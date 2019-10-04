@@ -1,0 +1,126 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exo 3.1.3}
+\subsubsection*{Q1}
+cours: La position d'\'equilibre de la masse est lorsque la force de rappel \'elastique $F_r=-k(l_e-l_0)$
+est \'egale \`a la force gravitationnelle $F_g = m.g$. Donc,
+$$F_e = F_g$$
+$$m.g = -k(l_e-l_0)$$
+$$l_e = \frac{k.l_o - m.g}{k}$$
+
+
+\subsubsection*{Q2}
+(a) La d\'eriv\'ee premi\`ere de $f(x) = sin(ax)$ est $f'(x) = a.cos(ax)$. 
+La d\'eriv\'ee seconde de $f(x)$ est $f''(x) = -a^2.sin(ax)$. 
+
+(b) Une solution de l'\'equation $f''(x) = -a^2f(x)$ est $f(x) = C.sin(ax)$. 
+En effet, $f''(x) = -C.a^2.sin(ax) = -a^2.C.sin(ax) = -a^2 f(x)$.
+
+Une autre solution de l'\'equation $f''(x) = -a^2f(x)$ est $f(x) = C.cos(ax)$. 
+En effet, $f''(x) = -C.a^2.cos(ax) = -a^2.C.cos(ax) = -a^2 f(x)$.
+
+La solution g\'en\'erale de de l'\'equation $f''(x) = -a^2f(x)$ est $f(x) = C_1.cos(ax) + C_2.sin(ax)$
+En effet, $f''(x) = -C_1.a^2.cos(ax) - C_2.a^2.sin(ax) = -a^2 (C_1.cos(ax) + C_2.sin(ax)) = -a^2 f(x)$.
+
+
+\subsubsection*{Q3}
+\emph{Identification du syst\`eme} : Le syst\`eme \'etudi\'e est la masse
+$m$ qui est accroch\'ee au ressort.
+
+
+\emph{Bilan des forces} : La masse est soumise \`a trois forces; 
+\begin{itemize}
+\item la force de rappel du ressort qui est proportionnelle \`a l'allongement
+du ressort $F_r = -k.(y(t) + y_0)\overrightarrow{i}$.
+\end{itemize}
+
+
+\emph{Composantes dans un rep\`ere cart\'esien} : Le mouvement est rectiligne.
+Il a lieu le long de l'axe $O_y$. Il est avantageux de prendre la
+position de la bille \`a l'\'equilibre pour l'origine O des coordonn\'ees sur
+l'axe $O_y$. Donc, nous avons $y(t) = l(t) - (l_e)$ et $\overrightarrow{g}=g.\overrightarrow{i}$$
+
+
+\emph{PFD} : La r\'esulante des forces est \'egale \`a 
+$m.\overrightarrow{a}=m.\frac{d^2y(t)}{dt}\overrightarrow{i}$
+
+$$m.g.\overrightarrow{i} -k.y(t).\overrightarrow{i} = $$
+
+
+\emph{Solution}
+
+\end{document}
+
