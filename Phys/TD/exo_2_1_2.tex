@@ -1,0 +1,125 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exo 2.1.2}
+\subsubsection*{Q1}
+(a) $F(x)$ est la primitive de la fonction $f(x)$ si la d\'eriv\'ee de
+la fonction $F(x)$est \'egale \`a la fonction $f(x)$.
+$$F'(x) = f(x)$$
+
+(b) Lorsque $f(x) = C$, les primitives de la fonction $f(x)$ sont
+$F(x) = Cx + C_0$ avec $C_0$ une constante arbitraire.
+
+(c) Lorsque $g(x) = Cx$, les primitives de la fonction $g(x)$ sont
+$G(x) = \frac{Cx^2}{2} + C_0$ avec $C_0$ une constante arbitraire.
+
+\subsubsection*{Q2}
+La vitesse $v(t)$ est la primitive de l'acc\'el\'eration. Entre
+les instants $t=0$ et $t=2$, l'acc\'el\'eration est constante et
+\'egale \`a $2m/s^2$. Donc, $a(t) = 2$. Par cons\'equent l'\'equation
+de la vitesse est $v(t) = 2t+C_0$. Comme le mobile est sans vitesse
+initiale, donc $v(0)=0$, donc $C_0 = 0$.
+\\
+La distance $x(t)$ est la primitive de la vitesse. Entre
+les instants $t=0$ et $t=2$, la vitesse est $v(t) = 2t$. Par cons\'equent l'\'equation
+de la distance est $x(t) = t^2+C_0$. Comme le mobile est \`a l'origine
+\`a l'instant 0.
+initiale, donc $x(0)=0$, donc $C_0 = 0$.
+$$v(t)=2t, x(t)=t^2$$
+
+
+\subsubsection*{Q3}
+La vitesse $v(t)$ est la primitive de l'acc\'el\'eration. Entre
+les instants $t=2$ et $t=4$, l'acc\'el\'eration est constante et
+\'egale \`a $-2m/s^2$. Donc, $a(t) = -2$. Par cons\'equent l'\'equation
+de la vitesse est $v(t) = -2t+C_0$. \`A l'instant $t=2$, donc
+$v(2)=2*2=4$, donc $C_0 = 8$.
+\\
+La distance $x(t)$ est la primitive de la vitesse. Entre
+les instants $t=2$ et $t=4$, la vitesse est $v(t) = -2t+8$. Par cons\'equent l'\'equation
+de la distance est $x(t) = -t^2+8t+C_0$. \`A l'instant $t=2$, donc $x(2)=2^2=4$, donc $C_0 = -8$.
+$$v(t)=-2t+8, x(t)=-t^2+8t-8$$
+
+
+La vitesse s'annule lorsque $v(t)=0$. $v(t) = 2t = 0 \implies t = 0$ et
+$v(t) = -2t +8 = 0 \implies t = 4$. La position du mobile lorsque la
+vitesse est nulle est $x(0) = 0$ et $x(4) = 8$.
+
+\subsubsection*{Q4}
+La vitesse moyenne entre les instants $t=0$ et $t=2$ est
+$v_{moy}=\frac{x(2)-x(0)}{2-0}=2 m/s$
+
+\end{document}
+

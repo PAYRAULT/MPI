@@ -1,0 +1,199 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exo 2.2.1}
+\subsubsection*{Q1}
+
+$x(t) = -2asin^2(\omega t))$, et $\left(f^n\right)' = nf'f^{n-1}$, avec $n=2$
+et $f=sin(\omega t)$. De plus, $\left(sin(f)\right)' = f'cos(f)$ avec
+$f=\omega t$ donc
+$v_x(t) = x'(t) = -2a*2 \omega cos(\omega t) sin(\omega t)$.
+
+
+$y(t)=2asin(\omega t)cos(\omega t)$ et $\left(fg\right)' = f'g+g'f$,
+avec $f=sin(\omega t)$ et $g=cos((\omega t)$. Donc  $f'=\omega
+cos(\omega t)$ et $g'=-\omega sin(\omega t)$, alors $2a(\omega cos(\omega t) cos(\omega t)- \omega sin(\omega t) sin(\omega t))$.
+
+$$
+v(t) = \left\{
+\begin{array}{l} 
+  v_x(t) = x'(t) = -4a\omega cos(\omega t) sin(\omega t) \\
+  v_y(t) = y'(t) =  2a\omega (cos^2(\omega t) - sin^2(\omega t)) \\
+  v_z(t) = z'(t) =  0 \\
+\end{array}
+\right\}
+$$
+
+$a_x(t) = v'_x(t)$ et $v_x(t)= -4a \omega cos(\omega t) sin(\omega t)$ et
+$\left(fg\right)' = f'g+g'f$, avec 
+avec $f=cos(\omega t)$ et $g=sin((\omega t)$. Donc  $f'=-\omega sin(\omega t)$ et $g'=\omega cos(\omega t)$, alors
+$-4a \omega ((-\omega sin(\omega t)) sin(\omega t) + \omega
+cos(\omega t) cos(\omega t))$. On a aussi $sin^2(x) + cos^2(x) = 1$.
+
+$a_y(t)= v'_y(t)$ et $v_y(t)= 2a\omega (cos^2(\omega t) - sin^2(\omega t))$ avec
+$\left(f+g\right)' = f'+g'$, on connait la d\'eriv\'ee de
+$sin^2(\omega t)$. Il faut calculer la d\'eriv\'ee de
+$cos^2(\omega t)$. La d\'eriv\'ee est $2 \omega (-sin(\omega t))
+cos(\omega t)$. 
+
+$$a(t) = \left\{
+\begin{array}{l} 
+  a_x(t) = v'_x(t) = 4a \omega^2\\
+  a_y(t) = v'_y(t) = -8a \omega^2 sin(\omega t) cos(\omega t)\\
+  a_z(t) = v'_z(t) = 0 \\
+\end{array}
+\right\}
+$$
+
+\subsubsection*{Q2}
+
+$$\Vert v(t) \Vert = \sqrt{v_x^2(t) + v_y^2(t) + v_z^2(t)} $$
+$$= \sqrt{(-4a\omega cos(\omega t) sin(\omega t))^ 2 + (2a\omega
+  (cos^2(\omega t) - sin^2(\omega t))^2 + 0^2)}$$
+$$= \sqrt{16a^2\omega^2 cos^2(\omega t) sin^2(\omega t) +
+  4a^2\omega^2(cos^4(\omega t)-2cos^2(\omega t)sin^2(\omega t) + sin^4(\omega t))}$$
+$$= \sqrt{8a^2\omega^2 cos^2(\omega t) sin^2(\omega t) +
+  4a^2\omega^2cos^4(\omega t)+ 4a^2\omega sin^4(\omega t))}$$
+$$= 2a\omega \sqrt{2cos^2(\omega t) sin^2(\omega t) +
+  cos^4(\omega t)+ sin^4(\omega t))}$$
+$$= 2a\omega \sqrt{(cos^2(\omega t) +sin^2(\omega t))^2}$$
+$$= 2a\omega \sqrt{1^2}$$
+$$= 2a\omega$$
+
+\subsubsection*{Q3}
+Le vecteur vitesse est \'egale \`a $= 2a\omega$ qui est constant. Donc
+le mouvement est uniforme.
+
+\subsubsection*{Q4}
+$$sin(2x) = 2sin(x)cos(x)$$
+$$cos(2x) = cos^2(x)-sin^2(x) = 1 - 2 sin^2(x) =  1 - 2 cos^2(x)$$
+$$R=\Vert AM \Vert = \sqrt{(x-a)^2 + (y-b)^2}$$
+$$R^2=(x-a)^2 + (y-b)^2$$
+ou en polaire
+$$ x = a + Rcos(\alpha), y = b + Rsin(\alpha), $$
+
+
+\subsubsection*{Q5}
+Supposons que la voiture d\'ecrit un cercle de centre $(x_c, y_c)$ et
+de rayon $R$. Donc
+
+$$
+\begin{array}{l} 
+  x_c + Rcos(\alpha) = -2asin^2( \omega t)\\
+  y_c + Rsin(\alpha)= -2asin( \omega t)cos( \omega t)\\
+\end{array}
+$$
+
+$$
+\begin{array}{l} 
+  x_c + Rcos(\alpha) = -2a(\frac{1-cos(2 \omega t)}{2})\\
+  y_c + Rsin(\alpha)= asin( 2 \omega t)\\
+\end{array}
+$$
+
+$$
+\begin{array}{l} 
+  x_c + Rcos(\alpha) = -2a + acos(2 \omega t)\\
+  y_c + Rsin(\alpha)= 0+ asin( 2 \omega t)\\
+\end{array}
+$$
+
+$$x_c = -2a, y_c = 0, R = a, \alpha = 2 \omega t$$
+
+La voiture d\'ecrit un cercle de centre $(-2a,0)$ et de rayon $a$.
+
+
+\subsubsection*{Q6}
+La p\'eriode $T$ est $\frac{\omega}{\pi}$.
+
+\subsubsection*{Q7}
+$$
+\begin{array}{c c c}
+  t & x_c & y_c  \\
+  0 & -2a + a cos(2 \omega * 0) = -a = -1 & 0 + a
+  sin(2 \omega * 0) = 0\\
+  \frac{\pi}{4 \omega}  & -2a + a cos(2 \omega  \frac{\pi}{4 \omega})
+  = -2a = -2 & 0 + a
+  sin(2 \omega \frac{\pi}{4 \omega}) = a = 1\\
+  \frac{\pi}{2 \omega}  & -2a + a cos(2 \omega  \frac{\pi}{2 \omega})
+  = -3a = -3 & 0 + a
+  sin(2 \omega \frac{\pi}{2 \omega}) = 0  \\
+\end{array}
+$$
+
+
+
+\end{document}
+

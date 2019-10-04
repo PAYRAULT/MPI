@@ -1,0 +1,142 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exo 2.1.1}
+\subsubsection*{Q1}
+$x(t)=\mu*t^2+\nu$, $x(t)$ est une distance exprim\'ee en metre $m$. Donc
+la dimension de $\nu$ est \'egalement en $m$ et $\mu$ est en $m/s^2$.
+
+\subsubsection*{Q2}
+(a) \\
+La d\'eriv\'ee de $f(x)$xs en $x_0$ est
+$$f'(x_0) = \lim_{h \to 0} \frac{f(x_0+h)-f(x_0)}{h}$$
+
+
+(b)
+$$f'(2) = \lim_{h \to 0} \frac{f(2+h)-f(2)}{h}$$
+$$f'(2) = \lim_{h \to 0} \frac{5(2+h)^2+3-(5*2^2+3)}{h}$$
+$$f'(2) = \lim_{h \to 0} \frac{5h^2+20h+20+3-23}{h}$$
+$$f'(2) = \lim_{h \to 0} \frac{5h^2+20h}{h}$$
+$$f'(2) = \lim_{h \to 0} 5h+20 = 20$$
+
+(c)
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}$$
+$$f'(x) = \lim_{h \to 0} \frac{5(x+h)^2+3-(5x^2+3)}{h}$$
+$$f'(x) = \lim_{h \to 0} \frac{5h^2+10xh+5x^2+3-5x^2 -3}{h}$$
+$$f'(x) = \lim_{h \to 0} \frac{5h^2+10xh}{h}$$
+$$f'(x) = \lim_{h \to 0} 5h+10x = 10x$$
+
+\subsubsection*{Q3}
+(a)
+\begin{center}
+\begin{tabular}{c|c|c} 
+                         $t_0$         & $t_1$  & $v _{moy}$ \\
+      \hline
+     $2.0000$ & $3.0000$ & $25$ \\
+     $2.0000$ & $2.1000$ & $20.5$ \\
+     $2.0000$ & $2.0100$ & $20.05$ \\
+     $2.0000$ & $2.0010$ & $20.005$ \\
+     $2.0000$ & $2.0001$ & $20.0005$ \\
+\end{tabular}
+\end{center}
+
+(b) La vitesse instantan\'ee est 
+$$v(t)=lim_{\Delta_t \to 0} \frac{x(t+\Delta_t)-x(t)}{\Delta_t}$$ 
+L'expression de la vitesse instantan\'ee est identique \`a la
+d\'efinition de la d\'eriv\'ee d'une fonction (voir Question 2). Donc 
+$$v(t_0)=x'(t_0)=10t_0$$
+$$v(2)=20$$
+
+(c)
+Plus la valeur de $\Delta_t$ diminue, plus la valeur de la vitesse
+moyenne tend vers la vitesse instantan\'ee.
+
+\subsubsection*{Q3}
+(a)
+\'Equation d'une droite $y = ax + b$, la valeur de $a$ est $20$ et la
+droite passe par le point $(2,23)$. Donc
+$$23 = 20 * 2 - b$$
+$$b = -17$$
+L'\'equation de la droite est $y = 20x - 17$.
+
+(b)
+La tangente et la droite sont confondues. La vitesse instantan\'ee au
+point $t_0$ est $20m/s$. Donc on peut conclure que le coefficient
+directeur de la tangente correspond \`a la vitesse instantan\'ee \`a
+ce point.
+
+
+\end{document}
+
