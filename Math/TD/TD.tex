@@ -1,0 +1,181 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Exercice 7}
+(a) on a $tan\, x = \frac{sin\, x}{cos\, x}$, donc $tan\, x$ est d\'efinie lorsque $cos\, x \neq 0$, ou $x \neq \pi/2+n\,\pi$.
+
+$$tan^2 x \leq 3$$
+$$\sqrt{tan^2 x} \leq \sqrt{3}$$
+$$|tan\, x| \leq \sqrt{3}$$
+$$tan\, x \leq \sqrt{3} \; and \; -tan\, x \leq \sqrt{3}$$
+$$x \leq \arctan\, \sqrt{3} \; and \; x \geq -\arctan\, \sqrt{3}$$
+$$x \leq 1.249 \; and \; x \geq -1.249$$
+Comme $\pi/2 > 1.249$ alors $x \in [-1.249, 1.249]$ et la fonction $tan$ est de p\'eriode $\pi$, l'in\'equation est vraie pour $x \in [-1.249+n.\pi, 1.249+n.\pi]$.
+
+
+
+(b) La function $tan\, x$ est d'efini pour $x \neq \pi/2+n\,\pi$. Faisons le changement de variable $y=tan\, x$. L'in\'equation devient $\frac{y^2-2}{y^2-1}$ avec $y \neq |1|$.
+$$\frac{y^2-2}{y^2-1} \leq \frac{1}{2}$$
+$$2(y^2-2) \leq y^2-1$$
+$$y^2 \leq 3$$
+$$|y| \leq \sqrt(3)$$
+$$y \leq \sqrt(3) \; and \; y \geq -3$$
+$$tan\, x \leq \sqrt(3) \; and \; tan\, x \geq -3$$
+$x \leq 1.249 \; and \; x \geq -1.249$ par (a) et $tan\, x \neq |1|$ (car $y \neq |1|$), donc $x \neq |0.7854|$. Par cons\'equent l'in\'equation est v\'erifi\'ee lorsque $x \in [-1.249,-0.7854[ \cup ]-0.7854,0.7854[ \cup ]0.7854,1.249]$ \`a la p\'eriode de $\pi$.
+  
+\subsection*{Exercice 8}
+$$P(t) = (\lambda + 1)t^2 + 2at + \lambda -1$$
+$$\Delta = (2a)^2 - 4.(\lambda + 1)(\lambda - 1)$$
+$$\Delta = (2a)^2 - 4.(\lambda^2 - 1)$$
+$$\Delta = 4(a^2 - \lambda^2 + 1)$$
+$$t = \frac{-2a \pm \sqrt{4(a^2 - \lambda^2 + 1)}}{2.(\lambda + 1)}$$
+$$t = \frac{-a \pm \sqrt{a^2 - \lambda^2 + 1}}{(\lambda + 1)}$$
+
+(a) $a^2-\lambda^2+1=0$, 1 seule racine $t=\frac{-a}{\lambda+1}$ avec $\lambda+1 \neq 0$. On a $P(t)$ positif entre $]-\infty, \frac{-a}{\lambda+1}[$ et n\'egatif entre $]\frac{-a}{\lambda+1},+\infty]$ si $\frac{-a}{\lambda+1} > 0$ et l'inverse sinon.
+  
+
+
+(b) $a^2-\lambda^2+1>0$, 2 seule racine $t=\frac{-a \pm \sqrt{a^2 - \lambda^2 + 1}}{(\lambda + 1)}$, avec $\lambda+1 \neq 0$. On a $P(t)$ positif entre $]-\infty, \frac{-a - \sqrt{a^2 - \lambda^2 + 1}}{(\lambda + 1)}[ \cup ]\frac{-a + \sqrt{a^2 - \lambda^2 + 1}}{(\lambda + 1)}, +\infty[$ et n\'egatif entre $]\frac{-a - \sqrt{a^2 - \lambda^2 + 1}}{(\lambda + 1)},\frac{-a + \sqrt{a^2 - \lambda^2 + 1}}{(\lambda + 1)}[$ si $\frac{-a}{\lambda+1} > 0$ et l'inverse sinon.
+
+  
+\subsection*{Exercice 9}
+\subsubsection*{P1}
+$$acos(t+b) = a(cos(t)cos(b)-sin(t)sin(b))$$ 
+$$a(cos(t)cos(b)-sin(t)sin(b)) = a.cos(b).cos(t) - a.sin(b).sin(t)$$
+$$a.cos(b).cos(t) - a.sin(b).sin(t) = \alpha cos(t) + \beta sin(t)$$ 
+donc $\alpha = a.cos(b)$ et $\beta=-a.sin(b)$. 
+
+(a) $\frac{\beta}{\alpha} = \frac{-a.sin(b)}{a.cos(b)} = -tan(b)$ donc $b=tan^{-1}(\frac{-\beta}{\alpha})$
+
+
+(b) $\alpha^2 + \beta^2 = a^2.cos^2(b) + a^2.sin^2(b) = a^2.(cos^2(b) + sin^2(b)) = a^2$ donc $a=\sqrt{\alpha^2 + \beta^2}$.
+
+\subsubsection*{P2}
+(a) $cos(t) + sin(t) = \lambda$. Donc, $\alpha = \beta = 1$, ce qui fait $a = \sqrt{2}$ et $b=tan^{-1}(-1)=-\pi/4$. On a $cos(t-\pi/4) = cos(t) + sin(t) = \lambda$, donc $t=cos^{-1}(\lambda)+\pi/4$.
+
+
+(b) idem avec $\alpha = 1$ et $\beta = \sqrt{3}$. Donc $a=2$ et $b=tan^{-1}(-\sqrt{3})$.
+
+(c) idem avec $\alpha = 1$ et $\beta = -1$. $a = \sqrt{2}$ et $b=tan^{-1}(-1)=\pi/4$. On a $cos(t+\pi/4) = cos(t) + sin(t) = \lambda$, donc $t=cos^{-1}(\lambda)-\pi/4$.
+
+\subsection*{Exercice 14}
+A faire
+
+
+\subsection*{Exercice 17}
+A faire
+
+
+\subsection*{Exercice 20}
+A faire
+
+
+\subsection*{Exercice 21}
+A faire
+
+
+\subsection*{Exercice 23}
+A faire
+
+
+
+\subsection*{Exercice 25}
+A faire
+
+
+\subsection*{Exercice 26}
+A faire
+
+
+
+\subsection*{Exercice 32}
+A faire
+
+
+\subsection*{Exercice 33}
+A faire
+
+
+\subsection*{Exercice 37}
+A faire
+
+
+\subsection*{Exercice 38}
+A faire
+
+
+QED
+
+\end{document}
+
