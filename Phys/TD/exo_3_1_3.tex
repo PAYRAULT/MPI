@@ -110,17 +110,34 @@ du ressort $F_r = -k.(y(t) + y_0)\overrightarrow{i}$.
 
 \emph{Composantes dans un rep\`ere cart\'esien} : Le mouvement est rectiligne.
 Il a lieu le long de l'axe $O_y$. Il est avantageux de prendre la
-position de la bille \`a l'\'equilibre pour l'origine O des coordonn\'ees sur
-l'axe $O_y$. Donc, nous avons $y(t) = l(t) - (l_e)$ et $\overrightarrow{g}=g.\overrightarrow{i}$
+position de la bille \`a l'\'equilibre pour l\'e'origine O des coordonn\'ees sur
+l'axe $O_y$. Donc, nous avons $y(t) = l(t) - (l_e)$.
 
 
 \emph{PFD} : La r\'esulante des forces est \'egale \`a 
 $m.\overrightarrow{a}=m.\frac{d^2y(t)}{dt}\overrightarrow{i}$
+La seule force appliqu\'ee est la force de rappel du ressort \`a partir de la position d'\'equilibre. En effet, quand le mobile est \`a l'\'equilibre la force de la p\'esanteur est \'equivalente \`a la force de rappel du ressort.
 
-$$m.g.\overrightarrow{i} -k.y(t).\overrightarrow{i} = $$
+$$-k.y(t).\overrightarrow{i}$$
 
 
 \emph{Solution}
+$$m.\frac{d^2y(t)}{dt} = -k.y(t)$$
+$$\frac{d^2y(t)}{dt} = \frac{-k}{m}.y(t)$$
+
+La solution de cette \'equation diff\'erentielle est $y(t) = C_1.cos(ax) + C_2.sin(ax)$ avec $a = \sqrt{\frac{k}{m}}$. Les conditions initiales sont \`a $t=0, y(0) = y_0, v(0) = 0$. Donc,
+$$y(0) = C_1.cos(a.0) + C_2.sin(a.0) = y_0$$
+$$y(0) = C_1 = y_0$$
+
+et
+
+$$v(0) = y'(0) = -C_1.sin(a.0) +C_2.cos(a.0) = 0$$
+$$v(0) = C_2 = 0$$
+
+Donc la solution de l'\'equation est :
+$$y(t) = y_0.sin(\sqrt{\frac{k}{m}}.t)$$
+
+
 
 \end{document}
 
