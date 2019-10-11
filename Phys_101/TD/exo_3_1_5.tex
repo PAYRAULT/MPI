@@ -174,20 +174,20 @@ $$\frac{d^2x(t)}{d^2t} = -\frac{k_1+k_2}{m}.x(t)$$
 
 
 
-(b)La solution de cette \'equation diff\'erentielle est $y(t) = C_1.cos(at) + C_2.sin(at)$ avec $a = \sqrt{\frac{k_1+k_2}{m}}$.
+(b)La solution de cette \'equation diff\'erentielle est $x(t) = C_1.cos(at) + C_2.sin(at)$ avec $a = \sqrt{\frac{k_1+k_2}{m}}$.
 
 
-(c) Les conditions initiales sont \`a $t=0, y(0) = M_0, v(0) = 0$. Donc,
-$$y(0) = C_1.cos(a.0) + C_2.sin(a.0) = M_0$$
-$$y(0) = C_1 = M_0$$
+(c) Les conditions initiales sont \`a $t=0, x(0) = (M_0-M_e), v(0) = 0$. Donc,
+$$x(0) = C_1.cos(a.0) + C_2.sin(a.0) = M_0-M_e$$
+$$x(0) = C_1 = M_0-M_e$$
 et
-$$v(0) = y'(0) = -C_1.sin(a.0) +C_2.cos(a.0) = 0$$
+$$v(0) = x'(0) = -C_1.sin(a.0) +C_2.cos(a.0) = 0$$
 $$v(0) = C_2 = 0$$
 
 Donc la solution de l'\'equation est :
-$$y(t) = M_0.sin(\sqrt{\frac{k_1+k_2}{m}}.t)$$
+$$x(t) = (M_0-Me).sin(\sqrt{\frac{k_1+k_2}{m}}.t)$$
 
-L'amplitude est $M_0$ car le sinus est toujours inf\'erieur \`a 1. \\
+L'amplitude est $|M_0-M_e|$ car le sinus est toujours inf\'erieur \`a 1. \\
 La p\'eriode est $\frac{2\pi}{\sqrt{\frac{k_1+k_2}{m}}}$.
 
 \end{document}
