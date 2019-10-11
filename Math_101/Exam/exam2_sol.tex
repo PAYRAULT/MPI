@@ -1,0 +1,165 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Exercice 1}
+
+Rappel de cours: 
+\begin{itemize}
+\item On appelle extraction toute application $\varphi : \N \to \N$ strictement croissante.
+\item On appelle suite extraite (ou sous-suite) d'une suite $(x_n)_{n \in \N}$. toute suite de la forme
+$(x_n)_{\varphi(n) \in \N}$ o\`u $\varphi$ est une extraction. Une suite extraite de $(x_n)_{n \in \N}$ est une suite obtenue à partir de celle-ci en n’en gardant que les éléments $\varphi(n)$, mais en nombre infini.
+\item On appelle valeur d'adh\'erence d'une suite $(x_n)_{n \in \N}$ toute limite finie d'une suite extraite de
+$(x_n)_{n \in \N}$.
+\end{itemize}
+
+
+Soit la fonction $f(n) = n*360$, la suite extraite $(cos_{f(n)})_{n \in \N}$ est une suite constante qui admet une valeur d'adh\'erence $1$.
+
+Donc la proposition est fausse.
+
+\subsection*{Exercice 2}
+Soit les fonctions $f_1(n) = n*360$ et $f_2(n) = 90+n*360$, les suites $(cos_{f_1(n)})_{n \in \N}$ et $(cos_{f_2(n)})_{n \in \N}$ convergent respectivement vers les valeurs $1$ et $0$. La suite $(cos\, n)_{n \in \N}$ n'est pas convergente car elle admet 2 valeurs d'adh\'erence distinctes. 	
+
+Donc la proposition est fausse.
+
+
+\subsection*{Exercice 3}
+Rappel de cours: \\
+Deux suites r\'eelles $(a_n)_{n \in \N}$ et $(b_n)_{n \in \N}$ sont dites adjacentes si
+\begin{enumerate}
+\item l'une est croissante et l'autre d\'ecroissante,
+\item $\lim_{n \to \infty}(b_n - a_n) = 0 $
+\end{enumerate}
+
+(a) $(S_n)_{n \in \N^{*}}$ est croissante ?\\
+$$S_{n+1} - S_{n} = \sum_{k=1}^{n+1}\frac{1}{k^2} - \sum_{k=1}^{n}\frac{1}{k^2} = \frac{1}{(n+1)^2} > 0$$  
+La suite $S_n$ est croissante.\\
+
+(b) $(S_n+\frac{1}{n})_{n \in \N^{*}}$ est d\'ecroissante ?\\
+$$(S_{n+1} +\frac{1}{n+1}) - (S_{n}+\frac{1}{n})) = \sum_{k=1}^{n+1}\frac{1}{k^2} - \sum_{k=1}^{n}\frac{1}{k^2} + \frac{1}{n+1} - \frac{1}{n} = \frac{1}{(n+1)^2} + \frac{1}{n+1} - \frac{1}{n}$$  
+$$= \frac{n+n(n+1)-(n+1)^2}{n(n+1)^2} = \frac{n+n^2+n-n^2-2n-1}{n(n+1)^2} = \frac{-1}{n(n+1)^2} < 0$$
+La suite $(S_n+\frac{1}{n})_{n \in \N^{*}}$ est d\'ecroissante.\\
+
+(c) $\lim_{n \to \infty}((S_n + \frac{1}{n}) - S_n) = 0 $?
+$$\lim_{n \to \infty}((S_n + \frac{1}{n}) - S_n) = \lim_{n \to \infty}\frac{1}{n} = 0 $$
+
+
+Les suites $(S_n)_{n \in \N^{*}}$ et $(S_n+\frac{1}{n})_{n \in \N^{*}}$ sont adjacentes.
+
+Donc la proposition est vraie.
+
+\subsection*{Exercice 4}
+$$\lim_{n \to +\infty} \frac{u_{n+1}}{u_{n}} = l \in ]-1,1[$$ 
+alors $\exists N_0 \in \mathbb{N}$ tel que $\forall n > N_{0}, \frac{u_{n+1}}{u_{n}} \approx l$. \\
+Soit $a = u_{N_0}$ alors $u_{N_0+1} \approx l.a, u_{N_0+2} \approx {l^2.a}, \ldots , u_{N_0+m} \approx {l^{m}.a}$. \\
+Par consequent, la suite $u_n$ converge vers $0$ car $|l| < 1$.
+\\ 
+Donc la proposition est vraie.
+
+
+\subsection*{Exercice 5}
+la proposition est vraie. Voir d\'efinition du cours.
+
+\subsection*{Exercice 6}
+A faire
+
+\subsection*{Exercice 7}
+A faire
+
+\subsection*{Exercice 8}
+$$\lim_{x \to +\infty} \frac{ln(1+x^2)}{ln x} = 2 \;\;?$$
+Application de la r\`egle de l'Hospital car $\lim_{x \to +\infty} ln(1+x2) = +\infty$ et $\lim_{x \to +\infty} ln\, x = +\infty$.\\
+
+On calcule les deux d\'eriv\'es: $(ln(1+x^2))' = \frac{(1+x^2)'}{1+x^2} = \frac{2x}{1+x^2}$ et $(ln\, x)' = \frac{1}{x}$.
+$$ \lim_{x \to +\infty} \frac{ln(1+x^2)}{ln x} = \lim_{x \to +\infty} \frac{\frac{2x}{1+x^2}}{\frac{1}{x}} = \lim_{x \to +\infty} \frac{2x^2}{1+x^2} = \lim_{x \to +\infty} \frac{2}{\frac{1}{x^2}+1} = 2$$
+
+
+Donc la proposition est vraie.
+
+\subsection*{Exercice 9}
+$$x \neq 0, \lim_{x \to 0} \frac{1}{x} \frac{1}{\sqrt{1+x^{-2}}}= 1 \;\;?$$
+
+Bizarre car
+$$x \neq 0, \lim_{x \to 0} \frac{1}{x} = \infty$$
+Donc trivial. Il faut demander si il n'y a pas un typo.
+
+
+\subsection*{Exercice 10}
+A faire
+
+
+QED
+
+\end{document}
+
