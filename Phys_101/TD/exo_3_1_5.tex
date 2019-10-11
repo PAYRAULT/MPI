@@ -1,0 +1,194 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exo 3.1.5}
+	
+\subsubsection*{Q1}
+\emph{Identification du syst\`eme} : Le syst\`eme \'etudi\'e est l'anneau de masse
+$m$ qui est accroch\'e aux 2 ressorts.
+
+
+\emph{Bilan des forces} : Au repos, l'anneau est soumis \`a deux forces (la force de gravit\'e est annul\'ee par l'absence de frottement): 
+\begin{itemize}
+\item la force de rappel du ressort du premier ressort qui est proportionnelle \`a l'allongement
+du ressort $F_{r_1} = -k_1.(l^{e}_{1} - l^{o}_{1})\overrightarrow{i}$, avec $l^{e}_{1}$ la longueur du ressort \`a l'\'equilibre.
+\item la force de rappel du ressort du second ressort qui est proportionnelle \`a l'allongement
+du ressort $F_{r_2} = k_2.(l^{e}_{2} - l^{o}_{2})\overrightarrow{i}$, avec $l^{e}_{2}$ la longueur du ressort \`a l'\'equilibre.
+\end{itemize}
+
+
+\emph{Composantes dans un rep\`ere cart\'esien} : Le mouvement est rectiligne.
+Il a lieu le long de l'axe $O_x$. L'origine est pris \`a la position d'\'equilibre. Il existe une relation entre la position d'\'equilibre et la longueur totale; $l_{1} + l_{2} = l^{e}_{1} + l^{e}_{2}$
+
+
+\emph{PFD} : La r\'esulante des forces est \'egale \`a z\'ero car le syst\`eme est \`a l'\'equilibre. Donc 
+$-k_1.(l^{e}_{1}- l^{o}_{1})\overrightarrow{i} + k_2.(l^{e}_{2}- l^{o}_{2})\overrightarrow{i}=\overrightarrow{0}$. 
+
+
+\emph{Solution}
+(a) \\
+On a le syst\`eme suivant \`a r\'esoudre:
+$$
+\left\{
+\begin{array}{l}
+ k_1.(l^{e}_{1}- l^{o}_{1})\overrightarrow{i} = k_2.(l^{e}_{2}- l^{o}_{2})\overrightarrow{i} \\
+ l_{1} + l_{2} = l^{e}_{1} + l^{e}_{2}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ k_1.l^{e}_{1} - k_1.l^{o}_{1} = k_2.l^{e}_{2} - k_2.l^{o}_{2} \\
+ l^{e}_{1}  = (l_{1} + l_{2}) - l^{e}_{2}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ k_1.(l_{1} + l_{2}) - k_1.l^{e}_{2} - k_1.l^{o}_{1} = k_2.l^{e}_{2} - k_2.l^{o}_{2} \\
+ l^{e}_{1}  = (l_{1} + l_{2}) - l^{e}_{2}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ l^{e}_{2} =  \frac{k_1.(l_{1} + l_{2}) - k_1.l^{o}_{1} + k_2.l^{o}_{2}}{k_2 + k_1} \\
+ l^{e}_{1} = (l_{1} + l_{2}) - l^{e}_{2}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ l^{e}_{1} = \frac{k_2.(l_{1} + l_{2}) - k_2.l^{o}_{2} + k_1.l^{o}_{1}}{k_2 + k_1} \\
+ l^{e}_{2} = \frac{k_1.(l_{1} + l_{2}) - k_1.l^{o}_{1} + k_2.l^{o}_{2}}{k_2 + k_1} \\
+\end{array}
+\right. 
+$$
+
+
+\subsubsection*{Q2}
+\emph{Identification du syst\`eme} : Le syst\`eme \'etudi\'e est l'anneau de masse
+$m$ qui est accroch\'e aux 2 ressorts.
+
+
+\emph{Bilan des forces} : L'anneau est soumis \`a deux forces : 
+\begin{itemize}
+\item la force de rappel du ressort du premier ressort qui est proportionnelle \`a l'allongement
+du ressort $F_{r_1}(t) = -k_1.x(t)\overrightarrow{i}$.
+\item la force de rappel du ressort du second ressort qui est proportionnelle \`a l'allongement
+du ressort $F_{r_2}(t) = -k_2.x(t)\overrightarrow{i}$.
+\end{itemize}
+
+
+\emph{Composantes dans un rep\`ere cart\'esien} : Le mouvement est rectiligne.
+Il a lieu le long de l'axe $O_x$. L'origine est pris \`a la position d'\'equilibre. $x(t) = (\overrightarrow{OM}(t)) - \overrightarrow{OM_{e}})$.
+
+
+\emph{PFD} : La r\'esulante des forces est \'egale \`a $m.\frac{d^2x(t)}{d^2t}$. 
+
+
+\emph{Solution}
+(a) \\
+$$m.\frac{d^2x(t)}{d^2t} = -k_1.x(t)-k_2.x(t)$$
+$$\frac{d^2x(t)}{d^2t} = -\frac{k_1+k_2}{m}.x(t)$$
+
+
+
+(b)La solution de cette \'equation diff\'erentielle est $y(t) = C_1.cos(at) + C_2.sin(at)$ avec $a = \sqrt{\frac{k_1+k_2}{m}}$.
+
+
+(c) Les conditions initiales sont \`a $t=0, y(0) = M_0, v(0) = 0$. Donc,
+$$y(0) = C_1.cos(a.0) + C_2.sin(a.0) = M_0$$
+$$y(0) = C_1 = M_0$$
+et
+$$v(0) = y'(0) = -C_1.sin(a.0) +C_2.cos(a.0) = 0$$
+$$v(0) = C_2 = 0$$
+
+Donc la solution de l'\'equation est :
+$$y(t) = M_0.sin(\sqrt{\frac{k_1+k_2}{m}}.t)$$
+
+L'amplitude est $M_0$ car le sinus est toujours inf\'erieur \`a 1. \\
+La p\'eriode est $\frac{2\pi}{\sqrt{\frac{k_1+k_2}{m}}}$.
+
+\end{document}
+
