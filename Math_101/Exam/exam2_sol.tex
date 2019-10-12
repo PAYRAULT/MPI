@@ -171,11 +171,27 @@ $$ \lim_{x \to +\infty} \frac{ln(1+x^2)}{ln x} = \lim_{x \to +\infty} \frac{\fra
 Donc la proposition est vraie.
 
 \subsection*{Exercice 9}
-$$x \neq 0, \lim_{x \to 0} \frac{1}{x} \frac{1}{\sqrt{1+x^{-2}}}= 1 \;\;?$$
+$$ \lim_{x \neq 0, x \to 0} \frac{1}{x} \frac{1}{\sqrt{1+x^{-2}}}= 1 \;\;?$$
 
-Bizarre car
-$$x \neq 0, \lim_{x \to 0} \frac{1}{x} = \infty$$
-Donc trivial. Il faut demander si il n'y a pas un typo.
+$$\lim_{x \neq 0,x \to 0} \frac{1}{x} = \infty$$
+et 
+$$\lim_{x \neq 0,x \to 0} \frac{1}{\sqrt{1+x^{-2}}} = 0$$
+
+Limite ind\'etermin\'ee.
+
+[1] $x>0$ alors $x = \sqrt{x^2}$.
+$$ \lim_{x \neq 0, x \to 0^{+}} \frac{1}{x} \frac{1}{\sqrt{1+x^{-2}}} = \lim_{x \neq 0, x \to 0^{+}} \frac{1}{\sqrt{x^2}\sqrt{1+x^{-2}}}$$
+$$ = \lim_{x \neq 0, x \to 0^{+}} \frac{1}{\sqrt{x^2+1}} = 1$$
+
+
+
+[12] $x<0$ alors $x = -\sqrt{x^2}$.
+$$ \lim_{x \neq 0, x \to 0^{-}} \frac{1}{x} \frac{1}{\sqrt{1+x^{-2}}} = \lim_{x \neq 0, x \to 0^{-}} \frac{1}{-\sqrt{x^2}\sqrt{1+x^{-2}}}$$
+$$ = \lim_{x \neq 0, x \to 0^{-}} \frac{-1}{\sqrt{x^2+1}} = -1$$
+
+
+
+Donc la proposition est fausse.
 
 
 \subsection*{Exercice 10}
