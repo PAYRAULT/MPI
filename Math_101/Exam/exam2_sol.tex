@@ -132,10 +132,33 @@ Donc la proposition est vraie.
 la proposition est vraie. Voir d\'efinition du cours.
 
 \subsection*{Exercice 6}
-A faire
+Soit la fonction 
+$$f(x) = 
+\left\{ 
+\begin{array}{l l}
+ x &  x \le 0\\
+ x+1-sin\; x & x > 0\\
+\end{array}
+\right. 
+$$
+La fonction $f$ n'est pas continue en $0$ ($f(0^-) = 0$ et $f(0^+) = 1$) donc elle n'admet pas de limite en $0$.
+
+Donc la proposition est fausse.
 
 \subsection*{Exercice 7}
-A faire
+Rappel de cours:
+$$\lim_{x \neq x_0, x \to x_0}(g \circ f)(x) = \lim_{x \neq x_0, x \to x_0}g(f(x)) = g(y_0)\; si\; \lim_{x \neq x_0, x \to x_0} f(x) = y_0 $$
+
+Prenons $g(x) = sin\; x$ et $f(x) = \frac{\pi.x}{|2x|}$. 
+$$ \lim_{x \neq 0, x \to 0} f(x) = \lim_{x \neq 0, x \to 0} \frac{\pi.x}{|2x|}$$
+\begin{itemize}
+\item Lorsque $x>0$, $\frac{\pi.x}{|2x|} = \frac{\pi}{2}$, donc $\lim_{x \neq 0, x \to 0} g(f(x)) = g(\frac{\pi}{2}) = 1$ 
+\item lorsque $x<0$, $\frac{\pi.x}{|2x|} = \frac{-\pi}{2}$, donc $\lim_{x \neq 0, x \to 0} g(f(x)) = g(\frac{-\pi}{2}) = 1$.
+\end{itemize}
+
+
+Donc la proposition est vraie.
+
 
 \subsection*{Exercice 8}
 $$\lim_{x \to +\infty} \frac{ln(1+x^2)}{ln x} = 2 \;\;?$$
@@ -156,8 +179,80 @@ Donc trivial. Il faut demander si il n'y a pas un typo.
 
 
 \subsection*{Exercice 10}
+Rappel de cours:\\
+Soit f une fonction d\'efinie au voisinage d'un point $x_0 \in \R$ (donc y compris en
+$x_0$). On dit que $f$ est continue en $x_0$ si $x \ne x_0,\;\lim_{x \to x_0} f(x) = f(x_0)$.
+
+
+$$(H \circ f) (x) = 
+\left\{ 
+\begin{array}{l l}
+ 1 + 1 -\frac{1}{2}cos^2\, x & 1 -\frac{1}{2}cos^2\, x \ge 0\\
+ 0 & 1 -\frac{1}{2}cos^2\, x < 0\\
+\end{array}
+\right. 
+$$
+
+Les fonctions $0$ et $2 -\frac{1}{2}cos^2\, x$ sont continues car elles sont une combinaison de fonctions continues. Il faut v\'erifier la continuit\'e de la fonction $(H \circ f) (x)$ en $1 -\frac{1}{2}cos^2\, x = 0$.
+$$1 -\frac{1}{2}cos^2\, x < 0$$
+$$\frac{1}{2}cos^2\, x > 1$$
+$$cos^2\, x > 2$$
+$$|cos\, x| > \sqrt{2}$$
+Il n'existe pas de $x$ tel que $|cos\, x| > \sqrt{2}$. Donc $(H \circ f) (x) = 2 -\frac{1}{2}cos^2\, x$.
+
+
+Donc la proposition est vraie.
+
+\subsection*{Exercice 11}
+Soit la fonction 
+$$f(x) = 
+\left\{ 
+\begin{array}{l l}
+ x+1 & x \ge 0\\
+ x-1 & x < 0\\
+\end{array}
+\right. 
+$$
+
+La fonction $f(x)$ est croissante et n'est pas continue en 0.
+
+
+Donc la proposition est fausse.
+
+\subsection*{Exercice 12}
 A faire
 
+\subsection*{Exercice 13}
+$f$ est une fonction $f$ continue alors 
+$$\forall x_0 \in [2,3], \forall \epsilon >0, \exists \eta > 0\; tel\; que\; (\forall x \in [2,3] \cap ]x_0-\eta, x_0+\eta[, |f(x)-f(x_0)| < \epsilon) \;\;\; [1]$$ 
+
+$f$ a pour limite $\infty$ en $x_0=\frac{5}{2}$ alors
+$$\forall A \in \R, \exists \eta > 0,\; tel\; que\; (]x_0-\eta, x_0+\eta[ \setminus \{x_0\} \subset [2,3] \; et \; \forall x \in ]x_0-\eta, x_0+\eta[ \setminus \{x_0\},\; f(x) > A)$$
+$$\forall A \in \R, \exists \eta > 0,\; tel\; que\; (\forall x \in [2,3] \cap ]x_0-\eta, x_0+\eta[ \setminus \{x_0\}, \; f(x) > A) \;\;\; [2]$$
+
+Deux cas possibles, 
+\begin{itemize}
+\item la fonction $f$ est d\'efinie en $x_0$, alors $f(x_0) = \infty$ et la proposition [1] est fausse.
+\item la fonction $f$ n'est pas d\'efinie en $x_0$, alors il faut trouver un prolongement par continuit\'e de la fonction $f$ en $x_0$. Il n'existe pas de valeur $l \in \R$ tel que $\lim_{x \neq x_0, x \to x_0} f(x) = l$ car $\lim_{x \neq x_0, x \to x_0} f(x) = \infty$. Donc,  la fonction $f$ n'est pas prolongeable en $x_0$.
+\end{itemize}
+
+
+Donc la proposition est fausse.
+
+
+\subsection*{Exercice 14}
+A faire
+
+\subsection*{Exercice 15}
+Admettons que la fonction n'est pas constante alors $\exists x_0, \exists \eta > 0\; t.q.\; f(x_0 - \eta) = Z_1\; et \; f(x_0 + \eta) = Z_2$ et $Z_1 \neq Z_2$.\\
+
+
+$\forall x \in ]x_0 - \eta;x_0 + \eta[, \epsilon = 0.1, |f(x) - f(x_0)| \nless \epsilon$ ce qui contredit l'hypoth\`ese de la fonction continue.\\
+
+Donc la proposition est vraie.
+
+\subsection*{Exercice 16}
+A faire
 
 QED
 
