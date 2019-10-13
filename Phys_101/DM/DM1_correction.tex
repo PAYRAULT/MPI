@@ -9,7 +9,6 @@
 \usepackage{amsthm}
 \usepackage{mathrsfs}
 \usepackage{color}
-\usepackage{calrsfs}
 
 %Here I define some theorem styles and shortcut commands for symbols I use often
 \theoremstyle{definition}
@@ -170,15 +169,15 @@ la pierre change de trajectoire et acc\'el\`ere sur l'axe $O_y$.
 (c) Entre les instants 0 et 15s la vitesse d\'ecroit lin\'eairement. L'\'equation de la vitesse 
 est $v(t) = v_0 - at = 2.25 - 0.1t$. L'\'equation horaire $x(t)$ est $2.25t - 0.05t^2 + x_0$. 
 \`A l'instant $t = 0$, la pierre se trouve sur l'origine de l'axe donc:
-$$ v(t) = 2.25t - 0.05t^2$$
+$$ x(t) = 2.25t - 0.05t^2$$
  
 \subsubsection*{Q 1.2 part 2}
 (a) Entre les instants 0 et $t_1$, la vitesse oscille autour de $0m/s$,
 
 
-(b) Pour $t \in [0,t_1], v(t) = 0$.
+(b) Pour $t \in [0,t_1], y(t) = 0.t+C_1=C_1$. \`A l]instant $t=0$, la pierre se trouve \`a l'origine, $y(0)= 0 = C_1$. Donc entre $[0,t_1], \; y(t) = 0$. 
 
-(c) $v_y$ repr\'esente une vitesse, son unit\'e est $m/s$. $\tau$ est le param\`tre de 
+(c) $v_y$ repr\'esente une vitesse, son unit\'e est $m/s$. $\tau$ est le param\`etre de 
 l'\'equation $v_y(t)$. Son unit\'e est en seconde. L'\'equation est $m/s = k_0 + k1*s + k_2*s^2$, 
 donc $k_0$ est en $m/s$, $k_1$ est en $m/s^2$ et $k_2$ est en $m/s^3$.
 
@@ -187,7 +186,7 @@ $$ v(t) =
 \left\{ 
 \begin{array}{l l}
 0 &  t \in [0,t_1] \\
-k_0 + k1*t + k_2*t^2  &  t \in ]t_1,t_2] \\
+k_0 + k1*\tau + k_2*\tau^2  &  t \in ]t_1,t_2], \tau = t - t_1 \\
 \end{array}
 \right. 
 $$
@@ -196,7 +195,7 @@ $$ v(t) =
 \left\{ 
 \begin{array}{l l}
 0 &  t \in [0,8] \\
-1.1 - 0.22*t + 0.01*t^2  &  t \in ]8,11] \\
+1.1 - 0.22*\tau + 0.01*\tau^2  &  t \in ]8,11], \tau = t-8 \\
 \end{array}
 \right. 
 $$
@@ -206,7 +205,7 @@ $$ v(t) =
 \left\{ 
 \begin{array}{l l}
 0 &  t \in [0,8] \\
-1.1 - 0.22*t + 0.01*t^2  &  t \in ]8,11] \\
+1.1 - 0.22*\tau + 0.01*\tau^2  &  t \in ]8,11], \tau = t-8 \\
 -0.1  &  t \in ]11,15] \\
 \end{array}
 \right. 
@@ -215,11 +214,29 @@ $$
 \subsubsection*{Q 1.2 part 3}
 \begin{itemize}
 \item Vitesse nulle entre 0 et 8, donc pas de d\'eplacement sur $O_y$.
-\item Entre 8 et 11, il faut int\'egrer la vitesse, donc $y(t) = 1.1*t - 0.22/2*t^2 + 
-0.01/2*t^3 + C$. A'instant $t=8$, la distance $y(8) = 0$ car pas de d\'eplacement 
-sur $O_y$ entre 0 et 8 s.
-\item Entre 11 et 15, la vitesse constante donc d\'eplacement lin\'eaire. $y(t) = -0.1\,t$
+\item Entre 8 et 11, il faut int\'egrer la vitesse, donc $y(t) = 1.1*\tau - 0.22/2*\tau^2 + 
+0.01/3*\tau^3 + C_2$. A'instant $t=8$, la distance $y(8) = 0$ car pas de d\'eplacement 
+sur $O_y$ entre 0 et 8 s. $y(8) = 1.1*\tau - 0.22/2*\tau^2 + 0.01/3*\tau^3 + C_2 = 0$. Donc $C_2 = 0$.
+\item Entre 11 et 15, la vitesse constante donc d\'eplacement lin\'eaire. $y(t) = -0.1*\tau_2+C_3, \, \tau_2 = t-11$. \`A l'instant $t=11$, la distance $y(11) =  1.1*\tau - 0.22/2*\tau^2 + 0.01/3*\tau^3 = 1.1*3 - 0.22/2*3^2 + 0.01/3*3^3 = 2.32 =C_3$. Donc $y(t) = -0.1*\tau_2+2.32$.
+
 \end{itemize}
+
+
+$$ y(t) =
+\left\{ 
+\begin{array}{l l}
+0 &  t \in [0,8] \\
+1.1*\tau - 0.22/2*\tau^2 + 0.01/3*\tau^3 &  t \in ]8,11],\, \tau = t-8 \\
+-0.1*\tau_2+2.32 &  t \in ]11,15],\, \tau_2 = t-11 \\
+\end{array}
+\right. 
+$$
+
+\begin{figure}[h!]
+  \includegraphics[width=0.8\linewidth]{graph1.jpg}
+\end{figure}
+
+
 
 \subsection*{Exo 2}
 \subsubsection*{Q 2.1}
@@ -264,11 +281,11 @@ $$
 
 
 (3) Du (2), les \'equations de la trajectoire sont
-$$ v(t)
+$$
 \left\{ 
 \begin{array}{l}
-v_x(t) = 3*t \\
-v_y(t) = h - 0.5*t \\
+x(t) = 3*t \\
+y(t) = h - 0.5*t \\
 \end{array}
 \right. 
 $$
