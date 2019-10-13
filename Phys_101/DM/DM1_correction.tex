@@ -9,6 +9,7 @@
 \usepackage{amsthm}
 \usepackage{mathrsfs}
 \usepackage{color}
+\usepackage{pgfplots}
 
 %Here I define some theorem styles and shortcut commands for symbols I use often
 \theoremstyle{definition}
@@ -232,10 +233,48 @@ $$ y(t) =
 \right. 
 $$
 
-\begin{figure}[h!]
-  \includegraphics[width=1\linewidth]{DM1_graph1.jpg}
-\end{figure}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {$s$},
+	x = 1cm,
+    ylabel = {$m$},
+	y = 0.25cm,
+	legend pos=north west,
+	enlargelimits=0.05,
+]
 
+\addplot [
+    domain=0:15, 
+    samples=100, 
+    color=red,
+]
+{-0.05*x^2 + 2.25*x};
+\addlegendentry{$x(t)$}
+
+%Here the blue parabloa is defined
+\addplot [
+    domain=0:8, 
+    samples=100,
+    color=blue,
+    ]
+    {0};
+\addplot [
+    domain=8:11, 
+    samples=100,
+    color=blue,
+    ]
+    {1.1*(x-8)-0.11*(x-8)^2+(0.01/3)*(x-8)^3};
+\addplot [
+    domain=11:15, 
+    samples=100,
+    color=blue,
+    ]
+    {2.32-0.1*(x-11)};
+\addlegendentry{$y(t)$}
+ 
+\end{axis}
+\end{tikzpicture}
 
 
 \subsection*{Exo 2}
