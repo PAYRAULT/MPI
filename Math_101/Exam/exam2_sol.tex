@@ -276,9 +276,20 @@ Donc la proposition est fausse.
 
 \subsection*{Exercice 14}
 A faire
-Preuve par l'absurde. Il faut admettre qu'une telle fonction existe pour montrer une contradiction. Donc elle n'existe pas.
+Preuve par l'absurde. Il faut admettre qu'une telle fonction existe pour montrer qu'elle ne peut pas \^etre continue. Donc elle n'existe pas.\\
+
+Soit $f(x)$ une fonction continue sur le domaine $I = [1,\infty[$ tel que $f(I) = \R$. Montrons que la fonction $f$ ne peut \^etre continue.\\
+
+Si $\exists a \in I, \; tel\; que\; \lim_{x \to a} f(x) = \infty$. Si $x = 1$, la fonction n'est pas d\'efinie en $1$ car $f(1) = \infty$. Si $x \neq 1$, la fonction n'est pas continue (voir exercice 13).
+
+Si $\nexists a \in I, \; tel\; que\; \lim_{x \to a} f(x) = \infty$. Donc $\R$ n'est pas enti\`erement couvert.
 
 Donc la proposition est fausse.
+\\
+
+Par contre, la proposition est vraie sur $I = ]1,\infty]$. Par exemple, la fonction $ln(x-1)$. Car $\lim_{x \to 1} ln(x-1) = -\infty$ et $\lim_{x \to \infty} ln(x-1) = +\infty$ et la fonction $ln$ est continue.
+
+
 
 \subsection*{Exercice 15}
 Admettons que la fonction n'est pas constante alors $\exists x_0, \exists \eta > 0\; t.q.\; f(x_0 - \eta) = Z_1\; et \; f(x_0 + \eta) = Z_2$ et $Z_1 \neq Z_2$.\\
@@ -292,24 +303,29 @@ Donc la proposition est vraie.
 On construit les trois suites $a_n$ et $b_n$ de la mani\`ere suivante:
 \begin{itemize}
 \item $c_n = \frac{a_n + b_n}{2}$
-\item Si $f(c_n) \ge 0$, $a_{n+1} = a_n$ et $b_{n+1} = c_n$
+\item Si $f(c_n) > 0$, $a_{n+1} = a_n$ et $b_{n+1} = c_n$
 \item Si $f(c_n) < 0$, $a_{n+1} = c_n$ et $b_{n+1} = b_n$
 \end{itemize}
 Avec $a_0 = 1$ et $b_0 = 2$.\\
 
-Comme $a_n$ et $b_n$ sont positif et $a_0 < b_0$, on a toujours la relation $a_n < \frac{a_n}{b_n} < b_n$, Donc, $a_n < c_n < b_n$.
+Comme $a_0 < b_0$, on a toujours la relation $a_n < \frac{a_n}{b_n} < b_n$, Donc, $a_n \le c_n \ge b_n$.\\
+On a $a_0 < \sqrt{2}$ et $b_0 > \sqrt{2}$.\\
  
 La suite $a_n$ croit car 
 \begin{itemize}
-\item lorsque $c_n \ge \sqrt{2}$, on a $a_{n+1} = a_n$. Donc $a_{n+1} \ge a_{n}$
-\item lorsque $x < \sqrt{2}$, on a $a_{n+1} = c_n$ et $a_n < c_n$ par d\'efinition. Donc $a_{n+1} \ge a_{n}$   
+\item lorsque $f(c_n) \ge 0$, on a $c_n \ge \sqrt{2}$, et $a_{n+1} = a_n$. Donc $a_{n+1} \ge a_{n}$ et $a_{n+1} \le \sqrt{2}$
+\item lorsque $f(c_n) < 0$, on a $x < \sqrt{2}$, et $a_{n+1} = c_n$ et $a_n < c_n$ par d\'efinition. Donc $a_{n+1} \ge a_{n}$ et $a_{n+1} \le \sqrt{2}$.   
 \end{itemize}
+
 
 La suite $b_n$ d\'ecroit car 
 \begin{itemize}
-\item lorsque $c_n \ge \sqrt{2}$, on a $b_{n+1} = c_n$ et $c_n < b_n$ par d\'efinition. Donc $b_{n+1} \le b_{n}$
-\item lorsque $x < \sqrt{2}$, on a $b_{n+1} = b_n$. Donc $a_{n+1} \le a_{n}$   
+\item lorsque $f(c_n) \ge 0$, on a $c_n \ge \sqrt{2}$, et $b_{n+1} = c_n$ et $c_n < b_n$ par d\'efinition. Donc $b_{n+1} \le b_{n}$ et $b_{n+1} \ge \sqrt{2}$.
+\item lorsque $f(c_n) < 0$, on a $x < \sqrt{2}$, et $b_{n+1} = b_n$. Donc $b_{n+1} \le b_{n}$ et $b_{n+1} \ge \sqrt{2}$.   
 \end{itemize}
+
+On a aussi $\forall n \in \N, b_n - a_n = \frac{a+b}{2^n} \to 0$. Donc les deux suites sont adjacentes. Le th\'eor\`eme des suites adjacentes, les suites $(a_n)_{n \in \N}$ et $(b_n)_{n \in \N}$ convergent vers un
+m\^eme r\'eel $x \in[a; b]$. Et , $a_n \le \sqrt{2} \le b_n$. Donc, $a_n$ et $b_n$ convergent vers $\sqrt{2}$.\\
 
 
 Donc la proposition est vraie.
