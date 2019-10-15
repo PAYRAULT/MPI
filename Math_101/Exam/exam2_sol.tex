@@ -289,10 +289,31 @@ $\forall x \in ]x_0 - \eta;x_0 + \eta[, \epsilon = 0.1, |f(x) - f(x_0)| \nless \
 Donc la proposition est vraie.
 
 \subsection*{Exercice 16}
-A faire
-Quand $c_n \le \sqrt{2}$, on fait d\'ecroitre $bn$, quand $c_n > \sqrt{2}$, on fait croitre $a_n$, donc les deux suites convergent vers $\sqrt{2}$.
+On construit les trois suites $a_n$ et $b_n$ de la mani\`ere suivante:
+\begin{itemize}
+\item $c_n = \frac{a_n + b_n}{2}$
+\item Si $f(c_n) \ge 0$, $a_{n+1} = a_n$ et $b_{n+1} = c_n$
+\item Si $f(c_n) < 0$, $a_{n+1} = c_n$ et $b_{n+1} = b_n$
+\end{itemize}
+Avec $a_0 = 1$ et $b_0 = 2$.\\
+
+Comme $a_n$ et $b_n$ sont positif et $a_0 < b_0$, on a toujours la relation $a_n < \frac{a_n}{b_n} < b_n$, Donc, $a_n < c_n < b_n$.
+ 
+La suite $a_n$ croit car 
+\begin{itemize}
+\item lorsque $c_n \ge \sqrt{2}$, on a $a_{n+1} = a_n$. Donc $a_{n+1} \ge a_{n}$
+\item lorsque $x < \sqrt{2}$, on a $a_{n+1} = c_n$ et $a_n < c_n$ par d\'efinition. Donc $a_{n+1} \ge a_{n}$   
+\end{itemize}
+
+La suite $b_n$ d\'ecroit car 
+\begin{itemize}
+\item lorsque $c_n \ge \sqrt{2}$, on a $b_{n+1} = c_n$ et $c_n < b_n$ par d\'efinition. Donc $b_{n+1} \le b_{n}$
+\item lorsque $x < \sqrt{2}$, on a $b_{n+1} = b_n$. Donc $a_{n+1} \le a_{n}$   
+\end{itemize}
+
 
 Donc la proposition est vraie.
+
 
 QED
 
