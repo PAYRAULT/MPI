@@ -79,10 +79,34 @@
 \emph{Identification du syst\`eme} : Le syst\`eme \'etudi\'e est un projectile ponctuel M de masse $m$ lanc\'e avec une vitesse initiale $v_0$ avec un angle de $\alpha_0$, sans frottement. 
 
 
-\emph{Bilan des forces} : Comme il n'y a pas de frottement, le projectile est uniquement soumis \`a la pesanteur.
+\emph{Bilan des forces} : Comme il n'y a pas de frottement, le projectile est uniquement soumis \`a la pesanteur. Donc $m \overrightarrow{a} = m \overrightarrow{g}$.
  
 
-\emph{Composantes dans un rep\`ere cart\'esien} : \`a $t=0$, le projectile se trouve \`a l'origine du rep\`ere. La force de la pesanteur est verticale, donc la du projectile est :
+\emph{Composantes dans un rep\`ere cart\'esien} : 
+ La force de la pesanteur est verticale :
+$$
+\left\{
+\begin{array}{l}
+ a_x(t) = 0 \\
+ a_y(t) = 0 \\
+ a_z(t) = - g \\
+\end{array}
+\right. 
+$$
+
+\`A $t=0$, la vitesse est $v_0$ dans le rep\`ere $(v_0*cos\, \alpha_0, 0, v_0*sin\, \alpha_0)$ :
+$$
+\left\{
+\begin{array}{l}
+ v_x(t) = C_1 \\
+ v_y(t) = C_2 \\
+ v_z(t) = C_3 - g*t \\
+\end{array}
+\right. 
+$$
+
+Donc, 
+
 $$
 \left\{
 \begin{array}{l}
@@ -93,7 +117,7 @@ $$
 \right. 
 $$
 
-L'\'equation horaire est
+\`A $t=0$, le projectile se trouve \`a l'origine du rep\`ere $(0,0,0)$. L'\'equation horaire est
 $$
 \left\{
 \begin{array}{l}
@@ -127,6 +151,80 @@ $$x= \frac{2*sin\, \alpha_0*v_0^2*cos\, \alpha_0}{g}$$
 $$x= \frac{sin\, 2\alpha_0*v_0^2}{g}$$
 
 La distance maximale est lorsque $sin\, 2\alpha_0 = 1$ soit $\alpha_0 = 45^{o}$.
+
+
+\subsubsection*{Q2}
+
+(a.i) $f'(u) = e^u$ et $g'(u) = -a*e^{-a*u}$.\\
+(a.ii) L'expression g\'en\'erale de l'\'equation diff\'erentielle est $f(x) = C*e^{-a*x}$. En effet, $(C*e^{-a*x})' + a*C*e^{-a*x} = 0$, $-a*C*e^{-a*x} + a*C*e^{-a*x} = 0$. \\
+(a.iii) L'expression g\'en\'erale de l'\'equation diff\'erentielle est $f(x) = C*e^{-a*x} + \frac{b}{a}$. En effet, $(C*e^{-a*x}+\frac{b}{a})' + a*(C*e^{-a*x}+\frac{b}{a}) = b$, $-a*C*e^{-a*x} + a*(C*e^{-a*x} + \frac{b}{a}) = b$.\\
+
+
+\emph{Identification du syst\`eme} : Le syst\`eme \'etudi\'e est un projectile ponctuel M de masse $m$ lanc\'e avec une vitesse initiale $v_0$ avec un angle de $\alpha_0$, avec frottement de l'air. 
+
+
+\emph{Bilan des forces} : Comme il n'y a pas de frottement, le projectile est soumis \`a la pesanteur et au frottement . Donc $m \overrightarrow{a} = m \overrightarrow{g} - k \overrightarrow{v}$.
+ 
+
+\emph{Composantes dans un rep\`ere cart\'esien} : 
+ La force de la pesanteur est verticale $(0,0,-g)$ et le frottement est proportionnelle \'a la vitesse $(v_x,0,v_z)$ :
+$$
+\left\{
+\begin{array}{l}
+ a_x(t) = \frac{dv_x}{dt} = \frac{-k}{m}*v_x \\
+ a_y(t) = \frac{dv_y}{dt} =0 \\
+ a_z(t) = \frac{dv_z}{dt} = -g - \frac{k}{m} * v_z \\
+\end{array}
+\right. 
+$$
+
+L'expression g\'en\'erale de l'\'equation diff\'erentielle $\frac{dv_x}{dt} + \frac{k}{m}*v_x = 0$ est $v_x(t) = C_1*e^{-\frac{k}{m}*t}$. \\
+
+L'expression g\'en\'erale de l'\'equation diff\'erentielle $\frac{dv_z}{dt} + \frac{k}{m}*v_z = -g$ est $v_x(t) = C_3*e^{-\frac{k}{m}*t} -\frac{g*m}{k}$. \\
+
+
+\`A $t=0$, la vitesse est $v_0$ dans le rep\`ere $(v_0*cos\, \alpha_0, 0, v_0*sin\, \alpha_0)$ :
+$$
+\left\{
+\begin{array}{l}
+ v_x(0) = C_1*e^{-\frac{k}{m}*0} = v_0*cos\, \alpha_0\\
+ v_y(0) = 0*t+C_2 = 0 \\
+ v_z(0) = C_3*e^{-\frac{k}{m}*0} - \frac{g*m}{k} = v_0*sin\, \alpha_0\\
+\end{array}
+\right. 
+$$
+
+Donc, $C_1 = v_0*cos\, \alpha_0$, $C_2 = 0$ et $C_3 = v_0*sin\, \alpha_0\, + \frac{g*m}{k}$
+
+$$
+\left\{
+\begin{array}{l}
+ v_x(t) = (v_0*cos\, \alpha_0)*e^{-\frac{k}{m}*t}\\
+ v_y(t) = 0 \\
+ v_z(t) = (v_0*sin\, \alpha_0\, + g)*e^{-\frac{k}{m}*t} - \frac{g*m}{k} \\
+\end{array}
+\right. 
+$$
+
+
+Lorsque $t \to \infty$, la vitesse devient constante sur l'axe $z$: $(0,0,-\frac{g*m}{k})$.
+
+Les 'equations horaire de $x(t), y(t)$ et $z(t)$ sont: 
+$$
+\left\{
+\begin{array}{l}
+ x(t) = \frac{(-m*v_0*cos\, \alpha_0)}{k}*e^{-\frac{k}{m}*t}\\
+ y(t) = 0*t + C_y \\
+ z(t) = (v_0*sin\, \alpha_0\, + g)*e^{-\frac{k}{m}*t} - \frac{g*m}{k} \\
+\end{array}
+\right. 
+$$
+
+\`A l'instant $t=0$, le projectile se trouve \`a l'origine du rep\`ere: $(0,0,0)$
+
+
+
+A FINIR.
 
 \end{document}
 
