@@ -201,7 +201,7 @@ $$
 \begin{array}{l}
  v_x(t) = (v_0*cos\, \alpha_0)*e^{-\frac{k}{m}*t}\\
  v_y(t) = 0 \\
- v_z(t) = (v_0*sin\, \alpha_0\, + g)*e^{-\frac{k}{m}*t} - \frac{g*m}{k} \\
+ v_z(t) = (v_0*sin\, \alpha_0\, + \frac{g*m}{k})*e^{-\frac{k}{m}*t} - \frac{g*m}{k} \\
 \end{array}
 \right. 
 $$
@@ -213,18 +213,16 @@ Les 'equations horaire de $x(t), y(t)$ et $z(t)$ sont:
 $$
 \left\{
 \begin{array}{l}
- x(t) = \frac{(-m*v_0*cos\, \alpha_0)}{k}*e^{-\frac{k}{m}*t}\\
+ x(t) = \frac{-m}{k}(v_0*cos\, \alpha_0)*e^{-\frac{k}{m}*t} + C_x\\
  y(t) = 0*t + C_y \\
- z(t) = (v_0*sin\, \alpha_0\, + g)*e^{-\frac{k}{m}*t} - \frac{g*m}{k} \\
+ z(t) = -\frac{m}{k}(v_0*sin\, \alpha_0\, + g)*e^{-\frac{k}{m}*t} - \frac{g*m}{k}*t + C_z\\
 \end{array}
 \right. 
 $$
 
-\`A l'instant $t=0$, le projectile se trouve \`a l'origine du rep\`ere: $(0,0,0)$
+\`A l'instant $t=0$, le projectile se trouve \`a l'origine du rep\`ere: $(0,0,0)$.\\
+Donc, $C_x = \frac{m}{k}(v_0*cos\, \alpha_0)$, $C_y = 0$, $C_z = \frac{m}{k}(v_0*sin\, \alpha_0\, + g)$.
 
-
-
-A FINIR.
 
 \end{document}
 
