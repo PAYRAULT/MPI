@@ -141,7 +141,17 @@ $$f(x) =
 \end{array}
 \right. 
 $$
-La fonction $f$ n'est pas continue en $0$ ($f(0^-) = 0$ et $f(0^+) = 1$) donc elle n'admet pas de limite en $0$.
+
+Calculons la limite de $f$ en $0^-$.
+$$\lim_{x \to 0^-} f(x) = x = 0$$
+
+Calculons la limite de $f$ en $0^+$.
+$$\lim_{x \to 0^+} f(x) = x = 0$$
+$$\lim_{x \to 0^+} f(x) = sin\, x = 0$$
+$$\lim_{x \to 0^+} f(x) = x +1 - sin\, x = 1$$
+
+
+Les limites \`a droite et \`a gauche de $f$ en $0$ sont distinctes, donc la fonction $f$ n'est pas continue en $0$ et elle n'admet pas de limite en $0$.
 
 Donc la proposition est fausse.
 
@@ -220,7 +230,7 @@ Il n'existe pas de $x$ tel que $|cos\, x| > \sqrt{2}$. Donc $(H \circ f) (x) = 2
 Donc la proposition est vraie.
 
 \subsection*{Exercice 11}
-Soit la fonction 
+Montrons un contre-exemple. Soit la fonction 
 $$f(x) = 
 \left\{ 
 \begin{array}{l l}
@@ -230,7 +240,16 @@ $$f(x) =
 \right. 
 $$
 
-La fonction $f(x)$ est croissante et n'est pas continue en 0.
+La fonction $f(x)$ est croissante?\\
+cas $x \ge 0$:
+$$\forall x_1,\,x_2,\, tq.\, x_1 > x_2,\, f(x_2) - f(x_1) = x_2 - x_1 > 0$$
+cas $x < 0$:
+$$\forall x_1,\,x_2,\, tq.\, x_1 > x_2,\, f(x_2) - f(x_1) = x_2 - x_1 > 0$$
+
+$f$ n'est pas continue en 0?
+$$\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} x+1 = 1$$
+$$\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} x-1 = -1$$
+Les limites \`a droite et \`a gauche de $f$ en $0$ sont distinctes, donc la fonction $f$ n'est pas continue en $0$.
 
 
 Donc la proposition est fausse.
