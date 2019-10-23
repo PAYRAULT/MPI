@@ -72,6 +72,7 @@
 
 \begin{document}
 
+
 \subsection*{Exercice 1}
 
 Rappel de cours: 
@@ -79,17 +80,17 @@ Rappel de cours:
 \item On appelle extraction toute application $\varphi : \N \to \N$ strictement croissante.
 \item On appelle suite extraite (ou sous-suite) d'une suite $(x_n)_{n \in \N}$. toute suite de la forme
 $(x_n)_{\varphi(n) \in \N}$ o\`u $\varphi$ est une extraction. Une suite extraite de $(x_n)_{n \in \N}$ est une suite obtenue à partir de celle-ci en n’en gardant que les éléments $\varphi(n)$, mais en nombre infini.
-\item On appelle valeur d'adh\'erence d'une suite $(x_n)_{n \in \N}$ toute limite finie d'une suite extraite de
-$(x_n)_{n \in \N}$.
+\item On appelle valeur d'adh\'erence d'une suite $(x_n)_{n \in \N}$ toute limite finie d'une suite extraite de $(x_n)_{n \in \N}$.
 \end{itemize}
 
 
-Soit la fonction $f(n) = n*360$, la suite extraite $(cos_{f(n)})_{n \in \N}$ est une suite constante qui admet une valeur d'adh\'erence $1$.
+Soit la fonction $f(n) = 2\pi n$, la suite extraite $(cos_{f(n)})_{n \in \N}$ est une suite constante qui admet une valeur d'adh\'erence $1$.
 
 Donc la proposition est fausse.
 
+
 \subsection*{Exercice 2}
-Soit les fonctions $f_1(n) = n*360$ et $f_2(n) = 90+n*360$, les suites $(cos_{f_1(n)})_{n \in \N}$ et $(cos_{f_2(n)})_{n \in \N}$ convergent respectivement vers les valeurs $1$ et $0$. La suite $(cos\, n)_{n \in \N}$ n'est pas convergente car elle admet 2 valeurs d'adh\'erence distinctes. 	
+Soit les fonctions $f_1(n) = 2\pi n$ et $f_2(n) = \frac{\pi}{2} + 2\pi n$, les suites $(cos_{f_1(n)})_{n \in \N}$ et $(cos_{f_2(n)})_{n \in \N}$ convergent respectivement vers les valeurs $1$ et $0$. La suite $(cos\, n)_{n \in \N}$ n'est pas convergente car elle admet 2 valeurs d'adh\'erence distinctes. 	
 
 Donc la proposition est fausse.
 
@@ -119,9 +120,10 @@ Les suites $(S_n)_{n \in \N^{*}}$ et $(S_n+\frac{1}{n})_{n \in \N^{*}}$ sont adj
 
 Donc la proposition est vraie.
 
+
 \subsection*{Exercice 4}
 $$\lim_{n \to +\infty} \frac{u_{n+1}}{u_{n}} = l \in ]-1,1[$$ 
-alors $\exists N_0 \in \mathbb{N}$ tel que $\forall n > N_{0}, \frac{u_{n+1}}{u_{n}} \approx l$. \\
+alors $\forall \epsilon > 0, \exists N_0 \in \mathbb{N}$ tel que $\forall n > N_{0}, |\frac{u_{n+1}}{u_{n}} - l| < \epsilon$. \\
 Soit $a = u_{N_0}$ alors $u_{N_0+1} \approx l.a, u_{N_0+2} \approx {l^2.a}, \ldots , u_{N_0+m} \approx {l^{m}.a}$. \\
 Par consequent, la suite $u_n$ converge vers $0$ car $|l| < 1$.
 \\ 
@@ -130,6 +132,7 @@ Donc la proposition est vraie.
 
 \subsection*{Exercice 5}
 la proposition est vraie. Voir d\'efinition du cours.
+
 
 \subsection*{Exercice 6}
 Soit la fonction 
@@ -154,6 +157,7 @@ $$\lim_{x \to 0^+} f(x) = x +1 - sin\, x = 1$$
 Les limites \`a droite et \`a gauche de $f$ en $0$ sont distinctes, donc la fonction $f$ n'est pas continue en $0$ et elle n'admet pas de limite en $0$.
 
 Donc la proposition est fausse.
+
 
 \subsection*{Exercice 7}
 Rappel de cours:
@@ -294,20 +298,19 @@ Donc la proposition est fausse.
 
 
 \subsection*{Exercice 14}
-A faire
-Preuve par l'absurde. Il faut admettre qu'une telle fonction existe pour montrer qu'elle ne peut pas \^etre continue. Donc elle n'existe pas.\\
+Cherchons un exemple.\\
+Soit la fonction $f(x) = x*sin(x)$.\\
+La fonction $f(x)$ est continue car, elle est la composition de 3 fonctions continues. La fonction $f(x)$ est d\'efinie sur $[1,\infty[$.
 
-Soit $f(x)$ une fonction continue sur le domaine $I = [1,\infty[$ tel que $f(I) = \R$. Montrons que la fonction $f$ ne peut \^etre continue.\\
+\begin{itemize}
+\item  Lorsque $x\, \% \, 2\pi < \pi$, $sin(x) > 0$, donc, $\lim_{x \to \infty} f(x) = +\infty$
+\item  Lorsque $x\, \% \, 2\pi \ge \pi$, $sin(x) \le 0$, donc, $\lim_{x \to \infty} f(x) = -\infty$
+\end{itemize}
 
-Si $\exists a \in I, \; tel\; que\; \lim_{x \to a} f(x) = \infty$. Si $x = 1$, la fonction n'est pas d\'efinie en $1$ car $f(1) = \infty$. Si $x \neq 1$, la fonction n'est pas continue (voir exercice 13).
+Donc, $f(x): [1,\infty[ \to \R$.
 
-Si $\nexists a \in I, \; tel\; que\; \lim_{x \to a} f(x) = \infty$. Donc $\R$ n'est pas enti\`erement couvert.
 
-Donc la proposition est fausse.
-\\
-
-Par contre, la proposition est vraie sur $I = ]1,\infty]$. Par exemple, la fonction $ln(x-1)$. Car $\lim_{x \to 1} ln(x-1) = -\infty$ et $\lim_{x \to \infty} ln(x-1) = +\infty$ et la fonction $ln$ est continue.
-
+Donc la proposition est vraie.
 
 
 \subsection*{Exercice 15}
@@ -327,7 +330,7 @@ On construit les trois suites $a_n$ et $b_n$ de la mani\`ere suivante:
 \end{itemize}
 Avec $a_0 = 1$ et $b_0 = 2$.\\
 
-Comme $a_0 < b_0$, on a toujours la relation $a_n < \frac{a_n}{b_n} < b_n$, Donc, $a_n \le c_n \ge b_n$.\\
+Comme $a_0 < b_0$, on a toujours la relation $a_n < \frac{a_n+b_n}{2} < b_n$, Donc, $a_n \le c_n \ge b_n$.\\
 On a $a_0 < \sqrt{2}$ et $b_0 > \sqrt{2}$.\\
  
 La suite $a_n$ croit car 
