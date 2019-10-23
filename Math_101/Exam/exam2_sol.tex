@@ -134,16 +134,16 @@ Donc la proposition est vraie.
 Rappel de cours:
 \begin{itemize}
 \item La d\'efinition d'une suite de Cauchy: $ \forall \epsilon \in \R, \epsilon> 0, \exists N_0 \in \N \, t.q.\,\forall n, m > N_0, |U_n - U_m| < \epsilon$.
-\item Une suite est born\'ee si $\exists (m,M)\in \R^{2}\quad \forall n\in \N \quad m\leq u_{n}\leq M$.\\
+\item Une suite est born\'ee si $\exists (m,M)\in \R^{2},\quad \forall n\in \N, \quad m\leq u_{n}\leq M$.\\
 \end{itemize}
 
 \begin{itemize}
-\item [1] Soit $N_0$, d'apr\`es le d\'efinition d'une suite de Cauchy, tous les points $u_n$ pour $n>N_0$ sont \`a une distance $\epsilon$ de $U_{N_0}$. Donc, $\forall n > N_0, U_{N_0}-\epsilon < u_n < U_{N_0}+\epsilon$. 
+\item [1] Soit $N_0$, d'apr\`es le d\'efinition d'une suite de Cauchy, tous les points $u_n$ pour $n>N_0$ sont \`a une distance $\epsilon$ de $U_{N_0}$. Donc, $\forall n > N_0, u_{N_0}-\epsilon < u_n < u_{N_0}+\epsilon$. 
 \item [2] Prenons $V_{max} = max(u_0, u_1, \ldots, u_{N_0})$. La valeur $V_{max}$ existe car la suite $u_0, \ldots u_{N_0}$ est finie. \\
 \item [3] Prenons $V_{min} = min(u_0, u_1, \ldots, u_{N_0})$. La valeur $V_{min}$ existe car la suite $u_0, \ldots u_{N_0}$ est finie.\\
 \end{itemize}
 
-Soit $m_1 = min(V_{min}, a-\epsilon)$ et $m_2=max(V_{max}, a+\epsilon)$, on a $\forall n \in \N,\, m_1 \le u_n \le m_2$. Car par [1] et [3], $m_1 \le u_n$ et par [1] et [2], $u_n \le m_2$.  \\
+Soit $m_1 = min(V_{min}, u_{N_0}-\epsilon)$ et $m_2=max(V_{max}, u_{N_0}+\epsilon)$, on a $\forall n \in \N,\, m_1 \le u_n \le m_2$. Car par [1] et [3], $m_1 \le u_n$ et par [1] et [2], $u_n \le m_2$.  \\
 Ce qui est la d\'efinition d'une suite born\'ee.\\
 
 
@@ -319,8 +319,8 @@ Soit la fonction $f(x) = x*sin(x)$.\\
 La fonction $f(x)$ est continue car, elle est la composition de 3 fonctions continues. La fonction $f(x)$ est d\'efinie sur $[1,\infty[$.
 
 \begin{itemize}
-\item  Lorsque $x\, \% \, 2\pi < \pi$, on a $0 \le sin(x) \le 1$, donc, $x*sin(x) \subset [0,+\infty[$
-\item  Lorsque $x\, \% \, 2\pi \ge \pi$, on a $-1 \le sin(x) \le 0$, donc, $x*sin(x) \subset ]-\infty,0]$
+\item  Lorsque $x\, \% \, 2\pi < \pi$, on a $0 \le sin(x) \le 1$, donc, $x*sin(x) \subset\, [0,+\infty[$
+\item  Lorsque $x\, \% \, 2\pi \ge \pi$, on a $-1 \le sin(x) \le 0$, donc, $x*sin(x) \subset\, ]-\infty,0]$
 \end{itemize}
 
 Donc, $f(x): [1,\infty[ \to \R$.
