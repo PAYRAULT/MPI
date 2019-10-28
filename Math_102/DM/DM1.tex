@@ -1,0 +1,136 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Question 7}
+On prend la vecteur $\overrightarrow{AB}/|AB|$ comme vecteur unit\'e support de l'axe des abcisses et le point $A$ comme origine du rep\`ere orthonormal. Dans ce rep\`ere les coordonne\'es des points $A$ et $B$ sont $(0,0)$ et $(r,0)$. 
+
+
+\subsection*{Question 8}
+
+Rappel de cours: Soit un point $M$ de coordonn\'es $(x_M,y_M)$. Dans le plan complexe, le point $M$ correspond \`a l'\'equation $x_m + iy_m$. 
+\begin{itemize}
+\item Le point sym\'etrique par rapport \`a l'abcisse est $M_1$ avec les coordonn\'ees $(x_{M1},-y_{M1}) =(x_M,-y_M)$ soit $x_m - iy_m$. Dans le plan complexe, la transformation $s$ d'un point $M$ correspond au conjugu\'e du point $M$.
+\item La rotation de centre $O = (0,0)$ et d'angle $\frac{\pi}{2}$ d'un point $M$ est \'egale \`a $i*M$, $M_1 = i (x_M + iy_M) = -y_M + i x_M$.  
+\item La rotation de centre $O = (0,0)$ et d'angle $\frac{-\pi}{2}$ d'un point $M$ est \'egale \`a $-i*M$, $M_1 = -i (x_M + i y_M) = y_M - ix_M$.  
+\item La translation d'un point $M$ par rapport \`a un vecteur $V=(V_x, V_y)$ est $M1 = (x_M+V_x) + i(y_M+V_y)$.
+\end{itemize}
+
+
+SOit $M$ un point du plan complexe de coordonn\'ee $(x_M, y_M)$.\\
+
+\begin{itemize}
+\item L'expression complexe de $s(M)$ est le conjugu\'e du point $M$. Donc, $s(M) = x_M - iy_M$.
+\item L'expression complexe de $r^{-}_A$ correspond \`a la rotation par rapport \`a l'origine du plan complexe car le point $A$ se situe \`a l'origine. Donc, $r^{-}_A(M) = - y_M + ix_M $
+\item Pour la transformation $r^{+}_B$, il faut d'abord translater le point pour avoir le point $B$ \`a l'origine du plan, effectuer la rotation horaire et retranslater le point dans le rep\`ere d'origine. Le point $B$ se situe aux coordonn\'ees $(r,0)$. Donc, le translation dans le rep\`ere d'origine $B$ est $x_M-r + iy_M$, la rotation horaire d'origine $B$ est $-i(x_M-r + iy_M)= y_M -i(x_M-r)$, la retranslation dans le rep\`ere d'origine est $(y_M+r) -i(x_M-r)$. Donc $r^{+}_B = (y_M+r) -i(x_M-r)$ 
+\end{itemize}
+
+
+\subsection*{Question 9}
+Soit $M$ le point d'affixe $z=x_M + i y_M)$. 
+\begin{itemize}
+\item $M1 = s(M)$, et $z_1 = x_M -i y_M$. 
+\item $M2 = r_{A}^{-}(M1)$, et $z_2 = i(x_M -i y_M) = y_M + i x_M$. 
+\item $M3 = s(M2)$, et $z_3 = = y_M - i x_M$.
+\item $M4 = r_{B}^{+}(M3)$, et $z_4 = = (-x_M + r) - i (y_M - r)$.  
+\end{itemize}
+ 
+\subsection*{Question 10}
+$\varphi(M) = r_{B}^{+} \circ s \circ r_{A}^{-} \circ s(M)) = r_{B}^{+}(s(r_{A}^{-}(s(M)))) = (-x_M + r) - i (y_M - r) = (-x_M + r) + i (-y_M + r)$.
+
+
+\subsection*{Question 11}
+$\varphi$ est une sym\'etrie centrale si $\exists C,\, t.q.\, C\,est\,au\,milieu\,du\,segment\,[M,\varphi(M)]$. Calculons les coordonn\'ees du point $C$. $C = \frac{x_M + (-x_M + r)}{2} + i\frac{y_M + (-y_M + r)}{2} = \frac{r}{2} + i\frac{r}{2}$.\\
+Le point $C$ existe car les coordonn\'ees du point $C$ sont fixes (ie. ind\'ependantes du point de d\'epart $M$). Donc, la transformation $\varphi$ est une sym\'etrie centrale.
+
+\subsection*{Question 12}
+Les coordonn\'ees de $A$, $B$ et $C$ sont $0+i0$, $r+i0$, $\frac{r}{2} + i\frac{r}{2}$.
+$$\frac{a-c}{b-c} = \frac{(0-r/2)+i(0-r/2)}{(r-r/2)+i(r-r/2)} = \frac{-(r/2+i*r/2)}{r/2+i*r/2} = -1$$
+$a-c$ correspond au vecteur $\overrightarrow{CA}$ et $b-c$ correspond au vecteur $\overrightarrow{CB}$. Et $|\overrightarrow{CA}| = \sqrt{(-r/2)^2+(-r/2)^2} = \sqrt{2}\frac{r}{2}$ et $|\overrightarrow{CB}| = \sqrt{(r/2)^2+(r/2)^2} = \sqrt{2}\frac{r}{2}$. Donc $AC=BC$.\\
+
+$tan(\widehat{BAC}) = \frac{r/2}{r/2} = 1$, donc l'angle $\widehat{BAC} = \pi/4$. De m\^eme, $tan(\widehat{ABC}) = \frac{r/2}{r-r/2} = 1$, donc l'angle $\widehat{ABC} = \pi/4$. Par cons\'equent, l'angle $\widehat{ACB} = \pi - (\pi/4+\pi/4) = \pi/2$. Donc l'angle est droit. 
+
+
+\subsection*{Question 13}
+Le point $C$ est le centre de la sym\'etrie centrale $\varphi$, par d\'efinition, c'est le milieu du segment $[M,\varphi(M)]$. Le point $I$ est le centre du segment $[M, M4]$. Les points $\varphi(M)$ et $M4$ sont identiques, donc $I=C$. Les triangles $CAB$ et $IAB$ sont identiques. De la questions 12, on a montr\'e que l'angle $\widehat{ACB} = \pi - (\pi/4+\pi/4) = \pi/2$. Donc le triangle $IAC$ est rectangle en $I$. Comme $|IA|=|IB|$, le triangle est aussi isoc\`ele. 
+
+\subsection*{Question 14}
+Des questions pr\'ec\'edentes on a montr\'e que la transformation $\varphi$ est une symetrie centrale de centre $C = (r/2, r/2)$. Le centre de sym\'etrie de la tranformation est le m\^eme quelque soit les points $A$ et $B$. Il suffit ce calculer les coordonn\'ees du triangles isoc\`ele $ACB$, rectangle en $C$. Il y a 2 triangles possibles (un de chaque c\^ot\'e de la droite $AB$). Il faut prendre le triagle avec l'angle $\widehat{BAC}$ qui est positif.\\
+
+Soit, $D$, le centre du segment $[AB]$. Ses coordonn\'ees sont $(\frac{1+2}{2}, \frac{1}{2})$. Le point $C$ est la rotation de $-\frac{\pi}{2}$ du point $A$ par rapport \`a $D$. Le vecteur $\overrightarrow{DA} = -1/2 -i/2$. La rotation de $-\frac{\pi}{2}$ du point $A$ par rapport \`a $D$ est $i(-1/2 -i/2) = i/2 - i/2$ qui est \'egale au vecteur $\overrightarrow{DC}$. Donc les coordonne'es du point $C$ sont $3/2-1/2+i(1/2-(-1/2)) = 1 + i$.
+
+
+QED
+
+\end{document}
+
