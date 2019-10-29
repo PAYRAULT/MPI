@@ -73,7 +73,7 @@
 \begin{document}
 
 \subsection*{Question 7}
-On prend la vecteur $\overrightarrow{AB}/|AB|$ comme vecteur unit\'e support de l'axe des abcisses et le point $A$ comme origine du rep\`ere orthonormal. Dans ce rep\`ere les coordonne\'es des points $A$ et $B$ sont $(0,0)$ et $(r,0)$. 
+On prend la vecteur $\overrightarrow{u} = \overrightarrow{AB}/|AB|$ comme vecteur unit\'e support de l'axe des abcisses et le point $A$ comme origine du rep\`ere orthonormal. Dans ce rep\`ere les coordonne\'es des points $A$ et $B$ sont $(0,0)$ et $(r,0)$. 
 
 
 \subsection*{Question 8}
@@ -86,7 +86,7 @@ Rappel de cours: Soit un point $M$ de coordonn\'es $(x_M,y_M)$. Dans le plan com
 \end{itemize}
 
 
-SOit $M$ un point du plan complexe de coordonn\'ee $(x_M, y_M)$.\\
+Soit $M$ un point du plan complexe de coordonn\'ee $(x_M, y_M)$.\\
 
 \begin{itemize}
 \item L'expression complexe de $s(M)$ est le conjugu\'e du point $M$. Donc, $s(M) = x_M - iy_M$.
@@ -96,7 +96,7 @@ SOit $M$ un point du plan complexe de coordonn\'ee $(x_M, y_M)$.\\
 
 
 \subsection*{Question 9}
-Soit $M$ le point d'affixe $z=x_M + i y_M)$. 
+Soit $M$ le point d'affixe $z=x_M + i y_M$. 
 \begin{itemize}
 \item $M1 = s(M)$, et $z_1 = x_M -i y_M$. 
 \item $M2 = r_{A}^{-}(M1)$, et $z_2 = -i(x_M -i y_M) = -y_M - i x_M$. 
@@ -109,15 +109,15 @@ $\varphi(M) = r_{B}^{+} \circ s \circ r_{A}^{-} \circ s(M)) = r_{B}^{+}(s(r_{A}^
 
 
 \subsection*{Question 11}
-$\varphi$ est une sym\'etrie centrale si $\exists C,\, t.q.\, C\,est\,au\,milieu\,du\,segment\,[M,\varphi(M)]$. Calculons les coordonn\'ees du point $C$. $C = \frac{x_M + (-x_M + r)}{2} + ib-c\frac{y_M + (-y_M - r)}{2} = \frac{r}{2} + i\frac{-r}{2}$.\\
-Le point $C$ existe car les coordonn\'ees du point $C$ sont fixes (ie. ind\'ependantes du point de d\'epart $M$). Donc, la transformation $\varphi$ est une sym\'etrie centrale.
+$\varphi$ est une sym\'etrie centrale si $\forall M, \exists C,\, t.q.\, C\,est\,au\,milieu\,du\,segment\,[M,\varphi(M)]$. Calculons les coordonn\'ees du point $C$. $C = \frac{x_M + (-x_M + r)}{2} + ib-c\frac{y_M + (-y_M - r)}{2} = \frac{r}{2} + i\frac{-r}{2}$.\\
+Le point $C$ est unique car les coordonn\'ees du point $C$ sont ind\'ependantes du point de d\'epart $M$. Donc, la transformation $\varphi$ est une sym\'etrie centrale. \`A noter que le point C d\'epend uniquement des coordonn\'ees des points $A$ et $B$.
 
 \subsection*{Question 12}
 Les coordonn\'ees de $A$, $B$ et $C$ sont $0+i0$, $r+i0$, $\frac{r}{2} + i\frac{r}{2}$.
 $$\frac{a-c}{b-c} = \frac{(0-r/2)+i(0-r/2)}{(r-r/2)+i(0-r/2)} = \frac{-(r/2+ir/2)}{r/2-ir/2} = -\frac{(r/2+ir/2)^2}{(r/2-ir/2)(r/2+ir/2)} = -\frac{2ir^2/4}{2r^2/4} = -i$$
 
 
-$a-c$ correspond au vecteur $\overrightarrow{CA}$ et $b-c$ correspond au vecteur $\overrightarrow{CB}$. Et $|\overrightarrow{CA}| = \sqrt{(-r/2)^2+(-r/2)^2} = \sqrt{2}\frac{r}{2}$ et $|\overrightarrow{CB}| = \sqrt{(r/2)^2+(-r/2)^2} = \sqrt{2}\frac{r}{2}$. Donc $AC=BC$.\\
+$a-c$ correspond au vecteur $\overrightarrow{CA}$ et $b-c$ correspond au vecteur $\overrightarrow{CB}$, $|\overrightarrow{CA}| = \sqrt{(-r/2)^2+(-r/2)^2} = \sqrt{2}\frac{r}{2}$ et $|\overrightarrow{CB}| = \sqrt{(r/2)^2+(-r/2)^2} = \sqrt{2}\frac{r}{2}$. Donc $AC=BC$.\\
 
 L'angle orient\'e $(\overrightarrow{CB}, \overrightarrow{CA}) = arg(\frac{a-c}{b-c}) = arg(-i) = -\frac{\pi}{2}$.
 
