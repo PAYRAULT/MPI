@@ -1,0 +1,172 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exo 3.3.1}
+\subsubsection*{Q1}
+Dans la main.\\
+
+Je suis dans le r\'ef\'erentiel du tapis roulant et le ballon \'egalement. Le ballon est soumis uniquement \`a la force gravitationelle (les frottements de l'air sont n\'eglig\'es). Donc $m.\overrightarrow{a} = m.\overrightarrow{g}$.
+
+$$a(t)
+\left\{
+\begin{array}{l}
+ a_{x}(t) = 0 \\
+ a_{y}(t) = -g \\
+\end{array}
+\right. 
+$$
+
+$$v(t)
+\left\{
+\begin{array}{l}
+ v_{x}(t) =  C_{vx} \\
+ v_{y}(t) =  C_{vy} -gt \\
+\end{array}
+\right. 
+$$
+\`A l'initialisation, $v_{x}(0) = 0\, m/s$, $v_{y}(0) = 1\, m/s$. Donc $C_{vx} = 0$ et $C_{vy} = 1$.\\
+
+$$
+\left\{
+\begin{array}{l}
+ x(t) =  C_{x} \\
+ y(t) =  C_{y} + t -\frac{g}{2}t^2 \\
+\end{array}
+\right. 
+$$
+\`A l'initialisation, $x(0) = 0$, $y(0) = 0$. Donc $C_{x} = 0$ et $C_{y} = 0$.\\
+
+Donc,
+$$
+\left\{
+\begin{array}{l}
+ x(t) =  0 \\
+ y(t) =  t -\frac{g}{2}t^2 \\
+\end{array}
+\right. 
+$$
+
+
+\subsubsection*{Q2}
+Dans le r\'ef\'erentiel de la personne immobile, le r\'ef\'erentiel du tapis bouge \`a $2m/s$ sur l'axe $O_x$. Donc, 
+$$v_{r}(t)
+\left\{
+\begin{array}{l}
+ x(t) =  2 \\
+ y(t) =  0 \\
+\end{array}
+\right. 
+$$
+
+L'\'equation horaire du r\'ef\'erentiel du tapis est
+$$
+\left\{
+\begin{array}{l}
+ x_r(t) =  2t + C_1 \\
+ y_r(t) =  0 + C_2\\
+\end{array}
+\right. 
+$$
+
+\`A l'initialisation mon r\'ef\'erentiel est \`a $(0,0)$ dans le r\'ef\'erentiel de la personne immobile. Donc, $C_1 = 0$ et $C_2 = 0$.
+$$
+\left\{
+\begin{array}{l}
+ x_r(t) =  2t \\
+ y_r(t) =  0 \\
+\end{array}
+\right. 
+$$
+
+Vis-\`a-vis du la personne immobile, l'\'equation horaire du ballon ets la somme des 2 r\'ef\'erentiels:
+$$
+\left\{
+\begin{array}{l}
+ x_b(t) =  2t \\
+ y_b(t) =  t -\frac{g}{2}t^2 \\
+ \\
+\end{array}
+\right. 
+$$
+
+La trajectoire du ballon est 
+$$Y(t) = \frac{x(t)}{2} - \frac{g}{2}(\frac{x(t)}{2})^2$$
+$$Y(t) = \frac{x(t)}{2} - \frac{g.x^2(t)}{8}$$
+
+La trajectoire est une parabole.
+
+
+\end{document}
+

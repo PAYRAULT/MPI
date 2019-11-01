@@ -102,41 +102,41 @@ $$
 
 On va travailler dans le rep\`ere orthonorm\'ee $Oxy$ parall\`ele au plan inclin\'e.
 
-Il y a 3 forces appliqu\'ees sur l'objet :
+Il y a 2 forces appliqu\'ees sur l'objet :
 \begin{itemize}
 \item la force gravitationnelle $\overrightarrow{F_g} = m\overrightarrow{g}$
 \item la force normale au plan $\overrightarrow{F_n}$ 
-\item la force r\'esultante $\overrightarrow{F_b} = m\overrightarrow{a_b}$
 \end{itemize}
 
-Dans le rep\`ere orthonorm\'ee $Oxy$, les 3 forces ont les valeurs suivantes:
+Dans le rep\`ere orthonorm\'ee $Oxy$, les 2 forces ont les valeurs suivantes:
 $$\overrightarrow{w} = 
 \left\{ 
-\begin{array}{l l l }
-\overrightarrow{F_n} & \overrightarrow{F_b} & \overrightarrow{F_g} \\ 
- (0, \Vert \overrightarrow{F_n} \Vert) & (-m * \overrightarrow{a_b},0) & (m*\overrightarrow{g}*sin(\beta), -m*\overrightarrow{g}*cos(\beta)) \\
+\begin{array}{l l}
+\overrightarrow{F_n}  & \overrightarrow{F_g} \\ 
+ (0, \Vert \overrightarrow{F_n} \Vert) & (m*\overrightarrow{g}*sin(\beta), -m*\overrightarrow{g}*cos(\beta)) \\
 \end{array}
 \right. 
 $$
 
-La somme des forces est nulle(2nd loi de Newton).
-$$ \sum{\overrightarrow{F}} = 0$$
-$$ \overrightarrow{F_g} + \overrightarrow{F_n} + \overrightarrow{F_b} = 0$$
+Comme le syst\`eme n'est pas \`a l'\'equilibre, la somme des forces est \'egale \`a la force r\'esultante.
+$ \sum{\overrightarrow{F}} = \overrightarrow{F_b}$
+
+Dans le rep\`ere orthonorm\'ee $Oxy$, la force r\'esultante a la valeur: 
+$ \overrightarrow{F_b} = (m*a_b, 0)$.
 
 $$\sum{\overrightarrow{F}} = 
 \left\{ 
 \begin{array}{l}
-\sum{\overrightarrow{F_x}} =  0 +  -m * \overrightarrow{a_b},0) + m*\overrightarrow{g}*sin(\beta) \\
-\sum{\overrightarrow{F_y}} = \Vert \overrightarrow{F_n} \Vert) + 0 + -m*\overrightarrow{g}*cos(\beta)) \\
+\sum{\overrightarrow{F_x}} =  0 + m*\overrightarrow{g}*sin(\beta) = m*a_b \\
+\sum{\overrightarrow{F_y}} = \Vert \overrightarrow{F_n} \Vert + -m*\overrightarrow{g}*cos(\beta)) = 0\\
 \end{array}
-\right. 
-= 0
+\right.
 $$
 
 $$
 \left\{ 
 \begin{array}{l}
-m * \overrightarrow{a_b},0) = m*\overrightarrow{g}*sin(\beta) \\
+m * \overrightarrow{a_b} = m*\overrightarrow{g}*sin(\beta) \\
 \Vert \overrightarrow{F_n} \Vert) = m*\overrightarrow{g}*cos(\beta)) \\
 \end{array}
 \right. 

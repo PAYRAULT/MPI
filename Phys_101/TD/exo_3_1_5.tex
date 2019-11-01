@@ -104,7 +104,7 @@ $$
 \left\{
 \begin{array}{l}
  k_1.(l^{e}_{1}- l^{o}_{1})\overrightarrow{i} = k_2.(l^{e}_{2}- l^{o}_{2})\overrightarrow{i} \\
- l_{1} + l_{2} = l^{e}_{1} + l^{e}_{2}\\
+ l = l^{e}_{1} + l^{e}_{2}\\
 \end{array}
 \right. 
 $$
@@ -113,7 +113,7 @@ $$
 \left\{
 \begin{array}{l}
  k_1.l^{e}_{1} - k_1.l^{o}_{1} = k_2.l^{e}_{2} - k_2.l^{o}_{2} \\
- l^{e}_{1}  = (l_{1} + l_{2}) - l^{e}_{2}\\
+ l^{e}_{1}  = l - l^{e}_{2}\\
 \end{array}
 \right. 
 $$
@@ -121,8 +121,8 @@ $$
 $$
 \left\{
 \begin{array}{l}
- k_1.(l_{1} + l_{2}) - k_1.l^{e}_{2} - k_1.l^{o}_{1} = k_2.l^{e}_{2} - k_2.l^{o}_{2} \\
- l^{e}_{1}  = (l_{1} + l_{2}) - l^{e}_{2}\\
+ k_1.(l - l^{e}_{2}) - k_1.l^{o}_{1} = k_2.l^{e}_{2} - k_2.l^{o}_{2} \\
+ l^{e}_{1}  = l - l^{e}_{2}\\
 \end{array}
 \right. 
 $$
@@ -130,8 +130,8 @@ $$
 $$
 \left\{
 \begin{array}{l}
- l^{e}_{2} =  \frac{k_1.(l_{1} + l_{2}) - k_1.l^{o}_{1} + k_2.l^{o}_{2}}{k_2 + k_1} \\
- l^{e}_{1} = (l_{1} + l_{2}) - l^{e}_{2}\\
+ k_1.l - k_1.l^{e}_{2} - k_1.l^{o}_{1} = k_2.l^{e}_{2} - k_2.l^{o}_{2} \\
+ l^{e}_{1}  = l - l^{e}_{2}\\
 \end{array}
 \right. 
 $$
@@ -139,8 +139,35 @@ $$
 $$
 \left\{
 \begin{array}{l}
- l^{e}_{1} = \frac{k_2.(l_{1} + l_{2}) - k_2.l^{o}_{2} + k_1.l^{o}_{1}}{k_2 + k_1} \\
- l^{e}_{2} = \frac{k_1.(l_{1} + l_{2}) - k_1.l^{o}_{1} + k_2.l^{o}_{2}}{k_2 + k_1} \\
+ k_2.l^{e}_{2} + k_1.l^{e}_{2} = k_1.l  - k_1.l^{o}_{1} + k_2.l^{o}_{2}\\
+ l^{e}_{1}  = l - l^{e}_{2}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ l^{e}_{2} (k_1+k_2) = k_1.l  - k_1.l^{o}_{1} + k_2.l^{o}_{2}\\
+ l^{e}_{1}  = l - l^{e}_{2}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ l^{e}_{2} =  \frac{k_1.l - k_1.l^{o}_{1} + k_2.l^{o}_{2}}{k_2 + k_1} \\
+ l^{e}_{1} = l - l^{e}_{2}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ l^{e}_{1} = \frac{k_2.l - k_2.l^{o}_{2} + k_1.l^{o}_{1}}{k_2 + k_1} \\
+ l^{e}_{2} = \frac{k_1.l - k_1.l^{o}_{1} + k_2.l^{o}_{2}}{k_2 + k_1} \\
 \end{array}
 \right. 
 $$
@@ -164,7 +191,7 @@ du ressort $F_{r_2}(t) = -k_2.x(t)\overrightarrow{i}$.
 Il a lieu le long de l'axe $O_x$. L'origine est pris \`a la position d'\'equilibre. $x(t) = (\overrightarrow{OM}(t)) - \overrightarrow{OM_{e}})$.
 
 
-\emph{PFD} : La r\'esulante des forces est \'egale \`a $m.\frac{d^2x(t)}{d^2t}$. 
+\emph{PFD} : La r\'esulante des forces est \'egale \`a $m.a(t) = m.\frac{d^2x(t)}{d^2t}$. 
 
 
 \emph{Solution}
@@ -185,9 +212,9 @@ $$v(0) = x'(0) = -C_1.sin(a.0) +C_2.cos(a.0) = 0$$
 $$v(0) = C_2 = 0$$
 
 Donc la solution de l'\'equation est :
-$$x(t) = (M_0-Me).sin(\sqrt{\frac{k_1+k_2}{m}}.t)$$
+$$x(t) = (M_0-M_e).sin(\sqrt{\frac{k_1+k_2}{m}}.t)$$
 
-L'amplitude est $|M_0-M_e|$ car le sinus est toujours inf\'erieur \`a 1. \\
+L'amplitude est $2|M_0-M_e|$ car le sinus est compris entre $-1$ et $1$. \\
 La p\'eriode est $\frac{2\pi}{\sqrt{\frac{k_1+k_2}{m}}}$.
 
 \end{document}
