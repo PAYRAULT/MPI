@@ -1,0 +1,116 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exo 3.3.2}
+\subsubsection*{Q1}
+La balance mesure la compression du ressort d\^u au poids (m.g) de l'objet pos\'e sur le plateau. Comme la force de rappel du ressort est proportionelle \`a la variation de la longueur du ressort ($k.\Delta l$), il est possible de facilement mesurer le poids de l'objet.
+
+
+\subsubsection*{Q2}
+\emph{Identification du syst\`eme} : Le plateau de la balance.\\
+
+
+\emph{Bilan des forces} : Le plateau est soumis \`a deux forces : 
+\begin{itemize}
+\item La force gravitationnelle; $F_g = m.\overrightarrow{g}$
+\item La force de rappel du ressort; $F_r = k.\Delta l \overrightarrow{i}$ 
+\end{itemize}
+
+
+\emph{PFD} :  
+Quand le syst\`eme est \`a l'\'equilibre, on a $F_g = F_r$. Donc, $m.g = k.\Delta l$. La masse de l'objet peut \^etre d\'etermin\'ee par l'\'equation $m = \frac{k.\Delta l}{g}$ avec $k$ le coefficient de raideur du ressort.
+
+
+\subsubsection*{Q2}
+
+\begin{itemize}
+\item Dans la phase 1, la gravit\'e dans l'ascenseur est \'egale \`a $g + 2\, m/s$ car l'ascenceur acc\'el\`ere dans le sens contraire \`a la gravit\'e.
+\item Dans la phase 2, la gravit\'e dans l'ascenseur est \'egale \`a $g + 0\, m/s$ car l'ascenceur n'acc\'el\`ere pas.
+\item Dans la phase 3, la gravit\'e dans l'ascenseur est \'egale \`a $g - 2\, m/s$ car l'ascenceur acc\'el\`ere dans le sens identique \`a la gravit\'e.
+\end{itemize}
+
+La masse de la personne et le coefficient de raideur du ressort sont identiques durant chaque phase de l'ascenseur. Seul son poids est diff\'erent. On a $\frac{m}{k} = \frac{\Delta l}{g(p)}$. 
+
+\begin{itemize}
+\item Dans la phase 1, $\Delta l_1 = \Delta l.\frac{g+2}{g}$. Ceci fait, $\Delta l_1 > \Delta l$. Donc la balance va afficher un poid sup\'erieur \`a 70kg.
+\item Dans la phase 2, $\Delta l_2 = \Delta l.\frac{g}{g}$. Ceci fait, $\Delta l_2 = \Delta l$. Donc la balance va afficher 70kg.
+\item Dans la phase 3, $\Delta l_3 = \Delta l.\frac{g-2}{g}$. Ceci fait, $\Delta l_3 < \Delta l$. Donc la balance va afficher un poid inf\'erieur \`a 70kg.
+\end{itemize}
+
+\subsubsection*{Q3}
+Lorsque le cable casse, l'acc\'el\'eration de la cabine est \'egale \`a la gravit\'e. Donc la gravit\'e dans l'ascenseur est nulle. Le poids affich\'e sur la balance est \'egale \`a $0$ car $k.\Delta l = m.0$.
+
+\end{document}
+
