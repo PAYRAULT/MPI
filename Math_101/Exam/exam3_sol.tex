@@ -9,6 +9,7 @@
 \usepackage{amsthm}
 \usepackage{mathrsfs}
 \usepackage{color}
+\usepackage{pgfplots}
 
 %Here I define some theorem styles and shortcut commands for symbols I use often
 \theoremstyle{definition}
@@ -136,7 +137,6 @@ on a $\lim_{x \to \pi^{-}} sin(-x) = \lim_{x \to \pi^{+}} sin(x)$. La valeur $l$
 La proposition est Vraie.
 
 \subsection*{Exo 2}
-Si $f$ est d\'erivable en $x_0$ alors $\exists l, \lim_{h \to 0}\frac{f(x_0+h)-f(x_0)}{h} = l$ et on note $f'(x_0)=l$. Il faut calculer $\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h}$\\
 
 Soit $f(x) = e^{x}$. on a $\forall x, f'(x) = e^{x}$
 $$\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h}$$
@@ -149,7 +149,46 @@ Si $\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0)$ alors on a $\lim_{h \
 
 La proposition est Fausse.
 
+\subsection*{Exo 3}
 
+
+\subsection*{Exo 4}
+Soit $f(x) = (x-1)^3$, le fonction est d\'erivable $f'(x)=3(x-1)^2$ et $f'(1) = 0$. Le point $1$ n'est pas un extremum de la fonction sur l'intervalle $[-2,3]$. En effet, $f(-2) = -27 < f(1) = 0$ donc $1$ n'est pas un minimum local et $f(3) = 8 > f(1) = 0$ donc $1$ n'est pas un maximum local.\\
+
+La proposition est Fausse.\\
+
+\begin{tikzpicture}
+	\begin{axis}[
+        axis lines = middle,
+		xlabel=$x$,
+		ylabel={$f(x) = (x-1)^3$},
+		grid=major,
+	]
+	% use TeX as calculator:
+	\addplot [
+   domain=-2:3,
+   samples=100,
+   color=blue]
+   {(x-1)^3};
+	\end{axis}
+\end{tikzpicture}
+
+
+
+\subsection*{Exo 5}
+Soit $f(x) = |x|$, la fonction est d\'efinie et continue en $0$ mais pas d\'erivable en $0$.
+En effet, si $f(x)$ est d\'erivable en $a$ alors, $\exists l, \lim_{x \to a}\frac{f(x)-f(a)}{x-a} = l$
+
+$$ 
+\left\{ 
+\begin{array}{l}
+ \lim_{x \to 0^{+}} \frac{x - 0}{x-0} = 1 \\
+ \lim_{x \to 0^{-}} \frac{-x - 0}{x-0} = -1 \\
+\end{array}
+\right. 
+$$
+
+La proposition est Fausse.
 
 \end{document}
 
