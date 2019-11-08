@@ -135,6 +135,21 @@ on a $\lim_{x \to \pi^{-}} sin(-x) = \lim_{x \to \pi^{+}} sin(x)$. La valeur $l$
 
 La proposition est Vraie.
 
+\subsection*{Exo 2}
+Si $f$ est d\'erivable en $x_0$ alors $\exists l, \lim_{h \to 0}\frac{f(x_0+h)-f(x_0)}{h} = l$ et on note $f'(x_0)=l$. Il faut calculer $\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h}$\\
+
+Soit $f(x) = e^{x}$. on a $\forall x, f'(x) = e^{x}$
+$$\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h}$$
+$$\lim_{h \to 0}\frac{e^{(x_0+3h)} - e^{(x_0+h)}}{h}$$
+$$\lim_{h \to 0}\frac{e^{x_0}.e^{3h} - e^{x_0}.e^{h}}{h}$$
+$$\lim_{h \to 0}\frac{e^{x_0}(e^{3h}-e^{h})}{h}$$
+$$e^{x_0}\lim_{h \to 0}\frac{(e^{3h}-e^{h})}{h}$$
+
+Si $\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0)$ alors on a $\lim_{h \to 0}\frac{(e^{3h}-e^{h})}{h} = e^{x_0}$. Ce qui est faux.\\
+
+La proposition est Fausse.
+
+
 
 \end{document}
 
