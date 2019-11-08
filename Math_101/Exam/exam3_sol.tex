@@ -73,11 +73,11 @@
 \begin{document}
 
 \subsection*{Exo 1}
-Rappel de cours:\\
+Rappel de cours:
 \begin{itemize}
 \item Une fonction d\'erivable est continue, par contre le r\'eciproque n'est pas vraie
 \item Une fonction est d\'erivable sur un intervalle si elle est d\'erivable en tout point de cette intervalle
-\item Une fonction est d\'erivable en un point $a$ si $\exists l, \lim_{x \to a}\frac{f(x)-f(a)}{x-a} = l$ ou $\exists l, \lim_{x \to a}\frac{f(a+h)-f(a)}{h}$
+\item Une fonction est d\'erivable en un point $a$ si $\exists l, \lim_{x \to a}\frac{f(x)-f(a)}{x-a} = l$ ou $\exists l, \lim_{h \to 0}\frac{f(a+h)-f(a)}{h}$
 \item une fonction est d\'erivable sur un intervalle donné si elle est un assemblage de fonctions connues et dérivables sur cette intervalle.
 \end{itemize}
 
@@ -85,8 +85,8 @@ La fonction $f(x) = |x-\pi| sin(x)$ est \'egale \`a
 $$f(x) = 
 \left\{ 
 \begin{array}{l l}
- (x-\pi) sin(x) &  x \ge \pi\\
- (\pi-x) sin(x); x & x < \pi\\
+ (x-\pi) sin(x) & x \ge \pi \\
+ (\pi-x) sin(x) & x < \pi \\
 \end{array}
 \right. 
 $$
@@ -106,7 +106,7 @@ $$
 \left\{ 
 \begin{array}{l}
  \lim_{x \to \pi^{+}}\frac{(x-\pi) sin(x)}{x-\pi} \\
- \lim_{x \to \pi^{-}}\frac{(\pi-x) sin(x)}{x-\pi} \\
+ \lim_{x \to \pi^{-}}\frac{-(x-\pi) sin(x)}{x-\pi} \\
 \end{array}
 \right. 
 $$
@@ -120,7 +120,7 @@ $$
 \right. 
 $$
 
-On a $sin(-x) = -sin(x)$. Donc
+La fonction sinus est impaire, $sin(-x) = -sin(x)$. Donc
 
 $$ 
 \left\{ 
