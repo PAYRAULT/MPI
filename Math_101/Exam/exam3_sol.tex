@@ -150,6 +150,8 @@ Si $\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0)$ alors on a $\lim_{h \
 La proposition est Fausse.
 
 \subsection*{Exo 3}
+Pour $x$ voisin de $0$, on a $e^{sin(2x)} = 1 + 3x + x\epsilon(x)$ avec $\lim_{x \to 0}\epsilon(x) = 0$.
+
 
 
 \subsection*{Exo 4}
@@ -189,6 +191,83 @@ $$
 $$
 
 La proposition est Fausse.
+
+\subsection*{Exo 6}
+
+\subsection*{Exo 7}
+
+\subsection*{Exo 8}
+
+
+
+\subsection*{Exo 9}
+Preuve par l'absurde. \\
+
+Admettons que la fonction $f$ ne soit pas born\'ee sur l'intervalle $[0,1]$, donc elle n'admet pas de valeur maximale (resp. minimale) sur l'intervalle $[0,1]$; $\exists c \in [0,1], f(c) = +\infty\, (resp.\, -\infty)\,\,\,[1]$.\\
+
+La fonction $f$ est continue sur l'intervalle $[0,1]$, donc $\forall x_0 \in [0,1], \forall \epsilon >0, \exists \eta > 0\; tel\; que\; (\forall x \in [0,1] \cap ]x_0-\eta, x_0+\eta[, |f(x)-f(x_0)| < \epsilon)\,\,\,[2]$. \\ 
+
+Au point $c$, la proposition $[2]$ est fausse, la fonction $f$ admet une valeur maximale $M$ (resp. minimale $m$) sur l'intervalle $[0,1]$. Donc la fonction $f$ est born\'ee.\\
+
+
+On peut \'egalement utiliser le th\'eor\`eme de Bolzano-Weierstrass.\\
+
+La proposition est Vraie.
+
+\subsection*{Exo 10}
+Preuve par l'absurde. \\
+
+Admettons que la fonction $f$ n'a pas de valeur maximale sur l'intervalle $[0,1]$, donc $\exists c \in [0,1], f(c) = +\infty\,\,\,[1]$.\\
+
+La fonction $f$ est continue sur l'intervalle $[0,1]$, donc $\forall x_0 \in [0,1], \forall \epsilon >0, \exists \eta > 0\; tel\; que\; (\forall x \in [0,1] \cap ]x_0-\eta, x_0+\eta[, |f(x)-f(x_0)| < \epsilon)\,\,\,[2]$. \\ 
+
+Au point $c$, la proposition $[2]$ est fausse, la fonction $f$ admet une valeur maximale sur l'intervalle $[0,1]$.\\
+
+
+On peut \'egalement utiliser le th\'eor\`eme de Bolzano-Weierstrass.\\
+
+La proposition est Vraie.
+
+
+\subsection*{Exo 11}
+Preuve par l'absurde. \\
+
+Soit une fonction $f$ p\'eriodique de p\'eriode $p$ et continue. \\
+
+Admettons que la fonction $f$ n'a pas de valeur maximale sur l'intervalle $[0,p]$, donc $\exists c \in [0,p], f(c) = +\infty\,\,\,[1]$.\\
+
+La fonction $f$ est continue sur $\R$ donc \'egalement sur l'intervalle $[0,p]$, donc $\forall x_0 \in [0,p], \forall \epsilon >0, \exists \eta > 0\; tel\; que\; (\forall x \in [0,p] \cap ]x_0-\eta, x_0+\eta[, |f(x)-f(x_0)| < \epsilon)\,\,\,[2]$. \\ 
+
+Au point $c$, la proposition $[2]$ est fausse, la fonction $f$ admet une valeur maximale sur l'intervalle $[0,p]$. Comme la fonction est p\'eriodique, on a $\forall x \in \R, f(x) = f(x\%p)$, et $x\%p \in [0,p]$, donc la valeur maximale sur l'intervalle $[0,p]$ est \'egalement la valeur maximale de la fonction $f$ sur $\R$. \\
+
+
+On peut \'egalement utiliser le th\'eor\`eme de Bolzano-Weierstrass.\\
+
+La proposition est Vraie.
+
+\subsection*{Exo 12}
+
+\subsection*{Exo 13}
+Montrons:
+$$\forall x,y \in [-1,1],|x^{2013} - y^{2013}| \le 2013|x-y|$$
+$|x-y| \ge 0$, donc
+$$\forall x,y \in [-1,1],\frac{|x^{2013} - y^{2013}|}{|x-y|} \le 2013$$
+$$\forall x,y \in [-1,1],\Big| \frac{x^{2013} - y^{2013}}{x-y} \Big| \le 2013$$
+$$\forall x,y \in [-1,1], |\sum_{k=0}^{2012}x^k.y^{2012-k}| \le 2013$$
+
+On a $x,y \in [-1,1]$, donc $x^m,y^m \in [-1,1]$ et $x^m.y^m \in [-1,1]$. Donc $\sum_{k=0}^{2012}x^k.y^{2012-k} \in [-2013,2013]$ et $|\sum_{k=0}^{2012}x^k.y^{2012-k}| \le 2013$.
+\\
+
+La proposition est Vraie.
+
+
+\subsection*{Exo 14}
+
+\subsection*{Exo 15}
+
+\subsection*{Exo 16}
+
+
 
 \end{document}
 
