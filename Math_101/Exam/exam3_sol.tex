@@ -307,7 +307,41 @@ La proposition est Fausse.
 \subsection*{Exo 15}
 
 \subsection*{Exo 16}
+Rappel de cours:\\
+La fonction $f$ est de classe $\C^1$ sur l'intervalle $I$ si la fonction est d\'erivable sur $I$ et que sa d\'eriv\'e est continue sur $I$.
 
+$$f: \R \to \R,
+\left\{ 
+\begin{array}{l l}
+ x^2sin(\frac{1}{x}) & x \neq 0\\
+ 0 & x = 0\\
+\end{array}
+\right. 
+$$
+
+La fonction $f$ est d\'erivable sur $\R$ car c'est un assemblage de fonctions d\'erivables. Calculons la d\'eriv\'ee de $f$.
+$$
+\begin{array}{l l}
+ h(x) = x^2 & h'(x)= 2x\\
+ g(x) = sin(\frac{1}{x}) & g'(x)= -\frac{1}{x^2}cos(\frac{1}{x})\\
+\end{array}
+$$
+
+Donc,
+$$f': \R \to \R,
+\left\{ 
+\begin{array}{l l}
+ (x^2)(-\frac{1}{x^2}cos(\frac{1}{x})) + 2x.sin(\frac{1}{x}) = 2x.sin(\frac{1}{x}) - cos(\frac{1}{x})& x \neq 0\\
+ 0 & x = 0\\
+\end{array}
+\right. 
+$$
+
+Il faut maintenant v\'erifier que la d\'eriv\'ee $f'(x)$ est continue sur $\R$. Pour $x \neq 0$, la fonction est continue car c'est un assemblage de fonctions continues, pour $x=0$, la fonction est \'egalement continue. Il reste \`a v\'erifier que la fonction est continue en $0$; $\lim_{x \to 0} 2x.sin(\frac{1}{x}) - cos(\frac{1}{x}) = 0$?\\
+
+La fonction $cos(\frac{1}{x})$ n'a pas de limite en $0$.\\
+
+La proposition est Fausse.
 
 
 \end{document}
