@@ -137,17 +137,15 @@ on a $\lim_{x \to \pi^{-}} sin(-x) = \lim_{x \to \pi^{+}} sin(x)$. La valeur $l$
 La proposition est Vraie.
 
 \subsection*{Exo 2}
+Comme $f$ est d\'erivable, on peut \'ecrire son d\'eveloppement limit\'e d'ordre 1 en $0$; $f(x+h) = f(x) + hf'(x) + h\epsilon(h)$.\\
 
-Soit $f(x) = e^{x}$. on a $\forall x, f'(x) = e^{x}$
-$$\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h}$$
-$$\lim_{h \to 0}\frac{e^{(x_0+3h)} - e^{(x_0+h)}}{h}$$
-$$\lim_{h \to 0}\frac{e^{x_0}.e^{3h} - e^{x_0}.e^{h}}{h}$$
-$$\lim_{h \to 0}\frac{e^{x_0}(e^{3h}-e^{h})}{h}$$
-$$e^{x_0}\lim_{h \to 0}\frac{(e^{3h}-e^{h})}{h}$$
+En rempla\c{c}ant $h$ par $3h$ on a $f(x+3h) = f(x) + 3hf'(x) + 3h\epsilon(3h) - h\epsilon(h)$.\\
+En soustrayant les 2 formules on a $f(x+3h)-f(x+h) = 2hf'(x) + 2h\epsilon(3h)-$, soit $\frac{f(x+3h)-f(x+h)}{h} = 2f'(x) + 3h\epsilon(3h) - h\epsilon(h)$.\\
+On a $\epsilon(3h) = \epsilon(h)$ par d\'efinition.
+$$\frac{f(x+3h)-f(x+h)}{h} = 2f'(x) + 2\epsilon(h)$$
+$$\lim_{h \to 0} \frac{f(x+3h)-f(x+h)}{h} = 2f'(x)$$
 
-Si $\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0)$ alors on a $\lim_{h \to 0}\frac{(e^{3h}-e^{h})}{h} = e^{x_0}$. Ce qui est faux.\\
-
-La proposition est Fausse.
+La proposition est Vraie.
 
 \subsection*{Exo 3}
 Comme $f$ est d\'erivable, on peut \'ecrire son d\'eveloppement limit\'e d'ordre 1 en $0$; $f(x) - f(0) = f'(0)(x - 0) + (x - 0)\epsilon(x - 0)$
