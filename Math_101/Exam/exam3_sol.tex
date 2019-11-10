@@ -150,8 +150,11 @@ Si $\lim_{h \to 0}\frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0)$ alors on a $\lim_{h \
 La proposition est Fausse.
 
 \subsection*{Exo 3}
-Pour $x$ voisin de $0$, on a $e^{sin(2x)} = 1 + 3x + x\epsilon(x)$ avec $\lim_{x \to 0}\epsilon(x) = 0$.
+Comme $f$ est d\'erivable, on peut \'ecrire son d\'eveloppement limit\'e d'ordre 1 en $0$; $f(x) - f(0) = f'(0)(x - 0) + (x - 0)\epsilon(x - 0)$
 
+On a $f(0) = e^{sin(2.0)} = 1$, $f'(x) = 2cos(2x)e^{sin(2x)}$, donc $f'(0) = 2$. Donc $f(x) = 1 + 2x + x\epsilon(x) \neq 1 + 3x + x\epsilon(x) $.\\
+
+La proposition est Fausse.
 
 
 \subsection*{Exo 4}
@@ -193,8 +196,41 @@ $$
 La proposition est Fausse.
 
 \subsection*{Exo 6}
+La fonction $tan^3(x)$ est d\'erivable sur $]-\frac{\pi}{2},\frac{\pi}{2}[$ car c'est un asssemblage de fonctions d\'erivable sur cette intervalle.
+
+$$(tan^3(x))' = 3(tan(x))'tan^2(x)=3(1+tan^2(x))tan^2(x) = 3(tan^2(x)+tan^4(x))$$
+
+La proposition est Fausse.
+
 
 \subsection*{Exo 7}
+Calculons la d\'eriv'ee de $h(x) = \frac{x}{\sqrt{1+x^2}}$.
+$$
+\begin{array}{l l}
+ f(x) = x & f'(x) = 1 \\
+ g(x) = \sqrt{1+x^2} & g'(x) = \frac{x}{\sqrt{1+x^2}} \\
+\end{array}
+$$
+
+$h'(x) = \frac{1.\sqrt{1+x^2} - x.\frac{x}{\sqrt{1+x^2}}}{1+x^2} = \frac{\frac{1}{\sqrt{1+x^2}}}{1+x^2} = \frac{1}{(1+x^2)\sqrt{1+x^2}}$.
+
+La fonction $h$ n'a pas de maximum ou minimum si sa d\'eriv\'ee ne peux pas \^etre nulle; $\forall x \in \R, h'(x) \neq 0$.
+$$ \frac{1}{(1+x^2)\sqrt{1+x^2}} = 0 $$
+$$ 1 = 0 $$
+
+
+OU
+La fonction $h(x) = \frac{x}{\sqrt{1+x^2}}$ est strictement croissante. Donc le maximum de $h(x)$, si il existe, est la limite quand $X \to +\infty$ et le minimum de $h(x)$, si il existe, est la limite quand $X \to -\infty$.
+Remarquons que, $\forall x \in \R, x^2 < 1 + x^2$ donc $\forall x \in \R, |x| < \sqrt{1 + x^2}$ et $\forall x \in \R, \frac{|x|}{\sqrt{1 + x^2}} < 1$.\\
+ 
+Lorsque $x \to +\infty$, $h(x)$ s'approche arbitrairement pr\`es de la valeur $1$ mais sans jamais atteindre cette valeur. Donc, $f(x)$ n'admet pas de maximum.\\
+
+Lorsque $x \to -\infty$, $h(x)$ s'approche arbitrairement pr\`es de la valeur $-1$ mais sans jamais atteindre cette valeur. Donc, $f(x)$ n'admet pas de minimum.\\
+
+
+La proposition est Vraie.
+
+
 
 \subsection*{Exo 8}
 
@@ -262,6 +298,11 @@ La proposition est Vraie.
 
 
 \subsection*{Exo 14}
+Prenons la valeur $x = -\frac{\pi}{2}$, on a $cos(-\frac{\pi}{2})-1 = -1 \nleq -\frac{\pi}{2}$.\\
+
+
+La proposition est Fausse.
+
 
 \subsection*{Exo 15}
 
