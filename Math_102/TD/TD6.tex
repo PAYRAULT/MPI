@@ -93,13 +93,15 @@ Expression des transformations en complexe:
 \item $s$ est l'homoth\'etie de centre $\mathcal{C}$ d'affixe $c$ et de rapport $\lambda$ alors $s: z \mapsto c + \lambda(z-c)$
 \end{itemize}
 
+
+
 Classification des isom\'etries (transformation qui conserve les longueurs)\\
 Supposons que $\varphi$ et $\psi$ soit 2 isom\'etries, alors`
 \begin{itemize}
 \item si $\varphi$ et $\psi$ sont des d\'eplacements (isom\'etries qui conservent les angles) alors $\varphi \circ \psi$ est un d\'eplacement
 \item si $\varphi$ et $\psi$ sont des antid\'eplacements (isom\'etries qui inversent les angles) alors $\varphi \circ \psi$ est un d\'eplacement
-\item si $\varphi$ est un d\'eplacement et $\psi$ un antid\'eplacements alors $\varphi \circ \psi$ est un antid\'eplacement
-\item si $\varphi$ est un antid\'eplacement et $\psi$ un d\'eplacements alors $\varphi \circ \psi$ est un antid\'eplacement
+\item si $\varphi$ est un d\'eplacement et $\psi$ un antid\'eplacement alors $\varphi \circ \psi$ est un antid\'eplacement
+\item si $\varphi$ est un antid\'eplacement et $\psi$ un d\'eplacement alors $\varphi \circ \psi$ est un antid\'eplacement
 \end{itemize}
 
 
@@ -117,11 +119,17 @@ Les valeurs de $a$ et $b$ sont uniques donc la transformation $\phi$ est unique.
 La transformation $\phi$ est une translation lorsque $a=1=e^{i\theta}$. Donc $\theta = 0$, par cons\'equent les droites $AB$ et $A'B'$ sont parall\'eles. 
 
 \subsection*{Question 1.c}
-??
+On prend un rep\'ere orthonorm\'e centr\'e sur le point $A'$. L'isome'trie est compos'ee d'une rotation $r$ pour aligner les deux segments et d'une translation $t$.\\
+
+Soit $\varphi$ l'angle orient\'e entre $(\vec(A'B'), \vec(AB))$, et la rotation de centre $A'$ (ie $O$) d'angle $\varphi$, $r: z \mapsto e^{i\varphi}z$.\\
+
+Soit $t$ la translation de vecteur $\vec{A'A}$. Le vecteur $\vec{A'A}$ est d'affixe $a$ car $A'$ est l'origine du rep\`ere. Donc $t: z\mapsto z+a$.\\
+
+La transformation $s = t \circ r = e^{i\varphi} + a$. Donc, l'angle $\theta$ de la rotation $s$ est \'egal \`a $\varphi$.
 
 
 \subsection*{Question 1.d}
-??
+La rotation de centre $c$ d'angle $\theta$ est \'egale \`a $c + e^i{\theta}(z-c) = e^{i\theta}z + c(e^{i\theta}-1)$. La rotation $s = e^{i\varphi} + a$. Ce qui fait, $a = c(e^{i\theta}-1)$ donc $c=\frac{a}{e^{i\theta}-1}$.
 
 \subsection*{Question 1.e}
 $\phi$ est une isom\'etrie donc $AB = A'B'$, Soit $D = \phi(D)$, on a $AD = AC$ et $BD = BC$ car $\phi$ est une isom\'etrie.
