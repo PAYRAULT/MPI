@@ -73,7 +73,8 @@
 
 \begin{document}
 
-Rappel de cours :
+Rappel de cours :\\
+Baricentre
 \begin{itemize}
 \item Si $\sum_{i=1}^{n}\, m_i\overrightarrow{IA_i} = \overrightarrow{0}$ alors $I = Bari(A_i, m_i))$.
 \item Si le point $I$ est le milieu d'un segment $AB$ alors $k\overrightarrow{IA}+k\overrightarrow{IB} = \overrightarrow{0}$, donc $I=Bari((A,k),(B,k))$.
@@ -81,6 +82,26 @@ Rappel de cours :
 \item Baricentre partiel. Si $F = Bari((B_j, n_j))$ alors $Bari((A_i,m_i),(B_j, n_j)) = Bari((A_i,m_i),(F,\sum n_j))$
 \item $G$ est un centre de gravit\'e des points $A_i$ si $G=Bari((A_i, m))$.
 \end{itemize}
+
+
+Expression des transformations en complexe:
+\begin{itemize}
+\item $s$ est une translation d'affixe $a$ alors $s: z \mapsto z + a$
+\item $s$ est une rotation de centre $\mathcal{C}$ d'affixe $c$ et d'angle $\theta$ alors $s: z \mapsto c + e^{i\theta}(z -c)$
+\item $s$ est la sym\'etrie centrale de centre $\mathcal{C}$ d'affixe $c$ alors $s: z \mapsto -z + 2c$ (car $c$ est le mileu de $s(z)z$)
+\item la r\'eflexion d'axe $\mathcal{O}x$ est $s: z \mapsto \bar{z}$ 
+\item $s$ est l'homoth\'etie de centre $\mathcal{C}$ d'affixe $c$ et de rapport $\lambda$ alors $s: z \mapsto c + \lambda(z-c)$
+\end{itemize}
+
+Classification des isom\'etries (transformation qui conserve les longueurs)\\
+Supposons que $\varphi$ et $\psi$ soit 2 isom\'etries, alors`
+\begin{itemize}
+\item si $\varphi$ et $\psi$ sont des d\'eplacements (isom\'etries qui conservent les angles) alors $\varphi \circ \psi$ est un d\'eplacement
+\item si $\varphi$ et $\psi$ sont des antid\'eplacements (isom\'etries qui inversent les angles) alors $\varphi \circ \psi$ est un d\'eplacement
+\item si $\varphi$ est un d\'eplacement et $\psi$ un antid\'eplacements alors $\varphi \circ \psi$ est un antid\'eplacement
+\item si $\varphi$ est un antid\'eplacement et $\psi$ un d\'eplacements alors $\varphi \circ \psi$ est un antid\'eplacement
+\end{itemize}
+
 
 
 \subsection*{Question 1.a}
@@ -114,8 +135,8 @@ La transformation est une translation.
 \subsection*{Question 3}
 Soit $s$ la r\'eflexion d'axe $\D$.
 La rotation $\phi$ de centre $O$ et d'angle $-\theta$ de la droite $\D$ est l'axe des abscisses. La r\'eflexion sur l'axe des abscisses, $\phi_a$  d'un point A est le conjugu\'e du point A, $\phi_a(A) = \bar(A)$. Donc en utilisant le principe de conjugaison on a 
-$$\phi_a = \phi \bullet s \bullet \phi^{-1}$$
-$$\phi^{-1} \bullet \phi_a \bullet \phi = s$$
+$$\phi_a = \phi \circ s \circ \phi^{-1}$$
+$$\phi^{-1} \circ \phi_a \circ \phi = s$$
 $$s = e^{i\theta}.\bar{(e^{-i\theta}z0}$$
 
 \subsection*{Question 4}
