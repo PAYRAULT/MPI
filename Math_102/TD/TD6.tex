@@ -1,0 +1,129 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\D}{\bb{D}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+Rappel de cours :
+\begin{itemize}
+\item Si le point $I$ est le milieu d'un segment $AB$ alors $k\overrightarrow{IA}+k\overrightarrow{IB} = \overrightarrow{0}$, donc $I=Bari((A,k),(B,k))$.
+\item Si $Bari((A,m_a), (A,n_a), ...) = Bari((A,m_a+n_a), ...)$.
+\item Baricentre partiel. Si $F = Bari((B_j, n_j))$ alors $Bari((A_i,m_i),(B_j, n_j)) = Bari((A_i,m_i),(F,\sum n_j))$
+\end{itemize}
+
+
+\subsection*{Question 1.a}
+Les distances $AB$ et $A'B'$ sont identiques, montrons qu'il existe une isom\'etrie $\phi(z) =  az+ b$ qui transforme $A' = \phi(A)$ et $B' = \phi(B)$ 
+\begin{itemize}
+\item soit $a=1$, donc la transformation $\phi$ est la translation $\overrightarrow{AA'}$.
+\item soit $a \neq 1$. Il existe un angle $\theta$ tel que $a=e^{i\theta}$. Pour que $\phi$ soit une rotation alors $\phi(z) =  c + d(z - c) = dz +c(1-d)$. Prenons, $d = a = e^{i\theta}$ et $b=c(1-d)=c(1-a)$. Alors $\phi$ est la rotation de centre $c$ et d'angle $\theta$. 
+\end{itemize}
+
+Les valeurs de $a$ et $b$ sont uniques donc la transformation $\phi$ est unique.
+
+\subsection*{Question 1.b}
+La transformation $\phi$ est une translation lorsque $a=1=e^{i\theta}$. Donc $\theta = 0$, par cons\'equent les droites $AB$ et $A'B'$ sont parall\'eles. 
+
+\subsection*{Question 1.c}
+??
+
+
+\subsection*{Question 1.d}
+??
+
+\subsection*{Question 1.e}
+$\phi$ est une isom\'etrie donc $AB = A'B'$, Soit $D = \phi(D)$, on a $AD = AC$ et $BD = BC$ car $\phi$ est une isom\'etrie.
+De m\^eme, l'angle $(AB, AC) = (A'B', A'D)$. $D$ est le point tel que $AD=AC$ et  $(AB, AC) = (A'B', A'D)$. Donc $\phi(C)=D=C'$.
+
+\subsection*{Question 2.a}
+La transformation est une translation.
+
+\subsection*{Question 2.b}
+
+\subsection*{Question 3}
+Soit $s$ la r\'eflexion d'axe $\D$.
+La rotation $\phi$ de centre $O$ et d'angle $-\theta$ de la droite $\D$ est l'axe des abscisses. La r\'eflexion sur l'axe des abscisses, $\phi_a$  d'un point A est le conjugu\'e du point A, $\phi_a(A) = \bar(A)$. Donc en utilisant le principe de conjugaison on a 
+$$\phi_a = \phi \bullet s \bullet \phi^{-1}$$
+$$\phi^{-1} \bullet \phi_a \bullet \phi = s$$
+$$s = e^{i\theta}.\bar{(e^{-i\theta}z0}$$
+
+\subsection*{Question 4}
+ 
+
+
+
+
+
+QED
+
+\end{document}
+
