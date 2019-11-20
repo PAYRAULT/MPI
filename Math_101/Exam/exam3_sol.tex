@@ -138,13 +138,13 @@ on a $\lim_{x \to \pi^{-}} sin(-x) = \lim_{x \to \pi^{+}} sin(x)$. La valeur $l$
 La proposition est Vraie.
 
 \subsection*{Exo 2}
-Comme $f$ est d\'erivable, on peut \'ecrire son d\'eveloppement limit\'e d'ordre 1 en $0$; $f(x+h) = f(x) + hf'(x) + h\epsilon(h)$.\\
+Comme $f$ est d\'erivable, on peut \'ecrire son d\'eveloppement limit\'e d'ordre 1 en $x_0$; $f(x_0+h) = f(x_0) + hf'(x_0) + h\epsilon(h)$.\\
 
-En rempla\c{c}ant $h$ par $3h$ on a $f(x+3h) = f(x) + 3hf'(x) + 3h\epsilon(3h) $.\\
-En soustrayant les 2 formules on a $f(x+3h)-f(x+h) = 2hf'(x) + 3h\epsilon(3h)- h\epsilon(h)$, soit $\frac{f(x+3h)-f(x+h)}{h} = 2f'(x) + 3h\epsilon(3h) - h\epsilon(h)$.\\
-On a $\epsilon(3h) = \epsilon(h)$ par d\'efinition.
-$$\frac{f(x+3h)-f(x+h)}{h} = 2f'(x) + 2\epsilon(h)$$
-$$\lim_{h \to 0} \frac{f(x+3h)-f(x+h)}{h} = 2f'(x)$$
+En rempla\c{c}ant $h$ par $3h$ on a $f(x_0+3h) = f(x_0) + 3hf'(x_0) + 3h\epsilon(3h) $.\\
+En soustrayant les 2 formules on a $f(x_0+3h)-f(x_0+h) = 2hf'(x_0) + 3h\epsilon(3h)- h\epsilon(h)$, soit $\frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0) + 3\epsilon(3h) - \epsilon(h)$.\\
+
+$$\frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0) + 2\epsilon(h)$$
+$$\lim_{h \to 0} \frac{f(x_0+3h)-f(x_0+h)}{h} = 2f'(x_0)$$
 
 La proposition est Vraie.
 
@@ -158,7 +158,7 @@ La proposition est Fausse.
 
 
 \subsection*{Exo 4}
-Soit $f(x) = (x-1)^3$, le fonction est d\'erivable $f'(x)=3(x-1)^2$ et $f'(1) = 0$. Le point $1$ n'est pas un extremum de la fonction sur l'intervalle $[-2,3]$. En effet, $f(-2) = -27 < f(1) = 0$ donc $1$ n'est pas un minimum local et $f(3) = 8 > f(1) = 0$ donc $1$ n'est pas un maximum local.\\
+Soit $f(x) = (x-1)^3$, la fonction est d\'erivable $f'(x)=3(x-1)^2$ et $f'(1) = 0$. Le point $1$ n'est pas un extremum de la fonction sur l'intervalle $[-2,3]$. En effet, $f(-2) = -27 < f(1) = 0$ donc $1$ n'est pas un minimum local et $f(3) = 8 > f(1) = 0$ donc $1$ n'est pas un maximum local.\\
 
 La proposition est Fausse.\\
 
@@ -199,6 +199,10 @@ La proposition est Fausse.
 La fonction $tan^3(x)$ est d\'erivable sur $]-\frac{\pi}{2},\frac{\pi}{2}[$ car c'est un asssemblage de fonctions d\'erivable sur cette intervalle.
 
 $$(tan^3(x))' = 3(tan(x))'tan^2(x)=3(1+tan^2(x))tan^2(x) = 3(tan^2(x)+tan^4(x))$$
+
+La fonction $g$ n’est pas la fonction nulle sur I (puisque $g(\pi/4) = 2$) donc :
+
+$$(tan^3(x))' = 3g(x) \neq g(x)$$
 
 La proposition est Fausse.
 
