@@ -81,8 +81,8 @@
 
 \subsection*{Exo 1}
 Preuve par r\'ecurrence.\\
-Proposition vraie pour $u_0 = 0 = 2^0 -1$.\\
-Supposons que $u_n = 2^n-1$ pour $n>0$, calculons $u_{n+1}$.
+Proposition est vraie pour $u_0 = 0 = 2^0 -1$.\\
+Supposons que $u_n = 2^n-1$ pour $n>0$, v\'erifions si $u_{n+1} = 2^{n+1} - 1$.
 $$u_{n+1} = 2u_n + 1$$
 $$u_{n+1} = 2(2^n - 1) + 1$$
 $$u_{n+1} = 2*2^n - 1$$
@@ -91,14 +91,68 @@ $$u_{n+1} = 2^{n+1} - 1$$
 La proposition est Vraie.
 
 \subsection*{Exo 2}
+Preuve par r\'ecurrence.\\
+Proposition est vraie pour $u_0 = 3 = 3^{2*0}$.\\
+Supposons que $u_n = 3^{2n}$ pour $n>0$, v\'erifions si $u_{n+1} = 3^{2(n+1)}$.
+$$u_{n+1} = u_n^2$$
+$$u_{n+1} = (3^{2n})^2$$
+$$u_{n+1} = 3^{4n}$$
 
 La proposition est Fausse.
 
 \subsection*{Exo 3}
+Prenons $f(x) = x^2 + 1$, et d\'eterminons le signe de $f(x) - x$ selon $x$.\\
+$$f(x) - x = x^2 + 1 -x = x(x-1) + 1$$
 
-La proposition est Fausse.
+$$f(x) - x,
+\left\{ 
+\begin{array}{l l}
+ >0 & x \in ]-\infty,0[\\
+ >0 & x = 0\\
+ >0 & x \in ]0,1[ \\
+ >0 & x = 1\\
+ >0 & x \in ]1,+\infty \\ 
+\end{array}
+\right. 
+$$
+
+\begin{itemize} 
+\item La fonction $f$ est continue sur $\R$ car c'est un assemblage de fonctions continues sur $\R$,
+\item La fonction $f$ est stable sur $\R$ car $f(\R) \subset \R^+ \subset \R$.
+\item La fonction $f$ est strictement croissante
+\item La fonction $f$ admet un point fixe , donc la suite $u_n = u_n^2 + 1$ est strictement croissante donc tend vers $l \in \R \cup \{+\infty\}$
+\end{itemize} 
+
+En passant \`a la limite dans l'in\'egalit\'e $u_n > u_0$, on obtient $l > u_0$, et la suite $u_n$ n'est pas constante, on en d\'eduit que $l=+\infty$ donc, la suite $\lim_{n \to +\infty} u_n = \{+\infty\}$. \\
+
+
+La proposition est Vraie.
 
 \subsection*{Exo 4}
+Prenons $f(x) = 1 + arctan(\frac{x}{2})$, et d\'eterminon le signe de $f(x) - x$ selon $x$.\\
+$$g(x) = f(x) - x = 1 + arctan(\frac{x}{2}) - x$$
+
+La fonction $g(x) = f(x) - x$ est strictement d\'ecroissante, positive $\forall x \in ]-\infty,x_{pf}[$, n\'egative $\forall ]x_{pf},+\infty[$, donc elle s'annule pour un point $x_{pf} in ]1-\frac{\pi}{2}, 1+\frac{\pi}{2}[$.
+
+$$
+\left\{ 
+\begin{array}{l l}
+ f(x)>x & x \in ]-\infty,x_{pf}[\\
+ =0 & x_{pf} in ]1-\frac{\pi}{2}, 1+\frac{\pi}{2}[\\
+ f(x)<x & x \in ]x_{pf},+\infty[ \\
+\end{array}
+\right. 
+$$
+
+\begin{itemize} 
+\item La fonction $f$ est continue sur $\R$ car c'est un assemblage de fonctions continues sur $\R$,
+\item La fonction $f$ est stable sur $\R$ car $f(\R) \subset ]1-\frac{\pi}{2},1+\frac{\pi}{2}[ \subset \R$.
+\item La fonction $f$ est strictement croissante
+\item La fonction $f$ admet un point fixe $x_{pf}$
+\end{itemize} 
+
+Cas $u_0=x_{pf}$, la suite est constante.\\
+cas $u_0 \neq x_{pf}$. Comme la fonction $f$ est strictement croissante sur $\R$, on  $f'(x_{pf}) > 1$, donc le point $x_{pf}$ est r\'epulsif et la suite $u_n$ n'est pas convergente.\\
 
 La proposition est Fausse.
 
