@@ -73,11 +73,37 @@
 
 \begin{document}
 
+\subsection*{Rappel de cours}
+\begin{itemize}
+\item La composante de la force d'un point $M$, $\overrightarrow{F}(M)$ sur l'axe $\mathcal{O}_x$ est donn\'ee par le produit scalaire $f(x) = \overrightarrow{F}(M).\overrightarrow{i}$. 
+\item Le travail d'une force $\overrightarrow{F}$ sur un segment $\overrightarrow{AB}$ est donn\'e par :
+$$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = \int_{x_a}^{x_b} f(x)dx$$ 
+\item On dira qu'une force est conservative si elle ne d\'epend que de la position et si son travail d'un point $A$ au point $B$ ne d\'epend pas du chemin suivi, ceci quels que soient les point $A$ et $B$.
+$$\forall A,B,C,\, W_{A \to B} \overrightarrow{F} = W_{A \to C} \overrightarrow{F} + W_{C \to B} \overrightarrow{F}$$
+\item Dans le cas o\`u le chemin est rectiligne, si une force est conservatrice alors l'\emph{\'energie potentielle} associ\'ee \`a la force $\overrightarrow{F}$ est not\'ee $E_p(x)$ est d\'efinie par :
+$$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = E_p(x_a) - E_p(x_b)$$. 
+\end{itemize}
+
 
 \subsection*{Exo 1}
-\subsubsection*{Q preliminaire}
 
-\subsubsection*{Q 1.1 part 1}
+\subsubsection*{Q 1.1 a et b}
+Si la force $\overrightarrow{F_{el}}(x)$ est conservatrice alors on peut d\'efinir son \'energie potentielle associ\'ee $E_{el}(x)$. La $\overrightarrow{F_{el)}}(x)$ est conservatrice si son travail d'un point $A$ au point $B$ ne d\'epend pas du chemin suivi sur l'axe $\mathcal{O}_x$, soit $\forall A,B,C,\, W_{A \to B} \overrightarrow{F} = W_{A \to C} \overrightarrow{F} + W_{C \to B} \overrightarrow{F}$. Le travail de la force $\overrightarrow{F_{el}}(x)$ entre les points $A$ et $B$ sur l'axe $\mathcal{O}_x$ est donn\'e par $W_{A \to B} \overrightarrow{F} = \int_{x_a}^{x_b} f(x)dx$ avec $f(x) = -\frac{A}{x^2}$ car la force $\overrightarrow{F_{el}}(x)$ est parall\`ele \`a l'axe $\mathcal{O}_x$.\\
+
+$$W_{A \to B} \overrightarrow{F_{el}} = \int_{x_a}^{x_b} -\frac{A}{x^2}dx = \left[ \frac{A}{x} \right]_{x_a}^{x_b} = \frac{A}{x_a} -\frac{A}{x_b}$$
+Et,
+$$W_{A \to C} \overrightarrow{F_{el}} + W_{C \to B} \overrightarrow{F_{el}} = (\frac{A}{x_a} -\frac{A}{x_c}) + (\frac{A}{x_c} -\frac{A}{x_b}) = \frac{A}{x_a} -\frac{A}{x_b} = W_{A \to B} \overrightarrow{F_{el}}$$
+Donc la force $\overrightarrow{F_{el}}$ est conservatrice et $E_p(x) = \frac{A}{x}$.\\
+
+Pour l'origine de l'\'energie potentielle associ\'ee \`a la force $\overrightarrow{F_{el}}$, je dirais \'a l'origine de l'axe $\mathcal{O}_x$  car comme les deux ions ne peuvent pas s'interpen\'etrer alors l'abscisse du ion $Na^{+}$ ne peut pas \^etre $0$.
+
+
+\subsubsection*{Q 1.2}
+On a: $$\frac{dE_{rep}(x)}{dx} = -\overrightarrow{F_{rep}}.\overrightarrow{i}$$
+$$\frac{dE_{rep}(x)}{dx} = \frac{d(\frac{B}{x^8})}{dx} = -\frac{8B}{x^9}$$
+
+Donc $\overrightarrow{F_{rep}}.\overrightarrow{i} = \frac{8B}{x^9}.\overrightarrow{i}$. La force $\overrightarrow{F_{rep}}$ est r\'epulsive car elle a le m\^eme sens que $\overrightarrow{i}$.
+
 
 QED.
 
