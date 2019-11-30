@@ -76,6 +76,8 @@
 \subsection*{Rappel de cours}
 \begin{itemize}
 \item Th\'eor\`eme de l'\'energie cin\'etique. $\sum_{\overrightarrow{F}} W_{A \to B}(\overrightarrow{F}) = E_c(t_b) - E_c(t_a)$ avec $E_c(t) = \frac{1}{2}\Vert v(t) \Vert^2$ avec $t_b>t_a$.
+\item Le travail du poids $\overrightarrow{P} = m \overrightarrow{g}$ sur le segment $AB$ est $W_{A \to B}(\overrightarrow{F}) = -m.g(z_b-z_a)$ avec $z_{a(b)}$ l'altitude du point $a$ (resp. $b$). Ou $W_{A \to B}(\overrightarrow{F}) = -m.g.h$ avec $h$ la diff\'erence d'altitude entre les points $a$ et $b$.
+\item L'\'energie potentielle due au poids est \'egale $m.g.z$ avec $z$ l'altitude de la masse $m$.
 \end{itemize}
 
 
@@ -113,7 +115,86 @@ Le travail fournie par la force de pouss\'ee est $W_{A \to B}(\overrightarrow{F}
 L'\'energie fournie a servi \`a annuler la force de frottement des pneus sur la route.
 
 \subsection*{Exo 2}
-\subsubsection*{Q 2.1}
+\subsubsection*{Q 2.2}
+La variation de l'\'energie potentielle est donc $-m.g.(z_b - z_h)$ ou $-m.g.h$ avec $h = z_b - z_h = -9m$.
+
+\subsubsection*{Q 2.3}
+Le travail de la force de la pesanteur est $W_{A \to B}(\overrightarrow{P})= m.g.h = 90000$.
+
+\subsubsection*{Q 2.3}
+Selon le th\'eor\`eme de l\'energie m\'ecanique $\sum_{\overrightarrow{F}}W_{A \to B}(\overrightarrow{F}) = E_c(t_b) - E_c(t_a)$.
+La seule force appliqu\'ee est la force de la pesanteur $W_{A \to B}(\overrightarrow{P})= 90000$, la vitesse initiale est de $v_i = 1m/s$, la masse du v\'ehicule est de $1000kg$. Donc la vitesse en bas de la pente est \'egale \`a $\sqrt{\frac{2.(90000+500)}{1000}} = 13.45m/s$ (ou $48.4km/h$).
+
+\subsection*{Exo 3}
+\subsubsection*{Q 3.1}
+Non, car les d\'t\'erioration du v\'ehicule absorbent une partie de l'\'energie du v\'ehicule au moment du choc. Cette partie n'est pas transmise aux occupants du v\'ehicule. Donc, ils absorbent un choc moindre. C'est pour cela que les voitures sont fabriqu\'ees pour se d\'eformer en cas de choc tout en prot\'egeant l'habitacle o\'u les passagers sont pr\'esents.
+
+\subsubsection*{Q 3.1}
+On a $V_i = 50 k/h = 13,89 m/s$, $M=1000 kg$, $u_i = 0m/s$ et $m=1700kg$.
+$$
+\left\{ 
+\begin{array}{l}
+ M\overrightarrow{V_i} + m\overrightarrow{u_i} = M\overrightarrow{V_f} + m\overrightarrow{u_f} \\
+ \frac{1}{2}M\Vert \overrightarrow{V_i} \Vert^2 + \frac{1}{2}m\Vert \overrightarrow{u_i} \Vert^2 = \frac{1}{2}M\Vert \overrightarrow{V_f} \Vert^2 + \frac{1}{2}m\Vert \overrightarrow{u_f} \Vert^2 + Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ 13,89.1000 = 1000.V_f + 1700.u_f \\
+ 1000.(13,89)^2  = 1000.V_f^2 + 1700.u_f^2 + 2.Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_f = 13,89 - 1,7u_f  \\
+ 1000.V_f^2 + 1700.u_f^2 + 2.Ed - 1000.(13,89)^2 = 0\\
+\end{array}
+\right. 
+$$
+ 
+$$
+\left\{ 
+\begin{array}{l}
+ V_f = 13,89 - 1,7u_f  \\
+ 1000.(13,89 - 1,7u_f)^2 + 1700.u_f^2 + 2.Ed - 1000.(13.89)^2 = 0\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_f = 13,89 - 1,7u_f  \\
+ 1000.(13,89^2 - 2.13,89.1,7u_f + (1,7u_f)^2) + 1700.u_f^2 + 2.Ed - 1000.(13,89)^2 = 0\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_f = 13,89 - 1,7u_f  \\
+ - 2000.13,89.1,7u_f + 1000u_f^2((1,7)^2 + 1,7) + 2.Ed  = 0\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_f = 13,89 - 1,7u_f  \\
+ 4590u_f^2 - 46226u_f + 2.Ed  = 0\\
+\end{array}
+\right. 
+$$
+
+Aucun des 2 v\'ehicules ne recule. Donc $V_f$ et $u_f$ sont positifs. Par cons\'equent, $V_f < u_f$.
 
 
 QED.
