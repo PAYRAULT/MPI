@@ -189,8 +189,37 @@ La proposition est Fausse.
 La proposition est Fausse.
 
 \subsection*{Exo 13}
+Rappel de cours:
+\begin{itemize}
+\item Int\'egrale par partie. $\int_{a}^{b} f(x)g'(x)dx = [f(x)g(x)]_{a}^{b} - \int_{a}^{b}f'(x)g(x)$
+\end{itemize}
 
-La proposition est Fausse.
+On prend
+$$
+\begin{array}{l l}
+ f(x) = (x-1)^2 & g'(x) = e^x\\
+ f'(x) = 2x-2   & g(x) = e^x\\
+\end{array}
+$$
+
+\medskip
+Donc $\int_0^1(x-1)^2e^x = [(x-1)^2e^x]_0^1 - \int_0^1 (2x-2)e^x = -1 - \int_0^1 (2x-2)e^x$
+
+On prend
+$$
+\begin{array}{l l}
+ f(x) = 2x-2 & g'(x) = e^x\\
+ f'(x) = 2   & g(x) = e^x\\
+\end{array}
+$$
+
+\medskip
+Donc $\int_0^1 (2x-2)e^x = [(2x-2)e(x)]_0^1 - \int_0^1 2e^x = [(2x-2)e(x)]_0^1 - 2[e^x]_0^1 = 2 - 2e + 2 = 4 - 2e$.\\
+
+Enfin $\int_0^1(x-1)^2e^x = -1 - (4 - 2e) = 2e - 5$
+
+
+La proposition est Vraie.
 
 \subsection*{Exo 14}
 
