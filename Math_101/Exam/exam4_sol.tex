@@ -181,12 +181,30 @@ La proposition est Fausse.
 La proposition est Fausse.
 
 \subsection*{Exo 11}
+Rappel de cours:
+\begin{itemize}
+\item Somme de Riemann. $\frac{b-a}{n}\sum_{k=1}^{n}f(a+k\frac{b-a}{n}) \to_{n \to \infty} \int_{a}^{b} f(x)dx$
+\end{itemize}
+
+On a $$\sum_{k=1}^{n}\frac{k}{n^2+k^2} = \sum_{k=1}^{n}\frac{k}{n^2(1+k^2/n^2)} = \frac{1}{n^2}\sum_{k=1}^{n}\frac{k}{1+(k/n)^2} = \frac{1}{n}.\frac{1-0}{n}\sum_{k=1}^{n}\frac{k}{1+(k/n)^2}$$
+
+En prenant: $a=0$, $b=1$ et $x=k/n$ on a $f(x)=\frac{nx}{1+x^2}$ donc
+$$\lim_{n \to \infty}\sum_{k=1}^{n}\frac{k}{n^2+k^2} = lim_{n \to \infty}\frac{1}{n}.\int_0^1 \frac{nx}{1+x^2}$$
+$$\int_0^1 \frac{x}{1+x^2} = [\frac{ln(x^2+1)}{2}]_0^1 = \frac{ln(2)}{2} - \frac{ln(1)}{2}$$
+
+Donc
+$$ \lim_{n \to \infty}\sum_{k=1}^{n}\frac{k}{n^2+k^2} \neq \frac{\pi}{4}$$
 
 La proposition est Fausse.
 
 \subsection*{Exo 12}
+On a $$\sum_{k=1}^{n}\frac{n}{n^2+k^2} = \sum_{k=1}^{n}\frac{n}{n^2(1+k^2/n^2)} = \frac{1}{n}\sum_{k=1}^{n}\frac{1}{1+(k/n)^2} = \frac{1-0}{n}\sum_{k=1}^{n}\frac{1}{1+(k/n)^2}$$
 
-La proposition est Fausse.
+En prenant: $a=0$, $b=1$ et $x=k/n$ on a $f(x)=\frac{1}{1+x^2}$ donc
+$$\lim_{n \to \infty}\sum_{k=1}^{n}\frac{n}{n^2+k^2} = \int_0^1 \frac{1}{1+x^2}$$
+$$\int_0^1 \frac{1}{1+x^2} = [arctan(x)]_0^1 = arctan(1) - arctan(0) = \frac{\pi}{4} - 0 = \frac{\pi}{4}$$
+
+La proposition est Vraie.
 
 \subsection*{Exo 13}
 Rappel de cours:
