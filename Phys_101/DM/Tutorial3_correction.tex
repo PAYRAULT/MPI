@@ -129,8 +129,8 @@ La seule force appliqu\'ee est la force de la pesanteur $W_{A \to B}(\overrighta
 \subsubsection*{Q 3.1}
 Non, car les d\'t\'erioration du v\'ehicule absorbent une partie de l'\'energie du v\'ehicule au moment du choc. Cette partie n'est pas transmise aux occupants du v\'ehicule. Donc, ils absorbent un choc moindre. C'est pour cela que les voitures sont fabriqu\'ees pour se d\'eformer en cas de choc tout en prot\'egeant l'habitacle o\'u les passagers sont pr\'esents.
 
-\subsubsection*{Q 3.1}
-On a $V_i = 50 k/h = 13,89 m/s$, $M=1000 kg$, $u_i = 0m/s$ et $m=1700kg$.
+\subsubsection*{Q 3.2.a}
+On a $u_i = 0m/s$, la seconde voiture est en stationnement.
 $$
 \left\{ 
 \begin{array}{l}
@@ -143,8 +143,8 @@ $$
 $$
 \left\{ 
 \begin{array}{l}
- 13,89.1000 = 1000.V_f + 1700.u_f \\
- 1000.(13,89)^2  = 1000.V_f^2 + 1700.u_f^2 + 2.Ed\\
+ M.V_i = M.V_f + m.u_f \\
+ M.V_i^2  = M.V_f^2 + m.u_f^2 + 2Ed\\
 \end{array}
 \right. 
 $$
@@ -152,51 +152,177 @@ $$
 $$
 \left\{ 
 \begin{array}{l}
- V_f = 13,89 - 1,7u_f  \\
- 1000.V_f^2 + 1700.u_f^2 + 2.Ed - 1000.(13,89)^2 = 0\\
+ V_i - \frac{m}{M}u_f = V_f  \\
+ M.V_i^2  = M.V_f^2 + m.u_f^2 + 2Ed\\
 \end{array}
 \right. 
 $$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_i - \frac{m}{M}u_f = V_f  \\
+ M.V_i^2  = M.(V_i - \frac{m}{M}u_f)^2 + m.u_f^2 + 2Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_i - \frac{m}{M}u_f = V_f  \\
+ M.V_i^2  = M.V_i^2 - 2m.V_i.u_f + \frac{m^2}{M}u_f^2 + m.u_f^2 + 2Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_i - \frac{m}{M}u_f = V_f  \\
+ 0 = - 2m.V_i.u_f + \frac{m^2}{M}u_f^2 + m.u_f^2 + 2Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ V_i - \frac{m}{M}u_f = V_f  \\
+ u_f^2(\frac{m^2}{M} + m) - 2m.V_i.u_f + 2Ed = 0\\
+\end{array}
+\right. 
+$$
+
+???????
+
+
+\subsubsection*{Q 3.2.b}
+La condition limite est lorsque les 2 v\'ehicule ont la m\^eme vitesse apr\'es le choc. Donc on a $V_f = u_f$.
+
+$$
+\left\{ 
+\begin{array}{l}
+ M\overrightarrow{V_i} + m\overrightarrow{u_i} = M\overrightarrow{V_f} + m\overrightarrow{u_f} \\
+ \frac{1}{2}M\Vert \overrightarrow{V_i} \Vert^2 + \frac{1}{2}m\Vert \overrightarrow{u_i} \Vert^2 = \frac{1}{2}M\Vert \overrightarrow{V_f} \Vert^2 + \frac{1}{2}m\Vert \overrightarrow{u_f} \Vert^2 + Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ M.V_i =  M.V_f + m.u_f \\
+ M.V_i^2  = M.V_f^2 + m.u_f^2 + 2Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ M.V_i =  V_f(M + m) \\
+ M.V_i^2  = V_f^2(M + m) + 2Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ \frac{M}{M+m}V_i =  V_f \\
+ M.V_i^2  = (\frac{M}{M+m}V_i)^2(M + m) + 2Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ \frac{M}{M+m}V_i =  V_f \\
+ V_i^2(M -\frac{M^2}{M+m}) = 2Ed\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ \frac{M}{M+m}V_i =  V_f \\
+ \frac{M.m}{2(M+m)}V_i^2 = Ed\\
+\end{array}
+\right. 
+$$
+
+
+\subsubsection*{Q 3.2.c}
+On a $M=1000kg$, $m=1700kg$, $V_i = 50km/h = 13.83m/s$, $u_i = 0$, et $Ed=20000J$.
+
+$$
+\left\{ 
+\begin{array}{l}
+ 1000.13.83 = 1000V_f + 1700u_f \\
+ 1000.(13.83)^2  = 1000V_f^2 + 1700u_f^2 + 40000\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ u_f = \frac{13830 - 1000V_f}{1700}\\
+ 151269  = 1000V_f^2 + 1700(\frac{13830- 1000V_f}{1700})^2\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ u_f = \frac{13830 - 1000V_f}{1700}\\
+ 151269  = 1000V_f^2 + \frac{13830^2 - 2.13830.1000V_f + (1000V_f)^2}{1700}\\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ u_f = \frac{13830 - 1000V_f}{1700}\\
+ 0 = 2700000V_f^2 -65888400 - 27660000V_f \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l}
+ u_f = 0.93m/s\\
+ V_f = 12.24m/s \\
+\end{array}
+\right. 
+$$
+Ou
+$$
+\left\{ 
+\begin{array}{l}
+ u_f = 9.3m/s\\
+ V_f = -2m/s \\
+\end{array}
+\right. 
+$$
+
+La premiere solution n'est pas possible car la seconde voiture ne peux pas passer au travers de la voiture en stationnement.
+
+\subsubsection*{Q 3.2.d}
+L'\'energie dissip'ee par la d\'eformation est $E_d = 20000J$ et $E_d = \overrightarrow{F}.d$. Donc la norme de la force est \'egale \`a $20000/.25 = 80.000N$.
+
+\subsubsection*{Q 3.2.e}
+ L'id\'ee du pare-choc en ressort n'est pas une bonne id\'ee car le ressort restitue enti\`erement l'\'energie re\c{c}ue. Donc le passager devra \'egalement absorber cette \'energie.\\
+ Mais je ne comprends pas pourquoi les heurtoirs de train ont des ressorts. Ils servent \`a absorber le choc!!!\\
  
-$$
-\left\{ 
-\begin{array}{l}
- V_f = 13,89 - 1,7u_f  \\
- 1000.(13,89 - 1,7u_f)^2 + 1700.u_f^2 + 2.Ed - 1000.(13.89)^2 = 0\\
-\end{array}
-\right. 
-$$
-
-$$
-\left\{ 
-\begin{array}{l}
- V_f = 13,89 - 1,7u_f  \\
- 1000.(13,89^2 - 2.13,89.1,7u_f + (1,7u_f)^2) + 1700.u_f^2 + 2.Ed - 1000.(13,89)^2 = 0\\
-\end{array}
-\right. 
-$$
-
-$$
-\left\{ 
-\begin{array}{l}
- V_f = 13,89 - 1,7u_f  \\
- - 2000.13,89.1,7u_f + 1000u_f^2((1,7)^2 + 1,7) + 2.Ed  = 0\\
-\end{array}
-\right. 
-$$
-
-$$
-\left\{ 
-\begin{array}{l}
- V_f = 13,89 - 1,7u_f  \\
- 4590u_f^2 - 46226u_f + 2.Ed  = 0\\
-\end{array}
-\right. 
-$$
-
-Aucun des 2 v\'ehicules ne recule. Donc $V_f$ et $u_f$ sont positifs. Par cons\'equent, $V_f < u_f$.
-
-
+ 
+ 
 QED.
 
 \end{document}
