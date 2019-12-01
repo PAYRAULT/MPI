@@ -183,15 +183,24 @@ La proposition est Fausse.
 La proposition est Fausse.
 
 \subsection*{Exo 10}
+Rappel de cours:
+\begin{itemize}
+\item Int\'egrale de Riemann. $\frac{b-a}{n}\sum_{k=1}^{n}f(a+k\frac{b-a}{n}) \to_{n \to \infty} \int_{a}^{b} f(x)dx$
+\end{itemize}
+
+On a $\frac{\pi}{n}\sum_{k=0}^{n-1} sin(\frac{\pi k}{2n})$.
+
+En prenant $b=\pi$, $a=0$, $x=k/n$, on a $f(x) = sin(\frac{\pi}{2}x)$
+$$\lim_{n \to \infty}\frac{\pi}{n}\sum_{k=0}^{n-1}sin(\frac{\pi k}{2n}) = \int_0^{\pi}sin(\frac{\pi}{2}x)dx$$
+
+Int\'egrale par substitution: $u=\frac{\pi}{2}x$, donc $\frac{du}{dx} = \frac{\pi}{2}$ et $dx=\frac{2}{\pi}du$
+$$\int sin(\frac{\pi}{2}x)dx = \frac{2}{\pi}\int sin(u)du = -\frac{2}{\pi}cos(u) = -\frac{2}{\pi}cos(\frac{\pi}{2}x)$$
+$$\int_0^{\pi} sin(\frac{\pi}{2}x) = [-\frac{2}{\pi}cos(\frac{\pi}{2}x)]_0^{\pi} = -\frac{2}{\pi} + \frac{cos(\frac{\pi^2}{2})}{n} \neq 1$$
+
 
 La proposition est Fausse.
 
 \subsection*{Exo 11}
-Rappel de cours:
-\begin{itemize}
-\item Somme de Riemann. $\frac{b-a}{n}\sum_{k=1}^{n}f(a+k\frac{b-a}{n}) \to_{n \to \infty} \int_{a}^{b} f(x)dx$
-\end{itemize}
-
 On a $$\sum_{k=1}^{n}\frac{k}{n^2+k^2} = \sum_{k=1}^{n}\frac{k}{n^2(1+k^2/n^2)} = \frac{1}{n^2}\sum_{k=1}^{n}\frac{k}{1+(k/n)^2} = \frac{1}{n}.\frac{1-0}{n}\sum_{k=1}^{n}\frac{k}{1+(k/n)^2}$$
 
 En prenant: $a=0$, $b=1$ et $x=k/n$ on a $f(x)=\frac{nx}{1+x^2}$ donc
