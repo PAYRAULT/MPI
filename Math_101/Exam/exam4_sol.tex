@@ -171,16 +171,47 @@ Donc $arcsin(sin(x)) \neq x$.\\
 La proposition est Fausse.
 
 \subsection*{Exo 7}
+Rappel de cours:\\
+\begin{itemize}
+\item une fonction $f$ est bijective, si elle est injective et surjective
+\item une fonction $f$ est injective, si $\forall (x_1, x_2) \in D x D, f(x_1) = f(x_2) \implies x_1 = x_2$ ou $\forall (x_1, x_2) \in D x D, x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$
+\item une fonction $f$ est surjective, si $\forall y \in A, \exists x \in D, f(x) = y$ 
+\item une fonction $f$ est de classe $\mathcal{C}^1$ sur $D$, si la fonction $f$ est d\'erivable sur $D$ et sa d\'eriv\'ee $f'(x)$ est continue sur $D$.
+\end{itemize}
 
-La proposition est Fausse.
+La fonction $f$ est de classe $\mathcal{C}^1$ sur $]-1;1[$, donc $\forall x_0 \in ]-1;1[, f'(x_0) = \lim_{x \to x_0}\frac{f(x) - f(x_0)}{x-x_0}$.
+On a 
+$$\lim_{x \to x_0}\frac{f(x) - f(x_0)}{x-x_0} = \lim_{x \to x_0}\frac{f(x) - f(x_0)}{f^{-1}(f(x)) - f^{-1}(f(x_0))}$$
+
+Comme $f$ est injective $x \neq x_0 \implies f(x) \neq f(x_0)$, donc $f(x)-f(x_0) \neq 0$.\\
+$$\frac{1}{f'(x_0)} = \lim_{x \to x_0}\frac{f^{-1}(f(x)) - f^{-1}(f(x_0))}{f(x) - f(x_0)}$$
+En prenant $f(x_0) = y_0$ et $f(x) = y$, on a 
+$$\frac{1}{f'(x_0)} = \lim_{x \to x_0}\frac{f^{-1}(f(x)) - f^{-1}(f(x_0))}{f(x) - f(x_0)}$$
+Comme la fonction $f$ est continue, lorsque $x \to x_0$, on a $f(x) \to f(x_0)$, donc $y \to y_0$.
+$$\frac{1}{f'(x_0)} = \lim_{y \to y_0}\frac{f^{-1}(y) - f^{-1}(y_0))}{y - y_0} = (f^{-1})'(y_0)$$
+
+La d\'eriv\'e de la function $f^{-1}$ existe et est continue car la d\'eriv\'ee de la fonction $f$ est continue (ie. la fonction $f$ ets de classe $\mathcal{C}^1$).
+
+La proposition est Vraie.
 
 \subsection*{Exo 8}
 
 La proposition est Fausse.
 
 \subsection*{Exo 9}
+Rappel de cours:\\
+\begin{itemize}
+\item une fonction $f$ est impaire si $\forall x, f(-x) = -f(x)$
+\item une fonction $f$ est bijective, si elle est injective et surjective
+\item une fonction $f$ est injective, si $\forall (x_1, x_2) \in D x D, f(x_1) = f(x_2) \implies x_1 = x_2$ ou $\forall (x_1, x_2) \in D x D, x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$
+\item une fonction $f$ est surjective, si $\forall y \in A, \exists x \in D, f(x) = y$ 
+\end{itemize}
 
-La proposition est Fausse.
+La fonction $f(x)$ est impaire donc $f(-x) = -f(x)$. La fonction $f(x)$ est bijective donc la fonction $f^{-1}(x)$ existe.  on a $f(f^{-1}(x)) = x$ donc $-f(f^{-1}(x)) = -x$, comme $f$ est impaire $f(-f^{-1}(x)) = -x$.\\
+
+Admettons que la fonction $f^{-1}$ ne soit pas impaire donc $f^{-1}(-x) = -f^{-1}(x)$. Comme la fonction $f$ est injective on a $-x = f(-f^{-1}(x)) \neq f(f^{-1}(-x)) = -x$. Contradiction, donc la fonction $f^{-1}$ est impaire.
+
+La proposition est Vraie.
 
 \subsection*{Exo 10}
 Rappel de cours:
@@ -256,7 +287,13 @@ La proposition est Vraie.
 
 \subsection*{Exo 14}
 
-La proposition est Fausse.
+Soit $f(x)$ une fonction croissante et $F(x)$ une fonction tel que $F'(x) = f(x)$. On a
+$$g(x) = \int_{x^3}^{x^3+1}f(t)dt = F(x^3+1) - F(x^3)$$
+La valeur de la d\'eriv\'ee de la fonction $g(x)$ donne le sens de la fonction $g(x)$.
+$$g'(x) = (F(x^3+1) - F(x^3))' = F'(x^3+1) - F'(x^3) = f(x^3+1) - f(x^3)$$
+La fonction $f(x)$ est croissante donc $\forall x_1, x_2, x_1 \geq x_2 \implies f(x_1) \geq f(x_2)$ et $x^3+1 > x^3$. Donc $g'(x)$ est toujours positive ou nulle. Par cons\'equent la fonction $g(x)$ est croissante.
+
+La proposition est Vraie.
 
 \subsection*{Exo 15}
 
