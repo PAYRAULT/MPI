@@ -168,10 +168,36 @@ Donc $f'(x) \leq \frac{1}{2}$, par le th\'eor\`eme de xx, le point fixe est attr
 La proposition est Vraie.
 
 \subsection*{Exo 5}
+On a $\lim_{x \to 0^+}x^{\sqrt{3}} = 0$ et $\lim_{x \to 0^-}-(-x)^{\sqrt{3}} = 0$, donc la fonction $\phi(x)$ se prolonge en:
+$$\tilde{\phi}(x),
+\left\{ 
+\begin{array}{l l}
+ x^{\sqrt{3}} & x > 0\\
+ 0 & x = 0\\
+ -(-x)^{\sqrt{3}} & x < 0\\
+\end{array}
+\right. 
+$$
 
+La fonction $\tilde{\phi}(x)$ est continue sur $\R$.\\
+Montrons que la fonction $\tilde{\phi}(x)$ est de classe $\mathcal{C}^1$.
+$$\tilde{\phi}'(x),
+\left\{ 
+\begin{array}{l l}
+ \sqrt{3}x^{\sqrt{3}-1} & x > 0\\
+ 0 & x = 0\\
+ -\sqrt{3}(-x)^{\sqrt{3}-1} & x < 0\\
+\end{array}
+\right. 
+$$
 
+On a $\lim_{x \to 0^+} \sqrt{3}x^{\sqrt{3}-1} = 0$ et $\lim_{x \to 0^-} -\sqrt{3}(-x)^{\sqrt{3}-1} = 0$, donc la fonction $\tilde{\phi}'(x)$ est continue. La fonction $\tilde{\phi}(x)$ est de classe $\mathcal{C}^{1}$.\\
 
-La proposition est Fausse.
+Montrons que la fonction $\tilde{\phi}(x)$ est bijective.
+Les fonctions $x^{\sqrt{3}}$, $0$, $-(-x)^{\sqrt{3}}$ sont bijectives sur les domaines respectifs $x>0$, $x=0$ et $x<0$. Il faut maintenant montrer que les images des trois fonctions sont exclusives pour que la fonction $\tilde{\phi}(x)$ soit bijective.
+$x>0, Im(\tilde{\phi}(x)) > 0$, $x=0, Im(\tilde{\phi}(x)) = 0$ et $x<0, Im(\tilde{\phi}(x)) < 0$, donc la fonction $\tilde{\phi}(x))$ est bijective.
+
+La proposition est Vraie.
 
 \subsection*{Exo 6}
 
@@ -203,11 +229,28 @@ $$\frac{1}{f'(x_0)} = \lim_{x \to x_0}\frac{f^{-1}(f(x)) - f^{-1}(f(x_0))}{f(x) 
 Comme la fonction $f$ est continue, lorsque $x \to x_0$, on a $f(x) \to f(x_0)$, donc $y \to y_0$.
 $$\frac{1}{f'(x_0)} = \lim_{y \to y_0}\frac{f^{-1}(y) - f^{-1}(y_0))}{y - y_0} = (f^{-1})'(y_0)$$
 
-La d\'eriv\'e de la function $f^{-1}$ existe mais elle est continue que lorsque $f'(x_0) \neq 0$. Donc $f^{i1}(x)$ n'est pas for\c{c}\'ement de classe $\mathcal{C}^1$.
+La d\'eriv\'e de la function $f^{-1}$ existe mais elle est continue que lorsque $f'(x_0) \neq 0$. Donc $f^{i1}(x)$ n'est pas for\c{c}\'ement de classe $\mathcal{C}^1$.\\
+
+
+Ou alors \\
+Soit la fonction $f(x) = x$. La fonction est de classe $\mathcal{C}^1$ sur $]-1;1[$ et est bijective. On a $f^{-1}(x) = \frac{1}{x}$ n'est pas de classe $\mathcal{C}^1$. En effet, sa d\'eriv\'ee existe $f^{-1}(x) = -\frac{1}{x^2}$, mais sa d\'eriv\'ee n'est pas continue sur sur $]-1;1[$ (non d\'efinie en $x=0$).\\ 
 
 La proposition est Fausse.
 
 \subsection*{Exo 8}
+Pour montrer la proposition, on va montrer que la fonction $f(x) = 2arctan(\sqrt{1+x^2} - x) + arctan(x)$ est constante sur $\R$ (i.e. sa d\'eriv\'ee est \'egale \`a z\'ero sur $\R$) et que $f(0) = \frac{\pi}{2}$.
+$$f'(x) = 2.\frac{\frac{2x}{2\sqrt{1+x^2}}-1}{(\sqrt{1+x^2}-x)^2+1} +\frac{1}{1+x^2}$$
+$$f'(x) = 2.\frac{\frac{x-\sqrt{1+x^2}}{\sqrt{1+x^2}}}{1+x^2 -2x\sqrt{1+x^2} +x^2+1} +\frac{1}{1+x^2}$$
+$$f'(x) = \frac{\frac{x-\sqrt{1+x^2}}{\sqrt{1+x^2}}}{1+x^2 -x\sqrt{1+x^2}} +\frac{1}{1+x^2}$$
+$$f'(x) = \frac{x-\sqrt{1+x^2}}{\sqrt{1+x^2}(1+x^2 -x\sqrt{1+x^2})} +\frac{1}{1+x^2}$$
+$$f'(x) = \frac{x-\sqrt{1+x^2}}{\sqrt{1+x^2}(1+x(x - \sqrt{1+x^2}))} +\frac{1}{1+x^2}$$
+$$f'(x) = \frac{(x-\sqrt{1+x^2})(x+\sqrt{1+x^2})}{\sqrt{1+x^2}(1+x(x - \sqrt{1+x^2}))(x+\sqrt{1+x^2})} +\frac{1}{1+x^2}$$
+$$f'(x) = \frac{-1}{\sqrt{1+x^2}((x+\sqrt{1+x^2})- x)} +\frac{1}{1+x^2}$$
+$$f'(x) = \frac{-1}{\sqrt{1+x^2}\sqrt{1+x^2}} +\frac{1}{1+x^2}$$
+$$f'(x) = \frac{-1}{1+x^2} +\frac{1}{1+x^2}$$
+$$f'(x) = 0$$
+
+Donc $f(x)$ est une fonction constante. Calculons un point au hasard $f(0) = 2arctan(\sqrt{1+0^2} - 0) + arctan(0) = 2arctan(1) + 0 = 2\frac{\pi}{4} = \frac{\pi}{2}$.\\
 
 
 La proposition est Vraie.
@@ -223,7 +266,7 @@ Rappel de cours:\\
 
 La fonction $f(x)$ est impaire donc $f(-x) = -f(x)$. La fonction $f(x)$ est bijective donc la fonction $f^{-1}(x)$ existe.  on a $f(f^{-1}(x)) = x$ donc $-f(f^{-1}(x)) = -x$, comme $f$ est impaire $f(-f^{-1}(x)) = -x$.\\
 
-Admettons que la fonction $f^{-1}$ ne soit pas impaire donc $f^{-1}(-x) = -f^{-1}(x)$. Comme la fonction $f$ est injective on a $-x = f(-f^{-1}(x)) \neq f(f^{-1}(-x)) = -x$. Contradiction, donc la fonction $f^{-1}$ est impaire.
+Admettons que la fonction $f^{-1}$ ne soit pas impaire donc $f^{-1}(-x) \neq -f^{-1}(x)$. Comme la fonction $f$ est injective on a $-x = f(-f^{-1}(x)) \neq f(f^{-1}(-x)) = -x$. Contradiction, donc la fonction $f^{-1}$ est impaire.
 
 La proposition est Vraie.
 
@@ -311,12 +354,32 @@ La proposition est Vraie.
 
 \subsection*{Exo 15}
 
+On a $arcsin'(x) = \frac{1}{\sqrt{1-x^2}}$.
+$$I=\int_{0}^{\frac{1}{2}}\frac{dt}{\sqrt{1-t^2}}$$
+$$I=\int_{0}^{\frac{1}{2}}arcsin'(t)dt$$
+$$I=[arcsin(t)+C]_{0}^{\frac{1}{2}}$$
+$$I=arcsin(\frac{1}{2}) - arcsin(0)$$
+$$I=\frac{\pi}{6} - 0$$
+$$I=\frac{\pi}{6} \neq \frac{\pi}{3}$$
+
+
 La proposition est Fausse.
 
 \subsection*{Exo 16}
+$$\int_{exp(exp(2))}^{exp(exp(1))} \frac{dx}{x(ln\,x)(ln(ln\,x))}$$
 
-La proposition est Fausse.
+On substitue $u=ln(ln\,x)$, donc $\frac{du}{dx}=\frac{1}{x(ln\,x)}$, et $dx={x(ln\,x)du}$
+$$\int_{exp(exp(2))}^{exp(exp(1))} \frac{1}{x(ln\,x)(ln(ln\,x))}dx$$
+$$\int_{exp(exp(2))}^{exp(exp(1))} \frac{x(ln\,x)}{x(ln\,x)(ln(ln\,x))}du$$
+$$\int_{exp(exp(2))}^{exp(exp(1))} \frac{1}{ln(ln\,x)}du$$
+$$ = \int_{exp(exp(2))}^{exp(exp(1))} \frac{1}{u}du$$
+$$ =[ln(u)]_{exp(exp(2))}^{exp(exp(1))}$$
+$$ =[ln(ln(ln\,x))]_{exp(exp(2))}^{exp(exp(1))}$$
+$$ = ln(ln(ln\,exp(exp(1)))) - ln(ln(ln\,exp(exp(2))))$$
+$$ = (ln\, 1) - (ln\, 2)$$
+$$ = -(ln\, 2)$$
 
+La proposition est Vraie.
 
 \end{document}
 
