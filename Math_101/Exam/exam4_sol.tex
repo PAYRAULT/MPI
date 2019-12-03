@@ -126,7 +126,7 @@ $$
 En passant \`a la limite dans l'in\'egalit\'e $u_n > u_0$, on obtient $l > u_0$, et la suite $u_n$ n'est pas constante, on en d\'eduit que $l=+\infty$ donc, la suite $\lim_{n \to +\infty} u_n = \{+\infty\}$. \\
 
 
-La proposition est Vraie.
+La proposition est Fausse.
 
 \subsection*{Exo 4}
 Prenons $f(x) = 1 + arctan(\frac{x}{2})$, et d\'eterminon le signe de $f(x) - x$ selon $x$.\\
@@ -151,12 +151,25 @@ $$
 \item La fonction $f$ admet un point fixe $x_{pf}$
 \end{itemize} 
 
-Cas $u_0=x_{pf}$, la suite est constante.\\
-cas $u_0 \neq x_{pf}$. Comme la fonction $f$ est strictement croissante sur $\R$, on  $f'(x_{pf}) > 1$, donc le point $x_{pf}$ est r\'epulsif et la suite $u_n$ n'est pas convergente.\\
+\begin{itemize}
+\item Cas $u_0=x_{pf}$, la suite est constante.\\
+\item Cas $u_0 \neq x_{pf}$. Il faut calculer la d\'eriv'ee de le fonction $f$ pour savoir si le point fixe est r\'epulsif ou attractif
+\end{itemize}
 
-La proposition est Fausse.
+$$f'(x) = \frac{1}{2}\frac{1}{1+\frac{x^2}{4}}$$
+On a:
+$$\frac{x^2}{4} \geq 0$$
+$$1 + \frac{x^2}{4} \geq 1$$
+$$0 < \frac{1}{1+\frac{x^2}{4}} \leq 1$$
+$$0 < \frac{1}{2} \frac{1}{1+\frac{x^2}{4}} \leq \frac{1}{2}$$
+
+Donc $f'(x) \leq \frac{1}{2}$, par le th\'eor\`eme de xx, le point fixe est attractif et la suite $u_n$ est convergente.\\
+
+La proposition est Vraie.
 
 \subsection*{Exo 5}
+
+
 
 La proposition est Fausse.
 
@@ -190,9 +203,9 @@ $$\frac{1}{f'(x_0)} = \lim_{x \to x_0}\frac{f^{-1}(f(x)) - f^{-1}(f(x_0))}{f(x) 
 Comme la fonction $f$ est continue, lorsque $x \to x_0$, on a $f(x) \to f(x_0)$, donc $y \to y_0$.
 $$\frac{1}{f'(x_0)} = \lim_{y \to y_0}\frac{f^{-1}(y) - f^{-1}(y_0))}{y - y_0} = (f^{-1})'(y_0)$$
 
-La d\'eriv\'e de la function $f^{-1}$ existe et est continue car la d\'eriv\'ee de la fonction $f$ est continue (ie. la fonction $f$ ets de classe $\mathcal{C}^1$).
+La d\'eriv\'e de la function $f^{-1}$ existe mais elle est continue que lorsque $f'(x_0) \neq 0$. Donc $f^{i1}(x)$ n'est pas for\c{c}\'ement de classe $\mathcal{C}^1$.
 
-La proposition est Vraie.
+La proposition est Fausse.
 
 \subsection*{Exo 8}
 
