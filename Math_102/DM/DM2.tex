@@ -1,0 +1,115 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Question 3}
+Prenons le rep\`ere de centre $O$, avec l'axe $Ox$ align\'e avec la droite $OA$. Dans ce rep\`ere, le point $A$ a l'affixe $a+i0$, le point $B = ae^{i\frac{\pi}{3}}$ car le triangle direct $ABC$ est un triangle isoc\`ele et $O$ est le centre du triangle donc $\Vert OA \Vert = \Vert OB \Vert = \Vert OC \Vert$. Les droites $OA$ et $OB$ sont \`a $\frac{\pi}{3}$. L'affixe du vecteur unitaire $\overrightarrow{u}$ dirigeant la droite $OB$ est $\frac{a.e^{\frac{i\pi}{3}}}{\Vert OB \Vert} = \frac{\Vert OA \Vert.e^{\frac{i\pi}{3}}}{\Vert OB \Vert} = e^{\frac{i\pi}{3}}$. Les droites $OA$ et $OC$ sont \`a $\frac{2\pi}{3}$. L'affixe du vecteur unitaire $\overrightarrow{u}$ dirigeant la droite $OC$ est $\frac{a.e^{\frac{2i\pi}{3}}}{\Vert OC \Vert} = \frac{\Vert OA \Vert.e^{\frac{2i\pi}{3}}}{\Vert OC \Vert} = e^{\frac{2i\pi}{3}}$.\\
+
+Dans ce rep\`ere, la rotation de centre $O$ et d'angle $\frac{2\pi}{3}$ est $r(z) = e^{\frac{2\pi}{3}}z$.\\
+
+Dans ce rep\`ere, on a $\sigma_1(z) = \overline{z}$ (ie r\'eflexion sur l'axe $Ox$).\\
+
+Dans ce rep\`ere, on a  $\sigma_2(z) = (e^{\frac{i\pi}{3}})^2.\overline{z} = e^{\frac{2i\pi}{3}}.\overline{z}$ (r\'eflexion de droite $OB$). \\
+
+Dans ce rep\`ere, on a  $\sigma_3(z) = (e^{\frac{i2\pi}{3}})^2.\overline{z} = e^{\frac{i4\pi}{3}}.\overline{z} $ (r\'eflexion de droite $OC$). \\
+
+Donc $\sigma_1 \circ \sigma_2(z) = \overline{e^{\frac{i2\pi}{3}}.\overline{z}} = e^{\frac{-i2\pi}{3}}.z = e^{\frac{i4\pi}{3}}.z = r \circ r(z)$.\\
+
+Donc $\sigma_1 \circ \sigma_3(z) = \overline{e^{\frac{i4\pi}{3}}.\overline{z}} = e^{\frac{-i4\pi}{3}}.z = e^{\frac{i2\pi}{3}}.z = r(z)$.\\
+
+
+\subsection*{Question 4}
+On a $\sigma_1 \circ \sigma_1 = Id$ car une r\'eflexion est une involution.\\
+On a
+$$\sigma_1 \circ \sigma_2 = r \circ r$$
+$$\sigma_1 \circ \sigma_1 \circ \sigma_2 = \sigma_1 \circ r \circ r$$
+$$\sigma_2 = \sigma_1 \circ r \circ r$$
+$$\sigma_2 = s \circ r \circ r$$
+$$\sigma_2 = s \circ r^2$$
+
+On a
+$$\sigma_1 \circ \sigma_3 = r$$
+$$\sigma_1 \circ \sigma_1 \circ \sigma_3 = \sigma_1 \circ r$$
+$$\sigma_3 = \sigma_1 \circ r$$
+$$\sigma_3 = s \circ r$$
+
+
+\subsection*{Question 5}
+On a
+$$ (s \circ r) \circ (s \circ r) = \sigma_3 \circ \sigma_3 = Id$$
+ 
+
+QED
+
+\end{document}
+
