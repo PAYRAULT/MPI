@@ -73,41 +73,98 @@
 \begin{document}
 
 \subsection*{Question 3}
-Prenons le rep\`ere de centre $O$, avec l'axe $Ox$ align\'e avec la droite $OA$. Dans ce rep\`ere, le point $A$ a l'affixe $a+i0$, le point $B = ae^{i\frac{\pi}{3}}$ car le triangle direct $ABC$ est un triangle isoc\`ele et $O$ est le centre du triangle donc $\Vert OA \Vert = \Vert OB \Vert = \Vert OC \Vert$. Les droites $OA$ et $OB$ sont \`a $\frac{\pi}{3}$. L'affixe du vecteur unitaire $\overrightarrow{u}$ dirigeant la droite $OB$ est $\frac{a.e^{\frac{i\pi}{3}}}{\Vert OB \Vert} = \frac{\Vert OA \Vert.e^{\frac{i\pi}{3}}}{\Vert OB \Vert} = e^{\frac{i\pi}{3}}$. Les droites $OA$ et $OC$ sont \`a $\frac{2\pi}{3}$. L'affixe du vecteur unitaire $\overrightarrow{u}$ dirigeant la droite $OC$ est $\frac{a.e^{\frac{2i\pi}{3}}}{\Vert OC \Vert} = \frac{\Vert OA \Vert.e^{\frac{2i\pi}{3}}}{\Vert OC \Vert} = e^{\frac{2i\pi}{3}}$.\\
+Prenons le rep\`ere de centre $O$, avec l'axe $Ox$ align\'e avec la droite $OA$. Dans ce rep\`ere, le point $A$ a l'affixe $a+i0$, le point $B = ae^{i\frac{\pi}{3}}$ car le triangle direct $ABC$ est un triangle isoc\`ele et $O$ est le centre du triangle donc $\Vert OA \Vert = \Vert OB \Vert = \Vert OC \Vert$. Les droites $OA$ et $OB$ sont \`a $\frac{2\pi}{3}$. L'affixe du vecteur unitaire $\overrightarrow{u}$ dirigeant la droite $OB$ est $\frac{a.e^{\frac{i2\pi}{3}}}{\Vert OB \Vert} = \frac{\Vert OA \Vert.e^{\frac{i2\pi}{3}}}{\Vert OB \Vert} = e^{2\frac{i\pi}{3}}$. Les droites $OA$ et $OC$ sont \`a $\frac{\pi}{3}$. L'affixe du vecteur unitaire $\overrightarrow{u}$ dirigeant la droite $OC$ est $\frac{a.e^{\frac{i\pi}{3}}}{\Vert OC \Vert} = \frac{\Vert OA \Vert.e^{\frac{i\pi}{3}}}{\Vert OC \Vert} = e^{\frac{i\pi}{3}}$.\\
 
 Dans ce rep\`ere, la rotation de centre $O$ et d'angle $\frac{2\pi}{3}$ est $r(z) = e^{\frac{2\pi}{3}}z$.\\
 
 Dans ce rep\`ere, on a $\sigma_1(z) = \overline{z}$ (ie r\'eflexion sur l'axe $Ox$).\\
 
-Dans ce rep\`ere, on a  $\sigma_2(z) = (e^{\frac{i\pi}{3}})^2.\overline{z} = e^{\frac{2i\pi}{3}}.\overline{z}$ (r\'eflexion de droite $OB$). \\
+Dans ce rep\`ere, on a  $\sigma_2(z) = (e^{\frac{i2\pi}{3}})^2.\overline{z} = e^{\frac{i4\pi}{3}}.\overline{z}$ (r\'eflexion de droite $OB$). \\
 
-Dans ce rep\`ere, on a  $\sigma_3(z) = (e^{\frac{i2\pi}{3}})^2.\overline{z} = e^{\frac{i4\pi}{3}}.\overline{z} $ (r\'eflexion de droite $OC$). \\
+Dans ce rep\`ere, on a  $\sigma_3(z) = (e^{\frac{i\pi}{3}})^2.\overline{z} = e^{\frac{i2\pi}{3}}.\overline{z} $ (r\'eflexion de droite $OC$). \\
 
-Donc $\sigma_1 \circ \sigma_2(z) = \overline{e^{\frac{i2\pi}{3}}.\overline{z}} = e^{\frac{-i2\pi}{3}}.z = e^{\frac{i4\pi}{3}}.z = r \circ r(z)$.\\
+Donc $\sigma_1 \circ \sigma_2(z) = \overline{e^{\frac{i4\pi}{3}}.\overline{z}} = e^{\frac{-i4\pi}{3}}.z = e^{\frac{i2\pi}{3}}.z =  r(z)$.\\
 
-Donc $\sigma_1 \circ \sigma_3(z) = \overline{e^{\frac{i4\pi}{3}}.\overline{z}} = e^{\frac{-i4\pi}{3}}.z = e^{\frac{i2\pi}{3}}.z = r(z)$.\\
+Donc $\sigma_1 \circ \sigma_3(z) = \overline{e^{\frac{i2\pi}{3}}.\overline{z}} = e^{\frac{-i2\pi}{3}}.z = e^{\frac{i4\pi}{3}}.z = r \circ r(z)$.\\
 
 
 \subsection*{Question 4}
 On a $\sigma_1 \circ \sigma_1 = Id$ car une r\'eflexion est une involution.\\
 On a
-$$\sigma_1 \circ \sigma_2 = r \circ r$$
-$$\sigma_1 \circ \sigma_1 \circ \sigma_2 = \sigma_1 \circ r \circ r$$
-$$\sigma_2 = \sigma_1 \circ r \circ r$$
-$$\sigma_2 = s \circ r \circ r$$
-$$\sigma_2 = s \circ r^2$$
+$$\sigma_1 \circ \sigma_2 = r$$
+$$\sigma_1 \circ \sigma_1 \circ \sigma_2 = \sigma_1 \circ r$$
+$$Id \circ \sigma_2 = \sigma_1 \circ r$$
+$$\sigma_2 = s \circ r $$
 
 On a
-$$\sigma_1 \circ \sigma_3 = r$$
-$$\sigma_1 \circ \sigma_1 \circ \sigma_3 = \sigma_1 \circ r$$
-$$\sigma_3 = \sigma_1 \circ r$$
-$$\sigma_3 = s \circ r$$
+$$\sigma_1 \circ \sigma_3 = r \circ r$$
+$$\sigma_1 \circ \sigma_1 \circ \sigma_3 = \sigma_1 \circ r \circ r$$
+$$Id \circ \sigma_3 = \sigma_1 \circ r \circ r$$
+$$\sigma_3 = s \circ r \circ r = s \circ r^2$$
 
 
 \subsection*{Question 5}
+On a $\sigma_2 \circ \sigma_2 = Id$ car une r\'eflexion est une involution. $s=s^{-1} \circ Id$ \\
+
 On a
-$$ (s \circ r) \circ (s \circ r) = \sigma_3 \circ \sigma_3 = Id$$
- 
+$$ (s \circ r) \circ (s \circ r) = \sigma_2 \circ \sigma_2 = Id$$
+
+On a
+$$ (s \circ r) \circ (s \circ r) = Id$$
+$$ s \circ r \circ s \circ r = Id$$
+$$ s^{-1} \circ s \circ r \circ s \circ r = s^{-1} \circ Id$$
+$$ s^{-1} \circ s \circ r \circ s \circ r \circ r{-1} = s^{-1} \circ Id \circ r^{-1}$$
+$$ Id \circ r \circ s \circ Id = s \circ r^{-1}$$
+$$ r \circ s = s \circ r^{-1}$$
+
+\subsection*{Question 6}
+Montrons d'abord que $\sigma_3 = s \circ r^{-1}$. On a $r \circ r \circ r = e^{\frac{2\pi}{3}} \circ e^{\frac{2\pi}{3}} e^{\frac{2\pi}{3}} = e^{\frac{6\pi}{3}} = e^{2\pi} = Id$ :
+$$\sigma_3 = s \circ r \circ r$$
+$$\sigma_3 \circ r = s \circ r \circ r \circ r$$
+$$\sigma_3 \circ r = s \circ Id$$
+$$\sigma_3 \circ r \circ r^{-1} = s \circ Id  \circ r^{-1}$$
+$$\sigma_3 = s \circ r^{-1} = r \circ s$$
+
+Donc 
+$$E = \sigma_3(D') = \sigma_3(\sigma_1(D)) = \sigma_3 \circ \sigma_1(D)$$
+$$\sigma_3 \circ \sigma_1(D) = r \circ s \circ s(D) = r(D)$$
+
+Et
+$$E' = \sigma_2(E) = \sigma_2(\sigma_3(D')) = \sigma_2 \circ \sigma_3(D')$$
+de la question 4, $\sigma_2 = s \circ r$ et $\sigma_2 = s \circ r \circ r$,
+$$\sigma_2 \circ \sigma_3(D') = s \circ r \circ s \circ r \circ r(D') = s \circ s \circ r^{-1} \circ r \circ r(D') = r(D')$$
+
+Et 
+$$F = \sigma_1(E') = \sigma_1(\sigma_2(E)) = \sigma_1 \circ \sigma_2(E)$$
+de la question 4, $\sigma_2 = s \circ r$,
+$$\sigma_1 \circ \sigma_2(E) = s \circ s \circ r(E) = r(E)$$
+
+Et 
+$$F' = \sigma_3(F) = \sigma_3(\sigma_1(E')) = \sigma_3 \circ \sigma_1(E')$$
+$$\sigma_3 \circ \sigma_1(E') = r \circ s \circ s(E') = r(E')$$
+
+\subsection*{Question 7}
+On a $E = r(D)$ et $F = r(E)$. Donc $\Vert \overrightarrow{OD} \Vert = \Vert \overrightarrow{OE} \Vert = \Vert \overrightarrow{OF} \Vert$. Donc les triangles $EOD$, $EOF$, $FOD$ sont isoc\`eles.\\
+
+Et $\widehat{DOE} = \widehat{EOF} = \frac{2\pi}{3}$ donc $\widehat{FOD} = \frac{2\pi}{3}$ car $r \circ r \circ r = Id$.\\
+
+Donc $\widehat{ODE} = \widehat{OED} = \frac{\pi}{6}$, $\widehat{OEF} = \widehat{OFE} = \frac{\pi}{6}$, $\widehat{OFD} = \widehat{ODF} = \frac{\pi}{6}$ 
+
+Donc $\widehat{DEF} = \widehat{DEO} + \widehat{OEF} = \frac{\pi}{6} + \frac{\pi}{6} = \frac{\pi}{3}$ et 
+$\widehat{DEF} = \widehat{DEO} + \widehat{OEF} = \frac{\pi}{6} + \frac{\pi}{6} = \frac{\pi}{3}$ et 
+$\widehat{EFD} = \widehat{EFO} + \widehat{OFD} = \frac{\pi}{6} + \frac{\pi}{6} = \frac{\pi}{3}$ et
+$\widehat{FDE} = \widehat{FDO} + \widehat{ODE} = \frac{\pi}{6} + \frac{\pi}{6} = \frac{\pi}{3}$.\\
+
+Donc, le triangle $DEF$ est \'equilat\'eral.
+Le triangle est direct car $O$ est le centre du cercle circonscrit du triangle $DEF$ et les angles  $\widehat{DOE} = \widehat{EOF} = \frac{2\pi}{3}$.
+
+D\'emonstration identique pour le triangle $D'E'F'$.\\
+
+
+\subsection*{Question 8}
+On a $E=r(D)$, donc $D = r^{-1}(E)$, donc l'angle orient\'e $(\overrightarrow{OE},\overrightarrow{OD})$ est $-\frac{2\pi}{3}$.\\
+
+On a $D'=\sigma_1(D)$ et le point $O$ est sur la droite $OA$ donc $\Vert \overrightarrow{OD} \Vert = \Vert \overrightarrow{OD'} \Vert$.\\
 
 QED
 
