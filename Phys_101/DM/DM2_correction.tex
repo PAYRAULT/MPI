@@ -85,7 +85,7 @@ $$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overright
 \end{itemize}
 
 
-\subsection*{Exo 1}
+\subsection*{Exo I}
 
 \subsubsection*{Q 1.1 a et b}
 Si la force $\overrightarrow{F_{el}}(x)$ est conservatrice alors on peut d\'efinir son \'energie potentielle associ\'ee $E_{el}(x)$. La $\overrightarrow{F_{el)}}(x)$ est conservatrice si son travail d'un point $A$ au point $B$ ne d\'epend pas du chemin suivi sur l'axe $\mathcal{O}_x$, soit $\forall A,B,C,\, W_{A \to B} \overrightarrow{F} = W_{A \to C} \overrightarrow{F} + W_{C \to B} \overrightarrow{F}$. Le travail de la force $\overrightarrow{F_{el}}(x)$ entre les points $A$ et $B$ sur l'axe $\mathcal{O}_x$ est donn\'e par $W_{A \to B} \overrightarrow{F} = \int_{x_a}^{x_b} f(x)dx$ avec $f(x) = -\frac{A}{x^2}$ car la force $\overrightarrow{F_{el}}(x)$ est parall\`ele \`a l'axe $\mathcal{O}_x$.\\
@@ -154,6 +154,59 @@ Voir courbes
 
 \subsubsection*{Q 1.4 c}
 $$\frac{\left(7.1\cdot10^{-96}\right)}{\left(3.05\cdot10^{-10}\right)^{8}} - \frac{\left(2.3\cdot10^{-28}\right)}{\left(3.05\cdot10^{-10}\right)} = −6.59287163×10^{−19}$$
+
+
+\subsection*{Exo II}
+
+\subsubsection*{Q 1.5 a}
+On a $F_{tot}(x) = F_{el}(x) + F_{rep}(x) = -\frac{A}{x^2} + \frac{8B}{x^9}$. Le d\'eveloppement limit\'e de $F_{tot}(x)$ autour du point $x_{eq}$:
+$$F_{tot}(x) = F_{tot}(x_eq) + F'_{tot}(x_{eq})(x-x_{eq})$$
+On a $F_{tot}(x_eq) = 0$ car $x_{eq}$ est la position d'\'equilibre.\\
+On a $F'_{tot}(x) = \frac{2A}{x^3} - \frac{72B}{x^{10}}$. Donc
+$$F_{tot}(x) = 0 + (\frac{2A}{x_{eq}^3} - \frac{72B}{x_{eq}^{10}})(x-x_{eq})$$
+$$F_{tot}(x) = -(\frac{72B}{x_{eq}^{10}}-\frac{2A}{x_{eq}^3})(x-x_{eq})$$
+Selon est de la forme
+$$F_{tot}(x) = -k.(x-x_0)$$
+Avec $k=\frac{72*7.1\times10^{-96}}{(3.05\times10^{-10})^{10}}-\frac{2*2.30\times10^{-28}}{(3.05\times10^{-10})^3} = 57.17 N.m$ et $x_0 = x_{eq}$.\\
+En faisant le changement de variable $x-x_{eq} = \delta$ alors
+$$F_{tot}(\delta) = -k.\delta$$
+
+\subsubsection*{Q 1.5 b}
+L'\'equation du mouvement de $Na^{+}$ est 
+$$m\ddot{x}(\delta) = F_{tot}(\delta) = -k.\delta$$
+$$\ddot{x}(\delta) + \frac{k}{m}\delta = 0$$
+
+La r\'esolution de l'\'equation diff\'erentielle donne $\delta(t)=x_0cos(\sqrt{\frac{k}{m}}t)$. $\delta(t)$ est une fonction oscillante autour de la position $x_{eq}$.
+
+\subsubsection*{Q 1.5 c}
+La p\'eriode de l'oscillation est $T=\frac{2\pi}{\sqrt{\frac{k}{m}}} = 2\pi\sqrt{\frac{m}{k}}$ et la fr\'equence est $F=\frac{1}{T}$.\\
+
+$$T = 2\pi \sqrt{\frac{3.84\times10^{-28}}{60}} = 1.59\times10^{-14}$$
+
+\subsubsection*{Q 1.6 a}
+L'ion $n$ suffit deux forces de sens contraire; la force provenant du ressort li\'e au ion $n+1$ et la force provenant de l'ion $n-1$. Ces forces sont propotionnels au coefficent du raideur $k$ du ressort et \`a l'extension de chaque ressort. L'extension du ressort entre $n-1$ et $n$ est $\delta_{n} - \delta_{n-1}$, celle avec le ressort $n+1$ est $\delta_{n+1} - \delta_{n}$. Donc la force totale est $-k(\delta_{n+1} - \delta_{n}) - (-k(\delta_{n} - \delta_{n-1}) = -k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$.\\ 
+
+Selon PFD on a $m\ddot{\delta_{n}} = -k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$
+
+
+\subsubsection*{Q 1.6 b}
+On a $$\dot{\delta_{n}} = \alpha.\omega.i e^{i(wt-kx_n)}$$
+et $$\ddot{\delta_{n}} = \alpha.\omega.i.\omega.i e^{i(wt-kx_n)} = -\alpha.\omega^2 e^{i(wt-kx_n)}$$
+Donc
+$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = -k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$$
+$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = -k(\alpha e^{i(wt-kx_{n-1})} -2(\alpha e^{i(wt-kx_n)}) + \alpha e^{i(wt-kx_{n+1})})$$
+$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = -k.\alpha( e^{i(wt-kx_{n-1})} -2e^{i(wt-kx_n)} + e^{i(wt-kx_{n+1})})$$
+$$m.\omega^2 e^{i(wt-kx_n)} = k( e^{i(wt-kx_{n-1})} -2e^{i(wt-kx_n)} + e^{i(wt-kx_{n+1})})$$
+
+\`A l'\'equilibre les ion $NA^{+}$ sont espac\'es par la distance $a$. Donc,
+$$m.\omega^2 e^{i(wt-k.n.a)} = k( e^{i(wt-k(n-1)a)} -2e^{i(wt-k.n.a)} + e^{i(wt-k(n+1)a)})$$
+$$m.\omega^2 e^{i(wt-k.n.a)} = k( e^{i(wt-k.n.a)}e^{ika} - 2e^{i(wt-k.n.a)} + e^{i(wt-k.n.a)}e^{-ika})$$
+$$m.\omega^2 e^{i(wt-k.n.a)} = k.e^{i(wt-k.n.a)}( e^{ika} - 2 + e^{-ika})$$
+$$m.\omega^2 = k( e^{ika} - 2 + e^{-ika})$$
+$$m.\omega^2 = k( 2cos(ka) - 2 )$$
+$$m.\omega^2 = 2k( cos(ka) - 1 )$$
+
+
 
 QED.
 
