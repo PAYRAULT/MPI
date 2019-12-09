@@ -184,27 +184,27 @@ La p\'eriode de l'oscillation est $T=\frac{2\pi}{\sqrt{\frac{k}{m}}} = 2\pi\sqrt
 $$T = 2\pi \sqrt{\frac{3.84\times10^{-28}}{60}} = 1.59\times10^{-14}$$
 
 \subsubsection*{Q 1.6 a}
-L'ion $n$ suffit deux forces de sens contraire; la force provenant du ressort li\'e au ion $n+1$ et la force provenant de l'ion $n-1$. Ces forces sont propotionnels au coefficent du raideur $k$ du ressort et \`a l'extension de chaque ressort. L'extension du ressort entre $n-1$ et $n$ est $\delta_{n} - \delta_{n-1}$, celle avec le ressort $n+1$ est $\delta_{n+1} - \delta_{n}$. Donc la force totale est $-k(\delta_{n+1} - \delta_{n}) - (-k(\delta_{n} - \delta_{n-1}) = -k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$.\\ 
+L'ion $n$ suffit deux forces de sens contraire; la force provenant du ressort li\'e au ion $n+1$ et la force provenant de l'ion $n-1$. Ces forces sont propotionnels au coefficent du raideur $k$ du ressort et \`a l'extension de chaque ressort. L'extension du ressort entre $n-1$ et $n$ est $\delta_{n} - \delta_{n-1}$, celle avec le ressort $n+1$ est $\delta_{n+1} - \delta_{n}$. Donc la force totale est $k(\delta_{n+1} - \delta_{n}) - (k(\delta_{n} - \delta_{n-1}) = k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$.\\ 
 
-Selon PFD on a $m\ddot{\delta_{n}} = -k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$
+Selon PFD on a $m\ddot{\delta_{n}} = k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$
 
 
 \subsubsection*{Q 1.6 b}
 On a $$\dot{\delta_{n}} = \alpha.\omega.i e^{i(wt-kx_n)}$$
 et $$\ddot{\delta_{n}} = \alpha.\omega.i.\omega.i e^{i(wt-kx_n)} = -\alpha.\omega^2 e^{i(wt-kx_n)}$$
 Donc
-$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = -k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$$
-$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = -k(\alpha e^{i(wt-kx_{n-1})} -2(\alpha e^{i(wt-kx_n)}) + \alpha e^{i(wt-kx_{n+1})})$$
-$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = -k.\alpha( e^{i(wt-kx_{n-1})} -2e^{i(wt-kx_n)} + e^{i(wt-kx_{n+1})})$$
-$$m.\omega^2 e^{i(wt-kx_n)} = k( e^{i(wt-kx_{n-1})} -2e^{i(wt-kx_n)} + e^{i(wt-kx_{n+1})})$$
+$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = k(\delta_{n-1} -2\delta_{n} + \delta_{n-1})$$
+$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = k(\alpha e^{i(wt-kx_{n-1})} -2(\alpha e^{i(wt-kx_n)}) + \alpha e^{i(wt-kx_{n+1})})$$
+$$-m.\alpha.\omega^2 e^{i(wt-kx_n)} = k.\alpha( e^{i(wt-kx_{n-1})} -2e^{i(wt-kx_n)} + e^{i(wt-kx_{n+1})})$$
+$$m.\omega^2 e^{i(wt-kx_n)} = k( -e^{i(wt-kx_{n-1})} +2e^{i(wt-kx_n)} - e^{i(wt-kx_{n+1})})$$
 
 \`A l'\'equilibre les ion $NA^{+}$ sont espac\'es par la distance $a$. Donc,
-$$m.\omega^2 e^{i(wt-k.n.a)} = k( e^{i(wt-k(n-1)a)} -2e^{i(wt-k.n.a)} + e^{i(wt-k(n+1)a)})$$
-$$m.\omega^2 e^{i(wt-k.n.a)} = k( e^{i(wt-k.n.a)}e^{ika} - 2e^{i(wt-k.n.a)} + e^{i(wt-k.n.a)}e^{-ika})$$
-$$m.\omega^2 e^{i(wt-k.n.a)} = k.e^{i(wt-k.n.a)}( e^{ika} - 2 + e^{-ika})$$
-$$m.\omega^2 = k( e^{ika} - 2 + e^{-ika})$$
-$$m.\omega^2 = k( 2cos(ka) - 2 )$$
-$$m.\omega^2 = 2k( cos(ka) - 1 )$$
+$$m.\omega^2 e^{i(wt-k.n.a)} = k( -e^{i(wt-k(n-1)a)} +2e^{i(wt-k.n.a)} - e^{i(wt-k(n+1)a)})$$
+$$m.\omega^2 e^{i(wt-k.n.a)} = k( -e^{i(wt-k.n.a)}e^{ika} + 2e^{i(wt-k.n.a)} - e^{i(wt-k.n.a)}e^{-ika})$$
+$$m.\omega^2 e^{i(wt-k.n.a)} = k.e^{i(wt-k.n.a)}( -e^{ika} + 2 - e^{-ika})$$
+$$m.\omega^2 = k( -e^{ika} + 2 - e^{-ika})$$
+$$m.\omega^2 = k( 2 - 2cos(ka))$$
+$$m.\omega^2 = 2k( 1 - cos(ka))$$
 
 
 
