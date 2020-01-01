@@ -135,7 +135,7 @@ On a $E_m = E_c + E_p$. L'\'energie du syst\`eme $E_m$ est conserv\'ee . Donc $E
 \subsubsection{Q3}
 La puissance moyenne d\'evelopp\'e est $P=\frac{\Delta_W}{\Delta_t} = \frac{E_p}{T} = \frac{\overrightarrow{F}.\overrightarrow{AB}}{T}$. 
 
-\subsection*{Exo 4.2.3}
+\subsection*{Exo 4.2.3 - Traineau}
 \subsubsection{Q1.a}
 3 forces s'exercent sur la masse $m$; la force de la pesanteur (verticale) $\overrightarrow{P}$, la force de r\'eaction $\overrightarrow{R}$ (perpendiculaire au plan inclin\'e) et la force de frottement statique $\overrightarrow{f}$ (parall\`ele au plan inclin\'e). Comme la masse ne bouge pas, la somme des 3 forces est nulle.\\
 On d\'efinit un rep\`ere orthonorm\'e centr\'e sur la masse $m$ et parall\`ele au plan inclin\'e. Dans ce rep\`ere, les 3 forces ont les coordonn\'ees:
@@ -205,6 +205,38 @@ On a
 $$l^\prime = \frac{l.(\sin(\beta) - k_d.\cos(\beta))}{k_d} $$
 
 Donc $l^\prime = 5\frac{\sin(6^\circ) - 0.05\cos(6^\circ)}{0.05} = 5.48m$.
+
+\subsection*{Exo 4.3.1}
+\subsubsection{Q1}
+On a $F_g = G\frac{M_t.m}{(R_t+h)^2}$ avec $G= 6.674\,10^{-11} m^3.kg^{-1}.s^{-2}$, $R_t$ le rayon de la terre et $M_t$ la masse de la terre.
+
+\subsubsection{Q2}
+Le d\'eveloppement limit\'e de $f(x)$ au point $x_0$ est $f(x)=f(x_{0})+f'(x_{0}) \cdot (x-x_{0})+o(x-x_{0})$. On a $f'(x) = n.(1+x)^{n-1}$. Donc,
+$$f(x) = (1+x_0)^n + n(1+x_0)^{n-1}.(x-x_0) + o(x-x_{0})$$
+
+En prenant $x_0 = 0$, cela fait $f(x) = 1 + n.x^{n-1} + o(x)$.
+
+\subsubsection{Q3}
+On a $F_g = mg = G\frac{M_t.m}{(R_t+h)^2}$. Donc \`a petite altitude, 
+$$g=G\frac{M_t}{R_t^2(1+\frac{h}{R_t})^2} = G\frac{M_t}{R_t(1+2\frac{h}{R_t})} = G\frac{M_t}{R_t^2}$$
+$$g = 9.82$$
+avec $R_t = 6370\,km$ et $M_t = 5.972\,10^{24}\,kg$. 
+
+\subsubsection{Q4}
+On a $\int \frac{K}{x^2} = K \int \frac{1}{x^2} = \frac{-K}{x} + C$
+
+\subsubsection{Q5}
+On a 
+$$W_{0 \to h} = \int_{0}^{h} f(x)dx = \int_{0}^{h} G\frac{M_t.m}{(R_t+x)^2} dx$$
+
+Changement de variable $X=R_t+x$ donc $dX = dx$.
+
+$$W_{0 \to h} = \int_{R_t}^{R_t+h} G\frac{M_t.m}{X^2} dX = [-G\frac{M_t.m}{X} + C]_{R_t}^{R_t+h}$$
+$$W_{0 \to h} = -G\frac{M_t.m}{R_t+h} + G\frac{M_t.m}{R_t} = -G.M_t.m(\frac{1}{R_t} - \frac{1}{R_t+h})$$
+$$W_{0 \to h} =  -G.M_t.m(\frac{R_t+h -R_t}{R_t(R_t+h)}) = -G.M_t.m(\frac{h}{R_t(R_t+h)})$$
+Lorsque $h$ est petit devant $R_t$ on a:
+$$W_{0 \to h} =  -G.M_t.m(\frac{h}{R_t^2}) = -m.g.h$$
+
 
 \end{document}
 

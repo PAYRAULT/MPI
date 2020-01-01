@@ -12,7 +12,7 @@ FILES=exo_2_1_1.pdf\
   exo_3_3_1.pdf\
   exo_3_3_2.pdf\
   exo_3_2_1.pdf\
-  exo_4_1_x.pdf
+  exo_4_x.pdf
 
 all: $(FILES)
 
