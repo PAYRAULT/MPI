@@ -135,6 +135,76 @@ On a $E_m = E_c + E_p$. L'\'energie du syst\`eme $E_m$ est conserv\'ee . Donc $E
 \subsubsection{Q3}
 La puissance moyenne d\'evelopp\'e est $P=\frac{\Delta_W}{\Delta_t} = \frac{E_p}{T} = \frac{\overrightarrow{F}.\overrightarrow{AB}}{T}$. 
 
+\subsection*{Exo 4.2.3}
+\subsubsection{Q1.a}
+3 forces s'exercent sur la masse $m$; la force de la pesanteur (verticale) $\overrightarrow{P}$, la force de r\'eaction $\overrightarrow{R}$ (perpendiculaire au plan inclin\'e) et la force de frottement statique $\overrightarrow{f}$ (parall\`ele au plan inclin\'e). Comme la masse ne bouge pas, la somme des 3 forces est nulle.\\
+On d\'efinit un rep\`ere orthonorm\'e centr\'e sur la masse $m$ et parall\`ele au plan inclin\'e. Dans ce rep\`ere, les 3 forces ont les coordonn\'ees:
+
+$$
+\left\{
+\begin{array}{l l l}
+ P_x = -m.g.sin(\beta) & R_x = 0 & f_x = \|\overrightarrow{f}\| \\
+ P_y = -m.g.cos(\beta) & R_y = \|\overrightarrow{R}\| & f_y = 0\\
+\end{array}
+\right. 
+$$
+
+Donc, on a $ \|\overrightarrow{R}\| = m.g.cos(\beta)$ et $\|\overrightarrow{f}\| = m.g.cos(\beta)$.
+
+\subsubsection{Q1.b}
+Le coefficient de frottement statique $k_s$ peut \^etre d\'etermin\'e pour l'angle minimum du plan inclin\'e $\beta_{min}$ faisant boug'e la masse $m$.\\
+$$k_s = \frac{\overrightarrow{f_{max}}}{\overrightarrow{R}}$$
+$$k_s = \frac{-m.g.sin(\beta_{min})}{-m.g.cos(\beta_{min})}$$
+$$k_s = \tan(\beta_{min})$$
+
+\subsubsection{Q1.c}
+Ne marche pas pour $\beta = 60^\circ$. Mais $\tan(6^\circ) = 0.1$.
+
+\subsubsection{Q2.a}
+Le travail $W_{C \to D} = W_{C \to D}(\overrightarrow{f\prime}) + W_{C \to D}(\overrightarrow{R}) + W_{C \to D}(\overrightarrow{P})$. On a 
+
+$$
+\left\{
+\begin{array}{l l}
+W_{C \to D}(\overrightarrow{R}) = 0 & La\, force\, \overrightarrow{R}\, est\, toujours\, perpendiculaire\, au\, deplacement.\\
+W_{C \to D}(\overrightarrow{f^\prime}) = \overrightarrow{f^\prime}.l = -k_d.m.g.\cos(\beta).l & \\
+W_{C \to D}(\overrightarrow{P}) = -m.g.h = m.g.l.\sin(\beta) & \\
+\end{array}
+\right. 
+$$
+
+Donc, $W_{C \to D} = m.g.l.(sin(\beta) - k_d.cos(\beta))$.
+
+
+\subsubsection{Q2.b}
+Le travail $W_{D \to E} = W_{D \to E}(\overrightarrow{f^\prime}) + W_{D \to E}(\overrightarrow{R}) + W_{D \to E}(\overrightarrow{P})$. On a 
+
+$$
+\left\{
+\begin{array}{l l}
+W_{D \to E}(\overrightarrow{R}) = 0 & La\, force\, \overrightarrow{R}\, est\, toujours\, perpendiculaire\, au\, deplacement.\\
+W_{D \to E}(\overrightarrow{f^\prime}) = \overrightarrow{f^\prime}.l = -k_d.m.g.l^\prime & \\
+W_{D \to E}(\overrightarrow{P}) = -m.g.h = 0 & \\
+\end{array}
+\right. 
+$$
+
+Donc, $W_{C \to D} = -k_d.m.g.l^\prime$.
+
+\subsubsection{Q2.c}
+Les forces \'etant toutes conservatives on a $E_m = W_{C \to D} + W_{D \to E} = 0$
+$$ m.g.l.(sin(\beta) - k_d.cos(\beta)) -k_d.m.g.l^\prime = 0$$
+$$ l.(sin(\beta) - k_d.cos(\beta)) -k_d.l^\prime = 0$$
+$$ (sin(\beta) - k_d.cos(\beta)) -k_d\frac{l^\prime}{l} = 0$$
+$$ sin(\beta) - k_d.cos(\beta) -k_d.r = 0$$
+$$ sin(\beta) - k_d(r+cos(\beta)) = 0$$
+$$ k_d = \frac{sin(\beta)}{r+cos(\beta)}$$
+
+\subsubsection{Q2.d}
+On a 
+$$l^\prime = \frac{l.(\sin(\beta) - k_d.\cos(\beta))}{k_d} $$
+
+Donc $l^\prime = 5\frac{\sin(6^\circ) - 0.05\cos(6^\circ)}{0.05} = 5.48m$.
 
 \end{document}
 
