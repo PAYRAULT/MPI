@@ -79,18 +79,22 @@
 \begin{itemize}
 \item La composante de la force d'un point $M$, $\overrightarrow{F}(M)$ sur l'axe $\mathcal{O}_x$ est donn\'ee par le produit scalaire $f(x) = \overrightarrow{F}(M).\overrightarrow{i}$. 
 \item Le travail d'une force $\overrightarrow{F}$ sur un segment $\overrightarrow{AB}$ est donn\'e par :
-$$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = \int_{x_a}^{x_b} f(x)dx$$ 
+$$W_{A \to B}(\overrightarrow{F}) = \overrightarrow{F}.\overrightarrow{AB} = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = \int_{x_a}^{x_b} f(x)dx$$ 
 \item On dira qu'une force est conservative si elle ne d\'epend que de la position et si son travail d'un point $A$ au point $B$ ne d\'epend pas du chemin suivi, ceci quels que soient les point $A$ et $B$.
 $$\forall A,B,C,\, W_{A \to B} \overrightarrow{F} = W_{A \to C} \overrightarrow{F} + W_{C \to B} \overrightarrow{F}$$
 \item Dans le cas o\`u le chemin est rectiligne, si une force est conservatrice alors l'\emph{\'energie potentielle} associ\'ee \`a la force $\overrightarrow{F}$ est not\'ee $E_p(x)$ est d\'efinie par :
-$$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = E_p(x_a) - E_p(x_b)$$. 
+$$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = E_p(x_b) - E_p(x_a)$$. 
+\item Le travail du poids $\overrightarrow{P} = m\overrightarrow{g}$ sur le segment $\overrightarrow{AB}$ est $W_{A \to B}(\overrightarrow{P}) = -mg(z_b - z_a) = -mgh$.
+\item Le travail de la force de rappel \'elastique d'un ressort de raideur $k$, $\overrightarrow{F} = -k.x\overrightarrow{i}$ est $W_{A \to B}(\overrightarrow{F}) = -\frac{1}{2}k(x_a^2 - x_b^2)$.
 \end{itemize}
+
 
 \subsubsection*{\'Energie}
 \begin{itemize}
 \item L'\'energie m\'ecanique d'un syst\`eme $E_m = E_c + E_p$ avec $E_c$ l'\'energie cin\'etique qui d\'epend de la masse et de la norme de la vitesse du syst\`eme physique \'etudi\'e et de l'\'energie potentielle $E_p$ qui correspond aux forces exerc\'ees sur le syst\`eme.
-\item L\'energie m\'ecanique est \'egale \`a $E_m = E_c + E_p$. Avec l'\'energie cin\'etique du syst\`eme $E_c = \frac{1}{2}mv_0^2$
-\item L'\'energie potentielle qui correspond \`a l'ensemble des forces qui s'exercent sur le syst\'eme
+\item L'\'energie cin\'etique du syst\`eme $E_c = \frac{1}{2}mv^2$
+\item L'\'energie potentielle qui correspond \`a l'ensemble des forces conservatives qui s'exercent sur le syst\'eme, $E_p(B) - E_p(A) = W_{A \to B}(\overrightarrow{F}_{conservatives})$
+\item $E_m(B) - E_m(A) = W_{A \to B}(\overrightarrow{F}_{non\, conservatives})$
 \end{itemize}
 
 \subsubsection*{Puissance}
@@ -98,7 +102,6 @@ $$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overright
 \item La puissance $P$ repr\'esente l'\'energie transf\'er\'ee uniformement (ie. le travail) pendant une unit\'e de temps, $P =\frac{W}{\Delta t}$.
 \item $1\,W = 1\,J.s^{-1} = 1\, N.m.s^{-1} = 1\, kg.m^{2}.s^{-3}$
 \end{itemize}
-
 
 
 \subsection*{Exo 4.1.1}
@@ -109,7 +112,7 @@ L'\'electron est soumis a la force gravitationnelle. Donc $E_m = E_c + E_p$ avec
 Il faut monter une masse de $m=500+5*70 = 850\,kg$ \`a une vitesse de $v=25/60 = 0.41\,m/s$. La puissance n\'ecessaire est $P=m.g.v = 850*9.81*0.41 = 3418\,Watt$.\\
  
 En l'abscence de frottements la puissance n\'ecessaire pour lever la cabine d'ascenseur est \'egale \`a la puissance fournie par le moteur. Le puissance du poids est r\'esistante, celle du moteur est motrice.\\
-
+v
 On a $P =\frac{W}{\Delta_t}$, donc $W = P*\Delta_t = 3418*60 = 205kJ$.
 
 \subsection*{Exo 4.1.3}
@@ -122,6 +125,15 @@ On a $1W = 1J/s$. On produit $429.10^{12}Wh$ pour une ann\'ee, donc on a produit
 \subsubsection{Q3}
 La puissance \'electrique moyenne d'un r\'eacteur est de $\frac{48.10^{9}}{58} = 0.82 MW$.  
 
+\subsection*{Exo 4.2}
+\subsubsection{Q1}
+Le travail accompli par la force est $\overrightarrow{F}.\overrightarrow{AB}$
+
+\subsubsection{Q2}
+On a $E_m = E_c + E_p$. L'\'energie du syst\`eme $E_m$ est conserv\'ee . Donc $E_{c0} + E_p = E_{cf} + E_{p_f}$ avec $E_{p_f} = 0$ car aucune force ne s'exerce sur la masse. Donc l'accroissement de l'\'energie cin\'etique est $E_{cf} - E_{c0} = E_p$.
+
+\subsubsection{Q3}
+La puissance moyenne d\'evelopp\'e est $P=\frac{\Delta_W}{\Delta_t} = \frac{E_p}{T} = \frac{\overrightarrow{F}.\overrightarrow{AB}}{T}$. 
 
 
 \end{document}
