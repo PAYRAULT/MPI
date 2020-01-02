@@ -250,6 +250,69 @@ $$E_p(x) = W_{0 \to x}F(x) = \int_0^x F(x) = \int_0^x -k.x = [\frac{-k}{2}x^2]_0
 L'\'energie potentielle gravitationnelle est $E_p(x) = mgx$.\\
 La forme de l'energie potentielle totale est $E_p = mgx - -\frac{1}{2}k.x^2$.
 
+\subsection*{Exo 4.4.1}
+\subsubsection{Q1}
+$$\int 2\, dx = 2x +C $$
+$$\int Ax\, dx = \frac{1}{2}A x^2 + C$$
+$$\int -\frac{K}{x^2}\, dx = \frac{K}{x} + C$$
+
+\subsubsection{Q2}
+Une force est conservative si le calcul de son travail ne d\'epend pas du chemin parcouru. Donc, il suffit de montrer que
+$$W_{A \to C}\overrightarrow{F} = W_{A \to B}\overrightarrow{F} + W_{B \to C}\overrightarrow{F}$$
+
+\subsubsection{Q3.a}
+$$W_{x_1 \to x_2}\overrightarrow{F} = \int_{x_1 \to x_2} -\frac{GmM}{x^2} dx = [\frac{GmM}{x}]_{x_1}^{x_2}$$
+
+$$W_{A \to C}\overrightarrow{F} = \frac{GmM}{C} - \frac{GmM}{A}$$
+$$W_{A \to B}\overrightarrow{F} + W_{B \to C}\overrightarrow{F} = \frac{GmM}{B} - \frac{GmM}{A} + \frac{GmM}{C} - \frac{GmM}{B} = \frac{GmM}{C} - \frac{GmM}{A} = W_{A \to C}\overrightarrow{F}$$
+
+Conservative.
+
+\subsubsection{Q3.c}
+$$W_{x_1 \to x_2}\overrightarrow{F} = \int_{x_1 \to x_2} -kx\, dx = [\frac{1}{2}kx^2]_{x_1}^{x_2}$$
+
+$$W_{A \to C}\overrightarrow{F} = \frac{1}{2}kC^2 - \frac{1}{2}kA^2$$
+$$W_{A \to B}\overrightarrow{F} + W_{B \to C}\overrightarrow{F} = \frac{1}{2}kB^2 - \frac{1}{2}kA^2 + \frac{1}{2}kC^2 - \frac{1}{2}kB^2 = \frac{1}{2}kC^2 - \frac{1}{2}kA^2 = W_{A \to C}\overrightarrow{F}$$
+
+Conservative.
+
+\subsubsection{Q3.d}
+$$W_{x_1 \to x_2}\overrightarrow{F} = \int_{x_1 \to x_2} -\gamma \dot{x}\, dx$$
+Cette int\'egrale d'epend de la vitesse au point $x$. La vitesse est ind\'ependente de la position de $x$ donc la force est non conservative.
+
+\subsubsection{Q3.e}
+$$W_{x_1 \to x_2}\overrightarrow{F} = \int_{x_1 \to x_2} -\Lambda x\, dx = [\frac{1}{2}\Lambda x^2]_{x_1}^{x_2}$$
+
+$$W_{A \to C}\overrightarrow{F} = \frac{1}{2}\Lambda C^2 - \frac{1}{2}\Lambda A^2$$
+$$W_{A \to B}\overrightarrow{F} + W_{B \to C}\overrightarrow{F} = \frac{1}{2}\Lambda B^2 - \frac{1}{2}\Lambda A^2 + \frac{1}{2}\Lambda C^2 - \frac{1}{2}\Lambda B^2 = \frac{1}{2}\Lambda C^2 - \frac{1}{2}\Lambda A^2 = W_{A \to C}\overrightarrow{F}$$
+
+Conservative.
+
+\subsection*{Exo 4.4.2}
+\subsubsection{Q1}
+L'\'energie potentielle d'une masse $m$ est \`a 1000m d'altitude est:
+$E_p = W_{0 \to 1000} mg\, dx = [mgx]_0^{1000} = 1.g.1000 - 1.g.0 = 9810$
+
+\subsubsection{Q2}
+L'\'energie cin\'etique au moment de l'impact est $E_c = \frac{1}{2}mv^2$. Comme il n'y a pas de frottement et que les forces sont conservatives alors l'\'energie est conserv\'ee. Donc 
+$$E_p = E_c$$
+$$\frac{1}{2}mv^2 = 9810$$
+$$v = \sqrt{2*9810} = 140 m/s$$
+
+\subsubsection{Q3}
+Durant la chute l'\'energie potentielle est de :
+$$E_p(x) = W_{x \to 1000} mg\, dx = [mgx]_x^{1000} = 1.g.1000 - 1gx = 9810 - gx$$
+
+L'\'energie cin\'etique est:
+$$E_c(x) = \frac{1}{2}mv(x)^2 = \frac{1}{2}v(x)^2$$
+
+L'\'energie est conserv'ee donc
+$$E_c(x) = E_p(x)$$
+$$v(x) = \sqrt{2(9810 - gx)}$$
+
+
+\subsection*{Exo 4.4.7}
+
 
 
 \end{document}
