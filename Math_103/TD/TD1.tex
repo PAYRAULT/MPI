@@ -176,7 +176,32 @@ Et
 $$\int_{0}^{\pi/2}{\frac{1}{(1+cos(x))^2}\,dx} = \int_{0}^{\pi/2}{\frac{(1+tan^2(\frac{x}{2}))^2}{4}\,dx}$$
 $$\int_{tan(0)}^{tan(\pi/4)}{\frac{(1+t^2)^2}{4}.\frac{2}{1+t^2}\,dt} = \int_{tan(0)}^{tan(\pi/4)}{\frac{1}{2}(1+t^2)\,dt} = \frac{1}{2}[t+\frac{t^3}{3}]_{tan(0)}^{tan(\pi/4)}$$
 
+\subsubsection*{Exercice 2.c}
+Trop complexe.
+
 \subsection*{Exercice 3}
+\subsubsection*{Exercice 3.a}
+$$\int{arcsin(x)\,dx}$$
+
+\subsubsection*{Exercice 3.b}
+$$\int{x^nln(x)\,dx}$$
+Par partie avec
+$$
+\begin{array}{l l}
+f(x) = ln(x) & f'(x)=\frac{1}{x} \\
+g'(x)= x^n & g(x) = \frac{x^{n+1}}{n+1} \\
+\end{array}
+$$
+
+Donc
+$$\int{x^nln(x)\,dx} = \frac{x^{n+1}ln(x)}{n+1} - \int{\frac{1}{x}.\frac{x^{n+1}}{n+1}\,dx} = \frac{x^{n+1}ln(x)}{n+1} - \frac{1}{n+1}\int{x^n\,dx} = \frac{x^{n+1}ln(x)}{n+1} - \frac{x^{n+1}}{(n+1)^2}$$
+
+
+\subsubsection*{Exercice 3.c}
+$$\int{x\arcsin(x)\,dx}$$
+
+\subsubsection*{Exercice 3.d}
+$$\int{ln(x^2+1)\,dx}$$
 
 QED
 
