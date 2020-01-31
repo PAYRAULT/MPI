@@ -181,27 +181,44 @@ Trop complexe.
 
 \subsection*{Exercice 3}
 \subsubsection*{Exercice 3.a}
-$$\int{arcsin(x)\,dx}$$
-
-\subsubsection*{Exercice 3.b}
-$$\int{x^nln(x)\,dx}$$
+$$\int{\arcsin(x)\,dx}$$
 Par partie avec
 $$
 \begin{array}{l l}
-f(x) = ln(x) & f'(x)=\frac{1}{x} \\
+f(x) = \arcsin(x) & f'(x)=\frac{1}{\sqrt{1-x^2}} \\
+g'(x)= 1 & g(x) = x \\
+\end{array}
+$$
+
+Donc
+$$\int{\arcsin(x)\,dx} = x\arcsin(x) - \int{\frac{x}{\sqrt{1-x^2}}\,dx}$$
+
+Soit $u(x)=1-x^2$, $u'(x)=-2x$ et $f(u)=-\frac{1}{2\sqrt{u}}$
+Donc
+$$\int{\frac{x}{\sqrt{1-x^2}}\,dx} = \int{f(1-x^2).2x\,dx} = \int{-\frac{1}{2\sqrt{u}}\,du} = -\frac{1}{2}\int{\frac{1}{\sqrt{u}}\,du} = -\frac{1}{2}.2\sqrt{u} = -\sqrt{u}$$
+
+Donc
+$$\int{\arcsin(x)\,dx} = x\arcsin(x) + \sqrt{1-x^2}$$
+
+\subsubsection*{Exercice 3.b}
+$$\int{x^n\ln(x)\,dx}$$
+Par partie avec
+$$
+\begin{array}{l l}
+f(x) = \ln(x) & f'(x)=\frac{1}{x} \\
 g'(x)= x^n & g(x) = \frac{x^{n+1}}{n+1} \\
 \end{array}
 $$
 
 Donc
-$$\int{x^nln(x)\,dx} = \frac{x^{n+1}ln(x)}{n+1} - \int{\frac{1}{x}.\frac{x^{n+1}}{n+1}\,dx} = \frac{x^{n+1}ln(x)}{n+1} - \frac{1}{n+1}\int{x^n\,dx} = \frac{x^{n+1}ln(x)}{n+1} - \frac{x^{n+1}}{(n+1)^2}$$
+$$\int{x^n\ln(x)\,dx} = \frac{x^{n+1}\ln(x)}{n+1} - \int{\frac{1}{x}.\frac{x^{n+1}}{n+1}\,dx} = \frac{x^{n+1}\ln(x)}{n+1} - \frac{1}{n+1}\int{x^n\,dx} = \frac{x^{n+1}\ln(x)}{n+1} - \frac{x^{n+1}}{(n+1)^2}$$
 
 
 \subsubsection*{Exercice 3.c}
 $$\int{x\arcsin(x)\,dx}$$
 
 \subsubsection*{Exercice 3.d}
-$$\int{ln(x^2+1)\,dx}$$
+$$\int{\ln(x^2+1)\,dx}$$
 
 QED
 
