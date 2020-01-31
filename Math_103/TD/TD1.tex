@@ -129,16 +129,52 @@ $$\int{\frac{ln^2(x)}{x}\,dx} = \int{f(ln(x)).\frac{1}{x}\,dx} = \int{u^2\,du} =
 
 
 \subsection*{Exercice 2}
-$t = u(x) = tan(\frac{x}{2})$ donc $x = u^{-1}(t) = 2arctan(t)$ et $(u^{-1})'(t) = \frac{dx}{dt} = \frac{2}{1+t^2}$.
-On a $sin(x)=\frac{2tan(\frac{x}{2})}{1+tan^2(\frac{x}{2})}$ donc $1-sin(x) = 1 - \frac{2tan(\frac{x}{2})}{1+tan^2(\frac{x}{2})} = \frac{tan^2(\frac{x}{2})-2tan^2(\frac{x}{2})+1}{1+tan^2(\frac{x}{2})} = \frac{(tan(\frac{x}{2})-1)^2}{1+tan^2(\frac{x}{2})}$.
-\\
-Donc $\frac{1}{1-sin(x)} = \frac{1+tan^2(\frac{x}{2})}{(tan(\frac{x}{2})-1)^2}$.
+\subsubsection*{Exercice 2.a}
+$t = u(x) = tan(\frac{x}{2})$ donc $x = u^{-1}(t) = 2arctan(t)$ et $(u^{-1})'(t) = \frac{dx}{dt} = \frac{2}{1+t^2}$.\\
+On a 
+$$sin(x)=\frac{2tan(\frac{x}{2})}{1+tan^2(\frac{x}{2})}$$ 
+$$1-sin(x) = 1 - \frac{2tan(\frac{x}{2})}{1+tan^2(\frac{x}{2})}
+= \frac{tan^2(\frac{x}{2})-2tan^2(\frac{x}{2})+1}{1+tan^2(\frac{x}{2})} = \frac{(tan(\frac{x}{2})-1)^2}{1+tan^2(\frac{x}{2})}$$
+
+Donc 
+$$\frac{1}{1-sin(x)} = \frac{1+tan^2(\frac{x}{2})}{(tan(\frac{x}{2})-1)^2}$$
+
+Et
 $$\int_0^{\pi/3}{\frac{1}{1-sin(x)}\,dx} = \int_0^{\pi/3}{\frac{1+tan^2(\frac{x}{2})}{(tan(\frac{x}{2})-1)^2}\,dx}$$
 $$\int_{tan(0)}^{tan(\pi/6)}{\frac{1+t^2}{(t-1)^2}.\frac{2}{1+t^2}\,dt} = \int_{tan(0)}^{tan(\pi/6)}{\frac{2}{(t-1)^2}\,dt}$$
 
 Soit $u(x)=x-1$, $u'(x)=1$ et $f(u) = \frac{1}{u^2}$ donc
 $$\int_{tan(0)}^{tan(\pi/6)}{\frac{2}{(t-1)^2}\,dt} = 2\int_{tan(0)}^{tan(\pi/6)}{f(t-1).1\,dt}=2\int_{tan(0)-1}^{tan(\pi/6)-1}{\frac{1}{u^2}\,du} = [\frac{2}{u}]_{tan(0)-1}^{tan(\pi/6)-1} = -2 - \frac{2}{tan(\pi/6)-1}$$
 
+
+\subsubsection*{Exercice 2.b}
+$t = u(x) = tan(\frac{x}{2})$ donc $x = u^{-1}(t) = 2arctan(t)$ et $(u^{-1})'(t) = \frac{dx}{dt} = \frac{2}{1+t^2}$.\\
+On a 
+$$cos(x)=\frac{1-tan^2(\frac{x}{2})}{1+tan^2(\frac{x}{2})}$$
+$$5-3cos(x)=5-3.\frac{1-tan^2(\frac{x}{2})}{1+tan^2(\frac{x}{2})} = \frac{2+8tan^2(\frac{x}{2})}{1+tan^2(\frac{x}{2})}$$
+Donc
+$$\frac{1}{5-3cos(x)} = \frac{1+tan^2(\frac{x}{2})}{2(1+4tan^2(\frac{x}{2}))}$$
+
+Et
+$$\int_{0}^{\pi/2}{\frac{1}{5-3cos(x)}\,dx} = \int_{0}^{\pi/2}{\frac{1+tan^2(\frac{x}{2})}{2(1+4tan^2(\frac{x}{2}))}\,dx}$$
+$$\int_{tan(0)}^{tan(\pi/4)}{\frac{1+t^2}{2(1+4t^2)}.\frac{2}{1+t^2}\,dt} = \int_{tan(0)}^{tan(\pi/4)}{\frac{1}{1+4t^2}\,dt}$$
+
+Soit $u(t)=2t$, $u'(t)=2$ et $f(u)=\frac{1}{2(u^2+1)}$ donc
+$$\int_{tan(0)}^{tan(\pi/4)}{\frac{1}{1+4t^2}\,dt} = \int_{tan(0)}^{tan(\pi/4)}{f(2t).2\,dt} = \int_{2tan(0)}^{2tan(\pi/4)}{\frac{1}{2(u^2+1)}\,du} = \frac{1}{2}[arctan(u)]_{2tan(0)}^{2tan(\pi/4)}$$
+
+
+\subsubsection*{Exercice 2.c}
+$t = u(x) = tan(\frac{x}{2})$ donc $x = u^{-1}(t) = 2arctan(t)$ et $(u^{-1})'(t) = \frac{dx}{dt} = \frac{2}{1+t^2}$.\\
+On a 
+$$cos(x)=\frac{1-tan^2(\frac{x}{2})}{1+tan^2(\frac{x}{2})}$$
+$$1+cos(x)=1+\frac{1-tan^2(\frac{x}{2})}{1+tan^2(\frac{x}{2})} = \frac{2}{1+tan^2(\frac{x}{2})}$$
+$$(1+cos(x))^2 = \frac{4}{(1+tan^2(\frac{x}{2}))^2}$$
+Donc
+$$\frac{1}{(1+cos(x))^2}=\frac{(1+tan^2(\frac{x}{2}))^2}{4}$$
+
+Et
+$$\int_{0}^{\pi/2}{\frac{1}{(1+cos(x))^2}\,dx} = \int_{0}^{\pi/2}{\frac{(1+tan^2(\frac{x}{2}))^2}{4}\,dx}$$
+$$\int_{tan(0)}^{tan(\pi/4)}{\frac{(1+t^2)^2}{4}.\frac{2}{1+t^2}\,dt} = \int_{tan(0)}^{tan(\pi/4)}{\frac{1}{2}(1+t^2)\,dt} = \frac{1}{2}[t+\frac{t^3}{3}]_{tan(0)}^{tan(\pi/4)}$$
 
 \subsection*{Exercice 3}
 
