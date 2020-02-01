@@ -216,9 +216,40 @@ $$\int{x^n\ln(x)\,dx} = \frac{x^{n+1}\ln(x)}{n+1} - \int{\frac{1}{x}.\frac{x^{n+
 
 \subsubsection*{Exercice 3.c}
 $$\int{x\arcsin(x)\,dx}$$
+Par partie avec
+$$
+\begin{array}{l l}
+f(x) = \arcsin(x) & f'(x)=\frac{1}{\sqrt{1-x^2}} \\
+g'(x)= x & g(x) = \frac{x^{2}}{2} \\
+\end{array}
+$$
+
+Donc
+$$\int{x\arcsin(x)\,dx} = \frac{1}{2}x^{2}.\arcsin(x) - \int{\frac{x^2}{2\sqrt{1-x^2}}\,dx}$$
+
+Soit $x = \sin(t)$, $\frac{dx}{dt}=\cos(t)$.
+Donc
+$$\int{\frac{x^2}{2\sqrt{1-x^2}}\,dx} = \int{\frac{\sin^2(t)\cos(t)}{2\sqrt{1-\sin^2(t)}}\,dt} = \int{\frac{\sin^2(t)\cos(t)}{2\sqrt{\cos^2(t)}}\,dt} = \int{\frac{1}{2}\sin^2(t)\,dt}$$
 
 \subsubsection*{Exercice 3.d}
 $$\int{\ln(x^2+1)\,dx}$$
+
+Par partie avec
+$$
+\begin{array}{l l}
+f(x) = \ln(x^2+1) & f'(x)=\frac{2x}{1+x^2} \\
+g'(x)= 1 & g(x) = x \\
+\end{array}
+$$
+
+Donc
+$$\int{\ln(x^2+1)\,dx} = x\ln(x^2+1) - \int{\frac{2x^2}{1+x^2}\,dx}$$
+$$\int{\frac{2x^2}{1+x^2}\,dx} = 2\int{\frac{x^2+1-1}{1+x^2}\,dx} = 2\int{\frac{x^2+1}{1+x^2}-\frac{1}{1+x^2}\,dx}$$
+$$=2\int{1\,dx}-2\int{\frac{1}{1+x^2}\,dx} = 2x - 2\arctan(x)$$
+
+Enfin
+$$\int{\ln(x^2+1)\,dx} = x\ln(x^2+1) - 2x + 2\arctan(x)$$
+
 
 QED
 
