@@ -130,7 +130,7 @@ $$
 \begin{itemize}
 \item le vecteur dans le rep\`ere $(\vec{i},\vec{j})$ est $\vec{u}_{\rho} = \cos\theta \vec{i} + \sin\theta\vec{j}$ et $\vec{u}_{\theta} = -\sin\theta \vec{i} + \cos\theta\vec{j}$
 \item Le vecteur position d'un point est $\vec{r}(t) = \rho(t)\vec{u}_{\rho}(t)$
-\item Le vecteur vitesse est $\vec{v} = \frac{d\vec{r}}{dt} = \dot{\rho}(t)\vec{u}_{\rho} + \rho\dot{\theta}(t)\vec{u}_{\theta}$
+\item Le vecteur vitesse est $\vec{v} = \frac{d\vec{r}}{dt} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta}$
 \end{itemize}
 
 
@@ -206,6 +206,7 @@ $$
 
 \subsubsection*{Exo III}
 \subsubsection*{III.1}
+$$\rho(t) = \rho_{0},\, \theta=\omega t $$
 
 \begin{tikzpicture}[x=1cm,y=1cm]
 
@@ -225,12 +226,13 @@ D\'eriv\'ees de $\rho$ et $\theta$
 $$\dot{\rho}(t) = 0, \dot{\theta}(t) = \omega$$ 
 
 La vitesse en coordonnn\'ees polaires
-$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho\dot{\theta}(t)\vec{u}_{\theta} = 0\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta}$$
+$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta} = 0\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta}$$
 
 La vitesse en coordonnn\'ees cart\'esiennes
 $$\vec{v} = 0\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta} = 0(\cos\theta \vec{i} + \sin\theta\vec{j}) + \rho_{0}\omega(-\sin\theta \vec{i} + \cos\theta\vec{j}) = \rho_{0}\omega(-\sin\theta \vec{i} + \cos\theta\vec{j})$$
 
 \subsubsection*{III.2}
+$$\rho(t) = \rho_{0},\, \theta=\alpha t^2 $$
 
 \begin{tikzpicture}[x=1cm,y=1cm]
 
@@ -242,19 +244,43 @@ $$\vec{v} = 0\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta} = 0(\cos\theta \vec
   \draw (0,0) -- (100:3cm) circle [radius=.1] node[right]{$t=2$};
   \draw (0,0) -- (225:3cm) circle [radius=.1] node[right]{$t=3$};
   \draw (0,0) -- (400:3cm) circle [radius=.1] node[right]{$t=4$};
-  \draw (0,0) circle (3cm);   
+  \draw[scale=1,domain=0:4,smooth,variable=\x,blue] plot ({3*cos(25*\x*\x)},{3*sin(25*\x*\x)});
 \end{tikzpicture}
 
 D\'eriv\'ees de $\rho$ et $\theta$
-$$\dot{\rho}(t) = 0, \dot{\theta}(t) = 2\alpha t$$ 
+$$\dot{\rho}(t) = 0,\, \dot{\theta}(t) = 2\alpha t$$ 
 
 La vitesse en coordonnn\'ees polaires
-$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho\dot{\theta}(t)\vec{u}_{\theta} = 0\vec{u}_{\rho} + \rho_{0}2\alpha t\vec{u}_{\theta}$$
+$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta} = 0\vec{u}_{\rho} + \rho_{0}2\alpha t\vec{u}_{\theta}$$
 
 La vitesse en coordonnn\'ees cart\'esiennes
 $$\vec{v} = 0\vec{u}_{\rho} + \rho_{0}2\alpha t\vec{u}_{\theta} = 0(\cos\theta \vec{i} + \sin\theta\vec{j}) + \rho_{0}2\alpha t(-\sin\theta \vec{i} + \cos\theta\vec{j}) = \rho_{0}2\alpha t(-\sin\theta \vec{i} + \cos\theta\vec{j})$$
 
 \subsubsection*{III.3}
+$$\rho(t) = \alpha t,\, \theta=\omega t $$
+
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \draw[<->] (-6,0)--(6,0); % l'axe des abscisses
+  \draw[<->] (0,-2)--(0,5); % l'axe des ordonnées
+
+  \draw (0,0) -- (0:0cm) circle [radius=.1] node[right]{$t=0$};
+  \draw (0,0) -- (25:1cm) circle [radius=.1] node[right]{$t=1$};
+  \draw (0,0) -- (50:2cm) circle [radius=.1] node[right]{$t=2$};
+  \draw (0,0) -- (75:3cm) circle [radius=.1] node[right]{$t=3$};
+  \draw (0,0) -- (100:4cm) circle [radius=.1] node[right]{$t=4$};
+  \draw (0,0) -- (125:5cm) circle [radius=.1] node[right]{$t=5$};
+  \draw[scale=1,domain=0:5,smooth,variable=\x,blue] plot ({\x*cos(25*\x)},{\x*sin(25*\x)});
+        
+\end{tikzpicture}
+
+D\'eriv\'ees de $\rho$ et $\theta$
+$$\dot{\rho}(t) = \alpha, \dot{\theta}(t) = \omega$$ 
+
+La vitesse en coordonnn\'ees polaires
+$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta} = \alpha\vec{u}_{\rho} + \alpha t\omega\vec{u}_{\theta}$$
+
+La vitesse en coordonnn\'ees cart\'esiennes
+$$\vec{v} = \alpha\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta} = \alpha(\cos\theta \vec{i} + \sin\theta\vec{j}) + \alpha t\omega(-\sin\theta \vec{i} + \cos\theta\vec{j}) = (\alpha\cos\theta-\alpha t\omega\sin\theta)\vec{i} + ((\alpha\sin\theta+\alpha t\omega\cos\theta))\vec{j}$$
 
 
 
