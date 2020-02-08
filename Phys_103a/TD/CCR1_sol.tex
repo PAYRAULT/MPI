@@ -210,6 +210,27 @@ $$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho\dot{\theta}(t)\vec{u}_{\theta} = 
 La vitesse en coordonnn\'ees cart\'esiennes
 $$\vec{v} = 0\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta} = 0(\cos\theta \vec{i} + \sin\theta\vec{j}) + \rho_{0}\omega(-\sin\theta \vec{i} + \cos\theta\vec{j}) = \rho_{0}\omega(-\sin\theta \vec{i} + \cos\theta\vec{j})$$
 
+\begin{tikzpicture}[x=1cm,y=1cm]
+
+  \draw[<->] (-4,0)--(4,0); % l'axe des abscisses
+  \draw[<->] (0,-4)--(0,4); % l'axe des ordonnées
+
+  \draw (0,0) -- (0:3cm) circle [radius=.1] node[right]{$t=0$};
+  \draw (0,0) -- (25:3cm) circle [radius=.1] node[right]{$t=1$} ;
+  \draw (0,0) -- (100:3cm) circle [radius=.1] node[right]{$t=2$};
+  \draw (0,0) -- (225:3cm) circle [radius=.1] node[right]{$t=3$};
+  \draw (0,0) -- (400:3cm) circle [radius=.1] node[right]{$t=4$};
+    
+\end{tikzpicture}
+
+D\'eriv\'ees de $\rho$ et $\theta$
+$$\dot{\rho}(t) = 0, \dot{\theta}(t) = 2\alpha t$$ 
+
+La vitesse en coordonnn\'ees polaires
+$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho\dot{\theta}(t)\vec{u}_{\theta} = 0\vec{u}_{\rho} + \rho_{0}2\alpha t\vec{u}_{\theta}$$
+
+La vitesse en coordonnn\'ees cart\'esiennes
+$$\vec{v} = 0\vec{u}_{\rho} + \rho_{0}2\alpha t\vec{u}_{\theta} = 0(\cos\theta \vec{i} + \sin\theta\vec{j}) + \rho_{0}2\alpha t(-\sin\theta \vec{i} + \cos\theta\vec{j}) = \rho_{0}2\alpha t(-\sin\theta \vec{i} + \cos\theta\vec{j})$$
 
 
 \end{document}
