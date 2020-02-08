@@ -79,15 +79,15 @@
 \subsubsection*{Travail}
 
 \begin{itemize}
-\item La composante de la force d'un point $M$, $\overrightarrow{F}(M)$ sur l'axe $\mathcal{O}_x$ est donn\'ee par le produit scalaire $f(x) = \overrightarrow{F}(M).\overrightarrow{i}$. 
-\item Le travail d'une force $\overrightarrow{F}$ sur un segment $\overrightarrow{AB}$ est donn\'e par :
-$$W_{A \to B}(\overrightarrow{F}) = \overrightarrow{F}.\overrightarrow{AB} = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = \int_{x_a}^{x_b} f(x)dx$$ 
+\item La composante de la force d'un point $M$, $\vec{F}(M)$ sur l'axe $\mathcal{O}_x$ est donn\'ee par le produit scalaire $f(x) = \vec{F}(M).\vec{i}$. 
+\item Le travail d'une force $\vec{F}$ sur un segment $\vec{AB}$ est donn\'e par :
+$$W_{A \to B}(\vec{F}) = \vec{F}.\vec{AB} = \int_{A \to B} \vec{F}.\vec{i}dx = \int_{x_a}^{x_b} f(x)dx$$ 
 \item On dira qu'une force est conservative si elle ne d\'epend que de la position et si son travail d'un point $A$ au point $B$ ne d\'epend pas du chemin suivi, ceci quels que soient les point $A$ et $B$.
-$$\forall A,B,C,\, W_{A \to B} \overrightarrow{F} = W_{A \to C} \overrightarrow{F} + W_{C \to B} \overrightarrow{F}$$
-\item Dans le cas o\`u le chemin est rectiligne, si une force est conservatrice alors l'\emph{\'energie potentielle} associ\'ee \`a la force $\overrightarrow{F}$ est not\'ee $E_p(x)$ est d\'efinie par :
-$$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overrightarrow{i}dx = E_p(x_b) - E_p(x_a)$$. 
-\item Le travail du poids $\overrightarrow{P} = m\overrightarrow{g}$ sur le segment $\overrightarrow{AB}$ est $W_{A \to B}(\overrightarrow{P}) = -mg(z_b - z_a) = -mgh$.
-\item Le travail de la force de rappel \'elastique d'un ressort de raideur $k$, $\overrightarrow{F} = -k.x\overrightarrow{i}$ est $W_{A \to B}(\overrightarrow{F}) = -\frac{1}{2}k(x_a^2 - x_b^2)$.
+$$\forall A,B,C,\, W_{A \to B} \vec{F} = W_{A \to C} \vec{F} + W_{C \to B} \vec{F}$$
+\item Dans le cas o\`u le chemin est rectiligne, si une force est conservatrice alors l'\emph{\'energie potentielle} associ\'ee \`a la force $\vec{F}$ est not\'ee $E_p(x)$ est d\'efinie par :
+$$W_{A \to B}(\vec{F}) = \int_{A \to B} \vec{F}.\vec{i}dx = E_p(x_b) - E_p(x_a)$$. 
+\item Le travail du poids $\vec{P} = m\vec{g}$ sur le segment $\vec{AB}$ est $W_{A \to B}(\vec{P}) = -mg(z_b - z_a) = -mgh$.
+\item Le travail de la force de rappel \'elastique d'un ressort de raideur $k$, $\vec{F} = -k.x\vec{i}$ est $W_{A \to B}(\vec{F}) = -\frac{1}{2}k(x_a^2 - x_b^2)$.
 \end{itemize}
 
 
@@ -95,8 +95,8 @@ $$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overright
 \begin{itemize}
 \item L'\'energie m\'ecanique d'un syst\`eme $E_m = E_c + E_p$ avec $E_c$ l'\'energie cin\'etique qui d\'epend de la masse et de la norme de la vitesse du syst\`eme physique \'etudi\'e et de l'\'energie potentielle $E_p$ qui correspond aux forces exerc\'ees sur le syst\`eme.
 \item L'\'energie cin\'etique du syst\`eme $E_c = \frac{1}{2}mv^2$
-\item L'\'energie potentielle qui correspond \`a l'ensemble des forces conservatives qui s'exercent sur le syst\'eme, $E_p(B) - E_p(A) = W_{A \to B}(\overrightarrow{F}_{conservatives})$
-\item $E_m(B) - E_m(A) = W_{A \to B}(\overrightarrow{F}_{non\, conservatives})$
+\item L'\'energie potentielle qui correspond \`a l'ensemble des forces conservatives qui s'exercent sur le syst\'eme, $E_p(B) - E_p(A) = W_{A \to B}(\vec{F}_{conservatives})$
+\item $E_m(B) - E_m(A) = W_{A \to B}(\vec{F}_{non\, conservatives})$
 \end{itemize}
 
 \subsubsection*{Puissance}
@@ -109,7 +109,7 @@ $$W_{A \to B}(\overrightarrow{F}) = \int_{A \to B} \overrightarrow{F}.\overright
 
 $$
 \begin{array}{l l}
-\text{polaire vers cart\'esienne} & \text{cart\'esienne vers polaire} \\
+\text{Polaire vers cart\'esienne} & \text{Cart\'esienne vers polaire} \\
 \left\{
 \begin{array}{l }
  x = \rho \cos(\theta) \\
@@ -126,6 +126,12 @@ $$
 \\
 \end{array}
 $$
+
+\begin{itemize}
+\item le vecteur dans le rep\`ere $(\vec{i},\vec{j})$ est $\vec{u}_{\rho} = \cos\theta \vec{i} + \sin\theta\vec{j}$ et $\vec{u}_{\theta} = -\sin\theta \vec{i} + \cos\theta\vec{j}$
+\item Le vecteur position d'un point est $\vec{r}(t) = \rho(t)\vec{u}_{\rho}(t)$
+\item Le vecteur vitesse est $\vec{v} = \frac{d\vec{r}}{dt} = \dot{\rho}(t)\vec{u}_{\rho} + \rho\dot{\theta}(t)\vec{u}_{\theta}$
+\end{itemize}
 
 
 \subsection*{Exo I}
@@ -181,6 +187,28 @@ $$
 
 \subsubsection*{III}
 \subsubsection*{III.1}
+
+\begin{tikzpicture}[x=1cm,y=1cm]
+
+  \draw[<->] (-4,0)--(4,0); % l'axe des abscisses
+  \draw[<->] (0,-4)--(0,4); % l'axe des ordonnées
+
+  \draw (0,0) -- (0:3cm) circle [radius=.1] node[right]{$t=0$};
+  \draw (0,0) -- (25:3cm) circle [radius=.1] node[right]{$t=1$} ;
+  \draw (0,0) -- (50:3cm) circle [radius=.1] node[right]{$t=2$};
+  \draw (0,0) -- (75:3cm) circle [radius=.1] node[right]{$t=3$};
+  \draw (0,0) -- (100:3cm) circle [radius=.1] node[right]{$t=4$};
+    
+\end{tikzpicture}
+
+D\'eriv\'ees de $\rho$ et $\theta$
+$$\dot{\rho}(t) = 0, \dot{\theta}(t) = \omega$$ 
+
+La vitesse en coordonnn\'ees polaires
+$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho\dot{\theta}(t)\vec{u}_{\theta} = 0\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta}$$
+
+La vitesse en coordonnn\'ees cart\'esiennes
+$$\vec{v} = 0\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta} = 0(\cos\theta \vec{i} + \sin\theta\vec{j}) + \rho_{0}\omega(-\sin\theta \vec{i} + \cos\theta\vec{j}) = \rho_{0}\omega(-\sin\theta \vec{i} + \cos\theta\vec{j})$$
 
 
 
