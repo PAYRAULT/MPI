@@ -130,9 +130,26 @@ $$
 \begin{itemize}
 \item le vecteur dans le rep\`ere $(\vec{i},\vec{j})$ est $\vec{u}_{\rho} = \cos\theta \vec{i} + \sin\theta\vec{j}$ et $\vec{u}_{\theta} = -\sin\theta \vec{i} + \cos\theta\vec{j}$
 \item Le vecteur position d'un point est $\vec{r}(t) = \rho(t)\vec{u}_{\rho}(t)$
-\item Le vecteur vitesse est $\vec{v} = \frac{d\vec{r}}{dt} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta}$
-\item Le vecteur acc\'el\'eration est $\vec{a} = \frac{d\vec{v}}{dt} = (\ddot{\rho}(t) - \rho\dot{\theta}^{2}(t))\vec{u}_{\rho} + (\rho(t)\ddot{\theta}(t) + 2\dot{\rho}(t)\dot{\theta}(t))\vec{u}_{\theta}$
+\item Le vecteur vitesse est $\vec{v} = \frac{d\vec{r}}{dt} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta} = \dot{\rho}\vec{u}_{\rho} + \rho\dot{\theta}\vec{u}_{\theta}$
+\item Le vecteur acc\'el\'eration est $\vec{a} = \frac{d\vec{v}}{dt} = (\ddot{\rho}(t) - \rho\dot{\theta}^{2}(t))\vec{u}_{\rho} + (\rho(t)\ddot{\theta}(t) + 2\dot{\rho}(t)\dot{\theta}(t))\vec{u}_{\theta} = (\ddot{\rho} - \rho\dot{\theta}^{2})\vec{u}_{\rho} + (\rho\ddot{\theta} + 2\dot{\rho}\dot{\theta})\vec{u}_{\theta}$
 \end{itemize}
+
+Posons $\vec{u}_{T} = \vec{u}_{\theta}$ et $\vec{u}_{N} = \vec{u}_{\rho}$. Donc $\vec{u}_{T}$ est un vecteur tangent \`a la trajectoire du point et $\vec{u}_{N}$ est un vecteur normal \`a la trajectoire du point dirig\'e vers le centre du rayon de courbure.\\
+
+Pour une trajectoire sur un cercle de rayon $R$. on a:
+
+\begin{itemize}
+\item $\vec{v} = R\dot{\theta}\vec{u}_{T} = v\vec{u}_{T}$
+\item $\vec{a} = R\dot{\theta}^2\vec{u}_{N} + R\ddot{\theta}\vec{u}_{T}= \frac{v^2}{R}\vec{u}_{N} + \frac{dv}{dt}\vec{u}_{T}$
+\end{itemize}
+
+
+Pour une trajectoire sur un cercle, on d\'efinit l'abcisse curviligne $s(t)=R\theta(t)$. On a
+\begin{itemize}
+\item $\vec{v} = \frac{ds}{dt}$
+\item $\vec{a} = \frac{\dot{s}^2}{R}\vec{u}_{N} + \ddot{s}\vec{u}_{T}$
+\end{itemize}
+
 
 
 \subsection*{Exo I}
@@ -377,6 +394,71 @@ $$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta}
 L'acc\'el\'eration en coordonnn\'ees polaires
 $$\vec{a} = (\ddot{\rho}(t) - \rho\dot{\theta}^{2}(t))\vec{u}_{\rho} + (\rho(t)\ddot{\theta}(t) + 2\dot{\rho}(t)\dot{\theta}(t))\vec{u}_{\theta} = (0-\rho_{0}\omega^2)\vec{u}_{\rho} + (\rho_{0}.0+2.0.\omega)\vec{u}_{\theta} = -\rho_{0}\omega^2\vec{u}_{\rho}$$
 
+
+\subsubsection*{IV.2}
+$$\rho(t) = \alpha t,\, \theta=\omega t $$
+
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \draw[<->] (-6,0)--(6,0); % l'axe des abscisses
+  \draw[<->] (0,-2)--(0,5); % l'axe des ordonnées
+
+  \draw (0,0) -- (0:0cm) circle [radius=.1] node[right]{$t=0$};
+  \draw (0,0) -- (25:1cm) circle [radius=.1] node[right]{$t=1$};
+  \draw (0,0) -- (50:2cm) circle [radius=.1] node[right]{$t=2$};
+  \draw (0,0) -- (75:3cm) circle [radius=.1] node[right]{$t=3$};
+  \draw (0,0) -- (100:4cm) circle [radius=.1] node[right]{$t=4$};
+  \draw (0,0) -- (125:5cm) circle [radius=.1] node[right]{$t=5$};
+  \draw[scale=1,domain=0:5,smooth,variable=\x,blue] plot ({\x*cos(25*\x)},{\x*sin(25*\x)});
+        
+\end{tikzpicture}
+
+D\'eriv\'ees de $\rho$ et $\theta$
+$$\dot{\rho}(t) = \alpha, \dot{\theta}(t) = \omega$$ 
+
+D\'eriv\'ees de $\dot{\rho}$ et $\dot{\theta}$
+$$\ddot{\rho}(t) = 0, \ddot{\theta}(t) = 0$$ 
+
+La vitesse en coordonnn\'ees polaires
+$$\vec{v} = \dot{\rho}(t)\vec{u}_{\rho} + \rho(t)\dot{\theta}(t)\vec{u}_{\theta} = \alpha\vec{u}_{\rho} + \alpha t\omega\vec{u}_{\theta}$$
+
+L'acc\'el\'eration en coordonnn\'ees polaires
+$$\vec{a} = (\ddot{\rho}(t) - \rho\dot{\theta}^{2}(t))\vec{u}_{\rho} + (\rho(t)\ddot{\theta}(t) + 2\dot{\rho}(t)\dot{\theta}(t))\vec{u}_{\theta} = (0-\rho_{0}\omega^2)\vec{u}_{\rho} + (\rho_{0}.0+2.\alpha.\omega)\vec{u}_{\theta} = -\rho_{0}\omega^2\vec{u}_{\rho} + 22.\alpha.\omega\vec{u}_{\theta} $$
+
+
+\subsubsection*{Exo V}
+\subsubsection*{V.1}
+$$\rho(t) = \rho_{0},\, \theta(t)=\omega t $$
+
+
+\subsubsection*{Exo VI}
+\subsubsection*{VI.1}
+On a 
+$$W_{A \to B}(\vec{F}_x) = \int_{A \to B} \vec{F}_x.\vec{i}dx = \int_{x_A}^{x_B} f(x)dx$$
+$$W_{A \to B}(\vec{F}_y) = \int_{A \to B} \vec{F}_y.\vec{j}dx = \int_{x_A}^{x_B} f(y)dy$$
+
+La force $\vec{F}$ repr\'esente une \'energie potentielle si la force est conservative. Donc $W_{A \to B}(\vec{F}) + W_{B \to C}(\vec{F}) = W_{A \to C}(\vec{F})$.
+
+Donc
+$$W_{A \to B}(\vec{F}_x) = \int_{A \to B} \vec{F}_x.\vec{i}dx = \int_{x_A}^{x_B} -2x\,dx = [-x^2]_{x_A}^{x_B} = -x_B^2 + x_A^2$$
+$$W_{A \to B}(\vec{F}_y) = \int_{A \to B} \vec{F}_y.\vec{i}dy = \int_{y_A}^{y_B} 2y\,dy = [y^2]_{y_A}^{y_B} = y_B^2 - y_A^2$$
+
+On a
+$$W_{A \to B}(\vec{F_x}) + W_{B \to C}(\vec{F_x}) = -x_B^2 + x_A^2 + -x_C^2 + x_B^2 = x_A^2 + -x_C^2 = W_{A \to C}(\vec{F_x})$$
+$$W_{A \to B}(\vec{F_y}) + W_{B \to C}(\vec{F_y}) = -y_B^2 + y_A^2 + -y_C^2 + y_B^2 = y_A^2 + -y_C^2 = W_{A \to C}(\vec{F_y})$$
+
+La force repr\'esente un \'energie potentielle.x
+
+\subsubsection*{VI.2}
+
+On a
+$$W_{A \to B}(\vec{F}_x) = \int_{A \to B} \vec{F}_x.\vec{i}dx = \int_{x_A}^{x_B} -2y\,dx = [-2xy]_{x_A}^{x_B} = -2y(x_B - x_A)$$
+$$W_{A \to B}(\vec{F}_y) = \int_{A \to B} \vec{F}_y.\vec{i}dy = \int_{y_A}^{y_B} 2x\,dy = [2xy]_{y_A}^{y_B} = 2x(y_B - y_A)$$
+
+On a
+$$W_{A \to B}(\vec{F_x}) + W_{B \to C}(\vec{F_x}) = -x_B^2 + x_A^2 + -x_C^2 + x_B^2 = x_A^2 + -x_C^2 = W_{A \to C}(\vec{F_x})$$
+$$W_{A \to B}(\vec{F_y}) + W_{B \to C}(\vec{F_y}) = -y_B^2 + y_A^2 + -y_C^2 + y_B^2 = y_A^2 + -y_C^2 = W_{A \to C}(\vec{F_y})$$
+
+La force repr\'esente un \'energie potentielle.
 
 
 \end{document}
