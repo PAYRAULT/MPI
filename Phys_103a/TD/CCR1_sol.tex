@@ -677,11 +677,40 @@ Quand on se d\'eplace du point A $(R_0,\theta = 0)$ au point B $(R_0, \theta=\pi
 $$W_{A \to B}(\vec{F})= A\rho^2\left[\sin \theta \right]_{(R_0,\theta=0)}^{(R_0,\theta=\pi/2)} = AR_0^2\sin(\frac{\pi}{2}) - AR_0^2\sin(0) = AR_0^2$$
 
 Quand on se d\'eplace de l'origine au point B $(R_0, \theta=\pi/2)$ en ligne droite, on a $\theta$ qui est constant. Donc le travail de cette force est
-$$W_{O \to B}(\vec{F})=\left[ \frac{1}{2}A\rho^2 \sin \theta \right]_{O}^{B} = \frac{1}{2}AR_0^2\sin(\frac{\pi}{2}) - \frac{1}{2}A0^2\sin(0) = \frac{1}{2}AR_0^2$$
+$$W_{O \to B}(\vec{F})=\left[ \frac{1}{2}A\rho^2 \sin \theta \right]_{O}^{B} = \frac{1}{2}AR_0^2\sin(\frac{\pi}{2}) - \frac{1}{2}A0^2\sin(\frac{\pi}{2}) = \frac{1}{2}AR_0^2$$
 
 On a 
 $$W_{O \to B} = \frac{1}{2}AR_0^2 \neq 0 + AR_0^2 = W_{O \to A} + W_{A \to B}$$
 La force $F$ n'est pas conservative. Il au 2 fois plus de travail en passant pas le point $A$ pour aller de l'origine au point $B$.
+
+
+\subsubsection*{VII.2}
+$$F_{\rho} = A \rho \cos \theta,\, F_{\theta} = -A \rho \sin \theta$$
+
+On a 
+$$W_{O \to A}(\vec{F}) = \int_{O \to A} \vec{F}.d\vec{l}$$.
+et
+$$d\vec{l} = d\rho\vec{u}_{\rho} + \rho d\theta\vec{u}_{\theta}$$
+
+On effectue le produit scalaire
+$$\vec{F}.d\vec{l} = (A \rho \cos \theta\vec{u}_{\rho} - A \rho \sin \theta\vec{u}_{\theta}).(d\rho\vec{u}_{\rho} + \rho d\theta\vec{u}_{\theta}) = (A \rho \cos \theta) (d\rho) + (-A \rho \sin \theta)(\rho d\theta)$$
+
+Donc 
+$$W_{O \to A}(\vec{F}) = \int_{O \to A} {A \rho \cos \theta d\rho - A \rho^2 \sin \theta d\theta} = \int_{O \to A} {A \rho \cos` \theta d\rho} - \int_{O \to A} {A \rho^2 \sin \theta d\theta}$$
+
+Quand on se d\'eplace de l'origine 0 au point A $(R_0,\theta = 0)$ en ligne droite, $\theta$ est constant. Donc le travail de cette force est
+$$W_{O \to A}(\vec{F})=\left[ \frac{1}{2}A\rho^2 \cos \theta \right]_{O}^{A} = \frac{1}{2}AR_0^2\cos(0) - \frac{1}{2}A0^2\cos(0) = \frac{1}{2}AR_0^2$$
+
+Quand on se d\'eplace du point A $(R_0,\theta = 0)$ au point B $(R_0, \theta=\pi/2)$ en se d\'eplacant sur le cercle de rayon $R_0$, on a $\rho$ qui est constant. Donc le travail de cette force est
+$$W_{A \to B}(\vec{F})= A\rho^2\left[\cos \theta \right]_{(R_0,\theta=0)}^{(R_0,\theta=\pi/2)} = AR_0^2\cos(\frac{\pi}{2}) - AR_0^2\cos(0) = -AR_0^2$$
+
+Quand on se d\'eplace de l'origine au point B $(R_0, \theta=\pi/2)$ en ligne droite, on a $\theta$ qui est constant. Donc le travail de cette force est
+$$W_{O \to B}(\vec{F})=\left[ \frac{1}{2}A\rho^2 \cos \theta \right]_{O}^{B} = \frac{1}{2}AR_0^2\cos(\frac{\pi}{2}) - \frac{1}{2}A0^2\cos(\frac{\pi}{2}) = 0$$
+
+On a 
+$$W_{O \to B} = 0 \neq \frac{1}{2}AR_0^2 - AR_0^2 = W_{O \to A} + W_{A \to B}$$
+La force $F$ n'est pas conservative. 
+
 
 
 \end{document}
