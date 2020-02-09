@@ -495,6 +495,7 @@ Le rayon de courbure en $x=0$ ne d\'epend pas de $v_0$ car la vitesse $\vec{v}(0
 
 \subsubsection*{Exo VI}
 \subsubsection*{VI.1}
+$$F_x = -2x,\, F_y = 2y$$
 
 Dans un premier temps, on v\'erifie que la force est conservative en appliquant le crit\`ere de Schwarz dans le plan:
 $$
@@ -515,13 +516,71 @@ $$
 \right. 
 $$
 
-Int\'egration de la premi\`ere \'equation: $E_p(x,y) = \inf{-F_x\, dx} = \int{2x\, dx} = x^2 + f(y)$.\\
-Identification de la fonction $f(y)$. $2y = -\frac{dE_p(x,y)}{dy} = -\frac{d(x^2+f(y)}{dy} = -f'(y)$ Donc $f(y) = -y^2$.\\
+Int\'egration de la premi\`ere \'equation: $E_p(x,y) = \int{-F_x\, dx} = \int{2x\, dx} = x^2 + f(y)$.\\
+Identification de la fonction $f(y)$. 
+$$2y = -\frac{dE_p(x,y)}{dy} = -\frac{d(x^2+f(y)}{dy} = -f'(y)$$
+Donc $f(y) = -y^2$.\\
 
 L'\'energie potentielle d\'eriv\'ee est donc $E_p = x^2 - y^2$.
 
 
 \subsubsection*{VI.2}
+$$F_x = -2y,\, F_y = -2x$$
+
+Dans un premier temps, on v\'erifie que la force est conservative en appliquant le crit\`ere de Schwarz dans le plan:
+$$
+\left\{
+\begin{array}{l }
+	\frac{dF_x}{dy} = \frac{d(-2y)}{dy} = -2\\
+	\frac{dF_y}{dx} = \frac{d(-2x)}{dx} = -2\\
+\end{array}
+\right. 
+$$
+La force est conservative. Calcul de l'\'energie potentielle $E_p$ d\'eriv\'ee de la force. Il faut trouver $E_p(x,y)$ tel que :
+$$
+\left\{
+\begin{array}{l }
+	F_x = -2y = -\frac{dE_p(x,y)}{dx} \\
+	F_y =  -2x = -\frac{dE_p(x,y)}{dy} \\
+\end{array}
+\right. 
+$$
+
+Int\'egration de la premi\`ere \'equation: $E_p(x,y) = \int{-F_x\, dx} = \int{2y\, dx} = 2yx + f(y)$.\\
+Identification de la fonction $f(y)$. 
+$$2x = \frac{dE_p(x,y)}{dy} = \frac{d(2yx+f(y))}{dy} = 2x+f'(y)$$
+Donc $f'(y) = 0$ et $f(y) = C^{ste}$.\\
+
+L'\'energie potentielle d\'eriv\'ee est donc $E_p = 2yx + C^{ste}$.
+
+\subsubsection*{VI.3}
+$$F_{\rho} = \sin \theta,\, F_{\theta} = \cos \theta$$
+
+Dans un premier temps, on v\'erifie que la force est conservative en appliquant le crit\`ere de Schwarz dans le plan:
+$$
+\left\{
+\begin{array}{l }
+	\frac{dF_{\rho}}{d\theta} = \frac{d(\sin \theta)}{d\theta} = \cos \theta\\
+	\frac{d(\rho F_{\theta})}{d\rho} = \frac{d(\rho \cos \theta)}{d\rho} = \cos \theta\\
+\end{array}
+\right. 
+$$
+La force est conservative. Calcul de l'\'energie potentielle $E_p$ d\'eriv\'ee de la force. Il faut trouver $E_p(x,y)$ tel que :
+$$
+\left\{
+\begin{array}{l }
+	F_{\rho} = \sin \theta = -\frac{dE_p(\rho,\theta)}{d\rho} \\
+	\rho F_{\theta} =  \rho \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} \\
+\end{array}
+\right. 
+$$
+
+Int\'egration de la premi\`ere \'equation: $E_p(\rho,\theta) = -\int{F_{\rho}\, d\rho} = -\int{\sin \theta\, d\rho} = \rho \cos \theta + f(\theta)$.\\
+Identification de la fonction $f(\theta)$. 
+$$\rho \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} = -\frac{d(-\rho \sin \theta + f(\theta)}{dy} = \rho \cos \theta + f'(\theta)$$
+Donc $f'(\theta) = 0$ et $f(\theta) = C^{ste}$.\\
+
+L'\'energie potentielle d\'eriv\'ee est donc $E_p = \rho \cos \theta + C^{ste}$.
 
 
 
