@@ -432,33 +432,34 @@ $$\rho(t) = \rho_{0},\, \theta(t)=\omega t $$
 
 \subsubsection*{Exo VI}
 \subsubsection*{VI.1}
-On a 
-$$W_{A \to B}(\vec{F}_x) = \int_{A \to B} \vec{F}_x.\vec{i}dx = \int_{x_A}^{x_B} f(x)dx$$
-$$W_{A \to B}(\vec{F}_y) = \int_{A \to B} \vec{F}_y.\vec{j}dx = \int_{x_A}^{x_B} f(y)dy$$
 
-La force $\vec{F}$ repr\'esente une \'energie potentielle si la force est conservative. Donc $W_{A \to B}(\vec{F}) + W_{B \to C}(\vec{F}) = W_{A \to C}(\vec{F})$.
+Dans un premier temps, on v\'erifie que la force est conservative en appliquant le crit\`ere de Schwarz dans le plan:
+$$
+\left\{
+\begin{array}{l }
+	\frac{dF_x}{dy} = \frac{d(-2x)}{dy} = 0\\
+	\frac{dF_y}{dx} = \frac{d(2y)}{dx} = 0\\
+\end{array}
+\right. 
+$$
+La force est conservative. Calcul de l'\'energie potentielle $E_p$ d\'eriv\'ee de la force. Il faut trouver $E_p(x,y)$ tel que :
+$$
+\left\{
+\begin{array}{l }
+	F_x = -2x = -\frac{dE_p(x,y)}{dx} \\
+	F_y =  2y = -\frac{dE_p(x,y)}{dy} \\
+\end{array}
+\right. 
+$$
 
-Donc
-$$W_{A \to B}(\vec{F}_x) = \int_{A \to B} \vec{F}_x.\vec{i}dx = \int_{x_A}^{x_B} -2x\,dx = [-x^2]_{x_A}^{x_B} = -x_B^2 + x_A^2$$
-$$W_{A \to B}(\vec{F}_y) = \int_{A \to B} \vec{F}_y.\vec{i}dy = \int_{y_A}^{y_B} 2y\,dy = [y^2]_{y_A}^{y_B} = y_B^2 - y_A^2$$
+Int\'egration de la premi\`ere \'equation: $E_p(x,y) = x^2 + f(y)$.\\
+Identification de la fonction $f(y)$. $2y = -\frac{dE_p(x,y)}{dy} = -\frac{d(x^2+f(y)}{dy} = -f'(y)$ Donc $f(y) = -y^2$.\\
 
-On a
-$$W_{A \to B}(\vec{F_x}) + W_{B \to C}(\vec{F_x}) = -x_B^2 + x_A^2 + -x_C^2 + x_B^2 = x_A^2 + -x_C^2 = W_{A \to C}(\vec{F_x})$$
-$$W_{A \to B}(\vec{F_y}) + W_{B \to C}(\vec{F_y}) = -y_B^2 + y_A^2 + -y_C^2 + y_B^2 = y_A^2 + -y_C^2 = W_{A \to C}(\vec{F_y})$$
+L'\'energie potentielle d\'eriv\'ee est donc $E_p = x^2 - y^2$.
 
-La force repr\'esente un \'energie potentielle.x
 
 \subsubsection*{VI.2}
 
-On a
-$$W_{A \to B}(\vec{F}_x) = \int_{A \to B} \vec{F}_x.\vec{i}dx = \int_{x_A}^{x_B} -2y\,dx = [-2xy]_{x_A}^{x_B} = -2y(x_B - x_A)$$
-$$W_{A \to B}(\vec{F}_y) = \int_{A \to B} \vec{F}_y.\vec{i}dy = \int_{y_A}^{y_B} 2x\,dy = [2xy]_{y_A}^{y_B} = 2x(y_B - y_A)$$
-
-On a
-$$W_{A \to B}(\vec{F_x}) + W_{B \to C}(\vec{F_x}) = -x_B^2 + x_A^2 + -x_C^2 + x_B^2 = x_A^2 + -x_C^2 = W_{A \to C}(\vec{F_x})$$
-$$W_{A \to B}(\vec{F_y}) + W_{B \to C}(\vec{F_y}) = -y_B^2 + y_A^2 + -y_C^2 + y_B^2 = y_A^2 + -y_C^2 = W_{A \to C}(\vec{F_y})$$
-
-La force repr\'esente un \'energie potentielle.
 
 
 \end{document}
