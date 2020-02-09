@@ -154,7 +154,7 @@ Pour une trajectoire sur un cercle, on d\'efinit l'abcisse curviligne $s(t)=R\th
 
 
 
-\subsection*{Exo I}
+\subsection*{Exo I - Liens entre Coordonn\'ees}
 \subsubsection*{I.1.a}
 $$
 \left\{
@@ -205,7 +205,7 @@ $$
 \right. 
 $$
 
-\subsubsection*{Exo II}
+\subsection*{Exo II - Rep\`ere en coordonn\'ees polaires}
 \begin{tikzpicture}[x=1cm,y=1cm]
 
   \draw[<->] (-6,0)--(6,0); % l'axe des abscisses
@@ -224,7 +224,7 @@ $$
 
 
 
-\subsubsection*{Exo III}
+\subsection*{Exo III - Vitesse en coordonn\'ees polaires}
 \subsubsection*{III.1}
 $$\rho(t) = \rho_{0},\, \theta=\omega t $$
 
@@ -366,7 +366,7 @@ La vitesse en coordonnn\'ees cart\'esiennes
 $$\vec{v} = \alpha\vec{u}_{\rho} + \rho_{0}\omega\vec{u}_{\theta} = \alpha(\cos\theta \vec{i} + \sin\theta\vec{j}) + \alpha t\omega(-\sin\theta \vec{i} + \cos\theta\vec{j}) = (\alpha\cos\theta-\alpha t\omega\sin\theta)\vec{i} + ((\alpha\sin\theta+\alpha t\omega\cos\theta))\vec{j}$$
 
 
-\subsubsection*{Exo IV}
+\subsection*{Exo IV - Vitesse et acc\'el\'eration en coordonn\'ees polaires}
 \subsubsection*{IV.1}
 $$\rho(t) = \rho_{0},\, \theta(t)=\omega t $$
 
@@ -427,7 +427,7 @@ L'acc\'el\'eration en coordonnn\'ees polaires
 $$\vec{a} = (\ddot{\rho}(t) - \rho\dot{\theta}^{2}(t))\vec{u}_{\rho} + (\rho(t)\ddot{\theta}(t) + 2\dot{\rho}(t)\dot{\theta}(t))\vec{u}_{\theta} = (0-\rho_{0}\omega^2)\vec{u}_{\rho} + (\rho_{0}.0+2.\alpha.\omega)\vec{u}_{\theta} = -\rho_{0}\omega^2\vec{u}_{\rho} + 22.\alpha.\omega\vec{u}_{\theta} $$
 
 
-\subsubsection*{Exo V}
+\subsection*{Exo V - Coordonn\'ees intrins\`eques}
 \subsubsection*{V.1}
 $$\rho(t) = \rho_{0},\, \theta(t)=\omega t $$
 Voir courbe Exo III.3\\
@@ -493,7 +493,7 @@ On a $\vec{a} = \dot{v}\vec{u}_T + \frac{v^2(0)}{R}\vec{u}_N$. En $x=0$, on a $\
 
 Le rayon de courbure en $x=0$ ne d\'epend pas de $v_0$ car la vitesse $\vec{v}(0)$ est normale \`a l'acc\'el\'eration $\vec{a}(0)$.
 
-\subsubsection*{Exo VI}
+\subsection*{Exo VI - \'Energie}
 \subsubsection*{VI.1}
 $$F_x = -2x,\, F_y = 2y$$
 
@@ -653,6 +653,35 @@ $$\rho^2 \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} = -\frac{d(-2\rho \sin
 Donc $f'(\theta) = 0$ et $f(\theta) = C^{ste}$.\\
 
 L'\'energie potentielle d\'eriv\'ee est donc $E_p = -2\rho \sin \theta + C^{ste}$.
+
+
+\subsection*{Exo VII - Travail}
+\subsubsection*{VII.1}
+$$F_{\rho} = A \rho \sin \theta,\, F_{\theta} = A \rho \cos \theta$$
+
+On a 
+$$W_{O \to A}(\vec{F}) = \int_{O \to A} \vec{F}.d\vec{l}$$.
+et
+$$d\vec{l} = d\rho\vec{u}_{\rho} + \rho d\theta\vec{u}_{\theta}$$
+
+On effectue le produit scalaire
+$$\vec{F}.d\vec{l} = (A \rho \sin \theta\vec{u}_{\rho} + A \rho \cos \theta\vec{u}_{\theta}).(d\rho\vec{u}_{\rho} + \rho d\theta\vec{u}_{\theta}) = (A \rho \sin \theta) (d\rho) + (A \rho \cos \theta)(\rho d\theta)$$
+
+Donc 
+$$W_{O \to A}(\vec{F}) = \int_{O \to A} {A \rho \sin \theta d\rho + A \rho^2 \cos \theta d\theta} = \int_{O \to A} {A \rho \sin \theta d\rho} + \int_{O \to A} {A \rho^2 \cos \theta d\theta}$$
+
+Quand on se d\'eplace de l'origine 0 au point A $(R_0,\theta = 0)$ en ligne droite, $\theta$ est constant. Donc le travail de cette force est
+$$W_{O \to A}(\vec{F})=\left[ \frac{1}{2}A\rho^2 \sin \theta \right]_{O}^{A} = \frac{1}{2}AR_0^2\sin(0) - \frac{1}{2}A0^2\sin(0) = 0$$
+
+Quand on se d\'eplace du point A $(R_0,\theta = 0)$ au point B $(R_0, \theta=\pi/2)$ en se d\'eplacant sur le cercle de rayon $R_0$, on a $\rho$ qui est constant.Donc le travail de cette force est
+$$W_{A \to B}(\vec{F})= A\rho^2\left[\sin \theta \right]_{(R_0,\theta=0)}^{(R_0,\theta=\pi/2)} = AR_0^2\sin(\frac{\pi}{2}) - AR_0^2\sin(0) = AR_0^2$$
+
+Quand on se d\'eplace de l'origine au point B $(R_0, \theta=\pi/2)$ en ligne droite, on a $\theta$ qui est constant. Donc le travail de cette force est
+$$W_{O \to B}(\vec{F})=\left[ \frac{1}{2}A\rho^2 \sin \theta \right]_{O}^{B} = \frac{1}{2}AR_0^2\sin(\frac{\pi}{2}) - \frac{1}{2}A0^2\sin(0) = \frac{1}{2}AR_0^2$$
+
+On a 
+$$W_{O \to B} = \frac{1}{2}AR_0^2 \neq 0 + AR_0^2 = W_{O \to A} + W_{A \to B}$$
+La force $F$ n'est pas conservative. Il au 2 fois plus de travail en passant pas le point $A$ pour aller de l'origine au point $B$.
 
 
 \end{document}
