@@ -148,6 +148,8 @@ Pour une trajectoire sur un cercle, on d\'efinit l'abcisse curviligne $s(t)=R\th
 \begin{itemize}
 \item $\vec{v} = \frac{ds}{dt}$
 \item $\vec{a} = \frac{\dot{s}^2}{R}\vec{u}_{N} + \ddot{s}\vec{u}_{T}$
+\item La courbure d'une trajectoire autour d'un point $A$ est $\mathcal{C} = \frac{d\theta}{ds}$. 
+\item Le rayon de courbure d'une trajectoire autour d'un point $A$ est $\mathcal{C} = \frac{1}{C} = \frac{ds}{d\theta}$.
 \end{itemize}
 
 
@@ -428,7 +430,68 @@ $$\vec{a} = (\ddot{\rho}(t) - \rho\dot{\theta}^{2}(t))\vec{u}_{\rho} + (\rho(t)\
 \subsubsection*{Exo V}
 \subsubsection*{V.1}
 $$\rho(t) = \rho_{0},\, \theta(t)=\omega t $$
+Voir courbe Exo III.3\\
 
+Le point se d\'eplace sur un cercle de rayon $\rho_{0}$. Donc la distance parcourue par le point par rapport \`a l'axe $\mathcal{O}_x$ est $s(t) = \rho_{0}\theta(t) = \rho_{0}\omega t$.\\
+
+Le rep\`ere intins\`eque est $\Omega$ \`a l'intersection entre le cercle et l'axe $\mathcal{O}_x$. Le sens de d\'eplacement est le sens anti-horaire (sens de d\'eplacement du point.\\
+
+Le rayon de courbure $R = \frac{ds}{d\theta} = \frac{s(t)dt}{theta(t)dt} = \frac{s(t_2)-s(t_1)}{\theta(t_2)-\theta(t_1)} = \frac{\rho_0\theta(t_2)-\rho_0\theta(t_1)}{\theta(t_2)-\theta(t_1)} = \rho_{0}$.\\
+
+La vitesse tangentielle pour une trajectoire sur un cercle de rayon $R$ est $R\dot{\theta}$. Donc $\vec{v}=\rho_0\omega$.\\
+
+L'acc\'el\'eration tangentielle pour un cercle de rayon $R$ est $R\ddot{\theta}$. Donc l'acc\'el\'eration tangentielle est \'egale \`a $0$.\\
+
+L'acc\'el\'eration normale pour un cercle de rayon $R$ est $R\dot{\theta}^2$. Donc l'acc\'el\'eration normale est \'egale \`a $\rho_{0}\omega^2$.\\
+
+L'acc\'el\'eration en coordonn\'ees polaires est $\vec{a} = 0\vec{u}_{T} +  \rho_{0}\omega^2\vec{u}_{N}$.
+
+\subsubsection*{V.2}
+$$\rho(t) = \rho_{0},\, \theta(t)=\alpha t^2 $$
+Voir courbe Exo III.4\\
+
+Le point se d\'eplace sur un cercle de rayon $\rho_{0}$. Donc la distance parcourue par le point par rapport \`a l'axe $\mathcal{O}_x$ est $s(t) = \rho_{0}\theta(t) = \rho_{0}\alpha t^2$.\\
+
+Le rep\`ere intins\`eque est $\Omega$ \`a l'intersection entre le cercle et l'axe $\mathcal{O}_x$. Le sens de d\'eplacement est le sens anti-horaire (sens de d\'eplacement du point.\\
+
+Le rayon de courbure $R = \frac{ds}{d\theta} = \frac{s(t)dt}{theta(t)dt} = \frac{s(t_2)-s(t_1)}{\theta(t_2)-\theta(t_1)} = \frac{\rho_0\theta(t_2)-\rho_0\theta(t_1)}{\theta(t_2)-\theta(t_1)} = \rho_{0}$.\\
+
+La vitesse tangentielle pour une trajectoire sur un cercle de rayon $R$ est $R\dot{\theta}$. Donc $\vec{v}=2\rho_0\alpha t$.\\
+
+L'acc\'el\'eration tangentielle pour un cercle de rayon $R$ est $R\ddot{\theta}$. Donc l'acc\'el\'eration tangentielle est \'egale \`a $2\rho_{0}\alpha$.\\
+
+L'acc\'el\'eration normale pour un cercle de rayon $R$ est $R\dot{\theta}^2$. Donc l'acc\'el\'eration normale est \'egale \`a $4\rho_{0}\omega^2t^2$.\\
+
+L'acc\'el\'eration en coordonn\'ees polaires est $\vec{a} = 2\rho_{0}\alpha\vec{u}_{T} +  4\rho_{0}\omega^2t^2vec{u}_{N}$.
+
+\subsubsection*{V.2}
+$$y = \frac{1}{2}\alpha x^2,\, x=v_0 t$$
+
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \draw[<->] (-1,0)--(9,0); % l'axe des abscisses
+  \draw[<->] (0,-1)--(0,17); % l'axe des ordonnées
+
+  \draw (0,0) circle [radius=.1] node[right]{$t=0$};
+  \draw (2,1) circle [radius=.1] node[right]{$t=1$};
+  \draw (4,4) circle [radius=.1] node[right]{$t=2$};
+  \draw (6,9) circle [radius=.1] node[right]{$t=3$};
+  \draw (8,16) circle [radius=.1] node[right]{$t=4$};
+  \draw[scale=1,domain=0:4,smooth,variable=\t,blue] plot ({2*\t)},{1/2*1/2*4*\t*\t)});
+        
+\end{tikzpicture}
+
+Le d\'eplacement du point sur la trajectoire est $x\vec{i}+y\vec{j}$ dans le rep\`ere cart\'esien. Donc $v_0 t \vec{i} + \frac{1}{2}\alpha x^2 \vec{j} = v_0 t \vec{i} + \frac{1}{2}\alpha v_0^2 t^2 \vec{j}$. La vitesse 
+$$\vec{v}(t) = \frac{v_0 t \vec{i} + \frac{1}{2}\alpha v_0^2 t^2 vec{j}}{dt} = v_0 \vec{i} + \alpha v_0^2 t \vec{j}$$
+
+On a $\vec{v}(0) = v_0 \vec{i}$.\\
+
+On a $\vec{a}(t) = \frac{d\vec{v}(t)}{dt} = \frac{v_0\vec{i}+\alpha v_0^2 t \vec{j}}{dt} = 0\vec{i}+\alpha v_0^2\vec{j} = \alpha v_0^2\vec{j}$. \\
+
+On a $\vec{a}(0) = \alpha v_0^2 \vec{j}$.\\
+
+On a $\vec{a} = \dot{v}\vec{u}_T + \frac{v^2(0)}{R}\vec{u}_N$. En $x=0$, on a $\vec{a} = \alpha v_0^2 \vec{j}$ et $\vec{u}_N = \vec{j}$. Donc, le rayon de courbure de la parabole en $x = 0$ est $\frac{v^2(0)}{R} = \alpha v_0^2$. Ce qui fait $R=\frac{1}{\alpha}$. \\
+
+Le rayon de courbure en $x=0$ ne d\'epend pas de $v_0$ car la vitesse $\vec{v}(0)$ est normale \`a l'acc\'el\'eration $\vec{a}(0)$.
 
 \subsubsection*{Exo VI}
 \subsubsection*{VI.1}
@@ -452,7 +515,7 @@ $$
 \right. 
 $$
 
-Int\'egration de la premi\`ere \'equation: $E_p(x,y) = x^2 + f(y)$.\\
+Int\'egration de la premi\`ere \'equation: $E_p(x,y) = \inf{-F_x\, dx} = \int{2x\, dx} = x^2 + f(y)$.\\
 Identification de la fonction $f(y)$. $2y = -\frac{dE_p(x,y)}{dy} = -\frac{d(x^2+f(y)}{dy} = -f'(y)$ Donc $f(y) = -y^2$.\\
 
 L'\'energie potentielle d\'eriv\'ee est donc $E_p = x^2 - y^2$.
