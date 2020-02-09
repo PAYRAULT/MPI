@@ -469,14 +469,14 @@ $$y = \frac{1}{2}\alpha x^2,\, x=v_0 t$$
 
 \begin{tikzpicture}[x=1cm,y=1cm]
   \draw[<->] (-1,0)--(9,0); % l'axe des abscisses
-  \draw[<->] (0,-1)--(0,17); % l'axe des ordonnées
+  \draw[<->] (0,-1)--(0,18); % l'axe des ordonnées
 
   \draw (0,0) circle [radius=.1] node[right]{$t=0$};
   \draw (2,1) circle [radius=.1] node[right]{$t=1$};
   \draw (4,4) circle [radius=.1] node[right]{$t=2$};
   \draw (6,9) circle [radius=.1] node[right]{$t=3$};
   \draw (8,16) circle [radius=.1] node[right]{$t=4$};
-  \draw[scale=1,domain=0:4,smooth,variable=\t,blue] plot ({2*\t)},{1/2*1/2*4*\t*\t)});
+  \draw[scale=1,domain=0:4.2,smooth,variable=\t,blue] plot ({2*\t)},{1/2*1/2*4*\t*\t)});
         
 \end{tikzpicture}
 
@@ -580,7 +580,7 @@ Identification de la fonction $f(\theta)$.
 $$\rho \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} = -\frac{d(-\rho \sin \theta + f(\theta))}{dy} = \rho \cos \theta + f'(\theta)$$
 Donc $f'(\theta) = 0$ et $f(\theta) = C^{ste}$.\\
 
-L'\'energie potentielle d\'eriv\'ee est donc $E_p = \rho \cos \theta + C^{ste}$.
+L'\'energie potentielle d\'eriv\'ee est donc $E_p = -\rho \sin \theta + C^{ste}$.
 
 \subsubsection*{VI.4}
 $$F_{\rho} = \sin \theta,\, F_{\theta} = -\cos \theta$$
@@ -637,22 +637,22 @@ $$
 \right. 
 $$
 
-La force est conservative. Calcul de l'\'energie potentielle $E_p$ d\'eriv\'ee de la force. Il faut trouver $E_p(x,y)$ tel que :
+La force est conservative. Calcul de l'\'energie potentielle $E_p$ d\'eriv\'ee de la force. Il faut trouver $E_p(\rho,\theta)$ tel que :
 $$
 \left\{
 \begin{array}{l }
 	F_{\rho} = 2\rho \sin \theta = -\frac{dE_p(\rho,\theta)}{d\rho} \\
-	\rho F_{\theta} =  \rho \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} \\
+	\rho F_{\theta} =  \rho^2 \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} \\
 \end{array}
 \right. 
 $$
 
-Int\'egration de la premi\`ere \'equation: $E_p(\rho,\theta) = -\int{F_{\rho}\, d\rho} = -\int{2\rho \sin \theta\, d\rho} = \rho \cos \theta + f(\theta)$.\\
+Int\'egration de la premi\`ere \'equation: $E_p(\rho,\theta) = -\int{F_{\rho}\, d\rho} = -\int{2\rho \sin \theta\, d\rho} = -2\rho \sin \theta + f(\theta)$.\\
 Identification de la fonction $f(\theta)$. 
-$$\rho \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} = -\frac{d(-\rho \sin \theta + f(\theta)}{dy} = \rho \cos \theta + f'(\theta)$$
+$$\rho^2 \cos \theta = -\frac{dE_p(\rho,\theta)}{d\theta} = -\frac{d(-2\rho \sin \theta + f(\theta)}{dy} = \rho^2 \cos \theta + f'(\theta)$$
 Donc $f'(\theta) = 0$ et $f(\theta) = C^{ste}$.\\
 
-L'\'energie potentielle d\'eriv\'ee est donc $E_p = \rho \cos \theta + C^{ste}$.
+L'\'energie potentielle d\'eriv\'ee est donc $E_p = -2\rho \sin \theta + C^{ste}$.
 
 
 \end{document}
