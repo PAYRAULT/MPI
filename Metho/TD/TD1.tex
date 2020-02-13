@@ -11,7 +11,7 @@
 \usepackage{color}
 \usepackage{tikz}
 \usepackage{fancyhdr}
-
+\usepackage{enumerate}
 
 %Here I define some theorem styles and shortcut commands for symbols I use often
 \theoremstyle{definition}
@@ -71,8 +71,8 @@
 \setlength{\textwidth}{6.5in}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Phys\_103}
-\lhead{CCR1}
+\rhead{TD1}
+\lhead{M\'ethodologie}
 \rfoot{Page \thepage}
 
 \begin{document}
@@ -139,27 +139,150 @@ $x \in \R, x = \pi$ donc $e^{2ix}= 1$ & $x \in \R, x = \pi \Rightarrow e^{2ix}= 
 \begin{enumerate}
 \item $\forall a, mange(moi,a) \Rightarrow aime(moi,a)$
 \item $\exists a, \lnot aime(moi, a) \land mange(moi, a)$
-\item $\forall p, \lnot aime(p, legume) \Rightarrow forall a, \lnot mange(p, a)$
-\end{enumerate} 
+\item $\forall p, \lnot aime(p, legume) \Rightarrow \forall a, \lnot mange(p, a)$
+\item $(\forall p, \exists a \lnot aime(p, a) \Rightarrow mange(p,a)) \Rightarrow mange(moi, legume)$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Toute personne qui aime quelque chose, le mange
+\item Il existe quelque chose que tout le monde aime et mange
+\end{enumerate}
 \end{enumerate}
 
 \subsubsection*{Exo 10}
 
 \subsubsection*{Exo 11}
+\begin{enumerate}
+\item Il existe une voiture qui n'est pas rouge. 
+\begin{itemize}
+\item P:$\forall v \in voitures, rouge(v)$
+\item (non P):$\lnot(\forall v \in voitures, rouge(v)) = \exists v \in voitures, \lnot rouge(v)$
+\end{itemize}
+\item 
+\begin{itemize}
+\item P:$\exists m \in moutons, ecossais(m) \land cote(m, noir)$
+\item (non P):$\lnot(\exists m \in moutons, ecossais(m) \land cote(m, noir)) = \forall m \in moutons, \lnot ecossais(m) \lor \lnot cote(m. noir)$.
+\end{itemize}
+\item Il existe une \'ecurie avec un cheval non blanc. 
+\begin{itemize}
+\item P:$\forall e \in ecuries, \forall c \in chevaux, dans(c,e) \Rightarrow couleur(c,blanc)$,
+\item (non P): $\lnot(\forall e \in ecuries, \forall c \in chevaux, dans(c,e) \Rightarrow couleur(c,blanc)) = \exists e \in ecurie, \exists c \in cheval, dans(c,e) \land \lnot couleur(blanc,c)$
+\end{itemize}
+\item Il existe un \'etudiant qui se reveille tous les jours de la semaines apr\`es 8 heures. 
+\begin{itemize}
+\item P:$\forall e \in etudiants, \exists j \in jours, \forall h \in heures, reveil(e, j, h) => h < 8$
+\item (non P): $\lnot(\forall e \in etudiants, \exists j \in jours, \exists h \in heures, reveil(e, j, h) => h < 8) = \exists e \in etudiants, \forall j \in jours, \exists h \in heures, reveil(e, j, h) \land h > 8$.
+\end{itemize}
+\item Il existe une prison avec un prisonnier qui aime un des gardiens.
+\begin{itemize}
+\item P:$\forall p \in prisons, \forall d \in detenus, \forall g \in gardiens, \lnot aime(d, g)$
+\item (non P):$\lnot(\forall p \in prisons, \forall d \in detenus, \forall g \in gardiens, \lnot aime(d, g)) = \exists p \in prisons, \exists d \in detenus, \exists g \in gardiens, aime(d, g)$
+\end{itemize}
+\item Il existe une personne habitant Rue du havre ayant les yeux bleus qui ne gagnera pas au loto ou qui ne prendra pas sa retraite avant 50 ans.
+\begin{itemize}
+\item P:$\forall p \in personnes, habite(p, "Rue du Havre") \land yeux(p, bleus) \Rightarrow (gagnant(p, loto) \land retraite\_avant(p, 50)$
+\item (non P):$\lnot(\forall p \in personnes, habite(p, "Rue du Havre") \land yeux(p, bleus) \Rightarrow (gagnant(p, loto) \land retraite\_avant(p, 50)) = \exists p \in personne habite(p, "Rue du Havre") \land yeux(p, bleus) \land \lnot(gagnant(p, loto) \lor \lnot retraite\_avant(p, 50)$
+\end{itemize}
+\end{enumerate}
 
 \subsubsection*{Exo 12}
+\begin{enumerate}
+\item P et Q
+\item non P et non Q
+\item P et non Q
+\item non( Q et non P)
+\item Q et non( Q et P)
+\item non P ou non Q
+\item non(Q et P)
+\item non(Q ou P)
+\end{enumerate}
+
+\subsubsection*{Exo 13}
+\begin{enumerate}
+\item $\forall p \in poules,\, OntDesDents(p) \Rightarrow Mamifere(p) = \forall p \in poules,\, \lnot Mamifere(p) \Rightarrow \lnot OntDesDents(p)$ par contrapos\'ee et $\forall p \in poules,\, \lnot Mamifere(p)$ donc par modus ponens $\lnot OntDesDents(p)$. Raisonnement valide.  
+\item P1:"assiste et non bavarde et ecoute $\Rightarrow$ reussi\_cours", P2:"ecoute $\Rightarrow$ assiste et non bavarde", P3:"ecoute". Donc par Modus Ponens sur P2 et P3 on a P4:"assiste et non bavarde"et Modus Ponens sur P3/P4 et P1, on a "reussi\_cours". Donc "ecoute $\Rightarrow$ reussi\_cours". Raisonnement valide.
+\item P1:"viens\_fete(Pierre) $\Rightarrow$ triste(Marie)", P2:"triste(Marie) $\Rightarrow$ non viens\_fete(Jean)", P3: "non viens\_fete(Jean) $\Rightarrow$ non viens\_fete(Pierre)" , P1 et P2 par transitivit\'e donne P4:"viens\_fete(Pierre) $\Rightarrow$ non viens\_fete(Jean))", P3 et P4 par transitivit\'e donne P5:"viens\_fete(Pierre) $\Rightarrow$ non viens\_fete(Pierre))". Faux par contradiction. Raisonnement invalide.
+\end{enumerate}
+
 
 \subsubsection*{Exo 14}
+\begin{itemize}
+\item bois(j)
+\item dors(j)
+\item mange(j)
+\item content(j)
+\end{itemize}
+\begin{enumerate}[P1:]
+\item "non bois(j) et dors(j) $\Rightarrow$ non content(j)"
+\item "bois(j) $\Rightarrow$ non content(j) et dors(j)"
+\item "non mange(j) $\Rightarrow$ non content(j) ou dors(j) ou (non content(j) et dors(j))"
+\item "mange(j) $\Rightarrow$ content(j) ou bois(j) ou (content(j) et bois(j))"
+\item "content(aujourdhui)"
+\end{enumerate}
+
+
+\begin{itemize}
+\item Contradiction P1 et P5 donne par Modus Ponens P6:"bois(aujourdhui) ou non dors(aujourdhui)". 
+\item Soit bois(aujourdhui) est vrai. Bois(aujourdhui) et P2 donne par Modus Ponens "non content(aujourdhui) et dors(aujourdhui)". Contradiction donc bois(aujourdhui) est faux par l'absurde.
+\item Soit non dors(aujourdhui) est vrai. COntrapos\'ee de P3 et P5 et P6 donne mange"aujourdhui)
+\end{itemize}
+Donc, aujourd'hui, il a mang\'e et il n'a pas dormi.
 
 \subsubsection*{Exo 15}
+\begin{enumerate}[P1:]
+\item Si sur le lieu(N) alors Coupable. "lieu(N) $\Rightarrow$ C"
+\item sur le lieu W. "lieu(W)"
+\end{enumerate}
+
+Cela fait "faux $\Rightarrow$ C" donc on ne peux pas dire si il est coupable ou non.\\
+Il faudrait \'ecrire "lieu(N) $\Leftrightarrow$ C". Il est coupable si et seulement si il \'etait sur le lieu N.
 
 \subsubsection*{Exo 16}
+\begin{itemize}
+\item Les deux proposition ne sont pas compl\'ementaires donc d'autre possibilit\'es existent
+\item P1: "non mange(soupe) $\Rightarrow$ prison" et P2:"mange(soupe)". Cela fait "faux $\Rightarrow$ prison". Donc on ne peux pas conclure car faux implique vrai ou faux.
+\item ??
+\item P2" gagnant $\Rightarrow$ jouer" et P2:"jouer". En prenant la contrapos\'ee de P1 et P2 on a "Faux $\Rightarrow$ non gagnant". Donc on ne peux pas conclure car faux implique vrai ou faux.
+\item Le titre est une g\'en\'eralisation de la r\'eponse sans mentionner la r\'ef\'erence \`a la situation actuelle. Dans une autre situation, la r\'eponse pourrait \^etre diff\'erente. ???
+\end{itemize}
 
 \subsubsection*{Exo 17}
+\begin{itemize}
+\item oasis(P) est vraie si la piste P m\`ene \`a un oasis
+\end{itemize}
+ 
+\begin{enumerate}[P1:]
+\item oasis(droite) ou oasis(gauche)
+\item non oasis(droite)
+\item (P1 et P2) ou (non P1 et non P2)
+\end{enumerate}
+
+\begin{itemize}
+\item Premier cas: "P1 et P2" "non oasis(droite) et (oasis(droite) ou oasis(gauche))" par distribution "(non oasis(droite) et oasis(droite)) ou (non oasis(droite) et oasis(gauche))",
+\item Second cas: "non P1 et non P2" "non(non oasis(droite)) et non (oasis(droite) ou oasis(gauche)))", "oasis(droite) et non oasis(droite) et non oasis(gauche)", "Faux"
+\end{itemize}
+donc il faut prendre la piste de gauche.
 
 \subsubsection*{Exo 18}
+\begin{itemize}
+\item coffre(P) est vraie si le portrait est dans le coffre P.
+\end{itemize}
 
+\begin{enumerate}[P1:]
+\item coffre(1)
+\item non coffre(2)
+\item non coffre(1)
+\item (P1 et non P2 et non P3) ou (non P1 et P2 et non P3) ou (P1 et non P2 et non P3)
+\end{enumerate}
 
+3 cas:
+\begin{itemize}
+\item (P1 et non P2 et non P3). "coffre(1) et non non coffre(2) et non non coffre(1)", "coffre(2) et coffre(1)", pas possible car un seul portrait.
+\item (non P1 et P2 et non P3). "non coffre(1) et non coffre(2) et non non coffre(1)", "Faux"
+\item (non P1 et non P2 et P3). "non coffre(1) et non non coffre(2) et non coffre(1)", "non coffre(1) et coffre(2)".
+\end{itemize}
+
+Le portrait est dans le coffre 2.
 
 \end{document}
 
