@@ -120,13 +120,84 @@ $$(S_0)
 $$
 
 Lorsque $(a_1,a_2,a_3) = (1,1,2)$, le syst\`me est compatible car $2 = 1+1$. 
-Une solution du syst\`eme est $(x,y,z)=(4,1,\frac{1}{3})$.\\
+La solution du syst\`eme est $(x,y,z)=(a,\frac{a-1}{3},\frac{a-2}{6})$.\\
 
-Lorsque $(a_1,a_2,a_3) = (0,0,0)$, le syst\`me est compatible. Une solution du syst\`eme est $(x,y,z)=(0,0,0)$.\\
+Lorsque $(a_1,a_2,a_3) = (0,0,0)$, le syst\`me est compatible. La solution du syst\`eme est $(x,y,z)=(a,\frac{a}{3},\frac{a}{6})$.\\
 
 
-\subsection*{Exercice 1.3}
+\subsection*{Exercice 1.3.a}
+La famille $((1, 2, 3, 0), (3, 1, 2, 0), (2, 3, 1, 0), (3, 2, 1, 0))$ engendre $\R^4$ si
 
+$$ \forall a \in \R^4, \exists (\lambda_1,\lambda_2,\lambda_3,\lambda_4) \in \R^4,
+\left\{ 
+\begin{array}{l l l l l}
+  1\lambda_1 & +3\lambda_2 & +2\lambda_3 & +3\lambda_4  & = a_1 \\
+  1\lambda_1 & +3\lambda_2 & +2\lambda_3 & +3\lambda_4  & = a_2 \\
+  1\lambda_1 & +3\lambda_2 & +2\lambda_3 & +3\lambda_4  & = a_3 \\
+  0\lambda_1 & +0\lambda_2 & +0\lambda_3 & +0\lambda_4  & = a_4 \\
+\end{array}
+\right. 
+$$
+
+Le vecteur $(a_1, a_2, a_3, 1) \in \R^4$ mais ne peux pas \^etre g\'en\'e\'re par la famille. Donc, cette famille n'engendre pas l'espace vectoriel $\R^4$.
+
+\subsection*{Exercice 1.3.b}
+La famille $((1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1))$ est libre si
+$$
+\left\{ 
+\begin{array}{l l l l}
+  1\lambda_1 & +2\lambda_2 & +3\lambda_3   & = 0 \\
+  1\lambda_1 & +3\lambda_2 & +2\lambda_3   & = 0 \\
+  2\lambda_1 & +1\lambda_2 & +3\lambda_3   & = 0 \\
+  2\lambda_1 & +3\lambda_2 & +1\lambda_3   & = 0 \\
+\end{array}
+\right. 
+\implies
+\lambda_1=\lambda_2=\lambda_3=0
+$$
+
+$$L_2 \leftarrow L_2-L_1:\, \lambda_2 - \lambda_3 = 0$$
+$$L_3 \leftarrow L_3-2L_1:\, -3\lambda_2 - 3\lambda_3 = 0$$
+$$L_4 \leftarrow L_4-2L_1:\, -\lambda_2 - 5\lambda_3 = 0$$
+$$L_4 \leftarrow L_4+L_1:\, -6\lambda_3 = 0$$
+
+Donc $\lambda_3 = \lambda_2 = \lambda_1 = 0$. La famille est libre.
+
+\subsection*{Exercice 1.4}
+La famille s'\'ecrit $\mathcal{F} = ((1,1,0),(0,1,1),(0,1,-1))$.
+
+La famille engendre-t-elle $\mathcal{P}_2$?
+bd
+$$ \forall a \in \mathcal{P}^2, \exists (\lambda_1,\lambda_2,\lambda_3) \in \R^3,
+\left\{ 
+\begin{array}{l l l l}
+  \lambda_1 & +\lambda_2 &               & = a_1 \\
+            & \lambda_2  & +\lambda_3   & = a_2 \\
+            & \lambda_2  & -\lambda_3   & = a_3 \\
+\end{array}
+\right. 
+$$
+$$L_3 \leftarrow L_3-L_2:\, -2\lambda_3 = a_3-a_2$$
+$$L_2:\, 2\lambda_2 = a_2+a_3$$
+$$L_1:\, 2\lambda_1 = 2a_1-a_2-a_3$$
+
+Donc $\lambda_1 = \frac{2a_1-a_2-a_3}{2}$, $\lambda_1 = \frac{a_2+a_3}{2}$, $\lambda_1 = \frac{a_3-a_2}{2}$. La famille $\mathcal{F}$ engendre l'espace vectoriel $\mathcal{P}_2$.\\
+
+\medskip
+La famille est-elle libre?
+$$
+\left\{ 
+\begin{array}{l l l l}
+  \lambda_1 & +\lambda_2 &               & = 0 \\
+            & \lambda_2  & +\lambda_3   & = 0 \\
+            & \lambda_2  & -\lambda_3   & = 0 \\
+\end{array}
+\right. 
+$$
+
+$$L_3 \leftarrow L_3-L_2:\, -2\lambda_3 = 0$$
+
+Donc $\lambda_3 = \lambda_2 = \lambda_1 = 0$. La famille $\mathcal{F}$ est libre.
 
 \end{document}
 
