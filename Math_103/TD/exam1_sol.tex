@@ -202,16 +202,52 @@ Donc $\lambda_3 = \lambda_2 = \lambda_1 = 0$. La famille $\mathcal{F}$ est libre
 \subsection*{Exercice 1.5}
 La famille $\mathcal{F} = (x \to \sin(x),x \to f(x))$.
 $$
-\forall g: x \to g(x), \exists \lambda_1 \in \R,
+\forall g: x \to g(x), \exists \lambda_1, \lambda_2 \in \R,
 \left\{ 
 \begin{array}{l l}
-  \lambda_1(x \to \sin(x)) & = x \to g(x) \\
-  \lambda_1(x \to f(x))    & = x \to g(x) \\
+  \lambda_1(x \to \sin(x)) & \lambda_2(x \to f(x)) = x \to g(x) \\
 \end{array}
 \right. 
 $$
 
-Non. Il n'existe pas de $\lambda_1$ qui engendre la fonction $x \to \cos(x)$ car $sin(x) \neq \frac{\cos(x)}{\lambda_1}$.
+Non. Prenons $g: x \to \cos(x)$. Pour $x \to \infty$, on a $\lambda_1(x \to \sin(x)) = (x \to cos(x)$ Il n'existe pas de $\lambda_1$ qui engendre la fonction $x \to \cos(x)$ car $\sin(x) \neq \frac{\cos(x)}{\lambda_1}$.
+
+\subsection*{Exercice 1.6}
+
+La famille $((1, 0, 0, 0), (1, 2, 0, 0), (1, 2, 3, 0), (1, 2, 3, 4))$ est libre si
+$$
+\left\{ 
+\begin{array}{l l l l l}
+  \lambda_1 &  &  &   & = 0 \\
+  \lambda_1 & +2\lambda_2 &  &   & = 0 \\
+  \lambda_1 & +2\lambda_2 & +3\lambda_3 &  & = 0 \\
+  \lambda_1 & +2\lambda_2 & +3\lambda_3 & +4\lambda_4  & = 0 \\
+\end{array}
+\right. 
+\implies
+\lambda_1=\lambda_2=\lambda_3=0
+$$
+
+$$L_1:\,  \lambda_1 = 0$$
+$$L_2:\, 2\lambda_2 = 0$$
+$$L_3:\, 3\lambda_3 = 0$$
+$$L_4:\, 4\lambda_4 = 0$$
+
+Donc $\lambda_3 = \lambda_2 = \lambda_1 = 0$. La famille est libre.
+
+$$E \subset F\, ssi\, \forall f \in E,\, f \in F$$
+On a $E = \lambda_{E1} u_1 + \lambda_{E2} u_2$ et $F = \lambda_{F1} u_1 + \lambda_{F2} u_2 + \lambda_{F3} u_3$\\
+Soit $f \in E$, alors $f \in F$ avec $\lambda_{F1} = \lambda_{E1}, \lambda_{F2} = \lambda_{E2}, \lambda_{F3} = 0$.\\
+L'inclusion est strict car lorsque $\lambda_{F3} \neq 0$ alors $f \in F$ mais $f \notin E$.\\
+
+\medskip
+Soit $f \in F$, alors $f \in \R^4$ avec $\lambda_{1} = \lambda_{F1}, \lambda_{2} = \lambda_{F2}, \lambda_{3} = \lambda_{F3}$.\\
+L'inclusion est strict car $(3,3,3,3) \in \R^4$ mais $(1,2,3,6) \notin F$ car $\lnot \exists \lambda_{F1},\lambda_{F2},\lambda_{F3},\lambda_{F4}, 0\lambda_{F1} + 0\lambda_{F2} 0\lambda_{F3} 0\lambda_{F4} = 6$.\\
+
+
+
+
+
 
 \end{document}
 
