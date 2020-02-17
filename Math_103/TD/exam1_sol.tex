@@ -103,23 +103,23 @@ C'est un syst\`eme d'\'equations homog\`ene de rang 4, \`a 4 inconnues. Aucune l
 \subsection*{Exercice 1.2}
 $$(S_0)
 \left\{ 
-\begin{array}{l l l l l}
-  x & -3y &     & = a_1 & [1]\\
-    & 3y  & -6z & = a_2 & [2]\\
-  x &     & -6z & = a_3 & [3]\\
+\begin{array}{l l l l}
+  x & -3y &     & = a_1 \\
+    & 3y  & -6z & = a_2 \\
+  x &     & -6z & = a_3 \\
 \end{array}
 \right. 
 $$
 
-Calculer [1]+[2], $x - 6z = a_1+a_2$, qui est \'egale \`a l'\'equation [3]. Donc $a_1+a_2 = a_3$.\\
-Ou calculer [1]-[3], $-3y +6z = a_1-a_3$, qui est \'egale \`a la n\'egation de l'\'equation [2]. Donc $a_2 = a_3-a_1$.\\
+Calculer $L2 \leftarrow L1 + L2$, $x - 6z = a_1+a_2$, qui est \'egale \`a l'\'equation [3]. Donc $a_1+a_2 = a_3$.\\
+Ou calculer $L3 \leftarrow L3 - L1$, $-3y +6z = a_1-a_3$, qui est \'egale \`a la n\'egation de l'\'equation [2]. Donc $a_2 = a_3-a_1$.\\
 
 $$(S_0)
 \left\{ 
-\begin{array}{l l l l l}
-  x & -3y &     & = 1 & [1]\\
-    & 3y  & -6z & = 1 & [2]\\
-  x &     & -6z & = 2 & [3]\\
+\begin{array}{l l l l}
+  x & -3y &     & = 1 \\
+    & 3y  & -6z & = 1 \\
+  x &     & -6z & = 2 \\
 \end{array}
 \right. 
 $$
@@ -321,6 +321,62 @@ D\'emonstration de P2\\
 $$L4 \leftarrow e_{22}L4-e_{24}L2:\,  \beta_4 (e_{22}e_{44}-e_{24}e_{42}) = 0$$
 
 \subsection*{Exercice 1.8}
+$$(S)
+\left\{ 
+\begin{array}{l l l l l}
+  x  & +y  & +2z & -t & = 0 \\
+  3x & +4y & +2z & +t & = 0 \\
+\end{array}
+\right. 
+$$
+Premi\`ere \'etape, mettre le syste\`eme sous forme \'echelonn\'ee. $L2 \leftarrow L2 - 3L1$
+$$(S)
+\left\{ 
+\begin{array}{l l l l l}
+  x  & +y & +2z & -t  & = 0 \\
+     &  y & -4z & +4t & = 0 \\
+\end{array}
+\right. 
+$$
+
+C'est un syst\'eme de rang 2, avec 2 inconnues principales $x, y$ et 2 inconnues secondaires $z, t$. Les solutions s'\'ecrivent
+$$(x_1, y_1, z_1, t_1) = (-6z_1+5t_1, 4z_1-4t_1, z_1, t_1) = z_1(-6,4,1,0)+t_1(5,-4,0,1)$$
+
+La famille $(u_1, u_2) = ((-6,4,1,0),(5,-4,0,1))$ forme une base $\mathcal{B}$, de dimension 2 ($p-r$, avec $p$ le nombre d'inconnues du syst\`eme et $r$ son rang).\\
+
+Le vecteur $v =(2,-3,1,-1)$ est solution de $(S)$ si $\exists \lambda_1, \lambda_2, \lambda_1 u_1 + \lambda_2 u_2 = u_3$.
+$$
+\exists \lambda_1, \lambda_2,
+\left\{ 
+\begin{array}{l l l}
+  -6\lambda_1 & +5\lambda_2 & = 2 \\
+  4\lambda_1  & -4\lambda_2 & = -3 \\
+  \lambda_1   & +0\lambda_2 & = 1 \\
+  0\lambda_1  & +\lambda_2   & = -1 \\
+\end{array}
+\right. 
+$$
+Faux, car $-6 -5 \neq 2$.\\
+
+
+La famille $(u_1, u_2, u_3)$ est-elle li\'ee?
+Une famille est li\'ee si $\exists \lambda_1, \lambda_2, \lambda_3,\, \text{non tous nul, } \lambda_1 u_1 + \lambda_2 u_2 + \lambda_3 u_3 = 0$.
+$$
+\exists \lambda_1, \lambda_2, \lambda_3
+\left\{ 
+\begin{array}{l l l l}
+  -6\lambda_1 & +5\lambda_2 & +2\lambda_3 & = 0 \\
+  4\lambda_1  & -4\lambda_2 & -3\lambda_3 & = 0 \\
+  \lambda_1   & +0\lambda_2 & +\lambda_3 & = 0 \\
+  0\lambda_1  & \lambda_2   & -\lambda_3 & = 0 \\
+\end{array}
+\right. 
+$$
+
+$$\lambda_1 = -\lambda_3,\, \lambda_2 = \lambda_3,\,6\lambda_3+5\lambda_3+2\lambda_3 = 0,\, -4\lambda_3 -4\lambda_3 -3\lambda_3 =0$$
+Donc $\lambda_1=\lambda_2=\lambda_3=0$. La famille est libre donc elle n'est pas li\'ee. 
+
+
 
 \subsection*{Exercice 1.9}
 la famille $(v_1, v_2, v_3)$ est une base canonique de $\R^3$ donc
