@@ -180,16 +180,18 @@ La formule de Taylor pour le developpement limit\'e d'ordre $n$ est
 $$f(b) = \sum_{k=0}^n{\frac{(b-a)^k}{k!}f^{(k)}(a)} + \int_a^b{\frac{(b-t)^n}{n!}f^{(n+1)}(t)dt}$$
 
 \subsubsection*{3.1}
-Dans notre cas, $f(x) = sin(x)$, $a = 0$, $b = x$ et $n = 2$.
+Dans notre cas, $f(x) = \sin(x)$, $a = 0$, $b = x$ et $n = 2$.
 Donc 
-$$sin(x) = \sum_{k=0}^2{\frac{(x-0)^k}{k!}\sin^{(k)}(0)} + \int_0^x{\frac{(x-t)^2}{2!}\sin^{(2+1)}(t)dt}$$
-$$sin(x) = \sin(0) + x\cos(0) - \frac{x^2}{2}\sin(0) + \int_0^x{\frac{(x-t)^2}{2}(-\cos(t))dt} = x + \int_0^x{\frac{(x-t)^2}{2}(-\cos(t))dt}$$
+$$\sin(x) = \sum_{k=0}^2{\frac{(x-0)^k}{k!}\sin^{(k)}(0)} + \int_0^x{\frac{(x-t)^2}{2!}\sin^{(2+1)}(t)dt}$$
+$$\sin(x) = \sin(0) + x\cos(0) - \frac{x^2}{2}\sin(0) + \int_0^x{\frac{(x-t)^2}{2}(-\cos(t))dt} = x - \int_0^x{\frac{(x-t)^2}{2}\cos(t)dt}$$
 
 \subsubsection*{3.2}
-Pour $x \in [0,\frac{\pi}{2}]$, on a $\frac{(x-t)^2}{2} >0$ et $-cos(x) <= 0$. Donc, le signe du reste integral est n\'egatif.
+Pour $x \in [0,\frac{\pi}{2}]$, on a $\frac{(x-t)^2}{2} >0$ et $cos(x) \geq 0$. Donc, le signe du reste integral est n\'egatif.
 
 \subsubsection*{3.3}
-On a $x - \frac{x^3}{6} \leq sin(x)$ si $x - \frac{x^3}{6} \leq x + \int_0^x{\frac{(x-t)^2}{2}(-\cos(t))dt}$, donc $\frac{x^3}{6} > \int_0^x{\frac{(x-t)^2}{2}\cos(t)dt}$ ou $\frac{x^3}{3} > \int_0^x{(x-t)^2\cos(t)dt}$ .
+Pour $x \in [0,\frac{\pi}{2}]$, on a $x - \frac{x^3}{6} \leq sin(x)$ si $x - \frac{x^3}{6} \leq x - \int_0^x{\frac{(x-t)^2}{2}\cos(t)dt}$, donc $\frac{x^3}{6} > \int_0^x{\frac{(x-t)^2}{2}\cos(t)dt}$ ou $\frac{x^3}{3} > \int_0^x{(x-t)^2\cos(t)dt}$.
+
+$$\int_0^{\frac{\pi}{2}}{(x-t)^2\cos(t)dt} = \int_0^{\frac{\pi}{2}}{(x^2-2xt+t^2)\cos(t)dt} = x^2\int_0^{\frac{\pi}{2}}{\cos(t)}dt -2x\int_0^{\frac{\pi}{2}}{t\cos(t)dt} + \int_0^{\frac{\pi}{2}}{t^2\cos(t)dt}$$
 
 
 
