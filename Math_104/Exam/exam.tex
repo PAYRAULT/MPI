@@ -205,7 +205,7 @@ $$x+\frac{x^3}{6} \leq \sin(x)$$
 
 
 \subsection*{Exercice 4}
-$$y'(t) + t.y(t) = t^3.y(^3t)$$
+$$y'(t) + t.y(t) = t^3.y^3(t)$$
 \subsubsection*{4.1}
 On a $y(t) = 0$ et $y'(t) = 0$.
 Donc
@@ -219,21 +219,39 @@ Si la fonction ne s'annule pas sur $\R$ donc $y^3(t) \neq 0$, donc on peut divis
 
 \subsubsection*{4.3}
 Posons $z(t) = \frac{1}{y^2(t)}$, on a $z'(t) = -2\frac{y'(t)}{y^3(t)}$. Donc
-$$-\frac{1}{2}z'(t) + z(t) = t^3$$
+$$-\frac{1}{2}z'(t) + t.z(t) = t^3$$
 
 \subsubsection*{4.4}
 L'\'equation homog\`ene est
-$$z'(t) = 2z(t) $$
+$$z'(t) = 2t.z(t) $$
 
-Donc $a(t) = 2$, $A(t) = 2t$. La solution est 
-$$z_0(t) = \lambda e^{2t}$$
+Donc $a(t) = 2t$, $A(t) = t^2$. La solution de l'\'equation homog\`ene est
+$$z_0(t) = \lambda e^{t^2}$$
 
-Il faut que $z_0(t) > 0$. On a $e^{2t} > 0$ donc il faut que $\lambda > 0$.
+La solution particuli\`ere par la m\'ethode de la variation de la constante.
+Si l'\'equation homog\`ene est de la forme:
+$$y'(t) = a(t)y(t) + b(t)$$
+Alors la solution est
+$$z_1(t) = \lambda(t) e^{A(t)}\; avec\; A'(t) = a(t)\; et\; \lambda'(t) = b(t)e^{-A(t)}$$
+
+
+Dans notre cas, $-\frac{1}{2}z'(t) + t.z(t) = t^3$, soit $z'(t) = 2t.z(t) - 2t^3$. Donc, $a(t) = 2t$, $A(t)=t^2$, et $\lambda'(t) = -2t^3e^{-t^2}$.
+
+$$\lambda(t) = \int{-2t^3e^{-t^2}dt}$$
+Par substitution avec $u = t^2$, $\frac{du}{dt} = 2t$, donc $dt=\frac{1}{2t}du$
+$$\int{-2t^3e^{-t^2}dt} = \int{-2t^3e^{-t^2}\frac{1}{2t}du} = -\int{t^2e^{-t^2}du} = -\int{ue^{-u} du}$$
+Int\'egration par parties avec $f=u$, $g'=e^{-u}$. Donc $f'=1$ et $g=-e^{-u}$.
+$$-\int{ue^{-u} du} = -(-ue^{-u} - \int{-e^{-u}du}) = ue^{-u} - \int{e^{-u}du} = ue^{-u} + e^{-u} = (t^2+1)e^{-t^2}$$
+
+$$z_1(t) = (t^2+1)e^{-t^2}e^{t^2} = (t^2+1)$$
+
+La solution g\'en\'erale est
+$$z(t) = z_0(t) + z_1(t) = \lambda e^{t^2} + t^2 + 1$$
 
 \subsubsection*{4.4}
 $$z(t) = \frac{1}{y^2(t)}$$
 $$y(t) = \sqrt{\frac{1}{z(t)}}$$
-$$y(t) = \sqrt{\frac{1}{\lambda e^{2t}}}\; avec\; \lambda > 0$$
+$$y(t) = \sqrt{\frac{1}{\lambda e^{t^2} + t^2 + 1}}\; avec\; \lambda > 0$$
 
 
 
