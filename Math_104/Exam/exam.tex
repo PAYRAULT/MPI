@@ -70,19 +70,49 @@
 \setlength{\textwidth}{6.5in}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Math\_103}
-\lhead{Exam\_1}
+\rhead{Math\_104}
+\lhead{Exam}
 \rfoot{Page \thepage}
-
 
 
 \begin{document}
 
 \subsection*{Rappel de cours}
 
+\'Equation diff\'erentielle
+
 \begin{itemize}
-\item 
+\item \'Equation diff\'erentielle du premier degr\'es; $y'(t) = a(t).y(t) + b(t)$
+  \begin{itemize}
+  \item R\'esoudre l'\'equation homog\`ene; $y'(t) = a(t).y(t)$. Solution $y_0(t) = \lambda e^{A(t)}$ avec $A'(t) = a(t)$. Il faut int\'egrer $a(t)$.
+  \item Calculer une solution particuli\`ere avec la methode de la variation de la constante. $y_1(t) = \lambda(t).e^{A(t)}$ avec $A'(t) = a(t)$ et $\lambda'(t) = b(t).e^{-A(t)}$. Il faut int\'egrer $\lambda'(t)$ et remplacer dans $y_1(t)$.
+  \item Solution g\'en\'erale $y(t) = y_0(t) + y_1(t)$
+  \item Trouver $\lambda$ par le calcul d'une valeur donn\'ee.
+  \end{itemize}
+\item \'Equation diff\'erentielle du second degr\'es a coefficient constant; $y''(t) + b.y'(t) + a.y(t) = b(t)$
+  \begin{itemize}
+  \item R\'esoudre l'\'equation homog\`ene; $y''(t) + b.y'(t) + a.y(t) = 0$
+  \item Calcul des racines $r_1, r_2$ de l'\'equation $r^2+br+a = 0$
+  \item $y_0(t) = \lambda e^{r_1 t} + \mu e^{r_2 t}$
+  \item Calculer une solution particuli\`ere de $y''(t) + b.y'(t) + a.y(t) = 0$ \`a partir de la formule g\'en\'eralement propos\'ee ou deviner une solution. Il faut d\'eriver 2 fois la formule propos\'ee et la remplacer dans l'\'equation. Ensuite trouver les coeeficients.
+  \item La solution g\'en\'erale est $y(t) = y_0(t) + y_1(t)$
+  \end{itemize} 
 \end{itemize}
+
+
+Formule de Taylor
+
+\begin{itemize}
+
+\item La formule de Taylor pour le developpement limit\'e d'ordre $n$ est
+$$f(b) = \sum_{k=0}^n{\frac{(b-a)^k}{k!}f^{(k)}(a)} + \int_a^b{\frac{(b-t)^n}{n!}f^{(n+1)}(t)dt}$$
+
+\item In\'egalit\'e de Taylor-Lagrance est 
+$$|f(b) - \sum_{k=0}^n{\frac{(b-a)^k}{k!}f^{(k)}(a)}| \leq M\frac{(b-a)^{(n+1)}}{(n+1)!}$$
+
+\end{itemize}
+
+\newpage
 
 \subsection*{Exercice 1}
 R\'esoudre l'\'equation diff\'erentielle :
