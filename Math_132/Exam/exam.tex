@@ -107,29 +107,30 @@ On a $x-1 < x$, donc $\frac{x}{x-1} > 1$ lorsque $x > 1$. On a $x_0 \geq 2 > 1$,
 \subsection*{Exercice 1 -  Une d\'efinition \'equivalente}
 
 1 - Si $\forall x \in \R, \forall \epsilon > 0, \exists d \in D \bigcap\; ]x-\epsilon,x+\epsilon[$ alors $x-\epsilon < d < x+\epsilon$, prenons $a=x-\epsilon$ et $b=x+\epsilon$ alors $a<d<b$\\
-2 - $\forall a,b \in \R, \exists d \in D, a < d < b$ alors prenons $x=\frac{a+b}{2}$ et $\epsilon = b-x$ alors $x+\epsilon = x + b-x = b$ et $x-\epsilon = x - (b-x) = 2x - b = 2\frac{a+b}{2} -b = a+b-b = a$ donc $x-\epsilon < d < x+\epsilon$.
+2 - $\forall a,b \in \R, \exists d \in D, a < d < b$ alors prenons $x=\frac{a+b}{2}$ et $\epsilon = b-x = \frac{b-a}{2}$ alors $x+\epsilon = x + b-x = b$ et $x-\epsilon = = \frac{a+b}{2} - \frac{b-a}{2} = a$ donc $x-\epsilon < d < x+\epsilon$.
 
 \subsection*{Exercice 2 -  Les rationnels sont denses dans $\R$}
 \subsubsection*{2.1}
 
-Si $\beta > 0$, prenons l'entier $i=E(\beta)$ alors $\beta-1<i<\beta$ et $\beta - \alpha > 1$, donc  $\alpha < \beta-1$ donc $\alpha<i<\beta$.\\
+Si $\beta > 0$, prenons l'entier $i=E(\beta)$ alors $\beta-1< i \leq \beta$ et $\beta - \alpha > 1$, donc  $\alpha < \beta-1$ donc $\alpha<i<\beta$.\\
 
-Si $\alpha < 0$, prenons l'entier $i=E(\alpha)$ alors $\alpha<i<\alpha+1$ et $\beta - \alpha > 1$, donc  $\beta > \alpha+1$ donc $\alpha<i<\beta$.\\
+Si $\alpha < 0$, prenons l'entier $i=E(\alpha)$ alors $\alpha \leq i<\alpha+1$ et $\beta - \alpha > 1$, donc  $\beta > \alpha+1$ donc $\alpha<i<\beta$.\\
 
 \subsubsection*{2.2}
 On a $x-1 < E(x) \leq x$.\\ 
 On a $b-a > 0$. Si $q(b-a) > 1$ alors $q>\frac{1}{b-a}$. Prenons $q=E(\frac{1}{b-a}) + 1$. 
-$$x-1 < E(x) \leq x$$
-$$x-1+1 < E(x)+1 \leq x+1$$
-$$\frac{1}{b-a} < E(\frac{1}{b-a}) + 1 < \frac{1}{b-a}+1$$
-$$\frac{1}{b-a} < q < \frac{1}{b-a}+1$$
-$$(b-a)\frac{1}{b-a} < q(b-a) < (\frac{1}{b-a}+1)(b-a)$$
-$$1 < q(b-a) < (\frac{1}{b-a}+1)(b-a)$$
+$$x - 1 < E(x) $$
+$$x-1+1 < E(x)+1 $$
+$$\frac{1}{b-a} < E(\frac{1}{b-a}) + 1$$
+$$\frac{1}{b-a} < q $$
+$$(b-a)\frac{1}{b-a} < q(b-a) $$
+$$1 < q(b-a)$$
 
 L'entier $q=E(\frac{1}{b-a}) + 1$.
 
 \subsubsection*{2.3}
-De la question 2, on a montr\'e que $\exists q, q(b-a)>1$ et $b-a>0$ donc 
+On cherche $p, q \in \N, \forall a, b \in \R, a < \frac{p}{q} < b$.\\ 
+De la question 2.3, on a montr\'e que $\exists q \in \N^{*}, q(b-a)>1$ et $b-a>0$ donc 
 $$b-a>\frac{1}{q}$$
 $$b> a+\frac{1}{q}$$
 $$b>\frac{aq + 1}{q}$$
@@ -181,8 +182,8 @@ $$\frac{p^2}{q^2}=2$$
 $$p^2=2q^2$$
 
 Comme $2q^2$ est pair, alors $p^2$ est doit \^etre pair, donc $p$ est pair \'egalement.\\
-Soit $p=2r$ (comme b est pair), donc $(2r)^2 = 4r^2 = 2q^2$, alors $q^2$ est pair, donc $q$ est pair.\\
-$p$ et $q$ sont tous les deux pairs, ils ne peuvent pas \^etre premier entre eux -> contradiction.\\
+Soit $p=2r$ (comme p est pair), donc $p^2=(2r)^2 = 4r^2 = 2q^2$, donc $q^2 = 2r^2$ alors $q^2$ est pair, donc $q$ est pair.\\
+$p$ et $q$ sont tous les deux pairs, ils ne peuvent pas \^etre premier entre eux, $\to$ contradiction.\\
 Donc $\sqrt(2)$ est irrationnel. 
 
 \subsubsection*{5.2}
@@ -190,7 +191,7 @@ Preuve par contradiction.\\
 
 Si $p^{\frac{1}{n}}$ est rationnel alors  $\exists a, b \in \N^{*}, \frac{a}{b}=p^{\frac{1}{n}}$ avec $a$,$b$ premiers entre eux.\\
 On a 
-$$p = (\frac{a}{b})^{n}$$
+$$p = \left(\frac{a}{b}\right)^{n}$$
 $$p.b^{n} = a^{n}$$
 $$p.b^{n} = a.a^{n-1}$$
 
