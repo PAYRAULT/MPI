@@ -101,7 +101,114 @@ On a $x-1 < x$, donc $\frac{x}{x-1} > 1$ lorsque $x > 1$. On a $x_0 \geq 2 > 1$,
 $$x_{n+1} - x_{n} = x_n + \frac{x_n}{x_n-1} - x_n = \frac{x_n}{x_n-1}$$
 On a $x-1 < x$, donc $\frac{x}{x-1} > 1$ lorsque $x > 1$. On a $x_0 \geq 2 > 1$, donc $x_{n+1} - x_{n} > 1$. La suite est strictement croissante donc elle divergence quand $x \to \infty$.
 
+\newpage
+\section*{S\'eance 2 - Densit\'e dans $\R$}
 
+\subsection*{Exercice 1 -  Une d\'efinition \'equivalente}
+
+1 - Si $\forall x \in \R, \forall \epsilon > 0, \exists d \in D \bigcap\; ]x-\epsilon,x+\epsilon[$ alors $x-\epsilon < d < x+\epsilon$, prenons $a=x-\epsilon$ et $b=x+\epsilon$ alors $a<d<b$\\
+2 - $\forall a,b \in \R, \exists d \in D, a < d < b$ alors prenons $x=\frac{a+b}{2}$ et $\epsilon = b-x$ alors $x+\epsilon = x + b-x = b$ et $x-\epsilon = x - (b-x) = 2x - b = 2\frac{a+b}{2} -b = a+b-b = a$ donc $x-\epsilon < d < x+\epsilon$.
+
+\subsection*{Exercice 2 -  Les rationnels sont denses dans $\R$}
+\subsubsection*{2.1}
+
+Si $\beta > 0$, prenons l'entier $i=E(\beta)$ alors $\beta-1<i<\beta$ et $\beta - \alpha > 1$, donc  $\alpha < \beta-1$ donc $\alpha<i<\beta$.\\
+
+Si $\alpha < 0$, prenons l'entier $i=E(\alpha)$ alors $\alpha<i<\alpha+1$ et $\beta - \alpha > 1$, donc  $\beta > \alpha+1$ donc $\alpha<i<\beta$.\\
+
+\subsubsection*{2.2}
+On a $x-1 < E(x) \leq x$.\\ 
+On a $b-a > 0$. Si $q(b-a) > 1$ alors $q>\frac{1}{b-a}$. Prenons $q=E(\frac{1}{b-a}) + 1$. 
+$$x-1 < E(x) \leq x$$
+$$x-1+1 < E(x)+1 \leq x+1$$
+$$\frac{1}{b-a} < E(\frac{1}{b-a}) + 1 < \frac{1}{b-a}+1$$
+$$\frac{1}{b-a} < q < \frac{1}{b-a}+1$$
+$$(b-a)\frac{1}{b-a} < q(b-a) < (\frac{1}{b-a}+1)(b-a)$$
+$$1 < q(b-a) < (\frac{1}{b-a}+1)(b-a)$$
+
+L'entier $q=E(\frac{1}{b-a}) + 1$.
+
+\subsubsection*{2.3}
+De la question 2, on a montr\'e que $\exists q, q(b-a)>1$ et $b-a>0$ donc 
+$$b-a>\frac{1}{q}$$
+$$b> a+\frac{1}{q}$$
+$$b>\frac{aq + 1}{q}$$
+Prenons $p=E(aq)$, donc $p \leq aq < p+1$.
+
+$$b>\frac{aq + 1}{q} > \frac{p + 1}{q}$$
+et
+$$\frac{p}{q} \leq a < \frac{p+1}{q}$$
+donc
+$$a < \frac{p+1}{q} < \frac{aq + 1}{q} < b$$
+
+Prenons $d=\frac{p+1}{q}$ alors $\forall a,b \in \R, \exists d \in \Q, a < d < b$. \\
+Donc $\Q$ est dense dans $\R$.
+
+\subsection*{Exercice 3 - Densit\'e et ensembles finis}
+\subsubsection*{3.1}
+Tout ensemble fini admet un majorant $M$.\\
+Prenons $a, b \in \R, a>M\; et\; b>M$, $\nexists d \in X, a<d<b$.\\
+Donc X n'est pas dense dans $\R$. 
+
+\subsubsection*{3.2}
+Comme $D$ est dense dans $\R$ alors $\forall a, b \in \R, \exists d \in D, a<d<b$. Si on consed\`ere $n+1$ sous-intervalles de $]a;b[$ alors la propri\'et\'e et \'egalement v\'erifi\'ee sur chaque sous-intervalle (car vrai pour tout r\'eel $a$ et $b$).\\
+Donc, l'ensemble $D \backslash \{d_1,...,d_n\}$ contient au moins une valeur tel que $\forall a, b \in \R, \exists d \in D, a<d<b$
+(choisir une valeur dans l'intervalle qui ne contient aucun $\{d_1,...,d_n\}$). \\
+Donc $D \backslash \{d_1,...,d_n\}$ est dense.
+
+
+\subsection*{Exercice 4 - Une dichotomie modifi\'ee}
+\subsubsection*{4.1}
+
+\subsubsection*{4.2}
+Preuve par contradiction\\
+Si $I$ est vide alors $\alpha=\beta$, donc $Inf\;X = Sup\; X$. L'ensemble $X$ contient 2 \'el\'ements distincts $x_1$ et $x_2$. On a $x_1 < x_2$ (car ils sont distincts)\\
+et $Inf\; X \leq x_1$ car $Inf\; X$ est une borne inf\'erieure.\\
+et $Sup\; X \geq x_2$ car $Sup\; X$ est une borne inf\'erieure.\\
+Donc $Inf\; X \leq x_1 < x_2 \leq Sup\; X$\\
+
+Ceci contredit l'hypoth\`ese $Inf\;X = Sup\; X$ donc $I$ n'est pas vide.
+
+
+
+\subsection*{Exercice 5 - Rationnel ou irrationnel ?}
+\subsubsection*{5.1}
+Preuve par contradiction.\\
+
+Si $\sqrt{2}$ est rationnel alors $\exists p, q \in \N^{*}, \frac{p}{q}=\sqrt{2}$ avec $p$,$q$ premiers entre eux.
+$$\frac{p}{q}=\sqrt{2}$$
+$$\frac{p^2}{q^2}=2$$
+$$p^2=2q^2$$
+
+Comme $2q^2$ est pair, alors $p^2$ est doit \^etre pair, donc $p$ est pair \'egalement.\\
+Soit $p=2r$ (comme b est pair), donc $(2r)^2 = 4r^2 = 2q^2$, alors $q^2$ est pair, donc $q$ est pair.\\
+$p$ et $q$ sont tous les deux pairs, ils ne peuvent pas \^etre premier entre eux -> contradiction.\\
+Donc $\sqrt(2)$ est irrationnel. 
+
+\subsubsection*{5.2}
+Preuve par contradiction.\\
+
+Si $p^{\frac{1}{n}}$ est rationnel alors  $\exists a, b \in \N^{*}, \frac{a}{b}=p^{\frac{1}{n}}$ avec $a$,$b$ premiers entre eux.\\
+On a 
+$$p = (\frac{a}{b})^{n}$$
+$$p.b^{n} = a^{n}$$
+$$p.b^{n} = a.a^{n-1}$$
+
+$p$ est premier donc $a$ ne divise pas $p$.\\
+$a$,$b$ sont premiers entre eux donc $a$ ne divise pas $b^n$.\\
+Donc la proposition est fausse et $p^{\frac{1}{n}}$ est irrationnel.
+
+\subsubsection*{5.3}
+Preuve par contradiction.\\
+Si $r^{\frac{1}{n}}$ est rationnel alors  $\exists a, b \in \N^{*}, \frac{a}{b}=r^{\frac{1}{n}}$ avec $a$,$b$ premiers entre eux.\\
+On a 
+$$r = \left(\frac{a}{b}\right)^{n}$$
+$r$ est un nombre rationnel donc $r=\frac{c}{d}$.
+$$\frac{c}{d} = \left(\frac{a}{b}\right)^{n}$$
+$$\log\left(\frac{c}{d}\right) = n.\log\left(\frac{a}{b}\right)$$
+
+$c$ et $d$ sont fix\'es par $r$, donc pour une certaine valeur $N$ tr\'es grande cette relation n'est pas v\'erifi\'ee car $\log\left(\frac{c}{d}\right) < N.\log\left(\frac{a}{b}\right)$.\\
+Donc $r^{\frac{1}{n}}$ est irrationnel pour $n>N$.
 
 \end{document}
 
