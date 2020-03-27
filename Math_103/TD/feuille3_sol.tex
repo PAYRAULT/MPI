@@ -1,0 +1,167 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Math\_103}
+\lhead{Exam\_1}
+\rfoot{Page \thepage}
+
+
+
+\begin{document}
+
+Rappel de cours: 
+\begin{itemize}
+\item 
+\end{itemize}
+
+ 
+
+\subsection*{Exercice 3.3}
+\subsubsection*{Exercice 3.3.1}
+Prenons $x_1$ comme inconnue sedondaire du syst\`eme d'\'equations. Donc, $(x_1,x_2,x_3) = x_1(1,2,-1)$ et
+
+$$
+\left\{ 
+\begin{array}{l}
+x_1 = x_1 \\
+x_2 = 2x_1 \\
+x_3 = -x_1 \\
+\end{array}
+\right. 
+$$
+
+Le syst\`eme d'\'equations est:
+$$
+\left\{ 
+\begin{array}{l l l l}
+2x_1 & -x_2 & & = 0 \\
+-x_1 & & -x_3 & = 0\\
+\end{array}
+\right. 
+$$
+
+\subsubsection*{Exercice 3.3.2}
+Le $(v,w)$ est libre si $\lambda_1v + \lambda_2w = 0 \implies \lambda_1 = \lambda_2 = 0$. Donc $\lambda_1(1,2,-3) + \lambda_2(1,-1,1) = 0$. 
+
+Le syst\`eme d'\'equations est:
+$$
+\left\{ 
+\begin{array}{l l l}
+\lambda_1 & +\lambda_2 & = 0 \\
+2\lambda_1 & -\lambda_2 & = 0 \\
+-3\lambda_1 & +\lambda_2 & = 0 \\
+\end{array}
+\right. 
+$$
+
+De $L1$, on a $\lambda_1 = -\lambda_2$, on remplace dans $L2$, $2\lambda_1 +\lambda_1 = 0$, $3\lambda_1 = 0$. Donc $\lambda_1 = \lambda_2 = 0$. La famille est libre.\\
+
+Le syst\`eme d'\'equations de $Vect(v,w)$ est
+$$
+\left\{ 
+\begin{array}{l l l}
+\lambda_1 & +\lambda_2 & = x_1 \\
+2\lambda_1 & -\lambda_2 & = x_2 \\
+-3\lambda_1 & +\lambda_2 & = x_3 \\
+\end{array}
+\right. 
+$$
+
+$L1+L2+L3$, $\lambda_2 = x_1+x_2+x_3$, en remplacant dans $L1$, on a $\lambda_1 = -x_2 - x_3$. Donc
+
+$$
+\left\{ 
+\begin{array}{l l}
+x_1 & = x_1 \\x_1
+2(-x_2 - x_3) - (x_1 + x_2 + x_3) & = x_2 \\
+-3(-x_2 - x_3) + (x_1 + x_2 + x_3) & = x_3 \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+-x_1 - 4x_2 - 3x_3 & = 0 \\
+x_1 + 4x_2 + 3x_3 & = 0 \\
+\end{array}
+\right. 
+$$
+
+Les \'equations cart\'esienne de $Vect(v,w)$ est $x_1 + 4x_2 + 3x_3 =0$' L'espace vectoriel est un plan.
+
+
+
+
+QED
+
+\end{document}
+
