@@ -181,6 +181,56 @@ Donc $a=b=0$, $Vect(v_3,v_4)$ est libre.\\
 Par cons\'equent $Vect(v_3,v_4)$ est une base de $E$.\\
 
 
+\subsection*{Exercice 4.2}
+\subsubsection*{4.2.1}
+$S$ est un plan vectoriel $Vect(v_1,v_2) = Vect((a,b),(-b,a))$ est une base de $\R^2$.\\
+$$\forall p=(x,y), \lambda_1 v_1 + \lambda_2 v_2 = p$$
+$$
+\left\{ 
+\begin{array}{l l l}
+\lambda_1 a - \lambda_2 b & = x & l_1\\
+\lambda_1 b + \lambda_2 a & = y & l_2\\
+\end{array}
+\right. 
+$$
+
+$$a l_1 + b l_2, \lambda_1 a^2-\lambda_2 ab + \lambda_1 b^2 + \lambda_2 ba = ax+by$$
+$$\lambda_1 = \frac{ax+by}{a^2+b^2}$$ 
+
+$$b l_1 - a l_2, \lambda_1 ab -\lambda_2 ^2b - \lambda_1 ab - \lambda_2 a^2 = bx-ay$$
+$$\lambda_2 = \frac{ay-bx}{a^2+b^2}$$ 
+Donc $Vect(v_1,v_2)$ est g\'en\'eratrice.\\
+
+Quand $x=y=0$ on a $\lambda_1 = \lambda_2 = 0$ donc $Vect(v_1,v_2)$ est libre.\\
+
+Donc $Vect(v_1,v_2)$ est une base de $\R^2$.\\
+
+$T$ est un plan vectoriel $Vect(v_3,v_4) = Vect((c,d),(d,-c))$ est une base de $\R^2$.\\
+$$\forall p=(x,y), \lambda_1 v_2 + \lambda_2 v_4 = p$$
+$$
+\left\{ 
+\begin{array}{l l l}
+\lambda_1 c + \lambda_2 d & = x & l_1\\
+\lambda_1 d - \lambda_2 c & = y & l_2\\
+\end{array}
+\right. 
+$$
+
+$$c l_1 + d l_2, \lambda_1 c^2 -\lambda_2 cd + \lambda_1 d^2 - \lambda_2 cd = cx+dy$$
+$$\lambda_1 = \frac{cx+dy}{c^2+d^2}$$ 
+
+$$d l_1 - c l_2, \lambda_1 cd + \lambda_2 d^2 - \lambda_1 dc + \lambda_2 c^2 = dx-`cy$$
+$$\lambda_2 = \frac{dx-cy}{c^2+d^2}$$ 
+
+Donc $Vect(v_1=3,v_4)$ est g\'en\'eratrice.\\
+
+Quand $x=y=0$ on a $\lambda_1 = \lambda_2 = 0$ donc $Vect(v_3,v_4)$ est libre.\\
+
+Donc $Vect(v_3,v_4)$ est une base de $\R^2$.\\
+
+
+
+
 QED
 
 \end{document}
