@@ -229,6 +229,68 @@ Quand $x=y=0$ on a $\lambda_1 = \lambda_2 = 0$ donc $Vect(v_3,v_4)$ est libre.\\
 Donc $Vect(v_3,v_4)$ est une base de $\R^2$.\\
 
 
+\subsection*{Exercice 4.5}
+\subsubsection*{4.5.1}
+
+$$A^2 = A.A = 
+\begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} .
+\begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} = 
+\begin{vmatrix} 2 & 3 \\ 3 & 5 \end{vmatrix} = 
+3. \begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} - 
+\begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 3A - I_2
+$$
+
+$$A^3 = A.A^2 = 
+\begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} .
+\begin{vmatrix} 2 & 3 \\ 3 & 5 \end{vmatrix} = 
+\begin{vmatrix} 5 & 8 \\ 8 & 13 \end{vmatrix} = 
+8. \begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} - 
+3 \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 8A - 3I_2
+$$
+
+
+Supposons que $A^n$ est de la forme $\begin{vmatrix} a & b \\ b & a+b \end{vmatrix}$.\\
+Vrai pour $n=0$.\\
+
+$$A^{n+1} = A.A^n = \begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} . 
+\begin{vmatrix} a & b \\ b & a+b \end{vmatrix} = 
+\begin{vmatrix} a+b & a+2b \\ a+2b & 2a+3b \end{vmatrix}
+$$
+Vrai pour $n+1$ si vrai pour $n$, donc v\'erifi\'e pour tout $n$.
+
+On a donc
+$$A^{n+1} = \begin{vmatrix} a+b & a+2b \\ a+2b & 2a+3b \end{vmatrix} = kA + jI^2 = 
+k . \begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} + 
+j . \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix}
+$$
+
+Donc $k = a+2b$ car la diagonale de $I^2$ est nulle. \\
+Donc $j = -b$ car $a+b = a+2b -b$ et $2a+3b = 2(a+2b)-b$.
+
+\subsubsection*{4.5.2}
+Famille libre si $\lambda_1 A + \lambda_2 I^2 = 0 \implies \lambda_1 = \lambda_2 = 0$.
+
+$$\lambda_1.\begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} + 
+\lambda_2.\begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 
+\begin{vmatrix} \lambda_1+\lambda_2 & \lambda_1 \\ \lambda_1 & \lambda_1+2\lambda_2 \end{vmatrix} = \begin{vmatrix} 0 & 0 \\ 0 & 0 \end{vmatrix}
+$$
+
+Donc $\lambda_1 = 0$ et $\lambda_1 + \lambda_2 = 0$. La famille $(A,I^2)$ est libre.\\
+
+\subsubsection*{4.5.3}
+On a montr\'e que $A^{n+1} = (a+2b)A - bI_2$ avec $a=A^n_{\{1,1\}}$ et $b=A^n_{\{1,2\}}$.\\
+
+Et
+$$
+A^{n+1} = A.A^n = 
+\begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} . 
+\begin{vmatrix} A^n_{\{1,1\}} & A^n_{\{1,2\}} \\ A^n_{\{1,2\}} & A^n_{\{1,1\}} + A^n_{\{1,2\}} \end{vmatrix} = 
+\begin{vmatrix} A^n_{\{1,1\}} + A^n_{\{1,2\}} & A^n_{\{1,1\}}+2A^n_{\{1,2\}} \\ A^n_{\{1,1\}} + 2A^n_{\{1,2\}} & 2A^n_{\{1,1\}} + 3A^n_{\{1,2\}} \end{vmatrix}
+$$
+
+
+ 
+
 
 
 QED
