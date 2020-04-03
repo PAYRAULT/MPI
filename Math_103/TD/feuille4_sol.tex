@@ -259,13 +259,13 @@ $$
 Vrai pour $n+1$ si vrai pour $n$, donc v\'erifi\'e pour tout $n$.
 
 On a donc
-$$A^{n+1} = \begin{vmatrix} a+b & a+2b \\ a+2b & 2a+3b \end{vmatrix} = kA + jI^2 = 
+$$A^{n} = \begin{vmatrix} A^n_{\{1,1\}} & A^n_{\{1,2\}} \\ A^n_{\{1,2\}} & A^n_{\{1,1\}} + A^n_{\{1,2\}} \end{vmatrix} = kA + jI^2 = 
 k . \begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} + 
-j . \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix}
+j . \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} =
+\begin{vmatrix} k+j & k \\ k & 2k+j \end{vmatrix}
 $$
 
-Donc $k = a+2b$ car la diagonale de $I^2$ est nulle. \\
-Donc $j = -b$ car $a+b = a+2b -b$ et $2a+3b = 2(a+2b)-b$.
+On a $k = A^n_{\{1,2\}}$, et $j = A^n_{\{1,1\}} - A^n_{\{1,2\}}$.
 
 \subsubsection*{4.5.2}
 Famille libre si $\lambda_1 A + \lambda_2 I^2 = 0 \implies \lambda_1 = \lambda_2 = 0$.
@@ -277,10 +277,11 @@ $$
 
 Donc $\lambda_1 = 0$ et $\lambda_1 + \lambda_2 = 0$. La famille $(A,I^2)$ est libre.\\
 
-\subsubsection*{4.5.3}
-On a montr\'e que $A^{n+1} = (a+2b)A - bI_2$ avec $a=A^n_{\{1,1\}}$ et $b=A^n_{\{1,2\}}$.\\
+\subsubsection*{4.5.3.a}
+On a montr\'e que $A^{n+1} = A^{n+1}_{\{1,2\}}A + (A^{n+1}_{\{1,1\}} - A^{n+1}_{\{1,2\}})I_2$ et on pose $A^{n+1} = a^{n+1}A + b^{n+1}I_2$.\\
+De m\^eme, $A^{n} = A^{n}_{\{1,2\}}A + (A^{n}_{\{1,1\}} - A^{n}_{\{1,2\}})I_2$ et $A^{n} = a^{n}A + b^{n}I_2$. Donc $a^{n} = A^{n}_{\{1,2\}}$, et $b^n = A^{n}_{\{1,1\}} - A^{n}_{\{1,2\}}$. \\
 
-Et
+
 $$
 A^{n+1} = A.A^n = 
 \begin{vmatrix} 1 & 1 \\ 1 & 2 \end{vmatrix} . 
@@ -288,10 +289,62 @@ A^{n+1} = A.A^n =
 \begin{vmatrix} A^n_{\{1,1\}} + A^n_{\{1,2\}} & A^n_{\{1,1\}}+2A^n_{\{1,2\}} \\ A^n_{\{1,1\}} + 2A^n_{\{1,2\}} & 2A^n_{\{1,1\}} + 3A^n_{\{1,2\}} \end{vmatrix}
 $$
 
+Donc
+$$A^{n+1} = (A^n_{\{1,1\}}+2A^n_{\{1,2\}}).A +  (A^n_{\{1,1\}} + A^n_{\{1,2\}} - (A^n_{\{1,1\}}+2A^n_{\{1,2\}}))I_2$$
 
+$$
+\left\{ 
+\begin{array}{l l}
+a^{n+1} = & A^n_{\{1,1\}}+2A^n_{\{1,2\}} \\
+b^{n+1} = & -A^n_{\{1,2\}} \\
+a^{n} = & A^{n}_{\{1,2\}} \\
+b^{n} = & A^{n}_{\{1,1\}} - A^{n}_{\{1,2\}} \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+a^{n+1} = & A^n_{\{1,1\}}+2A^n_{\{1,2\}} \\
+b^{n+1} = & -A^n_{\{1,2\}} \\
+A^{n}_{\{1,1\}} = & a^{n} + b^{n} \\
+A^{n}_{\{1,2\}} = & a^{n} \\
+\end{array}
+\right. 
+$$
+
+Donc,
+$$
+\left\{ 
+\begin{array}{l l}
+a^{n+1} = 3a^{n} + b^{n}\\
+b^{n+1} = -a^{n} \\
+\end{array}
+\right. 
+$$
  
+On a $a_0=0, b_0=1$ et $a_1=1, b_1=0$.
+
+\subsubsection*{4.5.3.b}
+On a $X_n = \begin{vmatrix} a_n \\ b_n \end{vmatrix}$. On cherche $B$ tel que $X_{n+1} = B X_n = B\begin{vmatrix} a_{n} \\ b_{n} \end{vmatrix}$.
+
+$$X_{n+1} = \begin{vmatrix} 3a_n + b_n\\ -a_{n} \end{vmatrix} = B\begin{vmatrix} a_{n} \\ b_{n} \end{vmatrix}$$
+Donc
+$$B = \begin{vmatrix} 3 & 1 \\ -1 & 0 \end{vmatrix}$$
 
 
+\subsubsection*{4.5.3.c}
+
+On a 
+$$B^2 = \begin{vmatrix} 3 & 1 \\ -1 & 0 \end{vmatrix} . \begin{vmatrix} 3 & 1 \\ -1 & 0 \end{vmatrix} =
+\begin{vmatrix} 8 & 3 \\ -3 & -1 \end{vmatrix} = k.B + j.I_2 =
+k . \begin{vmatrix} 3 & 1 \\ -1 & 0 \end{vmatrix} + j .\begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 
+\begin{vmatrix} 3k+j & k \\ -k & j \end{vmatrix} 
+$$
+
+
+Ceci fait $k=3$ et $j=-1$, donc $B^2 = 3B - I_2$.\\
 
 QED
 
