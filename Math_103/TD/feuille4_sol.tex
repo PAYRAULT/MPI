@@ -346,7 +346,82 @@ $$
 
 Ceci fait $k=3$ et $j=-1$, donc $B^2 = 3B - I_2$.\\
 
-QED
+\subsection*{Exercice 4.6}
+\subsubsection*{Exercice 4.6.1}
+$$S(a,b) = \begin{vmatrix} a & -b \\ b & a \end{vmatrix},
+S(a,-b) = \begin{vmatrix} a & b \\ -b & a \end{vmatrix}$$
 
+$$S(a,b).S(a,-b) = \begin{vmatrix} a & -b \\ b & a \end{vmatrix}.\begin{vmatrix} a & b \\ -b & a \end{vmatrix} = 
+\begin{vmatrix} a^2+b^2 & ab-ab \\ ab-ab & a^2+b^2 \end{vmatrix} = S(a^2+b^2,0)$$
+
+$$
+S(a_1,b_1).S(a_2,b_2) = 
+\begin{vmatrix} a_1 & -b_1 \\ b_1 & a_1 \end{vmatrix}.\begin{vmatrix} a_2 & -b_2 \\ b_2 & a_2 \end{vmatrix} = 
+\begin{vmatrix} a_1a_2-b_1b_2 & -a_1b_2-a_2b_1 \\ a_2a_1-b_1b_2 & a_1b_2+b_1a_2 \end{vmatrix} = S(a_1a_2-b_1b_2,a_2b_1+a_1b_2)
+$$
+
+$$
+T(a_1,b_1) = \begin{vmatrix} a_1 & b_1 \\ b_1 & -a_1 \end{vmatrix}, 
+T(a_2,b_2) = \begin{vmatrix} a_2 & b_2 \\ b_2 & -a_2 \end{vmatrix}
+$$
+
+$$
+T(a_1,b_1).T(a_2,b_2) = 
+\begin{vmatrix} a_1 & b_1 \\ b_1 & -a_1 \end{vmatrix}.\begin{vmatrix} a_2 & b_2 \\ b_2 & -a_2 \end{vmatrix} = 
+\begin{vmatrix} b_1a_2-a_1b_2 & a_1a_2+b_1b_2 \\ a_1a_2+b_1b_2 & a_1b_2-b_1a_2 \end{vmatrix} = 
+S(b_1a_2-a_1b_2,a_1a_2+b_1b_2)
+$$
+
+$$
+S(a_1,b_1).T(a_2,b_2) = 
+\begin{vmatrix} a_1 & b_1 \\ b_1 & -a_1 \end{vmatrix}.\begin{vmatrix} a_2 & b_2 \\ b_2 & -a_2 \end{vmatrix} = 
+\begin{vmatrix} a_1a_2-b_1b_2 & a_1b_2+b_1a_2 \\ a_1b_2+b_1a_1 & b_1b_2-a_1a_2 \end{vmatrix} = 
+T(a_1a_2-b_1b_2,a_1b_2+b_1a_2)
+$$
+
+$$
+T(a_1,b_1).S(a_2,b_2) = 
+\begin{vmatrix} a_1 & b_1 \\ b_1 & -a_1 \end{vmatrix}.\begin{vmatrix} a_2 & b_2 \\ b_2 & -a_2 \end{vmatrix} = 
+\begin{vmatrix} a_2a_1+b_2b_1 & b_2a_1-a_2b_1 \\ b_2a_1-a_2b_1 & b_2b_1+a_2a_1 \end{vmatrix} = 
+T(bc-ad,bd+ac)
+$$
+
+\subsubsection*{Exercice 4.6.2}
+Prenons $c_1 = a_1 + ib_1 = S(a_1, b_1)$ et $c_2 = a_2 + ib_2 = S(a_2, b_2)$.
+
+$$c_1+c_2 = S(a_1,b_1) + S(a_2,b_2) =
+\begin{vmatrix} a_1 & -b_1 \\ b_1 & a_1 \end{vmatrix} + \begin{vmatrix} a_2 & -b_2 \\ b_2 & a_2 \end{vmatrix} = 
+\begin{vmatrix} a_1+a_2 & -(b_1+b_2) \\ b_1+b_2 & a_1+a_2 \end{vmatrix} =
+$$
+$$S(a_1+a_2,b_1+b_2) = (a_1+a_2) + i(b_1+b_2)$$
+
+$$c_1.c_2 = S(a_1,b_1) . S(a_2,b_2) = S(a_1a_2-b_1b_2,a_2b_1+a_1b_2) = a_1a_2-b_1b_2 +i(a_2b_1+a_1b_2)$$
+
+$S(a,b).s(a-b)$ correspond \`a la multiplication d'un nombre complexe et de son conjugu\'e.
+
+\subsubsection*{Exercice 4.6.3.a}
+$$\sigma(M) = \Sigma X_M = T(1,0) X_M = \begin{vmatrix} 1 & 0 \\ 0 & -1 \end{vmatrix} . \begin{vmatrix} x_M \\ y_M \end{vmatrix} =
+\begin{vmatrix} x_M \\ -y_M \end{vmatrix}
+$$
+
+La transformation $\sigma(M)$ correspond \`a la sym\'etrie par rapport \`a l'axe des abcisses.
+
+\subsubsection*{Exercice 4.6.3.b}
+$$\sigma'(M) = \Sigma' X_M = T(0,1) X_M = \begin{vmatrix} 0 & 1 \\ 1 & 0 \end{vmatrix} . \begin{vmatrix} x_M \\ y_M \end{vmatrix} =
+\begin{vmatrix} y_M \\ x_M \end{vmatrix}
+$$
+
+La transformation $\sigma'(M)$ correspond \`a la sym\'etrie par rapport \`a la diagonale $y=x$.\\
+
+\subsubsection*{Exercice 4.6.3.c}
+$$r(M) = R.X_M = S(0,1) X_M = \begin{vmatrix} 0 & -1 \\ 1 & 0 \end{vmatrix} . \begin{vmatrix} x_M \\ y_M \end{vmatrix} =
+\begin{vmatrix} -y_M \\ x_M \end{vmatrix}
+$$
+
+La transformation $r(M)$ correspond \`a la rotation de $\frac{\pi}{2}$ par rapport \`a l'origine.\\
+
+
+
+QED
 \end{document}
 
