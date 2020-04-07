@@ -121,11 +121,76 @@ $$a = \lim_{x \to 0} \frac{g(x) - g(0)}{x} = \lim_{x \to 0} \frac{f(x) - lx - f(
 Par hypoth\`ese $a$ et $l$ existe, par cons\'equent $\lim_{x \to 0} \frac{f(x)- f(0)}{x}$ existe ($= a+l$). Donc $f$ est d\'erivable en 0.
 
 \subsubsection*{Exercice 1.2.b}
-$$\forall x \in \R, \lim_{n \to +\infty}g\left(\frac{x}{2^n}\right) = $$
+$$\forall x \in \R, \lim_{n to +\infty}g\left(\frac{x}{2^n}\right) = \lim_{X \to 0}g(X)$$
 
+Car $2^n$ est toujours tr\`es grand devant $x$ quand $n$ tend vers $+\infty$.
   
+$$\lim_{X \to 0}g(X) = \lim_{X \to 0} f(X) - lX = \lim_{X \to 0} f(X) - l\lim_{X \to 0}X = \lim_{X \to 0} f(X) = f(0)$$
+
+Car comme la fonction $f$ est d\'erivable en 0, elle est continue en 0.
+On a $g(0) = f(0) - l0 = f(o)$ donc $\forall x \in \R, \lim_{n to +\infty}g\left(\frac{x}{2^n}\right) = g(0)$.
+
+\subsubsection*{Exercice 1.3.a}
+La fonction $h$ est continue en 0, si $\lim_{x \to 0} h(x) = 0$.
+$$\lim_{x \to 0}h(x) = \lim_{x \to 0}\frac{f(2x)-2lx - f(x) + lx}{x} = \lim_{x \to 0}\frac{f(2x) - f(x)}{x} - l = l - l = 0$$
+Donc $h$ est continue en 0.\\
+
+$\lim_{x \to 0}h(x) = 0$ est \'equivalent \`a $\forall \epsilon > 0, \exists \sigma > 0, |x|<\sigma \implies |h(x)| < \epsilon$ et $\forall x \in [a,b], |h(x)| < Sup|h(x)|$. \\
+
+\subsubsection*{Exercice 1.3.b}
+
+On a $\forall k, \forall x \in [-\alpha_{\epsilon}, \alpha_{\epsilon}], X = 
+\frac{x}{2^k} \in [-\frac{\alpha_{\epsilon}}{2^k}, \frac{\alpha_{\epsilon}}{2^k}] \in [-\alpha_{\epsilon}, \alpha_{\epsilon}]$. Donc
+$$|h(X)| < \epsilon$$
+$$\sum_{k=1}^{n}{|h(\frac{x}{2^k})}| < \sum_{k=1}^{n}{\epsilon}$$
+$$\sum_{k=1}^{n}{\frac{1}{2^k}|h(\frac{x}{2^k})|} < \sum_{k=1}^{n}{\frac{1}{2^k} \epsilon}$$
+$$\sum_{k=1}^{n}{\frac{1}{2^k}|h(\frac{x}{2^k})|} < \epsilon \sum_{k=1}^{n}{\frac{1}{2^k}}$$
+Par in\'egalit\'e triangulaire
+$$|\sum_{k=1}^{n}{\frac{1}{2^k}h(\frac{x}{2^k})}| < \epsilon \sum_{k=1}^{n}{\frac{1}{2^k}}$$
+
+\subsubsection*{Exercice 1.3.c}
+Soit la suite $v_{n} = \frac{1}{2^n}$. Suite g\'eom\'etique de raison $\frac{1}{2}$.
+
+$$\sum_{k=1}^{n} v_n = \frac{\frac{1}{2}(1-\frac{1}{2^n})}{1-\frac{1}{2}} = 1-\frac{1}{2^n}$$
+$$\lim_{n \to \infty} \sum_{k=1}^{n} v_n = \lim_{n \to \infty} 1-\frac{1}{2^n} = 1$$
+
+La suite $u_n$ est strictement croissante, $u_1=1/2$ et sa limite est 1, donc la suite $u_n$ est major\'ee par 1.
 
 
+\subsubsection*{Exercice 1.4.a}
+Soit la relation $g(x) - g(\frac{x}{2^n}) = x\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$, montrons $g(x) - g(\frac{x}{2^{n+1}}) = x\sum_{k=1}^{n+1} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$.\\
+Pour $x=0$, on a $g(0)- g(\frac{0}{2^n}) = 0\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$. Vrai\\
+
+Pour $x \neq 0$,
+$$g(x) - g(\frac{x}{2^{n+1}}) = x\sum_{k=1}^{n+1} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)} = x\left(\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)} + \frac{1}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)\right)$$
+
+$$g(x) - g(\frac{x}{2^{n+1}}) = g(x) - g(\frac{x}{2^{n}}) + \frac{x}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)$$
+
+$$ g(\frac{x}{2^{n}}) - g(\frac{x}{2^{n+1}}) = \frac{x}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)$$
+
+$$ \frac{g(\frac{2x}{2^{n+1}}) - g(\frac{x}{2^{n+1}})}{x} = \frac{1}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)$$
+
+$$ h\left(\frac{x}{2^{n+1}}\right) = \frac{1}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)$$
+
+
+???\\
+
+\subsubsection*{Exercice 1.4.b}
+$$g(x) - g(\frac{x}{2^n}) = x\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$$
+Pour $x \neq 0$, 
+$$\frac{g(x) - g(\frac{x}{2^n})}{x} = \sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$$
+
+$$\left| \frac{g(x) - g(\frac{x}{2^n})}{x} \right| = \left| \sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)} \right| $$
+
+De 1.3.b
+$$\left| \frac{g(x) - g(\frac{x}{2^n})}{x} \right| = \left| \sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)} \right|  < \epsilon \sum_{k=1}^{n}{\frac{1}{2^k}}$$
+
+Quand $n \to \infty$, par 1.3.c
+$$\left| \frac{g(x) - g(\frac{x}{2^n})}{x} \right| < \epsilon $$
+$$\left| \frac{g(x) - g(0)}{x} \right| < \epsilon $$
+
+\subsubsection*{Exercice 1.4.c}
+La fonction $h$ est d\'erivable en 0.\\
 
 
 QED.
