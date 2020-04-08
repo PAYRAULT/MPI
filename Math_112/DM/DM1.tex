@@ -192,6 +192,81 @@ $$\left| \frac{g(x) - g(0)}{x} \right| < \epsilon $$
 \subsubsection*{Exercice 1.4.c}
 La fonction $h$ est d\'erivable en 0.\\
 
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1.a}
+Si la  fonction $f$ est d\'erivable sur $\R$ alors $\lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$ existe pour tout $x \in \R$. \\
+$$\lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = l_1$$
+Et
+$$\lim_{h \to 0} \frac{f(x) - f(x-h)}{h} = l_2$$
+Donc
+$$\lim_{h \to 0} \frac{f(x+h) - f(x)}{h} + \lim_{h \to 0} \frac{f(x) - f(x-h)}{h} = 2l$$
+$$\lim_{h \to 0} \frac{f(x+h) - f(x-h)}{h} = l_1 + l_2$$
+
+$$\lim_{h \to 0} \frac{f(x+h) - f(x-h)}{2h} = \frac{l_1 + l_2}{2}$$
+
+$$f'(x) = \tilde{f}(x)$$
+???
+
+
+\subsubsection*{Exercice 2.1.b}
+$$
+f(x) = \left\{ 
+\begin{array}{l l}
+0 & x \neq 0 \\
+1 & x = 0 \\
+\end{array}
+\right.
+$$
+
+On a 
+$$\tilde{f}(0)= \lim_{h \to 0} \frac{f(0+h)-f(0-h)}{2h} = \lim_{h \to 0} \frac{0 - 0}{2h} = 0$$
+
+\subsubsection*{Exercice 2.1.c}
+$$f(x) = |x|$$
+
+$f(x)$ est continu en 0, non d\'erivable en 0 et pseudo-d\'erivable en 0.
+$$\tilde{f}(0)= \lim_{h \to 0} \frac{f(0+h)-f(0-h)}{2h} = \lim_{h \to 0} \frac{|h|-|-h|}{2h} = \lim_{h \to 0} 0 = 0$$
+
+
+\subsubsection*{Exercice 2.2.a}
+
+On suppose que la fonction $f$ n'est pas croissante (donc strictement d\'ecroissante). 
+$a<b, f(a) > f(b)$ alors $m = \frac{f(a)+f(b)}{2} < f(a)$, donc E contient au moins le point $a$. Comme la fonction $f$ est strictement d\'ecroissante, la borne sup\'erieure est le point $c$ tel que $f(c) = m$ car 
+$$
+f(x) = \left\{ 
+\begin{array}{l l l}
+a < x < c & f(x) > f(c) = m & x \in E \\
+x = c & f(x) = f(c) = m & x \notin E \\
+c < x < b & f(c) = m > f(x) & x \notin E \\
+\end{array}
+\right.
+$$
+
+$c$ est le plus petit majorant de $E$, c'est la borne sup\'erieure.
+
+\subsubsection*{Exercice 2.2.b}
+$f$ est continue et strictement d\'ecroissante et $x \in E$, donc $f(x) > m$. Posons $h = c-(x+\epsilon)$. On a $f(x+h) = f(c-\epsilon) > f(c) = m$. \\
+
+$c = f(m) \notin E$ voir pr\'ec\'edent (2.2.a).
+
+\subsubsection*{Exercice 2.2.c}
+Posons la suite $h_n = \frac{1}{n}$, on a $h_n > 0$, $f$ est strictement d\'ecroissante donc $f(c-h_n) > f(c) = m$ donc $f(x-h_n) \in E$ et $\lim_{n \to +\infty} h_n = 0$.
+
+\subsubsection*{Exercice 2.2.d}
+Voir pr\'ec\'edent (2.2.a).
+
+\subsubsection*{Exercice 2.2.e}
+$f$ est strictement d\'ecroissante donc $f(c+h_n) < f(c) = m$ donc $f(c+h_n) \notin E$
+Voir pr\'ec\'edent (2.2.a).
+
+\subsubsection*{Exercice 2.2.f}
+$f$ est strictement d\'ecroissante donc $f(c+h_n) < f(c-h_n)$. Donc $f(c+h_n)- f(c-h_n) < 0$ et 
+$$\lim_{n \to +\infty} \frac{f(c+h_n)- f(c-h_n)}{2h_n} < 0$$
+
+Donc
+$$\tilde{f} = \lim_{n \to +\infty} \frac{f(c+h_n)- f(c-h_n)}{2h_n} < 0$$
+
+
 
 QED.
 
