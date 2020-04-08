@@ -260,13 +260,28 @@ $f$ est strictement d\'ecroissante donc $f(c+h_n) < f(c) = m$ donc $f(c+h_n) \no
 Voir pr\'ec\'edent (2.2.a).
 
 \subsubsection*{Exercice 2.2.f}
-$f$ est strictement d\'ecroissante donc $f(c+h_n) < f(c-h_n)$. Donc $f(c+h_n)- f(c-h_n) < 0$ et 
+$f$ est strictement d\'ecroissante donc lorsaue $h_n > 0$, on a $f(c+h_n) < f(c-h_n)$. Donc $f(c+h_n)- f(c-h_n) < 0$ et 
 $$\lim_{n \to +\infty} \frac{f(c+h_n)- f(c-h_n)}{2h_n} < 0$$
 
 Donc
-$$\tilde{f} = \lim_{n \to +\infty} \frac{f(c+h_n)- f(c-h_n)}{2h_n} < 0$$
+$$ \lim_{n \to +\infty} \frac{f(c+h_n)- f(c-h_n)}{2h_n} =
+\lim_{h \to 0} \frac{g_\alpha(x+h)- g_\alpha(x-h)}{2h} = \tilde{f} < 0$$
 
+Ceci est faux car on a montr\'e seulement que $\lim_{h \to 0+} \frac{f(c+h)- f(c-h)}{2h} < 0$, on a rien d\'emontr\'e pour la limite $\lim_{h \to 0-}$. Mais passons.
 
+\subsubsection*{Exercice 2.3.a}
+$$\tilde{g_\alpha}(x) = \lim_{h \to 0} \frac{g_\alpha(x+h)- g_\alpha(x-h)}{2h} = \lim_{h \to 0} \frac{f(x+h) + \alpha (x+h)  - f(x-h) - \alpha (x-h)}{2h}$$
+$$=\lim_{h \to 0} \frac{f(x+h) - f(x-h)}{2h} + \lim_{h \to 0} \frac{2 \alpha h}{2h} = \tilde{f}(x) + \alpha$$
+
+\subsubsection*{Exercice 2.3.b}
+On a $\alpha > 0$, $\tilde{f}(x) \geq 0$, donc  $\tilde{g_\alpha}(x) = \tilde{f}(x) + \alpha > 0$. En 2.1 on a montr\'e que si $\tilde{f}(x) \geq \alpha' > 0$ alors la fonction $f$ est croissante. Comme $\tilde{g_\alpha}(x) > \alpha > 0$ alors $g_{\alpha}(x)$ est croissante. 
+$$\forall x, y \in \R, x \leq y, g(x) \leq g(y)$$
+Donc
+$$\forall x, y \in \R, x \leq y, f(x) + \alpha x \leq f(y) + \alpha y$$
+
+\subsubsection*{Exercice 2.3.c}
+
+La fonction $f$ est croissante s\^urement mais pourquoi?.\\
 
 QED.
 
