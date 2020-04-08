@@ -159,7 +159,8 @@ La suite $u_n$ est strictement croissante, $u_1=1/2$ et sa limite est 1, donc la
 
 \subsubsection*{Exercice 1.4.a}
 Soit la relation $g(x) - g(\frac{x}{2^n}) = x\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$, montrons $g(x) - g(\frac{x}{2^{n+1}}) = x\sum_{k=1}^{n+1} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$.\\
-Pour $x=0$, on a $g(0)- g(\frac{0}{2^n}) = 0\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$. Vrai\\
+Pour $x=0$, on a $g(0)- g(\frac{0}{2^n}) = 0\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$.\\
+Vrai\\
 
 Pour $x \neq 0$,
 $$g(x) - g(\frac{x}{2^{n+1}}) = x\sum_{k=1}^{n+1} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)} = x\left(\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)} + \frac{1}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)\right)$$
@@ -168,12 +169,9 @@ $$g(x) - g(\frac{x}{2^{n+1}}) = g(x) - g(\frac{x}{2^{n}}) + \frac{x}{2^{n+1}}h\l
 
 $$ g(\frac{x}{2^{n}}) - g(\frac{x}{2^{n+1}}) = \frac{x}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)$$
 
-$$ \frac{g(\frac{2x}{2^{n+1}}) - g(\frac{x}{2^{n+1}})}{x} = \frac{1}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)$$
+$$ \frac{g(\frac{2x}{2^{n+1}}) - g(\frac{x}{2^{n+1}})}{\frac{x}{2^{n+1}}} = h\left(\frac{x}{2^{n+1}}\right)$$
 
-$$ h\left(\frac{x}{2^{n+1}}\right) = \frac{1}{2^{n+1}}h\left(\frac{x}{2^{n+1}}\right)$$
-
-
-???\\
+Vrai.
 
 \subsubsection*{Exercice 1.4.b}
 $$g(x) - g(\frac{x}{2^n}) = x\sum_{k=1}^{n} {\frac{1}{2^k}h\left(\frac{x}{2^k}\right)}$$
@@ -230,44 +228,33 @@ $$\tilde{f}(0)= \lim_{h \to 0} \frac{f(0+h)-f(0-h)}{2h} = \lim_{h \to 0} \frac{|
 
 \subsubsection*{Exercice 2.2.a}
 
-On suppose que la fonction $f$ n'est pas croissante (donc strictement d\'ecroissante). 
-$a<b, f(a) > f(b)$ alors $m = \frac{f(a)+f(b)}{2} < f(a)$, donc E contient au moins le point $a$. Comme la fonction $f$ est strictement d\'ecroissante, la borne sup\'erieure est le point $c$ tel que $f(c) = m$ car 
-$$
-f(x) = \left\{ 
-\begin{array}{l l l}
-a < x < c & f(x) > f(c) = m & x \in E \\
-x = c & f(x) = f(c) = m & x \notin E \\
-c < x < b & f(c) = m > f(x) & x \notin E \\
-\end{array}
-\right.
-$$
+On suppose que la fonction $f$ n'est pas croissante $\exists a,b \in \R, a<b, f(a) > f(b)$ alors $f(b) < m = \frac{f(a)+f(b)}{2} < f(a)$. Soit $F=\{x \in [a,b], f(x) = m\}$ et $c = max(F)$. La fonction $f$ est continue donc elle coupe la droite $y=m$ au moins une fois entre les points $a$ et $b$, par cons\'equent l'ensemble $F$ n'est pas vide.   
 
-$c$ est le plus petit majorant de $E$, c'est la borne sup\'erieure.
+On a $\forall x \in ]c,b], f(x) < m$ car $m > f(b)$ et si la fonction $f$ coupait la droite $y=m$ apr\`es $c$, cela contredirait la d\'efinition de $c$. Donc $c$ est le plus petit majorant de $E$, car aucun point sup\'erieur ou \'egal \`a $c$ n'est dans E. Donc $c$ est la borne sup\'erieure.
 
 \subsubsection*{Exercice 2.2.b}
-$f$ est continue et strictement d\'ecroissante et $x \in E$, donc $f(x) > m$. Posons $h = c-(x+\epsilon)$. On a $f(x+h) = f(c-\epsilon) > f(c) = m$. \\
+$f$ est continue et $x \in E$, donc $f(x) > m$. Posons $h = c-(x+\epsilon)$. On a $f(x+h) = f(c-\epsilon) > f(c) = m$. \\
 
-$c = f(m) \notin E$ voir pr\'ec\'edent (2.2.a).
+$m = f(c) \notin E$ voir pr\'ec\'edent (2.2.a).
 
 \subsubsection*{Exercice 2.2.c}
-Posons la suite $h_n = \frac{1}{n}$, on a $h_n > 0$, $f$ est strictement d\'ecroissante donc $f(c-h_n) > f(c) = m$ donc $f(x-h_n) \in E$ et $\lim_{n \to +\infty} h_n = 0$.
+Soit $F_1=\{x \in [a,c[, f(x) = m\}$ et $c_1 = max(F_1)$.
+Posons la suite $h_n = \frac{c-c_1}{2n}$, on a $h_n > 0$ car $c>c_1$. On a $\forall x \in ]c_1,c[, f(x) > m$ car la fonction $f$ est continue. Donc $f(c-h_n) > f(c) = m$ et $f(x-h_n) \in E$ et $\lim_{n \to +\infty} h_n = 0$.
 
 \subsubsection*{Exercice 2.2.d}
 Voir pr\'ec\'edent (2.2.a).
 
 \subsubsection*{Exercice 2.2.e}
-$f$ est strictement d\'ecroissante donc $f(c+h_n) < f(c) = m$ donc $f(c+h_n) \notin E$
 Voir pr\'ec\'edent (2.2.a).
 
 \subsubsection*{Exercice 2.2.f}
-$f$ est strictement d\'ecroissante donc lorsaue $h_n > 0$, on a $f(c+h_n) < f(c-h_n)$. Donc $f(c+h_n)- f(c-h_n) < 0$ et 
+On a $f(c+h_n) < f(c-h_n)$ car $f(c-h_n) \in E$ et $f(c+h_n) \notin E$. (voir pr\'ec\'edent 2.2.c et 2.2.e). Donc $f(c+h_n)- f(c-h_n) < 0$. Par cons\'equent, 
 $$\lim_{n \to +\infty} \frac{f(c+h_n)- f(c-h_n)}{2h_n} < 0$$
 
 Donc
 $$ \lim_{n \to +\infty} \frac{f(c+h_n)- f(c-h_n)}{2h_n} =
-\lim_{h \to 0} \frac{g_\alpha(x+h)- g_\alpha(x-h)}{2h} = \tilde{f} < 0$$
+\lim_{h \to 0+} \frac{g_\alpha(x+h)- g_\alpha(x-h)}{2h} = \tilde{f} < 0$$
 
-Ceci est faux car on a montr\'e seulement que $\lim_{h \to 0+} \frac{f(c+h)- f(c-h)}{2h} < 0$, on a rien d\'emontr\'e pour la limite $\lim_{h \to 0-}$. Mais passons.
 
 \subsubsection*{Exercice 2.3.a}
 $$\tilde{g_\alpha}(x) = \lim_{h \to 0} \frac{g_\alpha(x+h)- g_\alpha(x-h)}{2h} = \lim_{h \to 0} \frac{f(x+h) + \alpha (x+h)  - f(x-h) - \alpha (x-h)}{2h}$$
@@ -281,7 +268,7 @@ $$\forall x, y \in \R, x \leq y, f(x) + \alpha x \leq f(y) + \alpha y$$
 
 \subsubsection*{Exercice 2.3.c}
 
-La fonction $f$ est croissante s\^urement mais pourquoi?.\\
+La fonction $f	$ est croissante s\^urement mais pourquoi?.\\
 
 QED.
 
