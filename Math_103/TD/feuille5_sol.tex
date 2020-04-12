@@ -170,8 +170,10 @@ $$
 Une fonction $f$ de $E \to F$ appartient au noyau de $\phi$ si $\phi(f) = 0_F$. Une fonction est dite affine si elle est de la forme $f(t) = at + b$. Donc on cherche une fonction $f=at+b$ tel que $\phi(f)=0$.
 
 $$
-\phi(at+b) = \int_0^1{(at+c)e^t dt} = \int_0^1{at e^t + c e^t dt} = a\int_0^1{t e^t dt} + b\int_0^1{e^t dt} = a + b(e-1) = 0
+\phi(at+b) = \int_0^1{(at+b)e^t dt} = \int_0^1{at e^t + b e^t dt} = a\int_0^1{t e^t dt} + b\int_0^1{e^t dt} = a + b(e-1) = 0
 $$
+
+car $\int{e^t dt} = e^t$ et $\int{t e^t dt} = (t-1)e^t$.\\
 
 Il faut trouver $a$ et $b$ tel que $a+b(e-1) = 0$. Prenons par exemple, $b=0$ donc $a=0$, et $b=1$ donc $a = 1-e$.\\
 Les 2 fonctions affines sont $f_0(t) = 0t+0 = 0$ et $f_1(t) = (1-e)t + 1$.\\
