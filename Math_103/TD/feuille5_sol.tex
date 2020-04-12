@@ -1,0 +1,187 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Math\_103}
+\lhead{Feuille\_4}
+\rfoot{Page \thepage}
+
+
+
+\begin{document}
+
+Rappel de cours: 
+\begin{itemize}
+\item 
+\end{itemize}
+
+ 
+
+\subsection*{Exercice 5.1}
+\subsubsection*{5.1.1.a}
+La relation $\phi$ est lin\'eaire de $E$ si 
+\begin{itemize}
+\item $\forall A, B \in E, \phi(A+B) = \phi(A) + \phi(B)$  
+\item $\forall A \in E, \forall \lambda \in \R, \phi(\lambda A) = \lambda \phi(A)$
+\end{itemize}
+
+Posons $M_1=\begin{vmatrix} 1 & 2 \\ 2 & 3 \end{vmatrix}$ et $M_2 = \begin{vmatrix} -3 & 2 \\ 2 & -1 \end{vmatrix}$.\\
+
+En utilisant deux fois la distibitibit\'e par rapport \`a l'addition, on a:
+$$
+\phi(A+B) = M_1.(A+B).M_2 = M_1.(A.M_2 + B.M_2) = M_1.A.M_2 + M_1.B.M_2 = \phi(A) + \phi(B)
+$$
+
+On a $(\lambda A).B = \lambda (A.B) = A. (\lambda B)$ (voir cours).
+$$
+\phi(\lambda A) = M_1 . (\lambda A) . M_2 = M_1 . (\lambda (A . M_2)) = \lambda (M_1.A.M_2) = \lambda \phi(A)
+$$
+
+Donc la relation $\phi(M)$ est lin\'eaire.
+
+\subsubsection*{5.1.1.b}
+La matrice $A$ est un point fixe de la relation $\phi$ si $\phi(A) = A$, soit 
+$$
+\phi(A) =
+\begin{vmatrix} 1 & 2 \\ 2 & 3 \end{vmatrix} . A . 
+\begin{vmatrix} -3 & 2 \\ 2 & -1 \end{vmatrix} = 
+A
+$$
+
+$$
+\phi(A) =
+\begin{vmatrix} 1 & 2 \\ 2 & 3 \end{vmatrix} .
+\begin{vmatrix} 1 & 2 \\ 2 & 3 \end{vmatrix} . 
+\begin{vmatrix} -3 & 2 \\ 2 & -1 \end{vmatrix} = 
+\begin{vmatrix} 5 & 8 \\ 8 & 13 \end{vmatrix} .
+\begin{vmatrix} -3 & 2 \\ 2 & -1 \end{vmatrix} =
+\begin{vmatrix} 1 & 2 \\ 2 & 3 \end{vmatrix} =
+A
+$$
+
+\subsubsection*{5.1.2.a}
+$$
+\phi(P_1+P_2) = ((P_1+P_2)(1),(P_1+P_2)'(2)) = ((P_1(1)+P_2(1)),(P_1'+P_2')(2)) = (P_1(1)+P_2(1),P_1'(2)+P_2'(2))
+$$
+$$
+= (P_1(1), P_1'(2)) + (P_2(1),P_2'(2)) = \phi(P_1) + \phi(P_2)
+$$
+
+Et
+
+$$
+\phi(\lambda P) = (\lambda P(1), (\lambda P(2))') = (\lambda P(1), \lambda P'(2)) = \lambda (P(1), P'(2)) = \lambda \phi(P)
+$$
+
+La relation $\phi$ est lin\'eaire.
+
+\subsubsection*{5.1.2.b}
+$$
+\phi(t - 1) = ((t - 1)(1), (t - 1)'(2)) = ((t - 1)(1), (1)(2)) = (0,1)
+$$
+
+$$
+\phi((t - 2)^2) = ((t - 2)^2(1), ((t - 2)^2)'(2)) = ((t - 2)^2(1), (t^2 -4t +4)'(2)) = ((t - 2)^2(1), (2t -4)(2)) = (1,0)
+$$
+
+On cherche $P$, tel que $\phi(P) = (1,-1)$. Comme la relation $\phi$ est lin\'eaire on a
+$$
+(1,-1) = 1.(1,0) -1.(0,1) = 1.\phi((t - 2)^2) - 1.\phi(t-1) = \phi(1.(t-2)^2) + \phi(-(t-1)) = \phi((t-2)^2-(t-1)) = \phi(t^2-5t+5)
+$$
+Donc $P=t^2-5t+5$.
+
+\subsubsection*{5.1.3.a}
+$$
+\phi(f_1+f_2) = \int_0^1{(f_1+f_2)e^t dt} = \int_0^1{f_1 e^t + f_2 e^t dt} = \int_0^1{f_1 e^t} + \int_0^1{f_2 e^t dt} = \phi(f_1)+\phi(f_2)
+$$
+
+$$
+\phi(\lambda f) = \int_0^1{(\lambda f)e^t dt} = \int_0^1{ \lambda f e^t dt} =  \lambda \int_0^1{f e^t dt} = \lambda \phi(f)
+$$
+
+\subsubsection*{5.1.3.b}
+Une fonction $f$ de $E \to F$ appartient au noyau de $\phi$ si $\phi(f) = 0_F$. Une fonction est dite affine si elle est de la forme $f(t) = at + b$. Donc on cherche une fonction $f=at+b$ tel que $\phi(f)=0$.
+
+$$
+\phi(at+b) = \int_0^1{(at+c)e^t dt} = \int_0^1{at e^t + c e^t dt} = a\int_0^1{t e^t dt} + b\int_0^1{e^t dt} = a + b(e-1) = 0
+$$
+
+Il faut trouver $a$ et $b$ tel que $a+b(e-1) = 0$. Prenons par exemple, $b=0$ donc $a=0$, et $b=1$ donc $a = 1-e$.\\
+Les 2 fonctions affines sont $f_0(t) = 0t+0 = 0$ et $f_1(t) = (1-e)t + 1$.\\
+
+
+
+
+
+QED
+
+
+\end{document}
+
