@@ -189,6 +189,80 @@ f(x,y,z,t)=
 $$
 
 \subsubsection*{5.2.2.a}
+$Ker(f) = \{ X \in \R^4, f(X) = 0_{\R^3}\}$.\\
+
+$$
+\left\{ 
+\begin{array}{l l l}
+x -y +3z -t & = 0 & l_1 \\
+2x + y + 3z + 4t & = 0 & l_2 \\
+-x + 2y -4z + 3t & = 0 & l_3 \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l l}
+x -y +3z -t & = 0 & l_1 \\
+-y + 3z + 6t & = 0 & 2l_1 - l_2 \\
+y -z + 2t & = 0 & l_1 + l_3 \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l l}
+x -y +3z -t & = 0 & l_1 \\
+y -z + 2t & = 0 & l_1 + l_3 \\
+2z + 8t & = 0 & (2l_1 - l_2)+(l_1 + l_3) \\
+\end{array}
+\right. 
+$$
+
+On a 3 variables primaires (x,y,z) et une variable secondaire (t). Donc $Ker(f)=\{X \in \R^3, X=(7t,-6t, -4t, t)\}$.
+
+
+\subsubsection*{5.2.2.b}
+$$
+\left\{ 
+\begin{array}{l l l}
+x -y +3z -t & = x_b & l_1 \\
+2x + y + 3z + 4t & = y_b & l_2 \\
+-x + 2y -4z + 3t & = z_b & l_3 \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+x -y +3z -t & = x_b \\
+y -z + 2t & = x_b+z_b \\
+2z + 8t & = 3x_b-y_b+z_b \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+x_b = & x -y +3z -t \\
+z_b = & y -z + 2t - (x -y +3z -t) = -x +2y -4z +3t \\
+y_b = & 3(x -y +3z -t) -(2z + 8t) + (-x +2y -4z +3t) = 2x -y +3z -8t \\
+\end{array}
+\right. 
+$$
+
+La fonction $f$ est injective ssi $Ker(f) = 0_{\R^3}\}$. On a $Ker(f)= \{X \in \R^3, X=(7t,-6t, -4t, t)\} \neq 0_{\R^3}$. La fonction n'est pas injective.\\
+
+La fonction est surjective ssi $Im(f) = \R^3$. On a $Im(f) = B=(x_b,y_b,z_b) = \R^3$. Donc la fonction $f$ est surjective.
+
+\subsubsection*{5.2.3.a}
+On a $u_1 = 3e_1-e_3 = 3(1,0,0,0)-(0,0,1,0) = (3,0,-1,0)$ et $u_2 = e_2 -e_4 = (0,1,0,0) - (0,0,0,1) = (0,1,0,-1)$.\\
+Donc $f(u_1) = (3 - 0 -3 - 0, 6 - 0 +3 -0, -3 + 0 +4 +0)= (0, 9 ,1)$ et 
+$f(u_2) = (0-1+0--1, 0 -1 + 0 --8, -0 + 2 -0 -3) = (0,7,-1)$. \\
 
 
 
