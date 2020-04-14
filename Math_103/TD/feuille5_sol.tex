@@ -270,7 +270,7 @@ La fonction $f$ est injective ssi $Ker(f) = 0_{\R^3}\}$. On a $Ker(f)= \{X \in \
 
 La fonction est surjective ssi $Im(f) = \R^3$. On a $Im(f) = B= (x_b,y_b,z_b) \neq \R^3$ car il y a une relation entre $x_b,y_b et z_b$. Donc la fonction $f$ n'est pas surjective.
 
-\subsubsection*{5.2.3.a}
+\subsubsection*{5.2.3.a}	
 $$
 \begin{array}{l}
 u_1 = 3e_1-e_3 = 3(1,0,0,0)-(0,0,1,0) = (3,0,-1,0) \\
@@ -342,6 +342,64 @@ $$
 
 Oups la famille n'est pas g\'en\'eratrice. Probl\`eme.\\
 
+
+\subsection*{5.4}	
+\subsubsection*{5.4.1}	
+En utilisant la distributivit\'e par rapport \`a l'addition.
+$$g(A+B) = (A+B)M - M(A+B) = AM+BM -MA -MB = AM -MA +BM -MB = g(A) + g(B)$$
+
+$$g(\lambda A) = (\lambda A)M - M(\lambda A) = \lambda (AM) - \lambda(MA) = \lambda (AM-MA) = \lambda g(A)$$
+
+Donc $g$ est lin\'eaire.
+
+\subsubsection*{5.4.2}	
+Par d\'efinition, $Ker(g) = \{ M \in \mathcal{M}_2(\R), g(M) = 0_{\mathcal{M}_2(\R)}\}$.\\
+On a $g(M) = AM - MA = 0_{\mathcal{M}_2(\R)}$ pour tout $M \in \mathcal{M}_2(\R), AM=MA$ qui est la d\'efinition de $E$.\\
+
+Donc $Ker(g) = E$. 
+
+\subsubsection*{5.4.3}	
+On a $M \in E, AM = MA$.\\
+La matrice $A \in E$ car $AA =AA$.\\
+La matrice $I_2 \in E$ car $I_2A = A = AI_2$.\\
+
+On a trouv\'e 2 matrices qui appartiennent \`a $E$. Comme $Ker(g) = E$, on a $g(A) = 0_{\mathcal{M}_2(\R)}$ et $g(I_2) = 0_{\mathcal{M}_2(\R)}$. De plus, la relation $g$ est lin\'eaire donc $g(\lambda_1 A + \lambda_2 I_2) = \lambda_1g(A) + \lambda_2 g(I_2) = \lambda_1 0 + \lambda_2 0 = 0_{\mathcal{M}_2(\R)}$. Donc $\lambda_1 A + \lambda_2 I_2$ est dans $Ker(g)$. Par cons\'equent $Ker(g) = \{A,I_2,\lambda_1 A + \lambda_2 I_2\}$, et $dim\; Ker(g) \geq 2$.
+
+\subsubsection*{5.4.4}	
+$A$ et $I_2$ forment une base de $Ker(g)$ car la famille $(A,I_2)$ est libre et g\'en\'eratrice. 
+$dim\, Ker(g)$ et $rang(g)$ voir cours.
+
+
+\subsubsection*{5.4.5}	
+On a $g(A^2) = A^2A - AA^2 = A^3 - A^3 = 0_{\mathcal{M}_2(\R)}$. Donc la matrice $A^2 \in Ker(g)$.\\
+
+Comme les matrices $A$ et $I_2$ sont une base de $Ker(g)$ alors tous les \'el\'ement de l'ensemble $Ker(g)$ peuvent s'exprimer comme une combinaison lin\'eaire des matrices  $A$ et $I_2$.
+Ou plus bestialement,
+$$A^2 = 
+\begin{vmatrix} 2 & 3 \\ 1 & 2 \end{vmatrix} . \begin{vmatrix} 2 & 3 \\ 1 & 2 \end{vmatrix} =
+\begin{vmatrix} 7 & 12 \\ 4 & 7 \end{vmatrix}  = 
+4\begin{vmatrix} 2 & 3 \\ 1 & 2 \end{vmatrix} - \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} =
+4A -I_2
+$$
+
+Une matrice $M_g$ est dans l'image de la relation $g$ ssi il existe une matrice $M \in \mathcal{M}_2(\R)$ tel que $g(M) = AM - MA = M_g$. Soit $M = \begin{vmatrix} m_{11} & m_{12} \\ m_{21} & m_{22} \end{vmatrix}$\\
+
+$$
+AM = \begin{vmatrix} 2 & 3 \\ 1 & 2 \end{vmatrix} . \begin{vmatrix} m_{11} & m_{12} \\ m_{21} & m_{22} \end{vmatrix} =
+\begin{vmatrix} 2m_{11} +  3m_{21} & 2m_{12} + 3m_{22} \\ m_{11} + 2 m_{21} & m_{12} + 2m_{22} \end{vmatrix}
+$$
+
+$$
+MA = \begin{vmatrix} m_{11} & m_{12} \\ m_{21} & m_{22} \end{vmatrix} . \begin{vmatrix} 2 & 3 \\ 1 & 2 \end{vmatrix}  =
+\begin{vmatrix} 2m_{11} +  m_{12} & 3m_{11} + 2m_{12} \\ 2m_{21} + m_{22} & 3m_{21} + 2m_{22} \end{vmatrix}
+$$
+
+$$
+M_g = AM - MA = 
+\begin{vmatrix} 3m_{21} -  m_{12} & 3m_{22} - 3m_{11} \\ m_{11} - m_{22} & m_{12} - 3m_{21} \end{vmatrix} =
+\begin{vmatrix} a & -3b \\ b & -a \end{vmatrix}
+$$
+avec $a=3m_{21} -  m_{12}$ et $b = m_{11} - m_{22}$.
 
 QED
 
