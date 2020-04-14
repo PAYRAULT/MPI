@@ -205,7 +205,7 @@ $$
 \left\{ 
 \begin{array}{l l l}
 x -y +3z -t & = 0 & l_1 \\
--y + 3z + 6t & = 0 & 2l_1 - l_2 \\
+-3y + 3z - 6t & = 0 & 2l_1 - l_2 \\
 y -z + 2t & = 0 & l_1 + l_3 \\
 \end{array}
 \right. 
@@ -216,12 +216,12 @@ $$
 \begin{array}{l l l}
 x -y +3z -t & = 0 & l_1 \\
 y -z + 2t & = 0 & l_1 + l_3 \\
-2z + 8t & = 0 & (2l_1 - l_2)+(l_1 + l_3) \\
+0 & = 0 & (2l_1 - l_2)+3(l_1 + l_3) \\
 \end{array}
 \right. 
 $$
 
-On a 3 variables primaires (x,y,z) et une variable secondaire (t). Donc $Ker(f)=\{X \in \R^3, X=(7t,-6t, -4t, t)\}$.
+On a 2 variables primaires (x,y) et deux variables secondaires (z,t). Donc $Ker(f)=\{X \in \R^3, X=(2z-t,z-2t, z, t)\}$.
 
 
 \subsubsection*{5.2.2.b}
@@ -240,7 +240,7 @@ $$
 \begin{array}{l l}
 x -y +3z -t & = x_b \\
 y -z + 2t & = x_b+z_b \\
-2z + 8t & = 3x_b-y_b+z_b \\
+-3y + 3z - 6t & =  2x_b - y_b \\
 \end{array}
 \right. 
 $$
@@ -248,22 +248,99 @@ $$
 $$
 \left\{ 
 \begin{array}{l l}
-x_b = & x -y +3z -t \\
-z_b = & y -z + 2t - (x -y +3z -t) = -x +2y -4z +3t \\
-y_b = & 3(x -y +3z -t) -(2z + 8t) + (-x +2y -4z +3t) = 2x -y +3z -8t \\
+x -y +3z -t & = x_b \\
+y -z + 2t & = x_b+z_b \\
+-3(x_b+z_b) & =  2x_b - y_b \\
 \end{array}
 \right. 
 $$
 
-La fonction $f$ est injective ssi $Ker(f) = 0_{\R^3}\}$. On a $Ker(f)= \{X \in \R^3, X=(7t,-6t, -4t, t)\} \neq 0_{\R^3}$. La fonction n'est pas injective.\\
+$$
+\left\{ 
+\begin{array}{l l}
+x -y +3z -t & = x_b \\
+y -z + 2t & = x_b+z_b \\
+-5x_b +y_b -3 z_b & =  0 \\
+\end{array}
+\right. 
+$$
 
-La fonction est surjective ssi $Im(f) = \R^3$. On a $Im(f) = B=(x_b,y_b,z_b) = \R^3$. Donc la fonction $f$ est surjective.
+
+La fonction $f$ est injective ssi $Ker(f) = 0_{\R^3}\}$. On a $Ker(f)= \{X \in \R^3, X=(4z-t,z-2t, z, t)\} \neq 0_{\R^3}$. La fonction n'est pas injective.\\
+
+La fonction est surjective ssi $Im(f) = \R^3$. On a $Im(f) = B= (x_b,y_b,z_b) \neq \R^3$ car il y a une relation entre $x_b,y_b et z_b$. Donc la fonction $f$ n'est pas surjective.
 
 \subsubsection*{5.2.3.a}
-On a $u_1 = 3e_1-e_3 = 3(1,0,0,0)-(0,0,1,0) = (3,0,-1,0)$ et $u_2 = e_2 -e_4 = (0,1,0,0) - (0,0,0,1) = (0,1,0,-1)$.\\
-Donc $f(u_1) = (3 - 0 -3 - 0, 6 - 0 +3 -0, -3 + 0 +4 +0)= (0, 9 ,1)$ et 
-$f(u_2) = (0-1+0--1, 0 -1 + 0 --8, -0 + 2 -0 -3) = (0,7,-1)$. \\
+$$
+\begin{array}{l}
+u_1 = 3e_1-e_3 = 3(1,0,0,0)-(0,0,1,0) = (3,0,-1,0) \\
+u_2 = e_2 -e_4 = (0,1,0,0) - (0,0,0,1) = (0,1,0,-1) \\
+f(u_1) = (3 - 0 -3 - 0, 6 - 0 -3 -0, -3 + 0 +4 +0)= (0, 3 ,1) \\
+f(u_2) = (0-1+0--1, 0 +1 + 0 -4, -0 + 2 -0 -3) = (0,-3,-1) \\
+\end{array}
+$$
 
+On a $Vect(f(u_1), f(u_2)) = \{(0,3,1),(0,-3,-1)\}$. On remarque que $f(u_1)=-f(u_2)$, donc les 2 vecteurs sont colin\'eaires. Par cons\'equent $Vect(f(u_1), f(u_2))$ ne repr\'esente que les points de la droite de du plan $(y,z)$ et de vecteur directeur $(0,3,1)$.
+
+\subsubsection*{5.2.3.b}
+On a $Ker(f)=\{X \in \R^3, X=(-2z-t,z-2t, z, t)\}$,  les points de l'espace vectorielle sont $(x_f,y_f,z_f,t_f) = (-2z-t,z-2t, z, t)$.\\
+$E=Vect((3,0,-1,0), (0,1,0,-1))$, les points de l'espace vectorielle $D$ sont $(x_e,y_e,z_e,t_e) = a.(3,0,-1,0) + b.(0,1,0,-1) = (3a,b,-a,-b)$.\\
+
+$E \cap Ker(f)$ sont les points communs entre $E$ et $Ker(f)$. Donc
+
+$$
+\left\{ 
+\begin{array}{l l}
+3a & = -2z - t \\
+b & = z-2t \\
+-a & = z \\
+-b & = t \\
+\end{array}
+\right. 
+$$
+
+La solution de ce syst\`eme est $b=a$. Donc $D=(3a,a,-a,-a)$ ou $D=(3,1,-1,-1)$.\\
+
+$D'=(3,0,-1,0)$ et $D=(3,1,-1,-1)$ sont suppl\'ementaires dans E si $((3,0,-1,0),(3,1,-1,-1)) $ est une base de $E$. \\
+
+Famille libre?
+$$
+\left\{ 
+\begin{array}{l l}
+3\lambda_1 + 3\lambda_2& = 0 \\
+\lambda_2 & = 0 \\
+-\lambda_1 -\lambda_2 & = 0 \\
+-\lambda_2 & = 0 \\
+\end{array}
+\right. 
+$$
+
+$\lambda_1=\lambda_2=0$, la famille est libre. 
+
+Et g\'en\'eratrice?
+$$
+\left\{ 
+\begin{array}{l l}
+3\lambda_1 + 3\lambda_2& = x \\
+\lambda_2 & = y \\
+-\lambda_1 -\lambda_2 & = z \\
+-\lambda_2 & = t \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+0 & = t + y\\
+0 & = x +3z\\
+\lambda_2 & = y \\
+-\lambda_1 & = z + y \\
+\end{array}
+\right. 
+$$
+
+Oups la famille n'est pas g\'en\'eratrice. Probl\`eme.\\
 
 
 QED
