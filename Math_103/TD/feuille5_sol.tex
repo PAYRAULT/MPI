@@ -266,9 +266,9 @@ y -z + 2t & = x_b+z_b \\
 $$
 
 
-La fonction $f$ est injective ssi $Ker(f) = 0_{\R^3}\}$. On a $Ker(f)= \{X \in \R^3, X=(4z-t,z-2t, z, t)\} \neq 0_{\R^3}$. La fonction n'est pas injective.\\
+L'application $f$ est injective ssi $Ker(f) = 0_{\R^3}\}$. On a $Ker(f)= \{X \in \R^3, X=(4z-t,z-2t, z, t)\} \neq 0_{\R^3}$. L'application n'est pas injective.\\
 
-La fonction est surjective ssi $Im(f) = \R^3$. On a $Im(f) = B= (x_b,y_b,z_b) \neq \R^3$ car il y a une relation entre $x_b,y_b et z_b$. Donc la fonction $f$ n'est pas surjective.
+L'application est surjective ssi $Im(f) = \R^3$. On a $Im(f) = B= (x_b,y_b,z_b) \neq \R^3$ car il y a une relation entre $x_b,y_b et z_b$. Donc l'application $f$ n'est pas surjective.
 
 \subsubsection*{5.2.3.a}	
 $$
@@ -341,6 +341,100 @@ $$
 $$
 
 Oups la famille n'est pas g\'en\'eratrice. Probl\`eme.\\
+
+
+\subsection*{5.3}	
+\subsubsection*{5.3.1}	
+
+$$
+A = \begin{vmatrix} 3 & 4 & 2 & 1 \\ 1 & 2 & -1 & -1 \\  -1 & -1 & 3 & 2\\ 2 & -1 & 0 & 1 \end{vmatrix} 
+$$
+
+\subsubsection*{5.3.2.a}	
+
+$$
+f(1,0,1,-1) = (4, 1, 0, 1) 
+$$
+
+$$
+f(0,-1,1,-2) = (-4, -1, 0, -1) 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+4\lambda_1 - 4\lambda_2 & = 0 \\
+\lambda_1 - \lambda_2 & = 0\\
+0\lambda_1 - 0\lambda_2 & = 0 \\
+\lambda_1 - \lambda_2 & = 0 \\
+\end{array}
+\right. 
+$$
+
+On a $\lambda_1 = \lambda_2$, la famille n'est pas libre.\\
+
+Ou plus subtilement, on remarque que $f(1,0,1,-1) = -f(0,-1,1,-2)$ donc la famille est li\'ee.
+
+\subsubsection*{5.3.2.b}	
+L'application $f$ est injective si $Ker(f) = \{0\}$ avec $Ker(f) = \{X \in \R^4, f(X) = 0\}$.\\
+De la question pr\'ec\'edente on a:
+$$
+f(1,0,1,-1) + f(0,-1,1,-2) = 0
+$$
+L'application $f$ est lin\'eaire, donc\\
+$$
+f(1,-1,2,-3) = 0
+$$
+Donc
+$$
+(1,-1,2,-3) \in Ker(f)
+$$
+Donc
+$$
+Ker(f) \neq \{0\}
+$$
+Donc l'application $f$ n'est pas injective.
+
+\subsubsection*{5.3.2.c}	
+Une application lin\'eaire entre deux espaces vectoriels de m\^eme dimension est injective si, et seulement si, elle est surjective. L'application $f$ est lin\'eaire, de m\^eme dimension et elle n'est pas injective donc elle n'est pas surjective.
+
+\subsubsection*{5.3.3.a}	
+On note les vecteurs colonnes de A: $C_1 = (3,1,-1,2)$, $C_2 = (4,2,-1,-1)$, $C_3 = (2,-1,3,0)$ et $C_4 = (1,-1,2,1)$. \\
+
+Le deuxi\`eme vecteur-colonne est unee combinaison lin\'eaire des troisi\`eme et quatri\`eme vecteurs-colonnes si $\exists a,b \in \R, C_2 = aC_3+bC_4$.
+
+$$
+(4,2,-1,-1) = a(2,-1,3,0) + b(1,-1,2,1) = (2a+b,-a-b,3a+2b,b)
+$$
+Donc
+$$
+\left\{ 
+\begin{array}{l l}
+2a+b & = 4 \\
+-a-b & = 2\\
+3a+2b & = -1 \\
+b & = -1 \\
+\end{array}
+\right. 
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+2a+b & \neq 4 \\
+a & = -1\\
+3a+2b & = -1 \\
+b & = -1 \\
+\end{array}
+\right. 
+$$
+
+Contradiction. Donc non.
+
+\subsubsection*{5.3.3.b}	
+Voir cours
+
+\subsubsection*{5.3.3.c}	
 
 
 \subsection*{5.4}	
