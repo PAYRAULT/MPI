@@ -111,7 +111,7 @@ $$ = n2^n + 2^n > 2^{n+1}, \text{ pour } n \geq 2$$
 Pour $n_0 \geq 2$ la proposition est vraie. Donc il existe un $n_0$ (par exemple $n_0 =2$) pour lequel la proposition est vraie.
 
 \subsection*{Buffon TD1 - Exercice 7}
-$u_0 = 1, u_1 = u_0 = 1, u_2 = u_0+u_1 = 2, u_3 = u_0+u_1+u_2 = 4, u_3 = u_0+u_1+u_2+u_3 = 8$.\\
+$u_0 = 1, u_1 = u_0 = 1, u_2 = u_0+u_1 = 2, u_3 = u_0+u_1+u_2 = 4, u_4 = u_0+u_1+u_2+u_3 = 8$.\\
 
 Vrai pour $u_0$?, $u_0 = 1 \leq 2^0=1$, Vrai.\\
 Hypoth\`ese de r\'ecurrence: $u_n \leq 2^n$, calculons $u_{n+1}$.
@@ -122,6 +122,8 @@ La proposition est vraie.
 $$\forall x \in \R, \left(x+\frac{1}{x} \in \Z \implies \left( \forall n \in \N, x^n + \frac{1}{x^n} \in \Z \right) \right)$$
 
 Pour $n=0$, on a $\forall x \in \R, \left(x+\frac{1}{x} \in \Z \implies \left( x^0 + \frac{1}{x^0} \in \Z \right) \right)$ qui est vrai.\\
+Pour $n=1$, on a $\forall x \in \R, \left(x+\frac{1}{x} \in \Z \implies \left( x^1 + \frac{1}{x^1} \in \Z \right) \right)$ qui est vrai.\\
+
 Supposons la propri\'et\'e vraie au rang $k<n$, calculons le rang $n$.
 $$\left( x^{n-1} + \frac{1}{x^{n-1}} \right) \left( x + \frac{1}{x} \right) = x^n + x^{n-2} + \frac{1}{x^n} + \frac{1}{x^n-2} = \left( x^{n} + \frac{1}{x^{n}} \right) + \left( x^{n-2} + \frac{1}{x^{n-2}} \right)$$
 Donc
