@@ -103,10 +103,32 @@ $$w_{n+1} = \frac{(n+1)^2(n^2 + 4(n+1))}{4} = \frac{(n+1)^2(n+2)^2}{4} = \left(\
 
 
 \subsection*{Buffon TD1 - Exercice 6}
-Preuve par r\'ecurrence, suppposons $\exists n_0 \in \N, \forall n \in \N, n \geq n_0 \implies n! \geq 2^{n}$, v\'erifions la propri\'et'e pour $n+1$.
-$$(n+1)! = n!(n+1) \geq 2^n(n+1) \text{ (par hypoth\`ese de r\'ecurrence)}$$
+Preuve par r\'ecurrence, suppposons $\exists n_0 \in \N, \forall n \in \N, n \geq n_0 \implies n! \geq 2^{n}$, trouvons un entier $n$ pour lequel $n! \geq 2^n$ et v\'erifions la propri\'et'e pour $n+1$ avec l'hypoth\`ese de r\'ecurence $n! \geq 2^{n}$.
+Prenons $n=4$, on a $4! = 24 \geq 16 = 2^4$. 
+
+$$(n+1)! = n!(n+1) \geq 2^n(n+1) \text{ (hypoth\`ese de r\'ecurrence)}$$
 $$ = n2^n + 2^n > 2^{n+1}, \text{ pour } n \geq 2$$
 Pour $n_0 \geq 2$ la proposition est vraie. Donc il existe un $n_0$ (par exemple $n_0 =2$) pour lequel la proposition est vraie.
+
+\subsection*{Buffon TD1 - Exercice 7}
+$u_0 = 1, u_1 = u_0 = 1, u_2 = u_0+u_1 = 2, u_3 = u_0+u_1+u_2 = 4, u_3 = u_0+u_1+u_2+u_3 = 8$.\\
+
+Vrai pour $u_0$?, $u_0 = 1 \leq 2^0=1$, Vrai.\\
+Hypoth\`ese de r\'ecurrence: $u_n \leq 2^n$, calculons $u_{n+1}$.
+$$u_{n+1} = u_0 + u_1 + ... + u_{n-1} + u_n = u_n + u_n = 2u_n \leq 2.2^n = 2^{n+1}$$
+La proposition est vraie. 
+
+\subsection*{Buffon TD1 - Exercice 8}
+$$\forall x \in \R, \left(x+\frac{1}{x} \in \Z \implies \left( \forall n \in \N, x^n + \frac{1}{x^n} \in \Z \right) \right)$$
+
+Pour $n=0$, on a $\forall x \in \R, \left(x+\frac{1}{x} \in \Z \implies \left( x^0 + \frac{1}{x^0} \in \Z \right) \right)$ qui est vrai.\\
+Supposons la propri\'et\'e vraie au rang $k<n$, calculons le rang $n$.
+$$\left( x^{n-1} + \frac{1}{x^{n-1}} \right) \left( x + \frac{1}{x} \right) = x^n + x^{n-2} + \frac{1}{x^n} + \frac{1}{x^n-2} = \left( x^{n} + \frac{1}{x^{n}} \right) + \left( x^{n-2} + \frac{1}{x^{n-2}} \right)$$
+Donc
+$$ \left( x^{n} + \frac{1}{x^{n}} \right) = \left( x^{n-1} + \frac{1}{x^{n-1}} \right) - \left( x^{n-2} + \frac{1}{x^{n-2}} \right)$$
+
+Par hypoth\`ese de r\'ecurence, on a $\left( x^{n-1} + \frac{1}{x^{n-1}} \right) \in \Z$ et $\left( x^{n-2} + \frac{1}{x^{n-2}} \right) \in \Z$. Donc $\left( x^{n} + \frac{1}{x^{n}} \right) \in \Z$ car la soustraction de deux nombres dans $\Z$.
+
 
 
 \subsection*{Exercice Cauchy}
