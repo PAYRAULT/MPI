@@ -1,0 +1,129 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Exercice 1}
+
+La fonction $f(x)$ est paire ssi $\forall x, f(x) = f(-x)$, La fonction $f(x)$ est impaire ssi $\forall x, f(x) = -f(-x)$.\\
+
+Soit une fonction $f(x)$,
+$$f(x) = \frac{2f(x)}{2} = \frac{2f(x)+f(-x)-f(-x)}{2} = \frac{f(x)+f(-x)+f(x)-f(-x)}{2} = \frac{f(x)+f(-x)}{2} + \frac{f(x)-f(-x)}{2}$$
+
+Soit la fonction $f_1(x) = \frac{f(x)+f(-x)}{2}$, la fonction $f_1(x)$ est paire car $f_1(-x) = \frac{f(-x)+f(--x)}{2} = \frac{f(-x)+f(x)}{2} = f_1(x)$.\\
+Soit la fonction $f_2(x) = \frac{f(x)-f(-x)}{2}$, la fonction $f_2(x)$ est impaire car $f_2(-x) = \frac{f(-x)-f(--x)}{2} = \frac{f(-x)-f(x)}{2} = -\frac{f(x)-f(-x)}{2} = -f_2(x)$.\\
+
+Pour toute fonction $f(x)$, on a trouv\'e une fonction $f_1(x)$ paire et une fonction $f_2(x)$ impaire tel que $f(x) = f_1(x) + f_2(x)$.
+
+
+\subsection*{Buffon TD1 - Exercice 5}
+Vrai pour $u_0$? $u_0 = \frac{0(0+1)}{2} = 0$, oui.\\
+Admettons que $u_n = \frac{n(n+1)}{2}$, calculons $u_{n+1}$.
+$$u_{n+1} = u_n + n + 1 = \frac{n(n+1)}{2} + n + 1 = \frac{n(n+1)}{2} + \frac{2(n+1)}{2}  = \frac{(n+1)(n+2)}{2} = \frac{(n+1)((n+1)+1)}{2}$$
+
+
+Vrai pour $v_0$? $v_0 = \frac{0(0+1)(2.0+1)}{6} = 0$, oui.\\
+Admettons que $v_n = \frac{n(n+1)(2n+1)}{6}$, calculons $v_{n+1}$.
+$$v_{n+1} = v_n + n + 1 = \frac{n(n+1)(2n+1)}{6} + (n + 1)^2 = \frac{n(n+1)(2n+1)}{2} + \frac{6(n+1)^2}{6}  = \frac{(n+1)(n(2n+1) + 6(n+1))}{6}$$
+$$v_{n+1} = \frac{(n+1)(2n^2 +n + 6n+ 6))}{6} = \frac{(n+1)(n+2)(2n+3)}{6} = \frac{(n+1)((n+1)+1)(2(n+1)+1)}{6}$$
+
+Vrai pour $w_0$? $w_0 = \left(\frac{0(0+1)}{2}\right)^2 = 0$, oui.\\
+Admettons que $w_n = \left(\frac{n(n+1)}{2}\right)^2$, calculons $w_{n+1}$.
+$$w_{n+1} = w_n+ (n+1)^3 = \left(\frac{n(n+1)}{2}\right)^2 + (n+1)^3 = \left(\frac{n(n+1)}{2}\right)^2 + \frac{4(n+1)^3}{4} = \frac{n^2(n+1)^2 + 4(n+1)^3}{4}$$
+$$w_{n+1} = \frac{(n+1)^2(n^2 + 4(n+1))}{4} = \frac{(n+1)^2(n+2)^2}{4} = \left(\frac{(n+1)((n+1)+1)}{2}\right)^2$$
+
+
+\subsection*{Buffon TD1 - Exercice 6}
+Preuve par r\'ecurrence, suppposons $\exists n_0 \in \N, \forall n \in \N, n \geq n_0 \implies n! \geq 2^{n}$, v\'erifions la propri\'et'e pour $n+1$.
+$$(n+1)! = n!(n+1) \geq 2^n(n+1) \text{ (par hypoth\`ese de r\'ecurrence)}$$
+$$ = n2^n + 2^n > 2^{n+1}, \text{ pour } n \geq 2$$
+Pour $n_0 \geq 2$ la proposition est vraie. Donc il existe un $n_0$ (par exemple $n_0 =2$) pour lequel la proposition est vraie.
+
+
+\subsection*{Exercice Cauchy}
+Solution de l'\'equation diff\'erentielle de la forme $(y'(t) = a(t)y(t) + b(t)$ est $y(t) = \lambda e^{A(t)}+y_1(t)$ avec $A(t)$ une primitive de la fonction $a(t)$ et $y_1(t)$ est une solution particuli\`ere de l'\'equation.\\
+
+Pour $y'(t) - \frac{y(t)}{t^2} = e^{\frac{1}{t}}\sin(t)$, donc $a(t) = \frac{1}{t^2}$ et $b(t)= e^{\frac{1}{t}}\sin(t)$. On a $A(t) = -\frac{1}{t}$. Recherchons une  solution particuli\`ere de la forme $y_1(t) = \lambda(t)a^{A(t)}$ avec $\lambda'(t) = b(t)e^{A(t)}$.
+$$\lambda'(t) = b(t)e^{A(t)} = e^{\frac{1}{t}}\sin(t)e^{-\frac{1}{t}} = sin(t)$$
+donc $\lambda(t) =  -\cos(t)$ et $y_1(t) = -\cos(t)e^{-\frac{1}{t}}$\\
+Par cons\'equent
+$$y(t) = \lambda e^{A(t)}+y_1(t) = \lambda e^{-\frac{1}{n}} -\cos(t)e^{-\frac{1}{t}} = e^{-\frac{1}{n}}(\lambda-cos(t))$$
+
+Calculons l'unique solution $y(2\pi) =  e^{-\frac{1}{2\pi}}(\lambda-\cos(2\pi)) = \lambda e^{-\frac{1}{2\pi}} = 0$.\\
+Donc $\lambda = 0$ et l'unique solution est 
+$$y(t) = -\cos(t)e^{-\frac{1}{t}}$$
+
+
+QED
+
+\end{document}
+
