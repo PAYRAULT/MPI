@@ -133,6 +133,36 @@ Par hypoth\`ese de r\'ecurence, on a $\left( x^{n-1} + \frac{1}{x^{n-1}} \right)
 
 
 
+\subsection*{Buffon TD2 - Exercice 1.a}
+$$(1-a)\sum_{k=1}^{n}ka^{k-1} = \sum_{k=1}^{n}ka^{k-1} - \sum_{k=1}^{n}aka^{k-1} = \sum_{k=1}^{n}ka^{k-1} - \sum_{k=1}^{n}ka^{k}$$
+
+$$\sum_{k=1}^{n}{ka^{k-1} - ka^{k}} = \sum_{k=0}^{n-1}{a^k} - na^{n} = \sum_{k=0}^{n}{a^k} - (n+1)a^{n}$$
+Donc
+$$\sum_{k=1}^{n}ka^{k} = \sum_{k=1}^{n}ka^{k-1} - \sum_{k=0}^{n}{a^k} + (n+1)a^{n}$$
+
+On a $\sum_{k=0}^{n}{a^k} = \frac{1-a^{n+1}}{1-a}$ et $\sum_{k=1}^{n}ka^{k-1} = \left( \sum_{k=0}^{n}{a^k} \right)' = \left( \frac{1-a^{n+1}}{1-a} \right)'$
+Donc
+$$\sum_{k=1}^{n}ka^{k} = \left( \frac{1-a^{n+1}}{1-a} \right)' - \frac{1-a^{n+1}}{1-a} + (n+1)a^{n} $$
+
+\subsection*{Buffon TD2 - Exercice 1.b}
+Trouver $a,b,c$, tel que $\forall x \in \R^{+*},\frac{1}{x(x+1)(x+2)} = \frac{a}{x}+ \frac{b}{x+1}+ \frac{c}{x+2}$.
+
+$$\frac{a}{x}+ \frac{b}{x+1}+ \frac{c}{x+2} = \frac{a(x+1)(x+2)+bx(x+2)+cx(x+1)}{x(x+1)(x+2)} = \frac{a(x^2+3x+2)+b(x^2+2x)+c(x^2+x)}{x(x+1)(x+2)}$$
+Donc 
+$$
+\left\{ 
+\begin{array}{l}
+a+b+c = 0 \\
+3a+2b+c = 0 \\
+2a = 1 \\
+\end{array}
+\right. 
+$$
+Et $a=\frac{1}{2}$, $b=-1$, $c=\frac{1}{2}$. Donc $\frac{1}{x(x+1)(x+2)} = \frac{1}{2x} - \frac{1}{x+1} + \frac{1}{2(x+2)}$.\\
+$$\sum_{k=1}^{n}{\frac{1}{k(k+1)(k+2)}} = \sum_{k=1}^{n}{\frac{1}{2k} - \frac{1}{k+1} + \frac{1}{2(k+2)}} = \sum_{k=1}^{n}{\frac{1}{2k}} - \sum_{k=1}^{n}{\frac{1}{k+1}} + \sum_{k=1}^{n}{\frac{1}{2(k+2)}}$$
+$$ = \frac{1}{2}\sum_{k=1}^{n}{\frac{1}{k}} - \sum_{k=1}^{n}{\frac{1}{k+1}} + \frac{1}{2}\sum_{k=1}^{n}{\frac{1}{k+2}}$$
+
+
 \subsection*{Exercice Cauchy}
 Solution de l'\'equation diff\'erentielle de la forme $(y'(t) = a(t)y(t) + b(t)$ est $y(t) = \lambda e^{A(t)}+y_1(t)$ avec $A(t)$ une primitive de la fonction $a(t)$ et $y_1(t)$ est une solution particuli\`ere de l'\'equation.\\
 
