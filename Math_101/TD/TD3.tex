@@ -161,7 +161,9 @@ $$
 Et $a=\frac{1}{2}$, $b=-1$, $c=\frac{1}{2}$. Donc $\frac{1}{x(x+1)(x+2)} = \frac{1}{2x} - \frac{1}{x+1} + \frac{1}{2(x+2)}$.\\
 $$\sum_{k=1}^{n}{\frac{1}{k(k+1)(k+2)}} = \sum_{k=1}^{n}{\frac{1}{2k} - \frac{1}{k+1} + \frac{1}{2(k+2)}} = \sum_{k=1}^{n}{\frac{1}{2k}} - \sum_{k=1}^{n}{\frac{1}{k+1}} + \sum_{k=1}^{n}{\frac{1}{2(k+2)}}$$
 $$ = \frac{1}{2}\sum_{k=1}^{n}{\frac{1}{k}} - \sum_{k=1}^{n}{\frac{1}{k+1}} + \frac{1}{2}\sum_{k=1}^{n}{\frac{1}{k+2}}$$
-
+$$ = \frac{1}{2}\sum_{k=1}^{n}{\frac{1}{k}} - \sum_{k=2}^{n+1}{\frac{1}{k}} + \frac{1}{2}\sum_{k=3}^{n+2}{\frac{1}{k}}$$
+$$ = \frac{1}{2}(\sum_{k=3}^{n}{\frac{1}{k}}+1+\frac{1}{2}) - (\sum_{k=3}^{n}{\frac{1}{k}}+\frac{1}{2}+\frac{1}{n+1}) + \frac{1}{2}(\sum_{k=3}^{n}{\frac{1}{k}}+\frac{1}{n+1}+\frac{1}{n+2})$$
+$$=\frac{1}{4}-\frac{1}{2(n+1)}+\frac{1}{2(n+2)}$$
 
 \subsection*{Exercice Cauchy}
 Solution de l'\'equation diff\'erentielle de la forme $(y'(t) = a(t)y(t) + b(t)$ est $y(t) = \lambda e^{A(t)}+y_1(t)$ avec $A(t)$ une primitive de la fonction $a(t)$ et $y_1(t)$ est une solution particuli\`ere de l'\'equation.\\
