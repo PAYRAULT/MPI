@@ -232,7 +232,7 @@ $$a^2+b^2 -2a-2b = 0$$
 
 \subsection*{Buffon TD5 - Exercice 4.1}
 $P$: Si $g \circ f$ est injective alors $f$ aussi.\\
-Comme $g \circ f$ est injective, on a $(\forall (x_1, x_2) \in E^2, g(f(x_1)) = g(f(x_2)) \implies x_1 = x_2 \textrm{  : } [1]$.\\
+Comme $g \circ f$ est injective, on a $\forall (x_1, x_2) \in E^2, g(f(x_1)) = g(f(x_2)) \implies x_1 = x_2 \textrm{  : } [1]$.\\
 Preuve par l'absurde.\\
 Supposons que la fonction $f$ n'est pas injective. Donc $\exists (x_1, x_2) \in E^2, f(x_1)=f(x_2) \implies x_1 \neq x_2 \textrm{  : } [2]$.\\
 En partant de $f(x_1)=f(x_2)$, on a $g(f(x_1))=g(f(x_2))$ car $g$ est une fonction. Donc de $[1]$, on a $x_1 = x_2$.
@@ -241,16 +241,25 @@ Donc la proposition $P$ est vraie.
 
 \subsection*{Buffon TD5 - Exercice 4.2}
 $P$: Si $g \circ f$ est surjective alors $g$ aussi.\\
-Partons de $g \circ f$ est surjective, on a $\forall y \in G, \exists !x \in E, y = g \circ f(x) = g(f(x)) \textrm{  : } [1]$.\\
-et $f$ est une fonction donc $\forall x_e \in E, \exists !y_f \in F, y_f = f(x_e)$.
+Comme $g \circ f$ est surjective, on a $\forall y \in G, \exists !x \in E, y = g \circ f(x) = g(f(x)) \textrm{  : } [1]$.\\
+Comme $f$ est une fonction donc $\forall x_e \in E, \exists !y_f \in F, y_f = f(x_e)$.
 Donc, $\forall y \in G, y=g(f(x))$ de $[1]$, soit $b \in F, b = f(x)$, $b$ existe et est unique par $[2]$. \\
 DOnc $ \forall y \in G, y=g(f(x))=g(b)$ ce qui est la d\'efinition de g est une fonction surjective.
+Donc la proposition $P$ est vraie.
 
 \subsection*{Buffon TD5 - Exercice 4.3}
-Comme $g \circ f$ est injective, on a $(\forall (x_1, x_2) \in E^2, g(f(x_1)) = g(f(x_2)) \implies x_1 = x_2 \textrm{  : } [1]$.\\
-Comme $f$ est surjective, on a $\forall y \in F, \exists !x \in E, y = f(x) \textrm{  : } [2]$.\\
-Preuve par l'absurde.\\
-Supposons que la fonction $g$ n'est pas injective. Donc $\exists (x_1, x_2) \in F^2, g(x_1)=g(x_2) \implies x_1 \neq x_2 \textrm{  : } [3]$.\\
+P:si $g \circ f$ est injective et si $f$ est surjective alors $g$ est injective
+Comme $g \circ f$ est injective, on a $\forall (x_1, x_2) \in E^2, g(f(x_1)) = g(f(x_2)) \implies x_1 = x_2 \textrm{  :[1]}$.\\
+Comme $f$ est surjective, on a $\forall y \in F, \exists !x \in E, y = f(x) \textrm{  : [2]}$.\\
+
+Prenons $x_1, x_2$ tel que $g(x) = g(y) \textrm{  : [3]}$. Comme $f$ est surjective $[2]$, il existe $a,b$ tel que $x=f(a)$ et $y=f(b)$. Donc par $g(f(a) = g(f(b)$.\\
+par [1], on a donc $a=b$. Par cons\'equent $f(a) = f(b)$ car $f$ est une fonction. Donc $x=y$ et $g(x) = g(y) \implies x = y$ qui es la d\'efinition de $g$ est injective.\\
+Donc la proposition $P$ est vraie.
+
+\subsection*{Buffon TD5 - Exercice 4.4}
+P:  si $g \circ f$ est surjective et si $g$ est injective alors $f$ est surjective.\\
+Comme $g \circ f$ est surjective, on a $\forall y \in G, \exists !x \in E, y = g \circ f(x)=g(f(x)) \textrm{  : } [1]$.\\
+Comme $g$ est injective, on a $\forall (x_1, x_2) \in F^2, g(x_1) = g(x_2) \implies x_1 = x_2 \textrm{  : }[2]$.\\
 
 
 
