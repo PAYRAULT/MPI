@@ -225,7 +225,7 @@ $$a^2+b^2 -2a-2b = 0$$
 \subsection*{Rappel de cours}	
 \begin{itemize}
 \item la fonction $f \in F^{E}$ est injective si tout \'el\'ement de $F$ admet au plus un ant\'ec\'edent, $\forall (x_1, x_2) \in E^2, f(x_1) = f(x_2) \implies x_1 = x_2$ ou $\forall (x_1, x_2) \in E^2, x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$.
-\item la fonction $f \in F^{E}$ est surjective si tout \'el\'ement de $F$ admet exactement un ant\'ec\'edent, $\forall y \in F, \exists !x \in E, y = f(x)$.
+\item la fonction $f \in F^{E}$ est surjective si tout \'el\'ement de $F$ admet au moins un ant\'ec\'edent, $\forall y \in F, \exists x \in E, y = f(x)$.
 \item la fonction $f \in F^{E}$ est bijective si elle est injective et bijective.
 \item soit $f \in F^{E}$ et $g \in G^{F}$, la compos\'ee des fonctions $f$ et $g$ not\'ee $g \circ f$ d\'efinie par $g \circ f : E \to G, x \to g(f(x))$.
 \end{itemize}
@@ -241,7 +241,7 @@ Donc la proposition $P$ est vraie.
 
 \subsection*{Buffon TD5 - Exercice 4.2}
 $P$: Si $g \circ f$ est surjective alors $g$ aussi.\\
-Comme $g \circ f$ est surjective, on a $\forall y \in G, \exists !x \in E, y = g \circ f(x) = g(f(x)) \textrm{  : } [1]$.\\
+Comme $g \circ f$ est surjective, on a $\forall y \in G, \exists x \in E, y = g \circ f(x) = g(f(x)) \textrm{  : } [1]$.\\
 Comme $f$ est une fonction donc $\forall x_e \in E, \exists !y_f \in F, y_f = f(x_e)$.
 Donc, $\forall y \in G, y=g(f(x))$ de $[1]$, soit $b \in F, b = f(x)$, $b$ existe et est unique par $[2]$. \\
 DOnc $ \forall y \in G, y=g(f(x))=g(b)$ ce qui est la d\'efinition de g est une fonction surjective.
@@ -250,7 +250,7 @@ Donc la proposition $P$ est vraie.
 \subsection*{Buffon TD5 - Exercice 4.3}
 P:si $g \circ f$ est injective et si $f$ est surjective alors $g$ est injective
 Comme $g \circ f$ est injective, on a $\forall (x_1, x_2) \in E^2, g(f(x_1)) = g(f(x_2)) \implies x_1 = x_2 \textrm{  :[1]}$.\\
-Comme $f$ est surjective, on a $\forall y \in F, \exists !x \in E, y = f(x) \textrm{  : [2]}$.\\
+Comme $f$ est surjective, on a $\forall y \in F, \exists x \in E, y = f(x) \textrm{  : [2]}$.\\
 
 Prenons $x_1, x_2$ tel que $g(x) = g(y) \textrm{  : [3]}$. Comme $f$ est surjective $[2]$, il existe $a,b$ tel que $x=f(a)$ et $y=f(b)$. Donc par $g(f(a) = g(f(b)$.\\
 par [1], on a donc $a=b$. Par cons\'equent $f(a) = f(b)$ car $f$ est une fonction. Donc $x=y$ et $g(x) = g(y) \implies x = y$ qui es la d\'efinition de $g$ est injective.\\
@@ -258,9 +258,33 @@ Donc la proposition $P$ est vraie.
 
 \subsection*{Buffon TD5 - Exercice 4.4}
 P:  si $g \circ f$ est surjective et si $g$ est injective alors $f$ est surjective.\\
-Comme $g \circ f$ est surjective, on a $\forall y \in G, \exists !x \in E, y = g \circ f(x)=g(f(x)) \textrm{  : } [1]$.\\
+Comme $g \circ f$ est surjective, on a $\forall y \in G, \exists x \in E, y = g \circ f(x)=g(f(x)) \textrm{  : } [1]$.\\
 Comme $g$ est injective, on a $\forall (x_1, x_2) \in F^2, g(x_1) = g(x_2) \implies x_1 = x_2 \textrm{  : }[2]$.\\
 
+De $[1]$, $\forall z_1 \in G, \exists x_1 \in E, z_1 = g(f(x_1))$. donc $\exists y_1 \in F, y_1 = f(x_1)$.\\ 
+De $[2]$, $\not \exists y_2 \in F, y_2 \neq y_1, g(y_1) = g(y_2)$. Donc $y_1$ est unique.\\
+$\exists y_1 \in F, \forall x \in E, y_1 \neq f(x)$.
+
+
+\newpage
+\subsection*{Buffon TD7 - Exercice 1.1}
+Etude de $\arcsin(\frac{1+x}{\sqrt{2(1+x^2)}})$.\\
+1-d\'eriv\'ee de la fonction. On prend $g(x) = \arcsin(x)$ et $f(x)=\frac{1+x}{\sqrt{2(1+x^2)}}$. Donc
+$$\left(arcsin(\frac{1+x}{\sqrt{2(1+x^2)}})\right)' = (g \circ f(x))' = f'(x).\frac{1}{\sqrt{1-f^2(x)}}$$
+
+Donc calcul de $f'(x) = \left(\frac{1+x}{\sqrt{2(1+x^2)}}\right)' = \left(\frac{u}{v}\right)' = \frac{u'v-v'u}{v^2}$ avec $u(x) = 1+x$ et $v(x)=\sqrt{2(1+x^2)}$. Donc $u'(x) = 1$ et $v'(x) = \sqrt(2)w(x)^{1/2} = \sqrt(2).\frac{1}{2}.w^{\frac{1}{2}-1}w'(x)$ avec $w(x) = 1+x^2$ et $w'(x) = 2x$. Donc
+
+$$f'(x) = \frac{1.\sqrt{1+x^2}-(1+x)\frac{\sqrt{2}x}{\sqrt{1+x^2}}}{2(1+x^2)}  = \frac{1-x}{2\sqrt{2}(1+x^2)^{\frac{3}{2}}}$$
+
+Et
+$$d(x) = \left(arcsin(\frac{1+x}{\sqrt{2(1+x^2)}})\right)' = \frac{1-x}{2\sqrt{2}(1+x^2)^{\frac{3}{2}}}.\frac{1}{\sqrt{1-\frac{(1+x)^2}{2(1+x^2)}}}$$
+
+La d\'eriv\'ee de la fonction n'est pas d\'efinie en $x=1$.
+Lorque $x<1$, $d(x) > 0$ et lorque $x>1$, $d(x) < 0$ Donc $f(1) = 1 $est un maximum.\\
+
+Regardons le domaine de d\'efinition de $\arcsin(\frac{1+x}{\sqrt{2(1+x^2)}})$. $\arcsin(x)$ est d\'efinie pour $x \in ]-1,1[$. Calculons les $x$ tel que $-1 < \frac{1+x}{\sqrt{2(1+x^2)}} < 1$. On a $\lim_{x\to+\infty} f(x) = \frac{1}{\sqrt{2}}$ et $\lim_{x\to-\infty} f(x) = -\frac{1}{\sqrt{2}}$. Donc la fonction est d\'efinie sur $x \in ]-\infty, +\infty[$.\\
+
+Donc $\lim_{x\to+\infty} \arcsin(f(x)) = \arcsin(\frac{1}{\sqrt{2}}) = \frac{\pi}{4}$, Donc $\lim_{x\to-\infty} \arcsin(f(x)) = \arcsin(-\frac{1}{\sqrt{2}}) = -\frac{\pi}{4}$ et $\arcsin(1) = \frac{\pi}{2}$ le maximum.
 
 
 \newpage
