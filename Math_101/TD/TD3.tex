@@ -280,13 +280,53 @@ Et
 $$d(x) = \left(arcsin(\frac{1+x}{\sqrt{2(1+x^2)}})\right)' = \frac{1-x}{2\sqrt{2}(1+x^2)^{\frac{3}{2}}}.\frac{1}{\sqrt{1-\frac{(1+x)^2}{2(1+x^2)}}}$$
 
 La d\'eriv\'ee de la fonction n'est pas d\'efinie en $x=1$.
-Lorque $x<1$, $d(x) > 0$ et lorque $x>1$, $d(x) < 0$ Donc $f(1) = 1 $est un maximum.\\
+Lorsque $x<1$, $d(x) > 0$ et lorsque $x>1$, $d(x) < 0$ Donc $f(1) = 1$ est un maximum.\\
 
 Regardons le domaine de d\'efinition de $\arcsin(\frac{1+x}{\sqrt{2(1+x^2)}})$. $\arcsin(x)$ est d\'efinie pour $x \in ]-1,1[$. Calculons les $x$ tel que $-1 < \frac{1+x}{\sqrt{2(1+x^2)}} < 1$. On a $\lim_{x\to+\infty} f(x) = \frac{1}{\sqrt{2}}$ et $\lim_{x\to-\infty} f(x) = -\frac{1}{\sqrt{2}}$. Donc la fonction est d\'efinie sur $x \in ]-\infty, +\infty[$.\\
 
 Donc $\lim_{x\to+\infty} \arcsin(f(x)) = \arcsin(\frac{1}{\sqrt{2}}) = \frac{\pi}{4}$, Donc $\lim_{x\to-\infty} \arcsin(f(x)) = \arcsin(-\frac{1}{\sqrt{2}}) = -\frac{\pi}{4}$ et $\arcsin(1) = \frac{\pi}{2}$ le maximum.
 
 
+\subsection*{Buffon TD7 - Exercice 2.1}
+r\'esoudre $\arctan(x) + \arctan(2x) = \frac{\pi}{4}$.
+$$\arctan(x) + \arctan(2x) = \arctan\left(\frac{x + 2x}{1-2x^2}\right) = \frac{\pi}{4}$$
+$$\frac{x + 2x}{1-2x^2} = 1$$
+$$2x^2 + 3x -1 = 0$$
+Donc $x_1 = \frac{-3+\sqrt{17}}{4} \approx 0.280$ et $x_2 = \frac{-3-\sqrt{17}}{4} \approx -1.78$.
+
+ \subsection*{Buffon TD7 - Exercice 3.1}
+ $$\sqrt{3}\cos(x)+\sin(x) = 1$$
+Premi\`ere solution triviale $\cos(x) = 0$ et $sin(x)=1$ donc $\frac{\pi}{2} +2k\pi$.\\
+
+Ou alors
+ $$\sqrt{3}\cos(x)+\sin(x) = 1$$
+ $$\sqrt{3}\cos(x) = 1 - \sin(x)$$
+ $$3\cos^2(x) = 1 - 2\sin(x) + \sin^2(x)$$
+ $$3\cos^2(x) = 1 - 2\sin(x) + (1-\cos^2(x))$$
+ $$4\cos^2(x) = 2 - 2\sin(x)$$
+ $$2\cos^2(x) = 1 - \sin(x)$$
+ $$2(1-\sin^2(x)) = 1 - \sin(x)$$
+ $$-2\sin^2(x) + \sin(x) + 1 = 0$$
+ 
+ Donc $sin(x) = -\frac{1}{2}$ ou $sin(x) = 1$. Ce qui fait $x_1 = \frac{\pi}{6} +2k\pi$ et $x_2 = \frac{\pi}{2} +2k\pi$.
+
+ 
+ \newpage
+ \subsection*{Nombres r\'eels}
+Toute partie finie non vide $s$ de $\R$ poss\`ede un plus petit et un plus grand \'el\'ement. \\
+Preuve par r\'ecurence sur la taille de la partie de $\R$.\\
+L'ensemble $s$ est un singleton $s=\{a\}$. Le plus petit \'el\'ement de $s$ est $m = a$, le plus grand \'el\'ement de $s$ est $M = a$.\\
+Hypoth\`ese de r\'ecurence: Supposons que l'ensemble $s_n$ de taille $n$ admet un  plus petit \'el\'ement $m$ et un plus grand \'el\'ement $M$. Prouvons que l'ensemble $s_{n+1}$ de taille $n+1$ admet un plus petit et un plus grand \'el\'ement.\\
+Soit $a \in \R, a \notin s_n$, contruisons $s_{n+1} = s_n \cup \{a\}$. La taille de $s_{n+1}$ est $n+1$ \'el\'ements. On a 4 cas:
+\begin{itemize}
+\item $a < M$, alors le plus grand \'el\'ement de $s_{n+1}$ est $M$
+\item $a \geq M$, alors le plus grand \'el\'ement de $s_{n+1}$ est $a$
+\item $a < m$, alors le plus petit \'el\'ement de $s_{n+1}$ est $a$
+\item $a \geq m$, alors le plus petit \'el\'ement de $s_{n+1}$ est $m$
+\end{itemize}
+
+On a trouv\'e un plus petit et un plus grand \'el\'ement pour l'ensemble $s_{n+1}$ donc la proposition est vraie.
+ 
 \newpage
 \subsection*{Exercice Cauchy}
 Solution de l'\'equation diff\'erentielle de la forme $(y'(t) = a(t)y(t) + b(t)$ est $y(t) = \lambda e^{A(t)}+y_1(t)$ avec $A(t)$ une primitive de la fonction $a(t)$ et $y_1(t)$ est une solution particuli\`ere de l'\'equation.\\
