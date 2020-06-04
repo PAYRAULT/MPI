@@ -395,14 +395,23 @@ $$\lim_{y \to (0)^{+}} (y^2-2y). \lim_{y \to (0)^{+}}\ln(y) = \lim_{y \to (0)^{+
 Donc
 $$\lim_{x \to (-1)^{+}} (x^2-1)\ln(7x^3+4x^2+3) = 0$$
 
-\subsubsection*{Exo7 - Limites.10}
+\subsubsection*{Exo7 - Limites.9}
 $$\lim_{x \to (2)^{+}} (x-2)^2\ln(x^3-8)$$
 Posons $y=x-2$
 $$\lim_{y \to (0)^{+}} y^2\ln((y+2)^3-8)$$
 $$\lim_{y \to (0)^{+}} y^2\ln(y^3+6y^2+12y) = \lim_{y \to (0)^{+}} y^2(\ln(y)+\ln(y^2+6y+12))$$
 $$\lim_{y \to (0)^{+}} y^2\ln(y)+\lim_{y \to (0)^{+}}y^2\ln(y^2+6y+12) = 0 + 0 = 0$$
 
+\subsubsection*{Exo7 - Limites.10}
+$$\lim_{x \to (0)^{+}} \frac{x(x^x-1)}{\ln(x+1)}$$
+En utilisant le developpement limit\'e $\ln(1+x)$ en 0, on a
+$$\lim_{x \to (0)^{+}} \frac{x(x^x-1)}{x-\frac{x^2}{2} + \frac{x^3}{3}+\epsilon(x)}$$
+$$\lim_{x \to (0)^{+}} \frac{(x^x-1)}{1-\frac{x}{2} + \frac{x^2}{3}+\epsilon(x)}$$
+$$\lim_{x \to (0)^{+}} (x^x-1)$$
+$$\lim_{x \to (0)^{+}} (1-1) = 0$$
 
+Avec
+$$\lim_{x \to (0)^{+}}x^x = \lim_{x \to (0)^{+}}e^{ln(x^x)} = \lim_{x \to (0)^{+}}e^{x\ln(x)} = e^0 = 1$$ 
 
 \subsubsection*{Exo7 - Limites.11}
 $$\lim_{x \to +\infty}x\ln(x)-x\ln(x+2)$$
