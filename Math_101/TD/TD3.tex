@@ -372,6 +372,7 @@ $$\lim_{x \to +\infty} \frac{e^{\sqrt{x}+1}}{x+2}$$
 $$\lim_{x \to +\infty} \frac{\ln(e^{\sqrt{x}+1)}}{\ln(x+2)} = \lim_{x \to +\infty} \frac{\sqrt{x}}{\ln(x)}$$
 Posons $y = \sqrt{x}$.
 $$\lim_{y \to +\infty} \frac{\sqrt{y}}{\ln(y^2)} = \lim_{y \to +\infty} \frac{y}{2\ln(y)} = \lim_{y \to +\infty} \frac{1}{2}\frac{y}{\ln(y)} = \frac{1}{2} . +\infty = +\infty$$
+Donc$$\lim_{x \to +\infty} \frac{e^{\sqrt{x}+1}}{x+2} = +\infty$$
 
 \subsubsection*{Exo7 - Limites.5}
 $$\lim_{x \to 0+} \frac{\ln(3x+1)}{2x}$$
@@ -380,6 +381,8 @@ Posons $y=3x$
 $$\lim_{y \to 0+} \frac{1}{2}\frac{\ln(y+1)}{\frac{y}{3}} = \lim_{y \to 0+} \frac{3}{2}\frac{\ln(y+1)}{y}$$
 En utilisant le developpement limit\'e $\ln(1+x)$ en 0, on a
 $$\lim_{y \to 0+} \frac{3}{2}\frac{y-\frac{y^2}{2}+ \frac{y^3}{3}+\epsilon(y)}{y} = \lim_{y \to 0+} \frac{3}{2}(1-\frac{y^3}{2} + \frac{y^4}{3}+\epsilon(y)) = \frac{3}{2}$$
+Donc
+$$\lim_{x \to 0+} \frac{\ln(3x+1)}{2x} = \frac{3}{2}$$
 
 
 \subsubsection*{Exo7 - Limites.11}
@@ -389,8 +392,9 @@ Posons $y = \frac{1}{x}$
 $$\lim_{y \to 0^+} \frac{1}{y}\left(\ln(\frac{1}{y})-\ln(\frac{1}{y}+2)\right) = \lim_{y \to 0^+} \frac{1}{y}\left(\ln(\frac{1}{y})-\ln(\frac{1+2y}{y})\right) = \lim_{y \to 0^+} \frac{1}{y}\left(-\ln(y)-\ln(\frac{1+2y}{y})\right) $$
 $$= \lim_{y \to 0^+} \frac{1}{y}(-\ln(y)-(\ln(1+2y)-\ln(y)) = \lim_{y \to 0^+} -\frac{1}{y}\ln(1+2y)$$
 En utilisant le developpement limit\'e $\ln(1+x)$ en 0, on a
-$$\lim_{y \to 0^+} -\frac{1}{y}(2y - \frac{4y^2}{2} + \frac{8y^3}{3}+\epsilon(y)) = -2 - \frac{4y}{2} + \frac{8y^2}{3} = -2$$
-
+$$\lim_{y \to 0^+} -\frac{1}{y}(2y - \frac{4y^2}{2} + \frac{8y^3}{3}+\epsilon(y)) = \lim_{y \to 0^+} -2 - \frac{4y}{2} + \frac{8y^2}{3} = -2$$
+Donc
+$$\lim_{x \to +\infty}x\ln(x)-x\ln(x+2) = -2$$
 
 
 \subsubsection*{Exo7 - Limites.18}
