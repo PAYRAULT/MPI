@@ -385,6 +385,25 @@ Donc
 $$\lim_{x \to 0+} \frac{\ln(3x+1)}{2x} = \frac{3}{2}$$
 
 
+\subsubsection*{Exo7 - Limites.8}
+$$\lim_{x \to (-1)^{+}} (x^2-1)\ln(7x^3+4x^2+3)$$
+Posons $y=x+1$
+$$\lim_{y \to (0)^{+}} ((y-1)^2-1)\ln(7(y-1)^3+4(y-1)^2+3)$$
+$$\lim_{y \to (0)^{+}} (y^2-2y)\ln(7y^3-17y^2+13y) = \lim_{y \to (0)^{+}} (y^2-2y)(\ln(y)+\ln(7y^2-17y+13)$$
+$$\lim_{y \to (0)^{+}} (y^2-2y). \lim_{y \to (0)^{+}}\ln(y) = \lim_{y \to (0)^{+}}y(y-2)ln(y) = 0$$
+
+Donc
+$$\lim_{x \to (-1)^{+}} (x^2-1)\ln(7x^3+4x^2+3) = 0$$
+
+\subsubsection*{Exo7 - Limites.10}
+$$\lim_{x \to (2)^{+}} (x-2)^2\ln(x^3-8)$$
+Posons $y=x-2$
+$$\lim_{y \to (0)^{+}} y^2\ln((y+2)^3-8)$$
+$$\lim_{y \to (0)^{+}} y^2\ln(y^3+6y^2+12y) = \lim_{y \to (0)^{+}} y^2(\ln(y)+\ln(y^2+6y+12))$$
+$$\lim_{y \to (0)^{+}} y^2\ln(y)+\lim_{y \to (0)^{+}}y^2\ln(y^2+6y+12) = 0 + 0 = 0$$
+
+
+
 \subsubsection*{Exo7 - Limites.11}
 $$\lim_{x \to +\infty}x\ln(x)-x\ln(x+2)$$
 $$\lim_{x \to +\infty}x(\ln(x)-\ln(x+2))$$
