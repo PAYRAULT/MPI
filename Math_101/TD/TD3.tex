@@ -408,6 +408,65 @@ Donc
 $$\lim_{x \to +\infty}\left(\frac{x+1}{x-3}\right)^x = e^1 + \frac{1}{e^{-3}} = e.e^3= e^4$$
 
 
+\subsubsection*{Exo7 - Limites.15}
+$$\lim_{x \to +\infty}\left(\frac{x^3+5}{x^2+2}\right)^{\frac{x+1}{x^2+1}}$$
+
+Calculons 
+$$\lim_{x \to +\infty}\ln\left(\left(\frac{x+\frac{5}{x^2}}{1+\frac{2}{x^2}}\right)^{\frac{1+\frac{1}{x}}{x+\frac{1}{x}}}\right)$$
+$$\lim_{x \to +\infty} \frac{1+\frac{1}{x}}{x+\frac{1}{x}} \ln\left(\frac{x+\frac{5}{x^2}}{1+\frac{2}{x^2}}\right)$$
+On a 
+$$\lim_{x \to +\infty} \frac{1+\frac{1}{x}}{x+\frac{1}{x}} = \frac{1}{x}$$
+$$\lim_{x \to +\infty} \ln\left(\frac{x+\frac{5}{x^2}}{1+\frac{2}{x^2}}\right) = \ln(x)$$
+Et (voir exercice 2)
+$$\lim_{x \to +\infty} \frac{\ln(x)}{x} = 0$$
+On a 
+$$\lim_{x \to +\infty} a^b = \lim_{x \to +\infty} e^{\ln(a^b)}$$
+Donc
+$$\lim_{x \to +\infty} \left(\frac{x+\frac{5}{x^2}}{1+\frac{2}{x^2}}\right)^{\frac{1+\frac{1}{x}}{x+\frac{1}{x}}} = \lim_{x \to +\infty}e^{\ln\left(\left(\frac{x+\frac{5}{x^2}}{1+\frac{2}{x^2}}\right)^{\frac{1+\frac{1}{x}}{x+\frac{1}{x}}}\right)} = e^0 = 1$$
+
+
+\subsubsection*{Exo7 - Limites.16}
+$$\lim_{x \to +\infty} \left(\frac{e^x+1}{x+2}\right)^{\frac{1}{x+1}}$$
+Calculons 
+$$\lim_{x \to +\infty}\ln\left(\left(\frac{e^x+1}{x+2}\right)^{\frac{1}{x+1}}\right)$$
+$$\lim_{x \to +\infty}\frac{1}{x+1} \ln\left(\frac{e^x+1}{x+2}\right)$$
+$$\lim_{x \to +\infty}\frac{1}{x+1} (\ln(e^x+1)- ln(x+2))$$
+
+On a 
+$$\lim_{x \to +\infty}\frac{1}{x+1} = \frac{1}{x}$$
+$$\lim_{x \to +\infty} \ln(e^x+1) = x$$
+$$\lim_{x \to +\infty} -ln(x+2) = -ln(x)$$
+Donc
+$$\lim_{x \to +\infty}\frac{1}{x+1} (\ln(e^x+1)- ln(x+2)) = \lim_{x \to +\infty}\frac{1}{x}(x - \ln(x)) = \lim_{x \to +\infty} 1 - \frac{\ln(x)}{x} = 1$$
+
+On a 
+$$\lim_{x \to +\infty} a^b = \lim_{x \to +\infty} e^{\ln(a^b)}$$
+Donc
+$$\lim_{x \to +\infty} \left(\frac{e^x+1}{x+2}\right)^{\frac{1}{x+1}} = \lim_{x \to +\infty} e^{ln\left(\left(\frac{e^x+1}{x+2}\right)^{\frac{1}{x+1}}\right)} = e^1 = e$$
+
+\subsubsection*{Exo7 - Limites.17}
+$$\lim_{x \to 0^+} \left(\ln(1+x)\right)^{\frac{1}{\ln(x)}}$$
+
+On a 
+$$\lim_{x \to 0^+} \frac{1}{\ln(x)} = 0^{-}$$
+$$\lim_{x \to 0^+} \ln(1+x) = 0$$
+Dead end.\\
+
+Calculons 
+$$\lim_{x \to 0^+}\ln\left( \left(\ln(1+x)\right)^{\frac{1}{\ln(x)}} \right)$$
+$$\lim_{x \to 0^+}\frac{1}{\ln(x)}\ln(\ln(1+x))$$
+On a 
+$$\lim_{x \to 0^+} \ln(\ln(1+x)) = e$$
+$$\lim_{x \to 0^+} \frac{1}{\ln(x)} = 0$$
+Donc
+$$\lim_{x \to 0^+}\frac{1}{\ln(x)}\ln(\ln(1+x)) = 0$$
+Et
+
+On a 
+$$\lim_{x \to 0^+} a^b = \lim_{x \to 0^+} e^{\ln(a^b)}$$
+Donc
+$$\lim_{x \to 0^+} \left(\ln(1+x)\right)^{\frac{1}{\ln(x)}} = \lim_{x \to 0^+}e^{\ln\left( \left(\ln(1+x)\right)^{\frac{1}{\ln(x)}} \right)} = e^0 = 1$$
+
 \subsubsection*{Exo7 - Limites.18}
 $$\lim_{x \to +\infty}\frac{x^{(x^{x-1})}}{x^{(x^{x})}}$$
 $$\frac{x^{(x^{x-1})}}{x^{(x^{x})}} = \frac{x.x.x\ldots (x^{x-1} \textrm{ fois})}{x.x.x.\ldots (x^{x} \textrm{ fois})} =  \frac{1}{x^x} = 0$$
