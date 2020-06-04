@@ -346,7 +346,7 @@ $$\lim_{y \to +\infty}-\frac{\ln(y)}{y^2} = \lim_{x \to 0+}x^2\ln x = 0^{-}$$
 Donc 
 $$\lim_{x \to 0^{+}} \frac{x+2}{x^2\ln x} = \frac{2}{0-} = -\infty$$
 
-\subsubsection*{Exo7 - Limites.1}
+\subsubsection*{Exo7 - Limites.2}
 $$\lim_{x \to 0+} 2x\ln(x+\sqrt{x})$$
 $$\lim_{x \to 0+} 2x\ln(x+\sqrt{x})$$
 $\lim_{x \to 0+} 2x\ln(x+\sqrt{x}) = 2 \lim_{x \to 0+} x\ln(x+\sqrt{x})$ et posons $y = \frac{1}{x}$.
@@ -357,6 +357,33 @@ $$\lim_{y \to +\infty}\frac{1}{y}\ln(\frac{1}{y})$$
 $$\lim_{y \to +\infty}-\frac{\ln(y)}{y} = 0$$
 Donc
 $$\lim_{x \to 0+} 2x\ln(x+\sqrt{x}) = 2 \lim_{x \to 0+} x\ln(x+\sqrt{x}) = 2\lim_{y \to +\infty}\frac{1}{y}\ln(\frac{1}{y} + \sqrt{\frac{1}{y}}) = 2.0 = 0$$
+
+
+\subsubsection*{Exo7 - Limites.3}
+$$\lim_{x \to +\infty} \frac{x^3-2x^2+3}{x\ln x}$$
+$$\lim_{x \to +\infty} \frac{1-2x^{-1}+3x^{-3}}{x^{-2}\ln x}$$
+
+On a $\lim_{x \to +\infty} \frac{\ln x}{x^2} = 0^{-}$ (voir limite.1).
+Donc 
+$$\lim_{x \to +\infty} \frac{1-2x^{-1}+3x^{-3}}{x^{-2}\ln x} = \frac{1}{0^{+}} = +\infty$$ 
+
+\subsubsection*{Exo7 - Limites.4}
+$$\lim_{x \to +\infty} \frac{e^{\sqrt{x}+1}}{x+2}$$
+$$\lim_{x \to +\infty} \frac{\ln(e^{\sqrt{x}+1)}}{\ln(x+2)} = \lim_{x \to +\infty} \frac{\sqrt{x}}{\ln(x)}$$
+Posons $y = \sqrt{x}$.
+$$\lim_{y \to +\infty} \frac{\sqrt{y}}{\ln(y^2)} = \lim_{y \to +\infty} \frac{y}{2\ln(y)} = \lim_{y \to +\infty} \frac{1}{2}\frac{y}{\ln(y)} = \frac{1}{2} . +\infty = +\infty$$
+
+\subsubsection*{Exo7 - Limites.5}
+$$\lim_{x \to 0+} \frac{\ln(3x+1)}{2x}$$
+$$\lim_{x \to 0+} \frac{1}{2}\frac{\ln(3x+1)}{x}$$
+Posons $y=3x$
+$$\lim_{y \to 0+} \frac{1}{2}\frac{\ln(y+1)}{\frac{y}{3}} = \lim_{y \to 0+} \frac{3}{2}\frac{\ln(y+1)}{y}$$
+En utilisant le developpement limit\'e $\ln(1+x)$ en 0, on a
+$$\lim_{y \to 0+} \frac{3}{2}\frac{y-\frac{y^2}{2}+ \frac{y^3}{3}+\epsilon(y)}{y} = \lim_{y \to 0+} \frac{3}{2}(1-\frac{y^3}{2} + \frac{y^4}{3}+\epsilon(y)) = \frac{3}{2}$$
+
+\subsubsection*{Exo7 - Limites.18}
+$$\lim_{x \to +\infty}\frac{x^{(x^{x-1})}}{x^{(x^{x})}}$$
+$$\frac{x^{(x^{x-1})}}{x^{(x^{x})}} = \frac{x.x.x\ldots (x^{x-1} \textrm{ fois})}{x.x.x.\ldots (x^{x} \textrm{ fois})} =  \frac{1}{x^x} = 0$$
 
 
 \newpage
