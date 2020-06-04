@@ -328,6 +328,38 @@ Soit $a \in \R, a \notin s_n$, contruisons $s_{n+1} = s_n \cup \{a\}$. La taille
 On a trouv\'e un plus petit et un plus grand \'el\'ement pour l'ensemble $s_{n+1}$ donc la proposition est vraie.
  
 \newpage
+\subsection*{Exo7 - Limites}
+Rappel de cours:
+\begin{itemize}
+\item pour $x \to +\infty$, on a $\ln(x) < x < x^n$
+\item pour $x \to -\infty$, on a $\ln(x) > x > x^n \textrm{ si n est impair uniquement}$
+\item pour $x \to 0+$, on a $\ln(x) < 0$
+\end{itemize}
+
+\subsubsection*{Exo7 - Limites.1}
+$$\lim_{x \to 0+} \frac{x+2}{x^2\ln x}$$
+On a $\lim_{x \to 0+} x+2 = 2$, calculons $\lim_{x \to 0+}x^2\ln x$, posons $y = \frac{1}{x}$.\
+$$\lim_{y \to +\infty}\frac{\ln(\frac{1}{y})}{y^2}$$
+$$\lim_{y \to +\infty}-\frac{\ln(y)}{y^2}$$
+Quand $x \to +\infty$, on a $\ln(x) < x < x^n$ donc
+$$\lim_{y \to +\infty}-\frac{\ln(y)}{y^2} = \lim_{x \to 0+}x^2\ln x = 0^{-}$$
+Donc 
+$$\lim_{x \to 0^{+}} \frac{x+2}{x^2\ln x} = \frac{2}{0-} = -\infty$$
+
+\subsubsection*{Exo7 - Limites.1}
+$$\lim_{x \to 0+} 2x\ln(x+\sqrt{x})$$
+$$\lim_{x \to 0+} 2x\ln(x+\sqrt{x})$$
+$\lim_{x \to 0+} 2x\ln(x+\sqrt{x}) = 2 \lim_{x \to 0+} x\ln(x+\sqrt{x})$ et posons $y = \frac{1}{x}$.
+$$\lim_{y \to +\infty}\frac{1}{y}\ln(\frac{1}{y} + \sqrt{\frac{1}{y}})$$
+On a $\lim_{y \to +\infty} \frac{1}{y} + \sqrt{\frac{1}{y}} = \frac{1}{y}$.
+
+$$\lim_{y \to +\infty}\frac{1}{y}\ln(\frac{1}{y})$$
+$$\lim_{y \to +\infty}-\frac{\ln(y)}{y} = 0$$
+Donc
+$$\lim_{x \to 0+} 2x\ln(x+\sqrt{x}) = 2 \lim_{x \to 0+} x\ln(x+\sqrt{x}) = 2\lim_{y \to +\infty}\frac{1}{y}\ln(\frac{1}{y} + \sqrt{\frac{1}{y}}) = 2.0 = 0$$
+
+
+\newpage
 \subsection*{Exercice Cauchy}
 Solution de l'\'equation diff\'erentielle de la forme $(y'(t) = a(t)y(t) + b(t)$ est $y(t) = \lambda e^{A(t)}+y_1(t)$ avec $A(t)$ une primitive de la fonction $a(t)$ et $y_1(t)$ est une solution particuli\`ere de l'\'equation.\\
 
