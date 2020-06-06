@@ -1,0 +1,121 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Exercice 17}
+Une suite r\'elle $u_n$ converge vers le r\'eel $l$ si
+$$\forall \epsilon > 0, \exists N_{\epsilon} \in \N, \forall n \geq N_{\epsilon}  \implies  |u_n -l| < \epsilon \textrm{  [P1]}$$
+
+Une suite r\'elle $u_n$ diverge vers $+\infty$ si
+$$\forall A \in \R \exists N_{A} \in \N, \forall n \geq N_{A}  \implies  U_A \geq A \textrm{  [P2]}$$
+
+Une suite r\'elle $u_n$ diverge vers $-\infty$ si
+$$\forall B \in \R \exists N_{B} \in \N, \forall n \geq N_{B}  \implies  U_B \leq B \textrm{  [P3]}$$
+
+
+\subsubsection*{Exercice 17.1}
+Supposons que $l=2$.\\
+Prenons un $\epsilon>0$, trouvons un $N_{\epsilon}$ tel que $|u_{N_{\epsilon}} - 2| < \epsilon $. Par exemple, $N_{\epsilon} = 4$, car $|u_4 - 2| = |2-2| = 0 < \epsilon$.\\ 
+Maintenant, v\'erifions [P1] pour $l=2$.
+$\forall \epsilon > 0, \forall n > 4, |u_n - 2| < \epsilon$, calculons $u_{n>4} = 2 = u_4$, la propri\'et\'e [P1] est v\'erif\'ee pour tous les $n > N_{\epsilon}$.
+
+\subsubsection*{Exercice 17.2}
+\begin{itemize}
+\item $a = 1$, $\lim_{n\to\infty} u_n = 1$
+\item $|a| < 1$, $\lim_{n\to\infty} u_n = 0$
+\item $a \leq -1$, pas de limite
+\item $a \geq 1$, $\lim_{n\to\infty} u_n = +\infty$
+\end{itemize}
+
+Pour le second cas, posons $l=0$, trouvons un $N_{\epsilon}$ tel que $|u_{N_{\epsilon}} - 0| < \epsilon $. Par exemple, $N_{\epsilon}, |a^{N_{\epsilon}}| < \epsilon$. $N_{\epsilon}$ existe car $|a|<1$. On a bien $|u_{N_{\epsilon}} - 0| = |a^{N_{\epsilon}}| < \epsilon$.\\ 
+Maintenant, v\'erifions [P1] pour $l=0$. 
+$\forall \epsilon > 0, \exists N_{\epsilon} \in \N, |u_{N_{\epsilon}} - 0| < \epsilon$. Calculons $u_{N_{\epsilon}+1} = a^{N_{\epsilon}+1} < a^{N_{\epsilon}}$, la propri\'et\'e [P1] est v\'erif\'ee pour tous les $n> N_{\epsilon}$.\\
+M\^eme raisonnement pour les autres cas.
+
+
+\subsubsection*{Exercice 17.3}
+La suite diverge. Prenons un $A$, et calculons $N_A$ tel que $u_{N_A} > A$. Calculons $u_{N_A+1}$. \\
+$u_{N_A+1} = \frac{(N_A+1)^{N_A+1}}{(N_A+1)!} = \frac{(N_A+1).\ldots.(N_A+1).(N_A+1)}{N_A!(N_A+1)} = \frac{(N_A+1).\ldots.(N_A+1)}{N_A!}$, Les nombres au num\'erateur sont toujours plus grand que ceux du num\'erateur pour $u_{N_A}$, donc la suite $u_{N_A+1} > u_{N_A} > A$.\\
+La propri\'et\'e $[P2]$ est v\'erifi\'ee.\\
+
+La suite diverge. Prenons un $A$, et calculons $N_A$ tel que $u_{N_A} > A$. Calculons $u_{N_A+1}$. \\
+$u_{N_A+1} = \frac{(N_A+1)!}{2^{N_A+1}} = \frac{N_A!(N_A+1)}{2.2.2.\ldots.2} = U_{N_A}.\frac{(N_A+1)}{2}$. Donc la suite $u_{N_A+1} > u_{N_A} > A$.\\
+La propri\'et\'e $[P2]$ est v\'erifi\'ee.\\
+
+\subsection*{Exercice 18}
+On a $\forall \epsilon > 0, \exists N_{\epsilon} \in \N, \forall n \geq N_{\epsilon}  \implies  |u_n -l| < \epsilon$
+
+QED
+
+\end{document}
+
