@@ -174,19 +174,95 @@ $$ \lim_{n \to +\infty}u_{3n+2} = \frac{(3n+2)^2+1}{3n^2} = \frac{9n^2+12n+5}{3n
 
 \subsection*{Exercice 51}
 \subsubsection*{Exercice 51.1}
-$$\lim_{x\to1}=x^2+1 = 2$$
+$$\lim_{x\to1}x^2+1 = \lim_{x\to0} (x+1)^2+1 = \lim_{x\to0}x^2 + \lim_{x\to0}2x + \lim_{x\to0}1 + \lim_{x\to0}1 = 0+0+1+1 = 2$$
 
 \subsubsection*{Exercice 51.2}
-$$\lim_{x\to+\infty}=-x-\ln(x) = -\infty$$
+$$\lim_{x\to+\infty}-x-\ln(x) = -\lim_{x\to+\infty}x - \lim_{x\to+\infty} \ln(x) = -\infty -\infty = -\infty  $$
+
+\subsubsection*{Exercice 51.3}
+$$\lim_{x\to+\infty}x-\ln(x) = x.(1-\frac{\ln(x)}{x}) = \lim_{x\to+\infty}x.\lim_{x\to+\infty}(1-\frac{\ln(x)}{x}) = +\infty.(1-0) = +\infty$$
+Car $\ln(x) << x$.
+
+\subsubsection*{Exercice 51.4}
+$$\lim_{x\to1^{+}}\frac{1}{x-1}+\ln(x-1) = \lim_{x\to0^{+}}\frac{1}{x}+\ln(x) = \lim_{x\to0^{+}}\frac{1+x\ln(x)}{x} = \lim_{x\to0^{+}}\frac{1}{x}.\lim_{x\to0^{+}}(1+x\ln(x))$$
+$$=\frac{1}{0^+}.(1+0) = +\infty$$
+Voir exercice 17.
+
+\subsubsection*{Exercice 51.5}
+$$\lim_{x\to-\infty}x^2-x = \lim_{x\to-\infty}x(x-1) = \lim_{x\to-\infty}x.\lim_{x\to-\infty}(x-1) = -\infty.-\infty = +\infty$$
 
 
 \subsection*{Exercice 52}
+On a $\lim_{x\to0}\frac{\sin(x)}{x} = 1$, calculons $\lim_{x\to0}\cos(x)$.\\
+En utilisant la r\`egle de l'Hospital, on a $\lim_{x\to0}\frac{\sin(x)}{x} = \lim_{x\to0}\frac{\sin'(x)}{x'} = \lim_{x\to0}\frac{\cos(x)}{1} = \lim_{x\to0}\cos(x) = 1$.\\
+
+
+\subsubsection*{Exercice 51.1}
+$$\lim_{x\to0}\frac{\cos(x)}{x-\frac{\pi}{2}} = \frac{\lim_{x\to0}\cos(x)}{\lim_{x\to0}x-\frac{\pi}{2}}= \frac{1}{-\frac{\pi}{2}} = -\frac{2}{\pi}$$
+
+
+\subsubsection*{Exercice 52.2}
+On a $\tan(x) = \frac{\sin(x)}{\cos(x)}$. Calculons $\lim_{x\to0}\tan(x) = \lim_{x\to0}\frac{\sin(x)}{\cos(x)} = \lim_{x\to0}\frac{x\sin(x)}{x\cos(x)}$.
+$$ \lim_{x\to0}\frac{sin(x)}{x}.\lim_{x\to0}\frac{x}{cos(x)} = 1 . \frac{\lim_{x\to0}x}{\lim_{x\to0}cos x} = 1.0 = 0$$
+
+\subsubsection*{Exercice 52.3}
+$$\lim_{x\to0}\frac{\cos(x)-1}{x^2} = \lim_{x\to0}\frac{\cos(x)-(\cos^2(x)+\sin^2(x))}{x^2} = \lim_{x\to0}\frac{\cos(x)}{x^2}-\frac{\cos^2(x)}{x^2}-\frac{\sin^2(x))}{x^2}$$
+$$\lim_{x\to0}\left(\frac{\cos(x)}{x^2}-\frac{\cos^2(x)}{x^2}\right)-\lim_{x\to0}\frac{\sin^2(x)}{x^2} = \lim_{x\to0}\left(\frac{\cos(x)}{x^2}-\frac{\cos^2(x)}{x^2}\right)-\lim_{x\to0}\frac{\sin(x)}{x}.\lim_{x\to0}\frac{\sin(x)}{x}$$
+$$\lim_{x\to0}\left(\frac{\cos(x)}{x^2}(1-\cos(x)\right)-1$$
 
 \subsection*{Exercice 53}
+\subsubsection*{Exercice 53.1}
+$$\lim_{x\to1}\frac{1}{x-1}-\frac{2}{x2-1} = \lim_{x\to1}\frac{x+1}{(x+1)(x-1)}-\frac{2}{(x+1)(x-1)} = \lim_{x\to1}\frac{x-1}{(x+1)(x-1)} = \lim_{x\to1}\frac{1}{x+1} = \frac{1}{2}$$
+
+\subsubsection*{Exercice 53.2}
+$$\lim_{x\to0}\frac{\sqrt{1+x}-1}{x} = \lim_{x\to0}\frac{(\sqrt{1+x}-1)(\sqrt{1+x}+1)}{x(\sqrt{1+x}+1)} = \lim_{x\to0}\frac{1+x-1}{x(\sqrt{1+x}+1)} = \lim_{x\to0}\frac{1}{\sqrt{1+x}+1} = \frac{1}{\sqrt{1}+1} = \frac{1}{2}$$
+
+\subsubsection*{Exercice 53.3}
+Calculer $\lim_{x\to0}\frac{|x|}{x}$. 2 cas $\lim_{x\to0^+}\frac{|x|}{x}$ et $\lim_{x\to0^-}\frac{|x|}{x}$
+$$\lim_{x\to0^+}\frac{|x|}{x} = \lim_{x\to0^+}\frac{x}{x} = 1$$
+$$\lim_{x\to0^-}\frac{|x|}{x} = \lim_{x\to0^-}\frac{-x}{x} = -1$$
+
+\subsubsection*{Exercice 53.4}
+$$\lim_{x\to0}\frac{\sin(4x)}{\tan(5x)}$$
+Utilisation des d\'eveloppements limit\'es de $sin(x)$ et $\tan(x)$
+$$\lim_{x\to0}\frac{4x-\frac{(4x)^3}{3!}+\frac{(4x)^5}{5!}+\epsilon(x)}{5x+\frac{(5x)^3}{3}+\frac{2(5x)^5}{15}+\epsilon(x)} = \lim_{x\to0}\frac{4-\frac{(4x)^2}{3!}+\frac{(4x)^4}{5!}+\epsilon(x)}{5+\frac{(5x)^2}{3}+\frac{(25x)^4}{15}+\epsilon(x)} = \frac{\lim_{x\to0}4-\frac{(4x)^2}{3!}+\frac{(4x)^4}{5!}+\epsilon(x)}{\lim_{x\to0}5-\frac{(5x)^2}{3}+\frac{(25x)^4}{15}+\epsilon(x)} = \frac{4}{5}$$
+
+\subsubsection*{Exercice 53.5}
+Calculer $\lim_{x\to0}\frac{|\sin(4x)|}{\tan(5x)}$. 2 cas $\lim_{x\to0^+}\frac{|\sin(4x)|}{\tan(5x)}$ et $\lim_{x\to0^-}\frac{|\sin(4x)|}{\tan(5x)}$
+Utilisation des d\'eveloppements limit\'es de $sin(x)$ et $\tan(x)$
+$$\lim_{x\to0+}\frac{|4x-\frac{(4x)^3}{3!}+\frac{(4x)^5}{5!}+\epsilon(x)|}{5x+\frac{(5x)^3}{3}+\frac{2(5x)^5}{15}+\epsilon(x)} = \lim_{x\to0}\frac{4-\frac{(4x)^2}{3!}+\frac{(4x)^4}{5!}+\epsilon(x)}{5+\frac{(5x)^2}{3}+\frac{(25x)^4}{15}+\epsilon(x)} = \frac{\lim_{x\to0}4-\frac{(4x)^2}{3!}+\frac{(4x)^4}{5!}+\epsilon(x)}{\lim_{x\to0}5-\frac{(5x)^2}{3}+\frac{(25x)^4}{15}+\epsilon(x)} = \frac{4}{5}$$
+
+On sait que la fonction $\sin$ est impaire donc $\sin(-x) = -\sin(x)$.
+$$\lim_{x\to0-}\frac{|4x-\frac{(4x)^3}{3!}+\frac{(4x)^5}{5!}+\epsilon(x)|}{5x+\frac{(5x)^3}{3}+\frac{2(5x)^5}{15}+\epsilon(x)} = \frac{-4x+\frac{(4x)^3}{3!}-\frac{(4x)^5}{5!}+\epsilon(x)}{5x+\frac{(5x)^3}{3}+\frac{2(5x)^5}{15}+\epsilon(x)} = \lim_{x\to0}\frac{-4+\frac{(4x)^2}{3!}-\frac{(4x)^4}{5!}+\epsilon(x)}{5+\frac{(5x)^2}{3}+\frac{(25x)^4}{15}+\epsilon(x)} = -\frac{4}{5}$$
+
+\subsubsection*{Exercice 53.6}
+$$\lim_{x\to\frac{\pi}{2}}\frac{\cos(x)}{x-\frac{\pi}{2}} = \lim_{x\to0}\frac{\cos(x+\frac{\pi}{2})}{x} = \lim_{x\to0}-\frac{\sin(x)}{x} = -1$$
 
 \subsection*{Exercice 54}
+\subsubsection*{Exercice 54.1.1}
+$$\lim_{x\to+\infty}\frac{2x^3-3x^2+1}{-4x^3+3x+1} = \lim_{x\to+\infty}\frac{2-3x^{-1}+x^{-3}}{-4+3x^{-2}+x^{-3}} = \frac{2}{-4} = -\frac{1}{2}$$
+
+\subsubsection*{Exercice 54.1.2}
+$$\lim_{x\to1}\frac{2x^3-3x^2+1}{-4x^3+3x+1} = \lim_{x\to0}\frac{2(x+1)^3-3(x+1)^2+1}{-4(x+1)^3+3(x+1)+1}$$
+$$ = \lim_{x\to0}\frac{2x^3+3x^2}{-4x^3-12x^2-9x} = \lim_{x\to0}\frac{2x^2+3x}{-4x^2-12x-9} = \frac{\lim_{x\to0}2x^2+3x}{\lim_{x\to0}-4x^2-12x-9} = \frac{0}{9} =0$$
+
+\subsubsection*{Exercice 54.2}
+$$\lim_{x\to+\infty}\frac{2x+3}{3x^4+2}e^x = $$
+Calculons 
+$$\lim_{x\to+\infty}ln\left(\frac{2x+3}{3x^4+2}e^x\right) = \lim_{x\to+\infty}ln\left(\frac{2x+3}{3x^4+2}\right)+ln(e^x) = \lim_{x\to+\infty}ln\left(\frac{2x^{-3}+3x^{-4}}{3+2x{-4}}\right)+x $$
+$$ = \ln(\lim_{x\to+\infty}2x^{-3}+3x^{-4})-\ln(\lim_{x\to+\infty}3+2x^{-4})+ \lim_{x\to+\infty}x = $$
+$$ = \ln(\lim_{x\to+\infty}2x+3)-\ln(\lim_{x\to+\infty}x^{4})-\ln(3)+ \lim_{x\to+\infty}x = +\infty$$
+
+
+\subsubsection*{Exercice 54.3}
+$$\lim_{x\to+\infty}\frac{2x+3}{3x^4+2}e^{\ln(x)} = \lim_{x\to+\infty}\frac{2x+3}{3x^4+2}x = \lim_{x\to+\infty}\frac{2x^2+3x}{3x^4+2} = \lim_{x\to+\infty}\frac{2x^{-2}+3x^{-3}}{3+2x^{-4}} = \frac{\lim_{x\to+\infty}2x^{-2}+3x^{-3}}{\lim_{x\to+\infty}3+2x^{-4}} = \frac{0}{3} = 0$$
+
 
 \subsection*{Exercice 55}
+\subsubsection*{Exercice 55.2}
+$$\lim_{x\to+\infty}\frac{\ln(1+2x)}{\ln(1+x)} = \lim_{x\to+\infty}\frac{\ln((x^{-1}+2)x)}{\ln(1+x)} = \lim_{x\to+\infty}\frac{\ln((x^{-1}+2)+\ln(x)}{\ln(1+x}$$
+$$\lim_{x\to+\infty}\frac{\ln((x^{-1}+2)}{\ln(1+x)} + \frac{\ln(x)}{\ln(1+x)} = \lim_{x\to+\infty}\frac{\ln(2)}{\ln(1+x)} + \frac{\ln(x)}{\ln(1+x)} = 1$$
+car a l'infini $x \approx 1+x$.\\
 
 QED
 
