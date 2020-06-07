@@ -259,10 +259,21 @@ $$\lim_{x\to+\infty}\frac{2x+3}{3x^4+2}e^{\ln(x)} = \lim_{x\to+\infty}\frac{2x+3
 
 
 \subsection*{Exercice 55}
+\subsubsection*{Exercice 55.1}
+$$\lim_{x\to 0}\frac{\ln(\cos(x))}{\sin^2(x)} = \frac{\lim_{x\to 0}\ln(\cos(x))}{\lim_{x\to 0}sin^2(x)} = \frac{\ln(1)}{0+} = +\infty$$
+
 \subsubsection*{Exercice 55.2}
 $$\lim_{x\to+\infty}\frac{\ln(1+2x)}{\ln(1+x)} = \lim_{x\to+\infty}\frac{\ln((x^{-1}+2)x)}{\ln(1+x)} = \lim_{x\to+\infty}\frac{\ln((x^{-1}+2)+\ln(x)}{\ln(1+x}$$
 $$\lim_{x\to+\infty}\frac{\ln((x^{-1}+2)}{\ln(1+x)} + \frac{\ln(x)}{\ln(1+x)} = \lim_{x\to+\infty}\frac{\ln(2)}{\ln(1+x)} + \frac{\ln(x)}{\ln(1+x)} = 1$$
 car a l'infini $x \approx 1+x$.\\
+
+\subsubsection*{Exercice 55.3}
+$$\lim_{x\to+\infty}\frac{\sqrt(\ln(1+e^x))}{x^2}$$
+On a l'infini $1+e^x \approx e^x$, donc $ln(1+e^x) \approx ln(e^x) = x$.\\
+$$\lim_{x\to+\infty}\frac{\sqrt{\ln(1+e^x)}}{x^2} \approx \lim_{x\to+\infty}\frac{\sqrt{x}}{x^2} = 0$$
+
+\subsubsection*{Exercice 55.4}
+$$\lim_{x\to-\infty}\sin(x)\sin(\frac{1}{x^2}) = \lim_{x\to-\infty}\sin(x).\lim_{x\to-\infty}\sin(\frac{1}{x^2}) = [-1;1].0 = 0$$
 
 QED
 
