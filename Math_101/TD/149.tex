@@ -257,6 +257,12 @@ $$ = \ln(\lim_{x\to+\infty}2x+3)-\ln(\lim_{x\to+\infty}x^{4})-\ln(3)+ \lim_{x\to
 \subsubsection*{Exercice 54.3}
 $$\lim_{x\to+\infty}\frac{2x+3}{3x^4+2}e^{\ln(x)} = \lim_{x\to+\infty}\frac{2x+3}{3x^4+2}x = \lim_{x\to+\infty}\frac{2x^2+3x}{3x^4+2} = \lim_{x\to+\infty}\frac{2x^{-2}+3x^{-3}}{3+2x^{-4}} = \frac{\lim_{x\to+\infty}2x^{-2}+3x^{-3}}{\lim_{x\to+\infty}3+2x^{-4}} = \frac{0}{3} = 0$$
 
+\subsubsection*{Exercice 54.4}
+$$\lim_{x\to+\infty}(3x^4-2x^2)e^x$$
+Calculons 
+$$\lim_{x\to+\infty}ln((3x^4-2x^2)e^x) = \lim_{x\to+\infty}ln(3x^4-2x^2)+\ln(e^x) = \lim_{x\to+\infty}\ln(x^2(3x^2-2))+x $$
+$$ = \lim_{x\to+\infty}\ln(x^2) +\ln(3x^2-2)+x = \infty + \infty + \infty = \infty$$
+
 
 \subsection*{Exercice 55}
 \subsubsection*{Exercice 55.1}
@@ -274,6 +280,30 @@ $$\lim_{x\to+\infty}\frac{\sqrt{\ln(1+e^x)}}{x^2} \approx \lim_{x\to+\infty}\fra
 
 \subsubsection*{Exercice 55.4}
 $$\lim_{x\to-\infty}\sin(x)\sin(\frac{1}{x^2}) = \lim_{x\to-\infty}\sin(x).\lim_{x\to-\infty}\sin(\frac{1}{x^2}) = [-1;1].0 = 0$$
+
+
+\subsection*{Exercice 57}
+\subsubsection*{Exercice 57.1}
+
+$D_a = \R \setminus\{x^2+x-2 = 0\}$, $x^2+x-2 = 0$, donne $x_1 = 1$ et $x_2 = -2$. Donc $a(x) = \frac{2(x+2)}{(x+2)(x-1} = \frac{2}{x-1}$. On a $D_a = \R \setminus\{1\}$.\\
+$D_b = \R \setminus\{x^4+2x^2+1 = 0\}$, $x^4+2x^2+1 = 0$, n'a pas de racine car tout les membres sont positifs. Donc $D_b = \R$.\\
+
+\subsubsection*{Exercice 57.2}
+$$a(x) = \frac{2}{3} + \epsilon_1(x-4)$$
+$$\epsilon_1(x-4) = a(x) - \frac{2}{3} = \frac{2}{x-1} - \frac{2}{3} = \frac{6-2x+2}{3(x-1)} = \frac{-2(x-4)}{3(x-1)}$$
+$$\epsilon_1(X) = \frac{-2X}{3(X+3)}$$
+
+$$a(x) = -\frac{2}{5} + \epsilon_2(x-4)$$
+$$\epsilon_2(x+4) = a(x) + \frac{2}{5} = \frac{2}{x-1} + \frac{2}{5} = \frac{10+2x-2}{5(x-1)} = \frac{2(x+4)}{5(x-1)}$$
+$$\epsilon_2(X) = \frac{2X}{5(X-5)}$$
+
+On a $\epsilon_1(X) \neq \epsilon_2(X)$.
+
+\subsubsection*{Exercice 57.3}
+La fonction $b(x)$ est d\'erivable sur $\R$. La d\'eriv\'ee et un point $x_0$ est\\
+$$b'(x_0) = \frac{b(x_0+h)-b(x_0)}{h}$$
+$$b(x_0+h) = f(x_0) + hb'(x_o) = \frac{x_0-1}{x_0^4+2x_0^2+1} +hb'(x_0) = \frac{x_0-1}{x_0^4+2x_0^2+1} +\epsilon_0(h))$$
+Donc $\epsilon_0(h) = hb'(x_0)$.\\
 
 QED
 
