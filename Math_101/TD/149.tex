@@ -184,7 +184,8 @@ $$\lim_{x\to+\infty}x-\ln(x) = x.(1-\frac{\ln(x)}{x}) = \lim_{x\to+\infty}x.\lim
 Car $\ln(x) << x$.
 
 \subsubsection*{Exercice 51.4}
-$$\lim_{x\to1^{+}}\frac{1}{x-1}+\ln(x-1) = \lim_{x\to0^{+}}\frac{1}{x}+\ln(x) = \lim_{x\to0^{+}}\frac{1+x\ln(x)}{x} = \lim_{x\to0^{+}}\frac{1}{x}.\lim_{x\to0^{+}}(1+x\ln(x))$$
+Changement de variable $y=x-1$.
+$$\lim_{x\to1^{+}}\frac{1}{x-1}+\ln(x-1) = \lim_{y\to0^{+}}\frac{1}{y+1-1}+\ln(y+1-1) = \lim_{y\to0^{+}}\frac{1+y\ln(y)}{y} = \lim_{y\to0^{+}}\frac{1}{y}.\lim_{y\to0^{+}}(1+y\ln(y))$$
 $$=\frac{1}{0^+}.(1+0) = +\infty$$
 Voir exercice 17.
 
@@ -197,13 +198,14 @@ On a $\lim_{x\to0}\frac{\sin(x)}{x} = 1$, calculons $\lim_{x\to0}\cos(x)$.\\
 En utilisant la r\`egle de l'Hospital, on a $\lim_{x\to0}\frac{\sin(x)}{x} = \lim_{x\to0}\frac{\sin'(x)}{x'} = \lim_{x\to0}\frac{\cos(x)}{1} = \lim_{x\to0}\cos(x) = 1$.\\
 
 
-\subsubsection*{Exercice 51.1}
-$$\lim_{x\to0}\frac{\cos(x)}{x-\frac{\pi}{2}} = \frac{\lim_{x\to0}\cos(x)}{\lim_{x\to0}x-\frac{\pi}{2}}= \frac{1}{-\frac{\pi}{2}} = -\frac{2}{\pi}$$
+\subsubsection*{Exercice 52.1}
+Changement de variable $y=x-\frac{\pi}{2}$.
+$$\lim_{x\to\frac{\pi}{2}}\frac{\cos(x)}{x-\frac{\pi}{2}} = \lim_{y\to 0}\frac{\cos(y+\frac{\pi}{2})}{y}= \lim_{y\to 0}-\frac{\sin(y)}{y} = -1$$
 
 
 \subsubsection*{Exercice 52.2}
-On a $\tan(x) = \frac{\sin(x)}{\cos(x)}$. Calculons $\lim_{x\to0}\tan(x) = \lim_{x\to0}\frac{\sin(x)}{\cos(x)} = \lim_{x\to0}\frac{x\sin(x)}{x\cos(x)}$.
-$$ \lim_{x\to0}\frac{sin(x)}{x}.\lim_{x\to0}\frac{x}{cos(x)} = 1 . \frac{\lim_{x\to0}x}{\lim_{x\to0}cos x} = 1.0 = 0$$
+On a $\tan(x) = \frac{\sin(x)}{\cos(x)}$. 
+$$ \lim_{x\to0}\frac{\tan(x)}{x} = \lim_{x\to0}\frac{sin(x)}{x}.\lim_{x\to0}\frac{1}{cos(x)} = 1 . \frac{\lim_{x\to0}1}{\lim_{x\to0}cos x} = 1.1 = 1$$
 
 \subsubsection*{Exercice 52.3}
 $$\lim_{x\to0}\frac{\cos(x)-1}{x^2} = \lim_{x\to0}\frac{\cos(x)-(\cos^2(x)+\sin^2(x))}{x^2} = \lim_{x\to0}\frac{\cos(x)}{x^2}-\frac{\cos^2(x)}{x^2}-\frac{\sin^2(x))}{x^2}$$
