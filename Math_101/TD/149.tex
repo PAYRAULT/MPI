@@ -305,6 +305,65 @@ $$b'(x_0) = \frac{b(x_0+h)-b(x_0)}{h}$$
 $$b(x_0+h) = f(x_0) + hb'(x_o) = \frac{x_0-1}{x_0^4+2x_0^2+1} +hb'(x_0) = \frac{x_0-1}{x_0^4+2x_0^2+1} +\epsilon_0(h))$$
 Donc $\epsilon_0(h) = hb'(x_0)$.\\
 
+\subsection*{Exercice 76}
+Prenons un $x_0 \in \R$, la fonction $f(x)$ est d\'erivable en $x_0$ si $\frac{f(x_0+h)-f(x_0)}{h}$ admet une limite lorsque $h \to 0, h \neq 0$.
+$$\lim_{h \to 0, h \neq 0} \frac{f(x_0+h)-f(x_0)}{h} = \lim_{h \to 0, h \neq 0} \frac{C-C}{h} = \lim_{h \to 0, h \neq 0} \frac{0}{h} = 0$$
+
+
+\subsection*{Exercice 77}
+Prenons un $x_0 \in \R^{+}$, la fonction $f(x)$ est d\'erivable en $x_0$ si $\frac{f(x_0+h)-f(x_0)}{h}$ admet une limite lorsque $h \to 0, h \neq 0$.
+$$\lim_{h \to 0, h \neq 0} \frac{f(x_0+h)-f(x_0)}{h} = \lim_{h \to 0, h \neq 0} \frac{\sqrt{x_0+h}-\sqrt{x_0}}{h} = \lim_{h \to 0, h \neq 0} \frac{(\sqrt{x_0+h}-\sqrt{x_0})(\sqrt{x_0+h}+\sqrt{x_0})}{h(\sqrt{x_0+h}+\sqrt{x_0})}$$
+$$= \lim_{h \to 0, h \neq 0} \frac{x_0+h-x_0}{h(\sqrt{x_0+h}+\sqrt{x_0})} = \lim_{h \to 0, h \neq 0} \frac{h}{h(\sqrt{x_0+h}+\sqrt{x_0})} = \lim_{h \to 0, h \neq 0} \frac{1}{\sqrt{x_0+h}+\sqrt{x_0}} = \frac{1}{2\sqrt{x_0}}$$
+
+La fonction n'est pas d\'erivable en 0 car $\lim_{h \to 0^{-}, h \neq 0} \frac{1}{\sqrt{x_0+h}+\sqrt{x_0}}$ n'existe pas.\\
+
+
+\subsection*{Exercice 79}
+\subsubsection*{Exercice 79.1}
+$$f'(x) = 
+\left\{ 
+\begin{array}{l l}
+1 & \textrm{x est rationnel}\\
+0 & \textrm{x est irrationnel}\\
+\end{array}
+\right. 
+$$
+La fonction n'est pas d\'erivable et est continue en 0.
+
+\subsubsection*{Exercice 79.2}
+$$f'(x) = 
+\left\{ 
+\begin{array}{l l}
+\lim_{h \to 0, h \neq 0} 2x+h & \textrm{x est rationnel}\\
+0 & \textrm{x est irrationnel}\\
+\end{array}
+\right. 
+$$
+
+Pour $x=0$, on a 
+$$f'(0) = 
+\left\{ 
+\begin{array}{l l}
+\lim_{h \to 0, h \neq 0} 2.0+h = 0 & \textrm{x est rationnel}\\
+0 & \textrm{x est irrationnel}\\
+\end{array}
+\right. 
+$$
+
+La fonction est d\'erivable en $x=0$.
+
+
+\subsection*{Exercice 80}
+La fonction est continue en $x=0$, si $\lim_{x \to 0^{-}} a + bx -x^2 = \lim_{x \to 0^{+}} 1 - \frac{1}{1+x}$.
+$$\lim_{x \to 0^{+}} 1 - \frac{1}{1+x} = 0$$
+$$\lim_{x \to 0^{-}} a + bx -x^2 = a + \lim_{x \to 0^{-}} x(b-x) = 0$$
+Il faut $a=0$ et $b$ quelconque.\\
+
+La fonction est d\'erivable en $x=0$, si $(a + bx -x^2)' = \left(1 - \frac{1}{1+x}\right)'$.
+$$(a + bx -x^2)' = b-2x$$
+$$\left(1 - \frac{1}{1+x}\right)' = \frac{1}{(1+x)^2}$$
+En $x=0$, $b=1$ et $a$ quelconque.
+
 QED
 
 \end{document}
