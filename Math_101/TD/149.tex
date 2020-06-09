@@ -366,6 +366,26 @@ $$(a + bx -x^2)' = b-2x$$
 $$\left(1 - \frac{1}{1+x}\right)' = \frac{1}{(1+x)^2}$$
 En $x=0$, $b=1$ et $a$ quelconque.
 
+
+
+\subsection*{Exercice 83}
+\subsubsection*{Exercice 83.1}
+$$DL_1(0)\sqrt{1+x} = 1+\frac{x^2}{2} \textrm{   et   } DL_1(0)\cos{x} = 1 - \frac{x^2}{2}$$
+$$\lim_{x\to0^{+}} \frac{\alpha\sqrt{1+x} + \beta\cos(x)}{x} = \lim_{x\to0^{+}} \frac{\alpha(1 + \frac{x^2}{2}) + \beta(1 - \frac{x^2}{2})}{x}$$
+$$\lim_{x\to0^{+}} \frac{(\alpha+\beta)}{x}+\frac{x(\alpha-\beta)}{2}$$
+
+\begin{itemize}
+\item $\alpha = -\beta$, la limite est \'egale \`a $0$
+\item $\alpha + \beta > 0$, la limite est \'egale \`a $+\infty$
+\item $\alpha + \beta < 0$, la limite est \'egale \`a $-\infty$
+\end{itemize}
+
+\subsubsection*{Exercice 83.2}
+$$DL_1(1)\ln^2{x} = DL_1(0)\ln^2({x+1}) = (x+1)^2 \textrm{   et   } DL_1(1)\cos{(x^2)} = DL_1(0)\cos{((x+1)^2)} = 1 - \frac{(x+1)^4}{2}$$
+
+$$\lim_{x\to1} \frac{\ln^2(x)+\alpha \cos(x^2)}{x-1} = \lim_{X\to0} \frac{\ln^2(X+1)+\alpha \cos((X+1)^2)}{X} = 
+\lim_{X\to0} \frac{(X+1)^2+\alpha (1-\frac{(X+1)^4}{2})}{X} $$
+$$ =  $$
 QED
 
 \end{document}
