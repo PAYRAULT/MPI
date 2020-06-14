@@ -59,6 +59,7 @@
 \newcommand{\Oset}{\varnothing}
 \newcommand{\st}{\ni}
 \newcommand{\wh}{\widehat}
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
 
 %Pagination stuff.
 \setlength{\topmargin}{-.3 in}
@@ -306,6 +307,137 @@ La fonction $b(x)$ est d\'erivable sur $\R$. La d\'eriv\'ee et un point $x_0$ es
 $$b'(x_0) = \frac{b(x_0+h)-b(x_0)}{h}$$
 $$b(x_0+h) = f(x_0) + hb'(x_o) = \frac{x_0-1}{x_0^4+2x_0^2+1} +hb'(x_0) = \frac{x_0-1}{x_0^4+2x_0^2+1} +\epsilon_0(h))$$
 Donc $\epsilon_0(h) = hb'(x_0)$.\\
+
+\subsection*{Exercice 60}
+\subsubsection*{Exercice 60.1}
+La fonction $f: x \to x^2$ est continue est en $x_0 = 1$ si $\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{x \to 1, x \neq 1}\;$}} x^2 = f(1) = 1$.
+Calculons la limite $\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{x \to 1, x \neq 1}\;$}} x^2$.\\
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1-\eta, 1+\eta[ \setminus \{1\}, |f(x)-l| <\epsilon)$$
+Prenons $l=1$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1-\eta, 1+\eta[ \setminus \{1\}, |f(x)-l| <\epsilon)$$
+Cas $x \ ]1,1+\epsilon[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |(1+\eta)^2-l| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |2\eta+\eta^2| <\epsilon)$$
+Cas $x \ ]1-\epsilon,1[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |(1-\eta)^2-l| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |-2\eta+\eta^2| <\epsilon)$$
+Dans les 2 cas, $\eta$ existe (par exemple $\eta = \frac{\epsilon}{10}$). Donc la fonction $f(x)=x^2$ est continue en $x_0=1$.\\
+
+Prenons $x_0 \in \R$, on fait la m\^eme d\'emonstration mais avec une limite $l=x_0^2$.\\ 
+Cas $x \ ]x_0,x_0+\epsilon[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |(x_0+\eta)^2-x_0^2| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |2x_0\eta+\eta^2| <\epsilon)$$
+Cas $x \ ]x_0-\epsilon,x_0[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |(x_0-\eta)^2-x_0^2| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |-2x_0\eta+\eta^2| <\epsilon)$$
+Dans les 2 cas, $\eta$ existe (par exemple $\eta = \frac{\epsilon}{x_0^2}$). Donc la fonction $f(x)=x^2$ est continue en $x_0$ donc en tout $x\in\R$.\\
+
+
+\subsubsection*{Exercice 60.2}
+La fonction $f: x \to x^3$ est continue est en $x_0 = 1$ si $\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{x \to 1, x \neq 1}\;$}} x^3 = f(1) = 1$.
+Calculons la limite $\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{x \to 1, x \neq 1}\;$}} x^3$.\\
+Cas $x \ ]1,1+\epsilon[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |(1+\eta)^3-l| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |3\eta+3\eta^2+\eta^3| <\epsilon)$$
+Cas $x \ ]1-\epsilon,1[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |(1-\eta)^3-l| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]1, 1+\eta[ \setminus \{1\}, |-3\eta+3\eta^2-\eta^3| <\epsilon)$$
+Dans les 2 cas, $\eta$ existe (par exemple $\eta = \frac{\epsilon}{10}$). Donc la fonction $f(x)=x^3$ est continue en $x_0=1$.\\
+
+Prenons $x_0 \in \R$, on fait la m\^eme d\'emonstration mais avec une limite $l=x_0^3$.\\ 
+Cas $x \ ]x_0,x_0+\epsilon[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |(x_0+\eta)^3-x_0^3| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |2x_0\eta+\eta^2| <\epsilon)$$
+Cas $x \ ]x_0-\epsilon,x_0[$.
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |(x_0-\eta)^3-x_0^3| <\epsilon)$$
+$$\forall \epsilon >0, \exists \eta > 0 \textrm{ t.q. } ( \forall x \in ]x_0, x_0+\eta[ \setminus \{1\}, |-2x_0\eta+\eta^2| <\epsilon)$$
+Dans les 2 cas, $\eta$ existe (par exemple $\eta = \frac{\epsilon}{x_0^3}$). Donc la fonction $f(x)=x^3$ est continue en $x_0$ donc en tout $x\in\R$.\\
+
+Pour $f(x)=x^n$, il faut g\'en\'eraliser avec $(x_0-\eta)^n$ et prendre $\eta=\frac{\epsilon}{x_0^n}$.
+
+
+\subsection*{Exercice 62}
+\subsubsection*{Exercice 62.1}
+Continuit\'e de $\sqrt{x^3-3}$. La fonction est d\'efinie lorsque $x^3-3 \geq 0$, donc $x \geq \sqrt[3]{3}$. La fonction est une combinaison de fonctions continues sur leur domaines de d\'efinition, donc la fonction est continue sur $]\sqrt[3]{3}, +\infty[$. 
+
+\subsubsection*{Exercice 62.2}
+Continuit\'e de $\ln((x - 1)^2(x + 2)^4)$. La fonction est d\'efinie lorsque $(x - 1)^2(x + 2)^4 > 0$. On a $(x - 1)^2 \geq 0$ et $(x + 2)^4 \geq 0$. On a $(x - 1)^2 > 0$ lorsque $x \neq 1$ et $(x + 2)^4 > 0$ lorsque $x \neq -2$. Donc le domaine de d\'efinition est $\R \setminus \{-2,1\}$.
+Calculons la continuit\'e en $x_0 = 1$.
+$$lim_{x \to 1, x\neq 1} (x - 1)^2(x + 2)^4 = 0.3^4 = 0$$
+$$lim_{x \to 1, x\neq 1} ln((x - 1)^2(x + 2)^4) = -\infty$$
+Donc la fonction n'est pas continue.
+
+\subsubsection*{Exercice 62.3}
+Continuit\'e de $\ln(\sqrt{x^2+1}-2)$. La fonction est d\'efinie lorsque $\sqrt{x^2+1}-2 > 0$ donc $\sqrt{x^2+1}> 2$, $|x^2+1|> 4$, $x^2> 3$ et $x > \sqrt{3}$. La fonction est d\'efinie sur $]\sqrt{3},+\infty[$. La fonction est une combinaison de fonctions continues sur leurs domaines de d\'efinition, donc la fonction est continue sur $]\sqrt{3}, +\infty[$.
+
+\subsubsection*{Exercice 62.4}
+Continuit\'e de $\ln||x-1|+1|$. La fonction est d\'efinie lorsque $||x-1|+1| > 0$. On a $|x-1| \geq 0$, donc $||x-1|+1| = |x-1|+1$.
+2 cas:
+\begin{itemize}
+\item $x < 1$, $\lim_{x \to 1^{-}} \ln(|x-1|+1) = \lim_{x \to 1^{-}} \ln(2-x) = \ln(1) = 0$
+\item $x > 1$, $\lim_{x \to 1^{+}} \ln(|x-1|+1) = \lim_{x \to 1^{+}} \ln(x) = \ln(1) = 0$
+\end{itemize}
+On a $\lim_{x \to 1, x \neq 1} \ln||x-1|+1| = 0 = \ln||x-1|+1| = \ln(1)$.
+
+La fonction est une combinaison de fonctions continues sur les domaines $]-\infty,1[$ et $]1,+\infty[$ et continue par prolongement en $1$. Donc la fonction est continue sur $\R$.  
+
+\subsubsection*{Exercice 62.5}
+Continuit\'e de $\ln||x+1|-1|$. La fonction est d\'efinie lorsque $||x+1|-1| > 0$. \\
+$||x+1|-1| = |x+1|-1$ lorsque $|x+1| > 1$ et $||x+1|-1| = 1-|x+1|$ lorsque $|x+1| < 1$. \\
+
+\begin{itemize}
+\item $|x+1| > 1$, lorsque $x>0$ et $x < -2$
+\item $|x+1| < 1$, lorsque $-2<x<0$. 
+\end{itemize}
+
+Le domaine de d\'efinition est $\R \setminus \{-2,0\}$.\\
+Il faut v\'erifier la continuit\'e aux points $-2$ et $0$.
+
+On a $\lim_{x\to0} \ln ||x+1|-1| = \lim_{x\to0} \ln 0 = -\infty$, donc la fonction n'est pas continue.
+
+\subsubsection*{Exercice 62.6}
+Continuit\'e de $\ln||x-1|-1|$. La fonction est d\'efinie lorsque $||x-1|-1| > 0$. \\
+$||x-1|-1| = |x-1|-1$ lorsque $|x-1| > 1$ et $||x-1|-1| = 1-|x-1|$ lorsque $|x-1| < 1$. \\
+
+\begin{itemize}
+\item $|x-1| > 1$, lorsque $x<0$ et $x > 2$
+\item $|x-1| < 1$, lorsque $0<x<2$. 
+\end{itemize}
+
+Le domaine de d\'efinition est $\R \setminus \{2,0\}$.\\
+Il faut v\'erifier la continuit\'e aux points $2$ et $0$.
+
+On a $\lim_{x\to0} \ln ||x-1|-1| = \lim_{x\to0} \ln 0 = -\infty$, donc la fonction n'est pas continue.
+
+
+\subsubsection*{Exercice 62.7}
+Continuit\'e de $\ln|\sqrt{x-1}+1|$. La fonction est d\'efinie lorsque $|\sqrt{x-1}+1| > 0$ pour le $\ln$ ceci est vrai car $\sqrt{x-1} > 0$ et lorsque $x-1>0$ pour la racine carr\'e. Donc la fonction est d\'efinie sur $]1,+\infty[$.\\
+La fonction est une combinaison de fonctions continues sur le domaine  $]1,+\infty[$, donc la fonction est continue sur $]1,+\infty[$.
+
+
+\subsubsection*{Exercice 62.8}
+Continuit\'e de $\ln|\sqrt{x-1}-1|$. La fonction est d\'efinie lorsque $|\sqrt{x-1}-1| > 0$ pour le $\ln$  et lorsque $x-1>0$ pour la racine carr\'e.\\
+Donc $x > 1$.
+
+$|\sqrt{x-1}-1| = \sqrt{x-1}-1$ lorsque $\sqrt{x-1}-1 > 0$ et $|\sqrt{x-1}-1| = 1-\sqrt{x-1}$ lorsque $\sqrt{x-1}-1 < 0$
+
+\begin{itemize}
+\item $\sqrt{x-1}-1 > 0$, $\sqrt{x-1} > 1$, $|x-1| > 1$ toujours vrai pour $x > 2$, 
+\item $1-\sqrt{x-1} > 0$, $1>\sqrt{x-1}$, $1 > |x-1|$ impossible lorsque $x<2$.
+\end{itemize}
+
+La fonction est d\'efinie sur $\R \setminus \{2\}$.
+
+Calculons la continuit\'e en $x_0= 2$, $\lim_{x \to 2, x \neq 2} \ln|\sqrt{x-1}-1|$\\
+$\lim_{x \to 2, x \neq 2} |\sqrt{x-1}-1| = |\sqrt{\lim_{x \to 2, x \neq 2}x-1}-1| = |0| = 0$\\
+Donc $\lim_{x \to 2, x \neq 2} \ln|\sqrt{x-1}-1| = -\infty$. La fonction n'est pas continue en $2$.
+
+\subsubsection*{Exercice 62.9}
+Continuit\'e de $\sqrt{\ln(x+1)-1}$. La fonction est d\'efinie lorsque $\ln(x+1)-1 > 0$ pour la racine carr\'e et $x+1>0$ pour le $\ln$.\\
+Donc $x>-1$ et $\ln(x+1) > 1$, donc $e^{\ln(x+1)} > e^1$, donc $x > e - 1$.\\
+
+Le domaine de d\'efinition de la fonction est $]e-1, +\infty[$. La fonction est un assemblage de fonction continue sur leurs domaines de d\'efinition. Donc la fonction est continue sur $]e-1, +\infty[$.
+
 
 \subsection*{Exercice 76}
 Prenons un $x_0 \in \R$, la fonction $f(x)$ est d\'erivable en $x_0$ si $\frac{f(x_0+h)-f(x_0)}{h}$ admet une limite lorsque $h \to 0, h \neq 0$.
