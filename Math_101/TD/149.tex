@@ -439,6 +439,58 @@ Donc $x>-1$ et $\ln(x+1) > 1$, donc $e^{\ln(x+1)} > e^1$, donc $x > e - 1$.\\
 Le domaine de d\'efinition de la fonction est $]e-1, +\infty[$. La fonction est un assemblage de fonction continue sur leurs domaines de d\'efinition. Donc la fonction est continue sur $]e-1, +\infty[$.
 
 
+\subsection*{Exercice 64}
+\subsubsection*{Exercice 64.1}
+
+$$f \circ g(x) = f(g(x)) = 
+\left\{ 
+\begin{array}{l l}
+\frac{(x-1)+|x-1|}{2} & x < 0\\
+\frac{x^2+|x^2|}{2} & x \geq 0\\
+\end{array}
+\right.
+=
+\left\{ 
+\begin{array}{l l}
+0 & x < 0\\
+x^2 & x \geq 0\\
+\end{array}
+\right.
+$$
+
+$f \circ g$ est continue sur $\R$ car $lim_{x \to 0, x \neq 0} f \circ g(x) = 0$. 
+
+\subsubsection*{Exercice 64.2}
+$$g \circ f(x) = g(f(x)) = 
+\left\{ 
+\begin{array}{l l}
+\frac{x+|x|}{2}-1 & \frac{x+|x|}{2} < 0\\
+\left(\frac{x+|x|}{2}\right)^2 & \frac{x+|x|}{2} \geq 0\\
+\end{array}
+\right.
+$$
+
+On a $\frac{x+|x|}{2} \geq 0$, $x+|x| \geq 0$. 2 cas $x \geq 0$, $x+x \geq 0$ donc $x \geq 0$ et $x < 0$, $x+(-x) \geq 0$ toujours vrai. Donc $\frac{x+|x|}{2} \geq 0$ quand $x \geq 0$\\
+
+On a $\frac{x+|x|}{2} < 0$, $x+|x| < 0$. 2 cas $x \neq 0$, $x+x < 0$ impossible et $x < 0$, $x+(-x) < 0$ impossible. Donc $\frac{x+|x|}{2} < 0$ impossible.\\
+$g \circ f(x) = g(f(x)) = \left(\frac{x+|x|}{2}\right)^2 = x^2$ pour $x \in [0,+\infty[$.
+
+
+\subsection*{Exercice 69}
+\subsubsection*{Exercice 69.1}
+$x^7-x^2+1 = 0$ sur $I = [-2,0]$. La fonction est continue car assemblage de fonction continue sur le domaine $I$. On a $(-2)^7 - (-2)^2 + 1 < 0$ et $ (0)^7 - (0)^2 + 1 > 0$. Selon the th\'eor\`eme des valeurs interm\'ediaires, il existe un $c$ tel que $c^7-c^2+1 = 0$.
+
+\subsubsection*{Exercice 69.2}
+Il faut trouver 2 valeurs $x_1$ et $x_2$ tel que $f(x_1) > 2$ et $f(x_2) < 2 $ et appliquer ensuite le th\'eor\`eme des valeurs interm\'ediaires.\\
+
+On a $f(0) = 1$, donc prenons $x_2 = 0$. On a $f(-3) = \sqrt[3]{10} + 6 > 2$, prenons $x_1 = 3$. D'apr\`es TVI, il existe un $-3<c<0$ tel que $f(c) = 2$.
+
+\subsubsection*{Exercice 69.3}
+$\tan x - \frac{2}{3}x = 0$ sur $I = ]\frac{\pi}{4},\frac{\pi}{3}[$.
+
+Faisons le tableau de variation de $f(x)$ sur $I$. La d\'eriv\'ee est $f'(x) = \frac{1}{\cos^2 x} - \frac{2}{3}$. Sur l'intervalle $I$ on a $f'(x) > 0$. donc la fonction $f(x)$ est croissante sur $I$ et $f(\frac{\pi}{4}) = \tan \frac{\pi}{4} - \frac{2}{3}\frac{\pi}{4} = 1 - \frac{\pi}{6} > 0$. Donc il n'existe pas de $c \in I$tel que $f(c) = 0$.  
+
+
 \subsection*{Exercice 76}
 Prenons un $x_0 \in \R$, la fonction $f(x)$ est d\'erivable en $x_0$ si $\frac{f(x_0+h)-f(x_0)}{h}$ admet une limite lorsque $h \to 0, h \neq 0$.
 $$\lim_{h \to 0, h \neq 0} \frac{f(x_0+h)-f(x_0)}{h} = \lim_{h \to 0, h \neq 0} \frac{C-C}{h} = \lim_{h \to 0, h \neq 0} \frac{0}{h} = 0$$
@@ -499,6 +551,54 @@ $$\left(1 - \frac{1}{1+x}\right)' = \frac{1}{(1+x)^2}$$
 En $x=0$, $b=1$ et $a$ quelconque.
 
 
+\subsection*{Exercice 81}
+\subsubsection*{Exercice 81.1}
+$$f_p(x) =
+\left\{ 
+\begin{array}{l l}
+f(x) & x \in \in ]0,+\infty[ \\
+\lim_{x \to 0^{+}, x \neq 0} e^{\frac{1}{x^2}} & x = 0\\
+\end{array}
+\right. 
+$$ 
+
+Calculons $\lim_{x \to 0, x \neq 0} e^{-\frac{1}{x^2}} = e^{-\frac{1}{\lim_{x \to 0, x \neq 0} x^2}} = \frac{1}{e^{+\infty}} = 0$.
+
+$$f_p(x) =
+\left\{ 
+\begin{array}{l l}
+f(x) & x \in \in ]0,+\infty[ \\
+0 & x = 0\\
+\end{array}
+\right. 
+$$ 
+
+
+\subsubsection*{Exercice 81.2}
+La fonction $g(x) = \sin(\sqrt{x})$ est d\'efinie sur $x \geq 0$. Calculons $\lim_{x \to 0^{+}, x \neq 0}, \sin(x) = \sin(\sqrt{\lim_{x \to 0^{+},x \neq 0} x}) = \sin(\sqrt{0^{+}}) = 0$.
+
+$$g_p(x) =
+\left\{ 
+\begin{array}{l l}
+g(x) & x \in ]0,+\infty[ \\
+0 & x = 0\\
+\end{array}
+\right. 
+$$ 
+
+
+\subsubsection*{Exercice 81.3}
+La fonction $h(x) = \cos(\sqrt{x})$ est d\'efinie sur $x \geq 0$. Calculons $\lim_{x \to 0^{+}, x \neq 0}, \cos(x) = \cos(\sqrt{\lim_{x \to 0^{+},x \neq 0} x}) = \cos(\sqrt{0^{+}}) = 1$.
+
+$$h_p(x) =
+\left\{ 
+\begin{array}{l l}
+h(x) & x \in ]0,+\infty[ \\
+1 & x = 0\\
+\end{array}
+\right. 
+$$ 
+
 
 \subsection*{Exercice 83}
 \subsubsection*{Exercice 83.1}
@@ -518,6 +618,60 @@ $$DL_1(1)\ln^2{x} = DL_1(0)\ln^2({x+1}) = (x+1)^2 \textrm{   et   } DL_1(1)\cos{
 $$\lim_{x\to1} \frac{\ln^2(x)+\alpha \cos(x^2)}{x-1} = \lim_{X\to0} \frac{\ln^2(X+1)+\alpha \cos((X+1)^2)}{X} = 
 \lim_{X\to0} \frac{(X+1)^2+\alpha (1-\frac{(X+1)^4}{2})}{X} $$
 $$ =  $$
+
+
+
+\subsection*{Exercice 85}
+\subsubsection*{Exercice 85.1}
+Le domaine de d\'efinition de $f_1(x)$ est $\R$, la d\'eriv\'ee $f'(x) = 2x+11x^{10}+101x^{100}$. Le domaine de d\'efinition de $f'_1(x)$ est $\R$
+
+
+\subsubsection*{Exercice 85.5}
+La fonction $f_5(x)$ est d\'efinie lorsque $x>0$ pour $\ln$, $x-1 \geq 0$ pour la racine carr\'e et $\sqrt{x-1} \neq 0$ pour la division.
+Donc $x>0$, $x \geq 1$ et $x \neq 1$ donc $x > 1$.\\
+
+Prenons $u(x) = \ln x$ et $v(x) = \sqrt{x-1}$. $u'(x) = \frac{1}{x}$ et $v'(x) = \frac{1}{2\sqrt{x-1}}$\\
+$f'_5(x) = \frac{\frac{\sqrt{x-1}}{x}-\frac{\ln(x)}{2\sqrt{x-1}}}{x-1} = \frac{1}{x\sqrt{x-1}} - \frac{\ln(x)}{2(x-1)^{\frac{2}{3}}}$.\\
+
+Domaine de d\'efinition de $f'_5(x)$ est $x\neq 0$ et $\sqrt{x-1} \neq 0$ pour la division, $x-1 \geq 0$ pour la racine carr\'e, $x > 0$ pour la $\ln$ et $(x-1)^{\frac{2}{3}}$ pour la seconde division. Donc, $x\neq 0$, $x\neq 1$, $x\geq 1$ et $x >0$ donc $x>1$.
+
+
+
+\subsubsection*{Exercice 85.16}
+$f_{16} = \ln\ln\ln x$, il faut $\ln\ln x > 0$ Donc,  $ln(x) > 1$, donc $x>e$. Le domaine de d\'efinition est $]e,+\infty[$.\\
+
+$$f'_{16} = \frac{d}{dx}\ln\ln\ln x = \frac{1}{\ln \ln x} \frac{d}{dx}(\ln\ln x) = \frac{\frac{1}{\ln x}\frac{d}{dx}(\ln x)}{\ln \ln x} = \frac{1}{x\ln(x)\ln(\ln(x))} $$
+
+Le domaine de d\'efinition de $f'_{16}(x)$ est $x \neq 0$, $\ln x \neq 0$ et $\ln \ln x \neq 0$ pour la division, $x>0$ pour le $\ln x$ et $\ln x>0$ pour le $\ln \ln x$. Donc $x \neq 0$, $x \neq 1$, $x \neq e$, $x>0$, $x>1$, donc $]1,+\infty[\setminus \{e\}$.
+
+
+\subsubsection*{Exercice 85.17}
+$f_{17}(x) = x|x|$ est d\'efinie sur $\R$.
+$$
+f_17(x) = 
+\left\{ 
+\begin{array}{l l}
+x^2 & x \in [0,+\infty[ \\
+-x^2 & x \in [-\infty,0[ \\
+\end{array}
+\right. 
+$$
+
+$$
+f'_17(x) = 
+\left\{ 
+\begin{array}{l l}
+2x \in [0,+\infty[ \\
+-2x \in [-\infty,0[ \\
+\end{array}
+\right. 
+=
+|2x|
+$$
+$f'_{17}(x)$ est d\'efinie sur $\R$.
+
+
+
 QED
 
 \end{document}
