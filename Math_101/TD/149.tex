@@ -476,6 +476,67 @@ On a $\frac{x+|x|}{2} < 0$, $x+|x| < 0$. 2 cas $x \neq 0$, $x+x < 0$ impossible 
 $g \circ f(x) = g(f(x)) = \left(\frac{x+|x|}{2}\right)^2 = x^2$ pour $x \in [0,+\infty[$.
 
 
+\subsection*{Exercice 65}
+\subsubsection*{Exercice 65.1}
+Calculons
+$$\lim_{x\to0, x\neq0}4x-\frac{\sqrt{9x^2}}{x} = \lim_{x\to0, x\neq0}4x-\frac{3|x|}{x}$$
+Calcul des limites \`a droite et \`a gauche
+$$\lim_{x\to0^{+}, x\neq0}4x-\frac{|x|}{x} = \lim_{x\to0^{+}, x\neq0}4x-\frac{3x}{x} = \lim_{x\to0^{+}, x\neq0}4x-3 = -3$$
+$$\lim_{x\to0^{-}, x\neq0}4x-\frac{|x|}{x} = \lim_{x\to0^{+}, x\neq0}4x+\frac{3x}{x} = \lim_{x\to0^{+}, x\neq0}4x+3 = 3$$
+Pas de limite en $0$, la fonction $f_1(x)$ ne peux pas \^etre prolong\'ee en 0.
+
+\subsubsection*{Exercice 65.2}
+$$\lim_{x\to0, x\neq0}\sin(x)\ln(|x|)$$
+Calcul des limites \`a droite et \`a gauche (L'Hospital rule)
+$$\lim_{x\to0^{+}, x\neq0}\sin(x)\ln(|x|) = \lim_{x\to0^{+}, x\neq0}\sin(x)\ln(x) = 0$$
+$$\lim_{x\to0^{-}, x\neq0}\sin(x)\ln(|x|) = \lim_{x\to0^{-}, x\neq0}\sin(x)\ln(-x) = 0$$
+La fontion $f_2(x)$ peut \^etre prolong\'ee en 0.
+$$
+f_{2p} =
+\left\{ 
+\begin{array}{l l}
+f_2(x) & \R^{*}\\
+0 & x =0\\
+\end{array}
+\right.
+$$
+
+\subsubsection*{Exercice 65.3}
+$$\lim_{x\to0, x\neq0}1+\frac{e^x}{x}$$
+Calcul des limites \`a droite et \`a gauche (L'Hospital rule)
+$$\lim_{x\to0^{+}, x\neq0}1+\frac{e^x}{x} = 1+ \frac{\lim_{x\to0^{+}, x\neq0}e^x}{\lim_{x\to0^{+}, x\neq0}x} = 1+ \frac{1}{0^{+}} = +\infty$$
+
+$$\lim_{x\to0^{-}, x\neq0}1+\frac{e^x}{x} = 1+ \frac{\lim_{x\to0^{-}, x\neq0}e^x}{\lim_{x\to0^{-}, x\neq0}x} = 1+ \frac{1}{0^{-}} = -\infty$$
+La fonction diverge en 0 donc pas de prologement possible.
+
+\subsubsection*{Exercice 65.4}
+$$\lim_{x\to0, x\neq0}\frac{(1+x^3)-1}{x} = \lim_{x\to0, x\neq0}\frac{x^3}{x} = \lim_{x\to0, x\neq0} {x^2} = 0$$
+On a 
+$$
+f_{4p} =
+\left\{ 
+\begin{array}{l l}
+f_4(x) & \R^{*}\\
+0 & x =0\\
+\end{array}
+\right.
+$$
+
+Je pense qu'il voulait plut\^ot
+$$\lim_{x\to0, x\neq0}\frac{(1+x)^3-1}{x} = \lim_{x\to0, x\neq0}\frac{x^3+3x^2+3x}{x} = \lim_{x\to0, x\neq0} {x^2+3x+3} = 3$$
+On a 
+$$
+f_{4p} =
+\left\{ 
+\begin{array}{l l}
+f_4(x) & \R^{*}\\
+3 & x =0\\
+\end{array}
+\right.
+$$
+
+
+
 \subsection*{Exercice 69}
 \subsubsection*{Exercice 69.1}
 $x^7-x^2+1 = 0$ sur $I = [-2,0]$. La fonction est continue car assemblage de fonction continue sur le domaine $I$. On a $(-2)^7 - (-2)^2 + 1 < 0$ et $ (0)^7 - (0)^2 + 1 > 0$. Selon the th\'eor\`eme des valeurs interm\'ediaires, il existe un $c$ tel que $c^7-c^2+1 = 0$.
