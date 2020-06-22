@@ -733,7 +733,129 @@ $f'_{17}(x)$ est d\'efinie sur $\R$.
 
 
 
+\subsection*{Exercice 117}
+$$\sin(\arccos(x)) = \sqrt{1-x^2}?$$
+Soit $\theta=\arccos(x)$, $x=\cos(\arccos(x))=\cos(\theta)=\frac{adj}{hyp}$ et $hyp^2 = adj^2 + opp^2$. En prenant la norme $hyp=1$ on a $x=adj$ et $opp=\sqrt{1-x^2}$.\\
+$$\sin(\arccos(x)) = \sin(\theta) = \frac{opp}{hyp} = opp = \sqrt{1-x^2}$$
+
+
+\subsection*{Exercice 118}
+\subsubsection*{Exercice 118.2}
+$$\sqrt{3}\cos(3x)+\sin(3x) = 1$$
+Posons $3x=u$.
+
+$$\sqrt{3}\cos(u)+\sin(u) = 1$$
+$$\sin(u) = 1 - \sqrt{3}\cos(u)$$
+$$\sin^2(u) = (1 - \sqrt{3}\cos(u))^2 = 1-2\sqrt{3}\cos(u) + 3\cos^2(u)$$
+$$\cos^2(u) = 1-\sin^2(x) =  2\sqrt{3}\cos(u) - 3\cos^2(u)$$
+$$2\sqrt{3}\cos(u) - 4\cos^2(u) = 0$$
+$$\cos(u)(2\sqrt{3}-4\cos(u)) = 0$$
+
+2 solutions $cos(u)=0$ et $cos(u)=\frac{\sqrt{3}}{2}$
+Donc $u=\frac{\pi}{2}+2\pi n$ et $u=\frac{\pi}{6}+2\pi n$. Et $x=\frac{\pi}{6}+2\pi$ et $x=-\frac{\pi}{18} +2\pi n$.
+
+
+\subsection*{Exercice 119}
+On a 
+$$\tan(\alpha+\beta) = \frac{\tan(\alpha) + \tan(\beta)}{1-\tan(\alpha) \tan (\beta)}$$
+$$\tan(\arctan(1) +\arctan(2) + \arctan(3)) = \frac{\tan(\arctan(1)) + \tan(\arctan(2) + \arctan(3))}{1-\tan(\arctan(1)) \tan (\arctan(2) + \arctan(3))} = \frac{1 + \tan(\arctan(2) + \arctan(3))}{1-\tan (\arctan(2) + \arctan(3))}$$
+$$\tan (\arctan(2) + \arctan(3)) = \frac{\tan(\arctan(2))+\tan(\arctan(3))}{1-\tan(\arctan(2))\tan(\arctan(4))} = \frac{5}{-5} = -1$$
+Donc 
+$$\tan(\arctan(1) +\arctan(2) + \arctan(3)) = \frac{1-1}{1-(-1)} = 0$$
+Donc $\arctan(1) +\arctan(2) + \arctan(3) = \pi$.
+
+
+\subsection*{Exercice 125}
+\subsubsection*{Exercice 125.1}
+Calculons $f'(x) = 2e^{2x} - 3e^x = e^x(2e^x-3)$. $f'(x) > 0$ lorsque $e^x > \frac{3}{2}$ ou $x > \ln(\frac{3}{2})$. La function $f(x)$ est continue (assemblage de fonctions continues) et monotone sur $I=]\ln(\frac{3}{2}),+\infty[$. C'est donc une bijection sur $I$. On a 
+$$J=]f(\ln(\frac{3}{2})),f(+\infty)[=]e^{2\ln(\frac{3}{2})}-e^{\ln(\frac{3}{2})}-4,e^{2+\infty}-e^{+\infty}-4 = ]\frac{9}{4}-\frac{3}{2}-4,+\infty[ = ]-\frac{13}{4},+\infty[$$
+
+\subsubsection*{Exercice 125.2}
+V'erifions que $f'(x)$ est croissante sur $I$. Calcul de $f''(x)=4e^{2x}-3e^{x}$ $f''(x) = e^{x}(4e^{x}-3) > 0$, lorsque $4e^{x}-3 > 0$, $x > \ln(\frac{3}{4})$. Sur $]f(\ln(\frac{3}{2})),f(+\infty)[$ on a $f''(x)$ positive, donc $f(x)$ est convexe.\\
+
+\subsubsection*{Exercice 125.3}
+$f^{-1}(x)$ est concave sur $J$ si $f(x)$ est convexe et strictement croissante sur $I$. 
+
+\subsubsection*{Exercice 125.4}
+La d\'eriv\'e est nulle en un seul point $\ln(\frac{3}{2}))$ et elle est n\'egative sur $]-\infty,\ln(\frac{3}{2}))[$. Donc $f(x)$ est concave sur $I$.
+
+\subsection*{Exercice 130}
+\subsubsection*{Exercice 130.1}
+$$\int_{0}^{\pi/4}{\cos(x)\sin^4(x)dx}$$
+Substitution $u=\sin(x)$, donc $\frac{du}{dx} = \cos(x)$ et $dx=\frac{du}{cos(x)}$.
+
+$$\int_{\sin(0)}^{\sin(\pi/4)}{\cos(x)u^4 \frac{du}{cos(x)}} = \int_{0}^{\frac{\sqrt{2}}{2}}{u^4 du} = \left[ \frac{u^5}{5} \right]_{0}^{\frac{\sqrt{2}}{2}} = \frac{1}{5}((\frac{\sqrt{2}}{2})^5 -0) = 0.3535$$
+
+\subsubsection*{Exercice 130.4}
+$$\int_{0}^{\pi/6}{\cos^3(x) + \sin^3(x)dx} = \int_{0}^{\pi/6}{\cos^3(x)} + \int_{0}^{\pi/6}{\sin^3(x)dx}$$
+Premi\`ere partie. $\int_{0}^{\pi/6}{\cos^3(x)dx} = \int_{0}^{\pi/6}{\cos^2(x)\cos(x)dx} = \int_{0}^{\pi/6}{(1-\sin^2(x))\cos(x)dx}$
+Substitution $u=\sin(x)$, donc $\frac{du}{dx} = \cos(x)$ et $dx= \frac{du}{\cos(x)}$.
+$$\int_{0}^{\pi/6}{(1-\sin^2(x))\cos(x)dx} =  \int_{\sin(0)}^{\sin(\pi/6)}{(1-u^2)\cos(x) \frac{du}{\cos(x)}} = \int_{0}^{\frac{1}{2}}{1-u^2} = \left[u-\frac{u^3}{3}\right]_{0}^{\frac{1}{2}}$$
+
+Seconde partie. $\int_{0}^{\pi/6}{\sin^3(x)dx} = \int_{0}^{\pi/6}{\sin^2(x)\sin(x)dx} = \int_{0}^{\pi/6}{(1-\cos^2(x))\sin(x)dx}$
+Substitution $u=\cos(x)$, donc $\frac{du}{dx} = -\sin(x)$ et $dx= -\frac{du}{\sin(x)}$.
+$$\int_{0}^{\pi/6}{(1-\cos^2(x))\sin(x)dx} =  \int_{\cos(0)}^{\cos(\pi/6)}{(1-u^2)\sin(x) -\frac{du}{\sin(x)}} = \int_{1}^{\frac{\sqrt{3}}{2}}{u^2-1} = \left[\frac{u^3}{3}-u\right]_{1}^{\frac{\sqrt{3}}{2}}$$
+
+Donc
+$$\int_{0}^{\pi/6}{\cos^3(x) + \sin^3(x)dx} = \left[u-\frac{u^3}{3}\right]_{0}^{\frac{1}{2}} + \left[\frac{u^3}{3}-u\right]_{1}^{\frac{\sqrt{3}}{2}}$$
+
+\subsubsection*{Exercice 130.7}
+$$\int_{1/2}^{0}{\frac{x}{\sqrt{1-x^2}}dx}$$
+Substitution $u=1-x^2$, donc $\frac{du}{dx} = -2x$ et $dx=-\frac{du}{2x}$
+$$\int_{1/2}^{0}{\frac{x}{\sqrt{1-x^2}}dx} = \int_{3/4}^{1}{\frac{x}{\sqrt{u}}-\frac{du}{2x}} = \int_{3/4}^{1}{-\frac{1}{2\sqrt{u}}}$$
+$$ = \left[-\frac{1}{2}2\sqrt(u)\right]_{3/4}^{1} = \left[-\sqrt(u)\right]_{3/4}^{1} = \frac{\sqrt{3}{2}}-1$$
+
+
+\subsubsection*{Exercice 130.8}
+$$\int_{0}^{1}{\frac{1}{\sqrt{1-x^2}}dx} = \left[\arcsin(x)\right]_{0}^{1} = \arcsin(1)-\arcsin(0) =\frac{\pi}{2}$$
+
+\subsubsection*{Exercice 130.10}
+$$\int_{-1}^{2}{|x|dx} = \int_{-1}^{0}{|x|dx} + \int_{0}^{2}{|x|dx} = \int_{-1}^{0}{-xdx} + \int_{0}^{2}{xdx} = \left[\frac{-x^2}{2}\right]_{-1}^{0} + \left[\frac{x^2}{2}\right]_{0}^{2} = \frac{3}{2}$$
+
+
+\subsection*{Exercice 133}
+\subsubsection*{Exercice 133.1}
+$$x=-1$$
+\subsubsection*{Exercice 133.2}
+$$(x+1)(x^2+px+q) = x^3+(p+1)x^2+(p+q)x+5 = x^3+3x^2+7x+5$$
+Donc $p=2$ et $q=5$.
+\subsubsection*{Exercice 133.3}
+D\'evelopper et trouver
+$a=-\frac{1}{4}$, $b=-\frac{1}{4}$ et $c=\frac{5}{4}$
+
+
+
+\subsection*{Exercice 135}
+\subsubsection*{Exercice 135.2}
+$$\int_{0}^{\frac{\pi}{3}}{x\cos(2x)dx}$$
+Par partie; $f(x) = x$, $f'(x)=1$, $g'(x)=cos(2)$, $g(x)=\frac{sin(2x)}{2}$. Donc
+$$\int_{0}^{\frac{\pi}{3}}{x\cos(2x)}dx = \left[\frac{x\sin(2x)}{2}\right]_{0}^{\frac{\pi}{3}} - \int_{0}^{\frac{\pi}{3}}{\frac{\sin(2x)}{2}dx}$$
+
+Maintenant substitution $u=2x$ donc $\frac{du}{dx}=2$ et $dx=\frac{du}{2}$
+$$\int_{0}^{\frac{\pi}{3}}{\frac{\sin(2x)}{2}}dx = \int_{0}^{\frac{2\pi}{3}}{\frac{\sin(u)}{2}\frac{du}{2}} = \frac{1}{4}\int_{0}^{\frac{2\pi}{3}}{\sin(u)du} = \frac{1}{4}\left[-\cos(u)\right]_{0}^{\frac{2\pi}{3}} = \frac{3}{8}$$
+
+$$\int_{0}^{\frac{\pi}{3}}{x\cos(2x)dx} = 	\frac{\pi\sqrt{3}}{12}-\frac{3}{8}$$
+
+
+\subsection*{Exercice 136}
+\subsubsection*{Exercice 136.2}
+$$g(x)=2x^2e^{(x^2+1)} = 2ex^3e^{x^2}$$
+Domaine de d\'efinition de $g(x)$ est $]-\infty,+\infty[$.\\
+D'abord substitution $u=x^2$, donc $\frac{du}{dx}=2x$ et $dx=\frac{du}{2x}$
+$$\int{2ex^3e^{x^2}dx} = 2e\int{x^3e^{x^2}dx} = 2e\int{x^3e^{u}\frac{du}{2x}} = e\int{x^2e^{u}du} = e\int{ue^{u}du}$$
+Par partie avec $f = u$, $f' = 1$, $g' = e^{u}$, $g = e^{u}$, 
+$$\int{ue^{u}du} =  ue^u - \int{e^{u}du} = ue^u - e^u = e^{x^2}(x^2-1)$$
+$$\int_{-\infty}^{+\infty}{2ex^3e^{x^2}dx} = e\left[(e^{x^2}(x^2-1))\right]_{-\infty}^{+\infty} = e.0 = 0$$
+
+
+\subsection*{Exercice 143}
+$$\int_{-1}^{1}{\arctan(\frac{1+cos^5(x)}{\pi+\sqrt{x^8-2x^4+1}})\sin(x)} = 0$$
+
+car $\int_{-1}^{1}{\sin(x)} = 0$ et la fonction $\frac{1+cos^5(x)}{\pi+\sqrt{x^8-2x^4+1}}$ est paire.\\
+
+
 QED
+
 
 \end{document}
 
