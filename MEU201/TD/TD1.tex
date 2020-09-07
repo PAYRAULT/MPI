@@ -1,0 +1,115 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+\begin{defn}
+Soit $f(x)$ et $g(x)$ deux fonctions r\'eelles d\'efinies au voisinage de $+\infty$ avec $g(x)$ qui ne s'annule pas en $+\infty$. Lorsque 	
+$$\lim_{x \to +\infty}\frac{f(x)}{g(x)} = 0$$
+On \'ecrit
+$$f(x) = o_{x \to +\infty}(g(x))$$
+Alors on dit que $f(x)$ est n\'egligeable pas rapport \`a $g(x)$.\\
+\end{defn}
+
+
+\begin{thm}
+Th\'eor\`eme des croissances compar\'ees : Pour tous r\'eel $\alpha,\beta, \gamma, \lambda >0$
+\begin{itemize}
+\item Si $\alpha < \beta$ on a $x^{\alpha} = o_{x \to +\infty}(x^{\beta})$
+\item on a $1 = o_{x \to +\infty}((\ln x)^{\gamma})$
+\item on a $(\ln x)^{\gamma} = o_{x \to +\infty}(x^{\beta})$
+\item on a $x^{\beta} = o_{x \to +\infty}(e^{\lambda x^{\alpha}})$
+\end{itemize}
+\end{thm}
+
+
+\begin{thm}
+On peut g\'en\'eraliser le th\'eor\`eme des croissances compar\'ees aux suites (avec $n$ un entier positif).
+\begin{itemize}
+\item on a $1 = o_{n \to +\infty}((\ln n)^{\gamma})$
+\item on a $(\ln x)^{\gamma} = o_{n \to +\infty}(n^{\beta})$
+\item on a $n^{\beta} = o_{n \to +\infty}(e^{\lambda n^{\alpha}})$
+\item on a $e^{\lambda n^{\alpha}} = o_{n \to +\infty}(n!)$
+\end{itemize}
+\end{thm}
+
+\newpage
+\subsection*{Exercice Cauchy}
+
+
+
+QED
+
+\end{document}
+
