@@ -205,21 +205,57 @@ $$\lim_{n \to +\infty}{q_n} = 0$$
 \subsection*{Exercice 2}
 \subsubsection*{$a_n$}
 $$a_n = \frac{1}{n-1}-\frac{1}{n+1} = \frac{1}{n}-\frac{1}{n} = 0$$
-car $1 << n$.
+car $1 = o_{n \to +\infty}n$.
 
 \subsubsection*{$b_n$}
 $$a_n = \sqrt{n+1}-\sqrt{n-1} = \sqrt{n}-\sqrt{n} = 0$$
-car $1 << n$.
+car $1 = o_{n \to +\infty}n$.
 
 \subsubsection*{$c_n$}
 $$a_n = \sqrt{\ln(n+1)-\ln(n)} = \sqrt{\ln(n)-\ln(n)} = 0$$
-car $1 << n$.
+car $1 = o_{n \to +\infty}n$.
 
+\subsubsection*{$d_n$}
+$n+1 ~ n$ car $1 = o_{n \to +\infty}n$.
+$$\frac{1}{\sqrt{n+1}} = \frac{1}{\sqrt{n}} = \sqrt{\frac{1}{n}} = \sqrt{0} = 0$$
+
+\subsubsection*{$e_n$}
+$$\ln \left( \sin \frac{1}{n} \right) = \ln \left( \sin 0 \right) = \ln(0)$$
+car $1 = o_{n \to +\infty}n$.
+??
+
+\subsubsection*{$f_n$}
+Changement de variable $x=\frac{1}{n}$ et d\'eveloppement limit\'e de $\cos x$.
+$$1-\cos x = 1 - (1-\frac{x^2}{2!}+o(x) = \frac{x^2}{2!}+o(x) = 0$$
+Premier terme non nul est 0.
+
+\subsubsection*{$g_n$}
+??
+
+\subsubsection*{$h_n$}
+??
 
 \subsection*{Exercice 3}
 \subsubsection*{$a_n$}
 $$\lim_{n \to +\infty} n \sin(\frac{1}{n}) = \lim_{n \to +\infty} \frac{\sin(\frac{1}{n})}{\frac{1}{n}}$$
-$$\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{x-\frac{x^3}{3!}+\frac{x^5}{5!}+o(x)}{x} = \lim_{x \to 0} 1-\frac{x^2}{3!}+\frac{x^4}{5!}+o(x)} = 1$$
+Changement de variable $x=\frac{1}{n}$ et d\'eveloppement limit\'e de $\sin x$.
+$$\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{x-\frac{x^3}{3!}+\frac{x^5}{5!}+o(x)}{x} = \lim_{x \to 0}{1-\frac{x^2}{3!}+\frac{x^4}{5!}+o(x)} = 1$$
+$$\lim_{n \to +\infty} a_n = 1$$
+
+
+\subsubsection*{$b_n$}
+$$\lim_{n \to +\infty} n \sin(\frac{1}{n}) = \lim_{n \to +\infty} \frac{\sin(\frac{1}{n})}{\frac{1}{n}}$$
+Changement de variable $x=\frac{1}{n}$ et d\'eveloppement limit\'e de $\sin x$.
+$$\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{x-\frac{x^3}{3!}+o(x)}{x} = \lim_{x \to 0}{1-\frac{x^2}{3!}+o(x)}$$
+$$\lim_{n \to +\infty} b_n = \lim_{x \to 0} {\left(1-\frac{x^2}{3!}+o(x)\right)^{\frac{1}{x^2}}}$$
+
+$$\lim_{n \to +\infty} \ln( b_n ) = \lim_{x \to 0} {\ln \left(1-\frac{x^2}{3!}+o(x)\right)} = \lim_{x \to 0} {{\frac{1}{x^2}} \ln \left(1-\frac{x^2}{3!}+o(x)\right)}$$
+D\'eveloppement limit\'e de $\ln(1-x)$.
+$$\lim_{x \to 0} {{\frac{1}{x^2}}(-\frac{x^2}{3!}-\frac{x^4}{2.(3!)^2}+o(x))} = \lim_{x \to 0} {-\frac{1}{6}-\frac{x^2}{2.(3!)^2}+o(x)} = -\frac{1}{6}$$
+$$\lim_{n \to +\infty} b_n  = e^{-\frac{1}{6}}$$
+
+\subsubsection*{$c_n$}
+
 
 QED
 
