@@ -249,13 +249,40 @@ Changement de variable $x=\frac{1}{n}$ et d\'eveloppement limit\'e de $\sin x$.
 $$\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{x-\frac{x^3}{3!}+o(x)}{x} = \lim_{x \to 0}{1-\frac{x^2}{3!}+o(x)}$$
 $$\lim_{n \to +\infty} b_n = \lim_{x \to 0} {\left(1-\frac{x^2}{3!}+o(x)\right)^{\frac{1}{x^2}}}$$
 
-$$\lim_{n \to +\infty} \ln( b_n ) = \lim_{x \to 0} {\ln \left(1-\frac{x^2}{3!}+o(x)\right)} = \lim_{x \to 0} {{\frac{1}{x^2}} \ln \left(1-\frac{x^2}{3!}+o(x)\right)}$$
+$$\lim_{n \to +\infty} \ln( b_n ) = \lim_{x \to 0} {\ln \left(\left(1-\frac{x^2}{3!}+o(x)\right)^{\frac{1}{x^2}}\right)} = \lim_{x \to 0} {{\frac{1}{x^2}} \ln \left(1-\frac{x^2}{3!}+o(x)\right)}$$
 D\'eveloppement limit\'e de $\ln(1-x)$.
 $$\lim_{x \to 0} {{\frac{1}{x^2}}(-\frac{x^2}{3!}-\frac{x^4}{2.(3!)^2}+o(x))} = \lim_{x \to 0} {-\frac{1}{6}-\frac{x^2}{2.(3!)^2}+o(x)} = -\frac{1}{6}$$
 $$\lim_{n \to +\infty} b_n  = e^{-\frac{1}{6}}$$
 
 \subsubsection*{$c_n$}
+$$(1+n)^{1/n}-n^{1/n} = (n(\frac{1}{n}+1))^{1/n}-n^{1/n} = n^{1/n}(\frac{1}{n}+1)^{1/n}-n^{1/n} = n^{1/n} ((\frac{1}{n}+1)^{1/n}-1)$$
+Changement de variable $x=\frac{1}{n}$ et DL en 0 de $(1+x)^x = 1+x^2+O(x^3)$.
+$$((x+1)^x-1) = 1+x^2+O(x^3) - 1 = x^2+O(x^3) = \frac{1}{n^2} + O(\frac{1}{n^3})$$
+Donc
+$$\lim_{n \to +\infty} c_n = \lim_{n \to +\infty} n^2.n^{1/n}.(\frac{1}{n^2} + O(\frac{1}{n^3})) \approx \lim_{n \to +\infty} n^{1/n} = 1$$
 
+
+\subsubsection*{$d_n$}
+DL en $0$ de $ln(1+x) = x - \frac{x^2}{2} + O(x^3)$.
+$$\ln \left(1+\frac{1}{n^2+1} \right) = \frac{1}{n^2+1} - \frac{(\frac{1}{n^2+1})^2}{2} + o(x^3) = \frac{1}{n^2+1} - \frac{1}{2(n^2+1)^2} $$
+Donc
+$$\lim_{n \to +\infty} d_n = \lim_{n \to +\infty} n\sqrt{\frac{1}{2(n^2+1)}} = \lim_{n \to +\infty} \sqrt{n^2(\frac{1}{n^2+1} - \frac{1}{2(n^2+1)^2} +o(x^3))} = \lim_{n \to +\infty} \sqrt{1 - \frac{1}{1+\frac{2}{n^2}+\frac{1}{n^4}} +o(x^3))} = 1$$
+
+
+\subsubsection*{$e_n$}
+Calcul de  $\ln((1+\sin(\frac{1}{n})^n)$
+$$\ln((1+\sin(\frac{1}{n})^n) = n \ln(1+\sin(\frac{1}{n}))$$
+DL en 0 de $\sin x = x + o(x^3)$
+$$\ln((1+\sin(\frac{1}{n})^n) = n \ln(1+\frac{1}{n})$$
+DL en 0 de $\ln(1+ x)= x + o(x^2)$
+$$n \ln(1+\frac{1}{n}) = n \frac{1}{n} = 1$$
+Donc
+$$\lim_{n \to +\infty} e_n = e^1 = e$$ 
+
+
+\subsubsection*{$f_n$}
+On a $1 << n$ donc $\sqrt{n+1} \approx \sqrt{n}$ et $n+1 \approx n$.
+$$\frac{n^{\sqrt{n+1}}}{(n+1)^{\sqrt{n}}} =\approx \frac{n^{\sqrt{n}}}{n^{\sqrt{n}}} = 1$$
 
 QED
 
