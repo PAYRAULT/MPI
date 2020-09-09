@@ -105,8 +105,8 @@ $$\forall v \in E, \exists \lambda_1, \ldots, \lambda_p, v = \lambda_1 v_1 + \ld
 
 Il suffit de montrer les 3 conditions qui d\'efinissent un sous-espace vectoriel.
 \begin{itemize}
-\item $0_E \in F(\R,\R)$. Vrai la car fonction $0_E:x\to 0$ est continue sur $\R$
-\item Pour tous $u, v \in C(\R,\R)$, $u + v \in C(\R,\R)$, car la somme de 2 fonctions continues est une fonction continue 
+\item $0_F \in F(\R,\R)$. Vrai la car fonction $0_E:x\to 0$ est continue sur $\R$
+\item Pour tout $u, v \in C(\R,\R)$, $u + v \in C(\R,\R)$, car la somme de 2 fonctions continues est une fonction continue 
 \item Pour tout $\lambda \in \R$ et tout $u \in C(\R,\R)$, $\lambda.u \in C(\R,\R)$ car la multiplication par une constante ne change pas la continuit\'e d'une fonction.
 \end{itemize}
 Donc $C(\R,\R)$ est un sous-espace vectoriel de $F(\R,\R)$.
@@ -115,9 +115,9 @@ Donc $C(\R,\R)$ est un sous-espace vectoriel de $F(\R,\R)$.
 Notons $G(\R,\R)$ l'ensemble des fonctions $f \in C(\R,R)$ qui sont d\'erivables et telles que : $\forall x \in \R, f'(x)+xf(x) = 0$.
 Il suffit de montrer les 3 conditions qui d\'efinissent un sous-espace vectoriel.
 \begin{itemize}
-\item $0_E \in G(\R,\R)$. Vrai car $0_E'(x) + x.0_E(x) = 0 + x.0 = 0$
-\item Pour tous $u, v \in C(\R,\R)$, $u'(x) + x.u(x) = 0$ et $v'(x)+x.v(x) = 0$. On a $(u+v)'(x) + x.(u+v)(x) = u'(x) + v'(x) + x.u(x) + x.v(x) = 0 + 0 = 0$. Donc  $u+v \in G(\R,\R)$.
-\item Pour tout $\lambda \in \R$ et tout $u \in G(\R,\R)$, $(\lambda.u(x))'+x.\lambda.u(x) = \lambda (u'(x) + x.u(x)) = \lambda.0 = 0$ donc $\lambda.u \in G(\R,\R)$.
+\item $0_C \in C(\R,\R)$. $0_C'(x) + x.0_C(x) = 0 + x.0 = 0$ donc $0_C \in G(\R,\R)$ 
+\item Pour tout $u, v \in G(\R,\R)$, $u'(x) + x.u(x) = 0$ et $v'(x)+x.v(x) = 0$. On a $(u+v)'(x) + x.(u+v)(x) = u'(x) + v'(x) + x.u(x) + x.v(x) = 0 + 0 = 0$. Donc  $u+v \in G(\R,\R)$.
+\item Pour tout $\lambda \in \R$ et tout $u \in G(\R,\R)$, $(\lambda.u(x))'+x.(\lambda.u(x)) = \lambda.u'(x) + \lambda.x.u(x) = \lambda (u'(x) + x.u(x)) = \lambda.0 = 0$ donc $\lambda.u \in G(\R,\R)$.
 \end{itemize}
 Donc $G(\R,\R)$ est un sous-espace vectoriel de $C(\R,\R)$.
 
@@ -125,8 +125,8 @@ Donc $G(\R,\R)$ est un sous-espace vectoriel de $C(\R,\R)$.
 Notons $H(\R,\R)$ l'ensemble des fonctions $f \in C(\R,R)$ telles que : $\forall x \in \R, 0 \leq f(x) \leq 1$.
 Il suffit de montrer les 3 conditions qui d\'efinissent un sous-espace vectoriel.
 \begin{itemize}
-\item $0_E \in H(\R,\R)$. Vrai car $0 \leq 0_E(x) \leq 1$
-\item Pour tous $u, v \in C(\R,\R)$, $0 \leq u(x) \leq 1$ et $0 \leq v(x) \leq 1$. On a $(u+v)(x) = u(x) + v(x) \geq 1$. Donc  $u+v \notin H(\R,\R)$.
+\item $0_C \in C(\R,\R)$. $0 \leq 0_E(x) \leq 1$
+\item Pour tout $u, v \in C(\R,\R)$, $0 \leq u(x) \leq 1$ et $0 \leq v(x) \leq 1$. On a $(u+v)(x) = u(x) + v(x) \geq 1$. Donc  $u+v \notin H(\R,\R)$.
 \item Pour tout $\lambda \in \R$ et tout $u \in G(\R,\R)$, $\lambda.u(x) \geq 1$ lorsque $\lambda > 1$ donc $\lambda.u \notin H(\R,\R)$.
 \end{itemize}
 Donc $H(\R,\R)$ n'est pas un sous-espace vectoriel de $C(\R,\R)$.
