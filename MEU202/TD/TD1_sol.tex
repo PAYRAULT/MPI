@@ -105,7 +105,7 @@ $$\forall v \in E, \exists \lambda_1, \ldots, \lambda_p, v = \lambda_1 v_1 + \ld
 
 Il suffit de montrer les 3 conditions qui d\'efinissent un sous-espace vectoriel.
 \begin{itemize}
-\item $0_F \in F(\R,\R)$. Vrai la car fonction $0_E:x\to 0$ est continue sur $\R$
+\item $0_F \in F(\R,\R)$. La fonction $0_F:x\to 0$ est continue sur $\R$, donc $0_F \in C(\R,\R)$.
 \item Pour tout $u, v \in C(\R,\R)$, $u + v \in C(\R,\R)$, car la somme de 2 fonctions continues est une fonction continue 
 \item Pour tout $\lambda \in \R$ et tout $u \in C(\R,\R)$, $\lambda.u \in C(\R,\R)$ car la multiplication par une constante ne change pas la continuit\'e d'une fonction.
 \end{itemize}
@@ -251,6 +251,36 @@ $$
 
 
 Il existe $\lambda_2 = -\frac{3z-11x+y}{33}$, $\lambda_3 = \frac{5x -3y}{44}$ et $\lambda_1 = \frac{3x + y}{44}$. Donc, la famille est g\'en\'eratrice.
+
+\subsubsection*{2-d}
+Famille libre? \\
+$$\lambda_1 v_1 + \lambda_2 v_2 + \lambda_3 v_3 = \lambda_1 (1,2,3,4) + \lambda_2 (2,3,4,5) + \lambda_3 (4,5,6,7)  = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+1 \lambda_1 + 2 \lambda_2 + 4 \lambda_3 = 0 & (1)\\
+2 \lambda_1 + 3 \lambda_2 + 5 \lambda_3 = 0 & (2)\\
+3 \lambda_1 + 4 \lambda_2 + 6 \lambda_3 = 0 & (3)\\
+4 \lambda_1 + 5 \lambda_2 + 7 \lambda_3 = 0 & (4)\\
+\end{array}
+\right. 
+$$ 
+
+
+Famille g\'en\'eratrice?
+$$\forall v = (x,y,z) \in E, \exists \lambda_1, \lambda_2, \lambda_3, v = \lambda_1 v_1 + \lambda_2 v_2 + \lambda_3 v_3 = \lambda_1 (1,2,3,4) + \lambda_2 (2,3,4,5) + \lambda_3 (4,5,6,7)$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+1 \lambda_1 + 2 \lambda_2 + 4 \lambda_3 = x & (1)\\
+2 \lambda_1 + 3 \lambda_2 + 5 \lambda_3 = y & (2)\\
+3 \lambda_1 + 4 \lambda_2 + 6 \lambda_3 = z & (3)\\
+4 \lambda_1 + 5 \lambda_2 + 7 \lambda_3 = w & (4)\\
+\end{array}
+\right. 
+$$ 
 
 
 \subsection*{Exercice 3}
