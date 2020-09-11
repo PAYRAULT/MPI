@@ -1,0 +1,148 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+\begin{defn}
+\end{defn}
+
+
+\newpage
+\subsection*{Exercice 1.1}
+
+
+\begin{tikzpicture}
+\draw (0,0) -- (10,0);
+\node [label=b] at (1,0) {\textbullet};
+\node [label=c] at (8,0) {\textbullet};
+\node [label=a] at (4.5,0) {$\circ$};
+\draw [<->,label=r] (1,-0.5) -- node[above] {r} ++ (3.5,0);
+\end{tikzpicture}
+
+Les points $b$ et $c$ co\"incident avec les bornes d'un intervalle ouverts $]b,c[$. L'intervalle \'equivalent de centre $a$ et de rayon $r$ est d\'efini par  le centre $a$ au milieu des 2 points $b$ et $c$, donc $a = \frac{b+c}{2}$ et le rayon soit la distance entre les points $a$ et $b$ (resp. $c$), donc $r=a-b=\frac{b+c}{2}-b = \frac{c-b}{2}$. 
+
+
+\subsection*{Exercice 1.2}
+$$I=[0+(-1),1+1] = [-1,2]$$
+On a $s in [0,1] \equiv 0 \leq s \leq 1$ et $t in [-1,1] \equiv -1 \leq t \leq 1$. La borne inf\'erieure de l'intervalle $s+t$ est \'egale \`a $min(0+(-1), 0+1, 1+(-1), 1+1)$ car l'addition est une fonction strictement croissante. Mais on sait que $0+(-1)<0+1$,$0+(-1)<1+(-1)$, $0+(-1)<1+1$ car $0<1$ donc $min(\ldots) = 0+(-1)$. M\^eme raisonnement pour la borne sup\'erieur. Pour les bornes, les deux intervalles ont des bornes ferm\'ees donc la valeurs des bornes sont dans l'intervalles. par cons\'equent l'intervalle $s+t$ est \'egelement un intervalle ferm\'e Donc $I = [-1,2]$.    
+$$I'=]0+(-1),1+1[ = ]-1,2[$$
+Mais raisonnement sur la valeur des bornes. Maintenant l'intervalle $t$ est un intervalle ouvert. Donc ses bornes ne sont pas dans l'intervalle $t$. Par cons\'equent elles ne peuvent pas \^etre dans l'intervalle $s+t$. 
+
+$$J=[3,8]$$
+On a $s in [-2,-1] \equiv -2 \leq s \leq -1$ et $t in [-4,-3] \equiv -4 \leq t \leq -3$. La borne inf\'erieure de l'intervalle $s+t$ est \'egale \`a $min((-2)*(-4), (-2)*(-3), (-1)*(-4), (-1)*(-3)1+1)$ car la multiplication est une fonction strictement croissante. M\^eme raisonnement pour la borne sup\'erieur en prenant le max. Pour les bornes, les deux intervalles ont des bornes ferm\'ees donc la valeurs des bornes sont dans l'intervalles. par cons\'equent l'intervalle $s+t$ est \'egelement un intervalle ferm\'e Donc $I = [3,8]$.    
+$$I'= ]3,8[$$
+Mais raisonnement sur la valeur des bornes. Maintenant l'intervalle $t$ est un intervalle ouvert. Donc ses bornes ne sont pas dans l'intervalle $t$. Par cons\'equent elles ne peuvent pas \^etre dans l'intervalle $s+t$. 
+
+
+\subsection*{Exercice 1.3}
+\begin{tikzpicture}
+\draw [<->,label=r] (1,0) -- node[above] {I} ++ (7,0);
+\draw [<->,label=r] (4,-0.5) -- node[above] {J} ++ (5,0);
+\end{tikzpicture}
+
+On a $I \cap J = \emptyset$ donc $\exists a$ tel que $a \in I$ et $a \in J$. On a $a \leq \sup(I) (ou +\infty)$ et $\inf(J) (ou -\infty) \leq a$, donc $\inf(J) (ou -\infty) \leq a \leq \sup(I) (ou +\infty)$.\\
+
+Prenons $a,b \in (I \cup J)^2, a < b$, a-t-on $[a,b] \subset I \cup J$? 
+Plusieurs cas:
+\begin{itemize}
+\item $(a,b) \in I^2$, $I$ est un intervalle donc $[a,b] \subset I$ (caract\'erisation des intervalles) et $I \subset (I \cup J)$ (par d\'efinition, donc $[a,b] \subset (I \cup J)$.
+\item $(a,b) \in J^2$, m\^eme raisonnement 
+\item $a \in I, b \in J$, $I$ est un intervalle donc $[a,\sup(I)] \subset I$ (caract\'erisation des intervalles) et $[\inf(J),b] \subset J$, on a $\inf(J) \leq \sup(I)$ 
+\item $a \in J, b \in I$, ???
+\end{itemize}
+
+
+
+\subsection*{Exercice 1.4}
+
+
+\subsection*{Exercice 1.5}
+\subsubsection*{A}
+L'intervalle $A$ est minor\'e par $-1$ ($A \subset [-1,+\infty]$) et major\'e par $2$ ($A \subset [-\infty; 2]$) donc l'intervalle $A$ est born\'ee. Le diam\`etre $d(A) = \sup(d(x,x'),x,x' \in A)$. Le diam\`etre de $A = 1-0 = 1$.
+
+\subsubsection*{B}
+L'intervalle $B$ est minor\'e par $-3$ ($B \subset [-3,+\infty]$) et major\'e par $4$ ($B \subset [-\infty; 4]$) donc l'intervalle $B$ est born\'ee. Le diam\`etre $d(B) = \sup(d(x,x'), \forall x,x' \in B)$. Au passage \`a la limite le diam\`etre de $B = \lim_{\epsilon \to 0} (3-\epsilon)-(-2+\epsilon) = 5$.
+
+\subsubsection*{C}
+La partie $C$ est born\'ee par $7$ car $\forall x \in C, |x| \leq 7$. Le diam\'etre de $C$ est $d(C) = \sup(d(x,x'), \forall x,x' \in C)$. Le diam\`etre de $C = \max(C) - \min(C) = 6 -4 = 2$.  
+
+\subsubsection*{D}
+La partie $D$ est born\'ee par $2$ car $\forall x \in D, |x| \leq 2$. Le diam\'etre de $D$ est $d(D) = \sup(d(x,x'), \forall x,x' \in D)$. Le diam\`etre de $C = max(C)-min(C) = \lim_{\epsilon \to 0} (1-\epsilon) - (0+\epsilon) = 1$ .  
+
+
+QED
+
+\end{document}
+
