@@ -124,11 +124,10 @@ Plusieurs cas:
 \end{itemize}
 
 
-
 \subsection*{Exercice 1.4}
 
 
-\subsection*{Exercice 1.5}
+\subsection*{Exercice 1.5} 
 \subsubsection*{A}
 L'intervalle $A$ est minor\'e par $-1$ ($A \subset [-1,+\infty]$) et major\'e par $2$ ($A \subset [-\infty; 2]$) donc l'intervalle $A$ est born\'ee. Le diam\`etre $d(A) = \sup(d(x,x'),x,x' \in A)$. Le diam\`etre de $A = 1-0 = 1$.
 
@@ -141,6 +140,50 @@ La partie $C$ est born\'ee par $7$ car $\forall x \in C, |x| \leq 7$. Le diam\'e
 \subsubsection*{D}
 La partie $D$ est born\'ee par $2$ car $\forall x \in D, |x| \leq 2$. Le diam\'etre de $D$ est $d(D) = \sup(d(x,x'), \forall x,x' \in D)$. Le diam\`etre de $C = max(C)-min(C) = \lim_{\epsilon \to 0} (1-\epsilon) - (0+\epsilon) = 1$ .  
 
+
+\subsection*{Exercice 1.6}
+\subsubsection*{1.6.1}
+La partie $E$ est born\'ee donc $\exists M,m \in \R, E \subset [m,M]$, on a $F \subset E$, donc $F \subset [m,M]$ (car l'inclusion est transitive). $m$ est un minorant de $F$ et $M$ est un majorant de $F$ dons $F$ est born\'ee.
+
+\subsubsection*{1.6.2}
+Soit $E, F$ deux parties born\'ees. $\exists M_E,m_E \in \R, E \subset [m_E,M_E]$ et $\exists M_F,m_F \in \R, E \subset [m_F,M_F]$. On a $\forall x, x \in E et x \in F, x \in [m_E, M_E] et x \in [m_F, M_F]$ Donc $x \geq m_E et x \geq m_F \implies x \geq \max(m_E, m_F)$, de m\^eme pour le majorant. Donc $E \cup F \in [\max(m_E,m_F), \min(M_E, M_F)]$, $E \cup F$ est born\'ee.
+
+\subsubsection*{1.6.3}
+Soit $E, F$ deux parties born\'ees. $\exists M_E,m_E \in \R, E \subset [m_E,M_E]$ et $\exists M_F,m_F \in \R, E \subset [m_F,M_F]$. On a $\forall x, x \in E et x \in F, x \in [m_E, M_E] ou x \in [m_F, M_F]$ Donc $x \geq m_E ou x \geq m_F \implies x \geq \min(m_E, m_F)$, de m\^eme pour le majorant. Donc $E \cup F \in [\min(m_E,m_F), \max(M_E, M_F)]$, $E \cup F$ est born\'ee.
+
+\subsection*{Exercice 1.7}
+\subsubsection*{1.7.1}
+Si $\R \setminus \{a\}$ est ouvert alors $\forall x \in \R \setminus \{a\}, \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset \R \setminus \{a\}$. Soit un point $x=a+\alpha$ avec $\alpha>0$ quelconque. On a $x \in \R \setminus \{a\}$. Prenons $\epsilon = \frac{\alpha}{2}$. On a bien $]x-\epsilon, x+\epsilon[ \subset \R \setminus \{a\}$ car $a \notin ]x-\epsilon, x+\epsilon[$. Donc $\R \setminus \{a\}$ est ouvert. \\
+$\{a\}$ est ferm\'e car $\R \setminus \{a\}$ est ouvert.
+\subsubsection*{1.7.2}
+De l'exercice pr\'ec\'edenton a $\forall n >1, \R \setminus \{a_n\}$ qui est ouvert. De plus, une r\'eunion quelconque d’ouverts de $\R$ est un ouvert de $\R$. Donc 
+$\R \setminus \{a_1, a_2, \ldots a_n\}$ est ouvert. Par cons\'equent $\{a_1, a_2, \ldots a_n\}$ est ferm\'e.
+
+\subsection*{Exercice 1.8}
+\subsubsection*{1.8.1}
+Si $[0,1]$ est ouvert alors $\forall x \in [0,1], \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset [0,1]$. Prenons $x = 0$ (ou 1), on a $x \in [0,1]$ mais 
+$x-\epsilon \notin [0,1]$. Donc $[0,1]$ n'est pas ouvert.\\
+
+Si $]1,2[$ est ferm'e alors $\R \setminus ]1,2[$ est ouvert. Donc $\forall x \in \R \setminus ]1,2[, \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset \R \setminus ]1,2[$. Prenons $x = 1$ (ou 2), on a $x \in \R \setminus ]1,2[$ mais $x+\epsilon \notin \R \setminus ]1,2[, \forall \epsilon >0$. Donc $\R \setminus ]1,2[$ n'est pas ouvert et $]1,2[$ n'est pas ferm'e.\\
+
+$[-1,0[$, ni ouvert, ni ferm\'e. Tu fais.
+
+\subsubsection*{1.8.2.a}
+Si $\C$ est ouvert alors $\forall x \in \C, \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset \C$. Prenons un nombre r\'eel $x$ dont le developpement decimal \'egale \`a 5 est le dernier chiffre. On a $x \in \C$. Il n'existe pas de $\not\exists \epsilon, ]x-\epsilon, x+\epsilon[ \subset \C$ car soit $n$ la puissance associ\'e a 5. Si $\epsilon \leq 10^{n}, x-\frac{\epsilon}{2} \notin \C$ et si $\epsilon > 10^{n}, x-\frac{10^{n}}{2} \in ]x-\epsilon,x+\epsilon[ mais \notin \C$ car il ne contient pas de 5 dans son developpement limit\'e.
+
+\subsubsection*{1.8.2.b}
+On a $x in \C$, donc $x$ contient au moins un 5 dans son d\'eveloppement limit\'e et au moins un 5 n'est pas le dernier chiffre (car $x$ n'est pas d\'ecimal). Soit $n$ le rang du premier chiffre $\neq 0$ apr\'es le premier 5 (il existe car $x$ n'est pas d\'ecimal), prenons $\epsilon = 10^{n}$  on a bien $\in ]x-\epsilon,x+\epsilon[ \in \C$ car tous les nombre contienne le premier 5.
+
+
+\subsection*{Exercice 1.9}
+\subsubsection*{1.9.1}
+Soit $E = [a,b]$ ferm\'e donc $a \leq x \leq b$, et $M = \sup(E)$. D\'emonstration par l'absurde. Si $M \not\in E$ alors prenons $M_1 = \frac{b+M}{2}$. On a $M_1 > b$ donc c'est un majorant de $E$ et $M_1 < M$ ceci contredit $M=\sup(E)$. Donc $M \in E$.  
+
+\subsubsection*{1.9.2}
+Soit $E = ]a,b[$ ouvert donc $a < x < b$, et $M = \sup(E)$. Si $M \in E$ alors $M < b$ donc $M$ n'est pas un majorant de $E$. Ceci contredit $M=\sup(E)$. Donc $M \not\in E$.  
+
+\subsubsection*{1.9.3}
+??
 
 QED
 
