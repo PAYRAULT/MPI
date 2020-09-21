@@ -129,10 +129,7 @@ Donc les deux suites $(u_n)_{n\geq1}$ et $(v_n)_{n\geq1}$ sont adjacentes.
 \subsection*{Exercice 3}
 \subsubsection*{$3.1$}
 $\forall n\geq 1, u_n > 0$ car $u_n$ est une somme de nombres tous positifs.\\
-Supposons $0 \leq 1 - u_n$, montrons que $0 \leq 1 - u_{n+1}$.
-$$1 - u_{n+1} = 1 - \sum_{k=1}^{n+1}\frac{1}{k+(n+1)} = 1 - (\sum_{k=1}^{n}\frac{1}{k+(n+1)} + \frac{1}{2(n+1)}) =  1 - (\sum_{k=1}^{n}\frac{1}{k+n} - \frac{1}{n+1}+ \frac{1}{2n+1} + \frac{1}{2(n+1)}) $$
-$$ = 1 - u_n + \frac{1}{2(n+1)} - \frac{1}{2n+1}  = $$
-
+$\forall n\geq 1, u_n \leq 0$, ???
 
 
 \subsubsection*{$3.2$}
@@ -142,6 +139,7 @@ $\forall n, u_{n+1} - u_{n} > 0$ donc la suite $(u_n)_{n\geq1}$ est croisssante.
 
 
 \subsubsection*{$3.3$}
+La suite $u_n$ est born\'e et croissante donc elle converge. Calculons sa limite.
 $$\lim_{n\to\infty} u_n = \lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{n+k} =  \lim_{n\to\infty} (\sum_{k=1}^{2n}\frac{1}{k} - \sum_{k=1}^{n} \frac{1}{k}) = \lim_{n\to\infty} \sum_{k=1}^{2n}\frac{1}{k} - \lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{k} = \ln(2n) - \ln(n) = \ln(\frac{2n}{n}) = \ln(2)$$
 
 
