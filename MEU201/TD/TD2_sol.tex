@@ -86,26 +86,47 @@ Deux suites $(u_n)_{n\geq0}$ et $(v_n)_{n\geq0}$ sont adjacentes ssi:
 \newpage
 \subsection*{Exercice 1}
 Montrons que $(u_n)_{n\geq1}$ est croissante. 
-$$u_{n+1} - u{n} = \sum_{k=1}^{n+1}\frac{1}{k^3} - \sum_{k=1}^{n}\frac{1}{k^3} = \sum_{k=1}^{n}\frac{1}{k^3} + \frac{1}{(n+1)^3} - \sum_{k=1}^{n}\frac{1}{k^3} =  \frac{1}{(n+1)^3}$$
-$\forall n, u_{n+1} - u{n} > 0$ donc la suite $(u_n)_{n\geq1}$ est croisssante.\\
+$$u_{n+1} - u_{n} = \sum_{k=1}^{n+1}\frac{1}{k^3} - \sum_{k=1}^{n}\frac{1}{k^3} = \sum_{k=1}^{n}\frac{1}{k^3} + \frac{1}{(n+1)^3} - \sum_{k=1}^{n}\frac{1}{k^3} =  \frac{1}{(n+1)^3}$$
+$\forall n, u_{n+1} - u_{n} > 0$ donc la suite $(u_n)_{n\geq1}$ est croisssante.\\
 
 Montrons que $(v_n)_{n\geq1}$ est d\'croissante. 
-$$v_{n+1} - v{n} = u_{n+1}+\frac{1}{(n+1)^2} - (u_{n}+\frac{1}{n^2}) = \frac{1}{(n+1)^2} + \frac{1}{(n+1)^3} - \frac{1}{n^2} = \frac{n+2}{(n+1)^3} - \frac{1}{n^2}$$
+$$v_{n+1} - v_{n} = u_{n+1}+\frac{1}{(n+1)^2} - (u_{n}+\frac{1}{n^2}) = \frac{1}{(n+1)^2} + \frac{1}{(n+1)^3} - \frac{1}{n^2} = \frac{n+2}{(n+1)^3} - \frac{1}{n^2}$$
 $$\frac{-3n^2-n-1}{n^2(n+1)^3}$$
-$\forall n, v_{n+1} - v{n} < 0$ donc la suite $(v_n)_{n\geq1}$ est d\'ecroisssante.\\
+$\forall n, v_{n+1} - v_{n} < 0$ donc la suite $(v_n)_{n\geq1}$ est d\'ecroisssante.\\
 
 Montrons que $\forall n \in \N, n \geq 1, u_n \leq v_n$
 $$u_n \leq v_n, u_n \leq u_n + \frac{1}{n^2}$$
 Vrai car $\frac{1}{n^2}$ est positif pour $n \geq 1$.\\
 
 Montrons que $\lim_{n \to \infty}(v_n-u_n)_{n\geq0} = 0$
-$$\lim_{n \to \infty}(v_n-u_n)_{n\geq0} = \lim_{n \to \infty}(u_n+\frac{1}{n^2}-u_n)_{n\geq0} = \lim_{n \to \infty}\frac{1}{n^2} = 0$$
+$$\lim_{n \to \infty}(v_n-u_n)_{n\geq1} = \lim_{n \to \infty}(u_n+\frac{1}{n^2}-u_n)_{n\geq1} = \lim_{n \to \infty}\frac{1}{n^2} = 0$$
 Vrai\\
 
-Donc les deux suites $(u_n)_{n\geq0}$ et $(v_n)_{n\geq0}$ sont adjacentes.
+Donc les deux suites $(u_n)_{n\geq1}$ et $(v_n)_{n\geq1}$ sont adjacentes.
 
 
 \subsection*{Exercice 2}
+Montrons que $(u_n)_{n\geq1}$ est croissante. 
+$$u_{n+1} - u_{n} = \sum_{k=1}^{n+1}\frac{1}{k!} - \sum_{k=1}^{n}\frac{1}{k!} = \sum_{k=1}^{n}\frac{1}{k!} + \frac{1}{(n+1)!} - \sum_{k=1}^{n}\frac{1}{k!} =  \frac{1}{(n+1)!}$$
+$\forall n, u_{n+1} - u_{n} > 0$ donc la suite $(u_n)_{n\geq1}$ est croisssante.\\
+
+Montrons que $(v_n)_{n\geq1}$ est d\'croissante. 
+$$v_{n+1} - v_{n} = u_{n+1}+\frac{1}{(n+1)!} - (u_{n}+\frac{1}{n!}) = \frac{1}{(n+1)!} + \frac{1}{(n+1)!} - \frac{1}{n!} = \frac{2}{(n+1)!} - \frac{1}{n!}$$
+$$\frac{1-n}{(n+1)!} $$
+$\forall n, v_{n+1} - v_{n} \leq 0$ donc la suite $(v_n)_{n\geq1}$ est d\'ecroisssante.\\
+
+Montrons que $\forall n \in \N, n \geq 1, u_n \leq v_n$
+$$u_n \leq v_n, u_n \leq u_n + \frac{1}{n!}$$
+Vrai car $\frac{1}{n!}$ est positif pour $n \geq 1$.\\
+
+Montrons que $\lim_{n \to \infty}(v_n-u_n)_{n\geq0} = 0$
+$$\lim_{n \to \infty}(v_n-u_n)_{n\geq1} = \lim_{n \to \infty}(u_n+\frac{1}{n!}-u_n)_{n\geq1} = \lim_{n \to \infty}\frac{1}{n!} = 0$$
+Vrai\\
+
+Donc les deux suites $(u_n)_{n\geq1}$ et $(v_n)_{n\geq1}$ sont adjacentes.
+
+
+\subsection*{Exercice 3}
 \subsubsection*{$a_n$}
 
 QED
