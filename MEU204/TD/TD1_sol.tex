@@ -79,8 +79,8 @@
 La relation $xRy$ est une relation d'\'equivalence sur l'ensemble $E$ ssi:
 \begin{itemize}
 \item $\forall x \in E, xRx$
-\item $\forall x,y \in E, xRy \Leftrightarrow yRx$
-\item $\forall x,y,z \in E, xRy \wedge yRz \Leftrightarrow xRz$
+\item $\forall x,y \in E, xRy \Rightarrow yRx$
+\item $\forall x,y,z \in E, xRy \wedge yRz \Rightarrow xRz$
 \end{itemize}
 \end{defn}
 
@@ -92,8 +92,8 @@ La relation $R$ n'est pas une relation d'\'equivalence car $(4,4) \not\in R$.\\
 Si on ajoute le couple $(4,4)$ \`a la relation $R$ alors $R$ est une relation d'\'equivalence car 
 \begin{itemize}
 \item $(1,1),(2,2),(3,3),(4,4) \in R$
-\item $(1,2) \Leftrightarrow (2,1), (3,4) \Leftrightarrow (4,3)$
-\item $(1,1) \wedge (1,2) \Leftrightarrow (1,2), (1,2) \wedge (2,1) \Leftrightarrow (1,1), (1,2) \wedge (2,2) \Leftrightarrow (1,2),\ldots $
+\item $(1,2) \Rightarrow (2,1), (3,4) \Rightarrow (4,3)$
+\item $(1,1) \wedge (1,2) \Rightarrow (1,2), (1,2) \wedge (2,1) \Rightarrow (1,1), (1,2) \wedge (2,2) \Rightarrow (1,2),\ldots $
 \end{itemize}
 
 \subsection*{Exercice 1.2}
@@ -104,8 +104,8 @@ La liste des classes d'\'equivalence est $\{(1,1),(1,2),2,1),2,2)\}, \{(3,3),(3,
 \subsection*{Exercice 2.1}
 \begin{itemize}
 \item $\forall a,b \in \R, (a,b)R(a,b) \Leftrightarrow a^2+b^2 = a^2 + b^2$ est vrai
-\item $\forall a,b,c,d \in \R, ((a,b)R(c,d) \Leftrightarrow (c,d)R(a,b)) \Leftrightarrow (a^2+b^2 = c^2 + d^2 \Leftrightarrow c^2 + d^2 = a^2+b^2)$ est vrai car l'\'egalit\'e est symetrique
-\item $\forall a,b,c,d,e,f \in \R, ((a,b)R(c,d) \wedge (c,d)R(e,f) \Leftrightarrow (a,b)R(e,f)) \Leftrightarrow (a^2+b^2 = c^2 + d^2 \wedge c^2 + d^2 = e^2+f^2\Leftrightarrow a^2 + b^2 = e^2+f^2)$ est vrai car l'\'egalit'e est transitive
+\item $\forall a,b,c,d \in \R, ((a,b)R(c,d) \Rightarrow (c,d)R(a,b)) \Leftrightarrow (a^2+b^2 = c^2 + d^2 \Rightarrow c^2 + d^2 = a^2+b^2)$ est vrai car l'\'egalit\'e est symetrique
+\item $\forall a,b,c,d,e,f \in \R, ((a,b)R(c,d) \wedge (c,d)R(e,f) \Rightarrow (a,b)R(e,f)) \Leftrightarrow (a^2+b^2 = c^2 + d^2 \wedge c^2 + d^2 = e^2+f^2\Rightarrow a^2 + b^2 = e^2+f^2)$ est vrai car l'\'egalit'e est transitive
 \end{itemize}
 
 \subsection*{Exercice 2.2}
@@ -119,24 +119,24 @@ Pas compris $|R^2\setminus\R$.
 \subsection*{Exercice 3.1}
 \begin{itemize}
 \item $\forall x \in \R, xRx \Leftrightarrow |x| = |x|$ est vrai
-\item $\forall x,y \in \R, (xRy \Leftrightarrow yRx) \Leftrightarrow (|x| = |y| \Leftrightarrow |y| = |x|)$ est vrai car l'\'egalit\'e est symetrique
-\item $\forall x,y,z \in \R, (xRy \wedge yRz \Leftrightarrow xRz) \Leftrightarrow (|x| = |y| \wedge |y| = |z| \Leftrightarrow |x| = |z|)$ est vrai car l'\'egalit'e est transitive
+\item $\forall x,y \in \R, (xRy \Rightarrow yRx) \Leftrightarrow (|x| = |y| \Rightarrow |y| = |x|)$ est vrai car l'\'egalit\'e est symetrique
+\item $\forall x,y,z \in \R, (xRy \wedge yRz \Rightarrow xRz) \Leftrightarrow (|x| = |y| \wedge |y| = |z| \Rightarrow |x| = |z|)$ est vrai car l'\'egalit'e est transitive
 \end{itemize}
 
 
 \subsection*{Exercice 3.2}
 \begin{itemize}
 \item $\forall x \in \R, xRx \Leftrightarrow e^x = e^x$ est vrai
-\item $\forall x,y \in \R, (xRy \Leftrightarrow yRx) \Leftrightarrow (e^x = e^y \Leftrightarrow e^y = e^x)$ est vrai car l'\'egalit\'e est symetrique
-\item $\forall x,y,z \in \R, (xRy \wedge yRz \Leftrightarrow xRz) \Leftrightarrow (e^x = e^y \wedge e^y = e^z \Leftrightarrow e^x = e^z)$ est vrai car l'\'egalit'e est transitive
+\item $\forall x,y \in \R, (xRy \Rightarrow yRx) \Leftrightarrow (e^x = e^y \Rightarrow e^y = e^x)$ est vrai car l'\'egalit\'e est symetrique
+\item $\forall x,y,z \in \R, (xRy \wedge yRz \Rightarrow xRz) \Leftrightarrow (e^x = e^y \wedge e^y = e^z \Rightarrow e^x = e^z)$ est vrai car l'\'egalit'e est transitive
 \end{itemize}
 
 \subsection*{Exercice 4}
 \subsection*{Exercice 4.1}
 \begin{itemize}
 \item $\forall a,b \in \R, (a,b)R(a,b) \Leftrightarrow ab = ba$ est vrai car la multiplication est commutative
-\item $\forall a,b,c,d \in \R, ((a,b)R(c,d) \Leftrightarrow (c,d)R(a,b)) \Leftrightarrow (ad = bc \Leftrightarrow cb = da)$ est vrai car l'\'egalit\'e est symetrique et la multiplication est commutative
-\item $\forall a,b,c,d,e,f \in \R, ((a,b)R(c,d) \wedge (c,d)R(e,f) \Leftrightarrow (a,b)R(e,f)) \Leftrightarrow (ad = bc \wedge cf = de \Leftrightarrow af = be)$ est vrai car $a = \frac{bc}{d}$, donc $af = \frac{bc}{d}f$ mais $cf=de$ donc $af = \frac{bde}{d} = be$. 
+\item $\forall a,b,c,d \in \R, ((a,b)R(c,d) \Rightarrow (c,d)R(a,b)) \Leftrightarrow (ad = bc \Rightarrow cb = da)$ est vrai car l'\'egalit\'e est symetrique et la multiplication est commutative
+\item $\forall a,b,c,d,e,f \in \R, ((a,b)R(c,d) \wedge (c,d)R(e,f) \Rightarrow (a,b)R(e,f)) \Leftrightarrow (ad = bc \wedge cf = de \Rightarrow af = be)$ est vrai car $a = \frac{bc}{d}$, donc $af = \frac{bc}{d}f$ mais $cf=de$ donc $af = \frac{bde}{d} = be$. 
 \end{itemize}
 
 \subsection*{Exercice 4.2}
@@ -147,8 +147,8 @@ $(p,q)R(x,y) \Leftrightarrow py = qx$ avec $(p,q)$ premiers entre eux. Le seul c
 \subsection*{Exercice 5.1}
 \begin{itemize}
 \item $\forall P \in \R, PRP \Leftrightarrow P-P$ est un multiple de $X$ est vrai car 0 est un multiple de tous les nombres ($0 = 0.x$)
-\item $\forall P,Q \in \R, (PRQ \Leftrightarrow QRP) \Leftrightarrow (P-Q = k.X \Leftrightarrow Q-P = k'X)?$ est vrai en prenant $k'=-k$ car $Q-P = -(P-Q) = -kX$ 
-\item $\forall P,Q,S \in \R, (PRQ \wedge QRS \Leftrightarrow PRS) \Leftrightarrow (P-Q = kX \wedge Q-S = k'X \Leftrightarrow P-S = k''X)?$ est vrai $P-S = (P-Q) - (Q-S) = kX + k'X = (k+k')X$
+\item $\forall P,Q \in \R, (PRQ \Rightarrow QRP) \Leftrightarrow (P-Q = k.X \Rightarrow Q-P = k'X)?$ est vrai en prenant $k'=-k$ car $Q-P = -(P-Q) = -kX$ 
+\item $\forall P,Q,S \in \R, (PRQ \wedge QRS \Rightarrow PRS) \Leftrightarrow (P-Q = kX \wedge Q-S = k'X \Rightarrow P-S = k''X)?$ est vrai $P-S = (P-Q) - (Q-S) = kX + k'X = (k+k')X$
 \end{itemize}
 
 \subsection*{Exercice 5.2}
