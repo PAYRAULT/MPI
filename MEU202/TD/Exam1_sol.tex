@@ -1,0 +1,157 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+\begin{defn}
+Soit E un K-espace vectoriel. Une partie F de E est appelée un sous-espace vectoriel si :
+\begin{itemize}
+\item $0_E \in F$,
+\item $u + v \in F$ pour tous $u, v \in F$,
+\item $\lambda.u \in F$ pour tout $\lambda \in K$ et tout $u \in F$.
+\end{itemize}
+\end{defn}
+
+
+\begin{defn}
+Une famille $\{v_1, v_2, \ldots , v_p\}$ de $E$ est une famille libre ou lin\'eairement ind\'ependante si toute combinaison lin\'eaire nulle
+$$\lambda_1v_1 + \lambda_2v_2 + ··· + \lambda_p v_p = 0$$
+est telle que tous ses coefficients sont nuls, c’est-\`a-dire
+$$\lambda_1 = 0, \lambda_2 = 0, \ldots, \lambda_p = 0$$
+\end{defn}
+
+
+
+\begin{defn}
+Soient $v_1, \ldots, v_p$ des vecteurs de $E$. La famille $\{v_1, \ldots, v_p\}$ est une famille g\'en\'eratrice de l'espace vectoriel E si tout vecteur de E est une combinaison lin\'eaire des vecteurs $v_1, \ldots, v_p$. Ce qui peut s'\'ecrire aussi :
+$$\forall v \in E, \exists \lambda_1, \ldots, \lambda_p, v = \lambda_1 v_1 + \ldots + \lambda_p v_p$$
+\end{defn}
+
+
+\newpage
+\subsection*{Exercice 1}
+
+Soit $U=\{(x_1,x_2,x_3,x_4) \in \R^4 | x_1+x_2-2x_3+4x_4 = 0\}$ et $V=\{(x_1,x_2,x_3,x_4) \in \R^4 | 2x_1+3x_2+x_3+5x_4 = 0\}$. Il faut calculer $U \cap V$.\\
+Trouvons une base pour l'espace vectoriel $U$. 
+$$U=\begin{pmatrix} -x_2+2x_3-4x_4 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = ((-1,1,0,0),(2,0,1,0),(-4,0,0,1))$$ 
+
+Trouvons une base pour l'espace vectoriel $V$. 
+$$U=\begin{pmatrix} x_1 \\ x_2 \\ -2x_1-3x_2-5x_4 \\ x_4 \end{pmatrix} = ((1,0,-2,0),(0,1,-3,0),(0,0,-5,1))$$ 
+
+Pour qu'un vecteur $v$ appartienne \`a $U \cap V$, il est n\'ecessaire et suffisant d'avoir $v$ comme une combinaison lin\'eaire des 2 bases de $U$ et $V$, donc
+$$
+v= 
+a_1\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}+a_2\begin{pmatrix}2\\0\\1\\0\end{pmatrix}+a_3\begin{pmatrix}-4\\0\\0\\1\end{pmatrix} 
+= b_1\begin{pmatrix}1\\0\\-2\\0\end{pmatrix}+b_2\begin{pmatrix}0\\1\\-3\\0\end{pmatrix}+b_3\begin{pmatrix}0\\0\\-5\\1\end{pmatrix}
+$$
+Donc
+$$
+\begin{vmatrix} -1&2&-4&1&0&0 \\ 1&0&0&0&1&0 \\ 0&1&0&-2&-3&-5 \\ 0&0&1&0&0&1 \end{vmatrix} = 
+\begin{vmatrix} 1&0&0&0&1&0 \\ 0&1&0&0&-\frac{1}{5}&\frac{3}{5} \\ 0&0&1&0&0&1 \\ 0&0&0&1&\frac{7}{5}&\frac{14}{5} \end{vmatrix}
+$$
+D'o\`u
+$$
+v= 
+a_1\begin{pmatrix}1\\0\\0\\0\end{pmatrix}+a_2\begin{pmatrix}0\\1\\0\\0\end{pmatrix}+a_3\begin{pmatrix}0\\0\\1\\0\end{pmatrix}
+= b_1\begin{pmatrix}0\\0\\0\\1\end{pmatrix}+b_2\begin{pmatrix}1\\-\frac{1}{5}\\0\\\frac{7}{5}\end{pmatrix}+b_3\begin{pmatrix}0\\\frac{3}{5}\\1\\\frac{14}{5}\end{pmatrix}
+$$
+On obtient le syst\`eme d'\'equations
+$$
+\left\{ 
+\begin{array}{l l}
+a_1 =  & b_2\\
+a_2 = & -\frac{1}{5}b_2+\frac{3}{5}b_3\\
+a_3 = & b_3\\
+b_1 = & \frac{7}{5}b_2 + \frac{14}{5}b_3\\
+\end{array}
+\right. 
+$$ 
+
+On peut maintenant calculer $v$
+$$
+v= 
+b_2\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}+(-\frac{1}{5}b_2+\frac{3}{5}b_3)\begin{pmatrix}2\\0\\1\\0\end{pmatrix}+b_3\begin{pmatrix}-4\\0\\0\\1\end{pmatrix}
+$$
+
+La base de $U \cap V$ est 
+$$((-1-\frac{1}{5}.2, 1-\frac{1}{5}.0,0-\frac{1}{5}.1,0-\frac{1}{5}.0),(\frac{3}{5}.2-4, \frac{3}{5}.0+0, \frac{3}{5}.1+0, \frac{3}{5}.0+1))$$
+$$((-\frac{7}{5},1,-\frac{1}{5},0),(-\frac{14}{5}, 0, \frac{3}{5}, 1))$$  
+
+\subsection*{Exercice 2}
+
+
+QED
+
+\end{document}
+
