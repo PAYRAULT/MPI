@@ -130,7 +130,7 @@ Pas de solution car 5 n'est pas un multiple de 3.
 Preuve par r\'ecurrence. Soit la suite $a_{n+1} = 10a_n+1$ et $a_0 = 1$. La suite $a_n$ repr\'esente les nombres $1, 11, 111, 111111\ldots1$.
 Vrai pour $a_0$ avec $n=1, m=1$. Supposons que $a_n \mod n.m = 0$, quelles sont les conditions pour que $a_{n+1} \mod n.m' = 0$?. On a $a_n \mod nm = 0$ donc $\exists k, a_n=k.n.m$.
 $$a_{n+1} \mod n.m' = (10a_n + 1) \mod n.m' = (10k.n.m + 1) \mod n.m'$$
-Pour que $a_{n+1} \mod n.m' = 0$? il faut $\exists k', a_{n+1)=k'.n.m'$ donc $k'.n.m' = 10k.n.m + 1$.\\
+Pour que $a_{n+1} \mod n.m' = 0$? il faut $\exists k', a_{n+1}=k'.n.m'$ donc $k'.n.m' = 10k.n.m + 1$.\\
 
 Sous quelles conditions est-ce vrai?\\
 Si $n=2l$ (ie $2|n$), alors $2k'.l.m' = 20k.l.m+1$, il n'existe aucune valeur de $k,m,k',m'$ car un cot\'e est pair et l'autre impair.\\
