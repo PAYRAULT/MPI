@@ -108,6 +108,11 @@ Comme $|A| = n+1$ alors il y a au moins deux \'el\'ements de A qui sont dans la 
 Si on a $a \sim b$, alors $a=2^kb$. Lorsque $k\geq 0$, $a$ est un multiple de $b$, lorsque $k<0$, $b$ est un multiple de $a$.
 
 \subsection*{Exercice 2}
+On a $pgcd(a,b) = 1$, Soit $d=pgcd(a+b,a-b)$, donc $a+b=n.d$ et $a-b=n'*d$.
+$$2a = (a+b)+(a-b) = n.d+n'.d = d(n+n')$$
+$$2b = (a+b)-(a-b) = n.d-n'.d = d(n-n')$$
+Donc $d$ divise le $pgcd(2a, 2b)$ et $pgcd(2a, 2b)=2$ car $a$ et $b$ sont premiers entre eux. Il existe que 2 nombres qui divisent 2: 1 ou 2.
+$$pgcd(a+b,a-b) = 1 \text{ ou } 2$$ 
 
 \subsection*{Exercice 3}
 \'Equations diophantiennes du premier degr\'e.
@@ -122,11 +127,15 @@ $$15x+24y = 5, 3(5x+8y) = 5$$.
 Pas de solution car 5 n'est pas un multiple de 3.
 
 \subsection*{Exercice 5}
-On a $pgcd(a,b) = 1$, Soit $d=pgcd(a+b,a-b)$, donc $a+b=n.d$ et $a-b=n'*d$.
-$$2a = (a+b)+(a-b) = n.d+n'.d = d(n+n')$$
-$$2b = (a+b)-(a-b) = n.d-n'.d = d(n-n')$$
-Donc $d$ divise le $pgcd(2a, 2b)$ et $pgcd(2a, 2b)=2$ car $a$ et $b$ sont premiers entre eux. Il existe que 2 nombres qui divisent 2: 1 ou 2.
-$$pgcd(a+b,a-b) = 1 \text{ ou } 2$$ 
+Preuve par r\'ecurrence. Soit la suite $a_{n+1} = 10a_n+1$ et $a_0 = 1$. La suite $a_n$ repr\'esente les nombres $1, 11, 111, 111111\ldots1$.
+Vrai pour $a_0$ avec $n=1, m=1$. Supposons que $a_n \mod n.m = 0$, quelles sont les conditions pour que $a_{n+1} \mod n.m' = 0$?. On a $a_n \mod nm = 0$ donc $\exists k, a_n=k.n.m$.
+$$a_{n+1} \mod n.m' = (10a_n + 1) \mod n.m' = (10k.n.m + 1) \mod n.m'$$
+Pour que $a_{n+1} \mod n.m' = 0$? il faut $\exists k', a_{n+1)=k'.n.m'$ donc $k'.n.m' = 10k.n.m + 1$.\\
+
+Sous quelles conditions est-ce vrai?\\
+Si $n=2l$ (ie $2|n$), alors $2k'.l.m' = 20k.l.m+1$, il n'existe aucune valeur de $k,m,k',m'$ car un cot\'e est pair et l'autre impair.\\
+Si $n=5l$ (ie $5|n$), alors $5k'.l.m' = 50k.l.m+1$, il n'existe aucune valeur de $k,m,k',m'$ car un cot\'e se termine par 5 ou 0 et l'autre par 1.\\
+
 
 \subsection*{Exercice 6}
 Il suffit de trouver tous les entiers $j,m$ qui v\'erifient $31j+12m=208$.\\
