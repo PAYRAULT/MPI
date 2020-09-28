@@ -173,6 +173,41 @@ Il y a une unique solution; $a,b,c = 0$. Donc $Im f$ est lin\'eairement ind\'epe
 La dimension de $Im f = 3$, donc le rang de $f = 3$.
 
 \subsection*{Exercice 3}
+\subsection*{Exercice 3.1 - $Ker A$}
+
+Le noyau $Ker A = \{X \in \R^3, A.X = 0\}$. Prenons $X = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$
+$$A.X = 0 \Leftrightarrow \begin{vmatrix} 1 & 2 & 1 \\ 2 & 3 & 1 \\ 1 & 1 & 0 \end{vmatrix} . \begin{pmatrix} x \\ y \\ z \end{pmatrix} = 0$$
+
+$$ 
+\left\{ 
+\begin{array}{l l}
+x + 2y + z & = 0\\
+2x + 3y + z & = 0\\
+x + y  & = 0\\
+\end{array}
+\right. 
+$$ 
+Apres \'echelonnage, on a 
+$$ 
+\left\{ 
+\begin{array}{l l}
+x + 2y + z & = 0\\
+y + z & = 0\\
+\end{array}
+\right. 
+$$ 
+
+En prenant $z$ comme param\`etre secondaire on obtient:
+$$Ker A = \{ \begin{pmatrix} z \\ -z \\ z \end{pmatrix}, z \in \R\} = \{ \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}.z, z \in \R\} = Vect(\begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix})$$
+
+\subsection*{Exercice 3.1 - $Im A$}
+L'image de $A$ est l'espace vectoriel engendr\'e par la famille g\'en\'eratrice des colonnes de $A$.
+$$Im A =  Vect(\begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix},\begin{pmatrix} 2 \\ 3 \\ 1 \end{pmatrix},\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix})$$
+Il faut maintenant trouver une base de $Im A$.
+Il faut v\'erifier si ces vecteurs sont libres ou pas? On \'ecrit une relation de liaison entre les vecteurs.
+$$a.\begin{pmatrix}1\\2\\1\end{pmatrix} + b.\begin{pmatrix}2\\3\\1\end{pmatrix} + c.\begin{pmatrix}1\\1\\0\end{pmatrix} = 0$$
+Ceci est $Ker A$, comme $Ker A \neq \{0\}$, la famille n'est pas libre. Prenons les 2 premiers vecteurs comme base et v\'erifions si ils sont libres.
+Base de $Im A = vect(\begin{pmatrix}1\\2\\1\end{pmatrix} + b.\begin{pmatrix}2\\3\\1\end{pmatrix})$. Ils sont libres car lin\'eairement ind\'ependent. C'est une base de $Im A$.
 
 
 
