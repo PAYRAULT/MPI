@@ -99,6 +99,17 @@ $$\forall v \in E, \exists \lambda_1, \ldots, \lambda_p, v = \lambda_1 v_1 + \ld
 \end{defn}
 
 
+\begin{defn}
+Si $f : E \to F$ est une application lin\'eaire, on d\'efinit le noyau de $f$ comme \'etant le sous-espace vectoriel (sev) de $E$ d\'efini par
+$$ker(f) := \{x \in E | f(x) = 0\}$$
+On d\'efinit l'image de f comme \'etant le sev de F d\'efini par
+$$Im(f) = \{y \in F| \exists x \in E, f(x) = y\}$$
+La dimension de $Im(f)$ s'appelle aussi le rang de f et se note $rg(f)$.
+\end{defn}
+
+
+
+
 \newpage
 \subsection*{Exercice 1}
 
@@ -149,7 +160,17 @@ $$((-1-\frac{1}{5}.2, 1-\frac{1}{5}.0,0-\frac{1}{5}.1,0-\frac{1}{5}.0),(\frac{3}
 $$((-\frac{7}{5},1,-\frac{1}{5},0),(-\frac{14}{5}, 0, \frac{3}{5}, 1))$$  
 
 \subsection*{Exercice 2}
+Le rang est la dimension de l'image de $f$. Commencons par calculer l'image de $f$; $Im(f) = \{y \in \R^3| \exists x \in \R^3, f(x) = y\}$.
+$$f(x_1, x_2, x_3) = (x_1 + 4x_2 + 3x_3, 3x_1 + x_2 + x_3, 5x_1 + 2x_2 + 3x_3) = \begin{vmatrix} 1 & 4 & 3\\ 3 &1 & 1\\5 &2 &3 \end{vmatrix}$$
+$$Im f = Vect(\begin{pmatrix}1\\3\\5\end{pmatrix}, \begin{pmatrix}4\\1\\2\end{pmatrix}, \begin{pmatrix}3\\1\\3\end{pmatrix})$$
+Il faut v\'erifier si ces vecteurs sont libres ou pas? On \'ecrit une relation de liaison entre les vecteurs.
+$$a.\begin{pmatrix}1\\3\\5\end{pmatrix} + b.\begin{pmatrix}4\\1\\2\end{pmatrix} + c.\begin{pmatrix}3\\1\\3\end{pmatrix} = 0$$
+On \'echelonne la matrice et on obtient
+$$
+a.\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + b.\begin{pmatrix} 0 \\ 1 \\ 0  \end{pmatrix} + c.\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = 0$$
 
+Il y a une unique solution; $a,b,c = 0$. Donc $Im f$ est lin\'eairement ind\'ependent et est une base.
+La dimension de $Im f = 3$, donc le rang de $f = 3$.
 
 \subsection*{Exercice 3}
 
