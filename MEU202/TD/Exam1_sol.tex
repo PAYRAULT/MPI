@@ -33,6 +33,7 @@
 \newcommand{\C}{\bb{C}}
 \newcommand{\N}{\bb{N}}
 \newcommand{\M}{\mathbf{M}}
+\newcommand{\E}{\mathscr{E}}
 \newcommand{\m}{\mathbf{m}}
 \newcommand{\MM}{\mathscr{M}}
 \newcommand{\HH}{\mathscr{H}}
@@ -75,7 +76,7 @@
 \subsection*{Rappel de cours}
 
 \begin{defn}
-Soit E un K-espace vectoriel. Une partie F de E est appelée un sous-espace vectoriel si :
+Soit $\E$ un K-espace vectoriel. Une partie F de $\E$ est appelée un sous-espace vectoriel si :
 \begin{itemize}
 \item $0_E \in F$,
 \item $u + v \in F$ pour tous $u, v \in F$,
@@ -107,6 +108,22 @@ $$Im(f) = \{y \in F| \exists x \in E, f(x) = y\}$$
 La dimension de $Im(f)$ s'appelle aussi le rang de f et se note $rg(f)$.
 \end{defn}
 
+\begin{defn}
+Soit $\E$ un espace vectoriel de dimension $n$, et $B, B'$ deux bases de $\E$. On appelle la \emph{matrice de passage} de la base $B$ vers la base $B'$, not\'ee $P_{b,B'}$, la matrice dont la j-i\`eme colonne est form\'ee des coordonn\'ees du j-i\`eme vecteur de la base $B'$ par rapport la base $B$. \\
+Dans le cas particulier o\`u $B$ est la base canonique de $\E$, alors la matrice de passe est form\'ee des vecteurs de $B'$.
+\end{defn}
+
+\begin{defn}
+Soit 
+\begin{itemize}
+\item $f: \E \to \E$, ume application lin\'eaire
+\item $B,B'$ deux bases de $\E$
+\item $P_{B,B'}$, la matrice de passage de $B$ vers $B'$
+\item $A=Mat_{B}(f)$, la matrice de l'application $f$ dans la base $B$
+\item $B=Mat_{B'}(f)$, la matrice de l'application $f$ dans la base $B'$
+\end{itemize}
+Alors $$B = P^{-1}AP$$
+\end{defn}
 
 
 
@@ -214,6 +231,34 @@ Base de $Im A = vect(\begin{pmatrix}1\\2\\1\end{pmatrix} + b.\begin{pmatrix}2\\3
 \subsection*{Exercice 4}
 La proposition est fausse. Soit $F_1,F_2,F_3$ 3 sous-espaces vectoriels de $\R^2$, $F_1=((0,x)), F_2=((x,0)), F_3=(x,x)$. On a $F_1 \cap F_2 = \{0\}$ et $F_1 \cap F_3 = \{0\}$. On a $(F_1 \cap F_2) + (F_1 \cap F_3) = \{0\} + \{0\} = \{0\}$. On a $(F_1 + F_2) \cap F_3 = F_3$.
 
+
+
+\subsection*{Exercice 5}
+La matrice de passage $P_{B,B'}$ est 
+$$
+P_{B,B'} = \begin{pmatrix}1&0&-3\\2&-1&-1\\0&0&1\end{pmatrix}
+$$
+
+
+\subsection*{Exercice 6}
+On a 
+
+
+\subsection*{Exercice 7}
+Les matrices $A$ et $B$ sont semblables si $\exists P, A = PBP^{-1}$. 
+Prenons $B$ \'egale \`a la matrice identit\'e $I_{d}$. On a $PBP^{-1} = PI_{d}P^{-1} = PP^{-1} = I_{d}$. Prenons $A$ une matrice de $M_2(\R)$ de rang 2 et diff\'erente de $I_d$. On a $\not\exists P, A = PI_{d}P^{-1}$, donc la proposition est fausse.
+
+
+\subsection*{Exercice 8}
+$$
+\begin{vmatrix} 0 & a & b & 0\\ a & 0 & 0 & b\\ c & 0 & 0 & d\\ 0 & c & d & 0\end{vmatrix} =
+-a.\begin{vmatrix} a & 0 & b\\ c & 0 & d\\ 0 & d & 0\end{vmatrix} + b.\begin{vmatrix} a & 0 & b\\ c & 0 & d\\ 0 & c & 0\end{vmatrix} =
+a.d.\begin{vmatrix} a & b\\ c & d\end{vmatrix} - b.c.\begin{vmatrix} a & b\\ c & d\end{vmatrix}
+$$
+On a $\begin{vmatrix} a & b\\ c & d\end{vmatrix} = ad-bc$. Donc 
+$$
+\begin{vmatrix} 0 & a & b & 0\\ a & 0 & 0 & b\\ c & 0 & 0 & d\\ 0 & c & d & 0\end{vmatrix} = a.d.(ad-bc) - b.c.(ad-bc) = (ad-bc)^2
+$$ 
 
 QED
 
