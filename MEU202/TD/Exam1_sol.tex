@@ -241,7 +241,22 @@ $$
 
 
 \subsection*{Exercice 6}
-On a 
+$ker f \oplus Im f = \R^n \Leftrightarrow ker f \cap Im f = \{0\}$. Trouvons un endomorphisme $f$ tel que $ker f \cap Im f \neq \{0\}$\\
+
+Prenons $f=\begin{vmatrix} 0 & 1 \\ 0 & 0\end{vmatrix}$ un endomorphisme de $\R^2$. Calculons $ker f$ et $im f$.
+$$
+a.\begin{pmatrix}0 \\ 0 \end{pmatrix} + b.\begin{pmatrix}1 \\ 0 \end{pmatrix} = 0
+$$ 
+Donc $ker f = Vect((z,0))$\\
+
+L'image de $f$ est l'espace vectoriel engendr\'e par la famille g\'en\'eratrice des colonnes de $f$.
+$$Im A =  Vect(\begin{pmatrix} 0 \\ 0 \end{pmatrix},\begin{pmatrix} 1 \\ 0 \end{pmatrix})$$
+Il faut maintenant trouver une base de $Im f$. $Vect((z,0))$ est une famille de $f$.
+
+$$ker f + Im f = Vect((z,0)) \neq \R^2$$
+de plus $ker f \cap Im f \neq \{0\}$
+
+EN fait ceci est vrai lorsque $f$ est un 
 
 
 \subsection*{Exercice 7}
