@@ -1,0 +1,310 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+\begin{defn}
+Soit $\E$ un K-espace vectoriel. Une partie F de $\E$ est appelée un sous-espace vectoriel si :
+\begin{itemize}
+\item $0_E \in F$,
+\item $u + v \in F$ pour tous $u, v \in F$,
+\item $\lambda.u \in F$ pour tout $\lambda \in K$ et tout $u \in F$.
+\end{itemize}
+\end{defn}
+
+
+\begin{defn}
+Une famille $\{v_1, v_2, \ldots , v_p\}$ de $E$ est une famille libre ou lin\'eairement ind\'ependante si toute combinaison lin\'eaire nulle
+$$\lambda_1v_1 + \lambda_2v_2 + ··· + \lambda_p v_p = 0$$
+est telle que tous ses coefficients sont nuls, c’est-\`a-dire
+$$\lambda_1 = 0, \lambda_2 = 0, \ldots, \lambda_p = 0$$
+\end{defn}
+
+
+
+\begin{defn}
+Soient $v_1, \ldots, v_p$ des vecteurs de $E$. La famille $\{v_1, \ldots, v_p\}$ est une famille g\'en\'eratrice de l'espace vectoriel E si tout vecteur de E est une combinaison lin\'eaire des vecteurs $v_1, \ldots, v_p$. Ce qui peut s'\'ecrire aussi :
+$$\forall v \in E, \exists \lambda_1, \ldots, \lambda_p, v = \lambda_1 v_1 + \ldots + \lambda_p v_p$$
+\end{defn}
+
+
+\begin{defn}
+Si $f : E \to F$ est une application lin\'eaire, on d\'efinit le noyau de $f$ comme \'etant le sous-espace vectoriel (sev) de $E$ d\'efini par
+$$ker(f) := \{x \in E | f(x) = 0\}$$
+On d\'efinit l'image de f comme \'etant le sev de F d\'efini par
+$$Im(f) = \{y \in F| \exists x \in E, f(x) = y\}$$
+La dimension de $Im(f)$ s'appelle aussi le rang de f et se note $rg(f)$.
+\end{defn}
+
+\begin{defn}
+Soit $\E$ un espace vectoriel de dimension $n$, et $B, B'$ deux bases de $\E$. On appelle la \emph{matrice de passage} de la base $B$ vers la base $B'$, not\'ee $P_{b,B'}$, la matrice dont la j-i\`eme colonne est form\'ee des coordonn\'ees du j-i\`eme vecteur de la base $B'$ par rapport la base $B$. \\
+Dans le cas particulier o\`u $B$ est la base canonique de $\E$, alors la matrice de passe est form\'ee des vecteurs de $B'$.
+\end{defn}
+
+\begin{defn}
+Soit 
+\begin{itemize}
+\item $f: \E \to \E$, ume application lin\'eaire
+\item $B,B'$ deux bases de $\E$
+\item $P_{B,B'}$, la matrice de passage de $B$ vers $B'$
+\item $A=Mat_{B}(f)$, la matrice de l'application $f$ dans la base $B$
+\item $B=Mat_{B'}(f)$, la matrice de l'application $f$ dans la base $B'$
+\end{itemize}
+Alors $$B = P^{-1}AP$$
+\end{defn}
+
+
+
+\newpage
+\subsection*{Exercice 1}
+\subsubsection*{Exercice 1.1}
+Il faut montrer que $\forall A, B \in S_n, A + B \in S_n$ et $\forall \lambda \in \R, \forall A \in S_n, \lambda A \in S_n$. On a $A = ^{t}A$ et $B = ^{t}B$, donc
+$$
+A + B = \begin{vmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ a_{12} & a_{22} & \ldots & a_{2n} \\ \vdots & & & \\ a_{1n} & a_{2n} & \ldots & a_{nn} \end{vmatrix} +
+\begin{vmatrix} b_{11} & b_{12} & \ldots & b_{1n} \\ b_{12} & b_{22} & \ldots & b_{2n} \\ \vdots & & & \\ b_{1n} & b_{2n} & \ldots & b_{nn} \end{vmatrix} =
+\begin{vmatrix} a_{11} + b_{11} & a_{12} + b_{12} & \ldots & a_{1n} + b_{1n} \\ a_{12} + b_{12} & a_{22} + b_{22} & \ldots & a_{2n} + b_{2n} \\ \vdots & & & \\ a_{1n} + b_{1n}& a_{2n} + b_{2n}& \ldots & a_{nn} + b_{nn} \end{vmatrix}
+= ^{t}(A+B)
+$$ 
+et
+$$
+\lambda A = \lambda ^{t}A = \begin{vmatrix} \lambda a_{11} & \lambda a_{12} & \ldots & \lambda a_{1n} \\ \lambda a_{12} & \lambda a_{22} & \ldots & \lambda a_{2n} \\ \vdots & & & \\ \lambda a_{1n} & \lambda a_{2n} & \ldots & \lambda a_{nn} \end{vmatrix} = ^{t}(\lambda A)
+$$
+
+$S_n$ est bien un sev de $M_n(\R)$.\\
+
+
+Il faut montrer que $\forall A, B \in A_n, A + B \in A_n$ et $\forall \lambda \in \R, \forall A \in A_n, \lambda A \in A_n$. On a $-A = ^{t}A$ et $-B = ^{t}B$, donc
+$$
+A + B = \begin{vmatrix} 0 & a_{12} & \ldots & a_{1n} \\ -a_{12} & 0 & \ldots & a_{2n} \\ \vdots & & & \\ -a_{1n} & -a_{2n} & \ldots & 0 \end{vmatrix} +
+\begin{vmatrix} 0 & b_{12} & \ldots & b_{1n} \\ -b_{12} & 0 & \ldots & b_{2n} \\ \vdots & & & \\ -b_{1n} & -b_{2n} & \ldots & 0 \end{vmatrix} =
+\begin{vmatrix} 0 + 0 & a_{12} + b_{12} & \ldots & a_{1n} + b_{1n} \\ -(a_{12} + b_{12}) & 0 + 0 & \ldots & a_{2n} + b_{2n} \\ \vdots & & & \\ -(a_{1n} + b_{1n})& -(a_{2n} + b_{2n})& \ldots & 0 + 0 \end{vmatrix}
+= -^{t}(A+B)
+$$ 
+et
+$$
+\lambda A = \lambda ^{t}A = \begin{vmatrix} 0 & \lambda a_{12} & \ldots & \lambda a_{1n} \\ -\lambda a_{12} & 0 & \ldots & \lambda a_{2n} \\ \vdots & & & \\ -\lambda a_{1n} & -\lambda a_{2n} & \ldots & 0 \end{vmatrix} = -^{t}(\lambda A)
+$$
+
+$A_n$ est bien un sev de $M_n(\R)$.
+
+\subsubsection*{Exercice 1.2}
+La famille $F = Vect(E_{11},E_{22},E_{12+21})$ est libre ?
+	
+$$
+\lambda_1 E_{11} + \lambda_2 E_{22} + \lambda_3 E_{12+21} = \begin{vmatrix} \lambda_1 & \lambda_3 \\ \lambda_3  & \lambda_2 \end{vmatrix} = 0
+$$
+Vrai uniquement si $\lambda_1 = \lambda_2 = \lambda_3  = 0$. Donc la famille est libre.\\
+
+La famille $F = Vect(E_{11},E_{22},E_{12+21})$ est g\'en\'eratrice ?
+	
+$$
+\forall a \in S_n,
+\lambda_1 E_{11} + \lambda_2 E_{22} + \lambda_3 E_{12+21} = \begin{vmatrix} \lambda_1 & \lambda_3 \\ \lambda_3  & \lambda_2 \end{vmatrix} = 
+\begin{vmatrix} a_{11} & a_{12} \\ a_{12}  & a_{22} \end{vmatrix}
+$$
+Vrai pour $\lambda_1 = a_{11}, \lambda_2 = a_{22}, \lambda_3  = a_{12}$. Donc la famille est g\'en\'eratrice.\\
+
+
+La famille $G = Vect(E_{12-21}))$ est libre ?
+	
+$$
+\lambda_1 E_{12-21} = \begin{vmatrix} 0 & \lambda_1 \\ -\lambda_1  & 0 \end{vmatrix} = 0
+$$
+Vrai uniquement si $\lambda_1 = 0$. Donc la famille est libre.\\
+
+La famille $G = Vect(E_{12-21})$ est g\'en\'eratrice ?
+	
+$$
+\forall a \in A_n,
+\lambda_1 E_{12-21} = \begin{vmatrix} 0 & \lambda_1 \\ -\lambda_1  & 0 \end{vmatrix} = 
+\begin{vmatrix} 0 & a_{12} \\ -a_{12} & 0 \end{vmatrix}
+$$
+Vrai pour $\lambda_1 = a{12}$. Donc la famille est g\'en\'eratrice.
+
+\subsubsection*{Exercice 1.3} 
+Trouver une famille g\'en\'eratrice de $S_n$.
+	
+$$
+\forall a \in A_n,
+\sum_{i=1}^{k_1+k_2}\lambda_i E_{i} =  
+\begin{vmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ a_{12} & a_{22} & \ldots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{1n} & a_{2n} & \ldots & a_{nn} \end{vmatrix}
+$$
+
+Si on prends toutes les matrices avec que des 0 except\'e $\forall i, j, 1 \leq i \leq n, 1 \leq j \leq n, i \neq j, a_{ij} = a_{ji}$. Il y a $k1=\frac{(n-1)n}{2}$ matrices diff\'erentes (sommes des \'el\'ements au dessus de la diagonale) et les matrices avec que des 0 except\'e $\forall i, 1 \leq i \leq n, a_{ii} = c$. Il y a $k_2 = n$ matrices diff\'erentes (nombre d'\'el\'emets de la diagonale). Cela est une famille g\'eneratrice.
+Cette famille est g\'en\'eratrice, elle est \'egalement libre car car coefficient n'apparait que sur une cellule, donc il faut qu'il soit tous nul pour avoir $\sum_{i=1}^{k_1+k_2}\lambda_i E_{i} =  0$.
+
+ 
+
+Trouver une famille g\'en\'eratrice de $A_n$.
+	
+$$
+\forall a \in A_n,
+\sum_{i=1}^{k}\lambda_i E_{i} =  
+\begin{vmatrix} 0 & a_{12} & \ldots & a_{1n} \\ -a_{12} & 0 & \ldots & a_{2n} \\ \vdots & \vdots & & \vdots \\ -a_{1n} & -a_{2n} & \ldots & 0 \end{vmatrix}
+$$
+Si on prends les matrices avec que des 0 et $a_{ij} = - a_{ji}$. Il y a $k=\frac{(n-1)n}{2}$ matrices diff\'erentes (sommes des \'el\'ements au dessus de la diagonale). En prenant, $\forall i, j, 1 \leq i \leq n, 1 \leq j \leq n, i \neq j, a_{ij}=-a{ji}$.
+Cette famille est g\'en\'eratrice, elle est \'egalement libre car car coefficient n'apparait que sur une cellule, donc il faut qu'il soit tous nul pour avoir $\sum_{i=1}^{k}\lambda_i E_{i} =  0$.
+ 
+
+\subsubsection*{Exercice 1.4}
+On a $\forall A \in \M_n(\R), A+^{t}A \in S_n$. En effet,
+$$
+A + ^{t}A = 
+\begin{vmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ a_{21} & a_{22} & \ldots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{n1} & a_{n2} & \ldots & a_{nn} \end{vmatrix} +
+\begin{vmatrix} a_{11} & a_{21} & \ldots & a_{n1} \\ a_{12} & a_{22} & \ldots & a_{n2} \\ \vdots & \vdots & & \vdots \\ a_{1n} & a_{2n} & \ldots & a_{nn} \end{vmatrix} =
+\begin{vmatrix} a_{11} + a_{11} & a_{12} + a_{21} & \ldots & a_{1n} + a_{n1} \\ a_{12} + a_{21} & a_{22} + a_{22} & \ldots & a_{2n} + a_{n2} \\ \vdots & \vdots & & \vdots \\ a_{1n} + a_{n1}& a_{2n} + a_{n2}& \ldots & a_{nn} + a_{nn} \end{vmatrix}
+$$
+
+On a $\forall A \in M_n(\R), A-^{t}A \in A_n$. En effet,
+$$
+A - ^{t}A = 
+\begin{vmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ a_{21} & a_{22} & \ldots & a_{2n} \\ \vdots & \vdots & & \vdots \\ a_{n1} & a_{n2} & \ldots & a_{nn} \end{vmatrix} +
+\begin{vmatrix} a_{11} & a_{21} & \ldots & a_{n1} \\ a_{12} & a_{22} & \ldots & a_{n2} \\ \vdots & \vdots & & \vdots \\ a_{1n} & a_{2n} & \ldots & a_{nn} \end{vmatrix} =
+\begin{vmatrix} 0 & a_{12} - a_{21} & \ldots & a_{1n} - a_{n1} \\ -(a_{12} - a_{21}) & 0 & \ldots & a_{2n} - a_{n2} \\ \vdots & \vdots & & \vdots \\ -(a_{1n} - a_{n1}) & -(a_{2n} - a_{n2})& \ldots & 0 \end{vmatrix}
+$$
+
+et $S_n \cap A_n = \{0\}$. En effet, $A \in S_n \Leftrightarrow A = ^{t}A$ et $A \in A_n \Leftrightarrow -A = ^{t}A$. Donc $S_n \cap A_n = \{A \in M_n(|R), A=-A\}$. La seule matrice qui v\'erifie est $0$.
+
+On a 
+$$
+\forall A \in M_n(\R), A = \frac{A+^{t}A}{2} + \frac{A-^{t}A}{2}
+$$
+
+Pour r\'esumer, $\forall A \in M_n(\R), A = B + C$ avec $B=\frac{A+^{t}A}{2} \in S_n$ et $C=\frac{A-^{t}A}{2} \in A_n$ et $S_n \cap A_n = \{0\}$ donc $S_n \oplus A_n = M_n(\R)$.
+
+
+\subsection*{Exercice 2}
+On a $dim (ker) f = 1$ et $rg f = dim (Im f) = 2$ (l'image de $f$ est un plan). D'apr\`es le th\'eor\`eme du rang, on a $dim(ker f) + rg f = dim(\R^4) = 4$ ce qui est faux car $1+3 \neq 4$.
+
+\subsection*{Exercice 3}
+
+Une application lin\'eaire $v:\R^2 \to \R$ est injective ssi son noyau est r\'eduit \`a $\{0\}$. D'apr\`es le th\'eor\`eme du rang, on a $dim(ker v) + rg v = dim(\R^2) = 2$, mais $rg v \leq dim(\R) = 1$ donc $dim(ker v) = dim(\R^2) - rg v \geq  2 - 1 = 1$ Donc $ker v \neq \{0\}$.
+
+
+\subsection*{Exercice 4}
+Simple
+
+\subsection*{Exercice 5}
+Pas compris.
+
+\subsection*{Exercice 6}
+Les vecteurs ne forment pas une famille si ils ne sont pas libre.
+$$
+a_1\begin{pmatrix}2\\\mu\\1\end{pmatrix} + a_2\begin{pmatrix}\lambda \\ 0 \\1 \end{pmatrix} + a_3\begin{pmatrix}\mu\\\lambda\\0\end{pmatrix} = 0
+\Rightarrow a_1 \neq 0 \lor a_2 \neq 0 \lor a_3 \neq 0$$
+
+$$ 
+\left\{ 
+\begin{array}{l l}
+2a_1 + \lambda a_2 + \mu a_3 & = 0\\
+\mu a_1 + \lambda a_3 & = 0\\
+a_1 + a_2  & = 0\\
+\end{array}
+\right. 
+$$ 
+
+$$ 
+\left\{ 
+\begin{array}{l l}
+a_1  & = - a_2\\
+-\frac{\mu}{\lambda}a_1  & =  a_3\\
+2a_1 - \lambda a_1 & =  -\mu a_3\\
+\end{array}
+\right. 
+$$ 
+
+$$ 
+\left\{ 
+\begin{array}{l l}
+a_1  & = - a_2\\
+-\frac{\mu}{\lambda}a_1  & =  a_3\\
+2a_1 - \lambda a_1 & =  \frac{\mu^2}{\lambda}a_1\\
+\end{array}
+\right. 
+$$ 
+
+$$a_1(2\lambda -\lambda^2 - \mu^2) = 0 $$
+
+On cherche $a_1 \neq 0$, donc il faut $2\lambda = \lambda^2 + \mu^2$. C'est le cercle de centre $(1,0)$ et de rayon 1.
+En effet, en faisant un changement de variable $\lambda'= \lambda-1$ on a 
+$$
+2(\lambda'+1) = (\lambda'+1)^2+\mu^2 = \lambda'^2+2\lambda'+1+\mu^2$$
+$$1=\lambda'^2+\mu^2$$
+qui est le cercle de rayon 1 de centre $\mathscr{O}$.
+
+QED
+
+\end{document}
+
