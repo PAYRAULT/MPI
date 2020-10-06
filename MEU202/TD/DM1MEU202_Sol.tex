@@ -257,12 +257,20 @@ Une application lin\'eaire $v:\R^2 \to \R$ est injective ssi son noyau est r\'ed
 Simple
 
 \subsection*{Exercice 5}
-Si le d\'terminant de la matrice est \'egal \`a 0, alors une seule solution, sinon il y a une infinit\'e de solution. Calculons le d\'eterminant de la matrice.
+Si le d\'terminant de la matrice est \'egal \`a 0, alors une seule solution $0_4$, sinon il y a une infinit\'e de solutions. Calculons le d\'eterminant de la matrice.
 $$
-\begin{vmatrix} 1 & 1 & 1 & 1 \\ x & a & 0 & 0 \\ x & 0 & b & 0 \\ x & 0 & 0 * c\end{vmatrix} = 
+Det = \begin{vmatrix} 1 & 1 & 1 & 1 \\ x & a & 0 & 0 \\ x & 0 & b & 0 \\ x & 0 & 0 * c\end{vmatrix} = 
 -1.\begin{vmatrix}  x & 0 & 0 \\ x & b & 0 \\ x & 0 & c \end{vmatrix} + a.\begin{vmatrix}  1 & 1 & 1 \\ x & b & 0 \\ x & 0 & c \end{vmatrix}
 $$
+$$
+= -1.c\begin{vmatrix}  x & 0 \\ x & b \end{vmatrix} + a.\left(-1.\begin{vmatrix}  x & 0 \\ x & c \end{vmatrix} + b.\begin{vmatrix}  1 & 1 \\ x & c \end{vmatrix}\right) =
+-cbx - axc + abc -abx
+$$
 
+On a $Det=0$ lorsque
+$$
+x = \frac{abc}{ab+ac+bc}
+$$
 
 \subsection*{Exercice 6}
 Les vecteurs ne forment pas une famille si ils ne sont pas libre.
