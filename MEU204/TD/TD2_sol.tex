@@ -139,7 +139,24 @@ Si $n=5l$ (ie $5|n$), alors $5k'.l.m' = 50k.l.m+1$, il n'existe aucune valeur de
 
 \subsection*{Exercice 6}
 Il suffit de trouver tous les entiers $j,m$ qui v\'erifient $31j+12m=208$.\\
-Trouver une solution particuli\'ere \`a l'\'equation $31j+12m=1$, soit $j=-5$ et $m=13$. Donc 
+Trouver une solution particuli\'ere \`a l'\'equation $31j+12m=1$, mais 31 et 12 sont premiers entre eux donc $pgcd(12,31)=1$. Cela revient donc \`a trouver l'identit\'e de Bezout $pgcd(12,31) = 1 = 31j+12m$. Appliquons l'algorithme pour trouver $j$ et $m$. Dans un premier temps calcul du $pgcd(31,12)$
+
+$$31/12=2\text{ R }7, 12/7=1\text{ R }5, 7/5=1\text{ R }2, 5/2=2\text{ R }1$$
+
+En remontant en arri\`ere on a
+$$1 = 5 - 2*2$$
+$$2 = 7-5*1$$
+$$5 = 12 - 7*1$$
+$$7=31-12*2$$
+
+En substituant on a
+$$1 = 5 - 2(7-5*1) = 5 - 2*7 + 5*2$$
+$$1 = 5*3 -2*7 = 3(12-7*1) - 2*7 $$
+$$1= 3*12 - 7*3 - 2*7 = 3*12 - 5*7 $$
+$$1= 3*12 - 5(31-12*2) = 3*12 - 5*31 +12*10$$
+$$1 = 13*12 - 5*31$$
+
+On a $j=-5$ et $m=13$. Donc 
 $$308 = 308(31.(-5) + 12.13) =  31j + 12m$$
 $$31(j+308.5) = 12(13.308-m)$$
 Les entiers 12 et 31 sont premiers entre eux donc $12|j+308.5$ et $12k=j+308.5$
