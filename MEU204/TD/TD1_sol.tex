@@ -161,8 +161,22 @@ En prenant par exemple, $\pi:\Z[X] \to Z[X], P \to P-X$, on a $\forall P \in \Z[
 
 
 \subsection*{Exercice 6}
-Preuve par l'absurde. Supposons $a \neq 7k_a$ ($a$ n'est pas un multiple de 7), on a $a^2 \neq 49k_a^2$. Si $a^2 + b^2 = 7k$, $49k_a^2+b^2=7k$, $b^2 = 7k-49k_a^2 = 49(\frac{k}{7}-k_a^2)$ donc $b \neq 7\sqrt{\frac{k}{7}-k_a^2}$. Donc $b$ n'est pas un multiple de 7. Cela ne nous am\`ene pas loin.??? 
+Prenons $a=7k+r$ et $b=7k'+r'$ avec $r,r' < 7$. On a 
+$$a^2+b^2 = (7k+r)^2+(7k'+r')^2 = 49k+14kr+r^2+49k'+14k'r'+r'^2 = 7(7k+2kr+7k'+2k'r')+r^2+r'^2$$
+On a $7|a^2+b^2$ donc $7|7(7k+2kr+7k'+2k'r')+r^2+r'^2$, $7|r^2+r'^2$ et $r,r' < 7$. On a
+\begin{center}
+\begin{tabular}{ l l}
+ $0^2 \mod 7$ & 0 \\ 
+ $1^2 \mod 7$ & 1 \\ 
+ $2^2 \mod 7$ & 4 \\ 
+ $3^2 \mod 7$ & 2 \\ 
+ $4^2 \mod 7$ & 2 \\ 
+ $5^2 \mod 7$ & 4 \\ 
+ $6^2 \mod 7$ & 1 \\ 
+\end{tabular}
+\end{center}
 
+La seule combinaison possible est $r=0$ et $r'=0$. Donc $7|a$ et $7|b$.
 
 \subsection*{Exercice 7}
 Preuve par r\'ecurrence. Vrai pour $n=0$ ($3^1+2^2=7$). Supposons vrai pour $n$, $3^{2n+1}+2^{n+2} = 7k$ est-ce que $3^{2(n+1)+1}+2^{(n+1)+2} = 7k'$
