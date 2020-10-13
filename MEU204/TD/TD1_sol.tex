@@ -92,7 +92,6 @@ Les \'equations suivantes sont \'equivalentes:
 \item $kp+a \equiv b \mod p$
 \item $\exists k,k', a = kp + r \land b = k'p +r \land 0 \leq r < p$
 \item $\exists k,k', a - kp = b - k'p$
-
 \end{itemize}
 \end{defn}
 
@@ -103,6 +102,18 @@ Petit Th\'eor\`eme de Fermat 1. Si $p$ est un nombre premier alors $\forall a \i
 \begin{thm}
 Petit Th\'eor\`eme de Fermat 2. Si $p$ est un nombre premier alors $\forall a \in \N, p \not | a, a^{p-1} \equiv 1 \mod p$. ou $\exists k, a^{p-1}-1 = kp$
 \end{thm}
+
+\begin{defn}
+Calcul du pgcd:
+\begin{itemize}
+\item $pcgd(a,b) = pgcd(a-b,b) \text{ quand } a > b$
+\item $pcgd(a,b) = pgcd(a,b-a) \text{ quand } b > a$
+\item $pcgd(a,a) = a$
+\item $pcgd(a,0) = a$
+\item $pcgd(a,b) = pgcd(b,a \mod b)$
+\end{itemize}
+\end{defn}
+
 
 
 \newpage
