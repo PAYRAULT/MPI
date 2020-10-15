@@ -143,6 +143,17 @@ La suite $u_n$ est born\'e et croissante donc elle converge. Calculons sa limite
 $$\lim_{n\to\infty} u_n = \lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{n+k} =  \lim_{n\to\infty} (\sum_{k=1}^{2n}\frac{1}{k} - \sum_{k=1}^{n} \frac{1}{k}) = \lim_{n\to\infty} \sum_{k=1}^{2n}\frac{1}{k} - \lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{k} = \ln(2n) - \ln(n) = \ln(\frac{2n}{n}) = \ln(2)$$
 
 
+\subsection*{Exercice 4}
+\subsubsection*{$4.1$}
+$$u_{n+1}-u_{n} = \sum_{k=1}^{n+1}\frac{k}{k^2+1} - \sum_{k=1}^{n}\frac{k}{k^2+1} = \frac{n+1}{(n+1)^2+1}$$
+$u_{n+1}-n_{n} > 0$ donc la suite $u_n$ est croissante.
+
+\subsubsection*{$4.2$}
+$$u_{2n}-n_{n} = \sum_{k=1}^{2n}\frac{k}{k^2+1} - \sum_{k=1}^{n}\frac{k}{k^2+1} = \sum_{k=1}^{n}{\frac{n+k}{(n+k)^2+1}}$$
+Preuve pae r\'ecurrence, pour $n=1$, on a $u_2-u_1=2/5=0.4$. Supposons que $u_{2n}-u_{n} \geq 1/4$, que vaut $u_{2(n+1)} - u_{(n+1)}$?
+$$u_{2(n+1)} - u_{(n+1)} = \sum_{k=1}^{n+1}{\frac{n+k}{(n+1+k)^2+1}} = \sum_{k=1}^{n}{\frac{n+k}{(n+1+k)^2+1}} + \frac{n+1}{(2n+2)^2+1} = u_n + \frac{n+1}{2(n+1)}$$
+
+
 QED
 
 \end{document}
