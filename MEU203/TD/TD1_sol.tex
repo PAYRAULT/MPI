@@ -76,6 +76,12 @@
 \subsection*{Rappel de cours}
 
 \begin{defn}
+Soit $(x_n)_n$ une suite r\'eelle. On dit que $(x_n)_n$ est une suite de Cauchy si elle v\'erifie la propri\'et\'e suivante :
+$$\forall \epsilon > 0; \exists N \text{ tel que }, \forall p q \geq N, q \geq N \text{, on a } |x_p - x_q| < \epsilon$$
+\end{defn}
+
+\begin{defn}
+Soit $E \subset \R$ une partie. On dit que $E$ est dense dans $\R$ si pour tout $x \in \R$, et pour tout $r > 0$, il existe $e \in E$ tel que $e$ est r-proche de $x$, soit $|x - e| < r$.
 \end{defn}
 
 
@@ -164,7 +170,7 @@ $\R \setminus \{a_1, a_2, \ldots a_n\}$ est ouvert. Par cons\'equent $\{a_1, a_2
 Si $[0,1]$ est ouvert alors $\forall x \in [0,1], \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset [0,1]$. Prenons $x = 0$ (ou 1), on a $x \in [0,1]$ mais 
 $x-\epsilon \notin [0,1]$. Donc $[0,1]$ n'est pas ouvert.\\
 
-Si $]1,2[$ est ferm'e alors $\R \setminus ]1,2[$ est ouvert. Donc $\forall x \in \R \setminus ]1,2[, \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset \R \setminus ]1,2[$. Prenons $x = 1$ (ou 2), on a $x \in \R \setminus ]1,2[$ mais $x+\epsilon \notin \R \setminus ]1,2[, \forall \epsilon >0$. Donc $\R \setminus ]1,2[$ n'est pas ouvert et $]1,2[$ n'est pas ferm'e.\\
+Si $]1,2[$ est ferm\'e alors $\R \setminus ]1,2[$ est ouvert. Donc $\forall x \in \R \setminus ]1,2[, \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset \R \setminus ]1,2[$. Prenons $x = 1$ (ou 2), on a $x \in \R \setminus ]1,2[$ mais $x+\epsilon \notin \R \setminus ]1,2[, \forall \epsilon >0$. Donc $\R \setminus ]1,2[$ n'est pas ouvert et $]1,2[$ n'est pas ferm\'e.\\
 
 $[-1,0[$, ni ouvert, ni ferm\'e. Tu fais.
 
@@ -172,7 +178,7 @@ $[-1,0[$, ni ouvert, ni ferm\'e. Tu fais.
 Si $\C$ est ouvert alors $\forall x \in \C, \exists \epsilon > 0, ]x-\epsilon, x+\epsilon[ \subset \C$. Prenons un nombre r\'eel $x$ dont le developpement decimal \'egale \`a 5 est le dernier chiffre. On a $x \in \C$. Il n'existe pas de $\not\exists \epsilon, ]x-\epsilon, x+\epsilon[ \subset \C$ car soit $n$ la puissance associ\'e a 5. Si $\epsilon \leq 10^{n}, x-\frac{\epsilon}{2} \notin \C$ et si $\epsilon > 10^{n}, x-\frac{10^{n}}{2} \in ]x-\epsilon,x+\epsilon[ mais \notin \C$ car il ne contient pas de 5 dans son developpement limit\'e.
 
 \subsubsection*{1.8.2.b}
-On a $x in \C$, donc $x$ contient au moins un 5 dans son d\'eveloppement limit\'e et au moins un 5 n'est pas le dernier chiffre (car $x$ n'est pas d\'ecimal). Soit $n$ le rang du premier chiffre $\neq 0$ apr\'es le premier 5 (il existe car $x$ n'est pas d\'ecimal), prenons $\epsilon = 10^{n}$  on a bien $\in ]x-\epsilon,x+\epsilon[ \in \C$ car tous les nombre contienne le premier 5.
+On a $x \in \C$, donc $x$ contient au moins un 5 dans son d\'eveloppement limit\'e et au moins un 5 n'est pas le dernier chiffre (car $x$ n'est pas d\'ecimal). Soit $n$ le rang du premier chiffre $\neq 0$ apr\'es le premier 5 (il existe car $x$ n'est pas d\'ecimal), prenons $\epsilon = 10^{n}$  on a bien $\in ]x-\epsilon,x+\epsilon[ \in \C$ car tous les nombre contienne le premier 5.
 
 
 \subsection*{Exercice 1.9}
@@ -184,6 +190,33 @@ Soit $E = ]a,b[$ ouvert donc $a < x < b$, et $M = \sup(E)$. Si $M \in E$ alors $
 
 \subsubsection*{1.9.3}
 ??
+
+
+\subsection*{Exercice 1.10}
+\subsubsection*{1.10.1}
+Prenons $p > q$ et calculons $|x_p - x_q|$ 
+$$|x_p - x_q| = |\frac{\cos(0)}{10^0}+\frac{\cos(1)}{10^1}+\ldots+\frac{\cos(p)}{10^p} - (\frac{\cos(0)}{10^0}+\frac{\cos(1)}{10^1}+\ldots+\frac{\cos(p)}{10^p}+\ldots+\frac{\cos(q)}{10^q})|$$
+$$=\frac{\cos(p+1)}{10^{p+1}}+\ldots+\frac{\cos(q)}{10^q} < \frac{1}{10^{p+1}}+\ldots+\frac{1}{10^q} = \frac{1}{10^{p+1}}\left(1+\frac{1}{10^1}+\ldots+\frac{1}{10^{q-p-1}}\right) < \frac{2}{10^{p+1}}$$
+car $1+\frac{1}{10^1}+\ldots+\frac{1}{10^{q-p-1}} < 2$. Donc si on prend $N, \epsilon > \frac{2}{10^N+1}$, pour tout $\epsilon$, on a trouv\'e un entier $N$ tel que $(x_n)_n$ v\'erifie la propri\'et\'e de Cauchy.
+
+\subsubsection*{1.10.2}
+
+
+\subsection*{Exercice 1.11}
+\subsubsection*{1.11.1}
+Calculons $|x_p - x_q|$ avec $p > q$. 
+$$|x_p - x_q| = \left|\sum_{n=0}^{p}{\frac{\cos(n)}{10^{n}}} - \sum_{n=0}^{q}{\frac{\cos(n)}{10^{n}}}\right| = \left|\sum_{n=p+1}^{q}{\frac{\cos(n)}{10^{n}}}\right| = \frac{1}{10^{p+1}}\left|\sum_{n=p+1}^{q}{\frac{\cos(n)}{10^{n-(p+1)}}}\right| $$
+$$= \frac{1}{10^{p+1}}\left|\cos(p+1)+\frac{\cos(p+2)}{10}+\frac{\cos(p+2)}{10^2}+ \ldots +\frac{\cos(q)}{10^{q-(p+1)}}\right|$$
+On a $-1<\cos(n)<1$, 
+$$= \frac{1}{10^{p+1}}\left|1+\frac{1}{10}+\frac{1}{10^2}+ \ldots +\frac{1}{10^{q-(p+1)}}\right| < \frac{2}{10^{p+1}}$$
+
+Donc $\forall p, q > N, |x_p - x_q| < \frac{2}{10^N}$. Ceci d\'emontre que $x_n$ est une suite de Cauchy.
+
+\subsubsection*{1.11.2}
+On a $\lim_{x \to \infty}xf'(x) = 0 \implies \lim_{x \to \infty}f'(x) = 0$ car on a $f'(x)$ qui tend vers 0 plus rapidement que $n$ croit. (ou $n = o(\frac{1}{f'(x)})$. Donc $\lim_{x \to \infty}f'(x) = 0 \implies  \lim_{x \to \infty}f(x) = C$ donc la fonction $f$ converge vers $C$ donc $(f(x_n))_n$ est de Cauchy.
+
+
+
 
 QED
 
