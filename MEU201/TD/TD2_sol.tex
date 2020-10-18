@@ -129,18 +129,21 @@ Donc les deux suites $(u_n)_{n\geq1}$ et $(v_n)_{n\geq1}$ sont adjacentes.
 \subsection*{Exercice 3}
 \subsubsection*{$3.1$}
 $\forall n\geq 1, u_n > 0$ car $u_n$ est une somme de nombres tous positifs.\\
-$\forall n\geq 1, u_n \leq 0$, ???
-
+$\forall n\geq 1, u_n \leq 1$, preuve par r\'ecurrence. Calculons $u_{n+1}$.
+$$u_{n+1}=\sum_{k=1}^{n+1}\frac{1}{(n+1)+k} = \sum_{k=1}^{n}\frac{1}{(n+1)+k} + \frac{1}{2(n+1)} < \sum_{k=1}^{n}\frac{1}{n+k} + \frac{1}{2(n+1)} = u_n + \frac{1}{2(n+1)}$$
+Donc c'est inf\'erieur \`a une suite arithm\'etique de raison $\frac{1}{2(n+1)}$, donc $u_n<u_1+n\frac{1}{2(n+1)}= 1/2+\frac{1}{2+1/n} < 1$.
 
 \subsubsection*{$3.2$}
-Montrons que $(u_n)_{n\geq1}$ est croissante. 
-$$u_{n+1} - u_{n} = \sum_{k=1}^{n+1}\frac{1}{k+n} - \sum_{k=1}^{n}\frac{1}{k+n} = \frac{1}{n+1+n}$$ 
-$\forall n, u_{n+1} - u_{n} > 0$ donc la suite $(u_n)_{n\geq1}$ est croisssante.\\
-
+Montrons que $(u_n)_{n\geq1}$ est croissante. Calculon $u_{n+1} - u_{n}$
+$$u_{n+1} = \sum_{k=1}^{n+1}\frac{1}{(n+1)+k}=\frac{1}{(n+1)+1}+\frac{1}{(n+1)+2}+\ldots+\frac{1}{(n+1)+(n-1)}+\frac{1}{(n+1)+n}+\frac{1}{(n+1)+(n+1)}$$
+$$u_{n} = \sum_{k=1}^{n}\frac{1}{n+k}=\frac{1}{n+1}+\frac{1}{n+2}+\ldots+\frac{1}{n+n}$$
+$$u_{n+1} - u_{n} = \frac{1}{2n+1}+\frac{1}{2(n+1)}-\frac{1}{n+1} = \frac{1}{2n+1}-\frac{1}{2(n+1)} >0$$
+car $2n+1 < 2n+2$.
+Donc $u_n$ est croissante.
 
 \subsubsection*{$3.3$}
 La suite $u_n$ est born\'e et croissante donc elle converge. Calculons sa limite.
-$$\lim_{n\to\infty} u_n = \lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{n+k} =  \lim_{n\to\infty} (\sum_{k=1}^{2n}\frac{1}{k} - \sum_{k=1}^{n} \frac{1}{k}) = \lim_{n\to\infty} \sum_{k=1}^{2n}\frac{1}{k} - \lim_{n\to\infty} \sum_{k=1}^{n} \frac{1}{k} = \ln(2n) - \ln(n) = \ln(\frac{2n}{n}) = \ln(2)$$
+$$\lim_{n\to\infty} u_n = \frac{1}{2}+\frac{1}{2+\frac{1}{n}} = 1$$
 
 
 \subsection*{Exercice 4}
