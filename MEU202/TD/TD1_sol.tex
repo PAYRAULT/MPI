@@ -344,6 +344,101 @@ Ceci est m\'ecamiquement une base car les 3 vecteurs sont mutuellement ind\'epen
 
 
 
+\subsection*{Exercice 8}
+$$E + F = \{v \in \R^3: v = \lambda_{1e}u_1 + \lambda_{2e}u_2 + \lambda_{3e}u_3 + \lambda_{1f}u_4 + \lambda_{2f}u_5\}$$  
+
+Il faut r\'esoudre:
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1e} + \lambda_{2e} + 3\lambda_{3e} + \lambda_{1f} + \lambda_{2f} = 0 \\
+2\lambda_{1e} + 0\lambda_{2e} + 2\lambda_{3e} + \lambda_{1f} + 2\lambda_{2f} = 0\\
+3\lambda_{1e} - \lambda_{2e} + 1\lambda_{3e} + \lambda_{1f} + 2\lambda_{2f} = 0\\
+\end{array}
+\right. 
+$$ 
+
+
+$$
+\begin{vmatrix}
+1 & 1  & 3 & 1 & 1 & 0 \\
+2 & 0  & 2 & 1 & 2 & 0 \\
+3 & -1 & 1 & 1 & 2 & 0 \\
+\end{vmatrix}
+\Leftrightarrow
+\begin{vmatrix}
+1 & 0  & 1 & \frac{1}{2} & 0 & 0 \\
+0 & 1  & 2 & \frac{1}{2} & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+\end{vmatrix}
+$$
+
+
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1e} + \lambda_{3e} + \frac{1}{2} \lambda_{1f} = 0 \\
+2\lambda_{2e} + 2\lambda_{3e} + \frac{1}{2}\lambda_{1f} = 0 \\
+\lambda_{2f}= 0 \\
+\end{array}
+\right. 
+$$ 
+
+
+$\lambda_{3e}$, et $\lambda_{1f}$ sont ind\'etermin\'es, donc les vecteurs $u_3$ et $u_4$ peuvent s'exprimer en fonction des 3 autres vecteurs ($u_3 = u_1 + 2u_2$ et $u_4 = 1/2.(u_1 + u_2$). Donc la base de $E+F$ est $\{u_1, u_2, u_5\}$.
+
+
+
+$$E \cap F = \{v \in \R^3: v = \lambda_{1e}u_1 + \lambda_{2e}u_2 + \lambda_{3e}u_3 \land v = \lambda_{1f}u_4 + \lambda_{2f}u_5\}$$  
+$$E \cap F = \{v \in \R^3: \lambda_{1e}u_1 + \lambda_{2e}u_2 + \lambda_{3e}u_3 - \lambda_{1f}u_4 - \lambda_{2f}u_5 = 0\}$$  
+
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1e} + \lambda_{2e} + 3\lambda_{3e} - \lambda_{1f} - \lambda_{2f} = 0 & (1)\\
+2\lambda_{1e} + 0\lambda_{2e} + 2\lambda_{3e} - \lambda_{1f} - 2\lambda_{2f} = 0 & (2)\\
+3\lambda_{1e} - \lambda_{2e} + 1\lambda_{3e} - \lambda_{1f} - 2\lambda_{2f} = 0 & (3)\\
+\end{array}
+\right. 
+$$ 
+
+$$
+\begin{vmatrix}
+1 & 1  & 3 & -1 & -1 & 0\\
+2 & 0  & 2 & -1 & -2 & 0\\
+3 & -1 & 1 & -1 & -2 & 0\\
+\end{vmatrix}
+\Leftrightarrow
+\begin{vmatrix}
+1 & 1  & 3 & -1 & -1  & 0\\
+0 & 1  & 2 & -\frac{1}{2} & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0\\
+\end{vmatrix}
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1e} = -\lambda_{2e} - 3\lambda_{3e} + \lambda_{1f} + \lambda_{2f} & (1)\\
+\lambda_{2e} = -2\lambda_{3e} + \frac{1}{2}\lambda_{1f} = 0 & (2)\\
+\lambda_{2f} = 0 & (3)\\
+\end{array}
+\right. 
+$$ 
+
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1e} = -\lambda_{2e} - 3\lambda_{3e} + (4\lambda_{3e} + 2\lambda_{2e} = \lambda_{2e} + \lambda_{3e} & (1)\\
+\lambda_{1f} = 4\lambda_{3e} + 2\lambda_{2e} & (2)\\
+\lambda_{2f} = 0 & (3)\\
+\end{array}
+\right. 
+$$ 
+
+
+La base est $\{x \in \R^3: (\lambda_{2e} + \lambda_{3e})u_1 + \lambda_{2e}u_2 + \lambda_{2e}u_3 \}$, $\{x \in \R^3: (2\lambda_2 + 4\lambda4, 2\lambda_2 + 4\lambda4, 2\lambda_2 + 4\lambda4) \} = \{x \in \R^3: (1,1,1) \}$.
+
 QED
 
 \end{document}
