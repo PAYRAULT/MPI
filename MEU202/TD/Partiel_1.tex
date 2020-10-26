@@ -1,0 +1,240 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exercice 1}
+\subsubsection*{Exercice 1.1}
+On a $dim \R^2 = 2$ et $dim \R^3 = 3$
+
+
+\subsubsection*{Exercice 1.2}
+
+
+\subsection*{Exercice 2}
+Non. Car une application lin\'eaire doit satisfaire $f(\lambda x) = \lambda f(x)$. On sait que $f(\lambda x)$ et $f(x)$ sont dans le cercle $C(0,1)$. Donc pour un $\lambda > 1$, on ne peut pas avoir $f(\lambda x) = \lambda f(x)$. 
+
+
+
+\subsection*{Exercice 3}
+Famille libre? Il faut r\'esoudre:
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1} + 2\lambda_{2} + 0\lambda_{3} & = 0\\
+\lambda_{1} + \lambda_{2} - 1\lambda_{3} & = 0\\
+-1\lambda_{1} + 3\lambda_{2} + 5\lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+
+
+$$
+\begin{vmatrix}
+1 & 2  & 0 & 0 \\
+1 & 1  & -1 & 0 \\
+-1 & 3 & 5 & 0 \\
+\end{vmatrix}
+\Leftrightarrow
+\begin{vmatrix}
+1 & 0 & -2 & 0 \\
+0 & 1 & 1 & 0  \\
+0 & 0 & 0 & 0  \\
+\end{vmatrix}
+$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1} + -2\lambda_{3} & = 0\\
+\lambda_{2} + \lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+
+Famille non libre car on peut $\lambda_{3}$ n'est pas \'egal \`a 0.\\
+
+Famille g\'en\'eratrice? Non car du r\'esultat pr\'ec\'edent, on peut exprimer $\lambda_1$ et $\lambda_2$ en fonction de $\lambda_3$.\\
+
+On a $\lambda_1 = -2 \lambda_2$. Donc, $\forall k \in \R, v_3 = -2k.v_1 + kv_2$. 
+
+
+\subsection*{Exercice 4}
+\subsubsection*{Exercice 4.1}
+Soit $a,b \in \mathscr{H}_n$, on a $\sum_{k=1}^{n}a_{kk} = 0$ et $\sum_{k=1}^{n}b_{kk} = 0$.\\
+
+V\'erifions que $(a+\lambda b) \in \mathscr{H}_n$? La diagonale de la matrice $(a+\lambda b)$ sont les termes $a_{kk} + \lambda b_{kk}$. Donc $\sum_{k=1}^{n}(a_{kk} + \lambda b`_{kk}) = \sum_{k=1}^{n}a`_{kk} + \lambda \sum_{k=1}^{n}b`_{kk} = 0+ \lambda 0 = 0$. Comme la somme des coefficients diagonaux est nulle, alors $(a,b) \in \mathscr{H}_n$ et $\mathscr{H}_n$ est un sous espace vectoriel de $M_n(\C)$.\\
+
+
+\subsubsection*{Exercice 4.2}
+Soit 
+$$m_1= 
+\begin{vmatrix}
+1 & 0   \\
+0 & -1 \\
+\end{vmatrix}
+, m_2= 
+\begin{vmatrix}
+0 & 1 \\
+0 & 0 \\
+\end{vmatrix}
+, m_3= 
+\begin{vmatrix}
+0 & 0 \\
+1 & 0 \\
+\end{vmatrix}
+$$
+
+Montrons que $B = (m_1, m_2 , m_3)$ est une base de $\mathscr{H}_2$.
+B est g\'en\'eratrice? Tout \'el\'ement de $\mathscr{H}_2$ est de la forme $m = \begin{vmatrix}
+a & b \\
+c & -a \\
+\end{vmatrix}
+$.
+Montrons qu'il existe $\lambda_1, \lambda_2, \lambda_3$, tel que $\lambda_1 m_1 + \lambda_2 m_2 + \lambda_3 m_3 = m$. Vrai en prenant, $\lambda_1 = a$, $\lambda_2 = b$ et $\lambda_3 = c$
+
+B est libre? Montrons que si $\lambda_1 m_1 + \lambda_2 m_2 + \lambda_3 m_3 = 0$ alors $\lambda_1 = \lambda_2 = \lambda_3 = 0$.
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
+0\lambda_{1} + \lambda_{2} + 0\lambda_{3} & = 0\\
+0\lambda_{1} + 0\lambda_{2} + 1\lambda_{3} & = 0\\
+-1\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+
+Vrai. Donc famille libre et $B$ est une base de $\mathscr{H}_2$.
+
+La dimension de $\mathscr{H}_2$ est 3.
+
+\subsubsection*{Exercice 4.3}
+???
+
+\subsubsection*{Exercice 4.4}
+???
+
+
+\subsection*{Exercice 5}
+\subsubsection*{Exercice 5.1}
+Pour que $\mathscr{F}$ soit une base, il faut qu'il soit libre.
+$$
+\left\{ 
+\begin{array}{l l}
+2\lambda_{1} + 8\lambda_{2} + 7\lambda_{3} & = 0\\
+0\lambda_{1} + -4\lambda_{2} + 2\lambda_{3} & = 0\\
+0\lambda_{1} + 0\lambda_{2} + \alpha \lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+Pour que la famille $\mathscr{F}$ soit libre, il faut que $\alpha \neq 0$.
+
+\subsubsection*{Exercice 5.2}
+
+
+\subsection*{Exercice 6}
+\subsubsection*{Exercice 6.1}
+Pour $n=1$, $A_1 = |c|$ et $-A_1 = |-c|$, donc $det(A_1) = - det(-A_1)$, pour $n=2$, $A_2 = \begin{vmatrix} a & b \\ c & d \end{vmatrix}$ et $-A_2 = \begin{vmatrix} -a & -b \\ -c & -d \end{vmatrix}$, donc $det(A_1) = det(-A_1)$. Supposons que pour $n$ impair, $det(M_n) = - det(M_n)$ et $n$ pair, $det(M_n) = det(M_n)$. Faisons une preuve par r\'ecurrence de cette hypoth\`ese. \\
+
+Cas $n+1$ impair, montrons que $det(A_{n+1} = det(-A_{n+1})$.
+$$det(-A_{n+1}) = (-a_11).det(-A_{11}) - (-a_12).det(-A_{11}) + \ldots + (-a_1(n)).det(-A_{1(n)}) - (-a_1(n+1)).det(-A_{1(n+1)})$$
+par hypoth\'ese de r\'ecurrence on a
+$$det(-A_{n+1}) = (-a_11).det(A_{11}) - (-a_12).det(A_{11}) + \ldots + (-a_1(n)).det(A_{1(n)}) - (-a_1(n+1)).det(A_{1(n+1)}) = -(a_11.det(A_{11}) - a_12.det(A_{11}) + \ldots + a_1(n).det(A_{1(n)}) - a_1(n+1).det(A_{1(n+1)}) = -det(A_{n+1})$$
+
+Cas $n+1$ pair, montrons que $det(A_{n+1} = det(-A_{n+1})$.
+$$det(-A_{n+1}) = (-a_11).det(-A_{11}) - (-a_12).det(-A_{11}) + \ldots - (-a_1(n)).det(-A_{1(n)}) + (-a_1(n+1)).det(-A_{1(n+1)})$$
+par hypoth\'ese de r\'ecurrence on a
+$$det(-A_{n+1}) = (-a_11).-det(A_{11}) - (-a_12).-det(A_{11}) + \ldots - (-a_1(n)).-det(A_{1(n)}) + (-a_1(n+1)).-det(A_{1(n+1)}) = a_11.det(A_{11}) - a_12.det(A_{11}) + \ldots + a_1(n).det(A_{1(n)}) - a_1(n+1).det(A_{1(n+1)} = det(A_{n+1})$$
+
+V\'erifi\'e.
+
+\subsubsection*{Exercice 6.2}
+$n$ est impair donc $det(A) = -det(-A)$, une matrice et sa transpos\'ee ont le m\^eme d\'eterminant donc $det(^{t}A) = det(A)$. On a $^{t}A = - A$ donc $det(^{t}A) = det(- A)$. Ceux qui fait $det(-A) = det(^{t}A) = det(A) = -det(-A)$. Donc la seule valeur possible pour $det(-A)$ est 0. Donc $det(A) = -det(-A) = -0 = 0$.  
+
+
+\subsection*{Exercice 7}
+\subsubsection*{Exercice 7.1}
+$$det(A_1) = a_1.x - (-1)a_0 = a_1.x + a_0$$
+$$det(A_2) = a_2.det\left( \begin{vmatrix} x & 0 \\ -1 & x \\ \end{vmatrix} \right) - a_1.det\left( \begin{vmatrix} -1 & 0 \\ 0 & x \\ \end{vmatrix}\right) + a_0.det\left( \begin{vmatrix} -1 & x \\ 0 & -1 \\ \end{vmatrix}\right) = a_2.x^2 + a1.x + a_0$$
+
+\subsubsection*{Exercice 7.2}
+Preuve par r\'ecurrence. Supposons que $det(A_n) = a_nx^n+ \ldots + a_1x + a_0$, montrons que $det(A_{n+1}) = a_{n+1}x^{n+1} +  a_nx^n+ \ldots + a_1x + a_0$ 
+
+$$det(A_{n+1}) = a_{n+1}.\begin{vmatrix} x & 0 & 0 & \ldots & 0 \\ -1 & x & 0 & \ldots & 0 \\ 0 & -1 & x & \ldots & 0 \\ \vdots & \vdots & \vdots & -1 & x \\ \end{vmatrix} -(-1)det(A_n) = a_{n+1}x^{n+1} + det(A_n)$$
+
+
+$\square$
+
+\end{document}
+
