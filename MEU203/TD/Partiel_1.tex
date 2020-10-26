@@ -1,0 +1,187 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\B}{\mathrm{B}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\newpage
+\subsection*{Exercice 1}
+Montrer d'abord que $\frac{1}{2} < \cos(\frac{\pi}{4+x^2}) \leq 2$ est un ouvert. $\cos(\frac{\pi}{4+x^2})$ est une fonction continue. On a $\forall x in \R, -1 \leq \cos(\frac{\pi}{4+x^2}) \leq 1$. Prenons $r=0.5$, on a $\forall x \in \R,]\cos(\frac{\pi}{4+x^2}) - r, \cos(\frac{\pi}{4+x^2}) +r[ \subset ]-\infty,2]$, donc ouvert a droite. Soit $x \in \R, \frac{1}{2} < \cos(\frac{\pi}{4+x^2})$, prenons $r= \frac{\cos(\frac{\pi}{4+x^2}) - \frac{1}{2}}{2}$. $r$ est positif et $]\cos(\frac{\pi}{4+x^2}) - r, \cos(\frac{\pi}{4+x^2}) +r[ \subset ]\frac{1}{2}, \infty]$, donc ouvert \`a gauche. Par cons\'equent, $\frac{1}{2} < \cos(\frac{\pi}{4+x^2}) \leq 2$ est un ouvert. \\
+
+Montrer que $1 \leq e^{\sqrt{1+x^2}} < 3$ est un ouvert. On a $\forall x \in \R, \sqrt{1+x^2} \geq 1$, donc $\forall x \in \R, e^{\sqrt{1+x^2}} \geq e$. Prenons Prenons $r=0.5$, on a $\forall x \in \R,]e^{\sqrt{1+x^2}} - r, e^{\sqrt{1+x^2}} +r[ \subset [1,\infty]$, donc ouvert \`a gauche. Soit $x \in \R, e^{\sqrt{1+x^2}} < 3$. prenons $r=\frac{3-e^{\sqrt{1+x^2}}}{2}$. $r$ est positif et on a $]e^{\sqrt{1+x^2}}-r, e^{\sqrt{1+x^2}}+r[ \subset ]-\infty, 3[$, donc ouvert \` droite.\\
+
+
+L'union de 2 ouverts est un ouvert donc $\mathscr{O}$ est un ouvert.
+
+
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1}
+$F = [0^2, 0^2+1] \cup [1^2, 1^2+1] \cup [2^2, 2^2+1] \cup [3^2, 3^2+1] \cup \ldots = [0,1] \cup [1,2] \cup[4,5] \cup[9,10] \cup \ldots$
+
+\subsubsection*{Exercice 2.2}
+L'union d'un ensemble fini de ferm\'es est un ferm\'e. On a $\forall k \in \N, [a_k, a_k+1]$ qui est un ferm\'e. $U_p$ est une union finie de ferm\'e donc c'est un ferm\'e.
+
+\subsubsection*{Exercice 2.3}
+$k$ et $p$ sont des entiers et $k > p$ donc $k-p \geq 1$, On a $p \geq x$ donc $k-x \geq 1$. Comme $a_k \geq k$, on a $a_k - x \geq 1$ ou $a_k \geq x+1$. \\
+
+$y \in ]x-r, x+r[ \Leftrightarrow x-r < y < x+r$ comme $r \in ]0,1]$ on a $x-1 < y < x+1$.\\
+
+Donc $y < a_k$, donc $]x-r, x+r[ \cap [a_k, a_k+1] = \emptyset$
+
+\subsubsection*{Exercice 2.4}
+$F$ est l'union infinie de ferm\'es. $F$ est un ferm\'e dans $\R$ si $\R \setminus F$ est un ouvert. Deux cas:
+\begin{itemize}
+\item $F=[0,\infty[$ aucun "trou", $F$ est un ferm\'e
+\item $F\neq[0,\infty[$, donc $\exists x \in \R, x not\in F$, donc $\exists k, a_k+1 < x < a_{k+1}$. donc $x \in ]a_k+1, a_{k+1}[$ donc $\R \setminus F$ est un ouvert (car union d'ouvert), donc $F$ est un ferm\'e.
+\end{itemize}
+
+
+\subsection*{Exercice 3}
+\subsubsection*{Exercice 3.1}
+on a $f(x) \geq x^2$ donc $x \leq \sqrt{f(x)}$ car $f(x) > 0$. De plus, $\sqrt{f(x)} < f(x)$ et $f(x) \leq M$ et $x < M$ donc $\forall x \in F_M, x < M$. Donc $F_M$ est born\'ee par $M$.
+ 
+\subsubsection*{Exercice 3.2}
+puisque $(t_n)_n$ converge vers $l$, on a $\forall \epsilon >0, \exists N, \forall n > N, |l-t_n| < \epsilon$ ou $l-\epsilon < t_n < l+\epsilon$. donc $l-\epsilon < f(x_n) < l+\epsilon$ et $x_n^2 \leq f(x_n) < l+\epsilon$ donc $x_n < \sqrt{l+\epsilon}$. Donc $(x_n)_n$ est born\'ee.
+
+\subsubsection*{Exercice 3.3.a}
+$F$ est non vide car $x, f(x) = m$ existe car $m \in E$ et $\forall n \in \N, m \leq m + \frac{1}{1+n}$. On a $f(x) \leq m + \frac{1}{1+n}$ et $x^2 \leq f(x)$ donc $x^2 \leq m + \frac{1}{1+n}$. Donc $F_n$ est born\'e. 
+
+\subsubsection*{Exercice 3.3.b}
+
+
+\subsubsection*{Exercice 3.3.c}
+
+
+\subsubsection*{Exercice 3.3.d}
+on a $m=\inf(E)$, donc $m \in E$ et par d\'efinition de $E$, $\exists x, f(x) = m$.??????
+
+\subsection*{Exercice 4}
+Soit $F= \{v, \forall u \in E, d(u, v) leq 1\}$, on a $diam(F) \leq diam(E) + 2$ car si on prends deux points $a, b \in E$ tel que $d(a,b) = diam(E)$ et 2 points $v_1, v2 \in F$, alors $d(v_1, u_2) \leq d(v_1, u1)+d(u_1, u_2) \leq 1 + diam(E)$ et $d(v1, v2) \leq d(v1,u_2) + (u_2, v2) \leq  \leq 1 + diam(E) + 1 = diam(E)+2$. 
+On a $E' \subset F$, car $\forall u' \in E', \exists u \in E, d(u,u') < 1$. Donc $diam(E) \leq diam(F) \leq diam(E)+2$.
+
+
+\subsection*{Exercice 5}
+\subsubsection*{Exercice 5.1}
+$N(u) = |x| + |y| + \max(|x|,|y|) = \Vert u \Vert_1 + \Vert u \Vert_{\infty}$
+
+\subsubsection*{Exercice 5.2.a}
+$N(u) = \Vert u \Vert_1 + \Vert u \Vert_{\infty}$ et $\Vert u \Vert_{1} \leq 2 \Vert u \Vert_{\infty}$ donc 
+$$\Vert u \Vert_1 \leq K N(u) = K(\Vert u \Vert_1 + \Vert u \Vert_{\infty}) \leq K(\Vert u \Vert_1 + \frac{1}{2} \Vert u \Vert_{1}) = K\frac{3}{2} \Vert u \Vert_{1}$$  
+Donc $K=\frac{2}{3}$
+
+\subsubsection*{Exercice 5.2.b}
+$N(u) = \Vert u \Vert_1 + \Vert u \Vert_{\infty}$ et $\Vert u \Vert_{1} \leq 2 \Vert u \Vert_{\infty}$ donc 
+$$N(u) = \Vert u \Vert_1 + \Vert u \Vert_{\infty}) \leq (2\Vert u \Vert_{\infty} + \Vert u \Vert_{\infty}) = 3 \Vert u \Vert_{\infty}$$  
+Donc $L=3$
+
+\subsubsection*{Exercice 5.3.a}
+$N(A) = |x_a|+|y_a| + \max(|x_a|,|y_a|) = 1 + 0 + 1 = 2$ et $N(B) = |x_b|+|y_b| + \max(|x_b|,|y_b|) = \frac{2}{3} + \frac{2}{3} + \frac{2}{3} = 2$
+
+\subsubsection*{Exercice 5.3.b}
+$u=((1-t)x_a+tx_b, (1-t)y_a+ty_b) = (1-\frac{1}{3}t, \frac{2}{3}t)$
+$$N(u) = |1-\frac{1}{3}t| + |\frac{2}{3}t| + \max(|1-\frac{1}{3}t|, |\frac{2}{3}t|) =  1-\frac{1}{3}t + \frac{2}{3}t + \max(1-\frac{1}{3}t, \frac{2}{3}t) = 
+1+\frac{1}{3}t + \max(1-\frac{1}{3}t, \frac{2}{3}t)$$ car $t \in [0,1]$.
+
+2 cas:
+\begin{itemize}
+\item $1-\frac{1}{3}t > \frac{2}{3}t$, donc $N(U)= 1+\frac{1}{3}t + 1-\frac{1}{3}t = 2$
+\item $1-\frac{1}{3}t \leq \frac{2}{3}t$ donc $N(u) = 1+\frac{1}{3}t + \frac{2}{3}t = 2$
+\end{itemize}
+
+
+\subsection*{Exercice 6}
+\subsubsection*{Exercice 6.1}
+2 cas :
+\begin{itemize}
+\item $X \cap B = \emptyset$, et $\emptyset$ est un ouvert.
+\item $X \cap B \neq \emptyset$ donc $\exists x \in X \cap B$, comme $x \in X, \exists r, ]x-r, x+r[ \subset X$ car X est un ouvert. de m\^eme, $x \in B, \exists r', ]x-r', x+r'[ \subset B$, prenons $r'' = \min(r,r')$, on a $]x-r'', x+r''[ \subset X \cap B$, donc $X \cap B$ est un ouvert.
+\end{itemize}
+
+\subsubsection*{Exercice 6.2}
+$u \in X$ donc $X \cap B \neq \emptyset$. On a $\forall u \in X, \exists r, B(u,r), X \cap B(u,r)$ est un ouvert. Comme $X \cap B(u,r)$ est un ouvert $\exists r', \forall x \in X \cap B(u,r), ]x-r', x+r'[ \subset X \cap B(u,r)$. Donc $\forall u \in X, \exists r, ]x-r', x+r'[ \subset X \cap B \subset X$. Donc $X$ est un ouvert. 
+
+\subsubsection*{Exercice 6.3}
+2 cas :
+\begin{itemize}
+\item $X \cap B = \emptyset$, et $\emptyset$ est un ferm\'e.
+\item $X \cap B \neq \emptyset$ donc $\exists x \in X \cap B$, comme X est un ferm\'e, $\R \setminus X$ est un ouvert et de m\^eme $\R \setminus B$ est un ouvert. 
+L'union de 2 ouverts est un ouvert. Donc $(\R \setminus X) \cup (\R \setminus B)$ est un ouvert. et $R \setminus ((\R \setminus X) \cup (\R \setminus B))$ est un ferm\'e mais $R \setminus (\R \setminus X \cup \R \setminus B)  = X \cap B$ donc $X \cap B$ est un ferm\'e.
+\end{itemize}
+
+\subsubsection*{Exercice 6.4}
+
+
+QED
+
+\end{document}
+
