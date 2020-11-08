@@ -87,9 +87,25 @@ Deux suites $(u_n)_{n\geq0}$ et $(v_n)_{n\geq0}$ sont adjacentes ssi:
 \subsection*{Exercice 3}
 Pour que $\sum{c_nz^n}$ converge, il suffit de montrer, par le crit\`ere d'Abel, que $\exists M, \forall n, |\sum_{k=0}^{n}{z^k}| \leq M$. 
 On a 
-$$|\sum_{k=0}^{n}{z^k}|< \sum_{k=0}^{n}{|z^k|} = \sum_{k=0}^{n}{|z|^k} == 1.\frac{1-|z|^{n+1}}{1-|z|}$$
-Pb lorsque $|z| = 1$.
-Mais $|z| < 1$, donc $lim_{n\to\infty}|z| < 1$, donc $|\sum_{k=0}^{n}{z^k}| < \frac{1}{1-|z|}$. On a trouv\'e un $M = \frac{1}{1-|z|}$, ce qui permet de montrer que $\sum{c_nz^n}$ converge. 
+$$|\sum_{k=0}^{n}{z^k}| = |1.\frac{1-z^{n+1}}{1-z}| \leq \frac{1 + |z^{n+1}|}{|1-z|} < \frac{2}{|1-z|} $$
+car $|z| < 1$ et $|z^{n}| < 1$. On a trouv\'e un $M = \frac{2}{1-|z|}$, ce qui permet de montrer que $\sum{c_nz^n}$ converge. 
+
+
+\subsection*{Exercice 4}
+\subsubsection*{Exercice 4.1.a}
+Calculons
+$$
+\frac{v_n}{u_n} = \frac{\frac{(-1)^n}{\sqrt{n}}}{\frac{(-1)^n}{\sqrt{n}-(-1)^n}} = \frac{\sqrt{n}-(-1)^n}{\sqrt{n}} = 1 - \frac{(-1)^n}{\sqrt{n}}
+$$
+On a $\lim_{n \to \infty} \frac{v_n}{u_n} = 1$ donc $u_n ~_{n\to \infty} v_n$ 
+
+\subsubsection*{Exercice 4.1.b}
+$v_n = \frac{(-1)^n}{\sqrt{n}}$ converge? \\
+
+\begin{enumerate}
+\item Y a-t-il Convergence absolue? $\sum{|\frac{(-1)^n}{\sqrt{n}}}| = \sum{|\frac{1}{\sqrt{n}}}$ Cette suite diverge. Donc il n'y a pas de convergence absolue.
+\item Cas Special S\'erie Altern\'ee? La s\'erie est altern\'ee car $(-1)^n$ est altern\'ee et $\frac{1}{\sqrt{n}}$ est positif. Il faut montrer que $\frac{1}{\sqrt{n}}$ converge vers 0. Ce qui est vrai quand $n \to \infty$. Donc, la s\'erie de terme g\'en\'eral $v_n = \frac{(-1)^n}{\sqrt{n}}$ converge.
+\end{enumerate} 
 
 
 QED
