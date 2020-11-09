@@ -87,8 +87,8 @@ Deux suites $(u_n)_{n\geq0}$ et $(v_n)_{n\geq0}$ sont adjacentes ssi:
 \subsection*{Exercice 3}
 Pour que $\sum{c_nz^n}$ converge, il suffit de montrer, par le crit\`ere d'Abel, que $\exists M, \forall n, |\sum_{k=0}^{n}{z^k}| \leq M$. 
 On a 
-$$|\sum_{k=0}^{n}{z^k}| = |1.\frac{1-z^{n+1}}{1-z}| \leq \frac{1 + |z^{n+1}|}{|1-z|} < \frac{2}{|1-z|} $$
-car $|z| < 1$ et $|z^{n}| < 1$. On a trouv\'e un $M = \frac{2}{1-|z|}$, ce qui permet de montrer que $\sum{c_nz^n}$ converge. 
+$$|\sum_{k=0}^{n}{z^k}| = \left|1.\frac{1-z^{n+1}}{1-z}\right| \leq \frac{1 + |z^{n+1}|}{|1-z|} < \frac{2}{|1-z|} $$
+car $|z| \leq 1$ et $|z^{n}| \leq 1$. On a trouv\'e un $M = \frac{2}{1-|z|}$, ce qui permet de montrer que $\sum{c_nz^n}$ converge. 
 
 
 \subsection*{Exercice 4}
@@ -103,10 +103,52 @@ On a $\lim_{n \to \infty} \frac{v_n}{u_n} = 1$ donc $u_n ~_{n\to \infty} v_n$
 $v_n = \frac{(-1)^n}{\sqrt{n}}$ converge? \\
 
 \begin{enumerate}
-\item Y a-t-il Convergence absolue? $\sum{|\frac{(-1)^n}{\sqrt{n}}}| = \sum{|\frac{1}{\sqrt{n}}}$ Cette suite diverge. Donc il n'y a pas de convergence absolue.
+\item Y a-t-il Convergence absolue? $\sum{|\frac{(-1)^n}{\sqrt{n}}}| = \sum{\left|\frac{1}{\sqrt{n}}\right|}$ Cette suite diverge. Donc il n'y a pas de convergence absolue.
 \item Cas Special S\'erie Altern\'ee? La s\'erie est altern\'ee car $(-1)^n$ est altern\'ee et $\frac{1}{\sqrt{n}}$ est positif. Il faut montrer que $\frac{1}{\sqrt{n}}$ converge vers 0. Ce qui est vrai quand $n \to \infty$. Donc, la s\'erie de terme g\'en\'eral $v_n = \frac{(-1)^n}{\sqrt{n}}$ converge.
 \end{enumerate} 
 
+\subsubsection*{Exercice 4.2}
+
+\subsubsection*{Exercice 4.3}
+
+\subsubsection*{Exercice 4.4}
+
+\subsection*{Exercice 5}
+\subsubsection*{Exercice 5.1}
+$$u_n - \frac{(-1)^n}{n} = \frac{1}{\ln(n)+(-1)^{n}n} - \frac{(-1)^n}{n} = \frac{n}{n(\ln(n)+(-1)^{n}n)} - \frac{(-1)^n(\ln(n)+(-1)^{n}n)}{n(\ln(n)+(-1)^{n}n)}$$
+$$=\frac{n-((-1)^n(\ln(n)+(-1)^{n}n))}{n(\ln(n)+(-1)^{n}n)} = \frac{n-(-1)^n\ln(n)-(-1)^{n}(-1)^{n}n}{n(\ln(n)+(-1)^{n}n)} = \frac{-(-1)^n\ln(n)}{n(\ln(n)+(-1)^{n}n)}$$
+$$=\frac{-\ln(n)}{(-1)^{n}n\ln(n)+n^2)} = \frac{\ln(n)}{n}\frac{-1}{(-1)^{n}\ln(n)+n}$$
+??
+
+\subsubsection*{Exercice 5.2}
+On a 
+$$u_n = \left( u_n - \frac{(-1)^n}{n} \right) - \frac{(-1)^n}{n}$$
+Avec $u_n - \frac{(-1)^n}{n}$ qui converge et $\frac{(-1)^n}{n}$ qui converge aussi (C.S.S.A avec $v_n = \frac{1}{n}$). Donc la s\'erie de terme g\'en\'eral $u_n$ converge (somme de 2 s\'eries qui convergent). 
+
+
+\subsection*{Exercice 6}
+\subsubsection*{Exercice 6.a}
+$$a_n = \sum_{k=n}^{2n}\frac{1}{n+k} = \sum_{k=n}^{2n}\frac{1}{n}\frac{1}{1+\frac{k}{n}}$$
+Prenons $x=\frac{k}{n}$, on a $dx=\frac{1}{n}$ donc
+$$\sum_{k=n}^{2n}\frac{1}{n}\frac{1}{1+\frac{k}{n}} = \int_{1}^{2} \frac{1}{1+x}dx = \left[\ln(|1+x|\right]_{1}^{2} = \ln(3)-\ln(2) = \ln(\frac{3}{2})$$
+
+\subsubsection*{Exercice 6.b}
+$$b_n = \sqrt[n]{\frac{(2n)!}{n!n^n}}$$
+
+
+\subsection*{Exercice 7}
+\subsubsection*{Exercice 7.a}
+$$a_n = \sum_{k=0}^{n}\frac{1}{n+k} = \sum_{k=0}^{n}\frac{1}{n}\frac{1}{1+\frac{k}{n}}$$
+Prenons $x=\frac{k}{n}$, on a $dx=\frac{1}{n}$ donc
+$$\sum_{k=0}^{n}\frac{1}{n}\frac{1}{1+\frac{k}{n}} = \int_{0}^{1} \frac{1}{1+x}dx = \left[\ln(|1+x|\right]_{0}^{1} = \ln(2)-\ln(1) = \ln(2)$$
+
+\subsubsection*{Exercice 7.b}
+$$b_n = \sum_{k=0}^{n}\frac{n}{n^2+k^2} = \sum_{k=0}^{n}\frac{n}{n^2}\frac{1}{1+\frac{k^2}{n^2}}$$
+Prenons $x=\frac{k}{n}$, on a $dx=\frac{1}{n}$ donc
+$$\sum_{k=0}^{n}\frac{1}{n}\frac{1}{1+\left(\frac{k}{n}\right)^2} = \int_{0}^{1} \frac{1}{1+x^2}dx = \left[\arctan(x)\right]_{0}^{1} = \arctan(1)-\arctan(0) = \arctan(1)$$
+
+\subsubsection*{Exercice 7.c}
+$$c_n = \frac{1}{n^2}\prod_{k=1}^{n}{(n^2+k^2)^{1/n}}$$
 
 QED
 
