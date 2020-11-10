@@ -204,6 +204,15 @@ $$= \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\frac{n}{k}\begin{pmatrix}n\\k-1\end{pma
 $$= \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}.n.\frac{n!}{k!(n-k)!(n-k+1)}$$
 ????
 
+\subsection*{Exercice 12}
+$$\sum_{k=p}^{n+1}\binom{k}{p} = \sum_{k=p}^{n}\binom{k}{p} + \binom{n+1}{p} = \binom{n+1}{p+1} + \binom{n+1}{p}$$
+On a 
+$$\binom{n+1}{p+1} = \frac{(n+1)!}{(p+1)!(n-p)!} = \frac{(n+1)!(n-p+1)}{(p+1)!(n-p+1)!}$$
+$$\binom{n+1}{p} = \frac{(n+1)!}{(p)!(n+1-p)!} = \frac{(n+1)!(p+1)}{(p+1)!(n+1-p)!}$$
+Donc
+$$\binom{n+1}{p+1} + \binom{n+1}{p} = \frac{(n+1)!(n+1-p)}{(p+1)!(n+1-p)!} + \frac{(n+1)!(p+1)}{(p+1)!(n+1-p)!} = \frac{(n+1)!(n-p+1+p+1)}{(p+1)!(n+1-p)!}$$
+$$= \frac{(n+2)!}{(p+1)!((n+2)-(p+1))!} = \binom{n+2}{p+1}$$
+ 
 \subsection*{Exercice 13}
 \subsection*{Exercice 13.1}$$\sum_{k=0}^{m}\binom{2m}{2k} - \sum_{k=0}^{m-1}\binom{2m}{2k+1} = \binom{2m}{0} + \binom{2m}{2} + \ldots + \binom{2m}{2m} - (\binom{2m}{1} + \binom{2m}{3} + \ \ldots + \binom{2m}{2m-1}) $$
 $$\binom{2m}{0} - \binom{2m}{1} + \binom{2m}{2} - \binom{2m}{3} \ldots -\binom{2m}{2m-1} + \binom{2m}{2m}=  \sum_{k=0}^{2m} (-1)^k\binom{2m}{k} = 0$$
