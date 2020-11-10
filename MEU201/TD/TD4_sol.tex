@@ -198,11 +198,25 @@ Donc
 $$V(X)= \sum_{k=0}^{n}{k^2P(X=k)}-n^2p^2 = n^2p^2+np(1-p)-n^2p^2 = np(1-p)$$
 
 \subsection*{Exercice 11}
+On a
+$$\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$$
+
 V\'erifions pour $n=1$, $\sum_{k=1}^{1}\frac{(-1)^{k+1}}{k}\begin{pmatrix}1\\k\end{pmatrix} = 1 = \sum_{k=1}^{1} \frac{1}{k}$. Supposons $\sum_{k=1}^{n}\frac{(-1)^{k+1}}{k}\begin{pmatrix}n\\k\end{pmatrix} = \sum_{k=1}^{n}\frac{1}{k}$ vrai au rang $n$, calculons
-$$\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\begin{pmatrix}n+1\\k\end{pmatrix} = \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\frac{k}{k}\begin{pmatrix}n+1\\k\end{pmatrix}$$
-$$= \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\frac{n}{k}\begin{pmatrix}n\\k-1\end{pmatrix} = \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\frac{n}{k}\frac{n!}{(k-1)!(n-(k-1))!}$$
-$$= \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}.n.\frac{n!}{k!(n-k)!(n-k+1)}$$
-????
+$$\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\begin{pmatrix}n+1\\k\end{pmatrix} = \sum_{k=1}^{n+1}\left(\frac{(-1)^{k+1}}{k}\binom{n}{k}+\binom{n}{k-1}\right)$$
+$$\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\binom{n}{k}+\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\binom{n}{k-1} $$
+Premiere partie
+$$\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\binom{n}{k} = \sum_{k=1}^{n}\frac{(-1)^{k+1}}{k}\binom{n}{k} + \frac{(-1)^{k+2}}{n+1}\binom{n}{n+1} = \sum_{k=1}^{n}\frac{(-1)^{k+1}}{k}\binom{n}{k} = \sum_{k=1}^{n}\frac{1}{k}$$
+Car $\binom{n}{n+1} = 0$ par d\'efinition et par hypoth\`ese de r\'ecurrence.\\
+
+Seconde partie, commencons par calculer
+$$\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\binom{n}{k-1} = \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\binom{(n+1)-1}{k-1} = \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{n+1}\binom{n+1}{k} = \frac{1}{n+1}\sum_{k=1}^{n+1}(-1)^{k+1}\binom{n+1}{k}$$
+
+On a $(x+y)^n = \sum_{k=0}^{n}x^ny^{n-k}\binom{n}{k}$, en prenant $x=-1$ et $y=1$ on a 
+$$((-1)+1)^n = \sum_{k=0}^{n}(-1)^k 1^{n-k}\binom{n}{k} = \sum_{k=0}^{n}(-1)^{k}\binom{n}{k} = 1 + \sum_{k=1}^{n}(-1)^{k}\binom{n}{k}$$
+Donc $\sum_{k=1}^{n}(-1)^{k}\binom{n}{k} = -1$ ce qui fait $\sum_{k=1}^{n}(-1)^{k+1}\binom{n}{k} = 1$
+On a pour finir
+$$\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\binom{n}{k}+\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\binom{n}{k-1} = \sum_{k=1}^{n}\frac{1}{k} + \frac{1}{n+1} = \sum_{k=1}^{n+1}\frac{1}{k}$$
+Fini.
 
 \subsection*{Exercice 12}
 $$\sum_{k=p}^{n+1}\binom{k}{p} = \sum_{k=p}^{n}\binom{k}{p} + \binom{n+1}{p} = \binom{n+1}{p+1} + \binom{n+1}{p}$$
