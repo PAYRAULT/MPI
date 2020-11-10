@@ -134,7 +134,17 @@ $$\sum_{k=n}^{2n}\frac{1}{n}\frac{1}{1+\frac{k}{n}} = \int_{1}^{2} \frac{1}{1+x}
 
 \subsubsection*{Exercice 6.b}
 $$b_n = \sqrt[n]{\frac{(2n)!}{n!n^n}}$$
+Calcul de 
+$$\ln\left(\sqrt[n]{\frac{(2n)!}{n!n^n}}\right) = \frac{1}{n}\ln\left(\frac{(2n)!}{n!n^n}\right) = \frac{1}{n}(\ln((2n)!)-\ln(n!)-n\ln(n))$$
 
+On a 
+$$\ln(n!) = \ln(1*2*3*\ldots*n) = \ln(1)+\ln(2)+\ln(3)+\ldots+\ln(n) = \sum_{k=1}^n\ln(k)$$
+$$\ln(2n!) = \ln(1*2*3*\ldots*2n) = \ln(1)+\ln(2)+\ln(3)+\ldots+\ln(2n) = \sum_{k=1}^{2n}\ln(k)$$
+Donc
+$$\ln((2n)!)-\ln(n!) = \sum_{k=n+1}^{2n}\ln(k)$$
+$$\ln((2n)!)-\ln(n!)-n\ln(n) = \sum_{k=n+1}^{2n}\ln(k) - \sum_{k=1}^{n}{\ln(n)} = \sum_{k=n+1}^{2n}\ln(k) - \sum_{k=n+1}^{2n}{\ln(n)} = \sum_{k=n+1}^{2n}{\ln(k)-\ln(n)} = \sum_{k=n+1}^{2n}{\ln\left(\frac{k}{n}\right)}$$
+donc
+$$\frac{1}{n}(\ln((2n)!)-\ln(n!)-n\ln(n)) = \frac{1}{n} \sum_{k=n+1}^{2n}{\ln\left(\frac{k}{n}\right)} = \int_{\frac{n+1}{n}}^{2}{\ln(x)} = \left[ x(\ln(x)-1)\right]_{\frac{n+1}{n}}^{2}$$
 
 \subsection*{Exercice 7}
 \subsubsection*{Exercice 7.a}
@@ -149,6 +159,43 @@ $$\sum_{k=0}^{n}\frac{1}{n}\frac{1}{1+\left(\frac{k}{n}\right)^2} = \int_{0}^{1}
 
 \subsubsection*{Exercice 7.c}
 $$c_n = \frac{1}{n^2}\prod_{k=1}^{n}{(n^2+k^2)^{1/n}}$$
+
+
+\subsection*{Exercice 8}
+\subsubsection*{Exercice 8.a}
+$$k\begin{pmatrix}n\\k\end{pmatrix} = k\frac{n!}{k!(n-k)!} = k\frac{n!}{k(k-1)!(n-k)!}= \frac{n(n-1)!}{(k-1)!(n-k)!} = n\frac{(n-1)!}{(k-1)!((n-1)-(k-1))!}
+= n \begin{pmatrix}n-1\\k-1\end{pmatrix}$$
+
+\subsubsection*{Exercice 8.b}
+$$k(k-1)\begin{pmatrix}n\\k\end{pmatrix} = k(k-1)\frac{n!}{k!(n-k)!} = k(k-1)\frac{n!}{k(k-1)(k-2)!((n-2)-(k-2))!} $$
+$$= \frac{n(n-1)(n-2)!}{(k-2)!((n-2)-(k-2))!} = n(n-1)\begin{pmatrix}n-2\\k-2\end{pmatrix}$$
+
+\subsection*{Exercice 9}
+\subsubsection*{Exercice 9.1}
+On sait que $(x+y)^n = \sum_{k=0}^{n}{\begin{pmatrix}n\\k\end{pmatrix}x^ky^{n-k}}$. En prenant $y = 1-x$, on a
+$$\sum_{k=0}^{n}{\begin{pmatrix}n\\k\end{pmatrix}x^k(1-x)^{n-k}} = (x+(1-x))^n = 1^n = 1$$
+
+\subsubsection*{Exercice 9.2}
+Le premier terme est toujours \'egal \`a 0.
+$$E(X) = \sum_{k=0}^{n}{kp(X=k)} = \sum_{k=1}^{n}{kp(X=k)} = \sum_{k=1}^{n}{k\begin{pmatrix}n\\k\end{pmatrix}p^k(1-p)^{n-k}} = \sum_{k=1}^{n}{n\begin{pmatrix}n-1\\k-1\end{pmatrix}p^k(1-p)^{n-k}} =$$
+$$=\sum_{k=1}^{n}{n\begin{pmatrix}n-1\\k-1\end{pmatrix}pp^{(k-1)}(1-p)^{n-k}} = np\sum_{k=1}^{n}{\begin{pmatrix}n-1\\k-1\end{pmatrix}p^{(k-1)}(1-p)^{(n-1)-(k-1)}}$$
+Changement de variables $j=k-1$ et $m=n-1$ on a 
+$$np\sum_{j=0}^{m}{\begin{pmatrix}m\\j\end{pmatrix}p^{j}(1-p)^{(m-j)}} = np.1 = np$$
+
+
+\subsection*{Exercice 10}
+$$V(X) = \sum_{k=0}^{n}{(k-np)^2P(X=k)} = \sum_{k=0}^{n}{(k^2-2knp+n^2p^2)P(X=k)} $$
+$$= \sum_{k=0}^{n}{k^2P(X=k)}-2np\sum_{k=0}^{n}{kP(X=k)}+n^2p^2\sum_{k=0}^{n}{P(X=k)} = \sum_{k=0}^{n}{k^2P(X=k)}-2npnp+n^2p^2 = \sum_{k=0}^{n}{k^2P(X=k)}-n^2p^2$$
+On repart de 
+$$ \sum_{k=0}^{n}{k^2P(X=k)} =  \sum_{k=0}^{n}{k.k.P(X=k)} = \sum_{k=0}^{n}{k.k.\begin{pmatrix}n\\k\end{pmatrix}p^k(1-p)^{n-k}} = \sum_{k=0}^{n}{k.n.\begin{pmatrix}n-1\\k-1\end{pmatrix}p^k(1-p)^{n-k}} $$
+$$= \sum_{k=0}^{n}{k.n.\begin{pmatrix}n-1\\k-1\end{pmatrix}pp^{k-1}(1-p)^{(n-1)-(k-1)}} = np\sum_{k=0}^{n}{k.\begin{pmatrix}n-1\\k-1\end{pmatrix}p^{k-1}(1-p)^{(n-1)-(k-1)}}$$
+Le premier terme est \'egal \`a 0.
+$$np\sum_{k=1}^{n}{k.\begin{pmatrix}n-1\\k-1\end{pmatrix}p^{k-1}(1-p)^{(n-1)-(k-1)}}$$
+Changement de variables $j=k-1$, $m=n-1$
+$$np\sum_{j=0}^{m}{(j+1).\begin{pmatrix}m\\j\end{pmatrix}p^{j}(1-p)^{m-j}} = np\left(\sum_{j=0}^{m}{j\begin{pmatrix}m\\j\end{pmatrix}p^{j}(1-p)^{m-j}}+\sum_{j=0}^{m}{\begin{pmatrix}m\\j\end{pmatrix}p^{j}(1-p)^{m-j}}\right)$$
+$$=np(mp+1) = np((n-1)p+1) = n^2p^2-np^2+np = n^2p^2+np(1-p)$$
+Donc
+$$V(X)= \sum_{k=0}^{n}{k^2P(X=k)}-n^2p^2 = n^2p^2+np(1-p)-n^2p^2 = np(1-p)$$
 
 QED
 
