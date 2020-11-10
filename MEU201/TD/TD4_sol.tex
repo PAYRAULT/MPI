@@ -197,6 +197,46 @@ $$=np(mp+1) = np((n-1)p+1) = n^2p^2-np^2+np = n^2p^2+np(1-p)$$
 Donc
 $$V(X)= \sum_{k=0}^{n}{k^2P(X=k)}-n^2p^2 = n^2p^2+np(1-p)-n^2p^2 = np(1-p)$$
 
+\subsection*{Exercice 11}
+V\'erifions pour $n=1$, $\sum_{k=1}^{1}\frac{(-1)^{k+1}}{k}\begin{pmatrix}1\\k\end{pmatrix} = 1 = \sum_{k=1}^{1} \frac{1}{k}$. Supposons $\sum_{k=1}^{n}\frac{(-1)^{k+1}}{k}\begin{pmatrix}n\\k\end{pmatrix} = \sum_{k=1}^{n}\frac{1}{k}$ vrai au rang $n$, calculons
+$$\sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\begin{pmatrix}n+1\\k\end{pmatrix} = \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\frac{k}{k}\begin{pmatrix}n+1\\k\end{pmatrix}$$
+$$= \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\frac{n}{k}\begin{pmatrix}n\\k-1\end{pmatrix} = \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}\frac{n}{k}\frac{n!}{(k-1)!(n-(k-1))!}$$
+$$= \sum_{k=1}^{n+1}\frac{(-1)^{k+1}}{k}.n.\frac{n!}{k!(n-k)!(n-k+1)}$$
+????
+
+\subsection*{Exercice 13}
+\subsection*{Exercice 13.1}$$\sum_{k=0}^{m}\binom{2m}{2k} - \sum_{k=0}^{m-1}\binom{2m}{2k+1} = \binom{2m}{0} + \binom{2m}{2} + \ldots + \binom{2m}{2m} - (\binom{2m}{1} + \binom{2m}{3} + \ \ldots + \binom{2m}{2m-1}) $$
+$$\binom{2m}{0} - \binom{2m}{1} + \binom{2m}{2} - \binom{2m}{3} \ldots -\binom{2m}{2m-1} + \binom{2m}{2m}=  \sum_{k=0}^{2m} (-1)^k\binom{2m}{k} = 0$$
+
+Pour $n=2m$ ($n$ pair), on a 
+$$S_n = \sum_{k=0}^{m}\binom{2m}{2k}, T_n = \sum_{k=0}^{m-1}\binom{2m}{2k+1}$$
+
+Calculons $S_n - T_n$
+$$\sum_{k=0}^{m}\binom{2m}{2k} - \sum_{k=0}^{m-1}\binom{2m}{2k+1} = \binom{2m}{0} + \binom{2m}{2} + \ldots + \binom{2m}{2m} - \left(\binom{2m}{1} + \binom{2m}{3} + \ \ldots + \binom{2m}{2m-1}\right) $$
+$$\binom{2m}{0} - \binom{2m}{1} + \binom{2m}{2} - \binom{2m}{3} \ldots -\binom{2m}{2m-1} + \binom{2m}{2m}=  \sum_{k=0}^{2m} (-1)^k\binom{2m}{k} = 0$$
+
+Pour $n=2m+1$ ($n$ impair) on a 
+$$S_n = \sum_{k=0}^{m}\binom{2m+1}{2k}, T_n = \sum_{k=0}^{m}\binom{2m+1}{2k+1}$$
+Calculons $S_n - T_n$
+$$\sum_{k=0}^{m}\binom{m}{2k} - \sum_{k=0}^{m}\binom{2m+1}{2k+1} = \binom{2m+1}{0} + \binom{2m+1}{2} + \ldots + \binom{2m+1}{2m} - \left(\binom{2m+1}{1} + \binom{2m+1}{3} + \ \ldots + \binom{2m+1}{2m+1}\right) $$
+$$\binom{2m+1}{0} - \binom{2m+1}{1} + \binom{2m+1}{2} - \binom{2m+1}{3} \ldots + \binom{2m+1}{2m} -\binom{2m+1}{2m+1}=  \sum_{k=0}^{2m+1} (-1)^k\binom{2m+1}{k} = 0$$
+
+
+\subsection*{Exercice 13.2}
+Calculons $S_n + T_n$ pour $n=2m$
+
+$$\sum_{k=0}^{m}\binom{2m}{2k} + \sum_{k=0}^{m-1}\binom{2m}{2k+1} = \binom{2m}{0} + \binom{2m}{2} + \ldots + \binom{2m}{2m} + \left(\binom{2m}{1} + \binom{2m}{3} + \ \ldots + \binom{2m}{2m-1}\right) $$
+$$\binom{2m}{0} + \binom{2m}{1} + \binom{2m}{2} + \binom{2m}{3} \ldots + \binom{2m}{2m-1} + \binom{2m}{2m}=  \sum_{k=0}^{2m} \binom{2m}{k} = 2^{2m} = 2^n$$
+
+
+Calculons $S_n + T_n$ pour $n=2m+1$
+$$\sum_{k=0}^{m}\binom{m}{2k} + \sum_{k=0}^{m}\binom{2m+1}{2k+1} = \binom{2m+1}{0} + \binom{2m+1}{2} + \ldots + \binom{2m+1}{2m} + \left(\binom{2m+1}{1} + \binom{2m+1}{3} + \ \ldots + \binom{2m+1}{2m+1}\right) $$
+$$\binom{2m+1}{0} + \binom{2m+1}{1} + \binom{2m+1}{2} + \binom{2m+1}{3} \ldots + \binom{2m+1}{2m} +\binom{2m+1}{2m+1}=  \sum_{k=0}^{2m+1} \binom{2m+1}{k} = 2^{2m+1} = 2^{n}$$
+
+\subsection*{Exercice 13.3}
+On a $S_n - T_n = 0$ et $S_n + T_n = 2^n$, donc $2T_n = 2^n$, $T_n = 2^{n-1}$ et $S_n = T_n = 2^{n-1}$.\\
+
+
 QED
 
 \end{document}
