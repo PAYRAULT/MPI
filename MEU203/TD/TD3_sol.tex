@@ -226,9 +226,26 @@ On a $\mathscr{L}_{-3}(f) = \{ (x,y) \in \R^2, f(x,y) = (x-1)^2+(y+2)^2 = -3\}$,
 \subsubsection*{Exercice 3.6.1}
 \begin{itemize}
 \item $f$ continue $\implies$ $F$ continue, vrai car $F$ est un assemblage de fonctions continues ($y$, $+$, $f(x)$).
-\item
+\item $F$ continue $\implies$ $f$ continue, vrai car $F$ est continue donc $\forall \epsilon, \exists \alpha, \Vert(x,y),(x_0,y_0)\Vert \leq \alpha \implies |F(x,y)-F(x_0,y_0)| \leq \epsilon$, donc $|(y-y_0)+(f(x)-f(x_0)| \leq \epsilon$ et les fonctions $y$ et $+$ sont aussi continues, donc $\alpha_y$ et $\alpha_{+}$ existent. En prenant $\alpha_{f} = \alpha - (\alpha_y + \alpha_{+})$, on devrait montrer la continuit\'e de $f(x)$. Mais pas s\^ur. 
 \end{itemize}
 
+\subsubsection*{Exercice 3.6.2}
+On a $\mathscr{L}_{1}(F) = \{(x,y) \in \R^2, f(x,y) = y-\sin(x) = 1\}$, donc cela repr\'esente la fonction $y=g(x)=1-\sin(x)$.\\
+
+
+\subsection*{Exercice 3.7}
+\subsubsection*{Exercice 3.7.1}
+On a $\mathscr{L}_c(f)= \mathscr{L}_c(g)$, donc $\forall c \in \R, \{(x,y) \in \R^2, f(x,y) = c\} = \{(x,y) \in \R^2, g(x,y) = c\}$. Supposons que $f(x_0,y_0) \neq g(x_0,y_0)$ pour un certain $(x_0,y_0)$ et prenons $c=f(x_0,y_0)$. On a $(x_0,y_0) \in \mathscr{L}_c(f)$ et $(x_0,y_0) \in \mathscr{L}_c(g)$ par d\'efinition. Ceci contredit l'hypoth\`ese $f(x_0,y_0) \neq g(x_0,y_0)$ donc $f=g$.   
+
+\subsubsection*{Exercice 3.7.2}
+$f(x,y) = \pi$ et $g(x,y) = \sqrt{2}$, comme $\pi$ et $\sqrt{2}$ sont irrationnelles, $\not \exists c \in \Q, f(x,y) = \pi = c$ donc $\mathscr{L}_c(f) = \mathscr{L}_c(g) = \emptyset$ et $f(0,0) \neq g(0,0)$.
+
+\subsubsection*{Exercice 3.7.3}
+On a $\mathscr{L}_c(f)= \mathscr{L}_c(g)$, donc $\forall c \in \Q, \{(x,y) \in \R^2, f(x,y) = c\} = \{(x,y) \in \R^2, g(x,y) = c\}$. Supposons que $f(x_0,y_0) \neq g(x_0,y_0)$ pour un certain $(x_0,y_0)$ et prenons $c=f(x_0,y_0)$. deux cas possibles 
+\begin{itemize}
+\item $c \in \Q$, on a $(x_0,y_0) \in \mathscr{L}_c(f)$ et $(x_0,y_0) \in \mathscr{L}_c(g)$ par d\'efinition. Ceci contredit l'hypoth\`ese $f(x_0,y_0) \neq g(x_0,y_0)$
+\item $c \not \in \Q$, la fonction $f$ n'est pas constante donc $\exists (x_1,y_1) \neq (x_0, y_0) \in \R^2, f(x_0, y_0) \neq f(x_1, y_1)$ prenons $(x_1,y_1)$ et $(x_2,y_2)$ tel que $c_1=f(x_1,y_1) < c_0 < c_2=f(x_2, y_2)$. $(x_1, y_1)$, $(x_2, y_2)$ existe car $f$ est continue et il est toujours possible d'encadrer un nombre irrationnel par 2 nombres rationnels. Par d\'efinition $g(x_1, y_1) = c_1$ et  $g(x_2, y_2) = c_2$. Donc $g(x_1,y_1) < c_0 < c_2=g(x_2, y_2)$ donc $f(x_0,y_0) = g(x_0, y_0)$ ce qui contredit l'hypoth\`ese.
+\end{itemize}   
 
 
 
