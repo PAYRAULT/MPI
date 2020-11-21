@@ -1,0 +1,176 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+\pdfinfo{
+   /Author (Myself)
+   /Title  (DM1 - MEU202)
+}
+
+\begin{document}
+
+\subsection*{Rappel de cours}k
+
+
+
+\newpage
+\subsection*{Exercice 1}
+\subsubsection*{Exercice 1.1 pour A}
+On a 
+$$\det(A -\lambda I) = \det\left(\begin{vmatrix} 0-\lambda & 0 & 1 \\ 2 & i-\lambda & 2i \\ -1 & 0 & 0-\lambda \end{vmatrix}\right) = (i-\lambda)(\lambda^2+1)$$
+
+Calculons $\det(A -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(A)=\{i\}$. 
+
+\subsubsection*{Exercice 1.2 pour A}
+Calculons
+$$E_{i}(A) = ker(A -iI) = ker\left(\begin{vmatrix} 0-i & 0 & 1 \\ 2 & i-i & 2i \\ -1 & 0 & 0-i \end{vmatrix}\right)$$
+Cherchons $\lambda_1,\lambda_2,\lambda_3$  tel que
+$$\begin{vmatrix} -i & 0 & 1 \\ 2 & 0 & 2i \\ -1 & 0 & -i \end{vmatrix}.\begin{vmatrix} \lambda_1 & \lambda_2 & \lambda_3 \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+-i\lambda_{1} + 2\lambda_{2} -\lambda_{3} & = 0\\
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
+-\lambda_{1} + 2i\lambda_{2} -i \lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+Echelonnage
+$$
+\left\{ 
+\begin{array}{l l}
+-i\lambda_{1} + 2\lambda_{2} -\lambda_{3} & = 0\\
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0  (L_3=L_1-iL_3)\\
+\end{array}
+\right. 
+$$ 
+
+Donc, en fixant $\lambda_1 = c_1$ et $\lambda_2=c_2$ on a $\lambda_3 = -ic_1+2c_2$
+$$ker(A-iI) = \{(1,0,-i), (0,1,2)\}$$ 
+et $\dim(ker(A-iI)) = 2$.
+
+\subsubsection*{Exercice 1.1 pour B}
+On a 
+$$\det(A -\lambda I) = \det\left(\begin{vmatrix} i-\lambda & 0 & 2 \\ 0 & 0-\lambda & 1 \\ 0 & -1 & 0-\lambda \end{vmatrix}\right) = (i-\lambda)(\lambda^2+1)$$
+
+Calculons $\det(A -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(A)=\{i\}$. 
+
+\subsubsection*{Exercice 1.2}
+Calculons
+$$E_{i}(B) = ker(B -iI) = ker\left(\begin{vmatrix} i-i & 0 & 2 \\ 0 & 0-i & 1 \\ 0 & -1 & 0-i \end{vmatrix}\right)$$
+Cherchons $\lambda_1,\lambda_2,\lambda_3$  tel que
+$$\begin{vmatrix} 0 & 0 & 2 \\ 0 & -i & 1 \\ 0 & -1 & -i \end{vmatrix}.\begin{vmatrix} \lambda_1 & \lambda_2 & \lambda_3 \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
+0\lambda_{1} - i\lambda_{2} + \lambda_{3} & = 0\\
+2\lambda_{1} + \lambda_{2} - i\lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+Echelonnage
+$$
+\left\{ 
+\begin{array}{l l}
+2\lambda_{1} + \lambda_{2} - i\lambda_{3} & = 0 (L_1=L_3)\\
+0\lambda_{1} - i\lambda_{2} + \lambda_{3} & = 0\\
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0 (L_3=L_1)\\
+\end{array}
+\right. 
+,
+\left\{ 
+\begin{array}{l l}
+2\lambda_{1} + \lambda_{2} - i\lambda_{3} & = 0\\
+\lambda_{3} & = i\lambda_{2}\\
+\end{array}
+\right. 
+,
+\left\{ 
+\begin{array}{l l}
+2\lambda_{1} + \lambda_{2} - i(i\lambda_{2}) & = 0\\
+\lambda_{3} & = i\lambda_{2}\\
+\end{array}
+\right. 
+$$ 
+
+Donc, en fixant $\lambda_2 = c_2$ on a $\lambda_1 = -c_2$, $\lambda_3 = ic_2$
+$$ker(B-iI) = \{(-1,1,i)\}$$ 
+et $\dim(ker(B-iI)) = 1$.
+
+
+QED
+
+\end{document}
+
