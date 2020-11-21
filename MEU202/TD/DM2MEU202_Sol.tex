@@ -87,20 +87,20 @@
 On a 
 $$\det(A -\lambda I) = \det\left(\begin{vmatrix} 0-\lambda & 0 & 1 \\ 2 & i-\lambda & 2i \\ -1 & 0 & 0-\lambda \end{vmatrix}\right) = (i-\lambda)(\lambda^2+1)$$
 
-Calculons $\det(A -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(A)=\{i\}$. 
+Calculons $\det(A -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(A)=\{i, -i\}$. 
 
 \subsubsection*{Exercice 1.2 pour A}
 Calculons
 $$E_{i}(A) = ker(A -iI) = ker\left(\begin{vmatrix} 0-i & 0 & 1 \\ 2 & i-i & 2i \\ -1 & 0 & 0-i \end{vmatrix}\right)$$
 Cherchons $\lambda_1,\lambda_2,\lambda_3$  tel que
-$$\begin{vmatrix} -i & 0 & 1 \\ 2 & 0 & 2i \\ -1 & 0 & -i \end{vmatrix}.\begin{vmatrix} \lambda_1 & \lambda_2 & \lambda_3 \end{vmatrix} = 0$$
+$$\begin{vmatrix} -i & 0 & 1 \\ 2 & 0 & 2i \\ -1 & 0 & -i \end{vmatrix}.\begin{vmatrix} \lambda_1 \\ \lambda_2 \\ \lambda_3 \end{vmatrix} = 0$$
 
 $$
 \left\{ 
 \begin{array}{l l}
--i\lambda_{1} + 2\lambda_{2} -\lambda_{3} & = 0\\
-0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
--\lambda_{1} + 2i\lambda_{2} -i \lambda_{3} & = 0\\
+-i\lambda_{1} + 0\lambda_{2} + \lambda_{3} & = 0\\
+2\lambda_{1} + 0\lambda_{2} + 2i\lambda_{3} & = 0\\
+-\lambda_{1} + 0\lambda_{2} -i \lambda_{3} & = 0\\
 \end{array}
 \right. 
 $$ 
@@ -108,24 +108,69 @@ Echelonnage
 $$
 \left\{ 
 \begin{array}{l l}
--i\lambda_{1} + 2\lambda_{2} -\lambda_{3} & = 0\\
-0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
-0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0  (L_3=L_1-iL_3)\\
+\lambda_{1} + 0\lambda_{2} + i\lambda_{3} & = 0 (L_1=L_1*-i)\\
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0 (L_2 = L_2+2iL_2)\\
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0 (L_3 = L_3+iL_1)\\
 \end{array}
 \right. 
 $$ 
 
-Donc, en fixant $\lambda_1 = c_1$ et $\lambda_2=c_2$ on a $\lambda_3 = -ic_1+2c_2$
-$$ker(A-iI) = \{(1,0,-i), (0,1,2)\}$$ 
-et $\dim(ker(A-iI)) = 2$.
+Donc, en fixant $\lambda_3 = c_3$ et $\lambda_2=c_2$ on a $\lambda_1 = -ic_3$
+$$ker(A-iI) = \{(-i,0,1), (0,1,0)\}$$ 
+et $\dim(E_i(A) = \dim(ker(A-iI)) = 2$.
+
+Calculons
+$$E_{-i}(A) = ker(A +iI) = ker\left(\begin{vmatrix} 0+i & 0 & 1 \\ 2 & i+i & 2i \\ -1 & 0 & 0+i \end{vmatrix}\right)$$
+Cherchons $\lambda_1,\lambda_2,\lambda_3$  tel que
+$$\begin{vmatrix} i & 0 & 1 \\ 2 & 2i & 2i \\ -1 & 0 & i \end{vmatrix}.\begin{vmatrix} \lambda_1 \\ \lambda_2 \\ \lambda_3 \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+i\lambda_{1} + 0\lambda_{2} + \lambda_{3} & = 0\\
+2\lambda_{1} + 2i\lambda_{2} + 2i\lambda_{3} & = 0\\
+-\lambda_{1} + 0\lambda_{2} + i\lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+Echelonnage
+$$
+\left\{ 
+\begin{array}{l l}
+-\lambda_{1} + 0\lambda_{2} + i\lambda_{3} & = 0 (L_1=L_1.i)\\
+0\lambda_{1} + 2i\lambda_{2} + 4i\lambda_{3} & = 0 (L_2=L_2+2iL_1)\\
+0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0 (L_3=L_1+iL_3)\\
+\end{array}
+\right. 
+$$ 
+
+Donc, en fixant $\lambda_3 = c_3$ on a $\lambda_1 = ic_3$ et $\lambda_2 = -2c_3$
+$$ker(A+iI) = \{(i,-2,1)\}$$ 
+et $\dim(E_{-i}(A)) = \dim(ker(A+iI)) = 1$.
+
+0
+
+\subsubsection*{Exercice 1.3 pour A}
+Calculons $dim(A)$.
+$$\begin{vmatrix} 0 & 0 & 1 \\ 2 & i & 2i \\ -1 & 0 & 0 \end{vmatrix}$$
+Echelonnage
+$$\begin{vmatrix} 1 & 0 & 0  \\ 0 & i & 2i \\ 0 & 0 & 1 \end{vmatrix}$$
+Donc $dim(A)=3$ et $dim(E_{i}(A))+dim(E_{-i}(A)) = 3$ donc diagonisable.
+
+On a 
+$$P = \begin{vmatrix} i & -i & 0 \\ -2 & 0 & 1 \\ 1 & 1 & 0 \end{vmatrix}$$
+$$P^{-1} = \begin{vmatrix} -\frac{i}{2} & 0 & \frac{1}{2} \\ \frac{i}{2} & 0 & \frac{1}{2} \\ -i & 1 & 1 \end{vmatrix}$$
+$$P^{-1}AP = \begin{vmatrix} -i & 0 & 0 \\ 0 & i & 0 \\ 0 & 0 & i \end{vmatrix}$$
+
+
 
 \subsubsection*{Exercice 1.1 pour B}
 On a 
 $$\det(A -\lambda I) = \det\left(\begin{vmatrix} i-\lambda & 0 & 2 \\ 0 & 0-\lambda & 1 \\ 0 & -1 & 0-\lambda \end{vmatrix}\right) = (i-\lambda)(\lambda^2+1)$$
 
-Calculons $\det(A -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(A)=\{i\}$. 
+Calculons $\det(A -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(A)=\{i, -i\}$. 
 
-\subsubsection*{Exercice 1.2}
+\subsubsection*{Exercice 1.2 pour B}
 Calculons
 $$E_{i}(B) = ker(B -iI) = ker\left(\begin{vmatrix} i-i & 0 & 2 \\ 0 & 0-i & 1 \\ 0 & -1 & 0-i \end{vmatrix}\right)$$
 Cherchons $\lambda_1,\lambda_2,\lambda_3$  tel que
@@ -135,7 +180,7 @@ $$
 \left\{ 
 \begin{array}{l l}
 0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
-0\lambda_{1} - i\lambda_{2} + \lambda_{3} & = 0\\
+0\lambda_{1} - i\lambda_{2} - \lambda_{3} & = 0\\
 2\lambda_{1} + \lambda_{2} - i\lambda_{3} & = 0\\
 \end{array}
 \right. 
@@ -145,7 +190,7 @@ $$
 \left\{ 
 \begin{array}{l l}
 2\lambda_{1} + \lambda_{2} - i\lambda_{3} & = 0 (L_1=L_3)\\
-0\lambda_{1} - i\lambda_{2} + \lambda_{3} & = 0\\
+0\lambda_{1} - i\lambda_{2} - \lambda_{3} & = 0\\
 0\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0 (L_3=L_1)\\
 \end{array}
 \right. 
@@ -153,22 +198,58 @@ $$
 \left\{ 
 \begin{array}{l l}
 2\lambda_{1} + \lambda_{2} - i\lambda_{3} & = 0\\
-\lambda_{3} & = i\lambda_{2}\\
+\lambda_{3} & = -i\lambda_{2}\\
 \end{array}
 \right. 
 ,
 \left\{ 
 \begin{array}{l l}
-2\lambda_{1} + \lambda_{2} - i(i\lambda_{2}) & = 0\\
-\lambda_{3} & = i\lambda_{2}\\
+2\lambda_{1} + \lambda_{2} - i(-i\lambda_{2}) & = 0\\
+\lambda_{3} & = -i\lambda_{2}\\
 \end{array}
 \right. 
 $$ 
 
-Donc, en fixant $\lambda_2 = c_2$ on a $\lambda_1 = -c_2$, $\lambda_3 = ic_2$
-$$ker(B-iI) = \{(-1,1,i)\}$$ 
-et $\dim(ker(B-iI)) = 1$.
+Donc, en fixant $\lambda_2 = c_2$ on a $\lambda_1 = 0$, $\lambda_3 = ic_2$
+$$ker(B-iI) = \{(0,1,i)\}$$ 
+et $\dim(E_{i}(B))= \dim(ker(B-iI)) = 1$.
 
+Calculons
+$$E_{-i}(B) = ker(B +iI) = ker\left(\begin{vmatrix} i+i & 0 & 2 \\ 0 & 0+i & 1 \\ 0 & -1 & 0+i \end{vmatrix}\right)$$
+Cherchons $\lambda_1,\lambda_2,\lambda_3$  tel que
+$$\begin{vmatrix} 2i & 0 & 2 \\ 0 & i & 1 \\ 0 & -1 & i \end{vmatrix}.\begin{vmatrix} \lambda_1 & \lambda_2 & \lambda_3 \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+2i\lambda_{1} + 0\lambda_{2} + 0\lambda_{3} & = 0\\
+0\lambda_{1} + i\lambda_{2} - \lambda_{3} & = 0\\
+2\lambda_{1} + \lambda_{2} + i\lambda_{3} & = 0\\
+\end{array}
+\right. 
+$$ 
+
+$$
+\left\{ 
+\begin{array}{l l}
+\lambda_{1}  & = 0\\
+i\lambda_{2}  & = \lambda_{3}\\
+\lambda_{2}  & = - i\lambda_{3}\\
+\end{array}
+\right. 
+$$ 
+
+Donc, en fixant $\lambda_2 = c_2$ on a $\lambda_1 = 0$, $\lambda_3 = ic_2$
+$$ker(B-iI) = \{(0,1,i)\}$$ 
+et $\dim(E_{-i}(B))= \dim(ker(B+iI)) = 1$.
+
+
+\subsubsection*{Exercice 1.3 pour B}
+Calculons $dim(B)$.
+$$\begin{vmatrix} -i & 0 & 2 \\ 0 & 0 & 1 \\ 0 & -1 & 0 \end{vmatrix}$$
+Echelonnage
+$$\begin{vmatrix} -i & 0 & 2  \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}$$
+Donc $dim(B)=3$ et $dim(E_{i}(B))+dim(E_{-i}(B)) = 2$ donc pas diagonisable. 
 
 QED
 
