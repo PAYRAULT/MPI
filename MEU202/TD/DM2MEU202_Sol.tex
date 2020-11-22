@@ -166,9 +166,9 @@ $$P^{-1}AP = \begin{vmatrix} -i & 0 & 0 \\ 0 & i & 0 \\ 0 & 0 & i \end{vmatrix}$
 
 \subsubsection*{Exercice 1.1 pour B}
 On a 
-$$\det(A -\lambda I) = \det\left(\begin{vmatrix} i-\lambda & 0 & 2 \\ 0 & 0-\lambda & 1 \\ 0 & -1 & 0-\lambda \end{vmatrix}\right) = (i-\lambda)(\lambda^2+1)$$
+$$\det(B -\lambda I) = \det\left(\begin{vmatrix} i-\lambda & 0 & 2 \\ 0 & 0-\lambda & 1 \\ 0 & -1 & 0-\lambda \end{vmatrix}\right) = (i-\lambda)(\lambda^2+1)$$
 
-Calculons $\det(A -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(A)=\{i, -i\}$. 
+Calculons $\det(B -\lambda I) = 0$, $(i-\lambda)(\lambda^2+1)=0$, donc $sp(B)=\{i, -i\}$. 
 
 \subsubsection*{Exercice 1.2 pour B}
 Calculons
@@ -290,7 +290,7 @@ $$f(P) = [f]_{\mathscr{B}}. \begin{vmatrix} 1 \\ X \\ X^2 \\ \vdots \\ X^{n-1} \
 La matrice $[f]_{\mathscr{B}}$ est une matrice diagonale dont $f$ est diagonalisable.
 
 \subsubsection*{Exercice 4.4}
-On a $Sp(f) = \{\lambda \in \C, \} \det([f]_{\mathscr{B}} -\lambda Id_n) = 0$. Donc
+On a $Sp(f) = \{\lambda \in \C, \det([f]_{\mathscr{B}} -\lambda Id_n) = 0 \} $. Donc
 
 $$[f]_{\mathscr{B}} -\lambda Id_n = \begin{vmatrix} -\lambda & 0 & 0 & \ldots & 0 & 0 \\ 0 & a_1-\lambda & 0 & \ldots & 0 & 0 \\ 0 & 0 & 2a_2-\lambda & \ldots & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & (n-1).a_{n-1}-\lambda & 0\\ 0 & 0 & 0 & \ldots & 0 & n.a_n-\lambda  \end{vmatrix}$$
 
