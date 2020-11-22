@@ -253,7 +253,7 @@ Donc $dim(B)=3$ et $dim(E_{i}(B))+dim(E_{-i}(B)) = 2$ donc pas diagonisable.
 
 
 \subsection*{Exercice 2}
-Si $k$ est une valeur propre d'un endomorphisme $f:E \to E$ alors $\exists v \in E, v \neq 0_E, f(v) = k.v$. L'endomorphisme $f$ est surjective donc $im(f) = E$, et $dim(im\ f) = dim(E)\ [1]$. Preuve par l'absurde. Supposons que 0 soit une valeur propre de $f$, $\exists v \in E, v \neq 0_E, f(v) = 0.v = 0_E$. Donc $v \in ker(f)$. On a $dim(ker\ f) + dim(im\ f) = dim(E)$, donc par [1]$, on a $dim(ker\ f) = 0$ ce qui contredit l'existence de $v$. 
+Si $k$ est une valeur propre d'un endomorphisme $f:E \to E$ alors $\exists v \in E, v \neq 0_E, f(v) = k.v$. L'endomorphisme $f$ est surjective donc $im(f) = E$, et $dim(im\ f) = dim(E)\ [1]$. Preuve par l'absurde. Supposons que 0 soit une valeur propre de $f$, $\exists v \in E, v \neq 0_E, f(v) = 0.v = 0_E$. Donc $v \in ker(f)$. On a $dim(ker\ f) + dim(im\ f) = dim(E)$, donc par $[1]$, on a $dim(ker\ f) = 0$ ce qui contredit l'existence de $v$. 
 
 
 \subsection*{Exercice 3}
@@ -261,8 +261,42 @@ Si $k$ est une valeur propre d'un endomorphisme $f:E \to E$ alors $\exists v \in
 Non, la matrice nulle est diagonale mais n'est pas inversible car son d\'eterminant est nul.
 
 \subsubsection*{Exercice 3.2}
+On a $Sp(A)=\{\lambda \in \C, \det(A-\lambda.Id_n) = 0\}$ et la matrice $A$ est inversible si son d\'eterminant est non nul. Le d\'eterminant d'une matrice diagonale est \'egal \`a $\prod_{i=1}^{n}{a_{ii}}$. La matrice $A-\lambda.Id_n$ est diagonale donc pour avoir son d\'eterminant \'egale \`a nul il faut que $\prod_{i=1}^{n}{a_{ii}-\lambda}$, donc $Sp(A)= \{a_{ii}\}$. D'un autre cot\'e, pour que $A$ soit inversible on a $\prod_{i=1}^{n}{a_{ii}} \neq 0$ (ie. $\forall i, a_{ii} \neq 0$). Donc, il faut que $0 \not \in Sp(A)$ .
 
 
+\subsubsection*{Exercice 3.3}
+Si la matrice $A$ est diagonalisable alors il existe une matrice $P$ tel que $P^{-1}AP$ soit diagonale. Donc d'apr\`es l'exercice pre\'ec\'edent, il faut que 
+
+
+\subsection*{Exercice 4}
+\subsubsection*{Exercice 4.1}
+La base $\mathscr{B}$ a $n+1$ vecteurs ind\'ependents, dont sa dimension est $n+1$.
+
+\subsubsection*{Exercice 4.2}
+Soit 2 polynomes $P_a = \sum_{i=0}^{n}{a_iX^i}$ et $P_b= \sum_{i=0}^{n}{b_iX^i}$, on a $P_a+P_b = \sum_{i=0}^{n}{a_iX^i} + \sum_{i=0}^{n}{b_iX^i} = \sum_{i=0}^{n}{(a_i+b_i)X^i}$. On a $c.P_a = c.\sum_{i=0}^{n}{a_iX^i} = \sum_{i=0}^{n}{c.a_iX^i}$. On a $f(P) = X.\frac{d}{dX}P = X.\sum_{i=1}^{n}{ia_iX^{i-1}}$
+
+On doit montrer que  
+\begin{itemize}
+\item $f(P_a+P_b)=f(P_a)+f(P_b)?$, $f(P_a+P_b) = X.\sum_{i=1}^{n}{i(a_i+b_i)X^{i-1}} = X.(\sum_{i=1}^{n}{i.a_iX^{i-1}} + \sum_{i=1}^{n}{i.b_iX^{i-1}}) = X.(\sum_{i=1}^{n}{i.a_iX^{i-1}}) + X.(\sum_{i=1}^{n}{i.b_iX^{i-1}}) = f(P_a)+f(P_b)$
+\item $f(c.P_a) = c.f(P_a)?$, $f(c.P_a) = X.\sum_{i=1}^{n}{i(c.a_i)X^{i-1}} = c.X.\sum_{i=1}^{n}{i(a_i)X^{i-1}} = c.f(P_a)$
+\end{itemize}
+Donc, $f$ est une application lin\'eaire.
+
+\subsubsection*{Exercice 4.3}
+On a $f(P) = X.\sum_{i=1}^{n}{i.a_i.X^{i-1}} = \sum_{i=1}^{n}{i.a_i.X^{i}}$, donc
+
+$$f(P) = [f]_{\mathscr{B}}. \begin{vmatrix} 1 \\ X \\ X^2 \\ \vdots \\ X^{n-1} \\ X^{n} \end{vmatrix} = \begin{vmatrix} 0 & 0 & 0 & \ldots & 0 & 0 \\ 0 & a_1 & 0 & \ldots & 0 & 0 \\ 0 & 0 & 2a_2 & \ldots & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & (n-1).a_{n-1} & 0\\ 0 & 0 & 0 & \ldots & 0 & n.a_n  \end{vmatrix}.\begin{vmatrix} 1 \\ X \\ X^2 \\ \vdots \\ X^{n-1} \\ X^{n} \end{vmatrix}$$
+
+La matrice $[f]_{\mathscr{B}}$ est une matrice diagonale dont $f$ est diagonalisable.
+
+\subsubsection*{Exercice 4.4}
+On a $Sp(f) = \{\lambda \in \C, \} \det([f]_{\mathscr{B}} -\lambda Id_n) = 0$. Donc
+
+$$[f]_{\mathscr{B}} -\lambda Id_n = \begin{vmatrix} -\lambda & 0 & 0 & \ldots & 0 & 0 \\ 0 & a_1-\lambda & 0 & \ldots & 0 & 0 \\ 0 & 0 & 2a_2-\lambda & \ldots & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & (n-1).a_{n-1}-\lambda & 0\\ 0 & 0 & 0 & \ldots & 0 & n.a_n-\lambda  \end{vmatrix}$$
+
+$$\det([f]_{\mathscr{B}} -\lambda Id_n) = \prod_{i=0}^{n} i.a_i.X^i-\lambda = \prod_{i=0}^{n}(i.a_i.X^i) -(n+1)\lambda$$ 
+
+Mais $\prod_{i=0}^{n}(i.a_i.X^i) = 0$, donc $Sp(f) = \emptyset$. 
 
 QED
 
