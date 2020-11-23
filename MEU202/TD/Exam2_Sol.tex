@@ -298,6 +298,75 @@ Ce qui est vrai.
 
 \subsection*{Exercice 4}
 \subsubsection*{Exercice 4.1}
+$u$ est un vecteur propre associ\'e \`a la valeur $\lambda$ de $B$, donc $B.u = \lambda.u$ et $B=Q^{-1}.A.Q$.
+On cherche $\lambda_1$ tel que $A.(Q.u) = \lambda_1.Q.u$.  
+
+Donc 
+$$B.u = \lambda.u$$
+$$Q^{-1}.A.Q.u = \lambda.u$$
+$$Q.Q^{-1}.A.Q.u = Q.\lambda.u$$
+$$A.(Q.u) = \lambda.Q.u$$  
+
+Donc, en prenant $\lambda_1 = \lambda$, on a $Q.u$ est un vecteur propre de $A$ associ\'e \`a la valeur propre $\lambda$. On peut en d\'eduire que $dim\ E_{\lambda}(A) =  dim\ E_{\lambda}(B)$ car pour tous les \'el\'ement de $u \in E_{\lambda}(B)$ on peut associer un \'element $Q.u \in E_{\lambda}(A)$. 
+
+\subsubsection*{Exercice 4.2}
+Calculons les valeurs propres de $A$ et $B$.\\
+Calculons $\det(A-\lambda_a.I)$
+$$\det \left( \begin{vmatrix} -1 - \lambda_a & 0 & 1 \\ 0 & 3 - \lambda_a & 0 \\  0 & 0 & -1 -\lambda_a \end{vmatrix}\right) $$
+$$= (-1-\lambda_a)(3-\lambda_a)(-1-\lambda_a) = -(1+\lambda_a)^2(3-\lambda_a)$$
+donc
+$$Sp(A) = \{-1,3\}$$
+
+Calculons $\det(B-\lambda_b.I)$
+$$\det \left( \begin{vmatrix} -1 - \lambda_b & 1 & 0 \\ 0 & 3 - \lambda_b & 0 \\  0 & 0 & -1 -\lambda_b \end{vmatrix}\right) $$
+$$= (-1-\lambda_b)(3-\lambda_b)(-1-\lambda_b) = -(1+\lambda_b)^2(3-\lambda_b)$$
+donc
+$$Sp(B) = \{-1,3\}$$
+
+Calculons les vecteurs propres associ\'es \`a 1, $E_{-1}(A)$ et $E_{-1}(B)$
+$$E_{-1}(A)=ker(A+i.I) = ker\left( \begin{vmatrix} -1 + 1 & 0 & 1 \\ 0 & 3+1  & 0 \\  0 & 0 & -1 + 1 \end{vmatrix} \right)$$
+Cherchons $x,y,z$ tel que
+$$\begin{vmatrix} 0 & 0 & 1 \\ 0 & 4 & 0 \\  0 & 0 & 0 \end{vmatrix} . \begin{vmatrix} x \\ y \\  z \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+0x  + 0y + z & = 0\\
+0x  + 4y + 0z & = 0\\
+0x - y + 0z & = 0\\
+\end{array}
+\right. 
+$$ 
+
+En fixant $x=c_1$, $y=z=0$ on a $E_{-1}(A) = \{(1,0,0)\}$ 
+
+$$E_{-1}(B)=ker(B+i.I) = ker\left( \begin{vmatrix} -1 + 1 & 1 & 0 \\ 0 & 3+1  & 0 \\  0 & 0 & -1 + 1 \end{vmatrix} \right)$$
+Cherchons $x,y,z$ tel que
+$$\begin{vmatrix} 0 & 1 & 0 \\ 0 & 4 & 0 \\  0 & 0 & 0 \end{vmatrix} . \begin{vmatrix} x \\ y \\  z \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+0x  + y + 0z & = 0\\
+0x  + 4y + 0z & = 0\\
+0x - y + 0z & = 0\\
+\end{array}
+\right. 
+$$ 
+
+En fixant $x=c_1$, $z=c_2$, $y=0$ on a $E_{-1}(B) = \{(1,0,0), (0,0,1)\}$ 
+
+Les matrices $A$ et $B$ ne sont pas semblables car $dim\ E_{-1}(A) \neq dim\ E_{-1}(B)$.
+
+\subsection*{Exercice 5}
+Comme la matrice $A$ est diagonalisable, il existe une matrice $P$ inversible et une matrice diagonale $D$ tel que $A = P.D.P^{-1}$
+Donc 
+$$A^3+4A-16I_n = (P.D.P^{-1})^3 + 4(P.D.P^{-1}) -16I_n = P.D^3.P^{-1} + P.4D.P^{-1} - 16P.I_n.P^{-1} = P.(D^3+4D-16I_n).P^{-1} = 0_n$$
+La matrice $P$ est inversible donc $P \neq 0_n$. donc on cherche une matrice diagonale $D$ tel que 
+$$D^3+4D-16I_n = (D-2I_n)(D^2+2D+8) = 0_n$$
+Cette \'equation a une seule solution dans $\R$, $D=2I_n$.\\
+Donc $A=\{P.D.P^{-1}, P\ inversible\} = \{P.(2I_n).P^{-1}, P\ inversible\} = \{2P.I_n.P^{-1}, P\ inversible\} = \{2I_n\}$.
+
 
 
 \end{document}
