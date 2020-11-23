@@ -179,7 +179,116 @@ Pour que $A$ soit diagonalisable il faut que $dim\ A = dim\ E_{1} + dim\ E_{-1}$
 La matrice
 $$P = \begin{vmatrix} 1 & 0 & 0 \\ 1 & 1 & 3 \\  0 & 1 & 1 \end{vmatrix} $$
 
+$$P^{-1} = \begin{vmatrix}1&0&0\\ \:\:\:\frac{1}{2}&-\frac{1}{2}&\frac{3}{2}\\ \:\:\:-\frac{1}{2}&\frac{1}{2}&-\frac{1}{2}\end{vmatrix}$$
+
+$$D = P^{-1}AP = \begin{vmatrix}1&0&0\\ \:\:\:\frac{1}{2}&-\frac{1}{2}&\frac{3}{2}\\ \:\:\:-\frac{1}{2}&\frac{1}{2}&-\frac{1}{2}\end{vmatrix}.\begin{vmatrix}1&0&0\\ \:3&-2&3\\ \:1&-1&2\end{vmatrix}. \begin{vmatrix} 1 & 0 & 0 \\ 1 & 1 & 3 \\  0 & 1 & 1 \end{vmatrix} = \begin{vmatrix}1&0&0\\ 0&1&0\\ 0&0&-1\end{vmatrix} $$
+
 QED
+
+
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1}
+Calculons $\det(A-\lambda.I)$
+$$\det \left( \begin{vmatrix} 2 - \lambda & 0 & 0 \\ 0 & 0 - \lambda & -1 \\  0 & 1 & 0 -\lambda \end{vmatrix}\right) $$
+$$= (-\lambda)((2-\lambda)(-\lambda)-0*0) - (1)((2-\lambda)(-1) -0*0) = (2-\lambda)(\lambda^2+1)$$
+donc
+$$Sp(A) = \{2\}\ dans\ \R, et\  Sp(A) = \{2,i,-i\}\ dans\ \C,$$
+
+\subsubsection*{Exercice 2.2}
+D\'eterminons les vecteurs propres de $A$ dans $\R$.\\
+Calculons 
+$$E_{2}(A)=ker(A-2I) = ker\left( \begin{vmatrix} 2 - 2 & 0 & 0 \\ 0 & 0-2  & -1 \\  0 & 1 & 0 - 2 \end{vmatrix} \right)$$
+
+Cherchons $x,y,z$ tel que
+$$\begin{vmatrix} 0 & 0 & 0 \\ 0 & -2 & -1 \\  0 & 1 & -2 \end{vmatrix} . \begin{vmatrix} x \\ y \\  z \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+0x  + 0y + 0z & = 0\\
+0x  -2y - z & = 0\\
+0x +y -2z & = 0\\
+\end{array}
+\right. 
+$$ 
+
+$$
+\left\{ 
+\begin{array}{l l}
+0x  + 0y + 0z & = 0\\
+z & = 2y\\
+-3y & = 0\\
+\end{array}
+\right. 
+$$ 
+
+En fixant $x=c_1$ on a 
+$$E_{2}(A)=ker(A-2I) = \{(1,0,0)\}$$
+Donc dans $\R$, $dim\ Sp(A) = 1$, et $dim\ A = 3$ donc la matrice n'est pas diagonalisable dans $\R$.
+
+
+\subsubsection*{Exercice 2.2}
+D\'eterminons les vecteurs propres de $A$ dans $\C$.\\
+De l'exerce pr\'ec\'edent, on a $E_{2}(A)=ker(A-2I) = \{(1,0,0\}$.\\
+Calculons 
+$$E_{i}(A)=ker(A-i.I) = ker\left( \begin{vmatrix} 2 - i & 0 & 0 \\ 0 & 0-i  & 1 \\  0 & -1 & 0 - i \end{vmatrix} \right)$$
+Cherchons $x,y,z$ tel que
+$$\begin{vmatrix} 2-i & 0 & 0 \\ 0 & -i & 1 \\  0 & -1 & -i \end{vmatrix} . \begin{vmatrix} x \\ y \\  z \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+(2-i)x  + 0y + 0z & = 0\\
+0x  -iy - z & = 0\\
+0x +y -iz & = 0\\
+\end{array}
+\right. 
+$$ 
+
+$$
+\left\{ 
+\begin{array}{l l}
+x & = 0\\
+z & = -iy \\
+z & = \frac{y}{i} = -iy\\
+\end{array}
+\right. 
+$$ 
+
+En fixant $x=0$ et $y=c_1$ on a
+$$E_{i}(A)=ker(A-2I) = \{(0,1,-i)\}$$
+
+Calculons 
+$$E_{-i}(A)=ker(A+i.I) = ker\left( \begin{vmatrix} 2 + i & 0 & 0 \\ 0 & 0+i  & 1 \\  0 & -1 & 0 + i \end{vmatrix} \right)$$
+Cherchons $x,y,z$ tel que
+$$\begin{vmatrix} 2+i & 0 & 0 \\ 0 & i & 1 \\  0 & -1 & i \end{vmatrix} . \begin{vmatrix} x \\ y \\  z \end{vmatrix} = 0$$
+
+$$
+\left\{ 
+\begin{array}{l l}
+(2+i)x  + 0y + 0z & = 0\\
+0x  + iy - z & = 0\\
+0x +y + iz & = 0\\
+\end{array}
+\right. 
+$$ 
+
+$$
+\left\{ 
+\begin{array}{l l}
+x & = 0\\
+z & = iy \\
+z & = -\frac{y}{i} = iy\\
+\end{array}
+\right. 
+$$ 
+
+En fixant $x=0$ et $z=c_1$ on a
+$$E_{-i}(A)=ker(A-2I) = \{(0,1,i)\}$$
+
+$$Sp(A) = \{(1,0,0), (0,1,-i), (0,1,i)\}$$
+
+Donc dans $\C$, $dim\ Sp(A) = 3$, et $dim\ A = 3$ donc la matrice est diagonalisable dans $\R$.
 
 
 \end{document}
