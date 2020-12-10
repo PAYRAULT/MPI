@@ -1,0 +1,109 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+Une matrice $n \times n$ $A$ est diagonalisable ($A = PDP^{-1}$0 si:
+\begin{itemize}
+\item Elle a n vecteurs propres lin\'eairement ind\'ependants, condition pour avoir une matrice $P$ form\'ee des vecteurs propores en colonne qui est inversible. 
+\item Elle a n valeurs propres distinctes, car n valeurs propres g\'en\`erent n vecteurs propres lin\'eairement ind\'ependants
+\item $\sum{dim\ E_{sp_n}(A)} = n$
+\item pour chaque valeur propre $sp$, on a $dim\ E_{sp}(A) = multiplicite\ sp$. La multiplicit\'e de $sp$ le nombre de racine de $sp$.
+\item si $\chi_{A}(X) = P(X)$ et $P(X)$ est un polynome scind\'e (ie $P(X) = C(X-A_1)(X-A_2)\ldots(X-A_{m-1})(X-A_m)$).
+\item si $\chi_{A}(X) = P(X)$ et $P(A)=0$.
+\end{itemize}
+
+
+\newpage
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1}
+On a $\chi_{A}(X) = (X-1)^2(X-2)^2$ avec $A^2-A+I_4 = 0$. La matrice $A$ est diagonalisable ssi on a $\chi_{A}(A) = 0$.
+$$\chi_{A}(A) = (A-1)^2(A-2)^2 = ((A-1)(A-2))^2=(A^2-3A-2I_4)^2 = 0$$
+Donc la matrice $A$ est diagonalisable.\\
+Les valeurs propres $Sp(A)=\{1,2\}$. Comme la matrice $A$ est diagonalisable on a $dim\ E_1(A) + dim\ E_2(A) = 4$ et la multiplicit\'e de chaque valeur propre est 2.(ie $(X-1)^2 = 0$ g\'en\`ere une racie double 1). Donc $dim\ E_1(A)=2$.
+
+
+\subsubsection*{Exercice 2.2}
+On a $\chi_{B}(X) = (X-1)^2(X-2)^2$ avec $B^2-B+I_2 \neq 0$. La matrice $A$ est diagonalisable ssi on a $\chi_{B}(B) = 0$.
+$$\chi_{B}(B) = (B-1)^2(B-2)^2 = ((B-1)(B-2))^2=(B^2-3B-2I_2)^2 \neq 0$$
+Donc la matrice $B$ n'est pas diagonalisable.\\
+
+\subsubsection*{Exercice 2.3}
+On a une matrice $C$ sym\'etrique (ie $C^T = C$) et $\chi_{C}(X) = (X-1)^2(X-2)^2 = \det(XI-C)$. Comme la matrice $C$ est sym\'etrique, elle est diagonalisable. Comme elle est diagonalisable on a $\chi_{C}(C) = 0$
+$$\chi_{C}(C) = (C-1)^2(C-2)^2 = ((C-1)(C-2))^2=(C^2-3C-2I_4)^2 = 0$$
+Donc $C^2-3C-2I_4 = 0$.
+
+QED
+
+\end{document}
+
