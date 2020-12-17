@@ -1,0 +1,195 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+Une matrice $n \times n$ $A$ est diagonalisable ($A = PDP^{-1}$0 si:
+\begin{itemize}
+\item Elle a n vecteurs propres lin\'eairement ind\'ependants, condition pour avoir une matrice $P$ form\'ee des vecteurs propores en colonne qui est inversible. 
+\item Elle a n valeurs propres distinctes, car n valeurs propres g\'en\`erent n vecteurs propres lin\'eairement ind\'ependants
+\item $\sum{dim\ E_{sp_n}(A)} = n$
+\item pour chaque valeur propre $sp$, on a $dim\ E_{sp}(A) = multiplicite\ sp$. La multiplicit\'e de $sp$ le nombre de racine de $sp$.
+\item si $\chi_{A}(X) = P(X)$ et $P(X)$ est un polynome scind\'e (ie $P(X) = C(X-A_1)(X-A_2)\ldots(X-A_{m-1})(X-A_m)$).
+\item si $\chi_{A}(X) = P(X)$ et $P(A)=0$.
+\end{itemize}
+
+
+\newpage
+\subsection*{Exercice 4}
+
+On cherche les $\lambda$ tel que
+$$ \begin{vmatrix} 1 & 1 & 1 & \ldots & 1 \\ 1 & 1 & 1 & \ldots & 1 \\ 1 & 1 & 1 & \ldots & 1 \\ \vdots & \vdots & \vdots & \ldots & \vdots \\ 1 & 1 & 1 & \ldots & 1 \end{vmatrix} . \begin{vmatrix} x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n \end{vmatrix} = \begin{vmatrix} \lambda x_1 \\ \lambda x_2 \\ \lambda x_3 \\ \vdots \\ \lambda x_n \end{vmatrix}$$
+
+$$
+\left\{
+\begin{array}{ll}
+x_1 + x_2 + x_3 + \ldots + x_n & = \lambda x_1 \\
+x_1 + x_2 + x_3 + \ldots + x_n & = \lambda x_2 \\
+x_1 + x_2 + x_3 + \ldots + x_n & = \lambda x_3 \\
+\ldots  & = \lambda x_i \\
+x_1 + x_2 + x_3 + \ldots + x_n & = \lambda x_n \\
+\end{array}
+\right.
+$$
+
+Tous les $x_i$ ne sont pas \'egale \`a 0. Donc une premi\`ere solution est $\lambda = 0$ avec une multiplicit\'e de $n-1$, car cela correspond \`a un syst\`eme de $n$ \'equations et $n$ inconnues.\\
+La seconde solution est lorsque tous les $x_i$ sont \'egaux alors on a $n$ \'equations $n x_i = \lambda x_i$, d'o\`u $\lambda = n$.\\
+
+Par cons\'equent, $E_0(A) = \{(-1,1,0,0,\ldots,0),(-1,0,1,0,\ldots,0), (-1,0,0,1,\ldots,0), \dots (-1,0,0,0,\ldots,1)\}$ et $E_1(A) = \{(1,1,1,1,\dots,1)\}$.\\
+Donc $dim\ E_0(A) = n-1$ et $dim\ E_1(A) = 1$. La matrice est diagonalisable. La matrice $D$ la matrice diagonale compos\'e des valeurs propres de $A$.
+
+$$D=\begin{vmatrix} n & 0 & 0 & \ldots & 0 & 0 \\ 0 & 0 & 0 & \ldots & 0 & 0 \\ 0 & 0 & 0 & \ldots & 0 & 0 \\ \vdots & \vdots & \vdots & \ldots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & 0 & 0 \end{vmatrix}$$
+
+On a $D=B$ et $A=PDP^{-1}$ donc les matrcies $A$ et $B$ sont semblables (ie. $A=PBP^{-1}$).
+
+\subsection*{Exercice 7}
+\subsubsection*{Exercice 7.1}
+On cherche les $\lambda$ tel que
+$$ \begin{vmatrix} t & 1 & 1 & \ldots & 1 \\ 1 & t & 1 & \ldots & 1 \\ 1 & 1 & t & \ldots & 1 \\ \vdots & \vdots & \vdots & \ldots & \vdots \\ 1 & 1 & 1 & \ldots & t \end{vmatrix} . \begin{vmatrix} x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n \end{vmatrix} = \begin{vmatrix} \lambda x_1 \\ \lambda x_2 \\ \lambda x_3 \\ \vdots \\ \lambda x_n \end{vmatrix}$$
+
+$$
+\left\{
+\begin{array}{ll}
+tx_1 + x_2 + x_3 + \ldots + x_n & = \lambda x_1 \\
+x_1 + tx_2 + x_3 + \ldots + x_n & = \lambda x_2 \\
+x_1 + x_2 + tx_3 + \ldots + x_n & = \lambda x_3 \\
+\ldots  & = \lambda x_i \\
+x_1 + x_2 + x_3 + \ldots + tx_n & = \lambda x_n \\
+\end{array}
+\right.
+$$
+
+En prenant $\lambda = t-1$ on a 
+$$
+\left\{
+\begin{array}{ll}
+tx_1 + x_2 + x_3 + \ldots + x_n & = (t-1) x_1 \\
+x_1 + tx_2 + x_3 + \ldots + x_n & = (t-1) x_2 \\
+x_1 + x_2 + tx_3 + \ldots + x_n & = (t-1) x_3 \\
+\ldots  & = \lambda (t-1)x_i \\
+x_1 + x_2 + x_3 + \ldots + tx_n & = (t-1) x_n \\
+\end{array}
+\right.
+$$
+
+$$
+\left\{
+\begin{array}{ll}
+x_1 + x_2 + x_3 + \ldots + x_n & = 0 \\
+x_1 + x_2 + x_3 + \ldots + x_n & = 0 \\
+x_1 + x_2 + x_3 + \ldots + x_n & = 0 \\
+\ldots  & = 0 \\
+x_1 + x_2 + x_3 + \ldots + x_n & = 0 \\
+\end{array}
+\right.
+$$
+
+Syst\`eme de $n$ \'equations \`a $n$ inconnues qui a donc $n$ solutions. La multiplicit\'e de $\lambda$ est $n$. On a $E_{t-1}(A) = \{(-1,1,0,0,\ldots,0),(-1,0,1,0,\ldots,0), (-1,0,0,1,\ldots,0), \dots (-1,0,0,0,\ldots,1)\}$ et $dim\ E_{t-1}(A) = n$. 
+
+\subsubsection*{Exercice 7.2}
+$$Tr(a)=\sum_{i=1}^{n}a_{ii} = n.t$$ 
+Relation avec ls spectre ???
+
+\subsubsection*{Exercice 7.3}
+Oui car $dim\ E_{t-1}(A) = n$.
+
+\subsubsection*{Exercice 7.4}
+On a $A.A^(-1) = I_n$ et $A$ diagonalisable. Ceci fait $PDP^{-1}A^{-1} = I_n$ donc $A^{-1} = P^{-1}DP$. Donc $A$ inversible si $D$ est inversible.
+ 
+La matrice $D$ est la matrice diagonale compos\'e des valeurs propres de $A$. 
+$$D=\begin{vmatrix} t-1 & 0 & 0 & \ldots & 0 & 0 \\ 0 & t-1 & 0 & \ldots & 0 & 0 \\ 0 & 0 & t-1 & \ldots & 0 & 0 \\ \vdots & \vdots & \vdots & \ldots & \vdots & \vdots \\ 0 & 0 & 0 & \ldots & t-1 & 0 \\ 0 & 0 & 0 & \ldots & 0 & t-1 \end{vmatrix}$$
+
+Matrice $D$ est inversible si $a_{ii}$ sont tous diff\'erents de 0. Donc il faut que $t \neq 1$.
+
+
+\subsection*{Exercice 8}
+\subsubsection*{Exercice 8.a}
+On a 2 endomorphismes $u$ et $v$ qui commutent (ie. $u \circ v = c \circ u$). $\lambda$ une valeur propre de $v$ et $E_{\lambda}(v) = \{p \in E, v(p) = \lambda p\}$. Donc calculons $\lambda u(p)$.  $\lambda u(p) = u(\lambda p)$ car $u$ est un endomorphime. $\lambda u(p) = u(v(p))$ car $p$ est un vecteur propre de $v$ de valeur propre $\lambda$. $\lambda u(p) = v(u(p))$. On en d\'eduit que $u(p) \in E_{\lambda}(v)$. Ce qui montre que $E_{\lambda}(v)$ est stable par $u$ (ie. $\forall p \in E_{\lambda}(v), u(p) \in E_{\lambda}(v)$).
+
+
+\subsubsection*{Exercice 8.b}
+Pas compris la question
+
+\subsubsection*{Exercice 8.c}
+Si $u$ et $v$ sont diagonalisables donc ilv existe $E_{\lambda_{u}}(u) = \{p_u, u(p_u) = \lambda_{u} p_u\}$ et $E_{\lambda_{v}}(v) = \{p_v, v(p_v) = \lambda_{v} p_v\}$. Donc
+$$E_{\lambda u}(u) = \{p_u, u(p_u) = \lambda p_u\}$$
+$$E_{\lambda u}(u) = \{p_u, \lambda_{v} u(p_u) = \lambda_{v} \lambda_{u} p_u\}$$
+$$E_{\lambda u}(u) = \{p_u, u(\lambda_{v} p_u) = \lambda_{v} \lambda_{u} p_u\}$$
+???
+
+
+
+QED
+
+\end{document}
+
