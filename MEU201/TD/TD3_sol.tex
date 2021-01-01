@@ -1,0 +1,97 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+Une matrice $n \times n$ $A$ est diagonalisable ($A = PDP^{-1}$0 si:
+\begin{itemize}
+\item Elle a n vecteurs propres lin\'eairement ind\'ependants, condition pour avoir une matrice $P$ form\'ee des vecteurs propores en colonne qui est inversible. 
+\item Elle a n valeurs propres distinctes, car n valeurs propres g\'en\`erent n vecteurs propres lin\'eairement ind\'ependants
+\item $\sum{dim\ E_{sp_n}(A)} = n$
+\item pour chaque valeur propre $sp$, on a $dim\ E_{sp}(A) = multiplicite\ sp$. La multiplicit\'e de $sp$ le nombre de racine de $sp$.
+\item si $\chi_{A}(X) = P(X)$ et $P(X)$ est un polynome scind\'e (ie $P(X) = C(X-A_1)(X-A_2)\ldots(X-A_{m-1})(X-A_m)$).
+\item si $\chi_{A}(X) = P(X)$ et $P(A)=0$.
+\end{itemize}
+
+
+\newpage
+\subsection*{Exercice 3}
+\subsection*{Exercice 3e}
+On a 
+$$e_n = \frac{n!}{n^n} = \frac{1.2.3 \ldots (n-1).n}{1.2.3 \ldots (n-1).n} < \frac{1}{n}.\frac{2}{n}.1.1\ldots 1$$
+On sait que la s\'erie de teme g\'en\'eral $\frac{1}{n^2}$ converge ($\sum_{0}{\infty}{\frac{1}{n^2}}$ converge). En apppliquant le Th\'eor\`eme de Riemann, on d\'eduit que la suite de terme g\'en\'eral $e_n$ converge.
+
+QED
+
+\end{document}
+
