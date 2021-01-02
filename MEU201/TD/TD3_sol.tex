@@ -73,14 +73,22 @@
 \begin{document}
 
 \subsection*{Rappel de cours}
-Une matrice $n \times n$ $A$ est diagonalisable ($A = PDP^{-1}$0 si:
+Croissance ompar\'ee. On a $\forall n_, n_2, n_3 \in \R^{*+}, \forall x \to \infty$:
+$$(\ln x)^{n_1} << x^{n_2} << e^{n_3 x}$$
+
+
+Donc, pour tous r\'eel $a,b > 0$, on a :
 \begin{itemize}
-\item Elle a n vecteurs propres lin\'eairement ind\'ependants, condition pour avoir une matrice $P$ form\'ee des vecteurs propores en colonne qui est inversible. 
-\item Elle a n valeurs propres distinctes, car n valeurs propres g\'en\`erent n vecteurs propres lin\'eairement ind\'ependants
-\item $\sum{dim\ E_{sp_n}(A)} = n$
-\item pour chaque valeur propre $sp$, on a $dim\ E_{sp}(A) = multiplicite\ sp$. La multiplicit\'e de $sp$ le nombre de racine de $sp$.
-\item si $\chi_{A}(X) = P(X)$ et $P(X)$ est un polynome scind\'e (ie $P(X) = C(X-A_1)(X-A_2)\ldots(X-A_{m-1})(X-A_m)$).
-\item si $\chi_{A}(X) = P(X)$ et $P(A)=0$.
+\item $\lim_{x \to +\infty}{\frac{e^ax}{x^b}} = +\infty$. Par exemple, $\lim_{x \to +\infty}{\frac{e^x}{x}} = +\infty$  
+\item $\lim_{x \to -\infty}{|x|^{b}e^ax} = 0$. Par exemple, $\lim_{x \to -\infty}{xe^x} = 0$  
+\item $\lim_{x \to +\infty}{\frac{\ln(x)^a}{x^b}} = 0$. Par exemple, $\lim_{x \to -\infty}{\frac{\ln(x)}{x}} = 0$  
+\item $\lim_{x \to 0^{+}}{x^{b}|\ln(x)|^ax} = 0$. Par exemple, $\lim_{x \to 0^{+}}{x\ln(x)} = 0$  
+\end{itemize}
+
+Quelques r\'esultats connus, sur les s\'eries de terme g\'en\'eral:
+\begin{itemize}
+\item  $\frac{c}{n^s}$ converge pour $s > 1$ et diverge pour $0 \leq s \leq 1$
+\item si le terme g\'en\'eral ne tend pas vers 0, la s\'erie diverge.
 \end{itemize}
 
 
