@@ -73,14 +73,14 @@
 \begin{document}
 
 \subsection*{Rappel de cours}
-Croissance ompar\'ee. On a $\forall n_, n_2, n_3 \in \R^{*+}, \forall x \to \infty$:
+Croissance compar\'ee. On a $\forall n_1, n_2, n_3 \in \R^{*+}, \forall x \to \infty$:
 $$(\ln x)^{n_1} << x^{n_2} << e^{n_3 x}$$
 
 
 Donc, pour tous r\'eel $a,b > 0$, on a :
 \begin{itemize}
 \item $\lim_{x \to +\infty}{\frac{e^{ax}}{x^b}} = +\infty$. Par exemple, $\lim_{x \to +\infty}{\frac{e^x}{x}} = +\infty$  
-\item $\lim_{x \to +\infty}{|x|^{b}e^{-ax}} = 0$. Par exemple, $\lim_{x \to +\infty}{xe^{-x}} = 0$  
+\item $\lim_{x \to +\infty}{x^{b}e^{-ax}} = 0$. Par exemple, $\lim_{x \to +\infty}{xe^{-x}} = 0$  
 \item $\lim_{x \to +\infty}{\frac{\ln(x)^a}{x^b}} = 0$. Par exemple, $\lim_{x \to -\infty}{\frac{\ln(x)}{x}} = 0$  
 \item $\lim_{x \to 0^{+}}{x^{b}|\ln(x)|^ax} = 0$. Par exemple, $\lim_{x \to 0^{+}}{x\ln(x)} = 0$  
 \end{itemize}
@@ -88,9 +88,23 @@ Donc, pour tous r\'eel $a,b > 0$, on a :
 Quelques r\'esultats connus, sur les s\'eries de terme g\'en\'eral:
 \begin{itemize}
 \item  $\frac{c}{n^s}$ converge pour $s > 1$ et diverge pour $0 \leq s \leq 1$
-\item si le terme g\'en\'eral ne tend pas vers 0, la s\'erie diverge.
+\item Si le terme g\'en\'eral ne tend pas vers 0, la s\'erie diverge.
 \item R\`egle d'Alembert, soit la s\'erie de terme g\'en\'eral $u_n$ converge si $\frac{u_{n+1}}{u_{n}} < 1$.
+\item Si $u_n = u1_n + u2_n$ avec $u1_n$ et $u2_n$ convergent, alors $u_n$ converge
+\item Si $u_n = u1_n + u2_n$ avec $u1_n$ ou $u2_n$ diverge, alors $u_n$ diverge
+\item Si $u_n = u1_n + u2_n$ avec $u1_n$ et $u2_n$ divergent, alors $u_n$ diverge que si $u1_n, u2_n \geq 0$
 \end{itemize}
+
+
+
+Donc, pour tous r\'eel $a,b > 0$, on a :
+\begin{itemize}
+\item $\int_{c}^{+\infty}{\frac{e^{ax}}{x^b}}$ diverge. Par exemple, $\int_{c}^{+\infty}{\frac{e^{x}}{x}}$ diverge. 
+\item $\int_{c}^{+\infty}{x^{b}e^{-ax}}$ converge. Par exemple, $\int_{c}^{+\infty}{xe^{-x}}$ converge.  
+\item $\int_{c}^{+\infty}{\frac{\ln(x)^a}{x^b}}$ converge. Par exemple, $\int_{c}^{+\infty}{\frac{\ln(x)}{x}}$ converge.
+\item $\int_{c}^{+\infty}f(x) = \int_{c}^{d}f(x) + \int_{d}^{+\infty}f(x)$.
+\end{itemize}
+
 
 
 \newpage
