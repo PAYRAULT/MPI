@@ -1,0 +1,141 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+Croissance compar\'ee. On a $\forall n_1, n_2, n_3 \in \R^{*+}, \forall x \to \infty$:
+$$(\ln x)^{n_1} << x^{n_2} << e^{n_3 x}$$
+
+
+Donc, pour tous r\'eel $a,b > 0$, on a :
+\begin{itemize}
+\item $\lim_{x \to +\infty}{\frac{e^{ax}}{x^b}} = +\infty$. Par exemple, $\lim_{x \to +\infty}{\frac{e^x}{x}} = +\infty$  
+\item $\lim_{x \to +\infty}{x^{b}e^{-ax}} = 0$. Par exemple, $\lim_{x \to +\infty}{xe^{-x}} = 0$  
+\item $\lim_{x \to +\infty}{\frac{\ln(x)^a}{x^b}} = 0$. Par exemple, $\lim_{x \to -\infty}{\frac{\ln(x)}{x}} = 0$  
+\item $\lim_{x \to 0^{+}}{x^{b}|\ln(x)|^ax} = 0$. Par exemple, $\lim_{x \to 0^{+}}{x\ln(x)} = 0$  
+\end{itemize}
+
+Quelques r\'esultats connus, sur les s\'eries de terme g\'en\'eral:
+\begin{itemize}
+\item  $\frac{c}{n^s}$ converge pour $s > 1$ et diverge pour $0 \leq s \leq 1$
+\item Si le terme g\'en\'eral ne tend pas vers 0, la s\'erie diverge.
+\item R\`egle d'Alembert, soit la s\'erie de terme g\'en\'eral $u_n$ converge si $\frac{u_{n+1}}{u_{n}} < 1$.
+\item Si $u_n = u1_n + u2_n$ avec $u1_n$ et $u2_n$ convergent, alors $u_n$ converge
+\item Si $u_n = u1_n + u2_n$ avec $u1_n$ ou $u2_n$ diverge, alors $u_n$ diverge
+\item Si $u_n = u1_n + u2_n$ avec $u1_n$ et $u2_n$ divergent, alors $u_n$ diverge que si $u1_n, u2_n \geq 0$
+\end{itemize}
+
+
+
+Donc, pour tous r\'eel $a,b > 0$, on a :
+\begin{itemize}
+\item $\int_{c}^{+\infty}{\frac{e^{ax}}{x^b}}$ diverge. Par exemple, $\int_{c}^{+\infty}{\frac{e^{x}}{x}}$ diverge. 
+\item $\int_{c}^{+\infty}{x^{b}e^{-ax}}$ converge. Par exemple, $\int_{c}^{+\infty}{xe^{-x}}$ converge.  
+\item $\int_{c}^{+\infty}{\frac{\ln(x)^a}{x^b}}$ converge. Par exemple, $\int_{c}^{+\infty}{\frac{\ln(x)}{x}}$ converge.
+\item $\int_{c}^{+\infty}f(x) = \int_{c}^{d}f(x) + \int_{d}^{+\infty}f(x)$.
+\end{itemize}
+
+
+
+\newpage
+\subsection*{Exercice 3}
+\subsection*{Exercice 3-e}
+On a 
+$$e_n = \frac{n!}{n^n} = \frac{1.2.3 \ldots (n-1).n}{1.2.3 \ldots (n-1).n} < \frac{1}{n}.\frac{2}{n}.1.1\ldots 1 = \frac{2}{n^2}$$
+On sait que la s\'erie de terme g\'en\'eral $\frac{1}{n^2}$ converge ($\sum_{0}^{\infty}{\frac{1}{n^2}}$ converge). En appliquant le Th\'eor\`eme de Riemann, on d\'eduit que la suite de terme g\'en\'eral $e_n$ converge.
+
+\subsection*{Exercice 3-f}
+On a 
+$$f_n = \frac{1}{n^2 \ln n} < \frac{1}{n^3}$$
+On sait que la s\'erie de terme g\'en\'eral $\frac{1}{n^3}$ converge ($\sum_{0}^{\infty}{\frac{1}{n^3}}$ converge). En appliquant le Th\'eor\`eme de Riemann, on d\'eduit que la suite de terme g\'en\'eral $f_n$ converge.
+
+\subsection*{Exercice 3-g}
+On a 
+$$f_n = \frac{2^n+3^n+n^4}{n5^n+7n^7+2}$$
+
+\subsection*{Exercice 3-h}
+On a 
+$$f_n = \left( \frac{n-1}{2n+1} \right)^n = \left( \frac{1-\frac{1}{n}}{2+\frac{1}{n}} \right)^n < \left( \frac{1}{2} \right)^n = \frac{1}{2^n}$$
+C'est une s\'erie g\'eome\'etrique de raison $\frac{1}{2}$ et de premier terme -1. Donc $\sum_{0}^{\infty}\frac{1}{2^n} = -\frac{1-\frac{1}{2^n}}{1-\frac{1}{2}} = -2(1-\frac{1}{2^n})$. Donc la suite de terme g\'en\'eral $h_n$ converge.
+
+\subsection*{Exercice 4}
+\subsection*{Exercice 4-i}
+On a 
+$$i_n = \left( \frac{3n+1}{n+5} \right)^n = \left( \frac{3+\frac{1}{n}}{1+\frac{5}{n}} \right)^n < 3^n = $$
+C'est une s\'erie g\'eome\'etrique de raison $3$ et de premier terme $\frac{1}{5}$. Donc $\sum_{0}^{\infty} 3^n = \frac{1}{5}\frac{1-3^n}{1-3} = -\frac{1}{5}\frac{1-3^n}{2}$. Donc la suite de terme g\'en\'eral $i_n$ diverge.
+
+
+QED
+
+\end{document}
+

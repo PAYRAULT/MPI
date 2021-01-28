@@ -1,0 +1,206 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{hyperref} 
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Un groupe est 
+\begin{itemize}
+\item 
+\item 
+\item 
+\end{itemize}  
+\end{defn}
+
+\begin{defn}
+Un anneau est un ensemble $A$ muni de deux op\'erations (appel\'ees addition $+$ et multiplication $.$), tel que $\forall a, b, c \in A$
+\begin{itemize}
+\item Addition commutative, $a+b = b+a$
+\item Addition associative, $(a+b)+c = a+(b+c)$
+\item Addition distributive par rapport a la multiplication, $(a+b).c = a.c + b.c$
+\item Multiplication associative, $(a.b).c = a.(b.c)$ 
+\item \'El\'ement neutre pour l'addition, not\'e $0$, tel que $a+0=0+a=a$
+\item tout \'el\'ement poss\`ede un oppos\'e not\'e $-a$ tel que $a+(-a) = (-a) + a = 0$
+\item \'El\'ement neutre pour la multiplication, not\'e $1$, tel que $a.1=1.a=a$
+\end{itemize}  
+Lorsque la multiplication est commutative $a.b=b.a$, l'anneau est dit commutatif.
+\end{defn}
+
+
+\newpage
+\subsection*{Exercice 1}
+$x, y$ sont nilpotents, donc $x^n= y^n = 0$.
+\begin{itemize}
+\item $(x.y)^{n+m}= (x.y).(x.y)\ldots (x.y) = x.x\ldots.x.y.y\ldots y = x^n.x^m.y^n.y^m = 0.x^m.y^n.0 = 0$ car la multiplication est associative et commutative.
+\item $(x+y)^{n+m} = x^{n+m} + k_1x^{n+m-1}y + k_2x^{n+m-2}y^{2} + \ldots + k_{m+n-1}xy^{n+m-1} + y^{n+m}$. l'addition des puissances de $x$ et de $y$ est \'egale \`a $n+m$. Donc soit $x$ est \'elev\'e `a une puissance $\geq n$, soit $y$ est \'elev\'e `a une puissance $\geq m$. Par cons\'equent, $(x+y)^{n+m} = 0.x^m + k_1.0.x^{m-1}.y + k_2.0.x^{m-2}.y^{2}+ \ldots k_{m+n-1}xy^{n-1}y^{m} + y^{n}y^{m} = 0+0+ \ldots + 0 = 0$.
+\item pour que $1-x$ soit inversible, il faut trouver un $y$ tel que $(1-x).y = 1$. Donc $y - yx = 1$. Si on prends $y=x^{n-1}$ on a $x^{n-1}+x.x^{n-1} = x^{n-1}+x^{n} = x^{n-1}$. Donc il reste $x^{n-1}$. D'un autre c\^ot\'e, si on prends $y=1$, on a $1+1.x = 1$. Il faut donc \'eliminer $x^{n-1}$ et $x$. Une facon de faire est de prendre $y = \sum_{k=0}^{n-1}x^{k}$. Donc $(1-x)\sum_{k=0}^{n-1}x^{n} = 1+x+x^2+\ldots+x^{n-1}-(x+x^2+\ldots+x^{n}) = 1+x^{n} = 1$.
+\end{itemize}
+
+
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1}
+$A$ est un anneau si:
+\begin{itemize}
+\item Addition is commutative, $v_1, v_2 \in A, v_1 + v_2 = (a_1 + b_1\sqrt{2}) + (a_2 + b_2\sqrt{2}) = (a_2 + b_2\sqrt{2}) + (a_1 + b_1\sqrt{2}) = v_2 + v_1$
+\item Addition est associative, $v_1, v_2, v_3 \in A, (v_1 + v_2) + v_3 = ((a_1 + b_1\sqrt{2}) + (a_2 + b_2\sqrt{2})) + (a_3 + b_3\sqrt{2}) = (a_1 + b_1\sqrt{2}) + (a_2 + b_2\sqrt{2}) + (a_3 + b_3\sqrt{2}) = (a_1 + b_1\sqrt{2}) + ((a_2 + b_2\sqrt{2}) + (a_3 + b_3\sqrt{2})) = v_1 + (v_2 + v_3)$
+\item Addition est distributive. $v_1, v_2, v_3 \in A, (v_1 + v_2).v_3 = ((a_1 + b_1\sqrt{2})+(a_2 + b_2\sqrt{2})).(a_3 + b_3\sqrt{2}) = ((a_1 + b_1\sqrt{2}).(a_3 + b_3\sqrt{2})) + ((a_2 + b_2\sqrt{2}).(a_3 + b_3\sqrt{2})) = v_1.v_3 + v_2.v_3$
+\item \'El\'ement neutre 0. $v_1 \in A, v_1 + 0 = (a_1 + b_1\sqrt{2}) + 0 = (a_1 + b_1\sqrt{2}) = v_1$.
+\item \'El\'ement oppos\'e $(-a)+ (-b\sqrt{2})$. $v_1 + ((-a)+ (-b\sqrt{2})) = (a +b\sqrt{2}) + (-a -b\sqrt{2}) = (a+(-a)) +(b\sqrt{2} + (-b\sqrt{2})) = 0+0 = 0$
+\item poss\`ede un \'el\'ement neutre pour la multiplication. $v_1 * e = v_1$. donc $(a_1+b_1\sqrt{2}).(a_2+b_2\sqrt{2}) = a_1 + b_1\sqrt{2}$. donc $(a_1a_2+2b_1b_2) + (a_1b_2+b_1a_2)\sqrt{2} = a_1 + b_1\sqrt{2}$. Comme $\sqrt{2}$ est irrationnel, on a $(a_1a_2+2b_1b_2) = a_1$ et $a_1b_2+b_1a_2 = b_1$. On a $a_2=1$ et $b_2=0$ qui est une solution. Donc $1+0\sqrt{2} = 1$ est un \'el\'ement neutre.
+\end{itemize}
+
+\subsubsection*{Exercice 2.2}
+$$N(xy) = N((a_1 + b_1\sqrt{2})(a_1 + b_1\sqrt{2})) = N((a_1b_1+2b_1b_2)+(b_1a_2+b_2a_1)\sqrt{2}) = (a_1b_1+2b_1b_2)^2 - 2(b_1a_2+b_2a_1)^2$$
+$$ = ((a_1b_1)^2 -4(a_1b_1a_2b_2) + (2b_1b_1)^2) - 2((b_1a_2)^2+2(a_1b_1a_2b_2+(b_2a_1)^2) = a_1^2b_1^2 - 2a_1^2b_1^2 - 2b_1^2a_2^2 + 4b_1^2b_2^2 $$
+$$= (a_1^2-2b_1^2)(a_2^2-2b_2^2) = N(x)N(y)$$
+
+\subsubsection*{Exercice 2.3}
+Un \'el'ement $x \in A$ est inversible si $\exists y \in A, xy = 1$. $(a_1+b_1\sqrt{2}).(a_2+b_2\sqrt{2}) = 1$, donc $(a_1a_2+2b_1b_2) + (a_1b_2+a_2b_1)\sqrt{2} = 1$
+
+$$
+\left\{ \begin{array}{ll}
+a_1a_2+2b_1b_2 &= 1\\
+a_1b_2+a_2b_1 &= 0
+\end{array}
+\right.
+$$
+
+$$
+\left\{ \begin{array}{ll}
+a_1a_2+2b_1b_2 &= 1\\
+b_2 &= -a_2\frac{b_1}{a_1}
+\end{array}
+\right.
+$$
+
+$$
+\left\{ \begin{array}{ll}
+a_1a_2-2\frac{b_1^2a_2}{a_1} &= 1\\
+b_2 &= -a_2\frac{b_1}{a_1}
+\end{array}
+\right.
+$$
+
+$$
+\left\{ \begin{array}{ll}
+a_1^2a_2-2b_1^2a_2 &= a_1\\
+b_2 &= -a_2\frac{b_1}{a_1}
+\end{array}
+\right.
+$$
+
+$$
+\left\{ \begin{array}{ll}
+a_2 &= \frac{a_1}{a_1^2-2b_1^2} = frac{1}{N(x)}\\
+b_2 &= -a_2\frac{b_1}{a_1}
+\end{array}
+\right.
+$$
+
+$$
+\left\{ \begin{array}{ll}
+a_2 &= \frac{a_1}{a_1^2-2b_1^2} = \frac{a_1}{N(x)}\\
+b_2 &= -\frac{b_1}{a_1^2-2b_1^2} = -\frac{b_1}{N(x)}\\
+\end{array}
+\right.
+$$
+
+Mais il faut que $a_2, b_2 \in \Z$ donc $N(x) = 1$ ou $N(x) = -1$.
+
+\subsection*{Exercice 3}
+Ensemble des nilpotents de $A$ est d\'efini par $NP = \{x \in A, \exists n \geq 1, x^n = 0\}$. Un d\'eal de $A$ est d\'efini comme un sous-ensemble de $I$ de $A$ tel que $\forall x \in A, \forall y \in I, xy \in I$. Montrons que $NP$ est un id\'eal de $A$. Si $NP$ est in id\'eal de $A$ alors $\forall x \in A, \forall y \in NP, xy \in NP$. Donc prenons $y \in NP$, donc $\exists n \geq 1, y^n = 0$ et un $z=xy$. $z \in NP,\ si\ \exists k \geq 1, z^k = 0$ ou $z \in NP,\ si\ \exists k \geq 1, (xy)^k = 0$. En prenant $k=n$ on a $(xy)^k = (xy)^n = x^ny^n = x^n.0 = 0$. Donc $z \in NP$. par ons\'equent l'ensemble des nilpotents de $A$ est un id\'eal de $A$. 
+
+\subsection*{Exercice 4}
+\url{http://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/arithm/znz&type=fexo}
+Exercice 1.
+
+\subsection*{Exercice 5}
+\url{http://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/arithm/znz&type=fexo}
+Exercice 2.
+
+\subsection*{Exercice 6}
+\url{http://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/arithm/znz&type=fexo}
+Exercice 5.
+
+
+\subsection*{Exercice 8}
+\url{http://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/arithm/znz&type=fexo}
+Exercice 15.
+
+
+QED
+
+
+\end{document}
+
