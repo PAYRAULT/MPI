@@ -10,6 +10,7 @@
 \usepackage{mathrsfs}
 \usepackage{color}
 \usepackage{pgfplots}
+\usepackage{bbm}
 
 %Here I define some theorem styles and shortcut commands for symbols I use often
 \theoremstyle{definition}
@@ -76,9 +77,9 @@
 \subsection*{Rappel de cours}
 
 \begin{defn}
-La fonction indicatrice $1_A$ sur l'ensemble $A$ est d\'efinie comme:
+La fonction indicatrice $\mathbbm{1}_A$ sur l'ensemble $A$ est d\'efinie comme:
 $$
-1_A : A \to \{0,1\}, x \to 1_A(x) = 
+\mathbbm{1}_A : A \to \{0,1\}, x \to \mathbbm{1}_A(x) = 
 \left\{ 
 \begin{array}{l}
 0, \text{ si } x \notin A \\
@@ -92,8 +93,8 @@ $$
 
 \newpage
 \subsection*{Exercice 1}
-On a $1_{A^c} = 1 - 1_{A}$ car si $1_A(c) = 1$ alors $1_{A^c} = 0$ car quand $x \in A$ alors $x \notin A^c$ (m\^me raisonnement avec $1_A(x) = 0$), et $1_{A \cup B} = 1_A + 1_B - 1_A.1_B$ donc
-$$1_{A^c \cup B^c} = 1_{A^c} + 1_{B^c} - 1_{A^c}.1_{B^c} = (1 - 1_{A}) + (1 - 1_{B}) - (1 - 1_{A}).(1 - 1_{B}) =  1 - 1_{A} + 1 - 1_{B} - (1 - 1_{A} - 1_{B} + 1_{A}.1_{B}) = 1 - 1_{A}.1_{B}$$ 
+On a $\mathbbm{1}_{A^c} = 1 - \mathbbm{1}_{A}$ car si $\mathbbm{1}_{A}(x) = 1$ alors $\mathbbm{1}_{A^c}(x) = 0$ car quand $x \in A$ alors $x \notin A^c$ (m\^eme raisonnement avec $1_A(x) = 0$), et $\mathbbm{1}_{A \cup B} = \mathbbm{1}_A + \mathbbm{1}_B - \mathbbm{1}_A.\mathbbm{1}_B$ donc
+$$\mathbbm{1}_{A^c \cup B^c} = \mathbbm{1}_{A^c} + \mathbbm{1}_{B^c} - \mathbbm{1}_{A^c}.\mathbbm{1}_{B^c} = (1 - \mathbbm{1}_{A}) + (1 - \mathbbm{1}_{B}) - (1 - \mathbbm{1}_{A}).(1 - \mathbbm{1}_{B}) =  1 - \mathbbm{1}_{A} + 1 - \mathbbm{1}_{B} - (1 - \mathbbm{1}_{A} - \mathbbm{1}_{B} + \mathbbm{1}_{A}.\mathbbm{1}_{B}) = 1 - \mathbbm{1}_{A}.\mathbbm{1}_{B}$$ 
 
 
 QED
