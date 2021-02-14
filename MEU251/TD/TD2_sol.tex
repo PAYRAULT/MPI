@@ -85,7 +85,8 @@ $$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in I, \forall n > n_0, |(
 \end{defn}
 
 \begin{defn}
-\end{defn}
+On dit que la s\'erie de fonctions $\sum_{n\geq0}U_n(x)$ converge \textbf{normalement} sur  $I$ si la s\'erie $\sum_{n\geq0}||U_n(x)||_{\infty}$ est convergente.
+ \end{defn}
 
 
 \newpage
@@ -112,6 +113,23 @@ on a $f(0) = 0$ et
 $$f(\frac{2}{\sqrt{n}}) = n.\frac{4}{n}.e^{-\frac{2}{\sqrt{n}}.\sqrt{n}} = 4.e^{-2} = 0.5413$$. 
 
 Donc $sup_{x\in[0,+\infty[}u_n(x) = 4.e^{-2}$, comme le sup est constant, la s\'erie de fonction $u_n$ ne converge pas.
+
+
+\subsubsection*{Exercice 2.3}
+
+
+\subsection*{Exercice 3}
+\subsubsection*{Exercice 3.1}
+On a $\lim_{n \to \infty}u_n = \lim_{n \to \infty}\frac{1}{n^2+x^2} = 0$ donc en prenant $f(x) =0$ on a $u_n$ qui converge vers $f(x)$.
+ 
+\subsubsection*{Exercice 3.1}
+$\forall x_1, x_2, x_1 < x_2$ calculons $S(x_1) > S(x_2)$ (ou $S(x_1)-S(x_2) > 0$.
+$$S(x_1)-S(x_2) = \sum_{N \geq 1} u_n(x_1) - \sum_{N \geq 1} u_n(x_2) = \sum_{N \geq 1} \frac{1}{n^2+x_1^2} - \sum_{N \geq 1} \frac{1}{n^2+x_2^2}$$
+$$= \sum_{N \geq 1} \left(\frac{1}{n^2+x_1^2} - \frac{1}{n^2+x_2^2}\right) = \sum_{N \geq 1}\frac{n^2+x_2^2 - n^2-x_1^2}{(n^2+x_1^2)(n^2+x_2^2)}$$ 
+$$= \sum_{N \geq 1}\frac{x_2^2 - x_1^2}{(n^2+x_1^2)(n^2+x_2^2)} > 0$$
+
+
+Pour $x \in \R^{+}$, on a $ 0 < \frac{1}{x^2+n^2} \leq \frac{1}{n^2}$ et la fonction $\frac{1}{n^2}$ converge.
 
 
 QED
