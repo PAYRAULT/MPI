@@ -1,0 +1,120 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Soit $I$ un intervalle de $\R$,  $(U_n)$ une suite de fonctions d\'efinies sur $I$ et $f$ une fonction d\'efinie sur I.
+On dit que $(u_n)$ converge \textbf{simplement} vers $f$ sur $I$ si pour tout $x \in I$, la suite $(U_n(x))$ converge vers $f(x)$.
+\end{defn}
+
+\begin{defn}
+Soit $I$ un intervalle de $\R$,  $(U_n)$ une suite de fonctions d\'efinies sur $I$ et $f$ une fonction d\'efinie sur I.
+On dit que $(u_n)$ converge \textbf{uniform\'ement} vers $f$ sur $I$ si
+$$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in I, \forall n > n_0, |(U_n(x)) - f(x)| < \epsilon$$
+\end{defn}
+
+\begin{defn}
+\end{defn}
+
+
+\newpage
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1}
+Il faut trouver une fonction $f(x)$ tel que $\forall x \in I$, la suite $(U_n(x))$ converge vers $f(x)$. On a $\forall n \in \N, (U_n(0)) = 0$, il faut v\'erifier si la suite de $(U_n)$ converge et trouver la fonction de convergence. Comme d'habitude, trouver une borne sup\'erieure qui converge. 
+\begin{enumerate}
+\item Trouver une suite de fonction $(V_n)$ et exprimer $(V_n)$ en fonction de $(U_n)$. Prendre la fonction $(V_n)$ tel que $V_n = g(x,n)U_n$ et $\frac{1}{g(x,n)}$ converge.
+\item V\'erifier que $\lim_{n \to +\infty} V_n(x) = 0$ et que $V_n(x)$ est positive donc il existe un $c > 0$, tel que $\forall n>n_0, 0 \leq (V_n) \leq c$.
+\item Remplacer $(V_n)$ dans l'expression, simplifier et regarder si la borne sup\'erieure converge.
+\end{enumerate}
+
+Prenons $V_n = U_n.\frac{n^2}{x^2}$, donc $V_n = \frac{n^3}{e^{x\sqrt{n}}}$\\
+On a $\lim_{n \to +\infty} V_n(x) = 0$ et $\forall x \in [0,+\infty[, V_n(x) \geq 0$ et prenons $c=1$. Donc
+$$0 \leq V_n(x) \leq 1$$
+$$0 < U_n(x)\frac{n^2}{x^2} < 1$$
+$$0 < U_n(x) < \frac{x^2}{n^2}$$
+Comme la borne sup\'erieure converge alors $(U_n)$ converge aussi.
+
+
+\subsubsection*{Exercice 2.2}
+La d\'eriv\'ee de $\left(nx^2.e^{-x\sqrt{n}}\right)' = -x(n^{3/2}x-2n)e^{-x\sqrt{n}}$. La d\'eriv\'ee s'annule en 2 points $x=0$ et $x=\frac{2}{\sqrt{n}}$.
+on a $f(0) = 0$ et 
+$$f(\frac{2}{\sqrt{n}}) = n.\frac{4}{n}.e^{-\frac{2}{\sqrt{n}}.\sqrt{n}} = 4.e^{-2} = 0.5413$$. 
+
+Donc $sup_{x\in[0,+\infty[}u_n(x) = 4.e^{-2}$, comme le sup est constant, la s\'erie de fonction $u_n$ ne converge pas.
+
+
+QED
+
+\end{document}
+
