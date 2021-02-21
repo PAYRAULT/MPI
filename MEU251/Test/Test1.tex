@@ -144,6 +144,22 @@ La fonction $f_{n}(x)$ croit entre $[0,\frac{1}{n}[$ jusqu'\`a la valeur $f_n(\f
 On a $\sup_{x \in [0,+\infty]}|f_n(x)| = \frac{1}{ne}$, donc il $n_{\epsilon}$  existe et doit \^etre sup\'erieure \`a $\frac{1}{e.\epsilon}$. Par cons\'equent, la fonction $f_n(x)$ converge uniform\'ement vers la fonction $0$. 
 
 
+
+\subsection*{Exercice 4}
+Pour $x \in [-r,r]$ avec $r > 0$ on a $0 \geq f_n(x) \geq ln\left(1+\frac{r^2}{n^2}\right)$. On va montrer que 
+$$ln\left(1+\frac{r^2}{n^2}\right) \geq \frac{r^2}{n^2}$$
+$$1+\frac{r^2}{n^2} \geq e^{\frac{r^2}{n^2}} = 1 + \frac{r^2}{n^2} + \frac{r^4}{2n^4} + O(\frac{r^2}{n^2})$$
+$$0 \geq \frac{r^4}{2n^4} + O(\frac{r^2}{n^2})$$
+
+Donc $x \in [-r,r]$ avec $r > 0$ on a $0 \geq f_n(x) \geq ln\left(1+\frac{r^2}{n^2}\right) \geq \frac{r^2}{n^2}$ et on sait que la s\'erie de fonction $\frac{r^2}{n^2}$ converge normalement. Donc s\'erie de fonction $f_n(x) = ln(1+\frac{x^2}{n^2}$ converge normalement pour tout $x \in [-r, r]$.\\
+
+Les fonctions $f_n$ sont continues sur $x \in [-r,r]$ (assemblage de fonctions continues) et la s\'erie de fonctions $S = \sum_{n |geq 1}{f_n(x)}$ converge normalement pour $x \in [-r,r]$. On en d\'eduit que $S$ est continue pour $x \in [-r,r]$. 
+
+
+\subsection*{Exercice 5}
+ 
+
+
 QED
 
 \end{document}
