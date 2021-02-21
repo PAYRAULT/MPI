@@ -1,0 +1,125 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Soit $I$ un intervalle de $\R$,  $(U_n)$ une suite de fonctions d\'efinies sur $I$ et $f$ une fonction d\'efinie sur I.
+On dit que $(u_n)$ converge \textbf{simplement} vers $f$ sur $I$ si pour tout $x \in I$, la suite $(U_n(x))$ converge vers $f(x)$.
+\end{defn}
+
+\begin{defn}
+Soit $I$ un intervalle de $\R$,  $(U_n)$ une suite de fonctions d\'efinies sur $I$ et $f$ une fonction d\'efinie sur I.
+On dit que $(u_n)$ converge \textbf{uniform\'ement} vers $f$ sur $I$ si
+$$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in I, \forall n > n_0, |(U_n(x)) - f(x)| < \epsilon$$
+\end{defn}
+
+\begin{defn}
+On dit que la s\'erie de fonctions $\sum_{n\geq0}U_n(x)$ converge \textbf{normalement} sur  $I$ si la s\'erie $\sum_{n\geq0}||U_n(x)||_{\infty}$ est convergente.
+ \end{defn}
+
+
+\newpage
+\subsection*{Exercice 1}
+Montrons que la fonction $f_n(x)=\frac{ne^{-x}+x^2}{n+x}$ converge simplement pour $x \in [0,1]$.
+$$\lim_{n \to \infty}\frac{ne^{-x}+x^2}{n+x} = \lim_{n \to \infty}\frac{ne^{-x}+1}{n+1} = \lim_{n \to \infty}\frac{ne^{-x}}{n} = e^{-x}$$
+
+La fonction $f_n(x)$ converge simplement vers $f(x) = e^{-x}$. Montrons maintenant que $f_n(x)$ converge uniform\'ement. Il faut que $\forall \epsilon > 0, \exists n_{\epsilon} \in \N, \forall n \in \N, (n \geq n_{\epsilon} \implies \sup_{x \in [0,1]} |f_n(x)-f(x)| < \epsilon)$.
+Calculons 
+$$|f_n(x)-f(x)| = \left|\frac{ne^{-x}+x^2}{n+x} - e^{-x}\right| = \left|\frac{ne^{-x}+x^2-(n+x)e^{-x}}{n+x}\right| = \left|\frac{x^2-xe^{-x}}{n+x}\right| < \frac{2}{n}$$
+car $n+x \geq n$ et $|x^2-xe^{-x}| < 2$ comme $x^2 \in [0,1]$ et $xe^{-x} \in [0, \frac{1}{e}]$.\\ 
+Prenons $\sup_{x \in [0,1]} |f_n(x)-f(x)| = \frac{2}{n}$, donc $n_{\epsilon}$ existe et doit e\^tre sup\'erieur \`a $\frac{2}{\epsilon}$.
+
+
+\subsection*{Exercice 2}
+\subsection*{Exercice 2.1}
+Montrons que la fonction $f_n(x)=\ln\left(x+\frac{1}{n}\right)$ converge simplement pour $x \in ]0,+\infty]$.
+$$\lim_{n \to \infty}\ln\left(x+\frac{1}{n}\right) = \ln\left(x+0\right) = \ln(x)$$
+
+La fonction $f_n(x)$ converge simplement vers $f(x) = \ln(x)$. Montrons maintenant que $f_n(x)$ converge uniform\'ement sur $[a,+\infty]$. Il faut que $\forall \epsilon > 0, \exists n_{\epsilon} \in \N, \forall n \in \N, (n \geq n_{\epsilon} \implies \sup_{x \in [a,+\infty]} |f_n(x)-f(x)| < \epsilon)$.
+Calculons 
+$$|f_n(x)-f(x)| = \left|\ln\left(x+\frac{1}{n}\right) - \ln(x)\right| = \left|\ln\left(\frac{x+\frac{1}{n}}{x}\right)\right| = \left|\ln\left(1 + \frac{1}{nx}\right)\right| \leq \ln\left(1 + \frac{1}{na}\right)$$
+car $\frac{1}{na} \geq \frac{1}{nx}$ pour $x \in [a,+\infty]$.\\ 
+Prenons $\sup_{x \in [a,+\infty]} |f_n(x)-f(x)| = \ln\left(1 + \frac{1}{na}\right)$, donc $n_{\epsilon}$ existe et doit e\^tre tel que $\ln\left(1 + \frac{1}{n_{\epsilon}a}\right) < \epsilon$.
+
+\subsection*{Exercice 2.2}
+Non, car pour $x$ proche de 0, il n'existe pas de borne sup\'erieure pour $|f_n(x)-f(x)| = \left|\ln\left(1 + \frac{1}{nx}\right)\right|$.
+
+
+
+
+
+QED
+
+\end{document}
+
