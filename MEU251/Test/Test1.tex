@@ -115,8 +115,33 @@ Prenons $\sup_{x \in [a,+\infty]} |f_n(x)-f(x)| = \ln\left(1 + \frac{1}{na}\righ
 \subsection*{Exercice 2.2}
 Non, car pour $x$ proche de 0, il n'existe pas de borne sup\'erieure pour $|f_n(x)-f(x)| = \left|\ln\left(1 + \frac{1}{nx}\right)\right|$.
 
+\subsection*{Exercice 3}
+\subsection*{Exercice 3.1}
+Quand $x=0$, on a $f_n(x) = 0$ pour tout $n \geq 1$.\\
+Pour $x>0$, on a 
+$$\lim_{n \to \infty} xe^{-nx} = \lim_{n \to \infty} \frac{x}{e^{nx}} = 0$$
+On en d\'eduit que la fonction $f_n(x)$ converge simplement vers la fonction 
+$$f(x) = 
+\left\{
+\begin{array}{l l}
+0 & x = 0\\
+0 & x \in ]0, +\infty]\\
+\end{array}
+\right. 
+= 0
+$$
 
+\subsection*{Exercice 3.2}
+Pour que la fonction $f_n(x)$ converge uniform\'ement sur $[0,+\infty]$. Il faut que $\forall \epsilon > 0, \exists n_{\epsilon} \in \N, \forall n \in \N, (n \geq n_{\epsilon} \implies \sup_{x \in [0,+\infty]} |f_n(x)-0| < \epsilon)$. \\
 
+Cela revient \`a trouver si la fonction $f_n(x)$ a un maximum pour $x \in [0,+\infty]$.\\
+La fonction est continue et positive sur $[0,\infty]$, cherchons si il existe un maximum.\\
+
+Calculons $f_{n}'(x) = e^{-x}(1-nx)$. on a $f_{n}'(x)$ qui s'annule lorsque $x = \frac{1}{n}$.\\
+
+La fonction $f_{n}(x)$ croit entre $[0,\frac{1}{n}[$ jusqu'\`a la valeur $f_n(\frac{1}{n}) = \frac{1}{ne}$ et d\'ecroit ensuite pour $x \in ]\frac{1}{n}, \infty]$. Donc il existe une valeur sup\'erieure $\frac{1}{ne}$. \\
+
+On a $\sup_{x \in [0,+\infty]}|f_n(x)| = \frac{1}{ne}$, donc il $n_{\epsilon}$  existe et doit \^etre sup\'erieure \`a $\frac{1}{e.\epsilon}$. Par cons\'equent, la fonction $f_n(x)$ converge uniform\'ement vers la fonction $0$. 
 
 
 QED
