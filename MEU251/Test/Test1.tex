@@ -88,6 +88,10 @@ $$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in I, \forall n > n_0, |(
 On dit que la s\'erie de fonctions $\sum_{n\geq0}U_n(x)$ converge \textbf{normalement} sur  $I$ si la s\'erie $\sum_{n\geq0}||U_n(x)||_{\infty}$ est convergente.
  \end{defn}
 
+\begin{defn}
+On dit que la s\'erie de fonctions $\sum_{n\geq0}U_n(x)$ converge \textbf{normalement} sur  $I$ si la s\'erie $\sum_{n\geq0}||U_n(x)||_{\infty}$ est convergente.
+\end{defn}
+
 
 \newpage
 \subsection*{Exercice 1}
@@ -146,18 +150,50 @@ On a $\sup_{x \in [0,+\infty]}|f_n(x)| = \frac{1}{ne}$, donc il $n_{\epsilon}$  
 
 
 \subsection*{Exercice 4}
-Pour $x \in [-r,r]$ avec $r > 0$ on a $0 \geq f_n(x) \geq ln\left(1+\frac{r^2}{n^2}\right)$. On va montrer que 
-$$ln\left(1+\frac{r^2}{n^2}\right) \geq \frac{r^2}{n^2}$$
-$$1+\frac{r^2}{n^2} \geq e^{\frac{r^2}{n^2}} = 1 + \frac{r^2}{n^2} + \frac{r^4}{2n^4} + O(\frac{r^2}{n^2})$$
-$$0 \geq \frac{r^4}{2n^4} + O(\frac{r^2}{n^2})$$
+Pour $x \in [-r,r]$ avec $r > 0$ on a $0 \leq f_n(x) \leq \ln\left(1+\frac{r^2}{n^2}\right)$. On va montrer que 
+$$\ln\left(1+\frac{r^2}{n^2}\right) \leq \frac{r^2}{n^2}$$
+$$1+\frac{r^2}{n^2} \leq e^{\frac{r^2}{n^2}} = 1 + \frac{r^2}{n^2} + \frac{r^4}{2n^4} + O(\frac{r^2}{n^2})$$
+$$0 \leq \frac{r^4}{2n^4} + O(\frac{r^2}{n^2})$$
 
-Donc $x \in [-r,r]$ avec $r > 0$ on a $0 \geq f_n(x) \geq ln\left(1+\frac{r^2}{n^2}\right) \geq \frac{r^2}{n^2}$ et on sait que la s\'erie de fonction $\frac{r^2}{n^2}$ converge normalement. Donc s\'erie de fonction $f_n(x) = ln(1+\frac{x^2}{n^2}$ converge normalement pour tout $x \in [-r, r]$.\\
+Donc, pour $x \in [-r,r]$ avec $r > 0$ on a $0 \leq f_n(x) \leq \ln\left(1+\frac{r^2}{n^2}\right) \leq \frac{r^2}{n^2}$. Comme la s\'erie de fonctions $\frac{r^2}{n^2}$ converge normalement, on en d\'eduit par le crit\`ere d'\'equivalence que la s\'erie de fonctions $f_n(x) = \ln(1+\frac{x^2}{n^2})$ converge normalement pour tout $x \in [-r, r]$.\\
 
-Les fonctions $f_n$ sont continues sur $x \in [-r,r]$ (assemblage de fonctions continues) et la s\'erie de fonctions $S = \sum_{n |geq 1}{f_n(x)}$ converge normalement pour $x \in [-r,r]$. On en d\'eduit que $S$ est continue pour $x \in [-r,r]$. 
+Les fonctions $f_n$ sont continues sur $x \in [-r,r]$ (assemblage de fonctions continues) et la s\'erie de fonctions $S = \sum_{n \geq 1}{f_n(x)}$ converge normalement pour $x \in [-r,r]$. On en d\'eduit que $S$ est continue pour $x \in [-r,r]$. 
 
 
 \subsection*{Exercice 5}
- 
+\subsection*{Exercice 5.1}
+On va montrer que 
+$$\frac{x}{n(n+x)} < \frac{x}{n^2}$$
+$$0 < \frac{x}{n^2} - \frac{x}{n(n+x)}$$
+$$0 < \frac{x^2}{n^2(n+x)}$$
+
+Qui est vrai, donc $f_n(x) < \frac{x}{n^2}$. On sait que la s\'erie de fonctions $\frac{x}{n^2}$ converge, donc par le crit\`ere d'\'equivalence on a la s\'erie de fonctions $f_n(x)$ qui converge.
+
+\subsection*{Exercice 5.2}
+\begin{itemize}
+\item (H1) - fonction $f_n(x)$ d\'erivable. Oui. $f_n'(x) = \frac{1}{(n+x)^2}$.
+\item (H2) - la s\'erie de fonctions $\sum {f_n}$ converge simplement sur une fonction S sur $[0,+\infty]$. Oui voir 5.1
+\item (H3) - la s\'erie de fonctions $\sum {f_n'}$ converge uniform\'ement sur une fonction g sur $[0,+\infty]$.
+\end{itemize}
+
+Montrons (H3). on a $f_n'(x) = \frac{1}{(n+x)^2} < \frac{1}{n^2}$ et la s\'erie de fonctions $\frac{1}{n^2}$ converge uniform\'ement sur $\R^+$. Donc (H3) est v\'erifi\'ee.\\
+
+Donc la s\'erie de fonctions $f_n$ est de classe $C^1$.
+
+\subsection*{Exercice 6}
+\subsection*{Exercice 6.1}
+$$\int_{x}^{1-x}{\frac{\ln(1-t)}{t}dt} = \int_{x}^{1-x}{\frac{-\sum_{n=1}^{+\infty}{\frac{t^n}{n}}}{t}dt} = \int_{x}^{1-x}{-\sum_{n=1}^{+\infty}{\frac{t^{n-1}}{n}}dt} = -\sum_{n=1}^{+\infty}{\int_{x}^{1-x}{\frac{t^{n-1}}{n}dt}} $$ 
+$$ = -\sum_{n=1}^{+\infty}{\left[ \frac{x^n}{n^2} \right]_{x}^{1-x}} = -\sum_{n=1}^{+\infty}{\frac{x^n}{n^2}  - \frac{(1-x)^n}{n^2}} = -\sum_{n=1}^{+\infty}{\frac{1}{n^2} (x^n-(1-x)^n)} = \sum_{n=1}^{+\infty}{\frac{1}{n^2} ((1-x)^n-x^n)} = \sum_{n=1}^{+\infty}{g_n(x)}$$
+
+\subsection*{Exercice 6.2}
+$$\int_{0}^{1}{\frac{\ln(1-t)}{t}dt} = \lim_{x \to 0}\int_{x}^{1-x}{\frac{\ln(1-t)}{t}dt} = \lim_{x \to 0}\sum_{n=1}^{+\infty}{g_n(x)} = \lim_{x \to 0}\sum_{n=1}^{+\infty}{\frac{1}{n^2} ((1-x)^n-x^n)} = \sum_{n=1}^{+\infty}{\frac{1}{n^2}}$$
+
+\subsection*{Exercice 7}
+\subsection*{Exercice 7.1}
+
+
+
+
 
 
 QED
