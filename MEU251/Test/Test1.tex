@@ -189,13 +189,13 @@ $$ = -\sum_{n=1}^{+\infty}{\left[ \frac{x^n}{n^2} \right]_{x}^{1-x}} = -\sum_{n=
 $$\int_{0}^{1}{\frac{\ln(1-t)}{t}dt} = \lim_{x \to 0}\int_{x}^{1-x}{\frac{\ln(1-t)}{t}dt} = \lim_{x \to 0}\sum_{n=1}^{+\infty}{g_n(x)} = \lim_{x \to 0}\sum_{n=1}^{+\infty}{\frac{1}{n^2} ((1-x)^n-x^n)} = \sum_{n=1}^{+\infty}{\frac{1}{n^2}}$$
 
 \subsection*{Exercice 7}
-\subsection*{Exercice 7.1}
 On a $\lim_{n \to +\infty}f_n(x) = \lim_{n \to +\infty}\ln(1+\frac{x}{n(1+x)}) = 0$. Gr\^ace aux crit\`ere des s\'eries altern\'ees, on voit que, pour tout $x \in \R^{+}$, la s\'eries de fonctions $\sum_{n \geq 1} {(-1)^nf_n(x)}$ converge simplement. En appliquant le crit\`ere de Cauchy uniforme, la s\'erie $\sum_{n\geq 1} f_n(x)$ converge uniform\'ement sur $\R^{+}$ ssi:
-$$\forall \epsilon > 0, \exists n_{\epsilon} \in \N, (m > n geq n_{\epsilon} \implies \forall x \in \R^{+}, |\sum_{k=n+1}^{m} f_k(x)|  \leq \epsilon)$$ 
+$$\forall \epsilon > 0, \exists n_{\epsilon} \in \N, (m > n \geq n_{\epsilon} \implies \forall x \in \R^{+}, |\sum_{k=n+1}^{m} f_k(x)|  \leq \epsilon)$$ 
 
-  
+On a 
+$$|\sum_{k=n+1}^{m} f_k(x)| < \ln \left(1 + \frac{x}{n(1+x)} \right) < \ln \left(1 + \frac{1}{n}\frac{x}{1+x} \right) < \ln \left(1 + \frac{1}{n} \right)$$
 
-
+Donc en prenant $n_{\epsilon}$, tel que $\ln \left(1 + \frac{1}{n_{\epsilon}} \right) < \epsilon$, le crit\`ere de Cauchy est v\'erifi\'e et la s\'erie de fonctions converge uniform\'ement sur $\R^{+}$.
 
 
 
