@@ -182,8 +182,19 @@ Donc la s\'erie de fonctions $f_n$ est de classe $C^1$.
 
 \subsection*{Exercice 6}
 \subsection*{Exercice 6.1}
+On si la $(fn)n_{\in \N}$ une suite de fonctions continues sur l'intervalle $[a,b]$ et que la s\'erie $f_n$ converge uniform\'ement sur $[a, b]$ vers sa somme $S$ qui est continue, alors
+$$\int_{a}^{b} \sum_{n=0}^{+\infty}f_n(t) dt =  \sum_{n=0}^{+\infty} \int_{a}^{b} f_n(t) dt $$ 
+
+Montrons que la s\'erie de fonctions $f_n(t)=\frac{t^{n-1}}{n}$ est continue pour $t \in ]0,\frac{1}{2}[$. 
+\begin{itemize}
+\item les fonction $f_n$ sont continu sur $]0,\frac{1}{2}[$
+\item on a $\frac{t^{n-1}}{n} < t^{n-1}$ et $\sum_{n \geq 1}t^{n-1} = \frac{1}{1-x}$ lorsque $x \in [0,1[$, donc la s\'erie de fonction $f_n$ converge uniform\'ement sur $]0,\frac{1}{2}[$
+\end{itemize}
+Donc la s\'erie de fonction $f_n$ est continue.\\
+
+Comme la la s\'erie de fonction est continue, 
 $$\int_{x}^{1-x}{\frac{\ln(1-t)}{t}dt} = \int_{x}^{1-x}{\frac{-\sum_{n=1}^{+\infty}{\frac{t^n}{n}}}{t}dt} = \int_{x}^{1-x}{-\sum_{n=1}^{+\infty}{\frac{t^{n-1}}{n}}dt} = -\sum_{n=1}^{+\infty}{\int_{x}^{1-x}{\frac{t^{n-1}}{n}dt}} $$ 
-$$ = -\sum_{n=1}^{+\infty}{\left[ \frac{x^n}{n^2} \right]_{x}^{1-x}} = -\sum_{n=1}^{+\infty}{\frac{x^n}{n^2}  - \frac{(1-x)^n}{n^2}} = -\sum_{n=1}^{+\infty}{\frac{1}{n^2} (x^n-(1-x)^n)} = \sum_{n=1}^{+\infty}{\frac{1}{n^2} ((1-x)^n-x^n)} = \sum_{n=1}^{+\infty}{g_n(x)}$$
+$$ = -\sum_{n=1}^{+\infty}{\left[ \frac{t^n}{n^2} \right]_{x}^{1-x}} = -\sum_{n=1}^{+\infty}{\frac{x^n}{n^2}  - \frac{(1-x)^n}{n^2}} = -\sum_{n=1}^{+\infty}{\frac{1}{n^2} (x^n-(1-x)^n)} = \sum_{n=1}^{+\infty}{\frac{1}{n^2} ((1-x)^n-x^n)} = \sum_{n=1}^{+\infty}{g_n(x)}$$
 
 \subsection*{Exercice 6.2}
 $$\int_{0}^{1}{\frac{\ln(1-t)}{t}dt} = \lim_{x \to 0}\int_{x}^{1-x}{\frac{\ln(1-t)}{t}dt} = \lim_{x \to 0}\sum_{n=1}^{+\infty}{g_n(x)} = \lim_{x \to 0}\sum_{n=1}^{+\infty}{\frac{1}{n^2} ((1-x)^n-x^n)} = \sum_{n=1}^{+\infty}{\frac{1}{n^2}}$$
