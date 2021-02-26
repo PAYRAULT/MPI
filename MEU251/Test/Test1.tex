@@ -210,6 +210,48 @@ Donc en prenant $n_{\epsilon}$, tel que $\ln \left(1 + \frac{1}{n_{\epsilon}} \r
 
 
 
+\subsection*{Exercice 3 - autre}
+\subsection*{Q3.1}
+$$\lim_{n \to +\infty} \sqrt{x^2+\frac{1}{n}} = \sqrt{x^2} = |x|$$
+La fonction $f_n(x)$ converge simplement vers la fonction $f(x) = |x|$.
+
+\subsection*{Q3.2}
+Il faut v\'erifier que
+$$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in \R, \forall n > n_0, \left|\sqrt{x^2+\frac{1}{n}} - |x|\right| < \epsilon$$
+
+Il faut trouver un majorant a $|\sqrt{x^2+\frac{1}{n}} - |x||$. On voit que $x^2 + \frac{1}{n} > x^2$ car $n \geq 1$. donc $x^2 + \frac{1}{n} - x^2 > 0$ et $|\sqrt{x^2+\frac{1}{n}} - |x|| = \sqrt{x^2+\frac{1}{n}} - |x|$.
+
+Ensuite, le "truc".
+$$\left(\sqrt{x^2+\frac{1}{n}}\right)^2 - (|x|)^2 = x^2+\frac{1}{n} - x^2 = \frac{1}{n}$$
+donc
+$$\left(\sqrt{x^2+\frac{1}{n}} - |x|\right)\left(\sqrt{x^2+\frac{1}{n}} + |x|\right) = \frac{1}{n}$$
+$$\sqrt{x^2+\frac{1}{n}} - |x| = \frac{\frac{1}{n}}{\sqrt{x^2+\frac{1}{n}} + |x|}$$
+$$\sqrt{x^2+\frac{1}{n}} - |x| < \frac{1}{n}$$
+
+Donc il suffit de prendre $n_epsilon$ tel que $\frac{1}{n_{\epsilon}} < \epsilon$.
+
+\subsection*{Q3.3}
+$$f_n'(x) = \frac{x}{\sqrt{x+\frac{1}{n}}}$$
+donc
+$$\lim_{n \to +\infty} \frac{x}{\sqrt{x^2+\frac{1}{n}}} = \frac{x}{|x|}$$
+Donc $f_n'(x)$ converge simplement vers la fonction 
+$$g(x) = 
+\left\{
+\begin{array}{l l}
+1 & x > 0\\
+-1 & x < 0\\
+\text{non d\'efini} & x = 0\\
+\end{array}
+\right.
+$$
+
+\subsection*{Q3.4}
+Il faut v\'erifier que
+$$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in \R, \forall n > n_0, \left|\frac{x}{\sqrt{x+\frac{1}{n}}} - g(x)\right| < \epsilon$$
+
+Il n'existe pas de $\epsilon$ car $\frac{x}{\sqrt{x+\frac{1}{n}}}$ n'est pas born\'ee par 1.
+
+
 QED
 
 \end{document}
