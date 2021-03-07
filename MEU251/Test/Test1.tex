@@ -211,11 +211,11 @@ Donc en prenant $n_{\epsilon}$, tel que $\ln \left(1 + \frac{1}{n_{\epsilon}} \r
 
 
 \subsection*{Exercice 3 - autre}
-\subsection*{Q3.1}
+\subsubsection*{Q3.1}
 $$\lim_{n \to +\infty} \sqrt{x^2+\frac{1}{n}} = \sqrt{x^2} = |x|$$
 La fonction $f_n(x)$ converge simplement vers la fonction $f(x) = |x|$.
 
-\subsection*{Q3.2}
+\subsubsection*{Q3.2}
 Il faut v\'erifier que
 $$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in \R, \forall n > n_0, \left|\sqrt{x^2+\frac{1}{n}} - |x|\right| < \epsilon$$
 
@@ -230,7 +230,7 @@ $$\sqrt{x^2+\frac{1}{n}} - |x| < \frac{1}{n}$$
 
 Donc il suffit de prendre $n_epsilon$ tel que $\frac{1}{n_{\epsilon}} < \epsilon$.
 
-\subsection*{Q3.3}
+\subsubsection*{Q3.3}
 $$f_n'(x) = \frac{x}{\sqrt{x+\frac{1}{n}}}$$
 donc
 $$\lim_{n \to +\infty} \frac{x}{\sqrt{x^2+\frac{1}{n}}} = \frac{x}{|x|}$$
@@ -245,12 +245,38 @@ $$g(x) =
 \right.
 $$
 
-\subsection*{Q3.4}
+\subsubsection*{Q3.4}
 Il faut v\'erifier que
 $$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in \R, \forall n > n_0, \left|\frac{x}{\sqrt{x+\frac{1}{n}}} - g(x)\right| < \epsilon$$
 
 Il n'existe pas de $\epsilon$ car $\frac{x}{\sqrt{x+\frac{1}{n}}}$ n'est pas born\'ee par 1.
 
+
+\subsection*{Exercice 3 - Partiel 2020}
+\subsubsection*{Q3.1}
+Pour $x=1$ et $x=0$, $f_n(x)=0$.
+Pour $x \in ]0,1[$ et $n \geq 3$, on a $f_n(x) > 0$ car $x^n >0$, $(1-x) >0$ et $\ln(n)^{\alpha} > 0$. 
+Pour $x \in ]0,1[$,
+$$\frac{f_{n+1}(x)}{f_n(x)} = \frac{\frac{x^{n+1}(1-x)}{(\ln(n+1))^{\alpha}}}{\frac{x^n(1-x)}{(\ln(n))^{\alpha}}} = \frac{(\ln(n))^{\alpha}(x^{n+1}(1-x))} {(\ln(n+1))^{\alpha}(x^n(1-x))} = \left(\frac{\ln(n))}{\ln(n+1))} \right)^{\alpha}x \in ]0,1[$$
+
+Donc par le crit\`ere d'Alembert, la s\'erie de fonctions $f_n(x)$ converge simplement.
+
+
+\subsubsection*{Q3.2}
+Calcul de 
+$$f_n'(x) = -\frac{x^{n-1}((n+1)x -n)}{(\ln(n+1))^{\alpha}}$$
+
+$f_n'(x) = 0$ pour $x=0$ et $x = \frac{n}{n+1}$. Les 2 points sont dans $[0,1]$.
+On a $f_n(0) = 0$ et $f_n(1) = 0$ et $f_n(x)$ est positive, donc $f_n(x)$ croit entre $[0,\frac{n}{n+1}[$ et d\'ecroit entre $]\frac{n}{n+1},1]$
+
+Calcul du maximum
+$$f_n\left(\frac{n}{n+1}\right) =  \frac{\left(\frac{n}{n+1}\right)^n\left(1-\left(\frac{n}{n+1}\right)\right)}{(\ln(n))^{\alpha}} = \left(\frac{n}{n+1}\right)^n\frac{1}{(n+1)}\frac{1}{(\ln(n))^{\alpha}}$$
+
+Soit $c = \left(\frac{n}{n+1}\right)^n\frac{1}{(n+1)} $, on a $0 < c < 1$. 
+donc $f_n\left(\frac{n}{n+1}\right) = \frac{c}{(\ln(n))^{\alpha}}$ cela converge ssi $\alpha > 1$ (sinon $\frac{c}{(\ln(n))^{\alpha}}$ croit lorsque $n$ croit). 
+
+\subsubsection*{Q3.3}
+Je ne sais pas faire.
 
 QED
 
