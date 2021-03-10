@@ -80,8 +80,8 @@ Pour avoir \emph{une seule} paire, il faut 2 cartes de m\^eme hauteur, et 3 cart
 $$P(une\_seule\_paire) = \frac{\C_1^8.\C_2^4.\C_3^7.\C_1^4.\C_1^4.\C_1^4}{\C_5^{32}} = \frac{8.6.35.4.4.4}{201376} = 53.39\%$$
 
 \subsection*{Exercice 1.2}
-Pour avoir \emph{deux} paires, il faut 2 fois 2 cartes de m\^eme hauteur, et 1 cartes qui n'a pas ces hauteurs. Pour une hauteur donn\'ee, il y a $\C_2^4$ possibilit\'es (2 couleurs parmi 4). Dans un jeu de 32 cartes, il y a 8 hauteurs diff\'erentes. Il faut 1 paire, donc $\C_1^8$ et une seconde paire diff\'erente $\C_1^7$. Maintenant, il faut s'occuper de la derni\`ere carte. Comme il faut deux paire, la derni\`ere cartes doit \^etre diff\'erentes de la hauteur des 2 paires. Il reste donc 6 autres hauteurs donc $C_1^6$ et elle peut prendre n'importe qu'elle couleur donc $\C_1^4$. Donc
-$$P(deux\_paires) = \frac{\C_1^8.\C_2^4.\C_1^7.\C_2^4.\C_1^6.\C_1^4}{\C_5^{32}} = \frac{8.6.7.6.6.4}{201376} = $$
+Pour avoir \emph{deux} paires, il faut 2 fois 2 cartes de m\^eme hauteur, et 1 cartes qui n'a pas ces hauteurs. Pour une hauteur donn\'ee, il y a $\C_2^4$ possibilit\'es (2 couleurs parmi 4). Dans un jeu de 32 cartes, il y a 8 hauteurs diff\'erentes. Il faut 2 paires, donc $\C_2^8$. Maintenant, il faut s'occuper de la derni\`ere carte. Comme il faut deux paires, la derni\`ere carte doit \^etre diff\'erentes de la hauteur des 2 paires. Il reste donc 6 autres hauteurs donc $C_1^6$ et elle peut prendre n'importe qu'elle couleur donc $\C_1^4$. Donc
+$$P(deux\_paires) = \frac{\C_2^8.\C_2^4.\C_2^4.\C_1^6.\C_1^4}{\C_5^{32}} = \frac{28.6.6.6.4}{201376} = 12.01\%$$
 
 
 \subsection*{Exercice 1.3}
