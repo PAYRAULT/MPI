@@ -130,24 +130,19 @@ $$ Q = \frac{1}{3}\begin{pmatrix} 1 & 2 & -2 \\ 2 & 1 & 2 \\ -2 & 2 & 1 \end{pma
 
 
 \subsubsection*{1.3}
-$P$ est une synm\'etrie orthogonale ssi $P^2 = Id$ et $P=P^T$.
+$P$ est une synm\'etrie orthogonale ssi $P.P^T = Id$.
 $$
-P^2 = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}.\begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+P.P^T = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}.\begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
 $$
 
-$$
-P^T = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix} = P
-$$
 donc
 $P$ et une sym\'etrie orthogonale.
 
 
-$Q$ est une synm\'etrie orthogonale ssi $Q^2 = Id$ et $Q=Q^T$.
-$$Q^2 = \frac{1}{9}\begin{pmatrix} 1 & 2 & -2 \\ 2 & 1 & 2 \\ -2 & 2 & 1 \end{pmatrix}.\begin{pmatrix} 1 & 2 & -2 \\ 2 & 1 & 2 \\ -2 & 2 & 1 \end{pmatrix} = \frac{1}{9}\begin{pmatrix} 1+4+4 & 2+2-4 & -2+4-2 \\ 2+2-4 & 4+1+4 & -4+2+2 \\ -2+4-2 & -4+2+2 & 4+4+1 \end{pmatrix} $$
+$Q$ est une synm\'etrie orthogonale ssi $Qc = Id$.
+$$Q.Q^T = \frac{1}{9}\begin{pmatrix} 1 & 2 & -2 \\ 2 & 1 & 2 \\ -2 & 2 & 1 \end{pmatrix}.\begin{pmatrix} 1 & 2 & -2 \\ 2 & 1 & 2 \\ -2 & 2 & 1 \end{pmatrix} = \frac{1}{9}\begin{pmatrix} 1+4+4 & 2+2-4 & -2+4-2 \\ 2+2-4 & 4+1+4 & -4+2+2 \\ -2+4-2 & -4+2+2 & 4+4+1 \end{pmatrix} $$
 $$= \frac{1}{9}\begin{pmatrix} 9 & 0 & 0 \\ 0 & 9 & 0 \\ 0 & 0 & 9 \end{pmatrix} = Id$$
 et 
-$$Q^T = \frac{1}{3}\begin{pmatrix} 1 & 2 & -2 \\ 2 & 1 & 2 \\ -2 & 2 & 1 \end{pmatrix} = Q$$
-donc
 $Q$ et une sym\'etrie orthogonale.
 
 QED
