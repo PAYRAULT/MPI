@@ -77,18 +77,33 @@
 https://fr.wikipedia.org/wiki/Courbe\_du\_chien
 
 \subsection*{Exercice 1}
+On a $\alpha(t) = (x(t),y(t))$, $\beta(t) = (a,z(t))$, $\alpha(0) =(0,0)$ et $\alpha'(0) =(1,0)$. Donc on a $\beta(0) = (a,0)$ car $\alpha'(t)$ est orient\'e vers $\beta(t)$.
+
 \subsubsection*{1.1 - Calculer $\alpha'(t)$}
-
-\textbf{Comme on ne connait pas $x(t)$, on suppose que $x(t) = t$}.\\
-
-On a, $\alpha'(t) = c.\frac{\beta(t)-\alpha(t)}{a-t}$ car $\alpha(t)$ est sur la droite allant de $(t,\alpha(t))$ vers $(a,\beta(t))$. 
+Comme $\alpha(t)$ est sur la droite allant de $(x(t),y(t))$ vers $(a,z(t))$, on a $\alpha'(t) = (a-x(t), z(t)-y(t))$. 
 
 \subsubsection*{1.2 - Calculer $\beta(t)$}
+Le point $\beta(t)$ est \`a l'intersection de la droite verticale passant par $(a,0)$ et de la droite passant par le point $(x(t), y(t))$ et de coefficient directeur $\alpha'(t)$. La droite s'\'ecrit $y = \alpha'(t).x + c$ avec $c = y(t) - \alpha'(t).x(t)$ \\
+$\beta$ se deplacant sur la droite verticale $(a,0)$ et est au point (a,0) \`a $t_0$, on a $z(t) = y$
+Donc $z(t) = y = \alpha'(t).a +  y(t) - \alpha'(t).x(t) = \alpha'(t)(a - x(t)) + y(t)$.\\
+On a $\beta(t) = (a,\alpha'(t)(a - x(t)) + y(t))$
 
-On a $\alpha'(t) = k(\beta(t) - \alpha(t))$. Donc $\beta(t) = \alpha(t) +\frac{\alpha'(t)}{k}$.\\
-$$\beta(t) = \alpha(t) + \frac{c.\frac{\beta(t)-\alpha(t)}{a-t}}{k}$$
+\subsubsection*{1.3 - Calculer $\beta'(t)$}
+$\beta$ se d\'eplacant sur un droite verticale, on a:
+$$\beta'(t) = (0, (\alpha'(t)(a - x(t)) + y(t)') = (0, -\alpha'(t) + (a-x(t))\alpha''(t) + y'(t))$$
 
-  
+\subsubsection*{1.4 - relation entre $\beta'(t)$ et $\alpha'(t)$}
+La vitesse $\alpha'(t)$ est toujours proportionnelle \`a la vitesse $\lVert  \beta'(t) \rVert  = \frac{1}{k}.\lVert  \alpha'(t) \rVert $. Comme k=1 on a, $\lVert  \beta'(t) \rVert  = \lVert  \alpha'(t) \rVert $
+La distance parcourue par $\beta$ est \'egalement proportionelle \`a la distance parcourue par $\alpha$.
+
+$$
+\sqrt{0^2 + -\alpha'(t) + (a-x(t))\alpha''(t) + y'(t))^2} = -\alpha'(t) + (a-x(t))\alpha''(t) + y'(t)
+$$
+
+$$
+\sqrt{(z(t)-y(t))^2 + (a-x(t))^2} = \sqrt{(\alpha'(t)(a - x(t)) + y(t) -y(t))^2 + (a-x(t))^2} = (a-x(t))\sqrt{\alpha'^2(t)+1}
+$$
+
 
 
 QED
