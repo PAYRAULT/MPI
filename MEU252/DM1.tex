@@ -80,31 +80,78 @@ https://fr.wikipedia.org/wiki/Courbe\_du\_chien
 On a $\alpha(t) = (x(t),y(t))$, $\beta(t) = (a,z(t))$, $\alpha(0) =(0,0)$ et $\alpha'(0) =(1,0)$. Donc on a $\beta(0) = (a,0)$ car $\alpha'(t)$ est orient\'e vers $\beta(t)$.
 
 \subsubsection*{1.1 - Calculer $\alpha'(t)$}
-Comme $\alpha(t)$ est sur la droite allant de $(x(t),y(t))$ vers $(a,z(t))$, on a $\alpha'(t) = (a-x(t), z(t)-y(t))$. 
+Comme $\alpha'(t)$ est sur la droite allant de $(x(t),y(t))$ vers $(a,z(t))$, on a $\frac{dy(t)}{dx(t)} = \frac{z(t)-y(t)}{a-x(t)}$ et $\alpha'(t) = (1, \frac{z(t)-y(t)}{a-x(t)})$. 
 
 \subsubsection*{1.2 - Calculer $\beta(t)$}
-Le point $\beta(t)$ est \`a l'intersection de la droite verticale passant par $(a,0)$ et de la droite passant par le point $(x(t), y(t))$ et de coefficient directeur $\alpha'(t)$. La droite s'\'ecrit $y = \alpha'(t).x + c$ avec $c = y(t) - \alpha'(t).x(t)$ \\
+Le point $\beta(t)$ est \`a l'intersection de la droite verticale passant par $(a,0)$ et de la droite passant par le point $(x(t), y(t))$ et de coefficient directeur $\frac{dy(t)}{dx(t)}$. La droite s'\'ecrit $y = \frac{dy(t)}{dx(t)}.x + c$ avec $c = y(t) - \frac{dy(t)}{dx(t)}.x(t)$ \\
 $\beta$ se deplacant sur la droite verticale $(a,0)$ et est au point (a,0) \`a $t_0$, on a $z(t) = y$
-Donc $z(t) = y = \alpha'(t).a +  y(t) - \alpha'(t).x(t) = \alpha'(t)(a - x(t)) + y(t)$.\\
+Donc $z(t) = y = \frac{dy(t)}{dx(t)}.a +  y(t) - \frac{dy(t)}{dx(t)}.x(t) = \frac{dy(t)}{dx(t)}(a - x(t)) + y(t)$.\\
 On a $\beta(t) = (a,\alpha'(t)(a - x(t)) + y(t))$
 
 \subsubsection*{1.3 - Calculer $\beta'(t)$}
 $\beta$ se d\'eplacant sur un droite verticale, on a:
-$$\beta'(t) = (0, (\alpha'(t)(a - x(t)) + y(t)') = (0, -\alpha'(t) + (a-x(t))\alpha''(t) + y'(t))$$
+$$\beta'(t) = (0, (\frac{dy(t)}{dx(t)}(a - x(t)) + y(t))') = (0, -\frac{dy(t)}{dx(t)} + (a-x(t))\alpha''(t) + \frac{dy(t)}{dx(t)} = (0,(a-x(t))\alpha''(t))$$
 
 \subsubsection*{1.4 - relation entre $\beta'(t)$ et $\alpha'(t)$}
 La vitesse $\alpha'(t)$ est toujours proportionnelle \`a la vitesse $\lVert  \beta'(t) \rVert  = \frac{1}{k}.\lVert  \alpha'(t) \rVert $. Comme k=1 on a, $\lVert  \beta'(t) \rVert  = \lVert  \alpha'(t) \rVert $
 La distance parcourue par $\beta$ est \'egalement proportionelle \`a la distance parcourue par $\alpha$.
 
 $$
-\sqrt{0^2 + -\alpha'(t) + (a-x(t))\alpha''(t) + y'(t))^2} = -\alpha'(t) + (a-x(t))\alpha''(t) + y'(t)
+\sqrt{0^2 + ((a-x(t))\alpha''(t))^2} = (a-x(t))\alpha''(t) = (a-x(t))\frac{dy(t)}{d^2x(t)}
 $$
 
 $$
-\sqrt{(z(t)-y(t))^2 + (a-x(t))^2} = \sqrt{(\alpha'(t)(a - x(t)) + y(t) -y(t))^2 + (a-x(t))^2} = (a-x(t))\sqrt{\alpha'^2(t)+1}
+\sqrt{(\frac{z(t)-y(t)}{(a-x(t))})^2 + 1^2} = \sqrt{\left(\frac{\frac{dy(t)}{dx(t)}(a - x(t)) + y(t) -y(t)}{(a-x(t))}\right)^2 + 1^2} = \sqrt{\left(\frac{dy(t)}{dx(t)}\right)^2+1}
 $$
 
+Il reste a r\'esoudre l'\'equation diff\'erentielle:
+$$
+(a-x(t))\frac{dy(t)}{d^2x(t)} = \sqrt{\left(\frac{dy(t)}{dx(t)}\right)^2+1}
+$$
 
+Donc, renomage $y' = \frac{dy(t)}{dx(t)}$ et s\'eparation des variables:
+$$
+\frac{y'}{\sqrt{y'^2+1}} = \frac{dx}{a-x(t)}
+$$
+En int\'egrant on a:
+$$
+\ln(y'+{\sqrt  {1+y'^{2}}})=-\ln(a-x)+C
+$$
+\`A l'instant $t=0$, les conditions initiales sont $x=0$ et $y'=1$, ce qui donne pour la constante :
+$$
+C=\ln(a)
+$$
+
+Donc
+$$
+\ln(y'+{\sqrt  {1+y'^{2}}})=-\ln(a-x)+\ln(a) = \ln \left(\frac{a}{a-x}\right)
+$$
+ou
+$$
+y'+\sqrt  {1+y'^{2}}=\frac{a}{a-x}
+$$
+
+En faisant l'\'egalit\'e des oppos\'e on a:
+$$
+-\ln(y'+{\sqrt{1+y'^{2}}})= \ln\left(\frac{1}{y'+\sqrt  {1+y'^{2}}}\right) = \ln({y'-\sqrt  {1+y'^{2}}}) = - \ln \left(\frac{a}{a-x}\right) = \ln \left(\frac{a-x}{a}\right)
+$$ 
+Ou
+$$
+y'-\sqrt{1+y'^{2}}=\frac{a}{a-x}
+$$
+
+En additionnant les deux on obtient
+$$
+2y' = \frac{a}{a-x} + \frac{a-x}{a}
+$$
+
+Enfin en int\'egrant:
+$$
+y={\frac  {x^{2}-2ax}{4a}}+{\frac  {a}{2}}\ln {{\frac  {a}{a-x}}}.
+$$
+
+Cette \'equation est \'equivalente \`a celle \`a montrer.
+Je te laisse le v\'erifier.
 
 QED
 
