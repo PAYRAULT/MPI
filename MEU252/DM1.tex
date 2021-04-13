@@ -117,7 +117,7 @@ En int\'egrant on a:
 $$
 \ln(y'+{\sqrt  {1+y'^{2}}})=-\ln(a-x)+C
 $$
-\`A l'instant $t=0$, les conditions initiales sont $x=0$ et $y'=1$, ce qui donne pour la constante :
+\`A l'instant $t=0$, les conditions initiales sont $x=0$ et $y'=0$, ce qui donne pour la constante :
 $$
 C=\ln(a)
 $$
@@ -131,13 +131,16 @@ $$
 y'+\sqrt  {1+y'^{2}}=\frac{a}{a-x}
 $$
 
-En faisant l'\'egalit\'e des oppos\'e on a:
+En faisant l'\'egalit\'e des oppos\'es on a:
 $$
--\ln(y'+{\sqrt{1+y'^{2}}})= \ln\left(\frac{1}{y'+\sqrt  {1+y'^{2}}}\right) = \ln({y'-\sqrt  {1+y'^{2}}}) = - \ln \left(\frac{a}{a-x}\right) = \ln \left(\frac{a-x}{a}\right)
+-\ln(y'+{\sqrt{1+y'^{2}}})= \ln\left(\frac{1}{y'+\sqrt{1+y'^{2}}}\right) = \ln\left(\frac{y'-\sqrt{1-y'^{2}}}{(y'+\sqrt{1+y'^{2}})(y'-\sqrt{1+y'^{2}})}\right) = \ln \left(\frac{y'-\sqrt{1- y'^{2}}}{y'^2-(1+y'^{2})}\right)
+$$
+$$
+= \ln({-(y'-\sqrt  {1+y'^{2}}})) = - \ln \left(\frac{a}{a-x}\right) = \ln \left(\frac{a-x}{a}\right)
 $$ 
 Ou
 $$
-y'-\sqrt{1+y'^{2}}=\frac{a}{a-x}
+y'-\sqrt{1+y'^{2}}=-\frac{a}{a-x}
 $$
 
 En additionnant les deux on obtient
@@ -147,11 +150,20 @@ $$
 
 Enfin en int\'egrant:
 $$
-y={\frac  {x^{2}-2ax}{4a}}+{\frac  {a}{2}}\ln {{\frac  {a}{a-x}}}.
+y={\frac  {x^{2}-2ax}{4a}}+{\frac  {a}{2}}\ln {{\frac{a}{a-x}}}.
 $$
 
 Cette \'equation est \'equivalente \`a celle \`a montrer.
-Je te laisse le v\'erifier.
+$$
+y(t)=\frac{a}{4}\left(\left(\frac{a-x(t)}{a}\right)^2- 1 - 2\ln\left(\frac{a-t}{a}\right)\right) = \frac{a}{4}\left(\frac{a^2-2ax(t)+x^2(t)}{a^2} - \frac{a^2}{a^2} - 2\ln\left(\frac{a-t}{a}\right)\right)
+$$
+$$
+= \frac{-2ax(t)+x^2(t)}{4a}  - \frac{a}{2}\ln\left(\frac{a-t}{a}\right)
+$$
+
+
+\subsection*{Exercice 2}
+
 
 QED
 
