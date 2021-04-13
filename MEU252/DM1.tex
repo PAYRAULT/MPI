@@ -231,8 +231,16 @@ $$
 
 
 
-
-
+\subsection*{Exercice 3}
+Le poursuivant rattrape le fugitif à l'instant $t$ si l'\'eqution $(x(t), y(t)) = (a, z(t))$ a une solution. Comme k=1, les deux ont touours la m\^eme vitesse. Par cons\'equent, la distance parcourue par le poursuivant est \'egale \`a la distance parcourue par le fugitif a tout instant. La distance minimale parcourue par le poursuivant \`a l'instant $t$ est \'egale \`a $\sqrt{(x(t)-x(t_0))^2 + (y(t)-y(t_0))^2}$ (ie ligne droite depuis $(x(t_0), y(t_0))$). La distance parcourue par le fugitif est \'egale \`a $\sqrt{(a-a)^2+(z(t)-z(t_0))^2}$. \`A l'instant $t_0$, le poursuivant est \`a $(0,0)$ et le fugitif \`a $(a,0)$ car le vecteur vitesse du poursuivant est $(1,0)$ et pointe toujours vers le fugitif. On a donc:
+$$
+\sqrt{x^2(t) + y^2(t)} = \sqrt{z^2(t)}
+$$
+On cherche l'instant $t$ tel que $(x(t), y(t)) = (a, z(t))$ donc
+$$
+\sqrt{a^2 + z^2(t)} = \sqrt{z^2(t)}
+$$
+Comme $a$ est diff\'erent de z\'ero, cette \'equation n'a pas de solution, donc le poursuivant ne peut pas rattraper le figutif lorsque $k=1$.
 
 
 QED
