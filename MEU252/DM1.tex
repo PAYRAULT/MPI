@@ -163,6 +163,76 @@ $$
 
 
 \subsection*{Exercice 2}
+Lorsque $k \neq 1$, il faut r\'esoudre l'\'equation (voir question pr\'ec\'edente).
+$$
+(a-x(t))\frac{dy(t)}{d^2x(t)} = \frac{1}{k}\sqrt{\left(\frac{dy(t)}{dx(t)}\right)^2+1}
+$$
+
+Donc, on recommance renomage $y' = \frac{dy(t)}{dx(t)}$ et s\'eparation des variables:
+$$
+\frac{y'}{\sqrt{y'^2+1}} = \frac{1}{k}.\frac{dx}{a-x(t)}
+$$
+
+En int\'egrant on a:
+$$
+\ln(y'+{\sqrt  {1+y'^{2}}})=-\frac{1}{k}\ln(a-x)+C
+$$
+\`A l'instant $t=0$, les conditions initiales sont $x=0$ et $y'=0$, ce qui donne pour la constante :
+$$
+C=\frac{1}{k}\ln(a)
+$$
+
+Donc
+$$
+\ln(y'+{\sqrt  {1+y'^{2}}})=-\frac{1}{k}\ln(a-x)+\frac{1}{k}\ln(a) = \ln \left(\sqrt[k]{\frac{a}{a-x}}\right)
+$$
+ou
+$$
+y'+\sqrt  {1+y'^{2}}=\sqrt[k]{\frac{a}{a-x}}
+$$
+
+De la m\^eme facon que pour la question 1, on obtient
+$$
+y'-\sqrt  {1+y'^{2}}=-\sqrt[k]{\frac{a-x}{a}}
+$$
+
+En additionnant les 2, on a:
+$$
+2y' = \sqrt[k]{\frac{a}{a-x}} - \sqrt[k]{\frac{a-x}{a}}
+$$
+
+Enfin en int\'egrant:
+$$
+y={\frac{k(a-x)}{2}}\left({\frac{1}{k+1}}\left({\frac{a-x}{a}}\right)^{{{\frac{1}{k}}}}+{\frac{1}{1-k}}\left({\frac{a-x}{a}}\right)^{{-{\frac  {1}{k}}}}\right)+C
+$$
+
+Pour Pour x = 0 ; y = 0 on a 
+$$
+C=\frac  {ka}{k^{2}-1}
+$$
+
+Donc
+$$y={\frac{k(a-x)}{2}}\left({\frac{1}{k+1}}\left({\frac{a-x}{a}}\right)^{{{\frac{1}{k}}}}+{\frac{1}{1-k}}\left({\frac{a-x}{a}}\right)^{{-{\frac  {1}{k}}}}\right)+ \frac  {ka}{k^{2}-1}
+$$
+
+$$y={\frac{k(a-x)}{2(k+1)}}\left({\frac{a-x}{a}}\right)^{{{\frac{1}{k}}}}+{\frac{k(a-x)}{2(1-k)}}\left({\frac{a-x}{a}}\right)^{{-{\frac  {1}{k}}}} + \frac  {ka}{k^{2}-1}
+$$
+
+$$y={\frac{ka(a-x)}{2a(k+1)}}\left({\frac{a-x}{a}}\right)^{{{\frac{1}{k}}}}+{\frac{ka(a-x)}{2a(1-k)}}\left({\frac{a-x}{a}}\right)^{{-{\frac  {1}{k}}}} + \frac  {ka}{k^{2}-1}
+$$
+
+$$y={\frac{ka}{2(k+1)}}\left({\frac{a-x}{a}}\right)^{{{1+\frac{1}{k}}}}+{\frac{ka}{2(1-k)}}\left({\frac{a-x}{a}}\right)^{{1-{\frac  {1}{k}}}} + \frac  {ka}{k^{2}-1}
+$$
+
+Comme $a =1$, on obtient la m\^eme \'equation que celle demand\'ee:
+$$
+y(t) = \frac{k}{k^2-1} + \frac{k\,(1-t)^{1+1/k}}{2\,(1+k)}+\frac{k(1-t)^{1-1/k}}{2\,(1-k)}
+$$
+
+
+
+
+
 
 
 QED
