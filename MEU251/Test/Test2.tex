@@ -1,0 +1,195 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Soit $I$ un intervalle de $\R$,  $(U_n)$ une suite de fonctions d\'efinies sur $I$ et $f$ une fonction d\'efinie sur I.
+On dit que $(u_n)$ converge \textbf{simplement} vers $f$ sur $I$ si pour tout $x \in I$, la suite $(U_n(x))$ converge vers $f(x)$.
+\end{defn}
+
+\begin{defn}
+Soit $I$ un intervalle de $\R$,  $(U_n)$ une suite de fonctions d\'efinies sur $I$ et $f$ une fonction d\'efinie sur I.
+On dit que $(u_n)$ converge \textbf{uniform\'ement} vers $f$ sur $I$ si
+$$\forall \epsilon > 0, \exists n_0 \in \N, \forall x \in I, \forall n > n_0, |(U_n(x)) - f(x)| < \epsilon$$
+\end{defn}
+
+\begin{defn}
+On dit que la s\'erie de fonctions $\sum_{n\geq0}U_n(x)$ converge \textbf{normalement} sur  $I$ si la s\'erie $\sum_{n\geq0}||U_n(x)||_{\infty}$ est convergente.
+ \end{defn}
+
+\begin{defn}
+On dit que la s\'erie de fonctions $\sum_{n\geq0}U_n(x)$ converge \textbf{normalement} sur  $I$ si la s\'erie $\sum_{n\geq0}||U_n(x)||_{\infty}$ est convergente.
+\end{defn}
+
+
+\newpage
+\subsection*{Exercice 1}
+\subsection*{Exercice 2}
+\subsection*{Exercice 3}
+\subsection*{Exercice 4}
+\subsubsection*{Exercice 4.1}
+$$
+\frac{a}{(x-2)^2} + \frac{b}{(x-2)} + \frac{c}{(x-1)} = \frac{a(x-1)}{(x-2)^2(x-1)} + \frac{b(x-2)(x-1)}{(x-2)^2(x-1)} + \frac{c(x-2)^2}{(x-2)^2(x-1)} =
+\frac{a(x-1)+b(x-2)(x-1)+c(x-2)^2}{(x-2)^2(x-1)}
+$$
+
+$$
+= \frac{ax-a+bx^2-bx-2bx+2b +cx^2-c4x+4c}{(x-2)^2(x-1)}
+$$
+
+Donc
+$$ 
+\left\{
+\begin{array}{l l}
+b + c = 0 & x^2\\
+a -3b -4c = 0 & x\\
+-a +2b +4c = 1 & x^0\\
+\end{array}
+\right.
+$$
+
+$$ 
+\left\{
+\begin{array}{l}
+b = -c  \\
+a = c   \\
+c = 1 \\
+\end{array}
+\right.
+$$
+
+Donc $a=1, b=-1, c=1$.
+
+$$
+\frac{1}{(x-2)^2(x-1)} = \frac{1}{(x-2)^2} - \frac{1}{(x-2)} + \frac{1}{(x-1)}
+$$
+
+\subsubsection*{Exercice 4.2}
+Utilisons le d\'eveloppement de Taylor sur $f_3(x) = \frac{1}{(x-1)}$ au voisinage de 0. On a 
+$$\frac{f_3(0)}{0!} = -1$$
+$$f'_3(x) = -\frac{1}{(x-1)^2}, \frac{f'_3(0)}{1!} = -1$$
+$$f^{(2)}_3(x) = \frac{2}{(x-1)^3},\ \frac{f^{(2)}_3(0)}{2!} = -1$$
+$$f^{(3)}_3(x) = \frac{6}{(x-1)^4},\ \frac{f^{(3)}_3(0)}{3!} = -1$$ 
+
+Donc, au voisinage de 0
+$$
+\frac{1}{(x-1)} = \sum_{n \ge 0} -x^n
+$$
+
+Utilisons le d\'eveloppement de Taylor sur $f_2(x) = -\frac{1}{(x-2)}$ au voisinage de 0. On a 
+$$\frac{f_2(0)}{0!} = \frac{1}{2}$$
+$$f'_2(x) = \frac{1}{(x-2)^2}, \frac{f'_3(0)}{1!} = \frac{1}{4}$$
+$$f^{(2)}_2(x) = -\frac{2}{(x-2)^3},\ \frac{f^{(2)}_3(0)}{2!} = \frac{1}{8}$$
+$$f^{(3)}_2(x) = \frac{6}{(x-2)^4},\ \frac{f^{(3)}_3(0)}{3!} = \frac{1}{16}$$ 
+
+Donc, au voisinage de 0
+$$
+-\frac{1}{(x-2)} = \sum_{n \ge 0} \frac{1}{2^{n+1}}x^n
+$$
+
+Utilisons le d\'eveloppement de Taylor sur $f_1(x) = \frac{1}{(x-2)^2}$ au voisinage de 0. On a 
+$$\frac{f_2(0)}{0!} = \frac{1}{4}$$
+$$f'_2(x) = -\frac{2}{(x-2)^3}, \frac{f'_3(0)}{1!} = \frac{2}{8} = \frac{1}{4}$$
+$$f^{(2)}_2(x) = \frac{6}{(x-2)^4},\ \frac{f^{(2)}_3(0)}{2!} = \frac{3}{16}$$
+$$f^{(3)}_2(x) = -\frac{24}{(x-2)^5},\ \frac{f^{(3)}_3(0)}{3!} = \frac{4}{32}$$ 
+
+Donc, au voisinage de 0
+$$
+\frac{1}{(x-2)^2} = \sum_{n \ge 0} \frac{n+1}{2^{n+2}}x^n
+$$
+
+Donc 
+$$
+f(x) = \frac{1}{(x-2)^2} -\frac{1}{(x-2)} + \frac{1}{(x-1)} = \sum_{n \ge 0} \frac{n+1}{2^{n+2}}x^n + \frac{1}{2^{n+1}}x^n -x^n = \sum_{n \ge 0} \frac{n+3-2^{n+2}}{2^{n+2}}x^n
+$$ 
+
+
+Le rayon de convergence de $f_3(x)$ est 
+$$R_3 = \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lim_{n \to \infty} \frac{-1}{-1} = 1$$
+
+Le rayon de convergence de $f_2(x)$ est 
+$$R_2 = \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lim_{n \to \infty} \frac{\frac{1}{2^{n+2}}}{\frac{1}{2^{n+1}}} = \frac{1}{2}$$
+
+Le rayon de convergence de $f_1(x)$ est 
+$$R_1 = \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lim_{n \to \infty} \frac{\frac{n+2}{2^{n+3}}}{\frac{n+1}{2^{n+2}}} = \lim_{n \to \infty} \frac{n+2}{2(n+1)} = \lim_{n \to \infty} \frac{1+\frac{2}{n}}{2(1+\frac{1}{n})} = \frac{1}{2}$$
+
+Le rayon de converge de $f(x)$ au voisinage de 0 est $min(R_1, R_2, R_3) = \frac{1}{2}$.
+
+\subsection*{Exercice 5}
+
+
+QED
+
+\end{document}
+
