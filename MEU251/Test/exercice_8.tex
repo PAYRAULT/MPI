@@ -116,10 +116,33 @@ Les 2 s\'eries ne convergent pas car $x=\pm \frac{1}{2}$ car ces valeurs ne v\'e
 
 
 \subsubsection*{Exercice 2.3}
-Sur $x \in [0,\frac{1}{2}[$, la fonction $2^n\frac{x^{n+1}}{n+1}$ est d\'ecroissante et tend vers 0. La s\'erie num\'erique $\sum_{n \ge 0} f_n(x)$ est une s\'erie altern\'ee. En utilisant, le th\'eor\`eme du reste on a:
-$$R_n(x) = \sum_{k \ge n+1}f_k(x) \le f_{n+1}(x)$$
- 
+Sur $x \in [0,\frac{1}{2}[$, la fonction $f_n(x) = 2^n\frac{x^{n+1}}{n+1}$ est d\'ecroissante et tend vers 0. La s\'erie num\'erique $\sum_{n \ge 0} f_n(x)$ est une s\'erie altern\'ee. En utilisant, le th\'eor\`eme du reste on a:
+$$\lvert R_n(x) \rvert = \lvert \sum_{k \ge n+1}f_k(x) \rvert \le f_{n+1}(x)$$
 
+Donc
+$$
+f_{n+1}(x) = 2^{n+1}\frac{x^{n+2}}{n+2} = \frac{(2x)^{n+2}}{2(n+2)}
+$$
+Pour $x \in [0,\frac{1}{2}[$, on a
+$$\lim_{n \to \infty} \frac{(2x)^{n+2}}{2(n+2)} = 0$$
+Donc la s\'erie converge uniform\'ement.
+
+\subsubsection*{Exercice 2.4}
+Pour $a \in ]0,\frac{1}{2}[$, Sur le domaine $[-a,0[$, on a
+$$
+|(-1)^n2^n\frac{x^{n+1}}{n+1}| = |(-1)^n\frac{(2x)^{n+1}}{2(n+1)}| < |(-1)^n\frac{(2a)^{n+1}}{2(n+1)}| = \frac{(2a)^{n+1}}{2(n+1)}
+$$
+
+et 
+$$
+\lim_{n \to \infty} \frac{(2a)^{n+1}}{2(n+1)} = 0
+$$
+
+Donc, la s\'erie $\sum f_n$ converge uniform\'ement sur $[-a,0[$, pour $a \in [0,\frac{1}{2}]$, comme elle convergence \'egalement sur le domaine $[0,\frac{1}{2}$, elle converge sur $[-a, \frac{1}{2}[$.
+
+\subsubsection*{Exercice 2.5}
+
+ 
 QED
 
 \end{document}
