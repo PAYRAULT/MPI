@@ -138,11 +138,22 @@ $$
 \lim_{n \to \infty} \frac{(2a)^{n+1}}{2(n+1)} = 0
 $$
 
-Donc, la s\'erie $\sum f_n$ converge uniform\'ement sur $[-a,0[$, pour $a \in [0,\frac{1}{2}]$, comme elle convergence \'egalement sur le domaine $[0,\frac{1}{2}$, elle converge sur $[-a, \frac{1}{2}[$.
+Donc, la s\'erie $\sum f_n$ converge uniform\'ement sur $[-a,0[$, pour $a \in [0,\frac{1}{2}]$, comme elle convergence \'egalement sur le domaine $[0,\frac{1}{2}[$, elle converge sur $[-a, \frac{1}{2}[$.
 
 \subsubsection*{Exercice 2.5}
+On a
+$$g(x) = \sum_{n \ge 0}f_n'(x) = \sum_{n \ge 0} (-1)^n2^nx^n = \sum_{n \ge 0} (-2x)^n$$
+S\'erie g\'eom\'etrique de raison $-2x$. Donc
+$$g(x) = \lim_{N \to \infty} \frac{1-(2x)^N}{1-(-2x)} = \frac{1}{1+2x}$$
 
- 
+On a
+$$\int {g(x)} = \int {\frac{1}{1+2x}} = \frac{1}{2}\ln(1+2x) $$ 
+
+et 
+$$
+\int {g(x)} = \int {\sum_{n \ge 0}f_n'(x)} = \sum_{n \ge 0} \int {f_n'(x)} = \sum_{n \ge 0}f_n(x) = f(x)
+$$
+
 QED
 
 \end{document}
