@@ -1,0 +1,108 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Exercice a}
+Une matrice $P \in O(n)$ si $P^T = P^{-1}$. Donc la matrice $P^{-1} \in O(n)$ si on arrive \`a montrer que $(P^{-1})^T = (P^{-1})^{-1}$. On a $(P^{-1})^{-1} = Id$ (par d\'efinition) et comme $P \in O(n)$ on a $P^T = P^{-1}$. Donc $ (P^{-1})^T = (P^T)^T = Id$. Par cons\'equent $p \in O(n) \implies P^{-1} \in O(n)$. 
+
+\subsection*{Exercice b}
+Soit $\lambda$ la valeur propre de $u$, et $x$ un vecteur propre non nul, alors $u(x)=\lambda x$, et comme $u$ est une isom\'etrie, elle conserve la norme, $\Vert x \Vert = \Vert u(x) \Vert = \vert \lambda \vert \Vert x \Vert$, d'o\`u $\vert \lambda \vert =1$ et $\lambda = 1$ ou -1.
+
+\subsection*{Exercice c}
+\subsubsection*{Exercice c-2}
+C'est une sym\'etrie axiale car elle est de la forme $\begin{pmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{pmatrix}$. Comme $P\begin{pmatrix} 3 \\ 2 \end{pmatrix} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}$ l'axe de la sym\'etrie est $\begin{pmatrix} 3 \\ 2 \end{pmatrix}$. 
+
+\subsection*{Exercice d}
+\subsubsection*{Exercice d-1}
+Une rotation d'angle $-\frac{\pi}{3}$ de centre $O$ est 
+$$
+R = $\begin{pmatrix} \cos -\frac{\pi}{3} & -\sin -\frac{\pi}{3} \\ \sin -\frac{\pi}{3} & \cos -\frac{\pi}{3} \end{pmatrix}$
+$$
+
+
+
+\subsubsection*{Exercice d-2}
+$$
+\left\{
+\begin{array}{l l}
+x' = \\
+y' = \\
+\end{array}
+\right.
+$$
+
+QED
+
+
+\end{document}
+
