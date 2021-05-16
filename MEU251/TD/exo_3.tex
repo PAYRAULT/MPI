@@ -83,11 +83,11 @@ On en d\'eduit que la s\'erie est convergente pour $\lvert x \rvert < 1$, donc s
 
 \subsubsection*{Exercice 3.2}
 Le rayon de convergence est \'egale \`a 1, donc la s\'erie enti\`ere convergence sur le domaine $]-1, 1[$. Il faut maintenant v\'erifier que la s\'erie enti\`ere converge pour $x = -1$. La s\'erie enti\`ere s\'ecrit donc $S(-1) = \sum_{n \ge 0} \sin(\frac{1}{\sqrt{n}})(-1)^n$.\\
-C'est une s\'erie altern\'ee qui v\'erifie le crit\`ere TSSA car quand $n$ tend vers l'infini, la fonction $\\sin(\frac{1}{\sqrt{n}})$ est positive et d\'ecroissante. Donc la s\'erie enti\`ere $S(-1)$ converge. Par cons\'equent, la s\'erie enti\`ere $S(x)$ converge sur $[-1] \cup ]-1, 1[ = [-1, 1[$.
+C'est une s\'erie altern\'ee qui v\'erifie le crit\`ere CSSA car quand $n$ tend vers l'infini, la fonction $\\sin(\frac{1}{\sqrt{n}})$ est positive et d\'ecroissante. Donc la s\'erie enti\`ere $S(-1)$ converge. Par cons\'equent, la s\'erie enti\`ere $S(x)$ converge sur $[-1] \cup ]-1, 1[ = [-1, 1[$.
 
 \subsubsection*{Exercice 3.3}
-Une s\'erie enti\`ere $S(x)$ convergence normalement sur $[-1,1[$, ssi il existe une suite de r\'eels positifs 	$(a_n)_{n \in \N}$ telle que $\forall n \in N, \forall x \in [-1,1[, on a \lvert u_n(x) \rvert 	\le a_n$ et que la s\'erie num\'erique $\sum_{n ge 0}a_n$ converge. Sur le domaine $[-1,1[$, on a $\sin(\frac{1}{\sqrt{n}})x^n < \sin(\frac{1}{\sqrt{n}})$. Il faut maintenant v\'erifier que la suite num\'erique $\sum_{n \ge 0}{\sin(\frac{1}{\sqrt{n}})}$ converge. \\
-En prenant le d\'eveloppement limi\'e de $\sin(x)$ en 0 on a, $\sin(\frac{1}{\sqrt{n}}) = \frac{1}{\sqrt{n}} + O_2(x)$. Mais $\frac{1}{\sqrt{n}} > \frac{1}{n}$ et la s\'erie $\frac{1}{n}$ diverge. Donc la s\'erie enti\`ere $S(x)$ ne converge pas normalement sur $[-1,1[$.
+Une s\'erie enti\`ere $S(x)$ convergence normalement sur $[-1,1[$, ssi il existe une suite de r\'eels positifs 	$(a_n)_{n \in \N}$ telle que $\forall n \in N, \forall x \in [-1,1[$, on a $\lvert u_n(x) \rvert 	\le a_n$ et que la s\'erie num\'erique $\sum_{n \ge 0}a_n$ converge. Sur le domaine $[-1,1[$, on a $\sin(\frac{1}{\sqrt{n}})x^n < \sin(\frac{1}{\sqrt{n}})$. Il faut maintenant v\'erifier que la suite num\'erique $\sum_{n \ge 0}{\sin(\frac{1}{\sqrt{n}})}$ converge. \\
+En prenant le d\'eveloppement limit\'e de $\sin(x)$ en 0 on a, $\sin(\frac{1}{\sqrt{n}}) = \frac{1}{\sqrt{n}} + O_2(x)$. Mais $\frac{1}{\sqrt{n}} > \frac{1}{n}$ et la s\'erie $\frac{1}{n}$ diverge. Donc la s\'erie enti\`ere $S(x)$ ne converge pas normalement sur $[-1,1[$.
 
 \subsubsection*{Exercice 3.4}
 La s\'erie $S(x)$  converge uniform\'ement sur $[-1,a]$ avec $a \in [0,1[$ vers une fonction $s(x)$ ssi $\forall \epsilon > 0, \exists n_{\epsilon} \in \N,  \forall n \in \N, (n > n_{\epsilon} \implies \forall x \in [-1,a], \lvert u_n(x) - s(x) \rvert \le \epsilon)$. \\
@@ -100,9 +100,10 @@ $$
 On divise en 2 parties:
 \begin{itemize}
 \item convergence uniforme de $S(x)$ sur le domaine $[-1,0]$. Prenons $s(x) = 0$, $\forall \epsilon > 0, \exists n_{\epsilon} \in \N,  \forall n \in \N, (n > n_{\epsilon} \implies \forall x \in [-1,0], \lvert u_n(x) - 0 \rvert \le \epsilon)$. On a $\lvert u_n(x) \rvert \le |\sin(\frac{1}{\sqrt{n}})| $, donc cherchons $n_{\epsilon}$ tel que $\forall \epsilon > 0, \forall n \in \N, (n > n_{\epsilon} \implies \forall x \in [-1,0], \lvert \sin(\frac{1}{\sqrt{n}}) \rvert \le \epsilon)$, en prenant $n_{\epsilon} > \frac{1}{\arcsin^2(\epsilon)}$, la propri\'et\'e est v\'erifi\'ee. 
-\item convergence uniforme de $S(x)$ sur le domaine $[0,a]$ pour $a \in [0,1[$. On a sur $[0,a]$, $\lvert u_x(x) \rvert \le x^n \le  a^n $, donc $\sup_{x \in [0,a]} \left \lvert \sum_{k = n+1}^{\infty} {u_n(x)} \right \rvert \le \frac{a^{n+1}}{1-a}$ et $\lim{n \to \infty}{\frac{a^{n+1}}{1-a}} = 0$ pour $a \in [0.1[$.
+\item convergence uniforme de $S(x)$ sur le domaine $[0,a]$ pour $a \in [0,1[$. On a sur $[0,a]$, $\lvert u_x(x) \rvert \le x^n \le  a^n $, donc $\sup_{x \in [0,a]} \left \lvert \sum_{k = n+1}^{\infty} {u_n(x)} \right \rvert \le \frac{a^{n+1}}{1-a}$ et $\lim{n \to \infty}{\frac{a^{n+1}}{1-a}} = 0$ pour $a \in [0.1[$. La s\'erie converge uniform\'ement sur $[0,a]$ avec $a \in [0,1[$.
 \end{itemize}
 
+Donc la s\'eire $S(x)$ converge uniform\'ement.
 
 QED
 
