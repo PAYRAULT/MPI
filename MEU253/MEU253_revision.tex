@@ -147,6 +147,7 @@ Soit 2 courbes param\'etrables diff\'erentiables $\alpha(t) = (a,b) \to \R^n$ et
 \item $\beta$ est une \emph{reparam\'etrage n\'egatif} de $\alpha$ si il existe une fonction d\'erivable $h: (c,d) \to (a,b)$ tel que $\forall t in ]c,d[, h'(t) < 0$ et $\beta(t) = (\alpha \circ h)(t)$. 
 \item $\beta$ est une \emph{reparam\'etrage} de $\alpha$ si $\beta$ est soit un reparam\'etrage positif, soit un reparam\'etrage n\'egatif de $\alpha$. 
 \end{itemize}
+\end{defn}
 
  
 \begin{defn}
@@ -173,9 +174,14 @@ $$
 pour $a \le t < b$.
 \end{defn}
  
-
- 
+\begin{defn}
+Soit $\alpha: (a,b) \to \R^2$, on d\'efinit la courbure $k2[\alpha]$ et $\alpha$ par:
+$$
+k2[\alpha](t) = \frac{\alpha''(t).J\alpha'(t)}{\lVert \alpha'(t) \rVert^3}
+$$ 
+pour $a \le t < b$.
 \end{defn}
+
 
 
 
