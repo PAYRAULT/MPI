@@ -126,7 +126,7 @@ avec chaque $a_i(t)$ une fonction de $]t_1, t_2[ \to \R$.
 Exemple de courbes param\'etr\'ees, 
 \begin{itemize}
 \item la droite passant par 2 points p et q, $\beta(t) = p +t(q-p) = (1-t)p + tq$
-\item le cercle de centre $p = (p_1, p_2)$ et de rayon r, $\theta(t) = (p_1 + r\cos(t), p_2\sin(t)$ avec $0 \le t < 2\pi$.
+\item le cercle de centre $p = (p_1, p_2)$ et de rayon r, $\theta(t) = (p_1 + r\cos(t), p_2\sin(t))$ avec $0 \le t < 2\pi$.
 \end{itemize}
 
 
@@ -183,6 +183,12 @@ pour $a \le t < b$.
 \end{defn}
 
 
+\begin{defn}
+Le reparam\'etrage par longueur d'arcde la courbe param\'etr\'ee $\alpha$, (ou reparametrage selon le vecteur vitesse unit\'e) est :
+$$
+s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du
+$$ 
+\end{defn}
 
 
 \subsection*{Exercice 1}
