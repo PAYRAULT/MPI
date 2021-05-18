@@ -160,10 +160,20 @@ $$length[\alpha] = \int_a^b \lVert \alpha'(t)\rVert dt$$
 \end{defn}
 
 \begin{defn}
-si $\beta$ est un reparam\'etrage de $\alpha$ alors
+Si $\beta$ est un reparam\'etrage de $\alpha$ alors
 $$length[\beta] \ sur\ [c,d] = length[\alpha]  \ sur\ [h(c),h(d)]$$ 
 \end{defn}
  
+
+\begin{defn}
+Prenons une chiffre $c$ avec $a < c < b$. La \emph{la fonction de longueur d'arc} $s_{\alpha}$ de la courbe param\'etr\'ee $\alpha:(a,b) \to \R$ \`a partir de $c$ comme:
+$$
+s_{\alpha}(t) = length[c,t][\alpha] = \int_c^t \lVert \alpha'(u) \rVert du
+$$ 
+pour $a \le t < b$.
+\end{defn}
+ 
+
  
 \end{defn}
 
