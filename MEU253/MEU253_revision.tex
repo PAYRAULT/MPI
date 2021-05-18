@@ -86,13 +86,19 @@ Si $p = (p_1, \ldots, p_n)$ et $q = (q_1, \ldots, q_n)$, on d\'efinit $p+q = (p_
 
 
 \begin{defn}
-On d\'efinit le produit scalaire $ \cdot $ comme 
+On d\'efinit le produit scalaire $ \cdot $ dans $\R$ comme 
 $$p \cdot q = \sum_{i=1}^{n} p_iq_i$$
 La norme d'un vecteur comme
 $$\lVert p \rVert = \sqrt{p \cdot p}$$
 La distance entre 2 points:
 $$distance(p,q) = \lVert p - q \rVert$$
 \end{defn}
+
+\begin{defn}
+On d\'efinit le produit scalaire $ \cdot $ dans $\C$ comme 
+$$p \cdot q = \sum_{i=1}^{n} p_i \bar{q_i}$$
+\end{defn}
+
 
 
 \begin{defn}
@@ -190,11 +196,47 @@ s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du
 $$ 
 \end{defn}
 
-
 \subsection*{Exercice 1}
+Calculer la fonction longueur d'arc de $\alpha: t \to a(c\cos t + t\sin t, \sin t - t\cos t)$.
+On a $\alpha' = (t \cos t, t \sin t)$ et $\lVert \alpha'(t) \rVert = \sqrt{t^2 \cos^2 t + t^2 \sin^2 t} = t$.
+Donc
+$$
+s_{\alpha}(t) = \int_c^t \lVert \alpha'(u) \rVert du = \int_c^t{u du} = \left[ \frac{u^2}{2} \right]_c^t = \frac{t^2}{2} - \frac{c^2}{2}
+$$ 
 
-\subsubsection*{1.1}
+\subsection*{Exercice 2}
+Montrer que la courbure de la courbe parametr\'ee d'un cercle de centre $p = (p_1, p_2)$ et de rayon $r$ est \'egale \`a $\frac{1}{r}$.
+$$\beta(t) = (p_1 + r\cos t, p_2 + r\sin t)$$
+$$\beta'(t) = (-r\sin t, r\cos t)$$
+$$\beta''(t) = (-r\cos t, -r\sin t)$$
+et
+$$J\beta'(t) = (-r\cos t, -r\sin t)$$
+$$\beta''(t) \cdot J\beta'(t) = (-r \cos t)(-r \cos t) + (-r \sin t)(-r \sin t) = r^2$$
+$$\lVert \beta'(t) \rVert = \sqrt{(-r \sin t)(-r \sin t) + (r \cos t)(r \cos t)} = r$$
+Donc
+$$
+s_{\beta}(t) = \frac{\beta''(t).J\beta'(t)}{\lVert \beta'(t) \rVert^3} = \frac{r^2}{r^3} = \frac{1}{r}
+$$ 
 
+
+
+
+\subsection*{Exercice 6}
+On a  $\alpha(t) = p(t) + iq(t)$, donc $\alpha'(t) = p'(t) + iq'(t)$ et $\alpha''(t) = p''(t) + iq''(t)$,
+
+Calculons
+$$
+J\alpha'(t) = i\alpha'(t)
+$$
+Pour rappel dans $\C$, $a \cdot b = a \overline{b}$, avec $\overline{b}$ le conjugu\'e du nombre complexe $b$.
+$$
+\alpha''(t).J\alpha'(t) = \alpha''(t)\overline{J\alpha'(t)} = \alpha''(t)\overline{i\alpha'(t)} = \alpha''(t)\overline{i}\overline{\alpha}'(t) = -i\alpha''(t)\overline{\alpha}'(t)  
+$$
+et 
+$$
+k2[\alpha](t) = \frac{\alpha''(t).J\alpha'(t)}{\lVert \alpha'(t) \rVert^3} = \frac{-i\alpha''(t)\overline{\alpha'(t)}}{\lVert \alpha'(t) \rVert^3}
+$$
+Bizarre j'ai un "-" en trop.
 
 QED
 
