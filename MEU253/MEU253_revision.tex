@@ -190,7 +190,7 @@ pour $a \le t < b$.
 
 
 \begin{defn}
-Le reparam\'etrage par longueur d'arcde la courbe param\'etr\'ee $\alpha$, (ou reparametrage selon le vecteur vitesse unit\'e) est :
+Le reparam\'etrage par longueur d'arc de la courbe param\'etr\'ee $\alpha$, (ou reparametrage selon le vecteur vitesse unit\'e) est :
 $$
 s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du
 $$ 
@@ -217,6 +217,19 @@ Donc
 $$
 s_{\beta}(t) = \frac{\beta''(t).J\beta'(t)}{\lVert \beta'(t) \rVert^3} = \frac{r^2}{r^3} = \frac{1}{r}
 $$ 
+
+
+\subsection*{Exercice 3}
+Le reparam\'etrage par longueur d'arc de la courbe param\'etr\'ee $\alpha : t \to (t^2, t^3)$, (ou reparametrage selon le vecteur vitesse unit\'e) est :
+$$
+s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du
+$$ 
+Donc $\alpha'(t) = (2t, 3t^2)$ et $\lVert \alpha'(t) \rVert = \sqrt{4t^2+9t^4} = t\sqrt{4+9t^2}$
+On a
+$$
+s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du = \int_0^t \lVert u\sqrt{4+9u^2} \rVert du = \left[ \frac{(9u^2+4)^{\frac{3}{2}}}{27}\right]_0^t = 
+$$
+
 
 
 
