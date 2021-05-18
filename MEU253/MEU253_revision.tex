@@ -227,14 +227,65 @@ $$
 Donc $\alpha'(t) = (2t, 3t^2)$ et $\lVert \alpha'(t) \rVert = \sqrt{4t^2+9t^4} = t\sqrt{4+9t^2}$
 On a
 $$
-s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du = \int_0^t \lVert u\sqrt{4+9u^2} \rVert du = \left[ \frac{(9u^2+4)^{\frac{3}{2}}}{27}\right]_0^t = 
+s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du = \int_0^t \lVert u\sqrt{4+9u^2} \rVert du = \left[ \frac{(9u^2+4)^{\frac{3}{2}}}{27}\right]_0^t = \frac{(9t^2+4)^{\frac{3}{2}}}{27} - \frac{8}{27}
+$$
+
+
+\subsection*{Exercice 6}
+En partant de l'equation [1] $e^{i\theta_0} = \cos \theta_0 + i \sin \theta_0$, Essayons de contruire deux fonctions $h(t)$ et $\theta(t)$ tel que $h(t) = e^{i\theta(t)}$. 
+Prenons
+$$
+\begin{array}{l l}
+f(t) = \frac{\alpha'(t) \cdot \beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} & g(t) = \frac{\alpha'(t) \cdot J\beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert}
+\end{array}
+$$
+
+Calculons 
+$$
+f^2(t) + g^2(t) = \left( \frac{\alpha'(t) \cdot \beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} \right)^2 + \left( \frac{\alpha'(t) \cdot J\beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} \right)^2 = \frac{\left( \alpha'(t) \cdot \beta'(t)\right)^2 + \left( \alpha'(t) \cdot J\beta'(t)\right)^2 }{\left( \lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert \right)^2}
+$$ 
+
+$$
+= \frac{\left( \lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert \right)^2}{\left( \lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert \right)^2} = 1
+$$
+
+Contruisons la fonction $h(t) = f(t) + ig(t)$, on a 
+$$h(t)\overline{h(t)} = (f(t) + ig(t))(f(t)-ig(t)) = f^2(t) + if(t)g(t) - if(t)g(t) + g^2(t) = f^2(t) + g^2(t) = 1$$.
+
+D\'efinissons
+$$
+\theta(t) = \theta_0 + \int_{t_0}^th'(s)\overline{h(s)}ds
+$$
+
+Calculons 
+$$\frac{d}{dt}h(t)e^{-i\theta(t)} = h'(t)e^{-i\theta(t)} - ih(t)\theta'e^{-i\theta(t)} = e^{-i\theta(t)}(h(t)'-ih(t)\theta'(t))$$
+Mais $\theta'(t) = ih'(t)h(t)$
+Donc
+$$\frac{d}{dt}h(t)e^{-i\theta(t)} = e^{-i\theta(t)}(h'-ih(t)h'(t)\overline{h(t)})$$
+Comme $h(t)\overline{h(t)} = 1$, on a $\frac{d}{dt}h(t)e^{-i\theta(t)} = 0$ donc $h(t)e^{-i\theta(t)}$ est \'egale \`a une constante $c$.Calculons
+$$
+h(t_0)e^{-i\theta(t_0)} = (f(t_0) + ig(t_0))e^{-i\theta(t_0)} = e^{i\theta(t_0)}e^{-i\theta(t_0)} = 1
+$$
+car [1].
+
+Par cons\'equent 
+$$
+h(t)e^{-i\theta(t)} = c = 1
+$$
+et
+$$
+h(t)= e^{i\theta(t)} = \cos \theta(t) + i \sin \theta(t) = f(t) + ig(t)
+$$
+Ce qui fait que 
+$$
+\begin{array}{l l}
+\cos(t) = \frac{\alpha'(t) \cdot \beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} & \sin(t) = \frac{\alpha'(t) \cdot J\beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert}
+\end{array}
 $$
 
 
 
-
-
-\subsection*{Exercice 6}
+\subsection*{Exercice 5}
 On a  $\alpha(t) = p(t) + iq(t)$, donc $\alpha'(t) = p'(t) + iq'(t)$ et $\alpha''(t) = p''(t) + iq''(t)$,
 
 Calculons
