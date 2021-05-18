@@ -1,0 +1,181 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{R\'evision}
+\begin{defn}
+Un \emph{n-espace Euclidien} $\R^n$ est un ensemble de $n$ r\'eels (appel\'e \emph{n-tuple}).
+$$
+\R^n = \{(p_1,\ldots,p_n), p_i \text{est un r\'eel pour } i = 1,\ldots,n\}
+$$ 
+Si $p = (p_1, \ldots, p_n)$ et $q = (q_1, \ldots, q_n)$, on d\'efinit $p+q = (p_1+q_1,\ldots,p_n+q_n)$ et $\lambda p = (\lambda p_1, \ldots, \lambda p_n)$.
+
+\end{defn}
+
+
+\begin{defn}
+On d\'efinit le produit scalaire $ \cdot $ comme 
+$$p \cdot q = \sum_{i=1}^{n} p_iq_i$$
+La norme d'un vecteur comme
+$$\lVert p \rVert = \sqrt{p \cdot p}$$
+La distance entre 2 points:
+$$distance(p,q) = \lVert p - q \rVert$$
+\end{defn}
+
+
+\begin{defn}
+On a les propri\'et\'es suivantes: $p \cdot q = q \cdot p$, $(p+r) \cdot q = p \cdot q + r \cdot q$, $(\lambda p) \cdot q = \lambda(p \cdot q) = p \cdot (\lambda q)$ et $\lVert \lambda p \rVert = \lvert \lambda \rvert \lVert p \rVert$. \\
+Les in\'egalit\'es suivantes: $\lvert p \cdot q \rvert \le \lVert p \rVert \lVert q \rVert$ (Cauchy-Schwarz) et $\lVert p+q \rVert \le \lVert p \rVert + \lVert q \rVert$ (triangulaire).   	  
+\end{defn}
+
+\begin{defn}
+On d\'efinit un angle entre 2 vecteurs comme:
+$$\cos \theta = \frac{p \cdot q}{\lVert p \rVert \lVert q \rVert}$$
+\end{defn}
+
+\begin{defn}
+On d\'efinit une application lin\'eaire $A$ (linear map) de $\R^m \to \R^n$ comme:
+$$A(\lambda_1 p + \lambda_2 q) = \lambda_1 Ap + \lambda_2 Aq$$
+\end{defn}
+
+\begin{defn}
+On d\'efinit une application lin\'eaire $J$ (complex) de $\R^2 \to \R^2$ comme:
+$$J(p,q) = (-q,p)$$
+L'application $J$ a les propri\'et\'es suivantes: $J^2 = -1$, $(Jp) \cdot (Jq) = p \cdot q$ et $(Jp) \cdot p = 0$. 
+\end{defn}
+
+
+\begin{defn}
+On d\'efinit une courbe param\'etr\'ee $\alpha(t): ]t_1,t_2[ \to \R^n$ comme:
+$$\alpha(t) = (a_1(t), a_2(t), \ldots, a_n(t))$$
+avec chaque $a_i(t)$ une fonction de $]t_1, t_2[ \to \R$. 
+\end{defn}
+
+Exemple de courbes param\'etr\'ees, 
+\begin{itemize}
+\item la droite passant par 2 points p et q, $\beta(t) = p +t(q-p) = (1-t)p + tq$
+\item le cercle de centre $p = (p_1, p_2)$ et de rayon r, $\theta(t) = (p_1 + r\cos(t), p_2\sin(t)$ avec $0 \le t < 2\pi$.
+\end{itemize}
+
+
+\begin{defn}
+Si $\alpha(t) = (a_1(t), a_2(t), \ldots, a_n(t))$ est une courbe param\'etr\'ed, on d\'efinit la vitesse (v\'elocut\'e)de $\alpha$  comme:
+$$\alpha'(t) = (a_1'(t), a_2'(t), \ldots, a_n'(t))$$
+\end{defn}
+
+\begin{defn}
+Une courbe $\alpha(t) = ]t_1, t_2[ \to \R^n$ est dite r\'eguliaire si chaque $a_i(t)$ est d\'erivable et que la v\'elocit\'e en tout point n'est pas nulle. Si $\forall t \in ]t_1, t_2[, \lVert \alpha'(t) \rVert = 1$ alors $\alpha$ est dite \emph{vitesse unit\'e}
+\end{defn}
+
+
+\begin{defn}
+Soit 2 courbes param\'etrables diff\'erentiables $\alpha(t) = (a,b) \to \R^n$ et $\beta(t) = (a,b) \to \R^n$, on dit que:
+\begin{itemize}
+\item $\beta$ est une \emph{reparam\'etrage positif} de $\alpha$ si il existe une fonction d\'erivable $h: (c,d) \to (a,b)$ tel que $\forall t in ]c,d[, h'(t) > 0$ et $\beta(t) = (\alpha \circ h)(t)$. 
+\item $\beta$ est une \emph{reparam\'etrage n\'egatif} de $\alpha$ si il existe une fonction d\'erivable $h: (c,d) \to (a,b)$ tel que $\forall t in ]c,d[, h'(t) < 0$ et $\beta(t) = (\alpha \circ h)(t)$. 
+\item $\beta$ est une \emph{reparam\'etrage} de $\alpha$ si $\beta$ est soit un reparam\'etrage positif, soit un reparam\'etrage n\'egatif de $\alpha$. 
+\end{itemize}
+
+ 
+\begin{defn}
+Quelques propri\'et\'es $\beta'(t) = \alpha'(h(t))h'(t)$, $\lVert \beta'(t)\rVert = \lVert\alpha'(h(t))\rVert h'(t)$
+\end{defn}
+ 
+
+\begin{defn}
+On d\'efinit la \emph{longueur} d'une courbe param\'etr\'ee $\alpha$ sur l'intervale $[a,b]$ comme:
+$$length[\alpha] = \int_a^b \lVert \alpha'(t)\rVert dt$$
+\end{defn}
+
+\begin{defn}
+si $\beta$ est un reparam\'etrage de $\alpha$ alors
+$$length[\beta] \ sur\ [c,d] = length[\alpha]  \ sur\ [h(c),h(d)]$$ 
+\end{defn}
+ 
+ 
+\end{defn}
+
+
+
+\subsection*{Exercice 1}
+
+\subsubsection*{1.1}
+
+
+QED
+
+
+\end{document}
+
