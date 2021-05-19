@@ -137,8 +137,8 @@ Exemple de courbes param\'etr\'ees,
 
 
 \begin{defn}
-Si $\alpha(t) = (a_1(t), a_2(t), \ldots, a_n(t))$ est une courbe param\'etr\'ed, on d\'efinit la vitesse (v\'elocut\'e)de $\alpha$  comme:
-$$\alpha'(t) = (a_1'(t), a_2'(t), \ldots, a_n'(t))$$
+Si $\alpha(t) = (a_1(t), a_2(t), \ldots, a_n(t))$ est une courbe param\'etr\'ee, on d\'efinit la vitesse (v\'elocut\'e)de $\alpha$  comme:
+$$v(t) = \lVert \alpha'(t) \rVert \ avec \ \alpha'(t) = (a_1'(t), a_2'(t), \ldots, a_n'(t))$$
 \end{defn}
 
 \begin{defn}
@@ -163,7 +163,7 @@ Quelques propri\'et\'es $\beta'(t) = \alpha'(h(t))h'(t)$, $\lVert \beta'(t)\rVer
 
 \begin{defn}
 On d\'efinit la \emph{longueur} d'une courbe param\'etr\'ee $\alpha$ sur l'intervale $[a,b]$ comme:
-$$length[\alpha] = \int_a^b \lVert \alpha'(t)\rVert dt$$
+$$length[\alpha] = \int_a^b v(t) dt = \int_a^b \lVert \alpha'(t)\rVert dt$$
 \end{defn}
 
 \begin{defn}
@@ -173,20 +173,24 @@ $$length[\beta] \ sur\ [c,d] = length[\alpha]  \ sur\ [h(c),h(d)]$$
  
 
 \begin{defn}
-Prenons une chiffre $c$ avec $a < c < b$. La \emph{la fonction de longueur d'arc} $s_{\alpha}$ de la courbe param\'etr\'ee $\alpha:(a,b) \to \R$ \`a partir de $c$ comme:
+Prenons une chiffre $c$ avec $a < c < b$. La \emph{fonction de longueur d'arc} (abscisse curviligne) $s_{\alpha}$ de la courbe param\'etr\'ee $\alpha:(a,b) \to \R$ \`a partir de $c$ comme:
 $$
 s_{\alpha}(t) = length[c,t][\alpha] = \int_c^t \lVert \alpha'(u) \rVert du
 $$ 
 pour $a \le t < b$.
 \end{defn}
+
+L'avantage d'un parcours \`a vitesse constante ($\lVert \alpha'(t) \rVert = c$). Donc $\lVert \alpha'(t) \rVert^2 = \alpha'(t) \cdot \alpha'(t) = c^2$. En d\'erivant, on obtient $\alpha''(t) \cdot \alpha'(t) + \alpha'(t) \cdot \alpha''(t) = 0$. Donc,  $\alpha'(t) \cdot \alpha''(t) = 0$, c'est \`a dire que les vecteurs vitesse et acc\'el\'eration sont orthogonaux (produit scalaire nul).
  
 \begin{defn}
-Soit $\alpha: (a,b) \to \R^2$, on d\'efinit la courbure $k2[\alpha]$ et $\alpha$ par:
+Soit $\alpha: (a,b) \to \R^2$, on d\'efinit la courbure $\kappa2[\alpha]$ et $\alpha$ par:
 $$
-k2[\alpha](t) = \frac{\alpha''(t).J\alpha'(t)}{\lVert \alpha'(t) \rVert^3}
+\kappa2[\alpha](t) = \frac{\alpha''(t).J\alpha'(t)}{\lVert \alpha'(t) \rVert^3}
 $$ 
 pour $a \le t < b$.
 \end{defn}
+
+Cela vient de pour chaque instant $t$, on peut d\'efinir un rep\`ere orthonorm\'e mobile $(\alpha(t), \frac{\alpha'(t)}{\lVert\alpha'(t)\rVert}, \frac{J\alpha'(t)}{\lVert \alpha'(t)\rVert})$, avec $\frac{\alpha'(t)}{\lVert \alpha'(t)\rVert}$ le vecteur tangente norm\'e \`a l'instant $t$ et $\frac{J\alpha'(t)}{\lVert \alpha'(t)\rVert}$ le vecteur normal norm\'e. La composante normale du vecteur acc\'el\'eration ($\alpha''(t)$) \`a l'instant $t$ est \'egale \`a $\alpha''(t) \cdot \frac{J\alpha'(t)}{\lVert \alpha'(t)\rVert}$ 
 
 
 \begin{defn}
@@ -205,6 +209,21 @@ s_{\alpha}(t) = \int_c^t \lVert \alpha'(u) \rVert du = \int_c^t{u du} = \left[ \
 $$ 
 
 \subsection*{Exercice 2}
+Montrer que pour $\alpha(t) = (a_1(t), a_2(t))$,
+$$
+\alpha'(t) = \lim_{\delta \to 0} \frac{\alpha(t+\delta) - \alpha(t)}{\delta}
+$$
+$$
+\alpha'(t) = (a_1'(t), a_2'(t)) = (\lim_{\delta \to 0} \frac{a_1(t+\delta) - a_1(t)}{\delta}, \lim_{\delta \to 0} \frac{a_2(t+\delta) - a_2(t)}{\delta}) 
+$$
+$$
+= \lim_{\delta \to 0} \left(\frac{a_1(t+\delta) - a_1(t)}{\delta},\frac{a_2(t+\delta) - a_2(t)}{\delta}\right) = \lim_{\delta \to 0} \frac{1}{\delta} \left(a_1(t+\delta) - a_1(t),a_2(t+\delta) - a_2(t)\right)
+$$
+$$
+= \lim_{\delta \to 0} \frac{1}{\delta} \left(a_1(t+\delta),a_2(t+\delta)) - (a_1(t),a_2(t)) \right) = \lim_{\delta \to 0} \frac{1}{\delta} \left(\alpha(t+\delta) - \alpha(t) \right)
+$$
+
+\subsection*{Exercice 3}
 Montrer que la courbure de la courbe parametr\'ee d'un cercle de centre $p = (p_1, p_2)$ et de rayon $r$ est \'egale \`a $\frac{1}{r}$.
 $$\beta(t) = (p_1 + r\cos t, p_2 + r\sin t)$$
 $$\beta'(t) = (-r\sin t, r\cos t)$$
@@ -219,7 +238,7 @@ s_{\beta}(t) = \frac{\beta''(t).J\beta'(t)}{\lVert \beta'(t) \rVert^3} = \frac{r
 $$ 
 
 
-\subsection*{Exercice 3}
+\subsection*{Exercice 4}
 Le reparam\'etrage par longueur d'arc de la courbe param\'etr\'ee $\alpha : t \to (t^2, t^3)$, (ou reparametrage selon le vecteur vitesse unit\'e) est :
 $$
 s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du
@@ -228,6 +247,31 @@ Donc $\alpha'(t) = (2t, 3t^2)$ et $\lVert \alpha'(t) \rVert = \sqrt{4t^2+9t^4} =
 On a
 $$
 s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du = \int_0^t \lVert u\sqrt{4+9u^2} \rVert du = \left[ \frac{(9u^2+4)^{\frac{3}{2}}}{27}\right]_0^t = \frac{(9t^2+4)^{\frac{3}{2}}}{27} - \frac{8}{27}
+$$
+
+
+\subsection*{Exercice 5}
+On a  $\alpha(t) = a_1(t) + ia_2(t)$, donc $\alpha'(t) = a_1'(t) + ia_2'(t)$ et $\alpha''(t) = a_1''(t) + ia_2''(t)$,
+
+Calculons
+$$
+J\alpha'(t) = i\alpha'(t) = (-a_2'(t), a_1(t))
+$$
+et 
+$$
+\alpha''(t).J\alpha'(t) = a_1''(t) * -a_2'(t) + a_2''(t) * a_1(t)
+$$
+
+Calculons
+$$
+\alpha''(t)\overline{\alpha'(t)} = (a_1''(t)+ia_2''(t))\overline{(a_1'(t)+ia_2'(t))} = (a_1''(t)+ia_2''(t))(a_1'(t)-ia_2'(t)) 
+$$
+$$
+= a_1''(t)a_1(t) -ia_1''(t)a_2'(t) +  ia_2''(t)a_1'(t) + a_2''(t)a_2'(t) 
+$$
+Donc
+$$
+Im(\alpha''(t)\overline{\alpha'(t)}) = a_1''(t)a_2'(t) + a_2''(t)a_1'(t) = \alpha''(t).J\alpha'(t)
 $$
 
 
@@ -283,24 +327,6 @@ $$
 \end{array}
 $$
 
-
-
-\subsection*{Exercice 5}
-On a  $\alpha(t) = p(t) + iq(t)$, donc $\alpha'(t) = p'(t) + iq'(t)$ et $\alpha''(t) = p''(t) + iq''(t)$,
-
-Calculons
-$$
-J\alpha'(t) = i\alpha'(t)
-$$
-Pour rappel dans $\C$, $a \cdot b = a \overline{b}$, avec $\overline{b}$ le conjugu\'e du nombre complexe $b$.
-$$
-\alpha''(t).J\alpha'(t) = \alpha''(t)\overline{J\alpha'(t)} = \alpha''(t)\overline{i\alpha'(t)} = \alpha''(t)\overline{i}\overline{\alpha}'(t) = -i\alpha''(t)\overline{\alpha}'(t)  
-$$
-et 
-$$
-k2[\alpha](t) = \frac{\alpha''(t).J\alpha'(t)}{\lVert \alpha'(t) \rVert^3} = \frac{-i\alpha''(t)\overline{\alpha'(t)}}{\lVert \alpha'(t) \rVert^3}
-$$
-Bizarre j'ai un "-" en trop.
 
 QED
 
