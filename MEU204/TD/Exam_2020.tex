@@ -1,0 +1,149 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+
+\newpage
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1.a}
+Fausse, car plus de 7 nombres entre les nombres premiers 191 et 179.
+
+\subsubsection*{Exercice 2.1.b}
+Vraie, soit 7 entiers cons\'ecutifs $a, a+1, a+2, \ldots, a+6$. Soit :
+\begin{itemize}
+\item $a = 6k$, donc c'est un multiple de 6
+\item $a = 6k + r, 0 < r < 6$, donc ce n'est pas un multiple de 6. si $r = 1$ alors $a+5 = 6(k+1)$, si $r = 2$ alors $a+4 = 6(k+1)$, \ldots,si $r = 5$ alors $a+1 = 6(k+1)$   
+\end{itemize}
+
+Donc il existe toujours un multiple de 6 parmi 7 entiers cons\'ecutifs.
+
+
+\subsubsection*{Exercice 2.2.a}
+Fausse. $a=7$ et $b=5$, premiers entre eux et $a+b=12$ et $a-b=2$ non premiers entre eux.
+
+\subsubsection*{Exercice 2.2.b}
+Vraie. Preuve par contracdiction.\\
+Supposons que $ab$ et $a+b$ ne sont pas premiers entre eux donc $\exists d > 1, \gcd(ab, a+b) = d$. Donc $d|ab$, supposons que $d|a$, comme $d|a+b$, alors $a = k_1d$ et $a+b = k_2d$, donc $k_1d+b = k_2d$ ce qui montre aue $d|b$. On vient de trouver un $d$ qui divise $a$ et $b$, contredisant qu'ils sont premiers entre eux. Par cons\'equent, Si $a$ et $b$ sont premiers entre eux alors $ab$ et $a+b$ sont premiers entre eux.   
+
+\subsubsection*{Exercice 2.3}
+Fausse. Contre-exemple $x=27$ car $27^2 + 1 = 729+1 = 730 = 73*10$. \\
+Sinon admettons qu'il existe un $x$ tel que $x^2 \equiv -1 \pmod{73}$. On sait par le petit th\'eor\`eme de Fermat que $x^{72} \equiv 1 \pmod{73}$. Donc $x^{2^{36}}	 \equiv 1 \pmod{73} \implies (-1)^{36} \equiv 1 \pmod{73}$. Ce qui est vrai car $1 \equiv 1 \pmod{73}$. Donc il existe un $x$.
+Sinon admettons qu'il existe un $x$ tel que $x^2 \equiv -1 \pmod{73}$. On sait par le le petit th\'eor\`eme de Fermat que $x^72 \equiv 1 \pmod{73}$. Donc $x^{2^36} \equiv 1 \pmod{73} \implies (-1)^{36} \equiv 1 \pmod{73}$. Ce qui est vrai car $1 \equiv 1 \pmod{73}$. Donc il existe un $x$.
+
+\subsection*{Exercice 2.4}
+Vraie. Si $x^18 \equiv n \pmod{37}$ alors $x^18 = 37k+n$. Donc $x^36 = x^{18^2} = (37k+n)^2 = 37^2k^2 + 74nk + n^2 = 37(37k^2+2nk) + n^2 = n^2 \pmod{37}$. D'apr\`es le petit th\'eor\`eme de Fermat on a $x^{36} 	 \equiv 1 \pmod{37}$ donc il faut que $n^2 = 1$. Ceci implique $n=1$ ou $n=-1$ donc
+$x^18 \equiv 1 \pmod{37}$ ou $x^{18} \equiv -1 \pmod{37}$.
+
+\subsection*{Exercice 4}
+\subsubsection*{Exercice 4.1}
+$
+\begin{array}{|l|l|}
+\hline
+x & x^2 \pmod{7} \\
+\hline
+0,7,\ldots,7k & 0 \pmod{7} = 0  \\
+\hline
+1,8,\ldots,7k+1 & 1 \pmod{7} = 1 \\
+\hline
+2,9,\ldots,7k+2 & 4 \pmod{7} = 4 \\
+\hline
+3,10,\ldots,7k+3 & 9 \pmod{7} = 2 \\
+\hline
+4,11,\ldots,7k+4 & 16 \pmod{7} = 2 \\
+\hline
+5,12,\ldots,7k+5 & 25 \pmod{7} = 4 \\
+\hline
+6,13,\ldots,7k+6 & 36 \pmod{7} = 1 \\
+\hline
+\end{array}
+$
+
+\subsubsection*{Exercice 4.2}
+Montrons que  $a^2 + b^2  \equiv 0 \pmod{7} \implies a \equiv 0 \pmod{7} \text{ et } b \equiv 0 \pmod{7}$, Les valeurs possibles pour $x^2 \pmod{7}$ sont $\{0,1,2,4\}$, la seule combinaison qui donne $a^2 + b^2 \equiv 0 \pmod{7}$ est $a^2 \pmod{7} = 0$ et $b^2 \pmod{7} = 0$, d'apr\'es le tableau 1 est la seule valeur de $x$ qui donne $x^2 \equiv 0 \pmod{7}$ donc que 7 divise $a$ et $b$.
+
+\subsubsection*{Exercice 4.3}
+$0^2 + 0^2 = 7.0^2$ est vraie
+
+\subsubsection*{Exercice 4.4}
+On a $x = 7k_x$ et $y=7k_y$, donc $x^2 + x^2 = 49k_x^2 + 49k_y^2 = 7(7k_x^2+7k_y^2) = 7z^2$. Donc $z^2 = 7(k_x^2 + k_y^2)$. donc 7 divise $z^2$. D'apr\'es le tableau 1, la seule valeur pour $x^2 \equiv 0 \pmod{7}$ est $x=7k$. Donc $z = 7k$.
+
+\subsubsection*{Exercice 4.5}
+
+
+QED
+
+\end{document}
+
