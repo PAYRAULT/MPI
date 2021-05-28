@@ -1,0 +1,335 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{R\'evision}
+\begin{defn}
+Un \emph{n-espace Euclidien} $\R^n$ est un ensemble de $n$ r\'eels (appel\'e \emph{n-tuple}).
+$$
+\R^n = \{(p_1,\ldots,p_n), p_i \text{est un r\'eel pour } i = 1,\ldots,n\}
+$$ 
+Si $p = (p_1, \ldots, p_n)$ et $q = (q_1, \ldots, q_n)$, on d\'efinit $p+q = (p_1+q_1,\ldots,p_n+q_n)$ et $\lambda p = (\lambda p_1, \ldots, \lambda p_n)$.
+
+\end{defn}
+
+
+\begin{defn}
+On d\'efinit le produit scalaire $ \cdot $ dans $\R$ comme 
+$$p \cdot q = \sum_{i=1}^{n} p_iq_i$$
+La norme d'un vecteur comme
+$$\lVert p \rVert = \sqrt{p \cdot p}$$
+La distance entre 2 points:
+$$distance(p,q) = \lVert p - q \rVert$$
+\end{defn}
+
+\begin{defn}
+On d\'efinit le produit scalaire $ \cdot $ dans $\C$ comme 
+$$p \cdot q = \sum_{i=1}^{n} p_i \bar{q_i}$$
+\end{defn}
+
+
+
+\begin{defn}
+On a les propri\'et\'es suivantes: $p \cdot q = q \cdot p$, $(p+r) \cdot q = p \cdot q + r \cdot q$, $(\lambda p) \cdot q = \lambda(p \cdot q) = p \cdot (\lambda q)$ et $\lVert \lambda p \rVert = \lvert \lambda \rvert \lVert p \rVert$. \\
+Les in\'egalit\'es suivantes: $\lvert p \cdot q \rvert \le \lVert p \rVert \lVert q \rVert$ (Cauchy-Schwarz) et $\lVert p+q \rVert \le \lVert p \rVert + \lVert q \rVert$ (triangulaire).   	  
+\end{defn}
+
+\begin{defn}
+On d\'efinit un angle entre 2 vecteurs comme:
+$$\cos \theta = \frac{p \cdot q}{\lVert p \rVert \lVert q \rVert}$$
+\end{defn}
+
+\begin{defn}
+On d\'efinit une application lin\'eaire $A$ (linear map) de $\R^m \to \R^n$ comme:
+$$A(\lambda_1 p + \lambda_2 q) = \lambda_1 Ap + \lambda_2 Aq$$
+\end{defn}
+
+\begin{defn}
+On d\'efinit une application lin\'eaire $J$ (complex) de $\R^2 \to \R^2$ comme:
+$$J(p,q) = (-q,p)$$
+L'application $J$ a les propri\'et\'es suivantes: $J^2 = -1$, $(Jp) \cdot (Jq) = p \cdot q$ et $(Jp) \cdot p = 0$. 
+\end{defn}
+
+
+\begin{defn}
+On d\'efinit une courbe param\'etr\'ee $\alpha(t): ]t_1,t_2[ \to \R^n$ comme:
+$$\alpha(t) = (a_1(t), a_2(t), \ldots, a_n(t))$$
+avec chaque $a_i(t)$ une fonction de $]t_1, t_2[ \to \R$. 
+\end{defn}
+
+Exemple de courbes param\'etr\'ees, 
+\begin{itemize}
+\item la droite passant par 2 points p et q, $\beta(t) = p +t(q-p) = (1-t)p + tq$
+\item le cercle de centre $p = (p_1, p_2)$ et de rayon r, $\theta(t) = (p_1 + r\cos(t), p_2\sin(t))$ avec $0 \le t < 2\pi$.
+\end{itemize}
+
+
+\begin{defn}
+Si $\alpha(t) = (a_1(t), a_2(t), \ldots, a_n(t))$ est une courbe param\'etr\'ee, on d\'efinit la vitesse (v\'elocut\'e)de $\alpha$  comme:
+$$v(t) = \lVert \alpha'(t) \rVert \ avec \ \alpha'(t) = (a_1'(t), a_2'(t), \ldots, a_n'(t))$$
+\end{defn}
+
+\begin{defn}
+Une courbe $\alpha(t) = ]t_1, t_2[ \to \R^n$ est dite r\'eguliaire si chaque $a_i(t)$ est d\'erivable et que la v\'elocit\'e en tout point n'est pas nulle. Si $\forall t \in ]t_1, t_2[, \lVert \alpha'(t) \rVert = 1$ alors $\alpha$ est dite \emph{vitesse unit\'e}
+\end{defn}
+
+
+\begin{defn}
+Soit 2 courbes param\'etrables diff\'erentiables $\alpha(t) = (a,b) \to \R^n$ et $\beta(t) = (a,b) \to \R^n$, on dit que:
+\begin{itemize}
+\item $\beta$ est une \emph{reparam\'etrage positif} de $\alpha$ si il existe une fonction d\'erivable $h: (c,d) \to (a,b)$ tel que $\forall t in ]c,d[, h'(t) > 0$ et $\beta(t) = (\alpha \circ h)(t)$. 
+\item $\beta$ est une \emph{reparam\'etrage n\'egatif} de $\alpha$ si il existe une fonction d\'erivable $h: (c,d) \to (a,b)$ tel que $\forall t in ]c,d[, h'(t) < 0$ et $\beta(t) = (\alpha \circ h)(t)$. 
+\item $\beta$ est une \emph{reparam\'etrage} de $\alpha$ si $\beta$ est soit un reparam\'etrage positif, soit un reparam\'etrage n\'egatif de $\alpha$. 
+\end{itemize}
+\end{defn}
+
+ 
+\begin{defn}
+Quelques propri\'et\'es $\beta'(t) = \alpha'(h(t))h'(t)$, $\lVert \beta'(t)\rVert = \lVert\alpha'(h(t))\rVert h'(t)$
+\end{defn}
+ 
+
+\begin{defn}
+On d\'efinit la \emph{longueur} d'une courbe param\'etr\'ee $\alpha$ sur l'intervale $[a,b]$ comme:
+$$length[\alpha] = \int_a^b v(t) dt = \int_a^b \lVert \alpha'(t)\rVert dt$$
+\end{defn}
+
+\begin{defn}
+Si $\beta$ est un reparam\'etrage de $\alpha$ alors
+$$length[\beta] \ sur\ [c,d] = length[\alpha]  \ sur\ [h(c),h(d)]$$ 
+\end{defn}
+ 
+
+\begin{defn}
+Prenons une chiffre $c$ avec $a < c < b$. La \emph{fonction de longueur d'arc} (abscisse curviligne) $s_{\alpha}$ de la courbe param\'etr\'ee $\alpha:(a,b) \to \R$ \`a partir de $c$ comme:
+$$
+s_{\alpha}(t) = length[c,t][\alpha] = \int_c^t \lVert \alpha'(u) \rVert du
+$$ 
+pour $a \le t < b$.
+\end{defn}
+
+L'avantage d'un parcours \`a vitesse constante ($\lVert \alpha'(t) \rVert = c$). Donc $\lVert \alpha'(t) \rVert^2 = \alpha'(t) \cdot \alpha'(t) = c^2$. En d\'erivant, on obtient $\alpha''(t) \cdot \alpha'(t) + \alpha'(t) \cdot \alpha''(t) = 0$. Donc,  $\alpha'(t) \cdot \alpha''(t) = 0$, c'est \`a dire que les vecteurs vitesse et acc\'el\'eration sont orthogonaux (produit scalaire nul).
+ 
+\begin{defn}
+Soit $\alpha: (a,b) \to \R^2$, on d\'efinit la courbure $\kappa2[\alpha]$ et $\alpha$ par:
+$$
+\kappa2[\alpha](t) = \frac{\alpha''(t).J\alpha'(t)}{\lVert \alpha'(t) \rVert^3}
+$$ 
+pour $a \le t < b$.
+\end{defn}
+
+Cela vient de pour chaque instant $t$, on peut d\'efinir un rep\`ere orthonorm\'e mobile $(\alpha(t), \frac{\alpha'(t)}{\lVert\alpha'(t)\rVert}, \frac{J\alpha'(t)}{\lVert \alpha'(t)\rVert})$, avec $\frac{\alpha'(t)}{\lVert \alpha'(t)\rVert}$ le vecteur tangente norm\'e \`a l'instant $t$ et $\frac{J\alpha'(t)}{\lVert \alpha'(t)\rVert}$ le vecteur normal norm\'e. La composante normale du vecteur acc\'el\'eration ($\alpha''(t)$) \`a l'instant $t$ est \'egale \`a $\alpha''(t) \cdot \frac{J\alpha'(t)}{\lVert \alpha'(t)\rVert}$ 
+
+
+\begin{defn}
+Le reparam\'etrage par longueur d'arc de la courbe param\'etr\'ee $\alpha$, (ou reparametrage selon le vecteur vitesse unit\'e) est :
+$$
+s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du
+$$ 
+\end{defn}
+
+\subsection*{Exercice 1}
+Calculer la fonction longueur d'arc de $\alpha: t \to a(c\cos t + t\sin t, \sin t - t\cos t)$.
+On a $\alpha' = (t \cos t, t \sin t)$ et $\lVert \alpha'(t) \rVert = \sqrt{t^2 \cos^2 t + t^2 \sin^2 t} = t$.
+Donc
+$$
+s_{\alpha}(t) = \int_c^t \lVert \alpha'(u) \rVert du = \int_c^t{u du} = \left[ \frac{u^2}{2} \right]_c^t = \frac{t^2}{2} - \frac{c^2}{2}
+$$ 
+
+\subsection*{Exercice 2}
+Montrer que pour $\alpha(t) = (a_1(t), a_2(t))$,
+$$
+\alpha'(t) = \lim_{\delta \to 0} \frac{\alpha(t+\delta) - \alpha(t)}{\delta}
+$$
+$$
+\alpha'(t) = (a_1'(t), a_2'(t)) = (\lim_{\delta \to 0} \frac{a_1(t+\delta) - a_1(t)}{\delta}, \lim_{\delta \to 0} \frac{a_2(t+\delta) - a_2(t)}{\delta}) 
+$$
+$$
+= \lim_{\delta \to 0} \left(\frac{a_1(t+\delta) - a_1(t)}{\delta},\frac{a_2(t+\delta) - a_2(t)}{\delta}\right) = \lim_{\delta \to 0} \frac{1}{\delta} \left(a_1(t+\delta) - a_1(t),a_2(t+\delta) - a_2(t)\right)
+$$
+$$
+= \lim_{\delta \to 0} \frac{1}{\delta} \left(a_1(t+\delta),a_2(t+\delta)) - (a_1(t),a_2(t)) \right) = \lim_{\delta \to 0} \frac{1}{\delta} \left(\alpha(t+\delta) - \alpha(t) \right)
+$$
+
+\subsection*{Exercice 3}
+Montrer que la courbure de la courbe parametr\'ee d'un cercle de centre $p = (p_1, p_2)$ et de rayon $r$ est \'egale \`a $\frac{1}{r}$.
+$$\beta(t) = (p_1 + r\cos t, p_2 + r\sin t)$$
+$$\beta'(t) = (-r\sin t, r\cos t)$$
+$$\beta''(t) = (-r\cos t, -r\sin t)$$
+et
+$$J\beta'(t) = (-r\cos t, -r\sin t)$$
+$$\beta''(t) \cdot J\beta'(t) = (-r \cos t)(-r \cos t) + (-r \sin t)(-r \sin t) = r^2$$
+$$\lVert \beta'(t) \rVert = \sqrt{(-r \sin t)(-r \sin t) + (r \cos t)(r \cos t)} = r$$
+Donc
+$$
+s_{\beta}(t) = \frac{\beta''(t).J\beta'(t)}{\lVert \beta'(t) \rVert^3} = \frac{r^2}{r^3} = \frac{1}{r}
+$$ 
+
+
+\subsection*{Exercice 4}
+Le reparam\'etrage par longueur d'arc de la courbe param\'etr\'ee $\alpha : t \to (t^2, t^3)$, (ou reparametrage selon le vecteur vitesse unit\'e) est :
+$$
+s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du
+$$ 
+Donc $\alpha'(t) = (2t, 3t^2)$ et $\lVert \alpha'(t) \rVert = \sqrt{4t^2+9t^4} = t\sqrt{4+9t^2}$
+On a
+$$
+s_{\alpha}(t) = length[0,t][\alpha] = \int_0^t \lVert \alpha'(u) \rVert du = \int_0^t \lVert u\sqrt{4+9u^2} \rVert du = \left[ \frac{(9u^2+4)^{\frac{3}{2}}}{27}\right]_0^t = \frac{(9t^2+4)^{\frac{3}{2}}}{27} - \frac{8}{27}
+$$
+
+
+\subsection*{Exercice 5}
+On a  $\alpha(t) = a_1(t) + ia_2(t)$, donc $\alpha'(t) = a_1'(t) + ia_2'(t)$ et $\alpha''(t) = a_1''(t) + ia_2''(t)$,
+
+Calculons
+$$
+J\alpha'(t) = i\alpha'(t) = (-a_2'(t), a_1(t))
+$$
+et 
+$$
+\alpha''(t).J\alpha'(t) = a_1''(t) * -a_2'(t) + a_2''(t) * a_1(t)
+$$
+
+Calculons
+$$
+\alpha''(t)\overline{\alpha'(t)} = (a_1''(t)+ia_2''(t))\overline{(a_1'(t)+ia_2'(t))} = (a_1''(t)+ia_2''(t))(a_1'(t)-ia_2'(t)) 
+$$
+$$
+= a_1''(t)a_1(t) -ia_1''(t)a_2'(t) +  ia_2''(t)a_1'(t) + a_2''(t)a_2'(t) 
+$$
+Donc
+$$
+Im(\alpha''(t)\overline{\alpha'(t)}) = a_1''(t)a_2'(t) + a_2''(t)a_1'(t) = \alpha''(t).J\alpha'(t)
+$$
+
+
+\subsection*{Exercice 6}
+En partant de l'equation [1] $e^{i\theta_0} = \cos \theta_0 + i \sin \theta_0$, Essayons de contruire deux fonctions $h(t)$ et $\theta(t)$ tel que $h(t) = e^{i\theta(t)}$. 
+Prenons
+$$
+\begin{array}{l l}
+f(t) = \frac{\alpha'(t) \cdot \beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} & g(t) = \frac{\alpha'(t) \cdot J\beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert}
+\end{array}
+$$
+
+Calculons 
+$$
+f^2(t) + g^2(t) = \left( \frac{\alpha'(t) \cdot \beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} \right)^2 + \left( \frac{\alpha'(t) \cdot J\beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} \right)^2 = \frac{\left( \alpha'(t) \cdot \beta'(t)\right)^2 + \left( \alpha'(t) \cdot J\beta'(t)\right)^2 }{\left( \lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert \right)^2}
+$$ 
+
+$$
+= \frac{\left( \lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert \right)^2}{\left( \lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert \right)^2} = 1
+$$
+
+Contruisons la fonction $h(t) = f(t) + ig(t)$, on a 
+$$h(t)\overline{h(t)} = (f(t) + ig(t))(f(t)-ig(t)) = f^2(t) + if(t)g(t) - if(t)g(t) + g^2(t) = f^2(t) + g^2(t) = 1$$.
+
+D\'efinissons
+$$
+\theta(t) = \theta_0 + \int_{t_0}^th'(s)\overline{h(s)}ds
+$$
+
+Calculons 
+$$\frac{d}{dt}h(t)e^{-i\theta(t)} = h'(t)e^{-i\theta(t)} - ih(t)\theta'e^{-i\theta(t)} = e^{-i\theta(t)}(h(t)'-ih(t)\theta'(t))$$
+Mais $\theta'(t) = ih'(t)h(t)$
+Donc
+$$\frac{d}{dt}h(t)e^{-i\theta(t)} = e^{-i\theta(t)}(h'-ih(t)h'(t)\overline{h(t)})$$
+Comme $h(t)\overline{h(t)} = 1$, on a $\frac{d}{dt}h(t)e^{-i\theta(t)} = 0$ donc $h(t)e^{-i\theta(t)}$ est \'egale \`a une constante $c$.Calculons
+$$
+h(t_0)e^{-i\theta(t_0)} = (f(t_0) + ig(t_0))e^{-i\theta(t_0)} = e^{i\theta(t_0)}e^{-i\theta(t_0)} = 1
+$$
+car [1].
+
+Par cons\'equent 
+$$
+h(t)e^{-i\theta(t)} = c = 1
+$$
+et
+$$
+h(t)= e^{i\theta(t)} = \cos \theta(t) + i \sin \theta(t) = f(t) + ig(t)
+$$
+Ce qui fait que 
+$$
+\begin{array}{l l}
+\cos(t) = \frac{\alpha'(t) \cdot \beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert} & \sin(t) = \frac{\alpha'(t) \cdot J\beta'(t)}{\lVert \alpha'(t) \rVert \lVert \beta'(t) \lVert}
+\end{array}
+$$
+
+
+QED
+
+
+\end{document}
+
