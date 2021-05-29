@@ -1,0 +1,139 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+\pdfinfo{
+   /Author (Myself)
+   /Title  (Exam 2020 - MEU202)
+}
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+
+
+\newpage
+
+
+\subsection*{Exercice 5}
+\subsubsection*{Exercice 5.1}
+La dimension de la matrice $\M_2(\C)$ est $d=4$ car sa base est:
+$$U_1 = \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} . U_2 = \begin{vmatrix} 0 & 1 \\ 0 & 0 \end{vmatrix} . U_3 = \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix} . U_4 = \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix}$$
+
+Par d\'efinition, la dimension du $\R-ev$ est $2d = 8$.
+
+\subsubsection*{Exercice 5.1}
+Par d\'efinition la base dans l'espace vectoriel $\R-ev$ est $(U_1, iU_1, \ldots, U_4, iU_4)$.
+Donc la base est
+$$U_1 = \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} . U_2 = \begin{vmatrix} 0 & 1 \\ 0 & 0 \end{vmatrix} . U_3 = \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix} . U_4 = \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix}$$
+$$iU_1 = \begin{vmatrix} i & 0 \\ 0 & 0 \end{vmatrix} . iU_2 = \begin{vmatrix} 0 & i \\ 0 & 0 \end{vmatrix} . iU_3 = \begin{vmatrix} 0 & 0 \\ i & 0 \end{vmatrix} . iU_4 = \begin{vmatrix} 0 & 0 \\ 0 & i \end{vmatrix}$$
+
+\subsection*{Exercice 6}
+\subsubsection*{Exercice 6.1}
+On a H de la forme
+$$
+H = \begin{vmatrix} a_{11} + ib_{11} & a_{12} + ib_{12} \\ a_{21} + ib_{21} & -a_{11} - ib_{11} \end{vmatrix}
+$$
+
+Une base de H est 
+$$U_1 = \begin{vmatrix} 1 & 0 \\ 0 & -1 \end{vmatrix} . U_2 = \begin{vmatrix} 0 & 1 \\ 0 & 0 \end{vmatrix} . U_3 = \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix}$$
+
+La dimension de H est 3.
+
+\subsubsection*{Exercice 6.2}
+On a 
+$$E_{11} = \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} . E_{12} = \begin{vmatrix} 0 & 1 \\ 0 & 0 \end{vmatrix} . E_{21} = \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix}. E_{22} = \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix}$$
+
+Donc
+$$
+E_1 = E_{11}-E_{22} = \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} - \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} =  \begin{vmatrix} 1 & 0 \\ 0 & -1 \end{vmatrix}
+$$
+et $Tr(E_{11}-E_{22}) = 1 + (-1) = 0$, matrice diagonale.
+
+$$
+E_2 = E_{12}+E_{21} = \begin{vmatrix} 0 & 1 \\ 0 & 0 \end{vmatrix} - \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix} =  \begin{vmatrix} 0 & 1 \\ 1 & 0 \end{vmatrix} = U_2 + U_3
+$$
+et $Tr(E_{12}+E_{21}) = 0 + 0 = 0$, $X_m(\lambda) = \lambda^2-1$, $S_p(E_{12}+E_{21}) = \{1, -1\}$.... 
+
+$$
+E_3 = E_{11}-E_{22}+E_{12} = \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} - \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} + \begin{vmatrix} 0 & 1 \\ 0 & 0 \end{vmatrix} =  \begin{vmatrix} 1 & 1 \\ 0 & -1 \end{vmatrix} 
+$$
+et $Tr(E_{11}-E_{22}+E_{12}) = 1 + (-1) = 0$, $X_m(\lambda) = \lambda^2-1$, $S_p(E_{11}-E_{22}+E_{12}) = \{1, -1\}$.... 
+
+Donc les 3 matrices sont dans H.
+
+\subsubsection*{Exercice 6.3}
+Calcul si $(E_1, E_2, E_3)$ est une base de H. 
+
+
+\end{document}
+
