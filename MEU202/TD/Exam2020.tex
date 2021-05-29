@@ -83,6 +83,58 @@
 
 \newpage
 
+\subsection*{Exercice 3}
+\subsubsection*{Exercice 3.1}
+Les matrices A et B commutent donc $A.B = B.A$. Calculons $B.A^2$
+$$
+B.A^2 = B.A.A = (B.A).A = (A.B).A = A.B.A = A.(B.A) = A.(A.B) = A.A.B = A^2B
+$$
+Comme $B.A^2 = A^2.B$ les matrices $A^@$ et $B$ commutent.
+
+\subsubsection*{Exercice 3.2}
+$$
+X_A(\lambda) = (a-\lambda)(d-\lambda)-bc = \lambda^2 -\lambda(a+d) + ad-bc
+$$
+
+\subsubsection*{Exercice 3.3}
+$$
+A^2 = \begin{vmatrix} a^2+bc & ab+bd \\ ac+cd & bc+d^2 \end{vmatrix}
+$$
+
+$A \in vect(A^2, I^2)$ si il existe $\lambda_1$ et $\lambda_2$ tel que $A = \lambda_1A^2 + \lambda_2Id^2$
+4 \'equations a v\'erifier
+$$
+\left\{
+\begin{array}{l l}
+a = \lambda_1(a^2+bc) + \lambda_2 & \\
+b = \lambda_1(ab+bd) & \implies \lambda_1(a+d) = 1\\
+c = \lambda_1(ac+cd) & \implies \lambda_1(a+d) = 1\\
+d = \lambda_1(bc+d^2) + \lambda_2 & \\
+\end{array}
+\right.
+$$
+
+On a $\lambda_1 = \frac{1}{a+d}$ car $a+d \neq 0$. Calculons $\lambda_2$
+$$
+a = \frac{1}{a+d}(a^2+bc) + \lambda_2
+$$
+$$
+\frac{a^2+ad}{a+d} = \frac{a^2+bc}{a+d} + \frac{\lambda_2(a+d)}{a+d}
+$$
+$$
+a^2+ad = a^2+bc + \lambda_2(a+d)
+$$
+$$
+\lambda_2 = \frac{ad - bc}{a+d}
+$$
+
+V\'erifions $\lambda_2$
+$$
+d = \lambda_1(bc+d^2) + \lambda_2 = \frac{bc+d^2}{a+d} + \frac{ad - bc}{a+d} = \frac{d(a+d)}{a+d} = d
+$$
+
+$\lambda_1$ et $\lambda_2$ existent, donc $A \in vect(A^2, I^2)$.
+
 
 \subsection*{Exercice 5}
 \subsubsection*{Exercice 5.1}
@@ -141,7 +193,7 @@ $$
 Ax = A^2x = A(Ax) = A(\lambda x) = \lambda A(x) = \lambda^2 x = \lambda x
 $$
 
-Les 2 solutions sont $\lambda = 0$ ou $\lambda = 1$. Les espaces propres sont $E_0 = \{x \in M_n(\R)|Ax = 0\}$ et $E_1 = \{x \in M_n(\R)|Ax = x\}$. Il maintenant trouver la dimension de $E_0$ et $E_1$ et montrer que leur somme est $n$.
+Les 2 solutions sont $\lambda = 0$ ou $\lambda = 1$. Les espaces propres sont $E_0 = \{x \in M_n(\R)|Ax = 0\}$ et $E_1 = \{x \in M_n(\R)|Ax = x\}$. Il maintenant trouver la dimension de $E_0$ et $E_1$ et montrer que leur somme est $n$ ou que 
 
 
 \end{document}
