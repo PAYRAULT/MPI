@@ -144,6 +144,63 @@ Donc $a^2=9$, $2ab = -18$  et $b^2=9$. Ce qui fait $a=3,b=-3$ ou $a=-3,b=3$.
 Le point $A$ est un minimum global si $\forall (x,y) \in \R^2, f(x,y) \ge f(A) = f(1,1)$.	On a $g(x,y) = f(x,y) - (2x-y-1)^2 = (ay+b)^2+1$. Donc $f(x,y) = (ay+b)^2+1 + (2x-y-1)^2$ et $f(x,y) = 1$. On a $(ay+b)^2 \ge 0$ et $(2x-y-1)^2 \ge 0$ donc $(ay+b)^2 + (2x-y-1)^2 +1 \ge 1$. Donc le point $A$ est un minimum global.
 
 
+\subsection*{Exercice 2}
+\subsubsection*{Exercice 2.1}
+$$
+\frac{\partial }{\partial x}f(x,y) = \frac{\partial }{\partial x} (1+x+\sin(y))e^{-x} = −(x+\sin(y))e^{−x}
+$$
+$$
+\frac{\partial }{\partial y}f(x,y) = \frac{\partial }{\partial y} (1+x+\sin(y))e^{-x} = e^{-x}\cos(y)
+$$
+
+
+\subsection*{Exercice 3}
+\subsubsection*{Exercice 3.1}
+??
+\subsubsection*{Exercice 3.2}
+Gradient en tout point $(x,y) \in \R^2$.
+$$
+\nabla f : (x,y) \to \left\{
+\begin{array}{l}
+\frac{\partial }{\partial x}f(x,y) = 8x - 4y -4 \\
+\frac{\partial }{\partial y}f(x,y) = 2y - 4x -2 \\
+\end{array}
+\right.
+$$
+
+\subsubsection*{Exercice 3.3}
+$f(0,2) = 0$ donc le point $(0,2) \in \L$
+
+Gradient au point $(0,2)$.
+$$\nabla_{(0,2)} f = (-12,2)$$
+
+Tangente en un point $(x_0,y_0)$ est
+$$\{(x,y) \in \R^2, \frac{\partial }{\partial x}f(x_0,y_0)(x-x_0) + \frac{\partial }{\partial y}f(x_0,y_0)(y-y_0) = 0\}$$ 
+$$\{(x,y) \in \R^2, -12(x-0) + 2 (y-2) = -12x + 2y -4 = 0\}$$
+$$\{(x,y) \in \R^2,  y = 6x + 2\}$$
+
+Coefficent directeur est 6.
+
+\subsubsection*{Exercice 3.4.a}
+$f(x,h_{+}(x)) = 0$?
+$$f(x,h_{+}(x)) = 4x^2 -4x(1+2x+\sqrt{1+8x}) + (1+2x+\sqrt{1+8x})^2 - 4x -2(1+2x+\sqrt{1+8x})$$
+$$ = 4x^2 -4x -8x^2 -4x\sqrt{1+8x} + 1 +2x + \sqrt{1+8x} + 2x +4x^2 +2x\sqrt{1+8x} + \sqrt{1+8x} +2x\sqrt{1+8x}+1+8x -4x -2 + 4x -2\sqrt{1+8x}= 0$$
+ou
+$$f(x,h_{+}(x)) = (2x-(1+2x+\sqrt{1+8x}))^2 - 4x -2(1+2x+\sqrt{1+8x}) = (-1-\sqrt{1+8x})^2 - 4x - 2 - 4x - 2\sqrt{1+8x}$$
+$$= 1 + 2\sqrt{1+8x} + 1 +8x - 8x -2 - 2\sqrt{1+8x} = 0$$
+
+$f(x,h_{-}(x)) = 0$?
+$$f(x,h_{-}(x)) = 4x^2 -4x(1+2x-\sqrt{1+8x}) + (1+2x-\sqrt{1+8x})^2 - 4x -2(1-2x-\sqrt{1+8x})$$
+$$ = 4x^2 -4x -8x^2 + 4x\sqrt{1+8x} + 1 +2x - \sqrt{1+8x} + 2x +4x^2 - 2x\sqrt{1+8x} - \sqrt{1+8x} -2x\sqrt{1+8x}+1+8x -4x -2 + 4x +2\sqrt{1+8x}= 0 $$
+ou
+$$f(x,h_{+}(x)) = (2x-(1+2x-\sqrt{1+8x}))^2 - 4x -2(1+2x-\sqrt{1+8x}) = (-1+\sqrt{1+8x})^2 - 4x - 2 - 4x + 2\sqrt{1+8x}$$
+$$= 1 - 2\sqrt{1+8x} + 1 +8x - 8x -2 + 2\sqrt{1+8x} = 0$$
+
+\subsubsection*{Exercice 3.4.b}
+$$h'_{+}(x) = 2 + \frac{4}{\sqrt{1+8x}}$$
+$$h'_{+}(0) = 2 + \frac{4}{\sqrt{1+8.0}} = 6$$
+
+On a $h_{+}(0) = 2$, donc le point $(0,h_{+}(0)) = (0,2)$. On sait que $h_{+} \in \L$. Donc la ...
 
 
 QED
