@@ -1,0 +1,152 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\B}{\mathrm{B}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\newpage
+\subsection*{Exercice 1}
+\subsubsection*{Exercice 1.1}
+$$
+\frac{\partial }{\partial x}f(x,y) = 8x -4y -4
+$$
+$$
+\frac{\partial }{\partial y}f(x,y) = 20y - 4x -16
+$$
+
+\subsubsection*{Exercice 1.2}
+Point critique est le point o\`u les 2 d\'eriv\'ees s'annulent.
+$$
+\left\{
+\begin{array}{l}
+8x - 4y - 4 = 0 \\
+20y - 4x - 16 = 0 \\
+\end{array}
+\right.
+\implies
+\left\{
+\begin{array}{l}
+2x - y - 1 = 0 \\
+10y -2x - 8 = 0 \\
+\end{array}
+\right.
+\implies
+\left\{
+\begin{array}{l}
+9y - 9 = 0 \\
+2x - y - 1 = 0 \\
+\end{array}
+\right.
+\implies
+\left\{
+\begin{array}{l}
+y = 1 \\
+2x - 2 = 0 \\
+\end{array}
+\right.
+$$
+
+Le point critique est $A = (1,1)$.
+
+\subsubsection*{Exercice 1.3.a}
+$f(x,0) = 4x^2 - 4x + 11$ on a $f(x,0) < 4x^2 +11$
+donc $f(x,0) > C$ pour tout $x > M$ avec $M = \sqrt{|C-11|/4}$
+
+\subsubsection*{Exercice 1.3.b}
+Le point $A$ est un maximum global si $\forall (x,y) \in \R^2, f(x,y) < f(A) = f(1,1)$. Il suffit de trouver un contre exemple, ie un point $(x,y)$ tel que $ f(x,y) > f(1,1)$. On a $f(1,1) = 1$, il suffit de prendre le point $(0,0)$ car $f(0,0) = 11$. 
+
+\subsubsection*{Exercice 1.4.a}
+$$
+g(x,y) = f(x,y) - 4x^2 + 4xy +4x -y^2 -2y -1 = 9y^2 -18y +10 
+$$
+
+$$
+\frac{\partial }{\partial x}g(x,y) = \frac{\partial }{\partial x}(9y^2 -18y +10) = 0
+$$
+
+\subsubsection*{Exercice 1.4.b}
+$$
+g(x,y) = (ay+b)^2 + 1 = a^2y^2+2aby+b^2+1 = 9y^2-18y+10
+$$
+Donc $a^2=9$, $2ab = -18$  et $b^2=9$. Ce qui fait $a=3,b=-3$ ou $a=-3,b=3$.
+
+\subsubsection*{Exercice 1.4.b}
+Le point $A$ est un minimum global si $\forall (x,y) \in \R^2, f(x,y) \ge f(A) = f(1,1)$.	On a $g(x,y) = f(x,y) - (2x-y-1)^2 = (ay+b)^2+1$. Donc $f(x,y) = (ay+b)^2+1 + (2x-y-1)^2$ et $f(x,y) = 1$. On a $(ay+b)^2 \ge 0$ et $(2x-y-1)^2 \ge 0$ donc $(ay+b)^2 + (2x-y-1)^2 +1 \ge 1$. Donc le point $A$ est un minimum global.
+
+
+
+
+QED
+
+\end{document}
+
