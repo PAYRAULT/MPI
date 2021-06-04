@@ -1,0 +1,132 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Un \emph{groupe (G,*)} est un ensemble $G$ auquel est associ\'e une op\'eration $*$ (la \emph{loi de composition}) v\'erifiant les 4 propri\'et\'es suivantes:
+\begin{itemize}
+\item $\forall x, y \in G, x * y \in G$. $*$ est une loi de composition interne.
+\item $\forall x, y, z \in G, (x * y) * z = x * (y * z)$ la loi est \emph{associative}
+\item $\exists e \in G, \forall x \in G, x * e = e * x = x$. $e$ est l'\'el\'ement neutre
+\item $\forall x \in G, \exists x' \in G, x * x' = e$. $x'$ est l'inverse de $x$ et est not\'e $x^{-1}$. 
+\end{itemize}
+\end{defn}
+
+\newpage
+\subsection*{Exercice 1}
+Pour que $\R$, muni de la multiplication soit un groupe, il faut qu'il v\'efifie les 4 propri\'et\'es d'un groupe. La multiplication est une loi de composition interne pour $\R$. La multiplication est associative dans $\R$. 1 est l'\'el\'ement neutre pour la multiplication dans $\R$. V\'erifions si tout les \'el'\'ements de $\R$ ont un inverse dans $\R$. 
+0, n'a pas d'inverse dans $\R$, donc $(\R,*)$ n'est pas un groupe.
+
+\subsection*{Exercice 2}
+On a $G=\{a,b,e\}$, $(G,.)$ est un groupe et $e$ l\'el\'ement neutre du groupe $(G,.)$. Donc $\forall x \in G, \exists x' \in G, x . x' = e$ et $\forall x, y, \in G, x.y \in G = \{a,b,e\}$. \\
+Donc $a.b \in {a,b,e}$. Plusieurs cas possibles:
+\begin{itemize}
+\item $b$ est l'inverse de $a$ dans le groupe. Donc, $a.b = e$
+\item $b$ n'est pas l'inverse de $a$ dans le groupe. donc $a.b \in {a,b}$. Soit $a.b = a$, as possible car $a.e=a$ et $b \neq e$, ou $a.b=b$ pas possible car $(a.b).b \neq a.(b.b)$.
+\end{itemize}
+Donc $a.b = e$
+
+\subsection*{Exercice 3}
+Non. $a$ et $b$ premiers entre eux donc $\gcd(a,b) = 1$ et $b$ et $c$ premiers entre eux donc $\gcd(b,c) = 1$. Prenons, $a=3, b=5, c=9$, on a $gcd(3,5) = 1$ et $\gcd(5,9) = 1$ mais $gcd(3,9) = 3$. Donc $a$ et $c$ ne sont pas premiers entre eux.
+
+\subsection*{Exercice 4}
+
+
+\subsection*{Exercice 5}
+\subsubsection*{Exercice 5.1}
+$p^2 -1 = (p+1)(p-1)$, comme $p$ est un nombre premier sup\'erieur \`a 5, $p$ est impair. Donc $p^2 - 1 = (2k+1-1)(2k+1+1) = 2k(2k+2) = 4k(k+1)$.
+
+\subsubsection*{Exercice 5.2}
+$8 | p^2-1$ si $\exists n, p^2-1 = 8n$. 
+\begin{itemize}
+\item $k$ est pair donc $k=2k'$ et $4k(k+1) = 8k'(2k'+1)$ donc $n = k'(2k'+1)$
+\item $k$ est impair donc $k=2k'+1$ et $4k(k+1) = 4(2k'+1)(2k'+1+1) = 4(2k'+1)(2k'+2) = 8(2k'+1)(k'+1)$ donc $n=(2k'+1)(k'+1)$.
+\end{itemize}
+$n$ existe, donc $8 | p^2 - 1$.\\
+
+$16 | p^4-1$ si $\exists n, p^4-1 = 16n$. 
+$p^4-1 = (p^2-1)(p^2+1)$ et $8 | p^2 -1$ mais $p$ est impair donc $p^2$ est impair et $p^2+1$ est pair. Par cons\'equent $2 | p^2 + 1$. Par cons\'equent, $(p^2-1)(p^2+1) = 8n.2n' = 16nn'$ donc $16 | p^4-1$.
+
+\subsubsection*{Exercice 5.3}
+
+ 
+
+
+
+
+QED
+
+\end{document}
+
