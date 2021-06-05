@@ -139,7 +139,7 @@ Donc $3|p^2 -1$ pour tout nombre premier $p$.
 \subsubsection*{Exercice 5.4}
 $5 | p^2-1$ si $\exists n, p^2-1 = 5n$. 
 $p^4 -1 = (p^2-1)(p^2+1)$
-Chaque entier $n$ peut s'\'ecrire $5k$, $5k+1$, $5k+2$, $5k+3$ ou $5k+4$. Comme $p$ est un nombre premier il ne peut pas \^etre \'egal a $3n$. Donc il reste 4 cas:
+Chaque entier $n$ peut s'\'ecrire $5k$, $5k+1$, $5k+2$, $5k+3$ ou $5k+4$. Comme $p$ est un nombre premier il ne peut pas \^etre \'egal a $5n$. Donc il reste 4 cas:
 \begin{itemize}
 \item $p = 5n+1$, donc $p^4-1 = ((5n+1)^2-1)((5n+1)^2+1) = (25n^2+10n+1-1)((5n+1)^2-1) = 5(n^2+2n)((5n+1)^2-1)$
 \item $p = 5n+2$, donc $p^4-1 = ((5n+2)^2-1)((5n+2)^2+1) = ((5n+2)^2-1)(25n^2+10n+4+1) = 5((5n+2)^2-1)(5n^2+2n+1)$
@@ -148,9 +148,57 @@ Chaque entier $n$ peut s'\'ecrire $5k$, $5k+1$, $5k+2$, $5k+3$ ou $5k+4$. Comme 
 \end{itemize}
 Donc $5|p^4 -1$ pour tout nombre premier $p$.
 
- 
+\subsubsection*{Exercice 5.5}
+$a | c$ donc $c = k_1a$ et $b | c$ donc $c = k_2b$. il faut montrer que $ab | c$ ou $c = kab$. En partant de l'identit\'e de Bezout on a $\gcd(a,b) = ax+ by$ donc $ax + by =1$, en multipliant par $c$ on a $cax+cby = c$, cela fait $k_2bax + k_1aby = c$ et $ab(k_2x+k_1y) = c$. Donc $ab| c$.
 
 
+\subsubsection*{Exercice 5.6}
+On a $16| p^4-1$ et $5|p^4-1$, et $\gcd(16, 5) = 1$ donc d'apr\`es la question 5 on a $80| p^4-1$.\\
+On a $p^4-1 = (p^2-1)(p^2+1)$ et $3|p^2-1)$ donc $p^2-1 = 3n$ et $p^4-1 = 3n(p^2+1)$ donc $3|p^4-1$., $gcd(3,80) = 1$ donc d'apr\`es la question 5, on a $240|p^4-1$.
+
+\subsection*{Exercice 6}
+\subsubsection*{Exercice 6.1}
+Non, car $N = 4u_1u_2u_3\ldots u_n -1$ avec $\gcd(2,u_1, u_2, \ldots, u_n) = 1$ (car tous $u_n$ premiers et $u_1=3$.). Prenons un $u_i$, on a $N = u_i(4u_1u_2u_3\ldots u_n) -1$ avec $4u_1u_2u_3\ldots u_n$ non divisible par $u_i$. donc le reste de la division $\frac{N}{u_i} = u_i-1$ qui est diff\'erent de 0.
+
+\subsubsection*{Exercice 6.2}
+$N$ est un nombre impair. Si il existe un facteur premier $p$, alors $p$ est un nombre impair et $N=kp$ avec $k$ un nombre impair.\\
+$N$ est de la forme $4k-1$ et $N$ est la multiplication de 2 nombres impairs, donc $N$ ne peut \^etre que de la forme $N=(4k_1+1)(4k_2-1)$ (toute autre combinaison ne donne pas un nombre de la forme $4k-1$).
+
+\subsubsection*{Exercice 6.3}
+On a $N = (4k_1+1)(4k_2-1) = 16k_1k_2-4k_1+4k_2-1 = 4(4k_1k_2-k_1+k_2)-1$.
+
+
+\subsection*{Exercice 7}
+\subsubsection*{Exercice 7.1}
+$$\gcd(171,160), 171 = 160*1 + 11$$
+$$\gcd(11,160), 160 = 11*14 + 6$$
+$$\gcd(11, 6), 11 = 6*1 + 5$$
+$$\gcd(5, 6), 6 = 5*1 + 1$$
+$$\gcd(5, 1), 5 = 1*5 + 0$$
+$$\gcd(0, 1) = 1$$
+
+\subsubsection*{Exercice 7.2}
+On a $\gcd(171,160) = 1$, donc $\exists x, y, 171x+160y = 1$.
+$$1 = 6 - 1*5 = 6 - (11-6*1) = 2*6-11 = 2*(160-11*14) - 11 = 2*160 - 29*11 = 2*160 -29*(171-160) = 31*160 -29*171$$
+Identit\'e de Bezout: $31*160 - 29*171 = 1$.
+
+\subsubsection*{Exercice 7.3}
+$(x,y) = (x_0 + nb/d, y_0 - na/d)$ avec $\gcd(x,y)=d$ et $a,b$ une solution de $ax+by=d$. Donc, $x_0=-29$, $y_0=31$, $a=171$, $b=160$ et $d=1$.
+$$
+(x,y) = (-29 + 160n, 31 - 171n)
+$$
+
+
+
+\subsection*{Exercice}
+\subsubsection{Ex 1}
+Montrer que tout nombre impair peut se mettre sous la forme $4k+1$ ou $4k+3$.\\
+\subsubsection{Ex 2}
+Montrer que tout nombre impair peut se mettre sous la forme $4k+1$ ou $4k-1$.\\
+\subsubsection{Ex 3}
+Montrer que pour tout nombre impair $p$ on a $p^2 \equiv 1 \pmod{8}$.\\
+
+Preuve, un nombre impair p est de la forme $p = 2x+1$, $x$ est soit pair soit impair. cas $x$ est pair donc $p = 4l +1$, cas $x$ est impair donc $p=4k+3 = 4(k+1) -1$.\\
 
 
 QED
