@@ -110,6 +110,59 @@ $$P(A_2) = P(A_1) + P(A_2-A_1)$$
 $$P(A_2-A_1) = P(A_2) - P(A_1)$$
 Comme $P(X)$ est positif, on a $P(A_2) - P(A_1) \geq 0$, donc $P(A_2) \geq P(A_1)$
 \item $\forall X \in \mathscr{F}, P(X) \leq 1$. On a $\forall X \in \mathscr{F}, X \subset \Omega$ part d\'efinition, donc $P(X) \leq P(\Omega) = 1$
+\item Si $A_1, A_2, \ldots, A_n$ sont les ensembles \'el\'ementaires des \'el\'ements de $\Omega$, alors $\sum_{m=1}^{n} P(A_m) = 1$ on a $\cup_{m=1}^{n} A_m = \Omega$ et tous les $A_m$ sont disjoints donc 
+$$1 = P(\Omega) =  P(\cup_{m=1}^{n} A_m) = \sum_{m=1}^{n} P(A_m)$$
+\item $P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1 \cap A_2)$. On a $A_1 \cup A_2 = (A_1 - (A_1 \cap A_2)) \cup  (A_1 \cap A_2) \cup (A_2 - (A_1 \cap A_2))$. Les 3 ensembles sont disjoints et $A_1 =  (A_1 - (A_1 \cap A_2)) \cup  (A_1 \cap A_2)$ et $A_2 = (A_2 - (A_1 \cap A_2)) \cup  (A_1 \cap A_2)$. Les ensemnles sont disjoints. Donc
+$$P(A_1) = P(A_1 - (A_1 \cap A_2)) + P(A_1 \cap A_2), P(A_1 - (A_1 \cap A_2)) = P(A_1) - P(A_1 \cap A_2)$$ 
+$$P(A_2) = P(A_2 - (A_1 \cap A_2)) + P(A_1 \cap A_2), P(A_2 - (A_1 \cap A_2)) = P(A_2) - P(A_1 \cap A_2)$$
+$$P(A_1 \cup A_2) = P(A_1 - (A_1 \cap A_2)) +  P(A_1 \cap A_2) +P(A_2 - (A_1 \cap A_2))$$
+$$P(A_1 \cup A_2) = P(A_1) - P(A_1 \cap A_2) + P(A_1 \cap A_2) + P(A_2) - P(A_1 \cap A_2)$$ 
+$$P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1 \cap A_2)$$ 
+\end{itemize}
+
+
+\begin{defn}
+Si $\Omega$ est fini, la \emph{mesure \'equiprobable} est d\'efinie comme la mesure de probabilit\'e qui attribue la valeur $\frac{1}{card(\Omega)}$ a tous les singletons $\{\omega\}$ de $\Omega$.  
+\end{defn}
+
+\begin{defn}
+Soit deux \'ev\'enements $A$ et $B$ avec $P(A) > 0$. On d\'efinit la \emph{probabilite conditionnelle} $P(B|A) = \frac{P(A \cap B)}{P(A)}$, la probabilit\'e de $B$ sachant que l'\'ev\'ement $A$ est apparu.  
+\end{defn}
+
+\begin{defn}
+Deux \'ev\'enements $A$ et $B$ sont ind\'ependants si $P(B|A) = P(B)$. C'est \`a dire que la probabilit\'e de $B$ n'est pas affecte\'ee par l'occurence ou non de l'\'ev\'enement $A$.  
+\end{defn}
+
+On peut d\'eduire tous les th\'eor\`emes suivants:
+\begin{itemize}
+\item $P(A \cap B) = P(B|A).P(A)$ par d\'efinition
+\item Si les 2 \'ev\'enements $A$ et $B$ sont ind\'ependants alors $P(A \cap B) = P(A).P(B)$. on a $P(A \cap B) = P(B|A).P(A)$ et $P(B|A) = P(B)$ donc
+$$P(A \cap B) = P(A).P(B)$$
+\end{itemize}
+
+\begin{defn}
+On appelle \emph{variable al\'atoire} d'un espace de probabilit\'e $(\Omega, \mathscr{F}, P)$, toute application $X : \Omega \to \R$ tel que $\forall v \in \R, X^{-1}(v) \in \mathscr{F}$.
+\end{defn}
+
+\begin{defn}
+Soit une variable al\'eatoire $X$ et supposons que toutes les valeurs possibles de $X$ sont $x_1, x_2, \ldots, x_n$, on d\'efinit $P(X=x_k) = P(X^{-1}(x_k)) = f(x_k), \forall k = 1, 2, \ldots, n$ 
+\end{defn}
+
+On en d\'eduit que des propri\'et\'es des probabilit\'es que:
+\begin{itemize}
+\item $f(x) \geq 0$ 
+\item $\sum_{k=1}^{n}f(x_k) = 1$
+\end{itemize}
+
+\begin{defn}
+On d\'efinit une fonction (ie loi) de distribution pour une variable al\'eatoire $X$, la fonction $F(x) = P(X \leq x) = \sum_{l = -\infty}^{x} P(X=l)$. 
+\end{defn}
+
+On en d\'eduit que:
+\begin{itemize}
+\item $F(x)$ est une fonction non d\'ecroissante, si $x \leq  y$ alors $F(x) \ leq F(y)$ 
+\item $\lim_{x \to -\infty} = 0$
+\item $\lim_{x \to +\infty} = 1$
 \end{itemize}
 
 
