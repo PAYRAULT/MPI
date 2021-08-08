@@ -1,0 +1,120 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\begin{defn}
+On d\'efinit un \emph{espace de probibilit\'e} par un triplet $(\Omega, \mathscr{F}, P)$ avec:
+\begin{itemize}
+\item $\Omega$ est un ensemble de r\'esultats
+\item $\mathscr{F}$ une collection de sous-ensembles de $\Omega$ qui satisfait:
+	\begin{itemize}
+	\item $\Omega \in \mathscr{F}$
+	\item $\forall A \in \mathscr{F} \implies ^{c}A \in \mathscr{F}$
+	\item $A_1, A_2 \ldots A_n \in \mathscr{F} \implies \cup_{m = 1\ldots n}A_m \in \mathscr{F}$ 
+	\end{itemize}
+ \item $P$, une application de $\mathscr{F} \to [0,1]$
+\end{itemize}
+\end{defn}
+
+Par exemple: $\Omega=\{1,2,3\}, \mathscr{F} = \{\emptyset, \{1\}, \{2,3\}, \{1,2,3\} \}$. \\
+
+Un autre exemple $\bb{P}(\{1,2,3\}) = \{\emptyset, \{1\},  \{2\}, \{3\}, \{1,2\}, \{1,3\}, \{2,3\}, \{1,2,3\}\}$ est appel\'e l'ensemble des sous-ensembles.
+
+\begin{defn}
+L'application $P$ est d\'efinie par les 3 r\`egles suivantes:
+\begin{itemize}
+\item $P(\Omega) = 1$
+\item $\forall A \in \mathscr{F}, P( {}^{c}A) = 1 - P(A)$
+\item Toute suite d\'enombrable d'\'ev\'enements disjoints $A_1, A_2, \ldots, A_n \in \mathscr{F}, P(\cup_{m=1..n}A_m) = \sum_{m=1}^{n} P(A_m) $
+\end{itemize}
+\end{defn}
+
+
+On peut d\'eduire tous les th\'eor\`emes suivants:
+\begin{itemize}
+\item $P(\emptyset) = 0$. $\Omega$ et $\emptyset$ sont disjoints et $\Omega \cup \emptyset = \Omega$ donc
+$$P(\Omega) = P(\Omega \cup \emptyset) = P(\Omega) + P(\emptyset)$$ 
+donc $P(\emptyset) = 0$
+\item si $A_1 \subset A_2 \implies P(A_1) \leq P(A_2)$. On a $A_2 = A_1 \cup (A_2-A_1)$ car $A_1 \subset A_2$. Et $A_1$ et $(A_2 - A_1)$ sont disjoints donc
+$$P(A_2) = P(A_1) + P(A_2-A_1)$$
+$$P(A_2-A_1) = P(A_2) - P(A_1)$$
+Comme $P(X)$ est positif, on a $P(A_2) - P(A_1) \geq 0$, donc $P(A_2) \geq P(A_1)$
+\item $\forall X \in \mathscr{F}, P(X) \leq 1$. On a $\forall X \in \mathscr{F}, X \subset \Omega$ part d\'efinition, donc $P(X) \leq P(\Omega) = 1$
+\end{itemize}
+
+
+
+QED
+
+\end{document}
+
