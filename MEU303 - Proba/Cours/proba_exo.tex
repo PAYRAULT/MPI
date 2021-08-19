@@ -1,0 +1,123 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Exercice}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\subsection*{Exercice 1}
+Un jeu de carte a 52 cartes. Trouver la probabilit\'e d'avoir\ :
+\begin{enumerate}
+\item Un As
+\item Un Valet de Coeur
+\item Un 3 de Tr\`efle ou un 6 de Carreau
+\item Une carte de Coeur
+\item Une carte de couleur autre que Carreau
+\item Un 10 ou un As
+\item Ni un 4 ni une carte de couleur Pique
+\end{enumerate}
+
+\subsection*{Exercice 2}
+Un sac contient 6 balles rouges, 4 balles blanches et 5 balles bleues. Calculer la probabilit\'e de tirer\ :
+\begin{enumerate}
+\item une balle bleue
+\item une balle blanche
+\item Pas une balle rouge
+\item Une balle rouge ou bleue
+\end{enumerate}
+
+\subsection*{Exercice 3}
+Un d\'e est lanc\'e deux fois. Trouver la probabilit\'e d'avoir un 4, 5, ou 6 au premier tirage et un 1, 2, 3 ou 4 au second tirage.
+
+\subsection*{Exercice 4}
+Deux d\'es sont lanc\'es simultan\'ement. Trouver la probabilit\'e de ne pas avoir un total de 7 ou 11.
+
+\subsection*{Exercice 5}
+2 cartes sont tir\'ees au hasard d'un jeu de 52 cartes. Trouver la probabilit\'e d'avoir 2 Valets quand\ :
+\begin{enumerate}
+\item la premi\`ere carte est replac\'ee dans le jeu
+\item la premi\`ere carte n'est pas replac\'ee dans le jeu
+\end{enumerate}
+
+\subsection*{Exercice 6}
+Trois balles sont tir\'ees du sac de l'exercice 2, trouver la probabilit\'e de tirer dans l'ordre Bleu, Blanc et Rouge quand\ : 
+\begin{enumerate}
+\item les balles sont replac\'ees dans le sac
+\item les balles ne sont pas replac\'ees dans le sac
+\end{enumerate}
+
+\subsection*{Exercice 7}
+Un d\'e est lanc\'e deux fois de suite. Trouver la probabilit\'e d'avoir au moins un 4.
+
+
+QED
+
+\end{document}
+
