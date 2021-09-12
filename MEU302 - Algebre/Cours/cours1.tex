@@ -1,0 +1,127 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU303 - Alg\`ebre}
+\rhead{Cours 1}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{II.1 Exercice 1}
+??
+\subsection*{II.1 Proposition 1.1}
+??
+
+\subsection*{II.3 Proposition 1.1}
+Soit $P$ une matrice de passage de $\mathcal{B}$ vers $\mathcal{B'}$ et $Q$ une matrice de passage de $\mathcal{B'}$ vers $\mathcal{B}$. On a $P.Q = I$, en effet appliquer le passage d'un vecteur $\vect{u}$ d'une base vers une autre et inversement retourne le m\^eme vecteur $\vect{u}$. Donc $Q=P^{-1}$, ce qui montre que la matrice $P$ est inversible.
+
+\subsection*{II.3 Exercice 2.1}
+$GL_n(\R)$ est un groupe multiplicatif (pour la multiplication des matrices) si la multiplication est associative, il existe un \'el\'ement neutre et un inverse pour chaque \'el\'ement de $GL_n(\R)$. 
+\begin{itemize}
+\item Une matrice de passage est une matrice et la multiplication de matrice est associative
+\item La matrice identit\'e est dans l'ensemble $GL_n(\R)$. C'est la matrice de passage de la base $\mathcal{B}$ vers la base $\mathcal{B}$.
+\item une matrice de passage est inversible (voir exercice pr\'ec'edent).
+\end{itemize}
+
+Donc $GL_n(\R)$ est un groupe multiplicatif (pour la multiplication des matrices).
+
+\subsection*{II.3 Exercice 2.2}
+$\mathcal{M}_{n,p}(\R)$ n'est pas un groupe multiplicatif car il existe des matrices non inversibles. \\
+
+Un ensemble $S$ est stable par rapport \`a une op\'eration $*$ si $\forall a, b \in S, a * b \in S$. $\mathcal{M}_{n,p}(\R)$ est n'est pas stable pour la multiplication car la multiplication de la matrice $\mathcal{M}_{1,2}$ et $\mathcal{M}_{4,5}$ n'existe pas.
+
+\subsection*{II.4 Exercice 4}
+??
+\subsection*{II.4 Exercice 5}
+Il peut y avoir 0, 1 ou plusieurs applications lin\'eaire pour passer d'une famille de vecteurs \`a l'autre. (voir TD). 
+\subsection*{II.4 Exercice 6}
+??
+
+\subsection*{III.1 Propri\'et\'e 1.3}
+??
+
+
+
+\end{document}
+
