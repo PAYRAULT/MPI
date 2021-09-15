@@ -439,7 +439,11 @@ Prenons, il faut que $\frac{1}{1+n_0} < \epsilon$ donc $n_0 > \frac{1-\epsilon}{
 Comme $n_0$ ne d\'epend pas de $x$ la fonction converge uniform\'enent.
 
 \subsection*{Exercice 1.4.4}
-$f_n(x) = x(1-e^-{nx})$. Pour $x \in \R_{+}$, on a $\lim_{n \to \infty}{ e^{-nx}} = 0$, donc $\lim_{n \to \infty}{1 - e^{-nx}} = 1$. Pour un $\epsilon$ et un $x$ donn\'e, prenons $n_0$ tel que $x(1-e^{-nx}<\epsilon$. pour la convergence simple.
+$f_n(x) = x(1-e^{-nx})$. Pour $x \in \R_{+}$, on a $\lim_{n \to \infty}{ e^{-nx}} = 0$, donc $\lim_{n \to \infty}{1 - e^{-nx}} = 1$. V\'erifions que $f_n(x)$ converge vers $f(x)=x$. $|f_{n_0}(x) - x| < \epsilon$
+$$
+|f_{n_0}(x) - x| = \left|x(1-e^{-n_0x} -x \right| = \left| xe^{-n_0x} \right| 
+$$
+Pour un $x$ et un $\epsilon$ donn\'e, prenons un $n_0$ tel que $\left| xe^{-n_0x} \right| < \epsilon$.
 
 Pour la convergence uniforme, om ne peut pas trouver de $n_0$ qui ne d\'epende pas de $x$. Donc pas de convergence uniforme.
 
