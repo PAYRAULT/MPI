@@ -116,6 +116,18 @@ $$
 \end{defn}
 
 
+\begin{defn}
+Convergence simple de la s\'erie de fonction $f_n(x)$ vers la fonction $f(x)$.
+$$\forall \epsilon > 0, \forall x \geq 0, \exists n_0 \in \N \text{ tel que } \forall n \geq n_0, |f_n(x) - f(x)| \leq \epsilon$$
+\end{defn}
+
+\begin{defn}
+Convergence uniforme de la s\'erie de fonction $f_n(x)$ vers la fonction $f(x)$.
+$$\forall \epsilon > 0, \exists n_0 \in \N  \text{ tel que }  \forall x \geq 0, \forall n \geq n_0, |f_n(x) - f(x)| \leq \epsilon$$
+\end{defn}
+
+
+
 
 \newpage
 \subsection*{Exercice 1.1}
@@ -311,6 +323,118 @@ $$
 
 si $k = 0$, absurde car $\sqrt{x_1} \neq \sqrt{x_2}$. si $k>0$, prenons $x_1=0$ et $x_2=\frac{1}{4k^2}$. Donc $|\sqrt{\frac{1}{4k^2}} - \sqrt{0}| = \frac{1}{2k}$ et $k|\frac{1}{4k^2}-0| = \frac{1}{4k}$. d'o\'u, $\frac{1}{2k} < \frac{1}{4k}$ ce qui est absurde aussi.
 donc $\sqrt{x}$ n'est pas k-lipschitzienne.
+
+
+
+\subsection*{Exercice 1.4.1.1}
+\begin{tikzpicture}[scale=3.0]
+\draw[->] (-1.5,0) -- (3.5,0) node[above left]{\footnotesize $x$};
+\draw[->] (0,-0.2) -- (0,1.5) node[below right]{\footnotesize $y$};
+
+\draw[blue] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[blue] plot[variable=\x,domain=0:1,smooth] ({\x},{\x)})  node[above] {$n=1$};
+\draw[blue] plot[variable=\x,domain=1:2,smooth] ({\x},{2-\x)});
+\draw[blue] plot[variable=\x,domain=2:3,smooth] ({\x},{0});
+
+\draw[red] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[red] plot[variable=\x,domain=0:0.5,smooth] ({\x},{2*\x)})  node[above] {$n=2$};
+\draw[red] plot[variable=\x,domain=0.5:1,smooth] ({\x},{2-2*\x)});
+\draw[red] plot[variable=\x,domain=1:3,smooth] ({\x},{0});
+
+\draw[yellow] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[yellow] plot[variable=\x,domain=0:0.2,smooth] ({\x},{5*\x)})  node[above] {$n=5$};
+\draw[yellow] plot[variable=\x,domain=0.2:0.4,smooth] ({\x},{2-5*\x)});
+\draw[yellow] plot[variable=\x,domain=0.4:3,smooth] ({\x},{0});
+
+\draw[purple] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[purple] plot[variable=\x,domain=0:0.1,smooth] ({\x},{10*\x)})  node[left] {$n=10$};
+\draw[purple] plot[variable=\x,domain=0.1:0.2,smooth] ({\x},{2-10*\x)});
+\draw[purple] plot[variable=\x,domain=0.2:3,smooth] ({\x},{0});
+
+\end{tikzpicture}
+
+Convergence simple. Pour un $x$ donn\'e, prenons $\epsilon > 0$ et $n_0 > 2/x$. Dans ce cas, $\forall n \geq n_0, f_n(x) = 0$ donc la s\'erie de fonction converge simplement vers la fonction $f(x) = 0$.
+
+Convergence uniforme. Il n'existe pas de $n_0$ tel que pour tout $x$ la fonction $f_n(x)$ converge. En effet, pour un $n \geq n_0$ donn\'e, on a pour $0 \geq x \geq 1/n$ la fonction qui varie entre $0 < f_n(x) \leq 1$ et pour $1/n < x \leq 2/n$ la fonction qui varie entre $1 \geq f_n(x) \geq 0$. Donc pour un $\epsilon$ donn\'e, on ne peut pas d\'efinir un $n$ qui satisfasse la d\'efinition d'une suite convergente uniform\'ement.   
+
+\subsection*{Exercice 1.4.1.2}
+
+\begin{tikzpicture}[scale=3.0]
+\draw[->] (-1.5,0) -- (3.5,0) node[above left]{\footnotesize $x$};
+\draw[->] (0,-0.2) -- (0,1.5) node[below right]{\footnotesize $y$};
+
+\draw[blue] plot[variable=\x,domain=0:1,smooth] ({\x},{\x)})  node[left] {$n=1$};
+\draw[red] plot[variable=\x,domain=0:1,smooth] ({\x},{\x^2)})  node[right] {$n=2$};
+\draw[yellow] plot[variable=\x,domain=0:1,smooth] ({\x},{\x^5)})  node[right] {$n=5$};
+\draw[purple] plot[variable=\x,domain=0:1,smooth] ({\x},{\x^10)})  node[right] {$n=10$};
+
+\end{tikzpicture}
+
+
+\subsection*{Exercice 1.4.1.3}
+
+\begin{tikzpicture}[scale=3.0]
+\draw[->] (-1.5,0) -- (3.5,0) node[above left]{\footnotesize $x$};
+\draw[->] (0,-0.2) -- (0,1.5) node[below right]{\footnotesize $y$};
+
+\draw[blue] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[blue] plot[variable=\x,domain=0:1,smooth] ({\x},{1*\x)})  node[above] {$n=1$};
+\draw[blue] plot[variable=\x,domain=1:3,smooth] ({\x},{1});
+
+\draw[red] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[red] plot[variable=\x,domain=0:0.5,smooth] ({\x},{2*\x)})  node[above] {$n=2$};
+\draw[red] plot[variable=\x,domain=0.5:3,smooth] ({\x},{1});
+
+\draw[yellow] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[yellow] plot[variable=\x,domain=0:0.2,smooth] ({\x},{5*\x)})  node[above] {$n=5$};
+\draw[yellow] plot[variable=\x,domain=0.2:3,smooth] ({\x},{1});
+
+\draw[purple] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[purple] plot[variable=\x,domain=0:0.1,smooth] ({\x},{10*\x)})  node[left] {$n=10$};
+\draw[purple] plot[variable=\x,domain=0.1:3,smooth] ({\x},{1});
+
+\end{tikzpicture}
+
+Convergence simple. Pour un $x$ donn\'e, prenons  $\epsilon > 0$ et $n_0 > 1/x$. Dans ce cas, $\forall n \geq n_0, f_n(x) = 1$ donc la s\'erie de fonction converge simplement vers la fonction $f(x) = 1$.
+
+Convergence uniforme. Il n'existe pas de $n_0$ tel que pour tout $x$ la fonction $f_n(x)$ converge. En effet, pour un $n \geq n_0$ donn\'e, on a pour $0 \geq x \geq 1/n$ la fonction qui varie entre $0 \geq f_n(x) \geq 1$. Donc pour un $\epsilon$ donn\'e, on ne peut pas d\'efinir un $n$ qui satisfasse la d\'efinition d'une suite convergente uniform\'ement.   
+
+\subsection*{Exercice 1.4.2.1}
+$$
+f_n(x) = 1_{[-n, n]} = 
+\left\{
+\begin{array}{l l}
+1 & x \in [-n,n] \\
+0 & sinon
+\end{array}
+\right.
+$$
+
+Quand $n \to \infty$, on a $f_n(x) = 1$ car $x$ ne peut pas \^etre en dehors de l'ensemble $[-\infty, \infty]$
+
+
+\subsection*{Exercice 1.4.2.4}
+$$
+k_n(x) = 1_{[-1/n, 1/n]} = 
+\left\{
+\begin{array}{l l}
+1 & x \in [-1/n,1/n] \\
+0 & sinon
+\end{array}
+\right.
+$$
+
+Quand $n \to \infty$, on a $k_n(x) = 0$ car l'ensemble $[-1/\infty, 1/\infty]$ se rapproche de $\emptyset$.
+
+\subsection*{Exercice 1.4.3}
+$f_n(x) = \frac{n \sin(x)}{1+n}$. On a $\forall x \in \R, -1 \leq \sin(x) \leq 1$ et $\lim_{n \to \infty} {\frac{n}{1+n}} = 1$. Donc quand $n \to \infty$, la fonction $f_n$ ne converge pas simplement car elle varie entre -1 et 1. Comme la fonction ne converge pas simplement, elle ne peut pas converger uniform\'ement.
+
+\subsection*{Exercice 1.4.4}
+$f_n(x) = x(1-e^-{nx})$. Pour $x \in \R_{+}$, on a $\lim_{n \to \infty}{ e-{nx}} = 0$, donc $\lim_{n \to \infty}{1 - e-{nx}} = 1$. Pour un $\epsilon$ et un $x$ donn\'e, prenons $n_0$ tel que $x(1-e^{-nx}<\epsilon$. pour la convergence simple.
+
+Pour la convergence uniforme, om ne peut pas trouver de $n_0$ qui ne d\'epende pas de $x$. Donc pas de convergence uniforme.
+
+
 
 \end{document}
 
