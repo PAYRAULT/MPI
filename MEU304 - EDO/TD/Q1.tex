@@ -1,0 +1,119 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU303 - Alg\`ebre}
+\rhead{Cours 1}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{II.1 Exercice 1}
+
+Comme $x$ est une solution de $E$ on a :
+$$
+x'= -\cos(t)x -e^{t+\sin(t)}x^2
+$$
+on prend $y=1/x$. Donc
+$$
+y'=-\frac{x'}{x^2} = -\frac{-\cos(t)x -e^{t+\sin(t)}x^2}{x^{2}} = \frac{\cos(t)}{x} + e^{t+\sin(t)} = \cos(t)y + e^{t+\sin(t)}
+$$
+L'\'equation diff\'erentielle sous forme lin\'eaire est $y'- \cos(t)y = e^{t+\sin(t)} $
+
+1- Trouver la solution g\'en\'erale $y_c$ de l'\'equation homog\`ene: $y' = \cos(t)y$. Donc $y_c(t) = Ce^{\sin(t)}$. 
+
+2 - Trouver une solution particuli\`ere $y_0$ de $y'- \cos(t)y = e^{t+\sin(t)}$. Prenons $y(t)=e^{t-\sin(t)}$, on a $y'(t)=(1+\cos(t))e^{1-\sin(t)}$. 
+$$
+y'- \cos(t)y = e^{t+\sin(t)}
+$$
+$$
+(1+\cos(t))e^{1-\sin(t)}- \cos(t)e^{t-\sin(t)} = e^{t+\sin(t)}
+$$
+Vrai.
+
+3 - La solution g\'en\'erale est $y(t) = Ce^{\sin(t)} + e^{t+\sin(t)}$
+
+La solution de l'\'equation $E$ est $x=1/y$.
+
+\end{document}
+
