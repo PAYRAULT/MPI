@@ -1,0 +1,143 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU301 - Analyse}
+\rhead{TD1}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+\newpage
+\subsection*{Exercice 2.1}
+\subsection*{Exercice 2.1.1}
+$$\int_{0}^{\pi}{x\sin(x) dx}$$
+Prenons $f = x$ et $g' = \sin(x)$ donc $f' = 1$ et $g = -\cos(x)$
+
+$$\int{fg'} = fg - \int{f'g} = -x\cos(x) - \int{-\cos(x)} = \sin(x) - x\cos(x)$$
+$$\int_{0}^{\pi}{x\sin(x) dx} = \left[ \sin(x) - x\cos(x) \right]_{0}^{\pi} = \pi$$
+
+\subsection*{Exercice 2.1.2}
+$$\int_{0}^{\ln(2)}{\frac{e^x}{\sqrt{e^x+1}}dx}$$
+Prenons $u=e^x+1$, on a $\frac{du}{dx}=e^x$ donc $dx = e^{-x}du$.
+$$\int{\frac{e^x}{\sqrt{e^x+1}}dx} = \int{\frac{e^x}{\sqrt{u}}e^{-x}du} = \int{\frac{1}{\sqrt{u}}du} = 2\sqrt{u} = 2\sqrt{e^x+1}$$
+
+$$\int_{0}^{\ln(2)}{\frac{e^x}{\sqrt{e^x+1}}dx} = \left[ 2\sqrt{e^x+1} \right]_{0}^{\ln(2)} = 2(\sqrt{3} - \sqrt{2})$$
+
+
+\subsection*{Exercice 2.1.3}
+$$\int_{0}^{1}{\frac{4}{x^4-4}dx}$$
+
+Substitution $u=x^4-4$ -> Dead end
+Ona $x^4-4 = {x^2}^2 - 2^2 = (x^2-2)(x^2+2)$ mais apr\`es??
+
+
+\subsection*{Exercice 2.1.4}
+$$\int_{-1}^{1}{\ln(1+x^2)dx}$$
+Prenons $f = \ln(1+x^2)$ et $g' = 1$ donc $f' = \frac{2x}{x^2+1}$ et $g = x$
+
+$$\int{fg'} = fg - \int{f'g} = x\ln(x^2+1) - \int{\frac{2x^2}{x^2+1} dx}$$
+
+Prenons $u=x^2+1$, on a $\frac{du}{dx} = 2x$ donc $dx = \frac{1}{2x}du$
+$$\int{\frac{2x^2}{x^2+1} dx} = \int{\frac{2x^2}{u} \frac{1}{2x}du} = \int{\frac{x}{u}du}$$
+Dead end.
+
+On connait l'int\'egrale de $\frac{1}{x^2+1}$ 
+$$\int{\frac{2x^2}{x^2+1} dx} = 2\int{\frac{x^2+1-1}{x^2+1} dx} = 2\int{\frac{x^2+1}{x^2+1} - \frac{1}{x^2+1} dx} = 2\int{1 - \frac{1}{x^2+1} dx} =  2\int{1 dx} - 2\int{\frac{1}{x^2+1} dx} = 2(x - \arctan(x))$$
+
+donc
+$$
+\int_{-1}^{1}{\ln(1+x^2)dx} = \left[ x\ln(x^2+1) + 2(\arctan(x) - x) \right]_{-1}^{1} = \ln(2) +2\pi/4 -2 - (-ln(2) + 2 - 2\pi/4) = 2\ln(2) + \pi - 4
+$$
+
+
+
+\subsection*{Exercice 2.1.5}
+$$\int_{0}^{1}{x^2e^x dx}$$
+Prenons $f = x^2$ et $g' = e^x$ donc $f' = 2x$ et $g = e^x$
+
+$$\int{fg'} = fg - \int{f'g} = x^2e^x - \int{2x e^x dx}$$
+
+Prenons $f = 2x$ et $g' = e^x$ donc $f' = 2$ et $g = e^x$
+$$\int{fg'} = fg - \int{f'g} = 2xe^x - \int{2 e^x dx} = 2xe^x - 2e^x$$
+
+Donc
+$$\int_{-1}^{1}{\ln(1+x^2)dx} = \left[ x^2e^x - 2xe^x + 2e^x \right] = e - 5e^{-1}$$
+
+
+\end{document}
+
