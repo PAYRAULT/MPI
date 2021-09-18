@@ -102,8 +102,46 @@ $$\int_{0}^{\ln(2)}{\frac{e^x}{\sqrt{e^x+1}}dx} = \left[ 2\sqrt{e^x+1} \right]_{
 \subsection*{Exercice 2.1.3}
 $$\int_{0}^{1}{\frac{4}{x^4-4}dx}$$
 
-Substitution $u=x^4-4$ -> Dead end
-Ona $x^4-4 = {x^2}^2 - 2^2 = (x^2-2)(x^2+2)$ mais apr\`es??
+Substitution $u=x^4-4$ -> Dead end.
+
+On a $x^4-4 = {x^2}^2 - 2^2 = (x^2-2)(x^2+2)$
+$$\frac{1}{(x^2-2)(x^2+2)} = \frac{1}{4}(\frac{1}{x^2-2} - \frac{1}{x^2+2})$$
+$$\int_{0}^{1}{\frac{4}{x^4-4}dx} = \int_{0}^{1}{\frac{1}{x^2-2} - \frac{1}{x^2+2}dx} = \int_{0}^{1}{\frac{1}{x^2-2}dx} - \int_{0}^{1}{\frac{1}{x^2+2}dx}$$
+
+Donc
+$$
+\int_{0}^{1}{\frac{1}{x^2-2}dx} = \int_{0}^{1}{\frac{1}{x^2-\sqrt{2}^2}dx} = \int_{0}^{1}{\frac{1}{(x+\sqrt{2})(x-\sqrt{2})}dx} = \int_{0}^{1}{\frac{1}{2\sqrt{2}}\left(\frac{1}{x+\sqrt{2}} - \frac{1}{x-\sqrt{2}}\right)dx}
+$$
+Maintenant, prenons $u = x+\sqrt{2}$, $\frac{du}{dx} = 1$ donc $du=dx$ et 
+$$
+\int{\frac{1}{x+\sqrt{2}}dx} = \int{\frac{1}{u}du} =\ln(u) = \ln(x+\sqrt{2})
+$$
+de m\^eme avec $u = x-\sqrt{2}$
+$$
+\int{\frac{1}{x-\sqrt{2}}dx} = \int{\frac{1}{u}du} =\ln(u) = \ln(x-\sqrt{2})
+$$
+Donc
+$$
+\int_{0}^{1}{\frac{1}{x^2-2}dx} = \frac{1}{2\sqrt{2}}\left( \left[ \ln(x + \sqrt{2}) \right]_{0}^{1} - \left[ \ln(x - \sqrt{2} ) \right]_{0}^{1} \right)
+$$
+
+et pour la seconde partie
+$$
+\int{\frac{1}{x^2+2}dx}
+$$
+On connait l'int\'egrale de $\frac{1}{x^2+1}$, c'est presque pareil. Il faut juste \'eliminer le 2 avec un changement de variable judicieux (ou astucieux). Prenons $u = \frac{x}{\sqrt{2}}$, on a $\frac{du}{dx} = \frac{1}{\sqrt{2}}$ donc $dx=\sqrt{2}du$. Ce qui fait:
+$$
+\int{\frac{1}{x^2+2}dx} = \int{\frac{1}{(\sqrt{2}u)^2+2}\sqrt{2}du} = \int{\frac{\sqrt{2}}{2u^2+2}} = \frac{\sqrt{2}}{2}\int{\frac{1}{u^2+1}} = \frac{\sqrt{2}}{2}\arctan(u) = \frac{\sqrt{2}}{2}\arctan(\frac{x}{\sqrt{2}})
+$$
+Donc
+$$
+\int_{0}^{1}{\frac{1}{x^2-2}dx} = \left[ \frac{\sqrt{2}}{2}\arctan \left(\frac{x}{\sqrt{2}}\right) \right]_{0}^{1} = \frac{\sqrt{2}}{2}\arctan\left(\frac{1}{\sqrt{2}}\right)
+$$
+
+Pour finir
+$$
+\int_{0}^{1}{\frac{4}{x^4-4}dx} = bla bla - \frac{\sqrt{2}}{2}\arctan\left(\frac{1}{\sqrt{2}}\right)
+$$
 
 
 \subsection*{Exercice 2.1.4}
@@ -123,8 +161,6 @@ donc
 $$
 \int_{-1}^{1}{\ln(1+x^2)dx} = \left[ x\ln(x^2+1) + 2(\arctan(x) - x) \right]_{-1}^{1} = \ln(2) +2\pi/4 -2 - (-ln(2) + 2 - 2\pi/4) = 2\ln(2) + \pi - 4
 $$
-
-
 
 \subsection*{Exercice 2.1.5}
 $$\int_{0}^{1}{x^2e^x dx}$$
