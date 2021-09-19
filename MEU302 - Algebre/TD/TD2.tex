@@ -210,9 +210,25 @@ Donc
 \item $\lambda_1 ( f_1 + f_2) = \lambda_1 . f_1 + \lambda_1 . f_2$
 \end{enumerate}
 
+Trop long et complexe. 
 
 
+On peut aussi d\'emontrer qu'il existe une base $\{f_1, ..., f_p\}$ sur $E^{*}$ tel que $\forall f \in E^{*}, f = \lambda_1 f_1 + \lambda_2 f_2 + \ldots + \lambda_p f_p$ et la dimension de $E^{*}$ sera donc $p$. On a $E$ de dimension $n$ donc il existe une base $\{v_1, v_2, ...., v_n\}$ de $E$ et $\forall e \in E, e = \lambda_1 v_1 + \lambda_2 v_2 + \ldots + \lambda_n v_n$. Donc $\forall f \in E^{*}, \forall e \in E, f(e) = f(\lambda_1 v_1 + \lambda_2 v_2 + \ldots + \lambda_n v_n) = \lambda_1 f(v_1) + \lambda_2 f(v_2) + \ldots + \lambda_n f(v_n)$ ... Cela n'aboutit a rien.
 
+
+On a $E$ un espace vectoriel de dimension $n$ alors on a une base $\mathcal{B}_{E} = \{v_1, v_2, ...., v_n\}$ de $E$. On a $\R$, un espace vectoriel de dimension $1$ de base $\mathcal{B}_{\R}\{1\}$. Chaque application lin\'eaire de $E \to \R$ peut \^etre associ\'ee \`a une matrice de 1 ligne et $n$ colonnes. 
+$$
+\forall f \in E^{*},  M_{\mathcal{B}_{E}, \mathcal{B}_{\R}} = \begin{pmatrix} \alpha_1 & \alpha_2 & \ldots & \alpha_n  \end{pmatrix} 1
+$$
+avec $\alpha_i = f(v_i)$.
+
+Pour $f, g \in E^{*}$, on d\'efinit la somme de $f$ et $g$ comme $f+g : E \to \R, e \to f(e) + g(e)$ et soit $\lambda \in \R$, on d\'efinit $\lambda f : E \to \R, e \to \lambda f(e)$. On a 
+$$
+ \lambda M_{\mathcal{B}_{E}, \mathcal{B}_{\R}}(f) + M_{\mathcal{B}_{E}, \mathcal{B}_{\R}}(g) = M_{\mathcal{B}_{E}, \mathcal{B}_{\R}}(\lambda f) + M_{\mathcal{B}_{E}, \mathcal{B}_{\R}}(g) = M_{\mathcal{B}_{E}, \mathcal{B}_{\R}} (\lambda f + g) 
+$$
+par la simple propri\'et'es d'addition et de multiplication des matrices. Donc $E^{*}$ est un $\R$-espace vectoriel.
+
+La dimension de $E^{*}$ est $dim(E) * dim(\R) = n*1 = n$.
 
 \end{document}
 
