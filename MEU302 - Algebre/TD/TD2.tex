@@ -1,0 +1,218 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{Exercice 10}
+\subsection*{Exercice 10.a}
+
+$$\det
+\begin{vmatrix}
+1 & 2 & x \\
+2 & 3 & y \\
+3 & 4 & z \\
+\end{vmatrix}
+= 1. \begin{vmatrix} 3 & y \\ 4 & z \\ \end{vmatrix} -2. \begin{vmatrix} 2 & x \\ 4 & z \\ \end{vmatrix} + 3. \begin{vmatrix} 2 & x \\ 3 & y \\ \end{vmatrix} = 3z - 4y -4z + 8x +6y - 9x = -z + 2y - x
+$$
+
+\subsection*{Exercice 10.b}
+Un vecteur $(x,y,z)$ appartient à $F$ si et seulement si il existe deux r\'eels $\lambda_1$ et $\lambda_2$ tel que 
+$$
+(x,y,z)=\lambda_1(1,2,3)+\lambda_2(2,3,4)
+$$
+
+$$
+\left\{
+\begin{array}{l}
+x = \lambda_1 + 2 \lambda_2 \\
+y = 2\lambda_1 + 3 \lambda_2 \\
+z = 3\lambda_1 + 4 \lambda_2 \\
+\end{array}
+\right.
+=
+\left\{
+\begin{array}{l}
+x = \lambda_1 + 2 \lambda_2 \\
+y = 2\lambda_1 + 3 \lambda_2 \\
+z+x = 4\lambda_1 + 6 \lambda_2 \\
+\end{array}
+\right.
+=
+\left\{
+\begin{array}{l}
+x = \lambda_1 + 2 \lambda_2 \\
+y = 2\lambda_1 + 3 \lambda_2 \\
+-z-x+2y = -4\lambda_1 + -6 \lambda_2 + 4\lambda_1 + 6 \lambda_2 = 0 \\
+\end{array}
+\right.
+$$
+
+Le syst\`eme (H) a donc des solutions si et seulement si $-x+2y-z=0$. L'ensemble $F$ est donc l'ensemble des triplets $(x,y,z)$ tel que $-x+2y-z=0$. On dit que $F$ a pour \'equation : $-x+2y-z=0 = \det
+\begin{vmatrix}
+1 & 2 & x \\
+2 & 3 & y \\
+3 & 4 & z \\
+\end{vmatrix}
+$.
+
+\subsection*{Exercice 10.c}
+Si $H$ est le noyau d'une application lin\'eaire $f$ alors $H = \{v= (x, y, z) | f(v) = 0\}$.
+Donc trouver $\lambda_1, \lambda_2, \lambda_3$ tel que 
+$$
+\left\{
+\begin{array}{l}
+\lambda_1 + 2 \lambda_2 + 3 \lambda_3 = 0\\
+2\lambda_1 + 3 \lambda_2 + 4\lambda_3  =  0\\
+\end{array}
+\right.
+=
+\left\{
+\begin{array}{l}
+\lambda_1 + 2 \lambda_2 + 3 \lambda_3 = 0\\
+ \lambda_2 + 2\lambda_3 = 0\\
+\end{array}
+\right.
+=
+\left\{
+\begin{array}{l}
+\lambda_1 - 4 \lambda_3 + 3 \lambda_3 = 0\\
+\lambda_2 = -2\lambda_3 \\
+\end{array}
+\right.
+==
+\left\{
+\begin{array}{l}
+\lambda_1 = \lambda_3\\
+\lambda_2 = -2\lambda_3 \\
+\end{array}
+\right.
+$$
+
+Le noyau est $(\lambda, -2 \lambda, \lambda)$ et l'application lin\'eaire $f(x,y,z) = \lambda x - 2 \lambda y + \lambda z$. 	
+
+
+\subsection*{Exercice 12}
+Si $E$ est un espace vectoriel de dimension $n$ alors on a une base $\{v_1, v_2, ...., v_n\}$ de $E$ et $\forall e \in E, e = \lambda_1 v_1 + \lambda_2 v_2 + \ldots + \lambda_n v_n$ et $E^{*} = L(E, \R)$ donc $\forall f \in E^{*}, f: E \to \R, \forall (e_1,e_2) \in E^2, \forall \lambda \in \R, f(\lambda e_1 + e_2) = \lambda f(e_1) + f(e_2)$. $E^{*}$ est un espace vectoriel ssi $(E^{*},+)$ est un groupe Ab\'elien et $\forall(f_1, f_2) \in {E^{*}}^2, \forall (\lambda_1, \lambda_2) \in \R^2$ 
+\begin {enumerate}
+\item $\lambda_1.(\lambda_2 . f_1) = (\lambda_1 \lambda_2) . f_1$
+\item $1 . f_1 = f_1$
+\item $(\lambda_1 + \lambda_2) f_1 = \lambda_1 . f_1 + \lambda_2 . f_1 $
+\item $\lambda_1 ( f_1 + f_2) = \lambda_1 . f_1 + \lambda_1 . f_2$
+\end{enumerate}
+
+$(E^{*},+)$ est un groupe Ab\'elien ssi
+\begin{enumerate}
+\item cloture sur $E^{*}$, $\forall (f_1, f_2) \in {E^{*}}^2, f_1 + f_2 \in E^{*}$
+\item \'el\'ement neutre, $\exists f_{id} \in E^{*}, \forall f \in E^{*}, f_{id} + f = f + f_{id} = f$
+\item inverse, $\forall f_1 \in E^{*}, \exists f_2 \in E^{*}, f_1 + f_2 = f_2 + f_1 = f_{id}$
+\item Commutativit\'e, $\forall f_1 \in E^{*}, \forall f_2 \in E^{*}, f_1 + f_2 = f_2 + f_1$
+\end{enumerate}
+
+Donc
+\begin{enumerate}
+\item $\forall (f_1, f_2) \in {E^{*}}^2, f_1(\lambda_1 e_1 + e_2) + f_2(\lambda_1 e_1 + e_2) =  \lambda_1 f_1(e_1) + f_1(e_2) + \lambda_1 f_2(e_1) + f_2(e_2) = \lambda(f_1(e_2) + f_2(e_1)) + (f_1(e_2) + f_2(e_2))$ Prenons $g(e) = f_1(e) + f_2(e)$ on a $g(\lambda e_1 + e_2) = \lambda g(e_1) + g(e_2)$ donc $g(e) \in E^{*}$, donc Vrai
+\item Prenons $f_{id} : E \to \R, \forall e \in E, f(e) = 0$. On a $f_{id} \in E^{*}$ car $\forall (e_1,e_2) \in E^2, \forall \lambda \in \R, f_{id}(\lambda e_1 + e_2) = 0 = \lambda 0 + 0 = \lambda f(e_1) + f(e_2)$ et $\forall e \in E, f_{id}(e) + f(e) = 0 + f(e) = f(e)$ et $\forall e \in E, + f(e) + f_{id}(e)= f(e) + 0 = f(e)$ donc Vrai
+\item Pour $f_1 \in E^{*}$, prenons $f_2 = -f_1$. $f_2 \in E^{*}$ car $f_2(\lambda e_1 + e_2) = -f_1(\lambda e_1 + e_2) = -(\lambda f_1(e_1) + f_1(e_2)) = -\lambda f_1(e_1) - f_1(e_2) = \lambda f_2(e_1) + f_2(e_2))$ et $f_1(e) + f_2(e) = f_1(e) - f_1(e) = 0 = f_{id}(e)$ et $f_2(e) + f_1(e) = -f_1(e) + f_1(e) = 0 = f_{id}(e)$ donc Vrai
+\item $\forall f_1, f_2 \in {E^{*}}^2, f_1(\lambda_1 e_1 + e_2) + f_2(\lambda_2 e_3 + e_4) = \lambda_1 f_1(e_1) + f_1(e_2) + \lambda_2 f_2(e_3) + f_2(e_4) =  \lambda_2 f_2(e_3) + f(e_4) + \lambda_1 f_1(e_1) + f_1(e_2) = f_2(\lambda_2 e_3 + e_4) + f_1(\lambda_1 e_1 + e_2)$ donc Vrai
+\end{enumerate}
+
+
+Donc
+\begin {enumerate}
+\item $\lambda_1.(\lambda_2 . f_1(\lambda e_1 + e_2)) = \lambda_1.(\lambda_2 . (\lambda f_1(e_1) + f_1(e_2))) = \lambda_1.( \lambda_2 \lambda f_1(e_1) + \lambda_2 f_1(e_2)) = \lambda_1 \lambda_2 \lambda f_1(e_1) + \lambda_1 \lambda_2 f_1(e_2) = (\lambda_1 \lambda_2) . (\lambda f_1(e_1) + f_1(e_2)) = (\lambda_1 \lambda_2) . f_1(\lambda e_1 + e_2))$ donc Vrai
+\item $1 . f_1 = f_1$
+\item $(\lambda_1 + \lambda_2) f_1 = \lambda_1 . f_1 + \lambda_2 . f_1 $
+\item $\lambda_1 ( f_1 + f_2) = \lambda_1 . f_1 + \lambda_1 . f_2$
+\end{enumerate}
+
+
+
+
+
+\end{document}
+
