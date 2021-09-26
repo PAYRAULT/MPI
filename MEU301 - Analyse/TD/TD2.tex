@@ -175,5 +175,100 @@ Donc
 $$\int_{-1}^{1}{\ln(1+x^2)dx} = \left[ x^2e^x - 2xe^x + 2e^x \right] = e - 5e^{-1}$$
 
 
+\subsection*{Exercice 2.2}
+\subsection*{Exercice 2.2.1}
+$f(x) = \int_{0}^{x^2} {\frac{dt}{1+t+t^2}}$, on a donc $f(x) = F(x^2) - F(0)$ avec $F(x)$ la fonction int\'egrale de $f(x)$. donc
+$$
+f'(x) = (F(x^2) - F(0))' = (F(x^2))' - (F(0))' = (x^2)'f(x^2) - 0f(0) = \frac{2x}{1+x^2+x^4}
+$$
+
+
+\subsection*{Exercice 2.2.2}
+$f(x) = \int_{x}^{x^2} {\frac{dt}{1+t+t^2}}$, on a donc $f(x) = F(x^2) - F(0)$ avec $F(x)$ la fonction int\'egrale de $f(x)$. donc
+$$
+f'(x) = (F(x^2) - F(x))' = (F(x^2))' - (F(x))' = (x^2)'f(x^2) - f(0) = \frac{2x}{1+x^2+x^4} - 1
+$$
+
+
+
+\subsection*{Exercice 2.7}
+\subsection*{Exercice 2.7.1}
+
+\subsection*{Exercice 1.4.1.1}
+\begin{tikzpicture}[scale=1.0]
+\draw[->] (-1.5,0) -- (3.5,0) node[above left]{\footnotesize $x$};
+\draw[->] (0,-0.2) -- (0,10.5) node[below right]{\footnotesize $y$};
+
+\draw[blue] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[blue] plot[variable=\x,domain=0:1,smooth] ({\x},{\x)})  node[above] {$n=1$};
+\draw[blue] plot[variable=\x,domain=1:2,smooth] ({\x},{2-\x)});
+\draw[blue] plot[variable=\x,domain=2:3,smooth] ({\x},{0});
+
+\draw[red] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[red] plot[variable=\x,domain=0:0.5,smooth] ({\x},{4*\x)})  node[above] {$n=2$};
+\draw[red] plot[variable=\x,domain=0.5:1,smooth] ({\x},{4-4*\x)});
+\draw[red] plot[variable=\x,domain=1:3,smooth] ({\x},{0});
+
+\draw[yellow] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[yellow] plot[variable=\x,domain=0:0.33333,smooth] ({\x},{9*\x)})  node[above] {$n=3$};
+\draw[yellow] plot[variable=\x,domain=0.33333:0.666666,smooth] ({\x},{6-9*\x)});
+\draw[yellow] plot[variable=\x,domain=0.66666:3,smooth] ({\x},{0});
+
+\draw[purple] plot[variable=\x,domain=-1:0,smooth] ({\x},{0)});
+\draw[purple] plot[variable=\x,domain=0:0.1,smooth] ({\x},{100*\x)})  node[above] {$n=10$};
+\draw[purple] plot[variable=\x,domain=0.1:0.2,smooth] ({\x},{20-100*\x)});
+\draw[purple] plot[variable=\x,domain=0.3:3,smooth] ({\x},{0});
+
+\end{tikzpicture}
+
+
+Convergence simple. Pour un x donn´e, prenons $\epsilon> $0 et $n_0 > 2/x$. Dans ce cas, $\forall n \geq n_0, f_n(x) = 0$ donc
+la s´erie de fonction converge simplement vers la fonction $f(x) = 0$.
+
+pour $n=1$, 
+$$
+\int_{0}^{1}{f_n(x)} = \int_{0}^{1}{x} = \left[ \frac{x^2}{2}\right]_{0}^{1} = \frac{1}{2}
+$$
+
+pour $n=2$, 
+$$
+\int_{0}^{1}{f_n(x)} = \int_{0}^{1/2}{4x} + \int_{1/2}^{1}{4-4x} = \left[ 2x^2 \right]_{0}^{1/2} + \left[ 4x - 2x^2 \right]_{1/2}^{1} = \frac{2}{4} + 4 - 2 - 2 + \frac{2}{4} = 1
+$$
+
+pour $n > 3$, 
+$$
+\int_{0}^{1}{f_n(x)} = \int_{0}^{1/n}{n^2x} + \int_{1/n}^{2/n}{2n-n^2x} + \int_{2/n}^{1}{0}= \left[ \frac{n^2x^2}{2} \right]_{0}^{1/n} + \left[ 2nx - \frac{n^2x^2}{2} \right]_{1/n}^{2/n} + 0 = \frac{1}{2} +4 - 2 - 2 + \frac{1}{2} = 1
+$$
+
+On a $\lim_{n \to \infty} f_n(x) = 1$.
+
+
+\subsection*{Autres exercices 1}
+$$x \to e^{-nx^2}$$
+Convergence simple. Pour un x donn´e diff\'erent de 0, prenons $\epsilon> $0 et un $n_0$ tel que $\epsilon = e^{-n_0x}$ donc $n_0 = -\frac{\ln(\epsilon)}{x^2}$. Dans ce cas, $\forall n \geq n_0, |f_n(x)| < \epsilon$ donc la s´erie de fonction converge simplement. Lorsque $n \to \infty$ on a la fonction $f(x)$ qui tend vers 0. Pour $x=0$, la s\'erie de fonction converge vers 1.
+
+Convergence uniforme. Pour un $n$ donn\'e et un $x \neq 0$, calculons $|f_n(x) - f(x)| = f_n(x)$. Pour un $n$ donn\'e on pourra toujours trouv\'e un $x$ tel que $e^{-nx^2} > \epsilon$. donc la s\'erie ne converge par uniform\'ement pour $x \neq 0$. Pour $x=0$ calculons $|f_n(x) - f(x)| = e^{-n0} -1 = 0$ donc la fonction converge uniform\'ement pour $x=0$.
+
+\subsection*{Autres exercices 2}
+$$x \to \frac{1}{1+nx^2}$$
+Convergence simple. Pour un x donn´e diff\'erent de 0, prenons $\epsilon> $0 et et un $n_0$ tel que $\epsilon = \frac{1}{1+n_0x^2}$ donc $n_0 = \frac{1-\epsilon}{\epsilon x^2}$. Dans ce cas, $\forall n \geq n_0, |f_n(x)| < \epsilon$ donc la s´erie de fonction converge simplement. Lorsque $n \to \infty$ on a la fonction $f(x)$ qui tend vers 0. Pour $x=0$, la s\'erie de fonction converge vers 1.
+
+Convergence uniforme. Pour un $n$ donn\'e et un $x \neq 0$, calculons $|f_n(x) - f(x)| = f_n(x)$. Pour un $n$ donn\'e on pourra toujours trouv\'e un $x$ tel que $\frac{1}{1+nx^2} > \epsilon$. donc la s\'erie ne converge par uniform\'ement pour $x \neq 0$. Pour $x=0$ calculons $|f_n(x) - f(x)| = e^{-n0} -1 = 0$ donc la fonction converge uniform\'ement pour $x=0$.
+
+\subsection*{Autres exercices 3}
+$$x \to \sin(x)^n \text{ sur } [0,\frac{\pi}{2}]$$
+Convergence simple. Pour un x donn´e diff\'erent de $\frac{\pi}{2}$, prenons $\epsilon> 0$ et et un $n_0$ tel que $\epsilon = \sin(x)^n_0$ donc $n_0 = \frac{\ln(\epsilon)}{\ln(\sin(x)}$. Dans ce cas, $\forall n \geq n_0, |f_n(x)| < \epsilon$ donc la s´erie de fonction converge simplement. Lorsque $n \to \infty$ on a la fonction $f(x)$ qui tend vers 0. Pour $x=\frac{\pi}{2}$, la s\'erie de fonction converge vers 1.
+
+Convergence uniforme. Pour un $n$ donn\'e et un $x \neq \frac{\pi}{2}$, calculons $|f_n(x) - f(x)| = f_n(x)$. Pour un $n$ donn\'e on pourra toujours trouv\'e un $x$ tel que $\frac{1}{1+nx^2} > \epsilon$. donc la s\'erie ne converge par uniform\'ement pour $x \neq \frac{\pi}{2}$. Pour $x=\frac{\pi}{2}$ calculons $|f_n(x) - f(x)| = sin(\frac{\pi}{2})^{n} -1 = 0$ donc la fonction converge uniform\'ement pour $x=\frac{\pi}{2}$.
+
+
+\subsection*{Autres exercices 4}
+$$x \to \frac{1}{n}\sin(nx) \text{ sur } [0,\frac{\pi}{2}]$$
+Convergence simple. Pour un x donn´e diff\'erent de $\frac{\pi}{2}$, prenons $\epsilon> $0 et et un $n_0$ tel que $\epsilon > \frac{1}{n_0}\sin(n_0x)$ donc $n_0 = \frac{1}{\epsilon}$ car $0 \leq \sin(x) \leq 1$. Dans ce cas, $\forall n \geq n_0, |f_n(x)| < \epsilon$ donc la s´erie de fonction converge simplement. Lorsque $n \to \infty$ on a la fonction $f(x)$ qui tend vers 0. Pour $x=\frac{\pi}{2}$, la s\'erie de fonction converge vers 1.
+
+Convergence uniforme. Pour un $n$ donn\'e et un $x \neq \frac{\pi}{2}$, calculons $|f_n(x) - f(x)| = f_n(x)$. Pour un $n$ donn\'e on pourra toujours trouv\'e un $x$ tel que $\frac{1}{1+nx^2} > \epsilon$. donc la s\'erie ne converge par uniform\'ement pour $x \neq \frac{\pi}{2}$. Pour $x=\frac{\pi}{2}$ calculons $|f_n(x) - f(x)| = sin(\frac{\pi}{2})^{n} -1 = 0$ donc la fonction converge uniform\'ement pour $x=\frac{\pi}{2}$.
+
+
+
 \end{document}
 
