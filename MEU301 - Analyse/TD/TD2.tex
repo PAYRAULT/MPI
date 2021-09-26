@@ -264,10 +264,9 @@ Convergence uniforme. Pour un $n$ donn\'e et un $x \neq \frac{\pi}{2}$, calculon
 
 \subsection*{Autres exercices 4}
 $$x \to \frac{1}{n}\sin(nx) \text{ sur } [0,\frac{\pi}{2}]$$
-Convergence simple. Pour un x donn´e diff\'erent de $\frac{\pi}{2}$, prenons $\epsilon> $0 et et un $n_0$ tel que $\epsilon > \frac{1}{n_0}\sin(n_0x)$ donc $n_0 = \frac{1}{\epsilon}$ car $0 \leq \sin(x) \leq 1$. Dans ce cas, $\forall n \geq n_0, |f_n(x)| < \epsilon$ donc la s´erie de fonction converge simplement. Lorsque $n \to \infty$ on a la fonction $f(x)$ qui tend vers 0. Pour $x=\frac{\pi}{2}$, la s\'erie de fonction converge vers 1.
+Convergence simple. Pour un x donn´e, prenons $\epsilon> $0 et et un $n_0$ tel que $\epsilon > \frac{1}{n_0}\sin(n_0x)$ donc $n_0 = \frac{1}{\epsilon}$ car $0 \leq \sin(x) \leq 1$. Dans ce cas, $\forall n \geq n_0, |f_n(x)| < \epsilon$ donc la s´erie de fonction converge simplement. Lorsque $n \to \infty$ on a la fonction $f(x)$ qui tend vers 0.
 
-Convergence uniforme. Pour un $n$ donn\'e et un $x \neq \frac{\pi}{2}$, calculons $|f_n(x) - f(x)| = f_n(x)$. Pour un $n$ donn\'e on pourra toujours trouv\'e un $x$ tel que $\frac{1}{1+nx^2} > \epsilon$. donc la s\'erie ne converge par uniform\'ement pour $x \neq \frac{\pi}{2}$. Pour $x=\frac{\pi}{2}$ calculons $|f_n(x) - f(x)| = sin(\frac{\pi}{2})^{n} -1 = 0$ donc la fonction converge uniform\'ement pour $x=\frac{\pi}{2}$.
-
+Convergence uniforme. Pour un $n$ donn\'e, calculons $|f_n(x) - f(x)| = f_n(x)$. La borne sup\'erieure de $f_n$, $\sup(f_n(x)) = \frac{1}{n}$. En prenant $n_0$ tel que $\epsilon > \frac{1}{n_0}$, donc $n_0 = \frac{1}{\epsilon}$ alors $\forall n > n_0, f_n(x) < \epsilon$. La s\'erie de fonction converge uniformement vers 0.
 
 
 \end{document}
