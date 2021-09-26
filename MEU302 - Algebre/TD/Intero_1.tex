@@ -1,0 +1,190 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\K}{\bb{K}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU303 - Alg\`ebre}
+\rhead{TD1}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+\begin{defn}
+Une famille de vecteurs d'un $\K$-espace vectoriel $E$ est not\'e $(e_i)_{i \in I}$. On note \'egalement $Vect((e_i)_{i \in I}) = \{\sum\lambda_i e_i, \text{ avec } (\lambda_i) \in \K\}$ 
+\end{defn}
+
+\begin{defn}
+Base de $E$:
+\begin{itemize}
+\item $(e_i)_{i \in I}$ est libre ssi $\sum\lambda_i e_i = 0_E \implies \forall i, \lambda_i = 0_{\K}$
+\item $(e_i)_{i \in I}$ est g\'en\'eratrice ssi $Vect((e_i)_{i \in I}) = E$
+\end{itemize}
+$(e_i)_{i \in I}$ est une base de $E$ si $(e_i)_{i \in I}$ est libre et g\'en\'eratrice.
+\end{defn}
+
+\begin{defn}
+La dimension d'un $\K$-expace vectoriel $E$ est la cardinal d'une base quelconque de $E$. 
+\end{defn}
+
+\begin{defn}
+Le rang d'une famille de vecteur, not\'e $rg((e_i)_{i \in I})$ est \'egal \`a la dimension de l'espace vectoriel engendr\'e par la famille de vecteurs $Vect((e_i)_{i \in I})$. 
+\end{defn}
+
+\begin{defn}
+Soit $f$ une application lin\'eaire. Si l'image de $f$, $\text{Im} f$ est de dimension finie alors on dit que $f$ est de rang fini et son rang not\'e $rg(f)$ est \'egale \`a la dimension de son image $\text{Im} f$. Si $(e_1, e_2. \ldots, e_n)$ est une base d'une $\K$-espace vectoriel $E$ alors $\text{IM}f = Vect(f(e_1), f(e_2), \ldots, f(e_n))$ donc $dim \text{ Im}f \leq n$.
+\end{defn}
+
+\begin{defn}
+Soit une matrice $A \in M_{n,p}(\K)$, on d\'efinit le rang de la matrice $A$, not\'e $rg(A)$ la dimension du sous-espace vectoriel de $\K^n$ engendr\'e par ses vecteurs colonnes. 
+\end{defn}
+
+\begin{defn}
+Si $A = M_{\mathcal{B}, \mathcal{B'}}(f)$, la matrice d'un endomorphisme $f$ par rapport \`a deux bases $\mathcal{B}$ et $\mathcal{B'}$ alors $rg(A) = rg(f)$. 
+\end{defn}
+
+\begin{defn}
+Si $A = M_{\mathcal{B}, \mathcal{B'}}(f)$, $rg(A) \leq \min(n,p)$. 
+\end{defn}
+
+\begin{defn}
+Soit $E$ et $F$ deux $\K$-espaces vectoriel de dimension finie $n$ et $p$. Prenons 
+\begin{itemize}
+\item $f \in L(E,F)$, 
+\item 2 bases de $E$, $\mathcal{B}$ et $\mathcal{B'}$,
+\item $P = P_{\mathcal{B} \to \mathcal{B'}} \in GL_p(\K)$  
+\item 2 bases de $F$, $\mathcal{C}$ et $\mathcal{C'}$
+\item $Q = Q_{\mathcal{C} \to \mathcal{C'}} \in GL_n(\K)$  
+\end{itemize}
+On peut d\'efinir les matrices de changement de base $f$ $M=M_{\mathcal{B}, \mathcal{C}}(f)$ et $M'=M_{\mathcal{B'}, \mathcal{C'}}(f)$ et on a $M'=Q^{-1}MP$.
+\end{defn}
+
+
+\begin{defn}
+Deux matrices $A$ et $B$ sont semblables ssi la matrice $A$ peut s'\'ecrire sous la forme $A = PBP^{-1}$. En effet, deux matrices sont semblables si elles repr\'esentent la m\^eme applocation lin\'eaire mais pas dans la m\^eme base. Soit $f$ une application lin\'eaire avec sa matrice caract\'eristique $X$, prenons $A= M_{\mathcal{B}}(f)$ (ie application lin'eaire $f$ dans la base $\mathcal{B}$) et prenons $B= M_{\mathcal{B'}}(f)$ (ie application lin'eaire $f$ dans la base $\mathcal{B'})$. On a $Y=AX$ pour la base $\mathcal{B}$ et $Y'=BX'$ pour la base $\mathcal{B'}$. Notons $P$, le changement de base de $\mathcal{B} \to \mathcal{B'}$. On a donc $X=PX'$ et $Y=PY'$, donc $PY' = AX = APX'$ ce qui fait $Y'=P^{-1}APX' = BX'$. Donc $B = P^{-1}AP$ ou $A = PBP^{-1}$.
+
+
+ est d\'efini dans la base $\mathcal{B}$ et $B$ dans la base $\mathcal{B'}$. Prenons $P$ le changement de base $\mathcal{B} \to \mathcal{B'}$, donc $P^{-1}$ existe et est le changement de base r\'eciproque $\mathcal{B'} \to \mathcal{B}$. 
+\end{defn}
+
+\begin{defn}
+La trace de la matrices $A$ est $Tr(a) = \sum_{i=1}^{n} A_{i,i}$
+\end{defn}
+
+\begin{defn}
+Le polynome caract\'eristique d'une matrice carr\'e d'ordre $n$, $M$ not\'e $P_M(X) = \det(XI_n - M)$ avec $I_n$ la matrice identit\'e d'ordre $n$. 
+\end{defn}
+
+
+
+
+
+
+
+\newpage
+
+\subsection{propri\'et\'e 3.2}
+idem que pour les matrices semblables.
+
+\subsection{exercice 7}
+Si les matrices $A$ et $B$ sont \'equivalentes alors on a $A=QBP^{-1}$. 
+
+Commencons par montrer que si $P$ est une matrice inversible alors $rg(PA) = rg(A)$. On a $rg(AB) \leq \min(rg(A), rg(B))$. Donc $rg(PA) \leq \min(rg(P), rg(A)) \leq rg(A)$ mais comme $P$ est inversible on a $A$ qui peut s'\'ecrire $A = P^{-1}PA$, donc $rg(A) = rg(P^{-1}PA) \leq \min(rg(P^{-1}), rg(PA)) \leq rg(PA)$ donc $rg(PA) \leq rg(A) \text{ et } rg(A) \leq rg(PA)$ donc $rg(PA) = rg(A)$. 
+
+Comme les matrice $P$ et $Q$ sont inversibles car dans $GL(\K)$, on a $rg(B) = rg(QB) = rg(QBP^{-1} = rg(A)$.  
+
+\subsection{exercice 8}
+La relation "\^etre \'equivalente" est une relation d'\'equivalence ssi:
+\begin{itemize}
+\item Elle est r\'eflexive, en prenant les 2 matrices identit\'es $I_n$ et $I_p$ on a bien $ A = I_p A I_n$. 
+\item Elle est sym\'etrique $A = QBP^{-1} \implies B = Q^{-1}AP$ vrai car $P$ et $Q$ sont inversibles. Il suffit de multiplier des 2 cot\'es
+\item Elle est transitive $A = QBP^{-1}, B = RCT^{-1} \implies A = WCZ^{-1}$, on a $A=QRCT^{-1}P^{-1} = (QR)C(PT)^{-1}$ (attention $T^{-1}P^{-1} = (PT)^{-1}$ et non $(TP)^{-1}$. Vrai en prenant $W=QR$ et $Z=TP$.
+\end{itemize}
+
+\subsection*{Question 1.1}
+Il faut montrer que si $A$ et $B$ sont semblables (ie $A = PBP^{-1}$) alors leur traces sont \'egales $Tr(A) = Tr(B)$. On sait que pour des endomorphismes on a $tr(AB) = Tr(BA)$, donc calculons la trace de la matrice $A$. 
+$$
+Tr(a) = Tr(PBP^{-1}) = Tr(PP^{-1}B) = Tr(IdB) = Tr(B) 
+$$
+
+\subsection*{Question 1.2}
+
+
+
+
+
+\end{document}
+
