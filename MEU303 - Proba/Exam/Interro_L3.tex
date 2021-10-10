@@ -1,0 +1,126 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{Exercice 1
+\subsection*{Exercice 1.1}
+Il faut trouver un espace de probabilit\'e $(\Omega, F,P)$ 
+
+\subsection*{Exercice 1.2}
+La tribu d'un espace de probabilit\'e $(\Omega, F,P)$ est l'ensemble des sous-parties de $\Omega$. Comme l'ensemble $card(\Omega) \geq 3$ on a $card(P(\Omega)) \geq 3^2 = 8$.
+
+
+\subsection*{Exercice 2}
+\subsection*{Exercice 2.1}
+Soit $E$ l'\'ev\'enement sur lequel $X=\pi X$. Si $\omega \in E$ alors 
+$$
+\lim_{n \to \infty}{\cos(X(\omega))^{n}+\cos(2X(\omega))^{2n}} = \lim_{n \to \infty}{1^n+1^{2n} = 2}
+$$
+
+Si $\omega \notin E$ alors 
+$$
+\lim_{n \to \infty}{\cos(X(\omega))^{n}+\cos(2X(\omega))^{2n}} = \lim_{n \to \infty}{[0,1[^n+[0,1[^{2n} = 0}
+$$ 
+
+Donc $\lim_{n \to \infty}{\cos(X)^{n}+\cos(2X)^{2n}} = 2.1_{E}$. 
+
+On a $\exists Z \text{ tq } \forall n, |X_n| \leq Z$ $\implies Z = 2$ et $\exists X \text{ tq } X = \lim{n \to \infty}{X_n}$ $\implies X = 2.1_E$. Donc on peut utiliser le th\'eor\`eme de convergence domin\'ee.
+$$
+\lim_{n \to \infty} \E[X_n] = \E[X] = \E[2.1_E] = 2P(E) = 2P(X \in \pi \Z) = 0
+$$
+
+\subsection*{Exercice 2.2}
+m\^eme raisonnement
+$$
+\lim_{n \to \infty} \E[X_n] = \E[X] = \E[2.1_E] = 2P(E) = 2P(X \in \pi \Z) = 2p_1
+$$
+
+
+\end{document}
+
