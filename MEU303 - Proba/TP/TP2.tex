@@ -1,0 +1,169 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\Pe}{\bb{P}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{Exercice 2}
+\subsection*{Exercice 2.1}
+On a par d\'efinition 
+$$
+F_X(x) = \int_{-\infty}^{x}{\lambda e^{-\lambda x} 1_{[0,\infty]}} = \int_{0}^{x}{\lambda e^{-\lambda x}} = \left[-e^{-\lambda x}\right]_{0}^{x} = 1 - e^{-\lambda x}
+$$
+
+\subsection*{Exercice 2.2}
+Calculons 
+$$
+F_{X}(F_X^{-1}(x)) = 1 - e^{-\lambda F_X^{-1}(x)} = x
+$$
+
+$$
+e^{-\lambda F_X^{-1}(x)} = 1-x
+$$
+
+$$
+-\lambda F_X^{-1}(x) = \ln(1-x)
+$$
+
+$$
+F_X^{-1}(x) = -\frac{1}{\lambda} \ln(1-x)
+$$
+
+
+\subsection*{Exercice 2.4}
+$$
+\Pe(X > m_{\lambda}) = 1 - \Pe(X \leq m_{\lambda}) = 1 - F_X(m_{\lambda}) = 0.05
+$$
+Donc
+$$
+F_X(m_{\lambda}) = 1 - 0.05 = .95
+$$
+et
+$$
+m_{\lambda} = F_X^{-1}(.95) = -\frac{1}{\lambda} \ln(1-0.95) = -\frac{\ln(0.05)}{\lambda}
+$$
+
+
+\subsection*{Exercice 3}
+\subsection*{Exercice 3.1}
+On a par d\'efinition:
+$$
+F_X(x) = \int_{-\infty}^{x}{\pi^{-1}\frac{1}{1+y^2}dy} = \frac{1}{\pi}[arctan(x)]_{-\infty}^{x} = \frac{1}{\pi}(\arctan(x)- \arctan(-\infty)) = \frac{1}{\pi}\left(\arctan(x)+\frac{\pi}{2}\right) = \frac{\arctan(x)}{\pi}+\frac{1}{2}
+$$
+
+\subsection*{Exercice 3.2}
+Calculons 
+$$
+F_{X}(F_X^{-1}(x)) = \frac{\arctan(F_X^{-1}(x))}{\pi}+\frac{1}{2} = x
+$$
+
+$$
+\arctan(F_X^{-1}(x)) = \pi(x-\frac{1}{2})
+$$
+
+$$
+F_X^{-1}(x) = \tan\left(\pi\left(x-\frac{1}{2}\right)\right)
+$$
+
+
+\subsection*{Exercice 3.4}
+$$
+\Pe(|X| > m) = 1 - \Pe(|X| \leq m) = 1 - F_X(m) = 0.05
+$$
+Donc
+$$
+F_X(m) = 1 - 0.05 = .95
+$$
+et
+$$
+m_ = F_X^{-1}(.95) = \tan\left(\pi\left(.95-\frac{1}{2}\right)\right) = 6.31
+$$
+
+
+\end{document}
+
