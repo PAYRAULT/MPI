@@ -1,0 +1,356 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\Pe}{\bb{P}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Soit 2 variable al\'eatoire X et Y, on d\'efinit $F_{XY}(x,y) = \Pe(X \leq x, Y \leq y)$ et on a :
+\begin{itemize}
+\item $F_X(x) = F_{XY}(x,\infty)$
+\item $F_Y(y) = F_{XY}(\infty,y)$
+\item $F_{XY}(\infty, \infty)= 1$
+\item $F_{XY}(-\infty, y)= F_{XY}(x,-\infty)  = 0$
+\item $\Pe(x_1 < X < x_2, y_1 < Y < y_2) = F_{XY}(x_2,y_2) - F_{XY}(x_1,y_2) - F_{XY}(x_2,y_1) + F_{XY}(x_1,y_1)$
+\item si $X$ et $Y$ sont ind\'ependentes $F_{XY}(x,y) = F_X(x)F_Y(y)$
+\end{itemize}
+\end{defn}
+
+
+\begin{defn}
+In\'egalit]\'e de Markow simplifi\'ee. Soit Y une v.a., g une fonction croissante et positive ou nulle sur l'ensemble des r\'eels v\'erifiant $g(a) > 0$ alors 
+$$
+\forall a > 0, \Pe(Y>a) \leq \frac{E[g(x)]}{g(a)}
+$$
+
+Preuve:
+$$
+E[g(Y)] = \int_{\R}{g(y)f(y)dy} = \int_{-\infty}^{a}{g(y)f(y)dy} + \int_{a}^{\infty}{g(y)f(y)dy}
+$$
+$$
+\geq \int_{a}^{\infty}{g(y)f(y)dy} \text{ car g est positive ou nulle et g(a) > 0}
+$$
+$$
+\geq g(a)\int_{a}^{\infty}{f(y)dy} \text{ car g est croissante}
+$$
+$$
+= g(a) \Pe(Y > a)
+$$
+
+\end{defn}
+
+
+\newpage
+\subsection*{Exercice 1}
+\subsection*{Exercice 1.4}
+Moyenne:
+$$
+E[X] = 1\frac{1}{3}+2\frac{1}{3}+3\frac{1}{3} = 2
+$$
+Variance
+$$
+V(X) = (1-2)^2\frac{1}{3}+(2-2)^2\frac{1}{3}+(3-2)^2\frac{1}{3}) = \frac{2}{3}
+$$
+
+\subsection*{Exercice 1.5}
+$$
+f: a \to E[(X-a)^2] = (1-a)^2\frac{1}{3} + (2-a)^2\frac{1}{3} + (3-a)^2\frac{1}{3} = \frac{1}{3}((1-a)^2+(2-a)^2+(3-a)^2)
+$$
+On remarque que pour $a=E[X]$ on a $f(E[X]) = V(X)$
+
+\subsection*{Exercice 1.6}
+On a
+$$
+V(X)= \sum_{i=1}^{n}{(x_i-E[X])^2\Pe(X=x_i)}
+$$
+et
+$$
+E[(X-a)^2] = \sum_{i=1}^{n}{(x_i-a)^2\Pe(X=x_i)}
+$$
+donc quand $a=E[X]$ on a $V(X)=E[(X-a)^2]$.
+Calculons quand la d\'eriv\'ee de $E[(X-a)^2]$ est nulle
+$$
+E'[(X-a)^2] = \sum_{i=1}^{n}{(x_i-a)^2\Pe(X=x_i)} = \sum_{i=1}^{n}{-2(x_i-a)\Pe(X=x_i)} 
+$$
+$$
+= -2(x_1\Pe(X=x_1)+x_2\Pe(X=x_2)+\ldots + x_n\Pe(X=x_n) - a(\Pe(X=x_1)+ \Pe(X=x_1) + \ldots + \Pe(X=x_n))) = -2(E[X] - a)
+$$
+car par d\'efinition $\sum_{1}^{n}{\Pe(X=x_n)} = 1$. Donc d\'eriv\'ee nulle quand $a=E[X]$.
+La fonction d\'ecroit entre $-\infty$ et $a$ et croit entre $a$ et $+\infty$. Donc 
+$$
+\forall a \in \R, E[(Z-a)^2] \geq V(X)
+$$
+
+\subsection*{Exercice 2}
+\subsection*{Exercice 2.1}
+Soit $E$ l'ensemble sur lequel $\{X = \pi \Z \}$. 
+
+
+Si $\omega \in E$, on a $\lim_{n \to \infty} cos(\omega)^{2n} + cos(2\omega)^{2n} = \cos(\pi\Z)^{2n}+\cos(\pi\Z)^{2n} = 2$. 
+
+Si $\omega \notin E$, on a $\lim_{n \to \infty} cos(\omega)^{2n} + cos(2\omega)^{2n} = [0,1[^{2n}+[0,1[]]^{2n} = 0$. 
+
+Donc $\lim_{n \to \infty} cos(\omega)^{2n} + cos(2\omega)^{2n} = 2.1_E$.
+
+Donc 
+$$
+\lim_{n \to \infty} E[cos(X)^{2n} + cos(2X)^{2n}] = E[2.1_E] = 2E[1_E] = 0
+$$
+
+\subsection*{Exercice 2.2}
+Soit $E$ l'ensemble sur lequel $\{X = \pi \Z \}$. 
+Si $\omega \in E$, on a $\lim_{n \to \infty} cos(\omega)^{2n} + cos(2\omega)^{2n} = \cos(\pi\Z)^{2n}+\cos(\pi\Z)^{2n} = 2$. 
+
+Si $\omega \notin E$, on a $\lim_{n \to \infty} E[cos(\omega)^{2n} + cos(2\omega)^{2n}] = E[[0,1[^{2n}+[0,1[]]^{2n}] = 0$
+
+Donc $\lim_{n \to \infty} cos(X)^{2n} + cos(2X)^{2n} = 2.1_E$
+Donc
+Donc 
+$$
+\lim_{n \to \infty} E[cos(X)^{2n} + cos(2X)^{2n}] = E[2.1_E] = 2E[1_E] = 2p_1
+$$
+
+
+\subsection*{Exercice 3}
+\subsection*{Exercice 3.1}
+On a 
+$$
+A_n = \frac{x_1+x_2+\ldots + x_n}{n} = \frac{x_1}{n}+ \frac{x_2}{n} \ldots + \frac{x_n}{n} = \sum_{i=1}^{n}x_i.\frac{1}{n} = \sum_{0}^{n}x_i.\Pe(X=x_i) = E[X]
+$$
+
+G\'eometrique. Surement avec $ln(X)$.??
+
+On a
+$$
+E[\frac{1}{X}] = \sum_{i=1}^{n}{\frac{1}{x_i}\Pe(X=x_i)} =  \frac{1}{n}\sum_{i=1}^{n}{\frac{1}{x_i}} = \frac{1}{n}(\frac{1}{x_1}+\frac{1}{x_2}+ \ldots \frac{1}{x_n})
+$$
+donc
+$$
+H_n = \frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+ \ldots \frac{1}{x_n}} = \frac{1}{E[\frac{1}{X}]}
+$$
+
+\subsection*{Exercice 4}
+\subsection*{Exercice 4.1}
+La fonction de r\'eparition $F_X(x) = \int_{\R}fx(x)$. On a 
+$$
+f_x(x) =
+\left\{
+    \begin{array}{l l}
+        x < 0 &  0 + 0 = 0 \\
+        0 \leq x \leq 2 &  1/6 + 0 = 1/6 \\
+        2 \leq x \leq 4 & 0 + 1/3 = 1/3 \\
+        x > 4 & 0 + 0
+    \end{array}
+\right.
+$$
+
+Donc
+$$
+F_X(x) =
+\left\{
+    \begin{array}{l l}
+        x < 0 &  0 \\
+        0 \leq x < 2 & \int_{0}^{x}{1/6} = 1/6x \\
+        2 \leq x \leq 4 & \int_{0}^{2}{1/6} + \int_{2}^{x}{1/3} = 1/3+1/3x-2/3 = 1/3x-1/3\\
+        x > 4 & \int_{0}^{2}{1/6} + \int_{2}^{4}{1/3} = 1/3 + 4/3-2/3 = 1
+    \end{array}
+\right.
+$$
+
+\subsection*{Exercice 4.2}
+$$
+\Pe(X \in [1,3]) = \Pe(1<x<3) = F_X(3) - F_X(1) = 3/3 - 1/3 -1/6 = 3/6 = 1/2
+$$
+
+\subsection*{Exercice 4.3}
+$$
+E[X] = \int_{\R}xf(x) = \int_0^2{\frac{x}{6} + \int_2^4\frac{x}{3} = \left[\frac{x^2}{12}\right]_0^2 + \left[\frac{x^2}{6}\right]_2^4} = 4/12 - 0 + 16/6 - 4/6 = 1/3+2 = 7/3
+$$
+
+
+\subsection*{Exercice 4.4}
+Posons $Z = \frac{1}{X}$, donc $X=\frac{1}{Z}$.
+$$
+f_z(z) = \frac{1}{6}1_{[1/2, \infty]}(1/z) + \frac{1}{3}1_{[1/4, 1/2]}(1/z) = 6.1_{[1/2, \infty]}(z) + 3.1_{[1/4, 1/2]}(z)
+$$
+
+
+
+\subsection*{Exercice 5}
+\subsection*{Exercice 5.1}
+On a par d\'efinition $F_{XY}(\infty, \infty) = \int_{\R}\int_{\R}f(x,y)dxdy = 1$
+$$
+\int_{\R}{\int_{\R}{C\sin(x+y)1_{[0,\pi/2]^2}dx}dy} = C\int_{0}^{\pi/2}{\int_{0}^{\pi/2}{\sin(x+y) dx}dy}
+$$
+$$
+\int_{0}^{\pi/2}{\sin(x+y) dx} = [-\cos(x+y)]_{0}^{\pi/2} = -\cos(\pi/2+y) + \cos(y) = \sin(y) + \cos(y)
+$$
+
+$$
+\int_{0}^{\pi/2}{\sin(y) + \cos(y)dy} = [-\cos(y) + \sin(y)]_{0}^{\pi/2} = -\cos(\pi)+\sin(\pi/2) +\cos(\pi/2) -\sin(0) = 2
+$$
+
+$$
+F_{XY} = 2C = 1
+$$
+
+Donc $C=1/2$.
+
+\subsection*{Exercice 5.2}
+On a $F_X(x) = F_{XY}(x,\infty) = \int_{\R}{\int_{-\infty}^{x}{f(x,y)dx}dy}$
+
+$$
+\int_{-\infty}^{x}{f(x,y)dx} = 1/2 \int_{0}^{x}{\sin(x+y)dx} = 1/2 [-\cos(x+y)]_{0}^{x} = 1/2(-\cos(x+y) + \cos(y))
+$$
+
+$$
+\int_{\R}{\int_{-\infty}^{x}{f(x,y)dx}dy} = 1/2 \int_{0}^{\pi/2}{-\cos(x+y) + \cos(y) dy} = 1/2 [-\sin(x+y)+\sin(y)]_{0}^{\pi/2} 
+$$
+
+$$
+= 1/2(-\sin(x+\pi/2) + \sin(\pi/2) + \sin(x) - sin(0)) = 1/2(1 + \sin(x) -\cos(x))
+$$
+
+On a $F_Y(x) = F_{XY}(\infty,y) = \int_{-\infty}^{y}{\int_{\R}{f(x,y)dx}dy}$
+
+$$
+\int_{\R}{f(x,y)dx} = 1/2 \int_{0}^{\pi/2}{\sin(x+y)dx} = 1/2 [-\cos(x+y)]_{0}^{\pi/2} = 1/2(-\cos(\pi/2+y) + \cos(y))
+$$
+
+$$
+\int_{-\infty}^{y}{\int_{\R}{f(x,y)dx}dy} = 1/2 \int_{0}^{y}{-\cos(\pi/2+y) + \cos(y) dy} = 1/2 [-\sin(\pi/2+y)+\sin(y)]_{0}^{y} 
+$$
+
+$$
+= 1/2(-\sin(\pi/2+y) + sin(y) + \sin(\pi/2) - \sin(0)) = 1/2(1+ \sin(y) - \cos(y))
+$$
+
+\subsection*{Exercice 5.3}
+on a la fonction de distribotion de la loi 
+$$
+f(x) = F_X'(x)) = 1/2(\cos(x)+sin(x))
+$$
+Soit $Z = \pi/2-X$, donc $X = \pi/2-Z$
+$$
+f(z) = 1/2(\sin(\pi/2-z) - \cos(\pi/2-z)) = 1/2(\cos(z) + \sin(z)) = f(x)
+$$
+
+$X$ et $\pi/2-X$ ont la m\^eme loi de distribution sur le m\^me espace $[0,\pi/2]$, donc c'est la m\^eme loi.
+
+\subsection*{Exercice 5.4}
+La loi de distribution $f_x$ est centr\'ee en $\pi/4$ (voir question pr\'ec\'edente). avec le max a $\pi/4$. Donc la densit\'e est paire. Par cons\'equent on a $E[X] = $. 
+
+\subsection*{Exercice 5.5}
+On fait un preier changement de variable $Z = X-\pi/4$ donc $X = Z - \pi/4$ avec $Z \in [-\pi/4, \pi/4]$
+$f(z) = sin(z-\pi/4) + cos(z-\pi/4)$
+
+
+
+\subsection*{Exercice 6}
+\subsection*{Exercice 6.1}
+On a $E[g(x)] = \int_{\R}{g(x).f_x(x) dx}$ donc
+$$
+E[e^{tX}] = \int_{\R}{e^tx . e^{-x^2/2} dx} = \frac{1}{\sqrt{2\pi}}\int_{\R}{e^{-x^2/2+tx}dx} = \frac{1}{\sqrt{2\pi}}\int_{\R}{e^{-1/2(x-t)^2+t^2/2}dx}  
+$$
+$$
+= \frac{1}{\sqrt{2\pi}}e^{t^2/2}.\int_{\R}{e^{-1/2(x-t)^2}dx}
+$$
+
+Calculons l'int\'egrale avec un chagement de variable $u=\frac{1}{sqrt{2}(x-t)}$, donc $\frac{du}{dx} = \frac{1}{\sqrt{2}}$ et $dx = \sqrt{2}du$.
+
+$$
+= \int_{\R}{e^{-1/2(x-t)^2}dx} = \int_{\R}{e^{-u^2}\sqrt{2}du} = \sqrt{2}\int_{\R}{e^{-u^2}du} = \sqrt{2}\sqrt{\pi}
+$$
+Par l'int\'egrale de Gauss.
+Donc
+$$
+E[e^{tX}] = \frac{1}{\sqrt{2\pi}}e^{t^2/2}.\int_{\R}{e^{-1/2(x-t)^2}dx} = \frac{1}{\sqrt{2\pi}}e^{t^2/2}.\sqrt{2}\sqrt{\pi} = e^{t^2/2}
+$$
+
+
+\subsection*{Exercice 6.2}
+L'in\'egalit\'e simplifi\'e donne $\forall a> 0 , \Pe(Y>a) \leq \frac{E[g(y)]}{g(a)}$. Donc
+$$
+\Pe(Y > a) \leq \frac{E[e^{tX}]}{e^{ta}} = \frac{e^{t^2/2}}{e^{ta}} = e^{t^2/2-ta}
+$$
+
+\end{document}
+
