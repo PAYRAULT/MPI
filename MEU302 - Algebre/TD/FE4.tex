@@ -1,0 +1,324 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU303 - Alg\`ebre}
+\rhead{TD1}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{Exercice 1}
+\subsection*{Exercice 1.1}
+
+Les 2 premi\`eres colonnes de la matrice $M=\begin{vmatrix}
+    2 & -1 & 3 \\
+    1 & 4 & 6 \\
+\end{vmatrix}$ sont lin\'eairement ind\'ependantes. Il s'en suit que l'application lin\'eaire de $\R^3$ vers $\R^2$ associ\'ee est surjective. C'est donc un sous-espace affine de $\R^3$.
+
+Calcul de $Ker(M)$.
+$$
+\begin{vmatrix}
+    2 & -1 & 3 \\
+    1 & 4 & -6 \\
+\end{vmatrix} . 
+\begin{vmatrix}
+    \lambda_1 \\
+    \lambda_2 \\
+    \lambda_3 \\
+\end{vmatrix}
+=
+\begin{vmatrix}
+    0 \\
+    0 \\
+\end{vmatrix}
+$$
+$$
+\left\{ 
+    \begin{array}{l}
+        2\lambda_1 - \lambda_2 + 3 \lambda_3 = 0 \\
+        \lambda_1 + 4 \lambda_2 - 6\lambda_3 = 0
+    \end{array}
+\right\}
+$$
+$$
+\left\{ 
+    \begin{array}{l}
+        2\lambda_1 - \lambda_2 + 3 \lambda_3 = 0 \\
+         -9 \lambda_2 + 15\lambda_3 = 0
+    \end{array}
+\right\}
+$$
+$$
+\left\{ 
+    \begin{array}{l}
+        \lambda_1 = -\frac{2}{5} \lambda_2 \\
+        \lambda_3 = \frac{3}{5} \lambda_2 
+    \end{array}
+\right\}
+$$
+
+Donc $Ker(M) = \{(-2, 5, 3)\}$ donc $\dim Ker(M) = 1$
+
+Il faut trouver une solution particuli\`ere
+$$
+\left\{ 
+    \begin{array}{l}
+        2\lambda_1 - \lambda_2 + 3 \lambda_3 = 1 \\
+        \lambda_1 + 4 \lambda_2 - 6\lambda_3 = -2 \\
+    \end{array}
+\right\}
+$$
+$$
+\left\{ 
+    \begin{array}{l}
+        3\lambda_3 = 1 + \frac{9}{5}\lambda_2 \\
+        \lambda_1 = - \frac{2}{5}\lambda_2 \\
+    \end{array}
+\right\}
+$$
+
+Une solution particuli\`ere est $\{0,0,\frac{1}{3}\}$. 
+
+La nature est une droite affine.
+
+L'\'equation param\'atrique est donc
+$$
+\begin{vmatrix}
+    0 \\
+    0 \\
+    \frac{1}{3} \\
+\end{vmatrix}
++
+(\R\begin{vmatrix}
+   -2 \\
+   5 \\
+   3 \\ 
+\end{vmatrix})
+$$
+
+\subsection*{Exercice 1.2}
+
+\subsection*{Exercice 2}
+\subsection*{Exercice 2.1}
+Soit $M_1=\begin{vmatrix}
+    -1 & \lambda & -3 \\
+    1 & -3 & \lambda \\
+\end{vmatrix}$. Calculons $Ker(M_1)$.
+
+$$
+\left\{ 
+    \begin{array}{l}
+        -x + \lambda y - 3 z = 0 \\
+        x - 3 y + \lambda z = 0
+    \end{array}
+\right\}
+$$
+
+$$
+\left\{ 
+    \begin{array}{l}
+        -x + \lambda y - 3 z = 0 \\
+        (\lambda - 3) y + (-3 +\lambda) z = 0
+    \end{array}
+\right\}
+$$
+
+$$
+\left\{ 
+    \begin{array}{l}
+        x  = -3z+3y \\
+        0y + 0z= 0
+    \end{array}
+\right\}
+$$
+
+Si $\lambda = 3$, on a $Ker(M_1) = \{(-3, 0, 1), (3, 1, 0)\}$, ce 'est pas une droite affine mais un plan affine car $\dim Ker(M_1) = 2$. Si $\lambda \neq 3$, on a $Ker(M_1) = \{(-\lambda -3, -1, 1)\}$. 
+
+Soit $M_2=\begin{vmatrix}
+    0 & 1 & 1 \\
+    \lambda & 0 & -2 \\
+\end{vmatrix}$. Calculons $Ker(M_2)$.
+
+$$
+\left\{ 
+    \begin{array}{l}
+        y + z = 0 \\
+        \lambda x - 2 z = 0
+    \end{array}
+\right\}
+$$
+
+$$
+\left\{ 
+    \begin{array}{l}
+        y = -z \\
+        \lambda x = 2 z
+    \end{array}
+\right\}
+$$
+
+Si $\lambda = 0$, $Ker(M_2) =\{(1,0,0) \}$. Si $\lambda \neq 0$, $Ker(M_2) =\{(\frac{2}{\lambda},-1,1) \}$
+
+\subsection*{Exercice 2.2}
+Solution particul\`ere de $M_1$ quand $\lambda \neq 3$
+$$
+\left\{ 
+    \begin{array}{l}
+        -x + \lambda y - 3 z = \lambda - 1 \\
+        x - 3 y + \lambda z = -2
+    \end{array}
+\right\}
+$$
+
+$$
+\left\{ 
+    \begin{array}{l}
+        -x + \lambda y - 3 z = \lambda - 1 \\
+        (\lambda - 3) y + (\lambda - 3) z = (\lambda - 3)
+    \end{array}
+\right\}
+$$
+
+$$
+\left\{ 
+    \begin{array}{l}
+        x  = 1 - (\lambda + 3) z\\
+         y = 1-z
+    \end{array}
+\right\}
+$$
+
+Les points $A_1 = (1 - (\lambda + 3) z, 1-z, z)$. Donc, on a la droite affine $(1 - (\lambda + 3) z, 1-z, z) + \R(-\lambda -3, -1, 1)$
+
+Solution particul\`ere de $M_2$ quand $\lambda = 0$
+$$
+\left\{ 
+    \begin{array}{l}
+        y+z  = 2\\
+        -2z = 0
+    \end{array}
+\right\}
+$$
+
+Les points $A_2 = (x,2,0)$. Donc, on a la droite affine $(x,2,0) + \R(1,0,0)$
+
+
+Solution particul\`ere de $M_2$ quand $\lambda \neq 0$
+$$
+\left\{ 
+    \begin{array}{l}
+        y+z  = -\lambda + 2\\
+        \lambda x -2z = 0
+    \end{array}
+\right\}
+$$
+
+$$
+\left\{ 
+    \begin{array}{l}
+        y = -\lambda + 2 - z\\
+        x = \frac{2}{\lambda}z
+    \end{array}
+\right\}
+$$
+
+Les points $A_2 = (\frac{2}{\lambda}z,-\lambda + 2 - z,z)$. Donc, on a la droite affine $(\frac{2}{\lambda}z,-\lambda + 2 - z,z) + \R(\frac{2}{\lambda},-1,1)$
+
+
+\subsection*{Exercice 2.3}
+Pour $M_1$ on a $\lambda \neq 3$. Premier cas $\lambda = 0$, on a donc 2 coefficients directeur de droites affines $(-3, -1, 1)$ pour $M_1$ et $(-1, 0, 0)$ pour $M_2$. Les 2 droites ne sont pas parall\`eles (car leurs coefficients directeurs ne peuvent pas \^etre \'egaux), donc non confondues aussi. Elles sont donc s\'ecantes.
+
+Second cas $\lambda \neq 0$, on a donc 2 coefficients directeur de droites affines $(-\lambda -3, -1, 1)$ pour $M_1$ et $(\frac{2}{\lambda}, -1, 1)$ pour $M_2$. Pour que les droites soient parall\`eles il faut que $-\lambda -3 = \frac{2}{\lambda}$. Donc trouver les solutions de l'\'equation $|lambda^2 + 3\lambda + 2 = 0$, soit $\lambda = -2$ ou $\lambda = -1$. Pour que les droites soient confondues, il faut \'egalement que leurs points soient identiques, pour les valeurs de $lambda$. Quand $\lambda = 1$, on a $A_1 = (-3z,1-z,z)$ et $A_2 = (2z,1,z)$, il existe un point commun quand $z=0$. C'est le point $A=(0,1,0)$. Quand Quand $\lambda = 2$, on a $A_1 = (1-5z,-1,z)$ et $A_2 = (z,0,z)$. Il n'existe pas de point commun (\`a cause de y).
+
+Pour r\'esumer:
+\begin{itemize}
+    \item $\lambda = 0$, droites s\'ecantes
+    \item $\lambda = 1$, et point $(0,1,0)$, droites confondues
+    \item $\lambda = 1$, et point non $(0,1,0)$, droites parall\`eles
+    \item $\lambda = 2$, droites parall\`eles
+    \item $\lambda \neq 3$, droites s\'ecantes
+\end{itemize}
+
+\end{document}
+
