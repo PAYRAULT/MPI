@@ -93,6 +93,8 @@ On a
 $$
 E(X) = \int_{-\infty}^{+\infty}{x \frac{1}{\sqrt{2\pi r^2}} e^{-\frac{(x-m)^2}{2r^2}} dx}
 $$
+
+D\'emonstration variance
 $$
 E((X-m)^2) = \int_{-\infty}^{+\infty}{(x-m)^2\frac{1}{\sqrt{2\pi r^2}} e^{-\frac{(x-m)^2}{2r^2}} dx}
 $$
@@ -102,7 +104,29 @@ E((X-m)^2) = \int_{-\infty}^{+\infty}{r^2u^2\frac{1}{\sqrt{2\pi r^2}} e^{-\frac{
 \frac{r^2}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}{u^2 e^{1/2u^2}du} = r^2
 $$
 
-Donc la variance est bine $r^2$ dans la formule.
+Donc la variance est bien $r^2$ dans la formule.
+
+D\'emonstration de la moyenne
+$$
+E(X) = \int_{-\infty}^{+\infty}{x \frac{1}{\sqrt{2\pi r^2}} e^{-\frac{(x-m)^2}{2r^2}} dx}
+$$
+Changement de variable $u = \frac{x-m}{r}$, donc $dx = rdu$ et $x=ur+m$.
+
+$$
+E(X) = \int_{-\infty}^{+\infty}{(ur+m) \frac{1}{\sqrt{2\pi r^2}} e^{-\frac{u^2}{2}} rdu} = 
+\frac{r}{\sqrt{2\pi}} \int_{-\infty}^{+\infty}{u e^{-\frac{u^2}{2} rdu}}  + \frac{m}{\sqrt{2\pi}} \int_{-\infty}^{+\infty}{e^{-\frac{u^2}{2}} r du}
+$$
+
+Premi\`ere int\'egrale $\int{u e^{-\frac{u^2}{2} rdu}}$. Changement de variable $t = u^2/2$, $du = dt/x$.
+$$
+\int{u e^{-\frac{u^2}{2} rdu}} = \int{e^t dt} = [e^t] = [e^{u^2/2}]
+$$
+donc
+$$
+\int_{-\infty}^{+\infty}{u e^{-\frac{u^2}{2} rdu}} = [e^{u^2/2}]_{-\infty}^{+\infty} = 0
+$$
+
+Seconde int\'egrale
 
 
 \end{document}
