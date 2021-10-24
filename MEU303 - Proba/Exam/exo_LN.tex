@@ -1,0 +1,109 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Soit $X$ une variable al\'eatoire de moyenne $\mu$ alors sa variance $\sigma^2(X) = E[(X-\mu)^2]$
+\end{defn}
+
+
+
+\newpage
+\subsection*{Exercice 1}
+On a 
+$$
+E(X) = \int_{-\infty}^{+\infty}{x \frac{1}{\sqrt{2\pi r^2}} e^{-\frac{(x-m)^2}{2r^2}} dx}
+$$
+$$
+E((X-m)^2) = \int_{-\infty}^{+\infty}{(x-m)^2\frac{1}{\sqrt{2\pi r^2}} e^{-\frac{(x-m)^2}{2r^2}} dx}
+$$
+Changement de variable $u = \frac{x-m}{r}$, donc $dx = rdu$
+$$
+E((X-m)^2) = \int_{-\infty}^{+\infty}{r^2u^2\frac{1}{\sqrt{2\pi r^2}} e^{-\frac{u^2}{2}} r du} =
+\frac{r^2}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}{u^2 e^{1/2u^2}du} = r^2
+$$
+
+Donc la variance est bine $r^2$ dans la formule.
+
+
+\end{document}
+
