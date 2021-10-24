@@ -114,7 +114,7 @@ Changement de variable $u = \frac{x-m}{r}$, donc $dx = rdu$ et $x=ur+m$.
 
 $$
 E(X) = \int_{-\infty}^{+\infty}{(ur+m) \frac{1}{\sqrt{2\pi r^2}} e^{-\frac{u^2}{2}} rdu} = 
-\frac{r}{\sqrt{2\pi}} \int_{-\infty}^{+\infty}{u e^{-\frac{u^2}{2} rdu}}  + \frac{m}{\sqrt{2\pi}} \int_{-\infty}^{+\infty}{e^{-\frac{u^2}{2}} r du}
+\frac{r}{\sqrt{2\pi}} \int_{-\infty}^{+\infty}{u e^{-\frac{u^2}{2} du}}  + \frac{m}{\sqrt{2\pi}} \int_{-\infty}^{+\infty}{e^{-\frac{u^2}{2}} du}
 $$
 
 Premi\`ere int\'egrale $\int{u e^{-\frac{u^2}{2} rdu}}$. Changement de variable $t = u^2/2$, $du = dt/x$.
@@ -126,8 +126,9 @@ $$
 \int_{-\infty}^{+\infty}{u e^{-\frac{u^2}{2} rdu}} = [e^{u^2/2}]_{-\infty}^{+\infty} = 0
 $$
 
-Seconde int\'egrale
+Seconde int\'egrale $\int_{-\infty}^{+\infty}{e^{-\frac{u^2}{2}} du} = \sqrt{2\pi}$
 
+Donc $E(X) = m$.
 
 \end{document}
 
