@@ -82,8 +82,12 @@
 
 \subsection*{Rappel de cours}
 \begin{defn}
+    Soit $F$ un sous-espace vectoriel de $E$, l'ensemble de tous les vecteurs orthogonaux \`a F est appel\'e le compl\'ement orthogonal de F (ou orthogonal de F)
+et est not\'e $F^{\perp}$:
+$$
+F^{\perp} = \{u \in E, u \perp w \forall w \in F\}
+$$
 \end{defn}
-
 
 
 \newpage
@@ -94,7 +98,7 @@ P_u(v) = <u,v>\frac{u}{\lVert u\rVert^2}
 $$
 
 \subsection*{Exercice 3.2}
-Construction d'une base $Vect(u,v')$ orthogonale \`a une base $Vect(u,v).$ On construit le vecteur $\vect{v'}$ dans $Vect(u, v)$ sous la forme $v+\lambda u$ de facon \`a avoir $<u,v'> = 0$ (proc\'ed\'e d’orthogonalisation
+Construction d'une base $Vect(u,v')$ orthogonale d'une base $Vect(u,v).$ On construit le vecteur $\vect{v'}$ dans $Vect(u, v)$ sous la forme $v+\lambda u$ de facon \`a avoir $<u,v'> = 0$ (proc\'ed\'e d’orthogonalisation
 de Gram-Schmidt).
 
 $$
@@ -107,12 +111,59 @@ Donc $\lambda = -\frac{<u,v>}{\lVert u \rVert^2}$ et $v'= v -\frac{<u,v>}{\lVert
 
 \subsection*{Exercice 4}
 \subsection*{Exercice 4.1}
-On utilise le proc\'ed\'e d’orthogonalisation de Gram-Schmidt, en construisant par r\'ecurence la base orthogonale \`a $F$. On note $F' = Vect(u'_1, u'_2, u'_3)$ la base orthogonale \`a $F$. On commence par prendre $u'_1 = u_1$. Donc $u'_1 = (-1, 2, 0, 2)$.
+On utilise le proc\'ed\'e d’orthogonalisation de Gram-Schmidt, en construisant par r\'ecurence la base orthogonale de $F$. On note $F' = Vect(u'_1, u'_2, u'_3)$ la base orthogonale \`a $F$. On commence par prendre $u'_1 = u_1$. Donc $u'_1 = (-1, 2, 0, 2)$.
 
 
-On a ensuite $u'_2 = u_2 - \frac{<u_2, u'_1>}{\lVert u'_1 \rVert^2}u'_1$  avec $<u_2, u'_1> = (0, 4, 0, -4)$ et $\lVert u'_1 \rVert^2 = 9$ donc $u'_2 = (0, 4, 0, -4) - 9 (-1, 2, 0, 2) = (9,-14, 0, -22)$.
+On a ensuite $u'_2 = u_2 - \frac{<u_2, u'_1>}{\lVert u'_1 \rVert^2}u'_1$  avec $<u_2, u'_1> = 0$ et $\lVert u'_1 \rVert^2 = 9$ donc $u'_2 = (0,2,1,-2) - \frac{0}{9} (-1, 2, 0, 2) = (0,2,1,-2)$.
 
-On a ensuite $u'_3 = u_3 + \ldots$
+On a ensuite $u'_3 = u_3 - \frac{<e_3, u'_1>}{\lVert u'_1 \rVert^2}u'_1 - \frac{<e_3, u'_2>}{\lVert u'_2 \rVert^2}u'_2$
+Avec $<e_3, u'_1> = 1$, $\lVert u'_1 \rVert^2 = 9$, $<e_3, u'_2> = 3$ et $\lVert u'_2 \rVert^2 = 9$ donc $u'_3 = (1,1,1,0) - \frac{1}{9} (-1,2,0,2) - \frac{3}{9}(0,2,1,-2) = (\frac{10}{9}, \frac{1}{9}, \frac{6}{9}, \frac{4}{9})$.
+
+\subsection*{Exercice 4.2}
+On a $\dim(\R^4) = 4$ et $\dim(F) =3 $ donc $\dim(F^{\perp}) = 4 - 3 = 1$. On cherche donc un vecteur $w=(x,y,z,t)$ tel que $w \perp u'1$, $w \perp u'2$,$w \perp u'3$.
+
+$$
+\left\{
+    \begin{array}{l}
+        <w, u'_1> = 0 \\
+        <w, u'_2> = 0 \\
+        <w, u'_3> = 0 \\
+    \end{array}
+\right.
+$$
+$$
+\left\{
+    \begin{array}{l}
+        -x + 2y + 2t = 0 \\
+        2y - 1z -2t = 0 \\
+        10x + 1y + 6z + 4t = 0 \\
+    \end{array}
+\right.
+$$
+$$
+\left\{
+    \begin{array}{l}
+        -x + 2y + 2t = 0 \\
+             2y - 1z -2t = 0 \\
+             21y + 6z + 24t = 0 \\
+    \end{array}
+\right.
+$$
+$$
+\left\{
+    \begin{array}{l}
+        -x + 2y + 2t = 0 \\
+             2y - 1z -2t = 0 \\
+                 33z + 90t = 0 \\
+    \end{array}
+\right.
+$$
+
+
+Donc $F^{\perp} = \{(30,8,-30,11)\} $.
+
+\subsection*{Exercice 4.3}
+On cherche une application lin\'eaire $\varphi(x)$ tel que $F = Ker(\varphi(x))$. On sait que $Ker(f) = \{u \in E, f(u) = 0 \}$. On sait aussi que lorsque 2 vecteurs $u$ et $v$ sont orthogonaux alors $<u, v> = 0$. Si on choisit $\varphi(x) $ l'application qui calcule le produit vectoriel par rapport \`a $w$, alors on a $Ker(\varphi(x))$ qui est l'ensemble des vecteurs orthogonaux \`a $w$. Mais cet ensemble est $F$ car $w = F^{\perp}$. Donc $\varphi(x) = <x, w>$.  
 
 
 \end{document}
