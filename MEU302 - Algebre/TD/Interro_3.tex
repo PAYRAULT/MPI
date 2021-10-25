@@ -1,0 +1,119 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{Interro 3}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+\end{defn}
+
+
+
+\newpage
+\subsection*{Exercice 3}
+\subsection*{Exercice 3.1}
+$$
+P_u(v) = <u,v>\frac{u}{\lVert u\rVert^2}
+$$
+
+\subsection*{Exercice 3.2}
+Construction d'une base $Vect(u,v')$ orthogonale \`a une base $Vect(u,v).$ On construit le vecteur $\vect{v'}$ dans $Vect(u, v)$ sous la forme $v+\lambda u$ de facon \`a avoir $<u,v'> = 0$ (proc\'ed\'e d’orthogonalisation
+de Gram-Schmidt).
+
+$$
+<u,v+\lambda u> = <u,v> + <u,\lambda u> = <u,v> + \lambda<u,u> = <u,v> + \lambda\lVert u \rVert^2
+$$
+Donc $\lambda = -\frac{<u,v>}{\lVert u \rVert^2}$ et $v'= v -\frac{<u,v>}{\lVert u \rVert^2} u = v - P_u(v)$.
+
+\subsection*{Exercice 3.2}
+
+
+\subsection*{Exercice 4}
+\subsection*{Exercice 4.1}
+On utilise le proc\'ed\'e d’orthogonalisation de Gram-Schmidt, en construisant par r\'ecurence la base orthogonale \`a $F$. On note $F' = Vect(u'_1, u'_2, u'_3)$ la base orthogonale \`a $F$. On commence par prendre $u'_1 = u_1$. Donc $u'_1 = (-1, 2, 0, 2)$.
+
+
+On a ensuite $u'_2 = u_2 - \frac{<u_2, u'_1>}{\lVert u'_1 \rVert^2}u'_1$  avec $<u_2, u'_1> = (0, 4, 0, -4)$ et $\lVert u'_1 \rVert^2 = 9$ donc $u'_2 = (0, 4, 0, -4) - 9 (-1, 2, 0, 2) = (9,-14, 0, -22)$.
+
+On a ensuite $u'_3 = u_3 + \ldots$
+
+
+\end{document}
+
