@@ -227,7 +227,22 @@ D'apr\`es le Th\'eor\`eme de la d\'ecomposition de Dunford, toute matrice $M$ pe
 Donc pour calculer, on trouver les matrices $A$ et $B$ et $e^M= e^{A+B} = e^Ae^B$. Comme $A$ est diagonalisable on a $A=PDP^{-1}$. Donc $e^A = Pe^DP^{-1}$. La matrice $D$ est diagonale donc le calcul de $e^D$ est trivial (question 1). COmme $B$ est nilpotente de rang $n$, on peut faire le calcul de $e^B$ car on a une borne $n$.
 
 \subsection*{Exercice 2}
+\subsection*{Exercice 2.1}
+Exercice 12.3.
 
+Montrons que si $F_1$ et $F_2$ sont deux sous espace affines de $E$ alors $F_1 \subset F2 \implies F_1 \cup F_2$ est un sous-espace affine. On a $F_1 \subset F2 \implies F_1 \cup F_2 = F_2$ et $F_2$ est un sous espace affine par hypoth\`ese donc $F_1 \cup F_2$ l'est \'egalement. M\^eme raisonnement pour $F_2 \subset F1 \implies F_1 \cup F_2$ est un sous-espace affine.
+
+Montrons que si $F_1$ et $F_2$ sont deux sous espace affines de $E$ alors si $F_1 \cup F_2$ est un sous-espace affine alors $F_1 \subset F2$ ou $F_2 \subset F1$. Preuve par l'absurde. Il existe $P$ tel que $P \in F_1 - F_2$ et $Q$ tel que $Q \in F_2 - F_1$. On a $P \in F_1 \in F_1 \cup F_2$ et $Q \in F_2 \in F_1 \cup F_2$. Donc $P-Q \in F_1 \cup F_2$.
+On peut \'ecrire $P = Q + (P-Q)$ donc $(P-Q) \not \subset F_2$ car sinon $P$ serait dans $F_2$ et contredirait l'hypoth\`ese $P \in F_1 - F_2$. De m\^eme, $Q = P + (Q-P)$ donc $(Q-P) \not \subset F_1$ car sinon $Q$ serait dans $F_1$ et contredirait l'hypoth\`ese $Q \in F_2 - F_1$. Par cons\'equent $P-Q \not \subset F_1 \cup F_2$ ce qui contredit notre hypoth\`ese de d\'epart.
+
+
+Exercice 13.1
+
+On a $a \in V$ donc $a = u_1 + k_a \overrightarrow{V}$, de m\^eme $b \in W$ donc $b = u_2 + k_b \overrightarrow{W}$. par d\'efinition $vect<a,b> = a - b = u_1 + k_a \overrightarrow{V} -u_2 - k_b \overrightarrow{W}$ ou $u_1 - u_2 = vect<a,b> - k_a \overrightarrow{V} + k_b \overrightarrow{W}$
+
+On a $c \in T$ donc $c = u_1 + k_c \overrightarrow{T} = u_2 + k'_c \overrightarrow{T}$. donc $u_1-u_2 = (k'c-k_c) \overrightarrow{T}$.
+
+En regroupant les 2 on a $(k'c-k_c) \overrightarrow{T} = vect<a,b> - k_a \overrightarrow{V} + k_b \overrightarrow{W}$
 
 \subsection*{Exercice 3}
 \subsection*{Exercice 3.1}
