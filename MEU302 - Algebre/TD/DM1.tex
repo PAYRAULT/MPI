@@ -238,11 +238,16 @@ On peut \'ecrire $P = Q + (P-Q)$ donc $(P-Q) \not \subset F_2$ car sinon $P$ ser
 
 Exercice 13.1
 
-On a $a \in V$ donc $a = u_1 + k_a \overrightarrow{V}$, de m\^eme $b \in W$ donc $b = u_2 + k_b \overrightarrow{W}$. par d\'efinition $vect<a,b> = a - b = u_1 + k_a \overrightarrow{V} -u_2 - k_b \overrightarrow{W}$ ou $u_1 - u_2 = vect<a,b> - k_a \overrightarrow{V} + k_b \overrightarrow{W}$
+Soit $a$ et $b$ deux points de $T$ on a $vect(\overrightarrow{ab}) = b - a = u_1 + k_b\overrightarrow{T} - (u_1 + k_a \overrightarrow{T}) = (k_b-k_a) \overrightarrow{T}$ donc $vect(\overrightarrow{ab}) \in \overrightarrow{T}$
 
-On a $c \in T$ donc $c = u_1 + k_c \overrightarrow{T} = u_2 + k'_c \overrightarrow{T}$. donc $u_1-u_2 = (k'c-k_c) \overrightarrow{T}$.
+Soit $v \in \overrightarrow{V}$, on a $v_1 + k v \in V \subset T$ et par d\'efinition $v_1 \in V \subset T$. Donc $(v_1+v) - v_1 = v \in \overrightarrow{T}$. M\^eme raisonnement pour $w \in \overrightarrow{W}$, donc $w \in \overrightarrow{T}$.
 
-En regroupant les 2 on a $(k'c-k_c) \overrightarrow{T} = vect<a,b> - k_a \overrightarrow{V} + k_b \overrightarrow{W}$
+On peut conclure que $\overrightarrow{V} + \overrightarrow{W} + vect(\overrightarrow{ab}) \subset \overrightarrow{T}$
+
+On a soit $V \subset W$ ou $W \subset V$ (voir question pr\'ec\'edente). Prenons le cas $W \subset V$, donc $V = v_1 + \overrightarrow{V} \subset v_1 + (\overrightarrow{V} + \overrightarrow{W} + vect(\overrightarrow{ab})) $ et $W = v_1 + \overrightarrow{V} \subset v_1 + (\overrightarrow{V} + \overrightarrow{W} + vect(\overrightarrow{ab}))$ Donc $T = V \cup W \subset v_1 + (\overrightarrow{V} + \overrightarrow{W} + vect(\overrightarrow{ab}))$ et par cons\'equent $\overrightarrow{T} \subset \overrightarrow{V} + \overrightarrow{W} + \overrightarrow{ab}$.
+
+On peut conclure que $\overrightarrow{T} = \overrightarrow{V} + \overrightarrow{W} + vect(\overrightarrow{ab})$
+
 
 \subsection*{Exercice 3}
 \subsection*{Exercice 3.1}
