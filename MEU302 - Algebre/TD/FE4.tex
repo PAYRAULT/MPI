@@ -462,5 +462,123 @@ $$
 
 Le point d'intersection est $(1,0,0)$.
 
+
+\subsection*{Exercice 16}
+La dimension d’un espace affine est celle de sa direction. Donc, un espace affine de dimension 1 est une droite.
+
+$$
+\left\{
+\begin{array} {l l l}
+    f: & \R \to & \R^n \\
+     & x \to &\begin{pmatrix} a_1x + b_1 \\ \vdots \\ a_n x + b_n \end{pmatrix}
+\end{array}
+\right.
+$$
+
+\subsection*{Exercice 17}
+Si une application affine $f$ commute avec toute translation $t$ on a $f \circ t = t \circ f$. Une tranlation de vecteur $v$ est caract\'eris\'ee par $t_v(a) = b$ avec $\vect{ab} = \vect{v}$ ou sous la forme d'une application affine $t_v(x) = x + \vect{v}$. Une application lin\'eaire s'\'ecrit sous la forme $f(x) = f(a) + \vect{f}(\vect{ax})$.
+Donc
+$$
+f \circ t_v(x) = f(t_v(x)) = f(a) + \vect{f}(\vect{at(x)})
+$$
+$$
+t_v \circ f(x) = t_v(f(x)) = f(a) + \vect{f}(\vect{ax})  + \vect{v}
+$$
+Donc par commutation
+$$
+f(a) + \vect{f}(\vect{at(x)}) = f(a) + \vect{f}(\vect{ax})  + \vect{v}
+$$
+$$
+\vect{f}(\vect{at(x)}) = \vect{f}(\vect{ax})  + \vect{v}
+$$
+$$
+\vect{f}(\vect{a(x+\vect{v})}) = \vect{f}(\vect{ax})  + \vect{v}
+$$
+$$
+\vect{f}(\vect{ax}+\vect{v)}) = \vect{f}(\vect{ax})  + \vect{v}
+$$
+$\vect{f}$ est une application lin\'eaire donc
+$$
+\vect{f}(\vect{ax}) +\vect{f}(\vect{v}) = \vect{f}(\vect{ax})  + \vect{v}
+$$
+Donc $\vect{f}(x) = Id(x)$. Par cons\'equent $f(x) = f(a) + \vect{ax}$ qui est par d\'efinition une translation.
+
+\subsection*{Exercice 18}
+Si c'est une homot\'ethie de centre $O$ et de rapport $k$ alors on a $\vect{OA} = k\vect{OA'}$ et $\vect{OB}= k\vect{OB'}$. avec $\vect{OA} = (1-x_o, 1 - y_o)$, $\vect{OA'} = (-2-x_o, 2 - y_o)$, $\vect{OB} = (1-x_o, 3 - y_o)$ et $\vect{OB'} = (-2-x_o, 1 - y_o)$. Il faut r\'esoudre le syst\'emptyse
+
+
+$$
+\left\{
+\begin{array} {l}
+    1 - x_o = k(-2-x_o) \\
+    1 - y_o = k(2-y_o) \\
+    1 - x_o = k(-2 -x_o) \\
+    3 - yo = k(1-y_o) \\
+\end{array}
+\right.
+$$
+(1) et (3) identiques
+$$
+\left\{
+\begin{array} {l}
+    1 - x_o = k(-2-x_o) \\
+    1 - y_o = k(2-y_o) \\
+    3 - y_o = k(1-y_o) \\
+\end{array}
+\right.
+$$
+$$
+\left\{
+\begin{array} {l}
+    1 +2k + x_o(k-1) = 0 \\
+    1 -2k + y_o(k-1) = 0 \\
+    3 -k + y_o(k-1) = 0 \\
+\end{array}
+\right.
+$$
+(3)-(2) donne $k = -2$. Donc $x_o = -1$ et $y_o = 5/3$.
+
+C'est une homot\'ethie de centre $O= (-1, 5/3)$ et de rapport $k=-2$.
+
+
+\subsection*{Exercice 21}
+\subsection*{Exercice 21.1}
+On a $h: M_1 \to M_2, \vect{AM_2} = \lambda \vect{AM_1}$ et $h': M_1 \to M_2, \vect{BM_2} = \mu \vect{AM_1}$ et $\lambda\mu = 1$. Soit un point $O$ on a par $h$, $\vect{OM_2} = \vect{OA} + \vect{AM_2} = \vect{OA} + \lambda \vect{AM_1} = \vect{OA} + \lambda (\vect{AO} + \vect{OM_1}) = \lambda \vect{OM_1} + (1-\lambda)\vect{OA}$. de m\^eme on a par $h'$, $\vect{OM_2} = \lambda \vect{OM_1} + (1-\mu)\vect{OB}$.
+
+Calculons $h \circ h'(M)$
+$$
+\vect{Oh \circ h'(M)} = \vect{Oh(h'(M))} = \lambda \vect{Oh'(M)} + (1-\lambda)\vect{OA} = \lambda(\mu\vect{OM} + (1-\mu)\vect{OB}) + (1-\lambda)\vect{OA}
+$$
+$$
+= \lambda\mu\vect{OM} + \lambda(1-\mu)\vect{OB} + (1-\lambda)\vect{OA}
+$$
+comme on a $\lambda\mu = 1$ donc
+$$
+\vect{Oh \circ h'(M)} = \vect{OM} + (\lambda-1)\vect{OB} + (1-\lambda)\vect{OA} = \vect{OM} + (1-\lambda)\vect{BA}
+$$
+
+Donc
+\begin{itemize}
+    \item si $A=B$ on a $\vect{Oh \circ h'(M)} = \vect{OM}$, donc l'identit\'e.
+    \item si $A \neq B$ on a $\vect{Oh \circ h'(M)} = \vect{OM} + (1-\lambda)\vect{BA}$, qui est une translation de vecteur $(1-\lambda)\vect{BA}$
+\end{itemize}
+
+Pour $h' \circ h(M)$, m\^eme r\'esultat raisonnement. 
+Donc
+\begin{itemize}
+    \item si $A=B$ on a $\vect{Oh \circ h'(M)} = \vect{OM}$, donc l'identit\'e.
+    \item si $A \neq B$ on a $\vect{Oh \circ h'(M)} = \vect{OM} + (1-\mu)\vect{AB}$, qui est une translation de vecteur $(1-\mu)\vect{AB}$
+\end{itemize}
+
+\subsection*{Exercice 21.2}
+Avec $\lambda = 1/3$ et $\mu = 2$ on a 
+$$
+\vect{Oh \circ h'(M)} = \lambda\mu\vect{OM} + \lambda(1-\mu)\vect{OB} + (1-\lambda)\vect{OA} = 2/3\vect{OM} - 1/3\vect{OB}+ 2/3\vect{OA} = ??
+$$
+
+$$
+\vect{Oh' \circ h(M)} = \mu\lambda\vect{OM} + \mu(1-\lambda)\vect{OA} + (1-\mu)\vect{OB} = 2/3\vect{OM} + 4/3\vect{OB}-  \vect{OA} = ??
+$$
+
 \end{document}
 

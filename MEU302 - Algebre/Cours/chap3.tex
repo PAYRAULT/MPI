@@ -1,0 +1,231 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{Cours 3}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{I.1 Exercice 1}
+Par la relation de Chasles on a $\vect{aa} + \vect{aa} = \vect{aa}$, donc $\vect{aa} = \vect{aa} - \vect{aa} = 0$.
+
+
+On part de $\vect{aa} = 0$, donc $\vect{aa} = \vect{ab} + \vect{ba} = 0$ (relation de Chasles), par cons\'equent $\vect{ab} = -\vect{ba}$.
+
+\subsection*{I.1 Exercice 2}
+
+\subsection*{I.1 Exercice 3}
+\begin{tikzpicture}[scale=2]
+    \draw[help lines, color=gray!80, dashed] (-1,-1) grid (3,3);
+    \draw[->] (-1,0) -- (3,0) node[right] {$x(t)$};
+    \draw[->] (0,-1) -- (0,3) node[above] {$y(t)$};
+             
+    \node [below right] at (1,0) {a};
+    \node [below right] at (1,1) {b};
+    \node [below right] at (2,1) {c};
+
+    \draw[->] (1,0) -- (1,1);
+    \draw[->] (1,1) -- (2,1);
+    \draw[->] (1,0) -- (2,1);   
+\end{tikzpicture}
+
+La relation vectorielle est $\vect{ac} = \vect{ab} + \vect{bc}$ et la relation affine est .
+
+
+\subsection*{I.3 Preuve 1}
+Montrons que si le point $m$ est le milieu de 2 points $a$ t $b$ alors $\vect{am} = \vect{mb} \implies 2\vect{am} = \vect{ab}$.
+$$\vect{am} = \vect{ab} + \vect{bm} = \vect{ab} - \vect{mb} = \vect{ab} - \vect{am}$$ 
+$$2\vect{am} = \vect{ab}$$
+
+Dans l'autre sens, montrons que $2\vect{am} = \vect{ab} \implies \vect{am} = \vect{mb}$. 
+$$2\vect{ab} = 2\vect{am}+2\vect{mb}$$
+$$2\vect{ab} = \vect{ab}+2\vect{mb}$$ 
+$$\vect{ab} = 2\vect{mb}$$
+$$2\vect{am} = 2\vect{mb}$$ 
+$$\vect{am} = \vect{mb}$$ 
+
+\subsection*{I.3 Preuve 2}
+Montrons que $\vect{ab} = \vect{dc} \implies \vect{ad} = \vect{bc}$
+
+$$\vect{ab} = \vect{ad} + \vect{db}$$
+$$\vect{ad} = \vect{ab} - \vect{db} = \vect{ab} - (\vect{dc}+ \vect{cb})$$
+$$\vect{ad} = \vect{ab} - \vect{ab} - \vect{cb}$$
+$$\vect{ad} = \vect{bc}$$
+
+Montrons que $\vect{ad} = \vect{bc} \implies \vect{ab} = \vect{dc}$
+$$\vect{ad} = \vect{ab} + \vect{bd}$$
+$$\vect{ab} = \vect{ad} - \vect{bd} = \vect{ad} - (\vect{bc}+ \vect{cd})$$
+$$\vect{ad} = \vect{ab} - \vect{ab} - \vect{cd}$$
+$$\vect{ad} = \vect{dc})$$
+
+Montrons que $\vect{ad} = \vect{bc} \land \vect{am} = \vect{mc} \implies \vect{bm} = \vect{md}$
+$$\vect{am}  = \vect{ad} + \vect{dm} \text{ et } \vect{mc}  = \vect{mb} + \vect{bc}$$ 
+$\vect{am} = \vect{mc}$ donc
+$$\vect{ad} + \vect{dm} = \vect{mb} + \vect{bc}$$
+$\vect{ad} = \vect{bc}$ donc
+$$\vect{dm} = \vect{mb}$$
+$$\vect{md} = \vect{bm}$$
+
+Montrons que $\vect{ab} = \vect{dc} \land \vect{am} = \vect{mc} \implies \vect{bm} = \vect{md}$
+$$\vect{am}  = \vect{ab} + \vect{bm} \text{ et } \vect{mc}  = \vect{md} + \vect{dc}$$ 
+Comme $\vect{am} = \vect{mc}$ donc
+$$\vect{ab} + \vect{bm} = \vect{md} + \vect{dc}$$
+Comme $\vect{ab} = \vect{dc}$ donc
+$$\vect{bm} = \vect{md}$$
+
+Montrons que $ \vect{am} = \vect{mc} \land \vect{bm} = \vect{md} \implies \vect{ab} = \vect{dc}$
+$$\vect{ab} = \vect{am} + \vect{mb} = \vect{mc} - \vect{md} = \vect{mc} + \vect{dm} = \vect{dc}$$
+
+Montrons que $ \vect{am} = \vect{mc} \land \vect{bm} = \vect{md} \implies \vect{ad} = \vect{bc}$
+$$\vect{ad} = \vect{am} + \vect{md} = \vect{mc} + \vect{bm} =  \vect{bc}$$
+
+\subsection*{I.3 Propri\'et\'e 3.6}
+Soit $F$ et $G$ des sous-espaces affines parall\`eles de direction $\vect{F}$ . Soit $a \in F$ et $b \in G$, montrons que $F = G \implies \vect{ab} = \vect{F}$ On part de $a = b$. $F$ et $G$ deux sous-espaces affines de direction $\vect{F}$, donc $a = u_f + k_a\vect{F}$ et $b = u_g + k_b\vect{F}$ et $\vect{ab} = b - a = u_g + k_b\vect{F} - u_f + k_a\vect{F} = u_g - u_f + (k_a - k_b)\vect{F}$. Comme $F=G$, on peut exprimer $u_g = u_f + k\vect{F}$, donc on a $\vect{ab} = (k_a-k_b+k)\vect{F}$. ce qui montre que $\vect{ab} = \vect{F}$.
+
+Dans l'autre sens, montrons que $\vect{ab} = \vect{F} \implies  F = G$. $\vect{ab} = b - a =  u_g - u_f + (k_a - k_b)\vect{F} = \vect{F}$. donc soit $u_g - u_f  = 0$, soit $u_g - u_f \in \vect{F}$. Cas $u_g = u_f$, $F=G$ car tous points $b$ de $G$ peuvent s'\'ecrire $u_f + k_b\vect{F}$. Cas $u_g - u_f = k\vect{F}$, $F=G$ car tous points $b$ de $G$ peuvent s'\'ecrire $u_f + (k+k_b)\vect{F}$.
+
+\subsection*{I.3 Propri\'et\'e 3.5}
+Soit $F$ et $G$ deux sous-espace affines parall\`eles. On a deux cas $F \cap G = \emptyset$ ou $F \cap G \neq \emptyset$.
+
+Cas 1 $F \cap G = \emptyset$. $F$ et $G$ sont disjoints par d\'efinition.
+
+Cas 2 $F \cap G \neq \emptyset$. Prenons un point $a$ tel que $a \in F \cap G$. Preuve par l'absurde. Admettons qu'il existe un point $b$ tel que $b \in F$ et $b \not \in G$. Montrons que $F \neq G$. Comme les points $a$ et $b$ sont dans $F$, on a par d\'efinition $\vect{ab} = \vect{F}$, mais comme $a \in G$ et $b \in F$, on a $F = G$ par la propri\'et\'e pr\'ec\'edente. Ce qui contredit l'hypoth\`ese.  
+
+
+Soit $F$ et $G$ deux sous-espace affines faiblement parall\`eles. On a deux cas $F \cap G = \emptyset$ ou $F \cap G \neq \emptyset$.
+
+Cas 1 $F \cap G = \emptyset$. $F$ et $G$ sont disjoints par d\'efinition.
+
+Cas 2 $F \cap G \neq \emptyset$. Preuve par l'absurde. Admettons qu'il existe un point $b$ tel que $b \in F$ et $b \not \in G$. Mais par d\'efinition $F \subset G$ ($F$ et $G$ faiblement parall\`ele). Ce qui contredit l'hypoth\`ese.  
+
+
+
+
+\subsection*{II.2 Propri\'et\'e 3.8}
+Petite disgression.
+
+Si $H$ est un hyperplan affine d'un espace affine de dimension $n$, on a $\dim(H) = n-1$. \`A partir de la formule de Grassmann on a $\dim(H_1+H_2) = \dim(H_1) + \dim(H_2) - \dim(H_1 \cap H_2)$. Avec $\dim(H_1) = \dim(H_1) = n-1$ et $\dim(H_1+H_2) \leq n$. Donc $\dim(H_1 \cap H_2) \geq 2(n-1) - n = n-2$. On a $H_1 \cap H_2$ qui est un sous-espae vectoriel de $H_1$ (ou $H_2$), donc $\dim(H_1 \cap H_2) \leq n-1$. Ce qui fait $n-2 \leq \dim(H_1 \cap H_2) \leq n-1$, d'ou $\dim(H_1 \cap H_2) = n-1$ ou $\dim(H_1 \cap H_2) = n-2$. Si $H1 = H2$ alors $\dim(H1 \cap H_2) = \dim(H_1) = n-1$, si $H_1 \neq H_2$ on a $\dim(H1 \cap H_2) = \dim(H_1) = n-2$.
+
+Maintenant la preuve de la propri\'et\'e par r\'ecurence sur $k$. Admettons que $H_1 \cap H_2 \cap \ldots \cap H_k \neq \emptyset$ et $\dim(H_1 \cap H_2 \cap \ldots \cap H_k) \geq n - k$, montrons que soit $H_1 \cap H_2 \cap \ldots \cap H_k \cap H_{k+1} = \emptyset$, soit $\dim(H_1 \cap H_2 \cap \ldots \cap H_k \cap H_{k+1}) \geq n - (k+1)$. Posons $H = H_1 \cap H_2 \cap \ldots \cap H_k$.
+
+Cas 1 Si on a $H_{k+1}$ tel que $\forall i \leq k, H_{k+1} \cap H_i = \emptyset$, on a donc $H_1 \cap H_2 \cap \ldots \cap H_k \cap H_{k+1} = \emptyset$ (par d\'efinition).
+
+Cas 2 Si on a $H_1 \cap H_2 \cap \ldots \cap H_k \cap H_{k+1} \neq \emptyset$ montrons $\dim(H_1 \cap H_2 \cap \ldots \cap H_k \cap H_{k+1}) \geq n - (k+1)$. \`A partir de la formule de Grassmann on a $\dim(H+H_{k+1}) = \dim(H) + \dim(H_{k+1}) - \dim(H \cap H_{k+1})$ avec $\dim(H) \geq n -k $ (hypot\`ese de r\'ecurence), $\dim(H_{k+1}) = n-1$ et $\dim(H \cap H_{k+1}) \leq n$. Donc
+$$\dim(H_1 \cap H_2 \cap \ldots \cap H_k \cap H_{k+1}) geq (n - k) + (n-1) - n = n-(k+1)$$
+
+\subsection*{II.3 Propri\'et\'e 3.9}
+Montrons que $\forall i \in \{0;k\}, a_i = a_0 + \vect{V}$ avec $\vect{V} = Vect\{a_0, a_1, \ldots, a_k\}$. On peut \'ecrire $\forall i \in \{0;k\}, a_i = a_0 - a_0 + a_i = a_0 + (-1,0, \ldots, 1, 0, \ldots)\vect{V}$ On sait que $Vect\{a_0, a_1, \ldots, a_k\}$ est engendr\'e par $k$ vecteurs $\vect{a_0a_1},\vect{a_0a_2}, \ldots, \vect{a_0a_k}$ donc sa dimension vau au plus $k$. 
+
+
+\subsection*{III.1 Exercice 6}
+L'\'equation param\'etrique de la droite est $D = A + \R \vect{V}$, soit
+$$
+\left\{
+\begin{array}{l}
+    x = 1 + 3\lambda\\
+    y = 2 + 4\lambda\\
+\end{array}
+\right.
+$$
+
+
+\subsection*{III.1 Exercice 7}
+Calcul des vecteurs $\vect{AB} = (1,1,1)$ et $\vect{AC} = (0,-1,-2)$, les vecteurs ne sont pas lin\'eaires (car leur direction ne sont pas $\vect{AB} = k\vect{AB}$) donc les 3 points forment un plan d'\'equation param\'etrique $P = A + (\R \vect{AB} + \R \vect{AC})$. soit
+$$
+\left\{
+\begin{array}{l}
+    x = 1 + \lambda_1\\
+    y = 2 + \lambda_1 - \lambda_2\\
+    z = 3 + \lambda_1 - 2\lambda_2 \\
+\end{array}
+\right.
+$$
+
+\subsection*{III.1 Exercice 8}
+Un hyperplan de $E$ est un sous-espace vectoriel $F$ de $E$ de dimension $\dim(E) − 1$.
+
+
+\end{document}
+
