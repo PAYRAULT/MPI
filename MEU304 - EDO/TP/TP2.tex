@@ -1,0 +1,152 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU303 - Alg\`ebre}
+\rhead{Cours 1}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+\begin{defn}
+Bla bla
+\end{defn}
+
+
+
+\newpage
+\subsection*{Question 1}
+On a $Y = (H, P)$ et $Y' = F(Y)$ avec 
+$$
+\left\{
+\begin{array}{l}
+F_1(x_1, x_2) = a x_1 - b x_1 x_2 \\
+F_2(x_1, x_2) = -c x_2 + dx_1x_2 \\
+\end{array}
+\right.
+$$
+
+\subsection*{Question 2}
+$$
+\left\{
+\begin{array}{l}
+F_1(H_{eq}, P_{eq}) = 0 \\
+F_2(H_{eq}, P_{eq}) = 0 \\
+\end{array}
+\right.
+$$
+
+$$
+\left\{
+\begin{array}{l}
+a H_{eq} - b H_{eq} P_{eq} = 0 \\
+-cP_{eq} + d H_{eq} P_{eq} = 0 \\
+\end{array}
+\right.
+$$
+Premi\`ere solution triviale $H_{eq} = P_{eq} = 0$.
+
+Avec $H_{eq} \neq 0$ et $P_{eq} \neq 0$
+$$
+\left\{
+\begin{array}{l}
+a  - b  P_{eq} = 0 \\
+-c + d H_{eq}  = 0 \\
+\end{array}
+\right.
+$$
+
+Seconde solution: $P_{eq} = \frac{a}{b}$ et $H_{eq} = \frac{c}{d}$
+
+Si on choisit $(H_{eq}, P_{eq})$ comme condition initiale on a $H'(t) = 0$ et $P'(t) = 0$ donc les populations restent constante dans le temps.
+
+\subsection*{Question 3}
+Regardons comment evolue $H'$ et $P'$ lorsque autour du point $(H_{eq}, P_{eq}$.
+
+On a 
+$$
+\left\{
+\begin{array}{l}
+a (H_{eq}+\epsilon_1) - b (H_{eq}++\epsilon_1)(P_{eq}+\epsilon_2) = 0 \\
+-c(P_{eq}+\epsilon_2) + d (H_{eq}++\epsilon_1)(P_{eq}+\epsilon_2) = 0 \\
+\end{array}
+\right.
+$$
+
+
+
+\end{document}
+
