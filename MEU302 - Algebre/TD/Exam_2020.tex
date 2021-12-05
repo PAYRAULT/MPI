@@ -1,0 +1,197 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{Interro 3}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Rappel de cours}
+
+\subsection*{propri\'et\'e 4.1}
+Soit $b(x,y)$ une forme bilin\'eaire. D\'efinissons $f(x,y) = \frac{b(x,y)+b(y,x)}{2}$ on a 
+
+$$\forall (x,y), f(x, y) = \frac{b(x,y)+b(y,x)}{2} = \frac{b(y,x)+b(x,y)}{2} = f(y,x)$$
+donc $f(x,y)$ est sym\'etrique. D\'efinissons $g(x,y) = \frac{b(x,y) - b(y,x)}{2}$, on a 
+$$g(x,y) =  \frac{b(x,y) - b(y,x)}{2} = -\frac{b(y,x) - b(x,y)}{2} = -g(x,y)$$
+donc $g(x,y)$ est anti-sym\'etrique. On peut d\'ecomposer $b(x,y)$ en 
+$$\frac{b(x,y) + b(y,x)}{2} + \frac{b(x,y) - b(y,x)}{2} = f(x,y) + g(x,y)$$
+
+
+
+\newpage
+\subsection*{Question 1}
+Une forme quadratique $q$ $\R^n$ est dite \emph{d\'efinie n\'egative} si $\forall x \in E, q(x) \leq 0$. 
+
+
+\subsection*{Exercice 1}
+\subsection*{Exercice 1.1}
+Le vecteur $\vect{ab} = (-2,2,1)$, le vecteur $\vect{ac} = (-10, 4, -1)$. Les 2 vecteurs ne sont pas colin\'eaire donc l'espace affine est d\'efinie par $F= a + \R \vect{ab} + \R \vect{ac}$. Sa repr\'esentation param\'etrique est
+
+$$
+\left\{
+\begin{array}{l}
+x = 5 -2\lambda_1 - 10\lambda_2\\
+y = -1 +2\lambda_1 + 4\lambda_2\\
+z = 1 +\lambda_1 - 1\lambda_2\\
+\end{array}
+\right.
+$$
+
+\subsection*{Exercice 1.2}
+L'espace affine de G est d\'efinie par une droite $G = d + \lambda \vect{u}$. La dimension de lespace affine $F$ est 2, celle de $G$ est 1. L'intersection des espaces affines $F$ et $G$ est soit l'ensemble vide (dim = 0), soit un point (dim = 1). soit une droite (dim =2). 
+
+\subsection*{Exercice 1.3}
+L'\'equation param\'etrique de $G$ est 
+$$
+\left\{
+\begin{array}{l}
+x = 6 \lambda\\
+y = 1\\
+z = t + 3\lambda\\
+\end{array}
+\right.
+$$
+
+L'intersection de $F$ et $G$ est
+$$
+\left\{
+\begin{array}{l}
+ 5 -2\lambda_1 - 10\lambda_2 = 6 \lambda\\
+ -1 +2\lambda_1 + 4\lambda_2 = 1\\
+ 1 +\lambda_1 - 1\lambda_2 = t + 3 \lambda\\
+\end{array}
+\right.
+$$
+
+$$
+\left\{
+\begin{array}{l}
+ 6 \lambda + 2\lambda_1 + 10\lambda_2 = 5\\
+ \lambda_1 + 2\lambda_2 = 1\\
+ 3 \lambda - \lambda_1 + \lambda_2 = 1 - t \\
+\end{array}
+\right.
+$$
+
+Avec $(1)-2(3)$ on a
+
+$$
+\left\{
+\begin{array}{l}
+ 6 \lambda + 2\lambda_1 + 10\lambda_2 = 5\\
+ \lambda_1 + 2\lambda_2 = 1\\
+ 4 \lambda_1 + 8 \lambda_2 = 3 + 2t \\
+\end{array}
+\right.
+$$
+
+Avec $4(2) - (3)$ on a 
+$$
+\left\{
+\begin{array}{l}
+ 6 \lambda + 2\lambda_1 + 10\lambda_2 = 5\\
+ \lambda_1 + 2\lambda_2 = 1\\
+ 0 = 1 - 2t \\
+\end{array}
+\right.
+$$
+
+Si $t \neq 1/2$, alors l'intersection est vide, sinon 
+
+$$
+\left\{
+\begin{array}{l}
+ 6 \lambda  = 7 - 6\lambda_2\\
+ \lambda_1  = 1 - 2\lambda_2\\
+\end{array}
+\right.
+$$
+Donc, l'intersection est la droite passant par $d$ et de vecteur $u$. 
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
