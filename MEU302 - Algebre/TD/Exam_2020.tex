@@ -113,7 +113,7 @@ z = 1 +\lambda_1 - 1\lambda_2\\
 $$
 
 \subsection*{Exercice 1.2}
-L'espace affine de G est d\'efinie par une droite $G = d + \lambda \vect{u}$. La dimension de lespace affine $F$ est 2, celle de $G$ est 1. L'intersection des espaces affines $F$ et $G$ est soit l'ensemble vide (dim = 0), soit un point (dim = 1). soit une droite (dim =2). 
+L'espace affine de G est d\'efinie par une droite $G = d + \lambda \vect{u}$. La dimension de lespace affine $F$ est 2, celle de $G$ est 1. L'intersection des espaces affines $F$ et $G$ est soit l'ensemble vide, soit un point (dim = 0). soit une droite (dim =1). 
 
 \subsection*{Exercice 1.3}
 L'\'equation param\'etrique de $G$ est 
@@ -184,6 +184,43 @@ $$
 Donc, l'intersection est la droite passant par $d$ et de vecteur $u$. 
 
 
+\subsection*{Exercice 2}
+\subsection*{Exercice 2.1.a}
+On a $f(a_2) = a_2$ et $f(a_3) = a_3$. L'image de $(a_2a_3)$ par $F$ est $F(a_2a_3) = f(a_3 - a_2) = f(a_3) - f(a_2) = a_3 - a_2 = (a_2a_3)$ car l'application $f$ est une application affine????.
+
+\subsection*{Exercice 2.1.b}
+$\vect{f}(\vect{a_0a_1}) = \vect{f}(a_1 - a_0) = \vect{f}(a_1) - \vect{f}(a_0) = b_1 - b_0 = \vect{b_0b_1}$
+On a $\vect{a_0a_1} = (1,0,0)$ et $\vect{b_0b_1} = (1,0,0)$ donc les vecteurs sont \'egaux. Donc 1 est valeur propre de $\vect{f}$. 
+
+\subsection*{Exercice 2.1.c}
+On a $f(a_2) = a_2$ et $f(a_3) = a_3$, un point $p$ de la droite $(a_2, a_3)$ peut s'\'ecrire sous la forme $p = a_2 + \lambda \vect{a_2a_3}$. Donc $f(p) = f(a_2 + \lambda \vect{a_2a_3}) = f(a_2) + \lambda \vect{f}(\vect{a_2a_3}) = a_2 + \lambda (\vect{a_2a_3}) = p$ . Donc l'ensemble des points de la droite est un invariant par $f$.
+
+\subsection*{Exercice 2.2.a}
+On a $(a_0, a_2, b_0, a_3)$ qui est un parall\'elogramme car $\vect{a_0a_2} = \vect{a_3b_0}$. Par cons\'equent le milieu $m$ de $(a_0, b_0)$ est \'egale au milieu de $(a_3, a_2)$. Donc $m$ appartient \`a la droite $(a_2, a_3)$, donc c'est un point fixe de $f$.
+
+\subsection*{Exercice 2.2.b}
+On a $\vect{a_0b_0} = 2\vect{a_0m}$, et 
+$$\vect{f}(\vect{a_0b)}) = \vect{f(a_0)f(b_0)} = \vect{b_0f(b_0)}$$
+$$\vect{f}(\vect{a_0m}) = \vect{f(a_0)f(m)} = \vect{b_0m}$$
+$$
+\vect{f}(\vect{a_0b_0}) = \vect{f}(2\vect{a_0m}) = 2\vect{f}(\vect{a_0m}) = 2\vect{b_0m} 
+$$
+Donc $\vect{b_0f(b_0)} = 2\vect{b_0m}$. Comme le point $m$ est le milieu de $(a_0, b_0)$, on a $f(b_0) = a_0$.
+
+On a $f(b_1) = a_1$ mais je ne sais pas demontr\'e.
+  
+\subsection*{Exercice 2.2.c}
+$f \circ f = id$ pour chacun des points d\'efinis et le milieu $m'$ de $(a_1, b_1)$ qui est un invariant car $f(a_1b_1) = 2f(a_1m')$, $b_1a_1 = 2 b_1f(m')$.
+
+$f$ est une sym\'etrie par rapport au plan passant pas la droite $(a_2, a_3)$ et de direction $(a_0, b_0)$.
+
+\subsection*{Exercice 2.3}
+Une base du rep\`ere $\mathcal{R}$ est $(\vect{a_0a_1}, \vect{a_0a_2}, \vect{a_0a_3})$. la transform\'ee de la base par $f$ donne $(\vect{b_0b_1}, \vect{b_0a_2}, \vect{b_0b_3})$ avec $\vect{b_0b_1} = (0,0,1)$, $\vect{b_0a_2} = (0,-1,0)$ et $\vect{b_0a_3} = (-1,0,0)$ donc la matrice associ\'ee a l'application $f$ est
+$$
+M = \begin{vmatrix}
+0 & 0 & -1 \\ 0 & -1 & 0 \\ 1 & 0 & 0 \\
+\end{vmatrix}
+$$
 
 
 
