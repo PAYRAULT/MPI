@@ -1,0 +1,163 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\usepackage{tikz}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Exercice 1}
+\subsection*{Question 1.1(a)}
+La fonction de r\'epartition $F(x)$ est croissante, continue \`a droite et born\'ee entre 0 quand $x \to -\infty$ et 1 quand $x \to +\infty$. Prenons $y / 0 < y < 1$, et $x_1$ la plus petite valeur de $x$ tel que $F(x_1) \geq y$. $x_1$ existe car $F(x)$ est continue (?). Soit $x_2$ une valeur de $x$ telle que $F(x_2) \geq y$. Montrosn que $x_2$ ne peut pas \^etre inf\'erieure \`a $x_1$. Si $x_2$ \'etait inf\'erieure \`a $x_1$ alors $F(x_2) \leq F(x_1)$ car la fonction de r\'epartition $F(x)$ est non d\'ecroissante. Mais $x_1$ est la plus petite valeur de $x$ tel que $F(x_1) \geq y$ donc $x_2$ n'existe pas. 
+
+\subsection*{Question 1.1(b)}
+Montrons $F(Q_F(y)+\epsilon) \geq y$. La fonction de r\'epartion $F(x)$ est croissante. Donc $\forall x \in \R, \forall \epsilon > 0, F(x + \epsilon) \geq F(x)$. Comme la fonction $Q_F(y)$ est bien d\'efinie on a $\forall y \in ]0,1[, \forall \epsilon > 0, F(Q_F(y) + \epsilon) \geq F(Q_F(y))$.
+
+
+\subsection*{Question 2}
+Si la fonction $F$ est continue et strictement croissante, alors il existe exactement un seul $x$ tel que $F(x) = y$ et la fonction $F(x)$ est inversible. Donc on a $Q_F(y) = F^{-1}(x)$ car $\inf\{x \in \R, F(x) \geq y\}$ est le $x$ tel que $F(x) = y$. ???
+
+\subsection*{Question 3(a)}
+\begin{tikzpicture}
+    \begin{axis}[]
+    \addplot [domain=-2:1/3] {0};
+    \addplot [domain=1/3:2/3] {0.5};
+    \addplot [domain=2/3:1] {3/2*x - 1/2};
+    \addplot [domain=1:3] {1};   
+    \end{axis}
+\end{tikzpicture}
+
+\subsection*{Question 3(b)}
+$$Q_F(1/4) = \inf\{x \in \R, F(x) \geq 1/4\}= \inf \{ x in [1/3, \infty[\} = 1/3$$
+et
+$$Q_F(3/4) = \inf\{x \in \R, F(x) \geq 3/4\}= \inf \{ x \in R, F(x) = 3/4\} = (3/4+1/2)*2/3 = 5/6$$
+et
+$$Q_F(F(1/2)) = Q_F(1/2) = 1/3$$
+et
+Pour $x \in ]2/3,1[$, on a $F(x) \in ]1/2,1[$ donc $Q_F(F(x)) \in ]2/3,1[$.
+
+\subsection*{Question 4}
+Non. On a sur l'exemple pr\'ec\'edent $F(2/3) = 1/2$ et $Q_F(1/2) = 1/3 \neq 2/3$ et de m\^eme $Q_F(1/4) = 1/3$ et $F(1/3) = 1/2 \neq 1/4$. 
+
+\subsection*{Question 5}
+Pour tout $x \in \R$ on a $\forall x \in \R, Q_F(F(x)) \leq x$ par d\'efinition de la borne inf\'erieure de $Q_F$ et de la non d\'ecroissance de $F$. De m\^eme, on a $\forall y \in ]0,1[, F(Q_F(y)) \geq y$. 
+
+\begin{itemize}
+\item $Q(y) \leq x \implies y \leq F(x)$. On suppose $Q(y) \leq x$, comme $F$ est non d\'ecroissante on a $F(Q_F(y)) \leq F(x)$. Mais $y \leq F(Q_F(y))$, donc $y \leq F(x)$
+\item $y \leq F(x) \implies Q(y) \leq x$. pour $y_1, y_2 \in ]0,1[, \text{ avec } y_1 \leq y_2$ on a $\{x \in \R, F(x) \geq y_2\} \subseteq \{x \in \R, F(x) \geq y_1\}$. 
+Donc $\inf \{x \in \R, F(x) \geq y_1\} \leq  \inf \{x \in \R, F(x) \geq y_2\}$ donc $Q_F(y_1) \leq Q_F(y_2)$. Donc la fonction $Q_F$ est croissante. On suppose $y \leq F(x)$, on a $Q_F(y) \leq Q_F(F(x))$, mais $Q_F(F(x)) \leq x$ donc $Q_F(y) \leq x$.
+\end{itemize}
+
+Donc $Q(y) \leq x \text{ ssi } y \leq F(x)$
+
+\subsection*{Question 6}
+???
+
+\subsection*{Question 7(a)}
+Supposons $x_1 \leq x_2$, on a $\{x_i \leq x_1\} \subseteq \{x_i \leq x_2\}$, donc $\sum_{n=1}^n {1_{\{x_i \leq x_1\}}} \leq \sum_{n=1}^n {1_{\{x_i \leq x_2\}}}$ donc $F_n(x_1) \leq F_n(x_2)$. Par cons\'equent, $F_n$ est croissante.
+
+Soit $x$ une s\'erie num\'erique de $\R^n$, classons ces \'el\'ement en une s\'equence d\'ecroissante $x_1 > x_2 > \ldots > x_n$. Prenons $y < x_n$, on a $F_n(y) = 0$ car $\{ x_i < y \} = \emptyset$. Donc $\lim_{x \to -\infty}F_n(x) = 0$.
+
+Soit $x$ une s\'erie num\'erique de $\R^n$, classons ces \'el\'ement en une s\'equence croissante $x_1 < x_2 < \ldots < x_n$. Prenons $y > x_n$, on a $F_n(y) = 1$ car $card \{ x_i < y \} = n$. Donc $\lim_{x \to \infty}F_n(x) = 1$.
+
+\subsection*{Question 7(b)}
+Soit une s\'erie num\'erique sur $\R^n$, prenons la sous-s\'erie $x_m$ qui tend \`a droite vers un point $x$ lorsque $m \to +\infty$. On a $\{ x_i < x\} \subseteq \{x_i < x_m\}$ car $\forall m, x leq x_m$ et les ensembles $\{x_i < x_m\}$ sont de plus en plus petits lorsque $n$ croit. On a donc $\lim_{n \to \infty} \{ x_i < x_n\} = \{x_i < x\}$. Par cons\'equent $\lim_{m \to infty, x_m > x} F_n(x_m) = F_n(x)$ qui est la d\'efinition de la continuit\'e \`a droite.
+
+La fonction $F_n$ est croissante et est continue \`a droite en tous points $x$, donc elle a $F(x)$ comme limite \`a droite. La fonction $F_n$ est comprise entre 0 et 1. Donc pour tous point $x$ on a $0 \leq \lim_{m \to \infty, x_m < x} \leq F(x)$.  Donc il existe une limite \`a gauche en tous point $x$.
+
+\subsection*{Question 8(a)}
+La fonction de r\'epartition de $X_n$ est $F(x) = \sum_{i=1}^{n} p_i 1_{x_i < x}$. Comme la variable al\'eatoire $X_n$ est uniforme, on a tous les $p_i = 1/n$. Donc $F(x) = \sum_{i=1}^{n} 1/n 1_{x_i < x} = F(x) = 1/n \sum_{i=1}^{n} 1_{x_i < x} = F_n()$.
+
+\subsection*{Question 8(b)}
+L'esp\'erance dune variable al\'eatoire discrete $X_n = \{x_1, x_2, \ldots, x_n\}$ est $E(X_n) = \frac{x_1+x_2+\ldots + x_n}{n}$ et la variance $V(x_n) = \frac{x_1^2+x_2^2+\ldots + x_n^2}{n} - E^2(X-n)$.
+
+\subsection*{Question 9(a)}
+\begin{tikzpicture}
+    \begin{axis}[]
+    \addplot [domain=-3:-1] {0};
+    \addplot [domain=-1:1/2] {0.25};
+    \addplot [domain=1/2:2] {0.5};
+    \addplot [domain=2:5] {0.75};   
+    \addplot [domain=5:7] {1};   
+    \end{axis}
+\end{tikzpicture}
+
+\subsection*{Question 9(b)}
+On a $Q_F(1/4) = -1$, $Q_F(2/4) = 1/2$, $Q_F(3/4) = 2$, $Q_F(0.05) = -1$, $Q_F(0.95) = 5$ 
+
+\end{document}
+
