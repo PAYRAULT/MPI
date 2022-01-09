@@ -82,10 +82,13 @@
 
 \subsection*{Exercice 1}
 \subsection*{Question 1.1(a)}
-La fonction de r\'epartition $F(x)$ est croissante, continue \`a droite et born\'ee entre 0 quand $x \to -\infty$ et 1 quand $x \to +\infty$. Prenons $y / 0 < y < 1$, et $x_1$ la plus petite valeur de $x$ tel que $F(x_1) \geq y$. $x_1$ existe car $F(x)$ est continue (?). Soit $x_2$ une valeur de $x$ telle que $F(x_2) \geq y$. Montrosn que $x_2$ ne peut pas \^etre inf\'erieure \`a $x_1$. Si $x_2$ \'etait inf\'erieure \`a $x_1$ alors $F(x_2) \leq F(x_1)$ car la fonction de r\'epartition $F(x)$ est non d\'ecroissante. Mais $x_1$ est la plus petite valeur de $x$ tel que $F(x_1) \geq y$ donc $x_2$ n'existe pas. 
+La fonction de r\'epartition $F(x)$ est croissante, continue \`a droite, limite \`a gauche et born\'ee par 0 quand $x \to -\infty$ et par 1 quand $x \to +\infty$. 
+
+Prenons $y$ tel que $0<y<1$, il existe un $x$ tel que $F(x) \geq y$. car $F(+\infty) = 1$ et $y < 1$. La fonction $F(x)$ est croissante donc $\inf\{ F(x) \geq y\}$ est unique. Supposons $x_1$ le plus petit $x$ telle que $F(x_1) \geq y$. Montrons que $x_2$ ne peut pas \^etre inf\'erieure \`a $x_1$. $x_2$ est inf\'erieure \`a $x_1$ alors $F(x_2) \leq F(x_1)$ car la fonction de r\'epartition $F(x)$ est croissante. Soit $F(x_2) = F(x_1)$, mais par hypoth\`ese $x_1$ est la plus petite valeur de $x$ tel que $F(x_1) \geq y$, Soit $F(x_2) < F(x_1)$ ce qui contredit \'egalement l'hypoth\`ese. Donc $x_2$ n'existe pas. 
+
 
 \subsection*{Question 1.1(b)}
-Montrons $F(Q_F(y)+\epsilon) \geq y$. La fonction de r\'epartion $F(x)$ est croissante. Donc $\forall x \in \R, \forall \epsilon > 0, F(x + \epsilon) \geq F(x)$. Comme la fonction $Q_F(y)$ est bien d\'efinie on a $\forall y \in ]0,1[, \forall \epsilon > 0, F(Q_F(y) + \epsilon) \geq F(Q_F(y))$.
+La fonction de r\'epartion $F(x)$ est croissante. Donc $\forall x \in \R, \forall \epsilon > 0, F(x + \epsilon) \geq F(x)$. Comme la fonction $Q_F(y)$ est bien d\'efinie on a $\forall y \in ]0,1[, \forall \epsilon > 0, F(Q_F(y) + \epsilon) \geq F(Q_F(y))$. On a $Q_F(y)$ est le plus petit $x$ tel que $F(x) \geq y$ et la fonction $F(x)$ est croissante, donc $F(Q_F(y)) \geq y$. Par cons\'equent $F(Q_F(y) + \epsilon) \geq F(Q_F(y)) \geq y$,   
 
 
 \subsection*{Question 2}
@@ -102,7 +105,7 @@ Si la fonction $F$ est continue et strictement croissante, alors il existe exact
 \end{tikzpicture}
 
 \subsection*{Question 3(b)}
-$$Q_F(1/4) = \inf\{x \in \R, F(x) \geq 1/4\}= \inf \{ x in [1/3, \infty[\} = 1/3$$
+$$Q_F(1/4) = \inf\{x \in \R, F(x) \geq 1/4\}= \inf \{ x \in [1/3, \infty[\} = 1/3$$
 et
 $$Q_F(3/4) = \inf\{x \in \R, F(x) \geq 3/4\}= \inf \{ x \in R, F(x) = 3/4\} = (3/4+1/2)*2/3 = 5/6$$
 et
