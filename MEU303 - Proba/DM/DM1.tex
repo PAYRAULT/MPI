@@ -159,5 +159,22 @@ L'esp\'erance dune variable al\'eatoire discrete $X_n = \{x_1, x_2, \ldots, x_n\
 \subsection*{Question 9(b)}
 On a $Q_F(1/4) = -1$, $Q_F(2/4) = 1/2$, $Q_F(3/4) = 2$, $Q_F(0.05) = -1$, $Q_F(0.95) = 5$ 
 
+\subsection*{Question 10}
+On a $x_{(1)} = -1, x_{(2)} = 1/2, x_{(3)} = 2, x_{(4)} = 5$ et $F_n(x) = 1/n \sum_{i=1}^{n}1_{x_i \leq x}$
+$$F_n(x_{(1)}) = F_n(-1) = 1/4 \sum_{i=1}^{n}1_{x_i \leq -1} = 1/4$$
+$$F_n(x_{(2)}) = F_n(1/2) = 1/4 \sum_{i=1}^{n}1_{x_i \leq 1/2} = 2/4 = 1/2$$
+$$F_n(x_{(3)}) = F_n(2) = 1/4 \sum_{i=1}^{n}1_{x_i \leq 2} = 3/4$$
+$$F_n(x_{(4)}) = F_n(5) = 1/4 \sum_{i=1}^{n}1_{x_i \leq 5} = 4/4 = 1$$
+
+$$Q_{F_{n}}(\frac{i}{n}) = \inf\{ x \in \R, F_n(x) \geq \frac{i}{n}\} = x_{(i)}$$
+En effet, on a $F_n(x_{(i)}) = \frac{i}{n}$ donc la plus petite valeur est $\frac{i}{n}$.
+
+\subsection*{Question 11}
+On a $q_{\alpha}^{x} = Q_{F_{n}}(\alpha) = \inf \{ x \in \R, F_n(x) \geq \alpha \} = \inf\{ x \in \R, F_n(x) \geq \frac{\lceil \alpha n \rceil}{n}\} = x_{(\lceil \alpha n \rceil)}$. En effet, on a $F_n(x_{(i)}) = \frac{i}{n}$ (question 10), et $\alpha \leq \frac{\lceil \alpha n \rceil}{n}$ et il n'existe pas de $x_{(i)} \in x$ tel que $F_n(x_{(i)}) > \alpha $ et $F_n(x_{(i)}) < \frac{\lceil \alpha n \rceil}{n}$.
+
+
+\subsection*{Question 12}
+Pour $\alpha \in ]0,1[$ il existe un unique $i \in [1,2,\ldots,n]$ tel que $\lceil \alpha n \rceil = i$. De la question 11, on a $Q_{F_{n}}(\alpha) = Q_{F_{n}}(\frac{i}{n})$ De la question 10 on a $ Q_{F_{n}}(\frac{i}{n}) = x_{(i)}$, donc  $Q_{F_{n}}(\alpha) = x_{(i)}$. Ce qui signifie que les valeurs possibles de $Q_{F_{n}}$ sont les valeurs de $x$.
+
 \end{document}
 
