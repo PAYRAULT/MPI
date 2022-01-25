@@ -138,12 +138,12 @@ Soit $x$ une s\'erie num\'erique de $\R^n$, classons ces \'el\'ement en une s\'e
 Soit $x$ une s\'erie num\'erique de $\R^n$, classons ces \'el\'ement en une s\'equence croissante $x_1 < x_2 < \ldots < x_n$. Prenons $y > x_n$, on a $F_n(y) = 1$ car $card \{ x_i < y \} = n$. Donc $\lim_{x \to \infty}F_n(x) = 1$.
 
 \subsection*{Question 7(b)}
-Soit une s\'erie num\'erique sur $\R^n$, prenons la sous-s\'erie $x_m$ qui tend \`a droite vers un point $x$ lorsque $m \to +\infty$. On a $\{ x_i < x\} \subseteq \{x_i < x_m\}$ car $\forall m, x leq x_m$ et les ensembles $\{x_i < x_m\}$ sont de plus en plus petits lorsque $n$ croit. On a donc $\lim_{n \to \infty} \{ x_i < x_n\} = \{x_i < x\}$. Par cons\'equent $\lim_{m \to infty, x_m > x} F_n(x_m) = F_n(x)$ qui est la d\'efinition de la continuit\'e \`a droite.
+Soit une s\'erie num\'erique sur $\R^n$, prenons la sous-s\'erie $x_m$ qui tend \`a droite vers un point $x$ lorsque $m \to +\infty$. On a $\{ x_i < x\} \subseteq \{x_i < x_m\}$ car $\forall m, x \leq x_m$ et les ensembles $\{x_i < x_m\}$ sont de plus en plus petits lorsque $n$ croit. On a donc $\lim_{n \to \infty} \{ x_i < x_n\} = \{x_i < x\}$. Par cons\'equent $\lim_{m \to \infty, x_m > x} F_n(x_m) = F_n(x)$ qui est la d\'efinition de la continuit\'e \`a droite.
 
 La fonction $F_n$ est croissante et est continue \`a droite en tous points $x$, donc elle a $F(x)$ comme limite \`a droite. La fonction $F_n$ est comprise entre 0 et 1. Donc pour tous point $x$ on a $0 \leq \lim_{m \to \infty, x_m < x} \leq F(x)$.  Donc il existe une limite \`a gauche en tous point $x$.
 
 \subsection*{Question 8(a)}
-La fonction de r\'epartition de $X_n$ est $F(x) = \sum_{i=1}^{n} p_i 1_{x_i < x}$. Comme la variable al\'eatoire $X_n$ est uniforme, on a tous les $p_i = 1/n$. Donc $F(x) = \sum_{i=1}^{n} 1/n 1_{x_i < x} = F(x) = 1/n \sum_{i=1}^{n} 1_{x_i < x} = F_n()$.
+La fonction de r\'epartition de $X_n$ est $F(x) = \sum_{i=1}^{n} p_i 1_{x_i < x}$. Comme la variable al\'eatoire $X_n$ est uniforme, on a tous les $p_i = 1/n$. Donc $F(x) = \sum_{i=1}^{n} 1/n 1_{\{x_i < x\}} = F(x) = 1/n \sum_{i=1}^{n} 1_{\{x_i < x\}} = F_n()$.
 
 \subsection*{Question 8(b)}
 L'esp\'erance d'une variable al\'eatoire discr\`ete $X_n = \{x_1, x_2, \ldots, x_n\}$ est $E(X_n) = \frac{x_1+x_2+\ldots + x_n}{n}$ et la variance $V(x_n) = \frac{x_1^2+x_2^2+\ldots + x_n^2}{n} - E^2(X_n)$.
