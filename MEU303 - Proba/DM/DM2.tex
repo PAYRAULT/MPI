@@ -1,0 +1,156 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\usepackage{tikz}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Exercice 5}
+\subsection*{Question 5.A.1}
+
+$$
+\int_{-\infty}^{+\infty}{\frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} = 
+\int_{-\infty}^{\theta}{\frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} + \int_{\theta}^{+\infty}{\frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx}
+$$
+$$
+0 + \int_{\theta}^{+\infty}{\frac{m \theta^m}{x^{m+1}} dx} =
+\left[\frac{\theta^m}{x^m}\right]_{\theta}^{+\infty} =
+\frac{\theta^m}{\theta^m} - \frac{\theta^m}{\infty^m} = 1 - 0 = 1
+$$
+
+\subsection*{Question 5.A.2}
+$$
+\forall t \geq \theta, P(X \geq t) = \int_{\theta}^{t}{\frac{m \theta^m}{x^{m+1}} dx} = 
+\left[\frac{\theta^m}{x^m}\right]_{\theta}^{t} =
+1 - \left( \frac{\theta}{t}\right)^m
+$$
+
+
+\subsection*{Question 5.A.2}
+$$
+E(X) = \int_{-\infty}^{+\infty}{x \frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} =
+0 + \int_{\theta}^{+\infty}{x\frac{m \theta^m}{x^{m+1}} dx} =
+m \theta^m \int_{\theta}^{+\infty}{\frac{1}{x^{m}} dx} = 
+$$
+$$
+m \theta^m \left[-\frac{1}{(m-1)x^{m-1}}\right]_{\theta}^{+\infty} = 
+-\frac{m \theta^m}{m-1} \left(0 - \frac{1}{\theta^{m-1}}\right) =
+\frac{m \theta}{m-1}
+$$
+
+\bigskip
+
+$$
+E(X^2) = \int_{-\infty}^{+\infty}{x^2 \frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} =
+0 + \int_{\theta}^{+\infty}{x^2\frac{m \theta^m}{x^{m+1}} dx} =
+m \theta^m \int_{\theta}^{+\infty}{\frac{1}{x^{m-1}} dx} = 
+$$
+$$
+m \theta^m \left[-\frac{1}{(m-2)x^{m-2}}\right]_{\theta}^{+\infty} = 
+-\frac{m \theta^m}{m-2} \left(0 - \frac{1}{\theta^{m-2}}\right) =
+\frac{m \theta^2}{m-2}
+$$
+
+\subsection*{Question 5.A.3}
+
+$$
+V(X) = E(X^2) - E(X)^2 = \frac{m \theta^2}{m-2} - \left( \frac{m \theta}{m-1} \right)^2 =
+$$
+$$
+\frac{m(m-1)^2-m^2(m-2)}{(m-2)(m-1)^2}\theta^2 = 
+\frac{m}{(m-2)(m-1)^2}\theta^2
+$$
+
+
+\subsection*{Question 5.B.1}
+
+M\'ethode des moments de niveau 1, $M_1 = \frac{1}{n}\sum_{i=1}^{n}{X_i}$, et $E(X) = M_1$ donc 
+$$
+\frac{1}{n}\sum_{i=1}^{n}{X_i} = \frac{m \theta}{m-1}
+$$
+Donc l'estimateur estimateur
+$$
+\hat{\theta_1} = \frac{m-1}{mn}\sum_{i=1}^{n}{X_i}
+$$
+
+
+
+
+
+\end{document}
+
