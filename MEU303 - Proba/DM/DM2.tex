@@ -187,29 +187,64 @@ $$
 V[\hat{\theta_2}] = \frac{3n}{(3n-2)(3n-1)^2}\theta^2
 $$
 
+
+\subsection*{Question 5.B.2.d}
+$$
+B(\hat{\theta_2},\theta) = E[\hat{\theta_2} - \theta)] = E[\hat{\theta_2}] - E[\theta)] = \frac{3n}{3n-1}\theta - \theta = \frac{\theta}{3n-1} 
+$$
+
+\begin{itemize}
+    \item Premi\`ere m\'ethode: convergence en probabilit\'e, $\lim_{n \to \infty}P(|\hat{\theta_2}-\theta| > \epsilon) = 0$
+    \item Seconde m\'ethode: risque quadratique ????
+\end{itemize}
+
+
 \subsection*{Question 5.B.3}
-Prenons $\hat{\theta_3} = \frac{\hat{\theta_2}+\hat{\theta_1}}{2}$ on a 
+On cherche un un estimateur sans biais $\hat{\theta_3}$ donc par d\'efinition $E[\hat{\theta_3}] = \theta$. On a trouv\'e \`a la question pr\'ec\'edente que $B(\hat{\theta_2},\theta) = \frac{\theta}{3n-1}$ donc que 
 $$
-E(\hat{\theta_3}) = E\left(\frac{\hat{\theta_2}+\hat{\theta_1}}{2}\right) = \frac{E(\hat{\theta_2})+E(\hat{\theta_1})}{2} = \frac{\theta + \theta}{2} = \theta
+E[\hat{\theta_2}] = B(\hat{\theta_2},\theta) - E[\theta] = B(\hat{\theta_2},\theta) - \theta = \frac{\theta}{3n-1} - \theta = \frac{3n\theta}{3n-1}
+$$
+Ce qui fait $\theta = \frac{3n-1}{3n}E[\hat{\theta_2}]$ et $E[\hat{\theta_3}] = \frac{3n-1}{3n}E[\hat{\theta_2}]$.
+
+Si on d\'efinit $\hat{\theta_3} = \frac{3n-1}{3n}\hat{\theta_2}$, il est facile de montrer que $E[\hat{\theta_3}] = \theta$ car 
+$$
+E[\hat{\theta_3}] = E\left[\frac{3n-1}{3n}\hat{\theta_2}\right] = \frac{3n-1}{3n}E[\hat{\theta_2}] = \frac{3n-1}{3n} \frac{3n}{3n-1} \theta = \theta
 $$
 
-Donc l'estimateur $\hat{\theta_3}$ est sans biais.
-
+Pour montrer sa consistence, il faut montrer que son rsique quadratique tend vers 0 quand $n$ tend vers l'infini. on a 
+$$
+R(\hat{\theta_3},\theta) = V(\hat{\theta_3}) - B(\hat{\theta_3},\theta) = V(\hat{\theta_3}) = V\left(\frac{3n-1}{3n}\hat{\theta_2}\right) = \left(\frac{3n-1}{3n}\right)^2V(\hat{\theta_2})
+$$
+$$
+= \left(\frac{3n-1}{3n}\right)^2\frac{3n}{(3n-2)(3n-1)^2}\theta^2 = \frac{\theta^2}{3n(3n-2)}
+$$
 et
-
 $$
-R(\hat{\theta_3}, \theta) = V(\hat{\theta_3}) + B(\hat{\theta_3}, \theta)^2 = V(\hat{\theta_3})
-= E(\hat{\theta_3}^2) - E(\hat{\theta_3})^2 = 
+\frac{\theta^2}{3n(3n-2)} \to_{n \to \infty} 0
 $$
-$$
-E\left(\left(\frac{\hat{\theta_1}+\hat{\theta_2}}{2}\right)^2\right) - \left(\frac{E(\hat{\theta_1})+E(\hat{\theta_2}) }{2}\right)^2 = \frac{1}{4}(E(\hat{\theta_1}^2) + 2E(\hat{\theta_1}\hat{\theta_2}) + E(\hat{\theta_2}^2) - E(\hat{\theta_1})^2 - 2E(\hat{\theta_1})E(\hat{\theta_2}) - E(\hat{\theta_2})^2)
-$$
-$$
-= \frac{1}{4}(V(\hat{\theta_1}) + V(\hat{\theta_2}) + 2E(\hat{\theta_1}\hat{\theta_2}) - 2E(\hat{\theta_1})E(\hat{\theta_2}))
-$$
+Donc l'estimateur $\hat{\theta_3} = \frac{3n-1}{3n}\hat{\theta_2}$ est sans biais et est consistant.
 
 
+\subsection*{Question 5.B.4}
+Des questions pr\'e\'cedentes on a 
 
+$$
+\begin{array}{|c|c|c|}
+    \hline
+    \hat{\theta} & B(\hat{\theta},\theta) & R(\hat{\theta},\theta) \\
+    \hline
+    \hat{\theta_1} & 0 & \frac{\theta^2}{3n} \\
+    \hline
+    \hat{\theta_2} &  \frac{\theta}{3n-1} & \frac{3n}{(3n-2)(3n-1)^2}\theta^2 \\
+    \hline
+    \hat{\theta_3} & 0 & \frac{\theta^2}{3n(3n-2)} \\
+    \hline
+\end{array}
+$$
+
+
+
+L'estimateur $\hat{\theta_2}$ a un biais, il est donc moins bon que les 2 autres. Les estimateurs $\hat{\theta_1}$ et  $\hat{\theta_3}$ sont sans biais et on a l'estimateur $\hat{\theta_3}$ qui converge plus rapidement que $\hat{\theta_1}$. Donc, le meilleur estimateur est $\hat{theta_3}$.
 
 
 \end{document}
