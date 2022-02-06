@@ -170,10 +170,12 @@ La fonction de vraissemblance de $L_{\theta}(X) = C \theta^3n$ o\`u $C$ est un t
 \subsection*{Question 5.B.2.b}
 La fonction de r\'epartition de $\hat{\theta_2}$ est $F(t) = P(\min_{1 \leq i \leq n} X_i <t)$. Donc
 $$
-P(\min_{1 \leq i \leq n} X_i <t) = 1 - P(\min_{1 \leq i \leq n} X_i \geq t) = 1 - P(x_1 \geq t, \ldots, x_n \geq t) =
-1 - \prod_{i=1}^{n}{P(x_i \geq t)} = 1 - \prod_{i=1}^{n}{\left(\frac{\theta}{t}\right)^31_{[\theta, \infty[}(t)}
+P(\min_{1 \leq i \leq n} X_i <t) = 1 - P(\min_{1 \leq i \leq n} X_i \geq t) = 1 - P(x_1 \geq t, \ldots, x_n \geq t) 
 $$
+Les variables $x_i$ \'etant ind\'ependentes et de m\^eme loi, on a 
 $$
+= 1 - \prod_{i=1}^{n}{P(x_i \geq t)} 
+= 1 - \prod_{i=1}^{n}{\left(\frac{\theta}{t}\right)^31_{[\theta, \infty[}(t)}
 = 1 - \left(\frac{\theta}{t}\right)^{3n}1_{[\theta, \infty[}(t) = P(3n, \theta)
 $$
 
@@ -195,12 +197,38 @@ $$
 
 \begin{itemize}
     \item Premi\`ere m\'ethode: convergence en probabilit\'e, $\lim_{n \to \infty}P(|\hat{\theta_2}-\theta| > \epsilon) = 0$
-    \item Seconde m\'ethode: risque quadratique ????
+    \item Seconde m\'ethode: Utiliser le crit\`ere de faible consistance. c.a.d. si le risque quadratique $R(\hat{\theta_2},\theta)$ converge vers 0 quand $n \to \infty$. 
 \end{itemize}
 
+Premi\`ere m\'ethode.
+On a 
+$$
+(|\hat{\theta_2}-\theta|>\epsilon) = (\hat{\theta_2}-\theta > \epsilon ) \cap (\hat{\theta_2}>\theta) \cup (\theta - \hat{\theta_2} > \epsilon ) \cap (\hat{\theta_2} <\theta)
+$$
+On sait d'apr\`es la fonction de r\'epartition que l'\'ev\'enement $(\hat{\theta_2} <\theta) = 0$ et que l'\'ev\'enement $(\hat{\theta_2} > \theta) = 1$. Donc
+$$
+P(|\hat{\theta_2}-\theta| > \epsilon) = P(\hat{\theta_2}-\theta > \epsilon ) = P(\hat{\theta_2} > \epsilon +\theta) = \left(\frac{\theta}{\theta+\epsilon}\right)^{3n}
+$$
+Comme $\epsilon$ est positif, on a 
+$$
+\lim_{n \to \infty} \left(\frac{\theta}{\theta+\epsilon}\right)^{3n} = 0
+$$
+Donc l'estimateur $\hat{\theta_2}$ est consistant.
+
+
+
+Seconde m\'ethode.
+$$
+R(\hat{\theta_2},\theta) = V(\hat{\theta_2}) - B^2(\hat{\theta_2},\theta) = \frac{3n}{(3n-2)(3n-1)^2}\theta^2 - \frac{1}{(3n-1)^2}\theta^2 = \frac{2\theta^2}{(3n-1)^2}
+$$
+et
+$$
+\frac{2\theta^2}{(3n-1)^2} \to_{n \to \infty} 0
+$$
+Donc l'estimateur $\hat{\theta_2}$ est consistant.
 
 \subsection*{Question 5.B.3}
-On cherche un un estimateur sans biais $\hat{\theta_3}$ donc par d\'efinition $E[\hat{\theta_3}] = \theta$. On a trouv\'e \`a la question pr\'ec\'edente que $B(\hat{\theta_2},\theta) = \frac{\theta}{3n-1}$ donc que 
+On cherche un estimateur sans biais $\hat{\theta_3}$ donc par d\'efinition $E[\hat{\theta_3}] = \theta$. On a trouv\'e \`a la question pr\'ec\'edente que $B(\hat{\theta_2},\theta) = \frac{\theta}{3n-1}$ donc que 
 $$
 E[\hat{\theta_2}] = B(\hat{\theta_2},\theta) - E[\theta] = B(\hat{\theta_2},\theta) - \theta = \frac{\theta}{3n-1} - \theta = \frac{3n\theta}{3n-1}
 $$
