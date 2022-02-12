@@ -80,6 +80,7 @@
 
 \begin{document}
 
+<<<<<<< HEAD
 \subsection*{Exercice 1}
 \subsection*{Question 1.1}
 Supposons que la proposition est vraie, on a 
@@ -163,6 +164,199 @@ $$
 
 \subsection*{Question 2.3}
 
+=======
+\subsection*{Exercice 5}
+\subsection*{Question 5.A.1}
+
+$$
+\int_{-\infty}^{+\infty}{\frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} = 
+\int_{-\infty}^{\theta}{\frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} + \int_{\theta}^{+\infty}{\frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx}
+$$
+$$
+0 + \int_{\theta}^{+\infty}{\frac{m \theta^m}{x^{m+1}} dx} =
+\left[\frac{\theta^m}{x^m}\right]_{\theta}^{+\infty} =
+\frac{\theta^m}{\theta^m} - \frac{\theta^m}{\infty^m} = 1 - 0 = 1
+$$
+
+\subsection*{Question 5.A.2}
+$$
+\forall t \geq \theta, P(X \geq t) = \forall t \geq \theta, 1 - P(X < t) = 1- \int_{\theta}^{t}{\frac{m \theta^m}{x^{m+1}} dx} = 1 - \left[\frac{\theta^m}{x^m}\right]_{\theta}^{t} = \left( \frac{\theta}{t}\right)^m
+$$
+
+
+\subsection*{Question 5.A.3}
+$$
+E(X) = \int_{-\infty}^{+\infty}{x \frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} =
+0 + \int_{\theta}^{+\infty}{x\frac{m \theta^m}{x^{m+1}} dx} =
+m \theta^m \int_{\theta}^{+\infty}{\frac{1}{x^{m}} dx} = 
+$$
+$$
+m \theta^m \left[-\frac{1}{(m-1)x^{m-1}}\right]_{\theta}^{+\infty} = 
+-\frac{m \theta^m}{m-1} \left(0 - \frac{1}{\theta^{m-1}}\right) =
+\frac{m \theta}{m-1}
+$$
+
+\bigskip
+
+$$
+E(X^2) = \int_{-\infty}^{+\infty}{x^2 \frac{m \theta^m}{x^{m+1}}1_{\lceil \theta, \infty[}(x) dx} =
+0 + \int_{\theta}^{+\infty}{x^2\frac{m \theta^m}{x^{m+1}} dx} =
+m \theta^m \int_{\theta}^{+\infty}{\frac{1}{x^{m-1}} dx} = 
+$$
+$$
+m \theta^m \left[-\frac{1}{(m-2)x^{m-2}}\right]_{\theta}^{+\infty} = 
+-\frac{m \theta^m}{m-2} \left(0 - \frac{1}{\theta^{m-2}}\right) =
+\frac{m \theta^2}{m-2}
+$$
+
+\subsection*{Question 5.A.3}
+
+$$
+V(X) = E(X^2) - E(X)^2 = \frac{m \theta^2}{m-2} - \left( \frac{m \theta}{m-1} \right)^2 =
+$$
+$$
+\frac{m(m-1)^2-m^2(m-2)}{(m-2)(m-1)^2}\theta^2 = 
+\frac{m}{(m-2)(m-1)^2}\theta^2
+$$
+
+
+\subsection*{Question 5.B.1}
+
+M\'ethode des moments de niveau 1, $M_1 = \frac{1}{n}\sum_{i=1}^{n}{X_i}$, et $E(X) = M_1$ donc 
+$$
+M_1 = \frac{m \theta}{m-1}
+$$
+Donc l'estimateur est
+$$
+\hat{\theta_1} = \frac{m-1}{m}M_1 = \frac{m-1}{m}\frac{1}{n}\sum_{i=1}^{n}{X_i}
+$$
+Comme $m=3$, on a
+$$
+\hat{\theta_1} = \frac{2}{3}\frac{1}{n}\sum_{i=1}^{n}{X_i}
+$$
+
+
+TBC
+
+\subsection*{Question 5.B.2.a}
+M\'ethode du maximum de vraissemblance, on a 
+$$
+L_{\theta}(X) = \prod_{i=1}^{n}{\frac{3\theta^3}{x_i^{4}}1_{[\theta, \infty[}(x_i)} = 3^{n}\theta^{3n}\prod_{i=1}^{n}{\frac{1}{x_i^4}1_{[\theta, \infty[}(x_i)}
+$$
+
+On traite 2 cas :
+\begin{itemize}
+\item Lorsque $\theta > \min\{x_i\}$, la fonction $1_{[\theta, \infty[}(x) = 0$ pour $x = \min\{x_i\}$. Donc, on a $L_{\theta}(X) = 0$.   
+\item Lorsque $\theta \leq \min\{x_i\}$, la fonction $1_{[\theta, \infty[}(x) = 1, \forall x \in \{x_i\}$. Donc, on a $L_{\theta}(X) > 0$.
+\end{itemize}
+La fonction de vraissemblance de $L_{\theta}(X) = C \theta^3n$ o\`u $C$ est un terme constant dependant de $X$. Par cons\'equent, Le maximum de vraissemblance correspond \`a la plus grande valeur possible de $\theta$. Donc $\hat{\theta_2} = \min\{x_i\}$.
+
+
+\subsection*{Question 5.B.2.b}
+La fonction de r\'epartition de $\hat{\theta_2}$ est $F(t) = P(\min_{1 \leq i \leq n} X_i <t)$. Donc
+$$
+P(\min_{1 \leq i \leq n} X_i <t) = 1 - P(\min_{1 \leq i \leq n} X_i \geq t) = 1 - P(x_1 \geq t, \ldots, x_n \geq t) 
+$$
+Les variables $x_i$ \'etant ind\'ependentes et de m\^eme loi, on a 
+$$
+= 1 - \prod_{i=1}^{n}{P(x_i \geq t)} 
+= 1 - \prod_{i=1}^{n}{\left(\frac{\theta}{t}\right)^31_{[\theta, \infty[}(t)}
+= 1 - \left(\frac{\theta}{t}\right)^{3n}1_{[\theta, \infty[}(t) = P(3n, \theta)
+$$
+
+\subsection*{Question 5.B.2.c}
+La fonction de r\'epartition de $\hat{\theta_2}$ suit une loit de Pareto $P(3n, \theta)$, l'esp\'erance et la variance de la loi de Pareto $P(m, \theta)$ sont resp. $\frac{m\theta}{m-1}$ et $\frac{m}{(m-2)(m-1)^2}\theta^2$ (voir questions pr\'eliminaires), donc
+$$
+E[\hat{\theta_2}] = \frac{3n}{3n-1}\theta
+$$ 
+et 
+$$
+V[\hat{\theta_2}] = \frac{3n}{(3n-2)(3n-1)^2}\theta^2
+$$
+
+
+\subsection*{Question 5.B.2.d}
+$$
+B(\hat{\theta_2},\theta) = E[\hat{\theta_2} - \theta)] = E[\hat{\theta_2}] - E[\theta)] = \frac{3n}{3n-1}\theta - \theta = \frac{\theta}{3n-1} 
+$$
+
+\begin{itemize}
+    \item Premi\`ere m\'ethode: convergence en probabilit\'e, $\lim_{n \to \infty}P(|\hat{\theta_2}-\theta| > \epsilon) = 0$
+    \item Seconde m\'ethode: Utiliser le crit\`ere de faible consistance. c.a.d. si le risque quadratique $R(\hat{\theta_2},\theta)$ converge vers 0 quand $n \to \infty$. 
+\end{itemize}
+
+Premi\`ere m\'ethode.
+On a 
+$$
+(|\hat{\theta_2}-\theta|>\epsilon) = (\hat{\theta_2}-\theta > \epsilon ) \cap (\hat{\theta_2}>\theta) \cup (\theta - \hat{\theta_2} > \epsilon ) \cap (\hat{\theta_2} <\theta)
+$$
+On sait d'apr\`es la fonction de r\'epartition que l'\'ev\'enement $(\hat{\theta_2} <\theta) = 0$ et que l'\'ev\'enement $(\hat{\theta_2} > \theta) = 1$. Donc
+$$
+P(|\hat{\theta_2}-\theta| > \epsilon) = P(\hat{\theta_2}-\theta > \epsilon ) = P(\hat{\theta_2} > \epsilon +\theta) = \left(\frac{\theta}{\theta+\epsilon}\right)^{3n}
+$$
+Comme $\epsilon$ est positif, on a 
+$$
+\lim_{n \to \infty} \left(\frac{\theta}{\theta+\epsilon}\right)^{3n} = 0
+$$
+Donc l'estimateur $\hat{\theta_2}$ est consistant.
+
+
+
+Seconde m\'ethode.
+$$
+R(\hat{\theta_2},\theta) = V(\hat{\theta_2}) - B^2(\hat{\theta_2},\theta) = \frac{3n}{(3n-2)(3n-1)^2}\theta^2 - \frac{1}{(3n-1)^2}\theta^2 = \frac{2\theta^2}{(3n-1)^2}
+$$
+et
+$$
+\frac{2\theta^2}{(3n-1)^2} \to_{n \to \infty} 0
+$$
+Donc l'estimateur $\hat{\theta_2}$ est consistant.
+
+\subsection*{Question 5.B.3}
+On cherche un estimateur sans biais $\hat{\theta_3}$ donc par d\'efinition $E[\hat{\theta_3}] = \theta$. On a trouv\'e \`a la question pr\'ec\'edente que $B(\hat{\theta_2},\theta) = \frac{\theta}{3n-1}$ donc que 
+$$
+E[\hat{\theta_2}] = B(\hat{\theta_2},\theta) - E[\theta] = B(\hat{\theta_2},\theta) - \theta = \frac{\theta}{3n-1} - \theta = \frac{3n\theta}{3n-1}
+$$
+Ce qui fait $\theta = \frac{3n-1}{3n}E[\hat{\theta_2}]$ et $E[\hat{\theta_3}] = \frac{3n-1}{3n}E[\hat{\theta_2}]$.
+
+Si on d\'efinit $\hat{\theta_3} = \frac{3n-1}{3n}\hat{\theta_2}$, il est facile de montrer que $E[\hat{\theta_3}] = \theta$ car 
+$$
+E[\hat{\theta_3}] = E\left[\frac{3n-1}{3n}\hat{\theta_2}\right] = \frac{3n-1}{3n}E[\hat{\theta_2}] = \frac{3n-1}{3n} \frac{3n}{3n-1} \theta = \theta
+$$
+
+Pour montrer sa consistence, il faut montrer que son risque quadratique tend vers 0 quand $n$ tend vers l'infini. on a 
+$$
+R(\hat{\theta_3},\theta) = V(\hat{\theta_3}) - B(\hat{\theta_3},\theta) = V(\hat{\theta_3}) = V\left(\frac{3n-1}{3n}\hat{\theta_2}\right) = \left(\frac{3n-1}{3n}\right)^2V(\hat{\theta_2})
+$$
+$$
+= \left(\frac{3n-1}{3n}\right)^2\frac{3n}{(3n-2)(3n-1)^2}\theta^2 = \frac{\theta^2}{3n(3n-2)}
+$$
+et
+$$
+\frac{\theta^2}{3n(3n-2)} \to_{n \to \infty} 0
+$$
+Donc l'estimateur $\hat{\theta_3} = \frac{3n-1}{3n}\hat{\theta_2}$ est sans biais et est consistant.
+
+
+\subsection*{Question 5.B.4}
+Des questions pr\'e\'cedentes on a 
+
+$$
+\begin{array}{|c|c|c|}
+    \hline
+    \hat{\theta} & B(\hat{\theta},\theta) & R(\hat{\theta},\theta) \\
+    \hline
+    \hat{\theta_1} & 0 & \frac{\theta^2}{3n} \\
+    \hline
+    \hat{\theta_2} &  \frac{\theta}{3n-1} & \frac{3n}{(3n-2)(3n-1)^2}\theta^2 \\
+    \hline
+    \hat{\theta_3} & 0 & \frac{\theta^2}{3n(3n-2)} \\
+    \hline
+\end{array}
+$$
+
+L'estimateur $\hat{\theta_2}$ a un biais, il est donc moins bon que les 2 autres. Les estimateurs $\hat{\theta_1}$ et  $\hat{\theta_3}$ sont sans biais et on a l'estimateur $\hat{\theta_3}$ qui converge plus rapidement que $\hat{\theta_1}$. Donc, le meilleur estimateur est $\hat{theta_3}$.
+>>>>>>> b398de06cbc0f2a343fb02d9a07233733a84f14c
 
 \end{document}
 
