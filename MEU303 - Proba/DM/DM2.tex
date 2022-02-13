@@ -147,7 +147,7 @@ E(V_n^2) = E\left(\frac{1}{n}\sum_{i=1}^{n}{(X_i -5)^2}\right) =  E\left(\frac{1
 $$
 Mais on a $\sigma^2 = V(X_i) = E(X_i^2) - E^2(X_i) $ donc $E(X_i^2) = \sigma^2 + E^2(X_i)$. Dans notre cas $E(X_i) = 5$ donc $E(X_i^2) = \sigma^2 + 25$.
 $$
-\frac{1}{n} \sum_{i=1}^{n}{E(X_i^2)} -25 = \frac{1}{n} \sum_{i=1}^{n}{\sigma^2 + 25} -25 = \sigma^2 + 25-25 = \sigma^2  
+\frac{1}{n} \sum_{i=1}^{n}{E(X_i^2)} -25 = \frac{1}{n} \sum_{i=1}^{n}{(\sigma^2 + 25)} -25 = \sigma^2 + 25-25 = \sigma^2  
 $$
 
 $V_n^2$ est un estimateur non biais\'e donc $B(V_n^2) = 0$.
@@ -155,10 +155,7 @@ $V_n^2$ est un estimateur non biais\'e donc $B(V_n^2) = 0$.
 
 Le risque quadratique est d\'efini par
 $$
-R(V_n^2) = E((V_n^2 - 5)^2) = B^2(V_n^2) + V(V_n^2) = V(V_n^2) = V \left( \frac{1}{n}\sum_{i=1}^{n}{(X_i -5)^2} \right) = \frac{1}{n^2} \sum_{i=1}^{n}{V((X_i -5)^2)}
-$$
-$$
-= \frac{1}{n^2} \sum_{i=1}^{n}{E((X_i -5)^2-5)^2} = \frac{1}{n^2} \sum_{i=1}^{n}{E(X_i^2 - 10 X_i +25 -5)^2}
+R(V_n^2) =  B^2(V_n^2) + V(V_n^2) = V(V_n^2) = V \left( \frac{1}{n}\sum_{i=1}^{n}{(X_i -5)^2} \right) = \frac{1}{n^2} \sum_{i=1}^{n}{V((X_i -5)^2)}
 $$
 ????
 
