@@ -1,0 +1,169 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{tikz}
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\Pe}{\bb{P}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU359 - Proba-Stat}
+\rhead{TP}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Question 1}
+On voit clairement sur le nuage de points (circonference/hauteur) que cela suit une droite. On essaye de trouver les valeurs de la droites qui minimisent le risque quadratique.
+
+\subsection*{Question 2}
+Pour minimiser la fonction $\varphi(\beta_1, \beta_2)$ il faut trouver d\'eriver la fonction par rapport \`a $beta_1$ et $beta_2$ et trouver les valeurs qui annulent les 2 d\'eriv\'ees.
+$$
+\frac{\partial \varphi(\beta_1, \beta_2)}{\beta_1} = \frac{\sum_{i=1}^{n}{(Y_i - \beta_1 - \beta_2x_i)^2}}{\beta_1} = \frac{\sum_{i=1}^{n}{Y_i^2 - \beta_1Y_i - \beta_2x_iY_i -\beta_1Y_i + \beta_1^2 + \beta_1\beta_2x_i - \beta_2x_iY_i + \beta_2x_i\beta_1 +\beta_2^2x_i^2}}{\beta_1}
+$$
+$$
+= \sum_{i=1}^{n}{-Y_i -Y_i +2\beta_1 +\beta_2x_i+\beta_2x_i} = 2 \sum_{i=1}^{n}{-Y_i+\beta_2x_i+\beta_1}
+$$
+$$
+\frac{\partial \varphi(\beta_1, \beta_2)}{\beta_2} = \frac{\sum_{i=1}^{n}{(Y_i - \beta_1 - \beta_2x_i)^2}}{\beta_2} = \frac{\sum_{i=1}^{n}{Y_i^2 - \beta_1Y_i - \beta_2x_iY_i -\beta_1Y_i + \beta_1^2 + \beta_1\beta_2x_i - \beta_2x_iY_i + \beta_2x_i\beta_1 +\beta_2^2x_i^2}}{\beta_2}
+$$
+$$
+= \sum_{i=1}^{n}{-x_iY_i+\beta_1x_i-x_iY_i + \beta_1x_i+2\beta_2x_i^2} = 2 \sum_{i=1}^{n}{x_i(-Y_i+\beta_2x_i+\beta_1)}
+$$
+
+On cherche $\hat{\beta_1}$ et $\hat{\beta_2}$ les valeurs qui annulent le syst\`eme
+$$
+\left\{
+\begin{array}{l}
+\sum_{i=1}^{n}{x_i(-Y_i+\beta_2x_i+\beta_1)} = 0 \\
+\sum_{i=1}^{n}{-Y_i+\beta_2x_i+\beta_1} = 0
+\end{array}
+\right.
+$$
+$$
+\left\{
+\begin{array}{l l}
+\sum_{i=1}^{n}{-Y_ix_i}+\sum_{i=1}^{n}{\beta_2x_i^2}+\sum_{i=1}^{n}{\beta_1x_i} = 0 & (1)\\
+\sum_{i=1}^{n}{-Y_i} +\sum_{i=1}^{n}{\beta_2x_i}+\sum_{i=1}^{n}{\beta_1} = 0 & (2)
+\end{array}
+\right.
+$$
+$$
+\left\{
+\begin{array}{l l}
+\sum_{i=1}^{n}{-Y_ix_i}+\beta_2\sum_{i=1}^{n}{x_i^2}+\beta_1\sum_{i=1}^{n}{x_i} = 0 & (1)\\
+\sum_{i=1}^{n}{-Y_i} +\beta_2\sum_{i=1}^{n}{x_i}+n\beta_1 = 0 & (2)
+\end{array}
+\right.
+$$
+
+
+
+On fait $(3) = n(1)-(2)\sum_{i=1}^{n}{x_i}$
+$$
+\left\{
+\begin{array}{l l}
+n\sum_{i=1}^{n}{-Y_ix_i}+n\beta_2\sum_{i=1}^{n}{x_i^2}+\sum_{i=1}^{n}{Y_i}\sum_{i=1}^{n}{x_i} -\beta_2\left(\sum_{i=1}^{n}{x_i}\right)^2 = 0 & (3)\\
+\sum_{i=1}^{n}{-Y_i} +n\beta_2\sum_{i=1}^{n}{x_i}+n\beta_1 = 0 & (2)
+\end{array}
+\right.
+$$
+$$
+\left\{
+\begin{array}{l l}
+-n\sum_{i=1}^{n}{Y_ix_i} + \sum_{i=1}^{n}{Y_i}\sum_{i=1}^{n}{x_i} = \beta_2\left(\sum_{i=1}^{n}{x_i}\right)^2 -n\beta_2\sum_{i=1}^{n}{x_i^2}  & (3)\\
+\sum_{i=1}^{n}{-Y_i} +n\beta_2\sum_{i=1}^{n}{x_i}+n\beta_1 = 0 & (2)
+\end{array}
+\right.
+$$
+$$
+\left\{
+\begin{array}{l l}
+\beta_2 = \frac{\sum_{i=1}^{n}{Y_i}\sum_{i=1}^{n}{x_i}-n\sum_{i=1}^{n}{Y_ix_i}}{\left(\sum_{i=1}^{n}{x_i}\right)^2 -n\sum_{i=1}^{n}{x_i^2}}  & (3)\\
+\beta_1 = \frac{1}{n}(\sum_{i=1}^{n}{Y_i} - n\beta_2\sum_{i=1}^{n}{x_i}) & (2)
+\end{array}
+\right.
+$$
+$$
+\left\{
+\begin{array}{l l}
+\beta_2 = \frac{\sum_{i=1}^{n}{Y_i}\sum_{i=1}^{n}{x_i}-n\sum_{i=1}^{n}{Y_ix_i}}{\left(\sum_{i=1}^{n}{x_i}\right)^2 -n\sum_{i=1}^{n}{x_i^2}}  & (3)\\
+\beta_1 = \frac{\sum_{i=1}^{n}{x_i}\sum_{i=1}^{n}{x_iY_i}-\sum_{i=1}^{n}{x_i^2}\sum_{i=1}^{n}{Y_i}}{\left(\sum_{i=1}^{n}{x_i}\right)^2 -n\sum_{i=1}^{n}{x_i^2}} & (2)
+\end{array}
+\right.
+$$
+
+\subsection*{Question 3}
+Voir Python
+On obtient $\beta_1 =  9.037475668452768$  et $\beta_2 = 0.257137855007109$.
+
+\end{document}
+
