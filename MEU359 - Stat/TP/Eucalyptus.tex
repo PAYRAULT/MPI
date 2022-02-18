@@ -165,5 +165,54 @@ $$
 Voir Python
 On obtient $\beta_1 =  9.037475668452768$  et $\beta_2 = 0.257137855007109$.
 
+
+\subsection*{Question 4}
+On a $Y_i = \beta_1 + \beta_2x_i \epsilon_i$, donc $\epsilon_i = \beta_1 + \beta_2x_i -Y_i$ avec $X_i$ et $Y_i$ sont 2 variables al\'eatoires ind\'ependantes et la combinaison lin\'eaire de variables al\'eatoires est une variable al\'eatoire. Identiquement distribu\'e????.
+
+En calculant la moyenne de $\epsilon_i$, on obtient $5.07 \mathrm{e}^{-16}$. Il semble raisonnable de dire que $\varphi(\beta_1, \beta_2)$ est un estimateur sans biais, donc $E(\beta_1 + \beta_2x_i -Y_i) - E(\epsilon_i) = 0$. 
+
+
+\subsection*{Question 5}
+???
+
+\subsection*{Question 6}
+Pour trouver le minimum par rapport a $\beta$, il suffit de d\'eriver l'expression par rapport \`a $\beta$ et annuler l'expression. On remarque que $\sum_{i=1}^{n}{(Y-X\beta)^2} = (Y-X\beta)^t(Y-X\beta)$
+
+$$
+(Y-X\beta)^t(Y-X\beta) = Y^tY-2\beta^tX^tY + \beta^tX^tX\beta
+$$
+et
+$$
+\frac{\partial (Y-X\beta)^t(Y-X\beta) }{\partial \beta} = X^tY - X^tX\beta
+$$
+On cherche
+$$
+X^tY - X^tX\hat{\beta} = 0
+$$
+Donc
+$$
+\hat{\beta} = (X^tX)^{-1}X^tY
+$$
+
+\subsection*{Question 7}
+Voir Python
+
+\subsection*{Question 8}
+??
+
+\subsection*{Test de Student}
+\subsection*{Question 9}
+Soient Z une variable al\'eatoire de loi normale centr\'ee et r\'eduite et U une variable ind\'ependante de Z et distribu\'ee suivant la loi la loi du chi-deux \`a k degr\'es de libert\'e. Par d\'efinition la variable $T=\frac {Z}{\sqrt {U/k}}$ suit une loi de Student \`a k degr\'es de libert\'e.
+
+Prenons $U = (n-3)\frac{\hat{\sigma}^2}{\sigma^2}$ et $Z = \hat{\beta}_3$. On sait que $U$ suit une loi de chi-deux \`a $(n-3)$ degr\'es de libert\'e (voir question pr\'ec\'edente) et que $Z$ suit une loi normale centr\'ee et r\'eduite. Donc
+
+$$
+T = \frac{\hat{\beta}_3}{\sqrt{\frac{(n-3)\frac{\hat{\sigma}^2}{\sigma^2}}{n-3}}} = \frac{\hat{\beta}_3}{\frac{\hat{\sigma}}{\sigma}} = \frac{\hat{\beta}_3\sigma}{\hat{\sigma}}
+$$
+
+
+
+
+
 \end{document}
 
