@@ -1,0 +1,119 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\usepackage{tikz}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Exercice 3}
+\subsection*{Question 3.1}
+Soit $Z_1, Z_2, Z_3...Z_n$, des variables al\'eatoire independantes suivant une loi normale standard $N(0,1)$.et posons $Y_n = \sum_{1}^{n}{Z_i^2}$. Calculons le moment de $Y$.
+$$
+M_{Y_n}(t) = M_{Z_1^2}(t).M_{Z_2^2}(t).M_{Z_3^2}(t) \ldots M_{Z_n^2}(t)
+$$
+
+Chaque $Z^2$ suit la loi chi-deux de degr\'es 1 (ie $\chi_1^2$). Cela doit \^etre un resultat du cours?? sinon demande moi.
+Donc $M_{Z_1^2}(t) = (1-2t)^{-1/2}$ et 
+$$
+M_Y(t) = (1-2t)^{-n/2}
+$$ 
+Ceci est le moment de la fonction $\Gamma(\frac{n}{2},2)$  qui est \'egale \`a la loi chi-deux avec $n$ degr\'es de libert\'e. 
+
+Comme $X_i$ est une variable al\'eatoire suit une loi normale d'esp\'erance 5 et de variance $\sigma^2$, posons $Zi=\frac{X_i-5}{\sigma}$ qui suit une loi normale standard d'esp\'erance 0 et de variance 1.
+Donc comme $Y_n = \sum_{1}^{n}Z_i^2$ suit une loi chi-deux de $n$ degr\'es de libert\'e, 
+$$
+Q_n = \sum_{1}^{n}{\left(\frac{X_i-5}{\sigma}\right)^2}= \sum_{1}^{n}Z_i^2 = Y_n
+$$
+suit \'egalement une loi chi-deux de $n$ degr\'es de libert\'e,
+
+\subsection*{Question 3.2}
+$$
+V_n^2 = \frac{1}{n}\sum_{1}^{n}{(X_i-5)^2}
+$$
+Calculons $E(V_n^2)$.
+
+$$
+E(V_n^2) = E(1/n\sum_{i=1}^{n}{(X_i-5)^2})=1/nE(\sum_{i=1}{n}{(X_i-5)^2})=1/n\sum_{i=1}^{n}E((X_i-5)^2)=1/n\sum_{i=1}^{n}{\sigma^2}=1/n.n\sigma^2=\sigma^2.
+$$
+
+Calculons son risque quadratique $E((V^2_n - \sigma)^2) =  Var(V_n^2)$ car $V_n$ est un estimateur sans biais.
+
+
+
+\end{document}
+
