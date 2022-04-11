@@ -85,7 +85,7 @@
 On voit clairement sur le nuage de points (circonference/hauteur) que cela suit une droite. On essaye de trouver les valeurs de la droites qui minimisent le risque quadratique.
 
 \subsection*{Question 2}
-Pour minimiser la fonction $\varphi(\beta_1, \beta_2)$ il faut trouver d\'eriver la fonction par rapport \`a $beta_1$ et $beta_2$ et trouver les valeurs qui annulent les 2 d\'eriv\'ees.
+Pour minimiser la fonction $\varphi(\beta_1, \beta_2)$ il faut trouver d\'eriver la fonction par rapport \`a $\beta_1$ et $\beta_2$ et trouver les valeurs qui annulent les 2 d\'eriv\'ees.
 $$
 \frac{\partial \varphi(\beta_1, \beta_2)}{\beta_1} = \frac{\sum_{i=1}^{n}{(Y_i - \beta_1 - \beta_2x_i)^2}}{\beta_1} = \frac{\sum_{i=1}^{n}{Y_i^2 - \beta_1Y_i - \beta_2x_iY_i -\beta_1Y_i + \beta_1^2 + \beta_1\beta_2x_i - \beta_2x_iY_i + \beta_2x_i\beta_1 +\beta_2^2x_i^2}}{\beta_1}
 $$
@@ -167,27 +167,37 @@ On obtient $\beta_1 =  9.037475668452768$  et $\beta_2 = 0.257137855007109$.
 
 
 \subsection*{Question 4}
-On a $Y_i = \beta_1 + \beta_2x_i \epsilon_i$, donc $\epsilon_i = \beta_1 + \beta_2x_i -Y_i$ avec $X_i$ et $Y_i$ sont 2 variables al\'eatoires ind\'ependantes et la combinaison lin\'eaire de variables al\'eatoires est une variable al\'eatoire. Identiquement distribu\'e????.
+Il semble raisonnable de dire que la circonf\'erence (resp. la hauteur) d'un eucalyptus suit une loi normale. Ceci est visible sur le nuage de points car il y a plus de points au centre. Comme les 2 variables al\'eatoire suivent une loi normale, elle sont ind\'ependentes et identiquement distribu\'es.
 
-En calculant la moyenne de $\epsilon_i$, on obtient $5.07 \mathrm{e}^{-16}$. Il semble raisonnable de dire que $\varphi(\beta_1, \beta_2)$ est un estimateur sans biais, donc $E(\beta_1 + \beta_2x_i -Y_i) - E(\epsilon_i) = 0$. 
+Si X suit une loi normale $\mathscr{N}(m, \sigma^2)$ et $Y = AX + b$ alors, $Y$ suit une loi normale $\mathscr{N}(am + b, a^2\sigma^2)$  
+
+Si $X$ (resp. $Y$) suit une loi normale $\mathscr{N}(m_x, \sigma_x^2)$ (resp. $\mathscr{N}(m_y, \sigma_y^2)$) alors $X+Y$ suit une loi normale $\mathscr{N}(m_x + m_y, \sigma_x^2+\sigma_y^2)$.
+
+Dans notre cas on a $e_i = Y_i - \hat{\beta_1} + \hat{\beta_2}x_i$. Donc $e_i$ suit une loi normale  
+$\mathscr{N}(- \hat{\beta_1} - \hat{\beta_2}m_x + m_Y, \hat{\beta_2}^2\sigma_x^2+\sigma_y^2)$. On a par d\'efinition $m_y = \hat{\beta_1} + \hat{\beta_2}m_x$. Donc $E(e_i) = 0$ et $\sigma_{e_i} = \hat{\beta_2}^2\sigma_x^2+\sigma_y^2$.
 
 
 \subsection*{Question 5}
-???
+En cherchant \`a minimiser $\lVert Y - X\beta \rVert^2$, on cherche \`a trouver l'\'el\'ement de $F$ le plus proche de $Y$ au sens de la distance euclidienne. Il s'agit de la projection orthogonale de $Y$ sur $F$. Comme $z \in F$, si et seulement si $z = X\beta$, on cherche $\hat{\beta}$ tel que $X\hat{\beta} = P_F(Y)$. 
+
+Comme $X\hat{\beta} = P_F(Y)$, on a $Y - X\hat{\beta} = Y - P_F(Y)$ qui est un vecteur orthogonal \`a $X$ et par cons\'equent aussi a $X\theta$. Le produit scalaire de 2 vecteurs orthogonaux est nul, donc $\forall \theta \in \R^{3} <Y - X\hat{\beta}, X\theta> = 0$.
 
 \subsection*{Question 6}
 Pour trouver le minimum par rapport a $\beta$, il suffit de d\'eriver l'expression par rapport \`a $\beta$ et annuler l'expression. On remarque que $\sum_{i=1}^{n}{(Y-X\beta)^2} = (Y-X\beta)^t(Y-X\beta)$
 
 $$
-(Y-X\beta)^t(Y-X\beta) = Y^tY-2\beta^tX^tY + \beta^tX^tX\beta
+(Y-X\beta)^t(Y-X\beta) = (Y^t-\beta^tX^t)(Y-X\beta) = Y^tY-Y^tX\beta - \beta^tX^tY + \beta^tX^tX\beta
 $$
 et
 $$
-\frac{\partial (Y-X\beta)^t(Y-X\beta) }{\partial \beta} = X^tY - X^tX\beta
+\frac{\partial (Y-X\beta)^t(Y-X\beta) }{\partial \beta} = -Y^tX + \beta^tX^tX
 $$
-On cherche
+On cherche $\hat{\beta}$ tel que
 $$
-X^tY - X^tX\hat{\beta} = 0
+-Y^tX + \hat{\beta}^tX^tX = 0
+$$
+$$
+(\hat{\beta}^tX^tX)^t = (-Y^tX)^t
 $$
 Donc
 $$
@@ -198,7 +208,9 @@ $$
 Voir Python
 
 \subsection*{Question 8}
-??
+Les $y_i$ sont identiques \`a ceux de la question 4. Ils suivent une loi normale.
+
+??? pour le reste.
 
 \subsection*{Test de Student}
 \subsection*{Question 9}
