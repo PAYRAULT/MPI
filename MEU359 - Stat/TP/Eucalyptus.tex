@@ -241,11 +241,17 @@ Voir Python.
 $$\beta = [-24.35200327,  -0.48294547,   9.98688814]$$
 
 \subsection*{Question 8}
-Les $y_i$ sont identiques \`a ceux de la question 4. Ils suivent une loi normale.
+On a $Y = X\beta + \epsilon$. On suppose que les variables al\'eatoires $\epsilon_i$ suivent une loi normale $\mathscr{N}(0,\sigma^2)$. On ne sait rien de la loi de la variable al\'eatoire $X$, donc on ne peut rien dire sur la loi des $Y_i$. En effet, supposons que la variable al\'eatoire $X$ suit une loi exponentielle, alors $Y_i$ suivra probablement une loi exponentielle.
+
+Maintenant, sur le seul \'echantillon fourni, on a montr\'e \`a la question 4 que $Y_i$ suit certainement une loi normale.
+
+Au vu du nuage de points, pourquoi ne pas prendre $Y = \beta_1 + \beta_2x_i + \beta_3x_i^2 + \beta_3x_i^3 + \beta_4x_i^4$? Meilleure courbe. Et surement meilleur si on prend un ordre 10 ou 30.
 
 ??? pour le reste.
 
 \subsection*{Test de Student}
+Pourquoi on cherche \`a se demander si $\beta_3 = 0$. On suppose ici que les $\beta_1$ et $\beta_2$ sont identiques pour les 2 r\'egressions pour l'\'echantillon donn\'e. Ce qui n'est pas le cas.
+
 \subsection*{Question 9}
 Soient Z une variable al\'eatoire de loi normale centr\'ee et r\'eduite et U une variable ind\'ependante de Z et distribu\'ee suivant la loi la loi du chi-deux \`a k degr\'es de libert\'e. Par d\'efinition la variable $T=\frac {Z}{\sqrt {U/k}}$ suit une loi de Student \`a k degr\'es de libert\'e.
 
