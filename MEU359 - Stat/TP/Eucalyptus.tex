@@ -14,6 +14,7 @@
 \pagestyle{fancy}
 \usepackage{tikz}
 \usepackage{graphics}
+\usepackage{float}
 
 %Here I define some theorem styles and shortcut commands for symbols I use often
 \theoremstyle{definition}
@@ -169,13 +170,29 @@ Voir Python.
     \label{fig:regression simple}
 \end{figure}
 
-
-
 On obtient $\beta_1 =  9.037475668452768$  et $\beta_2 = 0.257137855007109$.
 
-
 \subsection*{Question 4}
-Il semble raisonnable de dire que la circonf\'erence (resp. la hauteur) d'un eucalyptus suit une loi normale. Ceci est visible sur le nuage de points car il y a plus de points au centre. Comme les 2 variables al\'eatoire suivent une loi normale, elle sont ind\'ependentes et identiquement distribu\'es.
+Comme le montre les figures 2 et 3, il semble raisonnable de dire que la circonf\'erence (resp. la hauteur) d'un eucalyptus suit une loi normale. Maintenant on n'a qu'un seul \'echantillon, donc cela pourrait \^etre une pure coincidence!
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+            \includegraphics[scale=0.5]{circ_normale.jpg}
+            \caption{Circonference}
+            \label{fig:Circonference}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.5]{hauteur_normale.jpg}
+        \caption{Hauteur}
+        \label{fig:Hauteur}
+    \end{minipage}
+\end{figure}
+
+
+Comme les 2 variables al\'eatoire suivent une loi normale, elle sont ind\'ependentes et identiquement distribu\'es.
 
 Si X suit une loi normale $\mathscr{N}(m, \sigma^2)$ et $Y = AX + b$ alors, $Y$ suit une loi normale $\mathscr{N}(am + b, a^2\sigma^2)$  
 
