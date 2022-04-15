@@ -170,8 +170,13 @@ Voir Python.
     \label{fig:regression simple}
 \end{figure}
 
-On obtient $\beta_1 =  9.037475668452768$  et $\beta_2 = 0.257137855007109$.
+On obtient $\hat{\beta_1} =  9.037475668452768$  et $\hat{\beta_2} = 0.257137855007109$.
 
+\begin{itemize}
+    \item Moyenne de espilon: -3.603610217941441e-11
+    \item risque quadratique: 19.492804231375466
+\end{itemize}
+    
 \subsection*{Question 4}
 Comme le montre les figures 2 et 3, il semble raisonnable de dire que la circonf\'erence (resp. la hauteur) d'un eucalyptus suit une loi normale. Maintenant on n'a qu'un seul \'echantillon, donc cela pourrait \^etre une pure coincidence!
 
@@ -238,20 +243,24 @@ Voir Python.
     \label{fig:Regression multiple}
 \end{figure}
 
-$$\beta = [-24.35200327,  -0.48294547,   9.98688814]$$
+$$\hat{\beta} = [-24.35200327,  -0.48294547,   9.98688814]$$
+\begin{itemize}
+    \item Moyenne de espilon: 1.0692449957862278e-13
+    \item risque quadratique: 19.32298986873724
+\end{itemize}
+Valeurs proches et meilleures que celles de la r\'egression simple \`a la question 3.
+
 
 \subsection*{Question 8}
-On suppose que $\epsilon_i ~ \mathscr{N}(0,\sigma^2)$ et on a $Y_i = X_i\beta + \epsilon_i$. La loi suivit par $Y_i$ d\'epend de la loi suivit par $X_i$. Donc si on suppose que $X_i$ suit une loi exponentielle, il y a de grande chance que $Y_i$ suive aussi une loi exponentielle.
+On suppose que $\epsilon_i \sim \mathscr{N}(0,\sigma^2)$ et on a $Y_i = X_i\beta + \epsilon_i$. La loi suivit par $Y_i$ d\'epend de la loi suivit par $X_i$ et $\beta$. Donc si on suppose que $X_i$ suit une loi exponentielle, il y a de grande chance que $Y_i$ suive aussi une loi exponentielle.
 
 Maintenant, sur le seul \'echantillon fourni, on a montr\'e \`a la question 4 que $X_i$ suit certainement une loi normale (mais avec un seul \'echantillon on ne peut pas \^etre sur).
 
 
 \subsection*{Test de Student}
-Au vu du nuage de points, pourquoi ne pas prendre $Y = \beta_1 + \beta_2x_i + \beta_3x_i^2 + \beta_3x_i^3 + \beta_4x_i^4$? Bien meilleure courbe. Et surement meilleur si on prend un polynome d'ordre 10 ou 30.
-
 Pourquoi on cherche \`a se demander si $\beta_3 = 0$. On fait la supposition ici que les $\beta_1$ et $\beta_2$ sont identiques pour les 2 types de r\'egression pour l'\'echantillon donn\'e. Ce qui n'est pas le cas.
 
-Cela parait \'evident que plus le polynome est grand plus la courbe sera pr\'ecise. Si ce n'\'etait pas la cas alors les valeurs des coefficients seraient nulles. 
+Sur l'\'echantillon donn\'e la r\'egression multiple est meilleure. 
 
 \subsection*{Question 9}
 Soient Z une variable al\'eatoire de loi normale centr\'ee et r\'eduite et U une variable ind\'ependante de Z et distribu\'ee suivant la loi la loi du chi-deux \`a k degr\'es de libert\'e. Par d\'efinition la variable $T=\frac {Z}{\sqrt {U/k}}$ suit une loi de Student \`a k degr\'es de libert\'e.
