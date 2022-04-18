@@ -273,6 +273,29 @@ $$
 = \frac{\hat{\beta_3}}{m_3 \hat{\sigma}} = T
 $$
 
+
+\subsection*{Question 10}
+L'erreur de deviation standard de $Se(\hat{\beta_3}) = \sqrt{[(X^tX)^{-1}]_{3x3}\hat{\sigma}^2}$. la t-value pour le test est $\frac{\hat{\beta_3} - 0}{Se(\hat{\beta_3})}$ avec $\hat{\beta_3} = 9.98688814$, $[(X^tX)^{-1}]_{3x3} = $, $\hat{\sigma}^2 = $ et $Se(\hat{\beta_3}) = $.
+
+Les coefficients $\hat{\beta_1}$ $\hat{\beta_2}$ de la r\'egression lin\'eaire simple et multiple sont diff\'erents donc on ne peut pas se passer de la composante $\sqrt{x}$ dans la r\'egression m ultiple car dans ce cas la regression simple associ\'ee ne donne pas le plus petit risque quadratique.  
+
+\subsection*{Question 11}
+Les intervalles de confiance sont 
+$$
+\hat{\beta_0} \pm t_{\alpha/2;n-2}\sqrt{\hat{\sigma}^2\left(\frac{1}{n}+\frac{\bar{X}^2}{\sum_{i=1}^{n}{(X_i-\bar{X})^2}}\right)}
+$$
+$$
+\hat{\beta_1} \pm t_{\alpha/2;n-2}\sqrt{\frac{\hat{\sigma}^2}{\sum_{i=1}^{n}{(X_i-\bar{X})^2}}}
+$$
+
+Voir programme python.
+
+Intervalle de confiance \`a 95\% de $\hat{\beta_0} = -0.14857451813593908$, celui de $\hat{\beta_1} = -0.007332356088614205$.  Donc, $ \hat{\beta_0} \in [8.888901150316945, 9.186050186588824]$ et $\hat{\beta_1} \in [0.24980549891849463, 0.26447021109572305]$.
+
+Intervalle de confiance \`a 99\% de $\hat{\beta_0} = -0.19535568338512507$, celui de $\hat{\beta_1} = -0.009641070706375857$. Donc, $ \hat{\beta_0} \in [8.84211998506776, 9.23283135183801]$ et $\hat{\beta_1} \in [0.247496784300733, 0.2667789257134847]$.
+
+
+
 \subsection*{Estimateur de la variance}
 \subsection*{Question 12}
 Par lin\'earit\'e de l'esp\'erance on a $E[AX+b] = AE[X] + b$]. Pour la variance on a 
@@ -281,13 +304,52 @@ VAR(AX+b) = VAR(AX) = E[(AX)(AX)^t] = E[AXX^tA^t] = AE[XX^t]A^t = AVAR(X)A^t
 $$
 
 \subsection*{Question 13}
-On a $Y =  X\beta + \epsilon$ et $X\hat{\beta} = P_F(Y)$ la projection orthonogale de $Y$ sur $F$ (voir question 5).
+On a $\hat{\beta} = (X^tX)^{-1}X^tY$ et $Y = X\beta + \epsilon$ donc
+
+$$Y - X\hat{\beta} = Y - X(X^tX)^{-1}X^tY = (I_n - X(X^tX)^{-1}X^t)Y = (I_n - X(X^tX)^{-1}X^t)(X\beta +\epsilon) 
+$$
+$$
+= X\beta - X(X^tX)^{-1}X^tX\beta + (I_n-X(X^tX)^{-1}X^t)\epsilon = X\beta - X\beta = (I_n - X(X^tX)^{-1}X^t)\epsilon
+$$
+
+Notons $H = X(X^tX)^{-1}X^t$, on a donc $P = (I_n - H)$.
+
+\subsection*{Question 14}
+On a $E(Y-X\hat{\beta}) = E(P\epsilon) = PE(\epsilon) = P.0 = 0$.
+
+
+\subsection*{Question 15}
+Il faut montrer que $E(\hat{\sigma}^2)=\sigma^2$.
+
+
+\subsection*{Question 16}
+$$
+(n-3)\frac{\hat{\sigma}^2}{\sigma^2} = \frac{\Vert Y - X\hat{\beta}\Vert^2}{\sigma^2} = \frac{\sum_{i=1}^{n}e_i}{\sigma^2} = \frac{e^te}{\sigma^2}
+$$
+Calculons $e^te$
+$$
+e^te = (P\epsilon)^t(p\epsilon) = \epsilon^t(I_n-H)^t(I_n - H)\epsilon = \epsilon^t(I_n - H)\epsilon
+$$
+Donc on a 
+$$
+(n-3)\frac{\hat{\sigma}^2}{\sigma^2} = \frac{\epsilon^t(I_n - H)\epsilon}{\sigma^2} = \frac{\epsilon^t}{\sigma}(I_n - H)\frac{\epsilon}{\sigma}
+$$
+
+En utilisant le th\'eor\`eme de Fisher Cochran, la formule ci-dessus a une distribution $\chi^2$ avec un degr\'es de libert\'e $rang(I_n-H)$.
+$$
+rang(I_n - H) = tr(I_n -H) = n - tr(H) = tr(X(X^tX)^{-1}X^t) = tr(I_3) = 3
+$$
 Donc 
-$$Y - X\hat{\beta} = X\beta + \epsilon - P_F(Y)$$
-$$\epsilon = P_F(Y) - X\beta$$
+$(n-3)\frac{\hat{\sigma}^2}{\sigma^2}$ a une distribution $\chi^2(n-3)$.
 
 
-$P_F(Y) = P_F(X\beta + \epsilon) = $
+\subsection*{Best Linear Unbiased Estimator (BLUE)}
+
+\subsection*{Question 17}
+
+\subsection*{Question 18}
+
+\subsection*{Question 19}
 
 
 \end{document}
