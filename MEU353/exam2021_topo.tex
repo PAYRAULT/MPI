@@ -1,0 +1,219 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\subsection*{Exercice 1}
+\subsection*{Exercice 1.1}
+
+$$
+\frac{\partial X}{\partial r} = \frac{2r\cos(\theta)}{\partial r} = 2\cos(\theta)
+$$
+
+$$
+\frac{\partial X}{\partial \theta} = \frac{2r\cos(\theta)}{\partial \theta} = -2r\sin(\theta)
+$$
+
+$$
+\frac{\partial Y}{\partial r} = \frac{3r\sin(\theta)}{\partial r} = 3\sin(\theta)
+$$
+
+$$
+\frac{\partial Y}{\partial \theta} = \frac{3r\sin(\theta)}{\partial \theta} = 3r\cos(\theta)
+$$
+
+\subsection*{Exercice 1.2}
+D\'erivable ??
+
+La matrice Jacobienne de $F(r,\theta)$ est 
+$$
+\begin{vmatrix}
+    \frac{\partial X}{\partial r} & \frac{\partial X}{\partial \theta} \\
+    \frac{\partial Y}{\partial r} & \frac{\partial Y}{\partial \theta} \\
+\end{vmatrix}
+=
+\begin{vmatrix}
+    2\cos(\theta) & -2r\sin(\theta) \\
+    3\sin(\theta) & 3r\cos(theta) \\
+\end{vmatrix}
+$$
+
+Le d\'eterminant Jacobien est $(2\cos(\theta))(3r\cos(\theta)) - (-2r\sin(\theta))(3\sin(\theta)) = 6r\cos^2(\theta) + 6r\sin^2(\theta) = 6r$
+
+
+
+
+
+\subsection*{Exercice 1.3}
+D'apr\`es le th\'eor\`eme d'inversion locale, notons $x_0 = (1,0)$ si $DF(1,0)$ est inversible et $F$ est de classe $C^1$ alors $\exists r>0, \text{ tel que } B=B(x_0, r)$ et la restriction de $F$ \`a $B$ est un diff\'eomorphisme sur $B \to F(B)$. On sait que $F$ est de classe $C^1$, que $DF(1,0)$ est inversible car son d\'eterminant Jacobien est $6*1 = 6$ (diff\'erent de 0). $F(1,0) = (2*1*\cos(0), 3*1*\sin(0)) = (2,0)$. Donc $F$ est un diff\'eomorhisme sur $(1,0) \to (2,0)$.
+
+\subsection*{Exercice 1.4}
+
+Montrons que l'application $F(r,\theta)$ est bijective. SOit $(x,Y)$ tel que $F(r,\theta) = (x,y)$ on a alors 
+$$
+\left(\frac{x}{2}\right)^2+\left(\frac{y}{3}\right)^2 = (r^2\cos^2(\theta) + r^2\sin^2(\theta)) = r^2 
+$$
+donc on peut d\'efinir $r$ uniquement \'a partir de $(x,y)$. 
+
+
+$$
+\frac{2y}{3x} = \frac{6r\sin(\theta)}{6r\cos(\theta)} = \frac{\sin(\theta)}{\cos(\theta)} = \tan(\theta)
+$$
+donc on peut d\'efinir $\theta$ uniquement \`a partir de $(x,y)$. 
+
+L'application r\'eciproque est 
+$$
+F^{-1}(x,y) = \left(\sqrt{\left(\frac{x}{2}\right)^2+\left(\frac{y}{3}\right)^2}, \arctan \left(\frac{2y}{3x}\right) \right)
+$$
+
+$$
+    DF^{-1}(2,0) = \left( \frac{\partial F^{-1}}{\partial x}(2,0),  \frac{\partial F^{-1}}{\partial y}(2,0)\right) = \frac{1}{2}
+$$
+
+$$
+\frac{\partial F^{-1}}{\partial x}(2,0) = \frac{x}{4\sqrt{ \frac{x^2}{4}+\frac{y^2}{9}}}(2,0) = 
+$$
+
+$$
+\frac{\partial F^{-1}}{\partial y}(2,0) = \frac{6x}{4y^2+9x^2}(2,0) = \frac{1}{3}
+$$
+
+donc
+$$
+DF^{-1}(2,0) = \left(\frac{1}{2}, \frac{1}{3}\right)
+$$
+
+
+\subsection*{Exercice 1.5}
+On a $X(1,0) + Y(1,0) = 2.1.\cos(0) + 3.1.\sin(0) = 2$. Donc l'\'equation $X(r,\theta)+Y(r,\theta) = 2$ admet au moins la solution $(1,0)$.
+
+la suite???
+
+
+\subsection*{Exercice 2}
+\subsection*{Exercice 2.1}
+
+$\frac{\partial^2 f}{\partial x^2}(x,y) +  \frac{\partial^2 f}{\partial y^2}(x,y) = 1$
+Rien compris.
+
+\subsection*{Exercice 3}
+\subsection*{Exercice 3.1}
+Aucune id\'eme
+
+\subsection*{Exercice 3.2}
+$$
+\nabla f_1(x,y,z) = \left(\frac{\partial f_1(x,y,z)}{\partial x}, \frac{\partial f_1(x,y,z)}{\partial y}, \frac{\partial f_1(x,y,z)}{\partial z}\right) 
+= \left(\frac{\partial e^{x+y+z}}{\partial x}, \frac{\partial e^{x+y+z}}{\partial y}, \frac{\partial e^{x+y+z}}{\partial z}\right)
+= (e^{x+y+z},e^{x+y+z},e^{x+y+z}) 
+$$
+
+
+$$
+\nabla f_2(x,y,z) = \left(\frac{\partial f_2(x,y,z)}{\partial x}, \frac{\partial f_2(x,y,z)}{\partial y}, \frac{\partial f_2(x,y,z)}{\partial z}\right)
+= (3x^2, -3y^2, 1+3z^2)
+$$
+
+\subsection*{Exercice 3.3}
+
+$$
+\det \begin{vmatrix}
+    e^{x+y+z} & e^{x+y+z} \\
+    -3y^2 & 1 + 3z^2
+\end{vmatrix}
+=
+e^{x+y+z}(1+3z^2 + 3y^2)
+$$
+
+C'est nul si $e^{x+y+z} = 0$ pas possible, ou $1+3z^2+3y^2 = 0$ impossible aussi. DOnc le d\'eterminant est non toujours nul.
+
+
+\subsection*{Exercice 3.4}
+On peut prendre $F(x,y,z) = (f_1(x,y,z)-a_0) + (f_2(x,y,z)-b_0)$. car, $(x,y,z) \in \Gamma \implies f_1(x,y,z) - a_0 = 0 \land  f_2(x,y,z) - b_0 = 0$. 
+
+\subsection*{Exercice 3.5}
+???
+
+
+\subsection*{Exercice 4}
+\subsection*{Exercice 4.1}
+Rien compris
+
+
+
+QED
+
+
+\end{document}
+
