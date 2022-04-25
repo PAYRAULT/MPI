@@ -210,8 +210,79 @@ On peut prendre $F(x,y,z) = (f_1(x,y,z)-a_0) + (f_2(x,y,z)-b_0)$. car, $(x,y,z) 
 
 \subsection*{Exercice 4}
 \subsection*{Exercice 4.1}
-Rien compris
+On a $\frac{\partial^2 f(x)}{\partial x^2} \geq 1$, donc $\frac{\partial f(x)}{\partial x} \geq x + c_1$ et $f(x) \geq \frac{x^2}{2} + c_1x + c_0$. Ce qui fait
+$$f\left(\frac{x+y}{2}\right) = \frac{(x+y)^2}{8} + \frac{c_1(x+y)}{2} + c_0 $$
+et
+$$\frac{1}{2}(f(x) + f(y)) - \eta\Vert x - y \Vert^2 = \frac{1}{2}\left(\frac{x^2}{2} + c_1x + c_0 + \frac{y^2}{2} + c_1y + c_0\right) - \eta(x-y)^2
+$$
+V\'erifions USC
+$$
+\frac{(x+y)^2}{8} + \frac{c_1(x+y)}{2} + c_0 \leq \frac{1}{2}\left(\frac{x^2}{2} + c_1x + c_0 + \frac{y^2}{2} + c_1y + c_0\right) - \eta(x-y)^2
+$$
+$$
+\frac{(x+y)^2}{8} \leq \frac{1}{2}\left(\frac{x^2}{2} + \frac{y^2}{2} \right) - \eta(x-y)^2
+$$
+$$
+x^2+2xy+y^2 \leq 2x^2 + 2y^2 - 8\eta(x^2-2xy+y^2)
+$$
+$$
+0 \leq x^2(1-8\eta) + y^2(1-8\eta) - 2xy(1-8\eta)
+$$
+$$
+0 \leq (1-8\eta)(x-y)^2
+$$
+Pour \^etre positif il faut que $0 \leq \eta \leq 1/8$.
 
+
+\subsection*{Exercice 4.2}
+On a $f(x) = \Vert x \Vert^2 = x_1^2 + x_2^2 + \ldots + x_n^2$ donc
+$$
+1/2(f(x)+f(y))- f((x+y)/2) 
+= 1/2(x_1^2 + x_2^2 + \ldots + x_n^2) + 1/2(y_1^2 + y_2^2 + \ldots + y_n^2) - (\frac{x_1+y_1)^2}{4} + \frac{x_2+y_2)^2}{4} + \ldots + \frac{x_n+y_n)^2}{4})
+$$
+$$ 
+= 1/2(x_1^2 + x_2^2 + \ldots + x_n^2) + 1/2(y_1^2 + y_2^2 + \ldots + y_n^2) - (x_1^2/4+2x_1y_1/4+y_1^2/4 + x_2^2/4+2x_2y_2/4+y_2^2/4 + \ldots + x_n^2/4+2x_1y_n/4+y_n^2/4)
+$$
+$$
+= 1/4(x_1^2 + x_2^2 + \ldots + x_n^2 + y_1^2 + y_2^2 + \ldots + y_n^2) - x_1y_1/2 - x_2y_2/2 - \ldots - x_ny_n/2
+$$
+$$
+= 1/4(x_1^2 + x_2^2 + \ldots + x_n^2 + y_1^2 + y_2^2 + \ldots + y_n^2 - 2x_1y_1 - 2x_2y_2 - \ldots - 2x_ny_n) = 1/4\Vert x - y \Vert^2
+$$
+
+On a $f((x+y)/2) = 1/2(f(x)+f(y)) - 1/4\Vert x - y \Vert^2$, donc $f(x) = \Vert x \Vert^2$ est USC avec $\eta = 1/4$.
+
+\subsection*{Exercice 4.3}
+Rappel de cours: une fonction $f$ est convexe lorsque $f((1-t)x + ty) \leq (1-t)f(x) + tf(y), \forall x, y \in E, 0 < t < 1$. ou $f$ est convexe si tous arcs de son graphe est en dessous de sa corde. 
+
+Comme on a la fonction $F$ qui est USC, alors $f((x+y)/2) \leq 1/2(f(x)+f(y))$, sur la figure cela donne que la corde $f(x), f(y)$ est toujours au dessus de $f((x+y)/2)$. Donc $f$ est convexe. 
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=.5]{convexe.jpg}}
+    \caption{l'arc est toujours en dessous de la corde}
+    \label{fig}
+\end{figure}
+
+Recopie internet.
+On a $f$ qui est convexe, donc
+$$
+f((1-t)x+ty) \leq (1-t)f(x)+tf(y)
+$$
+$$
+f(x-tx+ty) \leq f(x)-tf(x)+tf(y)
+$$
+comme $t \neq 0$
+$$
+\frac{f(x-tx-ty)-f(x)}{t} \leq f(y) - f(x)
+$$
+Quand $t \to 0$, on a 
+$$
+\langle \nabla f(x),y-x\rangle \leq f(y) - f(x)
+$$
+En prenant $x=0$ on a $\langle \nabla f(0),y\rangle \leq f(y) - f(0)$ ou $f(y) \geq f(0) - \langle \nabla f(0),y\rangle$.
+
+\subsection*{Exercice 4.4}
+Rien compris.
 
 
 QED
