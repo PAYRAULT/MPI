@@ -1,6 +1,6 @@
-\documentclass[]{book}
-
+\documentclass[pdflatex]{article}
 %These tell TeX which packages to use.
+
 \usepackage{array,epsfig}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -15,6 +15,19 @@
 \usepackage{tikz}
 \usepackage{graphics}
 \usepackage{float}
+\usepackage{sistyle}
+\usepackage[utf8]{inputenc}      % accents dans le source
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{verbatim}
+
+\setlength{\textheight}{24cm} % Hauteur de la zone de texte
+\setlength{\textwidth}{17cm} % Largeur de la zone de texte
+\setlength{\topmargin}{-0.8cm}  % marge en haut
+\setlength{\oddsidemargin}{-0.5cm} % Marge gauche sur pages impaires (book) quelconques (article)
+\setlength{\headheight}{1cm} % Haut de page
+\setlength{\headsep}{3mm} % Entre le haut de page et le texte
+\setlength{\footskip}{1cm} % Bas de page + séparation
 
 %Here I define some theorem styles and shortcut commands for symbols I use often
 \theoremstyle{definition}
@@ -68,24 +81,37 @@
 \newcommand{\st}{\ni}
 \newcommand{\wh}{\widehat}
 \newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\quest}[1]{\textbf{\textit{#1}} \vspace{3mm}}
 
 %Pagination stuff.
 %\setlength{\oddsidemargin}{0in}
 %\setlength{\evensidemargin}{0in}
-\setlength{\textheight}{9.in}
-\setlength{\textwidth}{6.5in}
-\cfoot{page \thepage}
+%\setlength{\textheight}{9.in}
+%\setlength{\textwidth}{6.5in}
+%\cfoot{page \thepage}
 \lhead{MEU359 - Proba-Stat}
 \rhead{TP}
 \pagestyle{fancy}
 
 
 \begin{document}
+\title{R\'egression linr\'eaire pour mesurer la hauteur des eucalyptus}
 
+\author{Charlote Ayrault - The ghost}
+\date{\today}
+
+
+\maketitle
+
+\section*{R\'egression lin\'eaire simple}
 \subsection*{Question 1}
+\quest{Pourquoi proposer un estimateur lin\'eaire simple?}
+
 On voit clairement sur le nuage de points (circonference/hauteur) que cela suit une droite. On essaye de trouver les valeurs de la droites qui minimisent le risque quadratique.
 
 \subsection*{Question 2}
+\quest{Comment minimise-t-on une fonction de deux variables? Trouver $\hat{\beta_1}$ et $\hat{\beta_2}$?}
+
 Pour minimiser la fonction $\varphi(\beta_1, \beta_2)$ il faut trouver d\'eriver la fonction par rapport \`a $\beta_1$ et $\beta_2$ et trouver les valeurs qui annulent les 2 d\'eriv\'ees.
 $$
 \frac{\partial \varphi(\beta_1, \beta_2)}{\beta_1} = \frac{\sum_{i=1}^{n}{(Y_i - \beta_1 - \beta_2x_i)^2}}{\beta_1} = \frac{\sum_{i=1}^{n}{Y_i^2 - \beta_1Y_i - \beta_2x_iY_i -\beta_1Y_i + \beta_1^2 + \beta_1\beta_2x_i - \beta_2x_iY_i + \beta_2x_i\beta_1 +\beta_2^2x_i^2}}{\beta_1}
@@ -127,7 +153,6 @@ $$
 $$
 
 
-
 On fait $(3) = n(1)-(2)\sum_{i=1}^{n}{x_i}$
 $$
 \left\{
@@ -163,14 +188,16 @@ $$
 $$
 
 \subsection*{Question 3}
-Voir Python.
+\quest{Programmer et tracer la droite de r\'egression $y = \hat{\beta_1} + \hat{\beta_2}x$?}
+
+Voir la figure ~\ref{fig:regression simple}.
 \begin{figure}
 	\includegraphics[scale=1]{regression_simple.jpg}
-    \caption{Regression simple}
+    \caption{R\'egression simple}
     \label{fig:regression simple}
 \end{figure}
 
-On obtient $\hat{\beta_1} =  9.037475668452768$  et $\hat{\beta_2} = 0.257137855007109$.
+On a obtenu $\hat{\beta_1} =  9.037475668452768$  et $\hat{\beta_2} = 0.257137855007109$.
 
 \begin{itemize}
     \item Moyenne de espilon: -3.603610217941441e-11
@@ -178,6 +205,7 @@ On obtient $\hat{\beta_1} =  9.037475668452768$  et $\hat{\beta_2} = 0.257137855
 \end{itemize}
     
 \subsection*{Question 4}
+\quest{Que pensez-vous de ces hypoth\`eses ? Comment peut-on estimer ce param\`etre de variance $\sigma^2$ ?}
 Comme le montre les figures 2 et 3, il semble raisonnable de dire que la circonf\'erence (resp. la hauteur) d'un eucalyptus suit une loi normale. Maintenant on n'a qu'un seul \'echantillon, donc cela pourrait \^etre une pure coincidence!
 
 \begin{figure}
@@ -197,7 +225,7 @@ Comme le montre les figures 2 et 3, il semble raisonnable de dire que la circonf
 \end{figure}
 
 
-Comme les 2 variables al\'eatoire suivent une loi normale, elle sont ind\'ependentes et identiquement distribu\'es.
+Comme les 2 variables al\'eatoires suivent une loi normale, elle sont ind\'ependentes et identiquement distribu\'es.
 
 Si X suit une loi normale $\mathscr{N}(m, \sigma^2)$ et $Y = AX + b$ alors, $Y$ suit une loi normale $\mathscr{N}(am + b, a^2\sigma^2)$  
 
@@ -206,7 +234,7 @@ Si $X$ (resp. $Y$) suit une loi normale $\mathscr{N}(m_x, \sigma_x^2)$ (resp. $\
 Dans notre cas on a $e_i = Y_i - \hat{\beta_1} + \hat{\beta_2}x_i$. Donc $e_i$ suit une loi normale  
 $\mathscr{N}(- \hat{\beta_1} - \hat{\beta_2}m_x + m_Y, \hat{\beta_2}^2\sigma_x^2+\sigma_y^2)$. On a par d\'efinition $m_y = \hat{\beta_1} + \hat{\beta_2}m_x$. Donc $E(e_i) = 0$ et $\sigma_{e_i} = \hat{\beta_2}^2\sigma_x^2+\sigma_y^2$.
 
-
+\section*{R\'egression lin\'eaire multiple}
 \subsection*{Question 5}
 En cherchant \`a minimiser $\lVert Y - X\beta \rVert^2$, on cherche \`a trouver l'\'el\'ement de $F$ le plus proche de $Y$ au sens de la distance euclidienne. Il s'agit de la projection orthogonale de $Y$ sur $F$. Comme $z \in F$, si et seulement si $z = X\beta$, on cherche $\hat{\beta}$ tel que $X\hat{\beta} = P_F(Y)$. 
 
