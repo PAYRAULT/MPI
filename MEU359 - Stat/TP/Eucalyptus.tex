@@ -206,7 +206,8 @@ On a obtenu $\hat{\beta_1} =  9.037475668452768$  et $\hat{\beta_2} = 0.25713785
     
 \subsection*{Question 4}
 \quest{Que pensez-vous de ces hypoth\`eses ? Comment peut-on estimer ce param\`etre de variance $\sigma^2$ ?}
-Comme le montre les figures 2 et 3, il semble raisonnable de dire que la circonf\'erence (resp. la hauteur) d'un eucalyptus suit une loi normale. Maintenant on n'a qu'un seul \'echantillon, donc cela pourrait \^etre une pure coincidence!
+
+Comme le montre les figures \ref{fig:Circonference} et \ref{fig:Hauteur}, il semble raisonnable de dire que la circonf\'erence (resp. la hauteur) d'un eucalyptus suit une loi normale. Maintenant on n'a qu'un seul \'echantillon, donc cela pourrait \^etre une pure coincidence!
 
 \begin{figure}
     \centering
@@ -236,11 +237,15 @@ $\mathscr{N}(- \hat{\beta_1} - \hat{\beta_2}m_x + m_Y, \hat{\beta_2}^2\sigma_x^2
 
 \section*{R\'egression lin\'eaire multiple}
 \subsection*{Question 5}
+\quest{Montrer que $X\hat{\beta} = P_F(Y)$, o\`u $P_F(Y)$ est la projection orthonogale de $Y$ sur $F$. En d\'eduire : $\forall \theta \in \R^3, \langle Y - X\hat{\beta}, X\theta \rangle = 0$.}
+
 En cherchant \`a minimiser $\lVert Y - X\beta \rVert^2$, on cherche \`a trouver l'\'el\'ement de $F$ le plus proche de $Y$ au sens de la distance euclidienne. Il s'agit de la projection orthogonale de $Y$ sur $F$. Comme $z \in F$, si et seulement si $z = X\beta$, on cherche $\hat{\beta}$ tel que $X\hat{\beta} = P_F(Y)$. 
 
-Comme $X\hat{\beta} = P_F(Y)$, on a $Y - X\hat{\beta} = Y - P_F(Y)$ qui est un vecteur orthogonal \`a $X$ et par cons\'equent aussi a $X\theta$. Le produit scalaire de 2 vecteurs orthogonaux est nul, donc $\forall \theta \in \R^{3} <Y - X\hat{\beta}, X\theta> = 0$.
+Comme $X\hat{\beta} = P_F(Y)$, on a $Y - X\hat{\beta} = Y - P_F(Y)$ qui est un vecteur orthogonal \`a $X$ et par cons\'equent aussi a $X\theta$. Le produit scalaire de 2 vecteurs orthogonaux est nul, donc $\forall \theta \in \R^{3}, \langle Y - X\hat{\beta}, X\theta \rangle = 0$.
 
 \subsection*{Question 6}
+\quest{Montrer que $\hat{\beta} = (X^TX)^{-1}X^TY$.}
+
 Pour trouver le minimum par rapport a $\beta$, il suffit de d\'eriver l'expression par rapport \`a $\beta$ et annuler l'expression. On remarque que $\sum_{i=1}^{n}{(Y-X\beta)^2} = (Y-X\beta)^t(Y-X\beta)$
 
 $$
@@ -263,7 +268,9 @@ $$
 $$
 
 \subsection*{Question 7}
-Voir Python.
+\quest{Programmer et tracer la courbe de r\'egression $\hat{\beta_1} + \hat{\beta_2}x + \hat{\beta_3}\sqrt{x}$.}
+
+Voir figure \ref{fig:Regression multiple}.
 
 \begin{figure}
 	\includegraphics[scale=1]{regression_multiple.jpg}
@@ -271,26 +278,41 @@ Voir Python.
     \label{fig:Regression multiple}
 \end{figure}
 
-$$\hat{\beta} = [-24.35200327,  -0.48294547,   9.98688814]$$
+\vspace{5mm}
+On a obtenu les valeurs suivantes:
+\begin{itemize}
+    \item $\hat{\beta_1} = -24.35200327$
+    \item $\hat{\beta_2} = -0.48294547$
+    \item $\hat{\beta_3} = 9.98688814$
+\end{itemize}
+
+\vspace{5mm}
+On a \'egalement calcul\'e:
 \begin{itemize}
     \item Moyenne de espilon: 1.0692449957862278e-13
     \item risque quadratique: 19.32298986873724
 \end{itemize}
-Valeurs proches et meilleures que celles de la r\'egression simple \`a la question 3.
+
+\vspace{5mm}
+Les valeurs proches mais meilleures que celles de la r\'egression simple \`a la question 3.
 
 
 \subsection*{Question 8}
+\quest{Quel est alors la loi des $Y_i$ ? Montrer que $\hat{\beta}$ est l'estimateur du maximum de vraisemblance. Calculer la loi des $\hat{\beta_j}$.}
+
 On suppose que $\epsilon_i \sim \mathscr{N}(0,\sigma^2)$ et on a $Y_i = X_i\beta + \epsilon_i$. La loi suivit par $Y_i$ d\'epend de la loi suivit par $X_i$ et $\beta$. Donc si on suppose que $X_i$ suit une loi exponentielle, il y a de grande chance que $Y_i$ suive aussi une loi exponentielle.
 
 Maintenant, sur le seul \'echantillon fourni, on a montr\'e \`a la question 4 que $X_i$ suit certainement une loi normale (mais avec un seul \'echantillon on ne peut pas \^etre sur).
 
 
-\subsection*{Test de Student}
+\section*{Test de Student}
 Pourquoi on cherche \`a se demander si $\beta_3 = 0$. On fait la supposition ici que les $\beta_1$ et $\beta_2$ sont identiques pour les 2 types de r\'egression pour l'\'echantillon donn\'e. Ce qui n'est pas le cas.
 
 Sur l'\'echantillon donn\'e la r\'egression multiple est meilleure. 
 
 \subsection*{Question 9}
+\quest{Montrer qur $T$ suit une loi de Student \`a $(n - 3)$ degr\'es de libert\'e $\tau (n - 3)$}
+
 Soient Z une variable al\'eatoire de loi normale centr\'ee et r\'eduite et U une variable ind\'ependante de Z et distribu\'ee suivant la loi la loi du chi-deux \`a k degr\'es de libert\'e. Par d\'efinition la variable $T=\frac {Z}{\sqrt {U/k}}$ suit une loi de Student \`a k degr\'es de libert\'e.
 
 Prenons $U = (n-3)\hat{\sigma}^2/\sigma^2$. On sait que $U$ suit une loi de chi-deux \`a $(n-3)$ degr\'es de libert\'e (voir question pr\'ec\'edente) et $Z = \frac{\hat{\beta_3}}{\sigma m_3}$ suit une loi normale centr\'ee et r\'eduite et $k = n-3$.
@@ -303,11 +325,15 @@ $$
 
 
 \subsection*{Question 10}
+\quest{En d\'eduire une roc\'edure de test. L'impl\'ementer sur les donn\'es. Quelle conclusion pouvez-vous en tirer? Pourrait-on se passer de a composante lin\'eaire en $x$ de la r\'egression ?}
+
 L'erreur de deviation standard de $Se(\hat{\beta_3}) = \sqrt{[(X^tX)^{-1}]_{3x3}\hat{\sigma}^2}$. la t-value pour le test est $\frac{\hat{\beta_3} - 0}{Se(\hat{\beta_3})}$ avec $\hat{\beta_3} = 9.98688814$, $[(X^tX)^{-1}]_{3x3} = $, $\hat{\sigma}^2 = $ et $Se(\hat{\beta_3}) = $.
 
-Les coefficients $\hat{\beta_1}$ $\hat{\beta_2}$ de la r\'egression lin\'eaire simple et multiple sont diff\'erents donc on ne peut pas se passer de la composante $\sqrt{x}$ dans la r\'egression m ultiple car dans ce cas la regression simple associ\'ee ne donne pas le plus petit risque quadratique.  
+Les coefficients $\hat{\beta_1}$ $\hat{\beta_2}$ de la r\'egression lin\'eaire simple et multiple sont diff\'erents donc on ne peut pas se passer de la composante $\sqrt{x}$ dans la r\'egression multiple car dans ce cas la regression simple associ\'ee ne donne pas le plus petit risque quadratique.  
 
 \subsection*{Question 11}
+\quest{Dans le cas de la r\'egression lin\'eaire simple, donner les intervalles de confiance a 95\% et 99\% pour $\beta_1$ et $\beta_2$. Les tracer en fonction de $n$ pour les donn\'ees fournies}
+
 Les intervalles de confiance sont 
 $$
 \hat{\beta_0} \pm t_{\alpha/2;n-2}\sqrt{\hat{\sigma}^2\left(\frac{1}{n}+\frac{\bar{X}^2}{\sum_{i=1}^{n}{(X_i-\bar{X})^2}}\right)}
@@ -322,16 +348,21 @@ Intervalle de confiance \`a 95\% de $\hat{\beta_0} = -0.14857451813593908$, celu
 
 Intervalle de confiance \`a 99\% de $\hat{\beta_0} = -0.19535568338512507$, celui de $\hat{\beta_1} = -0.009641070706375857$. Donc, $ \hat{\beta_0} \in [8.84211998506776, 9.23283135183801]$ et $\hat{\beta_1} \in [0.247496784300733, 0.2667789257134847]$.
 
+\vspace{5mm}
+On n'a pas pu les tracer en fonction de $n$ car cela d\'epend des $n$ donn\'ees que l'on prend pour faire le calcul. 
 
-
-\subsection*{Estimateur de la variance}
+\section*{Estimateur de la variance}
 \subsection*{Question 12}
+\quest{Montrer que $AU + b \thicksim \mathcal{N}(Am + b, A\Sigma A^T)$.}
+
 Par lin\'earit\'e de l'esp\'erance on a $E[AX+b] = AE[X] + b$]. Pour la variance on a 
 $$
 VAR(AX+b) = VAR(AX) = E[(AX)(AX)^t] = E[AXX^tA^t] = AE[XX^t]A^t = AVAR(X)A^t
 $$
 
 \subsection*{Question 13}
+\quest{Montrer que $Y - X\hat{\beta}$ peut s'\'ecrire $P\epsilon$ o\`u $P$ est la matrice d'une projection orthogonale \`a pr\'eciser.}
+
 On a $\hat{\beta} = (X^tX)^{-1}X^tY$ et $Y = X\beta + \epsilon$ donc
 
 $$Y - X\hat{\beta} = Y - X(X^tX)^{-1}X^tY = (I_n - X(X^tX)^{-1}X^t)Y = (I_n - X(X^tX)^{-1}X^t)(X\beta +\epsilon) 
@@ -343,14 +374,20 @@ $$
 Notons $H = X(X^tX)^{-1}X^t$, on a donc $P = (I_n - H)$.
 
 \subsection*{Question 14}
+\quest{D\'eterminer l'esp\'erance et la matrice de variance de $Y - X\hat{\beta}$.}
+
 On a $E(Y-X\hat{\beta}) = E(P\epsilon) = PE(\epsilon) = P.0 = 0$.
 
 
 \subsection*{Question 15}
+\quest{En d\'eduire que $\hat{\sigma}^2$ est un estimateur sans biais de $\sigma^2$.}
+
 Il faut montrer que $E(\hat{\sigma}^2)=\sigma^2$.
 
 
 \subsection*{Question 16}
+\quest{Montrer que $(n-3)\hat{\sigma}^2/\sigma^2 \thicksim \Xi (n-3)$ et $\hat{\sigma}^2$ ind\'ependant de $\hat{\beta}$}
+
 $$
 (n-3)\frac{\hat{\sigma}^2}{\sigma^2} = \frac{\Vert Y - X\hat{\beta}\Vert^2}{\sigma^2} = \frac{\sum_{i=1}^{n}e_i}{\sigma^2} = \frac{e^te}{\sigma^2}
 $$
@@ -371,14 +408,16 @@ Donc
 $(n-3)\frac{\hat{\sigma}^2}{\sigma^2}$ a une distribution $\chi^2(n-3)$.
 
 
-\subsection*{Best Linear Unbiased Estimator (BLUE)}
+\section*{Best Linear Unbiased Estimator (BLUE)}
 
 \subsection*{Question 17}
+\quest{Interpr\'eter la propri\'et\'e $MSE_{\lambda}(\bar{\beta}) \leq MSE_{\lambda}(\tilde{\beta})$}
 
 \subsection*{Question 18}
+\quest{Montrer que, si $\tilde{\beta}$ est sans bias, alors $MSE_\lambda(\tilde{\beta}) = VAR[\lambda^T\tilde{\beta}]$. En d\'eduire que $\bar{\beta}$ est le BLUE si et seulement si, pout tout estimateur lin\'eaire sans biais $\tilde{\beta}$, $Var(\tilde{\beta}) - Var(\bar{\beta})$ est une matrice positive.}
 
 \subsection*{Question 19}
-
+\quest{En \'ecrivant $\tilde{\beta} = \hat{\beta} + DY = ((X^TX)^{-1}X^T+D)Y$, montrer $DX = 0$, puis $Var(\tilde{beta}) - Var(\hat{\beta})$ est positive. Conclure.}
 
 \end{document}
 
