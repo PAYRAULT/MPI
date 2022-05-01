@@ -21,7 +21,7 @@
 \usepackage[francais]{babel}
 \usepackage{verbatim}
 
-\setlength{\textheight}{24cm} % Hauteur de la zone de texte
+\setlength{\textheight}{23cm} % Hauteur de la zone de texte
 \setlength{\textwidth}{17cm} % Largeur de la zone de texte
 \setlength{\topmargin}{-0.8cm}  % marge en haut
 \setlength{\oddsidemargin}{-0.5cm} % Marge gauche sur pages impaires (book) quelconques (article)
@@ -201,7 +201,7 @@ On a obtenu $\hat{\beta_1} =  9.037475668452768$  et $\hat{\beta_2} = 0.25713785
 
 \begin{itemize}
     \item Moyenne de espilon: -3.603610217941441e-11
-    \item risque quadratique: 19.492804231375466
+    \item Risque quadratique: 19.492804231375466
 \end{itemize}
     
 \subsection*{Question 4}
@@ -290,7 +290,7 @@ On a obtenu les valeurs suivantes:
 On a \'egalement calcul\'e:
 \begin{itemize}
     \item Moyenne de espilon: 1.0692449957862278e-13
-    \item risque quadratique: 19.32298986873724
+    \item Risque quadratique: 19.32298986873724
 \end{itemize}
 
 \vspace{5mm}
@@ -397,7 +397,19 @@ On a $E(Y-X\hat{\beta}) = E(P\epsilon) = PE(\epsilon) = P.0 = 0$.
 \subsection*{Question 15}
 \quest{En d\'eduire que $\hat{\sigma}^2$ est un estimateur sans biais de $\sigma^2$.}
 
-Il faut montrer que $E(\hat{\sigma}^2)=\sigma^2$.
+Il faut montrer que $E(\hat{\sigma}^2)=\sigma^2$. Lorsque $X \thicksim \chi^2(n-3)$ alors $E(X) = n-3$. Donc comme $(n-3)\hat{\sigma}^2/\sigma^2 \thicksim \chi (n-3)$, on a 
+
+$$
+E\left(\frac{(n-3)\hat{\sigma}^2}{\sigma^2}\right) = n-3
+$$
+$$
+\frac{n-3}{\sigma^2}E(\hat{\sigma}^2) = n-3
+$$
+$$
+E(\hat{\sigma}^2) = \sigma^2
+$$
+
+
 
 
 \subsection*{Question 16}
@@ -432,7 +444,7 @@ $(n-3)\frac{\hat{\sigma}^2}{\sigma^2}$ a une distribution $\chi^2(n-3)$.
 \quest{Montrer que, si $\tilde{\beta}$ est sans biais, alors $MSE_\lambda(\tilde{\beta}) = VAR[\lambda^T\tilde{\beta}]$. En d\'eduire que $\bar{\beta}$ est le BLUE si et seulement si, pout tout estimateur lin\'eaire sans biais $\tilde{\beta}$, $Var(\tilde{\beta}) - Var(\bar{\beta})$ est une matrice positive.}
 
 \subsection*{Question 19}
-\quest{En \'ecrivant $\tilde{\beta} = \hat{\beta} + DY = ((X^TX)^{-1}X^T+D)Y$, montrer $DX = 0$, puis $Var(\tilde{beta}) - Var(\hat{\beta})$ est positive. Conclure.}
+\quest{En \'ecrivant $\tilde{\beta} = \hat{\beta} + DY = ((X^TX)^{-1}X^T+D)Y$, montrer $DX = 0$, puis $Var(\tilde{\beta}) - Var(\hat{\beta})$ est positive. Conclure.}
 
 Calculons $E(\tilde{\beta})$.
 $$
@@ -441,8 +453,7 @@ $$
 
 Donc pour que $\tilde{\beta}$ soit sans biais il faut que $E(\tilde{\beta}) = \beta$, donc $DX=0$.
 
-
-On a $Var(\tilde{\beta}) = $
+%On a $Var(\tilde{\beta}) = $
 
 \end{document}
 
