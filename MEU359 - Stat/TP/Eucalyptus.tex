@@ -301,14 +301,19 @@ Les valeurs proches mais meilleures que celles de la r\'egression simple \`a la 
 \quest{Quel est alors la loi des $Y_i$ ? Montrer que $\hat{\beta}$ est l'estimateur du maximum de vraisemblance. Calculer la loi des $\hat{\beta_j}$.}
 
 On suppose que $\epsilon_i \sim \mathscr{N}(0,\sigma^2)$ et on a $Y_i = X_i\beta + \epsilon_i$. La loi suivit par $Y_i$ d\'epend de la loi suivit par $X_i$ et $\beta$. Donc si on suppose que $X_i$ suit une loi exponentielle, il y a de grande chance que $Y_i$ suive aussi une loi exponentielle.
+Maintenant, sur l'\'echantillon fourni, on a montr\'e \`a la question 4 que $X_i$ suit certainement une loi normale.
+Prenons cette hypoth\`ese.
 
-Maintenant, sur le seul \'echantillon fourni, on a montr\'e \`a la question 4 que $X_i$ suit certainement une loi normale (mais avec un seul \'echantillon on ne peut pas \^etre sur).
 
+
+$$E(\hat{\beta}) = E((X^tX)^{-1}X^tY) = E((X^tX)^{-1}X^t(X\beta + \epsilon)) = E((X^tX)^{-1}X^tX\beta+ (X^tX)^{-1}X^t\epsilon)
+$$
+$$
+= E(\beta)+ E((X^tX)^{-1}X^t\epsilon)) = \beta + (X^tX)^{-1}X^tE(\epsilon) = \beta + (X^tX)^{-1}X^t0 = \beta
+$$
+Donc $\hat{\beta}$ est sans biais.
 
 \section*{Test de Student}
-Pourquoi on cherche \`a se demander si $\beta_3 = 0$. On fait la supposition ici que les $\beta_1$ et $\beta_2$ sont identiques pour les 2 types de r\'egression pour l'\'echantillon donn\'e. Ce qui n'est pas le cas.
-
-Sur l'\'echantillon donn\'e la r\'egression multiple est meilleure. 
 
 \subsection*{Question 9}
 \quest{Montrer qur $T$ suit une loi de Student \`a $(n - 3)$ degr\'es de libert\'e $\tau (n - 3)$}
@@ -325,11 +330,12 @@ $$
 
 
 \subsection*{Question 10}
-\quest{En d\'eduire une roc\'edure de test. L'impl\'ementer sur les donn\'es. Quelle conclusion pouvez-vous en tirer? Pourrait-on se passer de a composante lin\'eaire en $x$ de la r\'egression ?}
+\quest{En d\'eduire une proc\'edure de test. L'impl\'ementer sur les donn\'es. Quelle conclusion pouvez-vous en tirer? Pourrait-on se passer de a composante lin\'eaire en $x$ de la r\'egression ?}
 
-L'erreur de deviation standard de $Se(\hat{\beta_3}) = \sqrt{[(X^tX)^{-1}]_{3x3}\hat{\sigma}^2}$. la t-value pour le test est $\frac{\hat{\beta_3} - 0}{Se(\hat{\beta_3})}$ avec $\hat{\beta_3} = 9.98688814$, $[(X^tX)^{-1}]_{3x3} = $, $\hat{\sigma}^2 = $ et $Se(\hat{\beta_3}) = $.
+%L'erreur de deviation standard de $Se(\hat{\beta_3}) = \sqrt{[(X^tX)^{-1}]_{3x3}\hat{\sigma}^2}$. la t-value pour le test est $\frac{\hat{\beta_3} - 0}{Se(\hat{\beta_3})}$ avec $\hat{\beta_3} = 9.98688814$, $[(X^tX)^{-1}]_{3x3} = $, $\hat{\sigma}^2 = $ et $Se(\hat{\beta_3}) = $.
 
-Les coefficients $\hat{\beta_1}$ $\hat{\beta_2}$ de la r\'egression lin\'eaire simple et multiple sont diff\'erents donc on ne peut pas se passer de la composante $\sqrt{x}$ dans la r\'egression multiple car dans ce cas la regression simple associ\'ee ne donne pas le plus petit risque quadratique.  
+Les coefficients $\hat{\beta_1}$ $\hat{\beta_2}$ de la r\'egression lin\'eaire simple et de la r\'egression multiple sont diff\'erents donc on ne peut pas comparer les 2 r\'egressions lin\'eaires sur le seul param\^etre $\hat{\beta_3}$. Donc on ne peut pas se passer de la composante $\sqrt{x}$ dans la r\'egression multiple car dans ce cas la r\'egression simple associ\'ee ne donnera pas le plus petit risque quadratique.  
+
 
 \subsection*{Question 11}
 \quest{Dans le cas de la r\'egression lin\'eaire simple, donner les intervalles de confiance a 95\% et 99\% pour $\beta_1$ et $\beta_2$. Les tracer en fonction de $n$ pour les donn\'ees fournies}
@@ -344,9 +350,18 @@ $$
 
 Voir programme python.
 
-Intervalle de confiance \`a 95\% de $\hat{\beta_0} = -0.14857451813593908$, celui de $\hat{\beta_1} = -0.007332356088614205$.  Donc, $ \hat{\beta_0} \in [8.888901150316945, 9.186050186588824]$ et $\hat{\beta_1} \in [0.24980549891849463, 0.26447021109572305]$.
+Intervalle de confiance \`a 95\% de $\hat{\beta_0} = -0.14857451813593908$, celui de $\hat{\beta_1} = -0.007332356088614205$. Donc, 
+\begin{itemize}
+    \item $ \hat{\beta_0} \in [8.888901150316945, 9.186050186588824]$ 
+    \item $\hat{\beta_1} \in [0.24980549891849463, 0.26447021109572305]$.
+\end{itemize}
 
-Intervalle de confiance \`a 99\% de $\hat{\beta_0} = -0.19535568338512507$, celui de $\hat{\beta_1} = -0.009641070706375857$. Donc, $ \hat{\beta_0} \in [8.84211998506776, 9.23283135183801]$ et $\hat{\beta_1} \in [0.247496784300733, 0.2667789257134847]$.
+\vspace{5mm}
+Intervalle de confiance \`a 99\% de $\hat{\beta_0} = -0.19535568338512507$, celui de $\hat{\beta_1} = -0.009641070706375857$. Donc,
+\begin{itemize}
+    \item $\hat{\beta_0} \in [8.84211998506776, 9.23283135183801]$
+    \item $\hat{\beta_1} \in [0.247496784300733, 0.2667789257134847]$.
+\end{itemize}
 
 \vspace{5mm}
 On n'a pas pu les tracer en fonction de $n$ car cela d\'epend des $n$ donn\'ees que l'on prend pour faire le calcul. 
@@ -418,6 +433,16 @@ $(n-3)\frac{\hat{\sigma}^2}{\sigma^2}$ a une distribution $\chi^2(n-3)$.
 
 \subsection*{Question 19}
 \quest{En \'ecrivant $\tilde{\beta} = \hat{\beta} + DY = ((X^TX)^{-1}X^T+D)Y$, montrer $DX = 0$, puis $Var(\tilde{beta}) - Var(\hat{\beta})$ est positive. Conclure.}
+
+Calculons $E(\tilde{\beta})$.
+$$
+E(\tilde{\beta}) = E(((X^TX)^{-1}X^T+D)Y) = ((X^TX)^{-1}X^T+D)E(Y) = ((X^TX)^{-1}X^T+D)X\beta = ((X^TX)^{-1}X^TX\beta+DX\beta = \beta +DX\beta
+$$
+
+Donc pour que $\tilde{\beta}$ soit sans biais il faut que $E(\tilde{\beta}) = \beta$, donc $DX=0$.
+
+
+On a $Var(\tilde{\beta}) = $
 
 \end{document}
 
