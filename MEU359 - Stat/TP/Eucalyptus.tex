@@ -233,7 +233,7 @@ Si X suit une loi normale $\mathscr{N}(m, \sigma^2)$ et $Y = AX + b$ alors, $Y$ 
 Si $X$ (resp. $Y$) suit une loi normale $\mathscr{N}(m_x, \sigma_x^2)$ (resp. $\mathscr{N}(m_y, \sigma_y^2)$) alors $X+Y$ suit une loi normale $\mathscr{N}(m_x + m_y, \sigma_x^2+\sigma_y^2)$.
 
 Dans notre cas on a $e_i = Y_i - \hat{\beta_1} + \hat{\beta_2}x_i$. Donc $e_i$ suit une loi normale  
-$\mathscr{N}(- \hat{\beta_1} - \hat{\beta_2}m_x + m_Y, \hat{\beta_2}^2\sigma_x^2+\sigma_y^2)$. On a par d\'efinition $m_y = \hat{\beta_1} + \hat{\beta_2}m_x$. Donc $E(e_i) = 0$ et $\sigma_{e_i} = \hat{\beta_2}^2\sigma_x^2+\sigma_y^2$.
+$\mathscr{N}(- \hat{\beta_1} - \hat{\beta_2}m_x + m_Y, \hat{\beta_2}^2\sigma_x^2+\sigma_y^2)$. On a par d\'efinition $m_Y = \hat{\beta_1} + \hat{\beta_2}m_x$. Donc $E(e_i) = 0$ et $\sigma_{e_i} = \hat{\beta_2}^2\sigma_x^2+\sigma_y^2$.
 
 \section*{R\'egression lin\'eaire multiple}
 \subsection*{Question 5}
@@ -300,9 +300,12 @@ Les valeurs proches mais meilleures que celles de la r\'egression simple \`a la 
 \subsection*{Question 8}
 \quest{Quel est alors la loi des $Y_i$ ? Montrer que $\hat{\beta}$ est l'estimateur du maximum de vraisemblance. Calculer la loi des $\hat{\beta_j}$.}
 
-On suppose que $\epsilon_i \sim \mathscr{N}(0,\sigma^2)$ et on a $Y_i = X_i\beta + \epsilon_i$. La loi suivit par $Y_i$ d\'epend de la loi suivit par $X_i$ et $\beta$. Donc si on suppose que $X_i$ suit une loi exponentielle, il y a de grande chance que $Y_i$ suive aussi une loi exponentielle.
-Maintenant, sur l'\'echantillon fourni, on a montr\'e \`a la question 4 que $X_i$ suit certainement une loi normale.
-Prenons cette hypoth\`ese.
+Maintenant, sur l'\'echantillon fourni, on a montr\'e \`a la question 4 que $Y_i$ et $X_i$ suivent certainement une loi normale. Prenons cette hypoth\`ese.
+
+$Y_i$ et $X_i$ suivent une loi normale, $\epsilon_i$ suit une loi normale par hypoth\`ese, et $Y = X\beta + \epsilon$, donc $X\beta$ suit une loi normale car l'addition de 2 lois normales suit une loi normale.
+
+
+%On suppose que $\epsilon_i \thicksim \mathscr{N}(0,\sigma^2)$ et on a $Y = X\beta + \epsilon$. La loi suivit par $Y_i$ d\'epend de la loi suivit par $X_i$ et $\beta$. Donc si on suppose que $X_i$ suit une loi exponentielle, il y a de grande chance que $Y_i$ suive aussi une loi exponentielle.
 
 
 
