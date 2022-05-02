@@ -335,10 +335,17 @@ $$
 \subsection*{Question 10}
 \quest{En d\'eduire une proc\'edure de test. L'impl\'ementer sur les donn\'es. Quelle conclusion pouvez-vous en tirer? Pourrait-on se passer de a composante lin\'eaire en $x$ de la r\'egression ?}
 
-%L'erreur de deviation standard de $Se(\hat{\beta_3}) = \sqrt{[(X^tX)^{-1}]_{3x3}\hat{\sigma}^2}$. la t-value pour le test est $\frac{\hat{\beta_3} - 0}{Se(\hat{\beta_3})}$ avec $\hat{\beta_3} = 9.98688814$, $[(X^tX)^{-1}]_{3x3} = $, $\hat{\sigma}^2 = $ et $Se(\hat{\beta_3}) = $.
+On a 
+$$
+T = \frac{\hat{\beta_3}}{\hat{\sigma}\sqrt{(X^tX)^{-1}_{33}}} \thicksim \chi_{(n-3)}
+$$
 
-Les coefficients $\hat{\beta_1}$ $\hat{\beta_2}$ de la r\'egression lin\'eaire simple et de la r\'egression multiple sont diff\'erents donc on ne peut pas comparer les 2 r\'egressions lin\'eaires sur le seul param\^etre $\hat{\beta_3}$. Donc on ne peut pas se passer de la composante $\sqrt{x}$ dans la r\'egression multiple car dans ce cas la r\'egression simple associ\'ee ne donnera pas le plus petit risque quadratique.
+On rej\`ete l'hypoth\`ese $H_0$ avec le niveau de confiance $\alpha$ si $|T| > \chi_{\alpha/2, n-3}$.
 
+Par calcul (voir programme python), on obtient $T = 12.802852542888674$.
+On a suivant pour un niveau de confiance 99\% $\chi_{\alpha/2, n-3} = 1292.1980833934238$.
+
+Donc il faut rejeter l'hypoth\`ese $H_0: \hat{\beta_3} = 0$.
 
 \subsection*{Question 11}
 \quest{Dans le cas de la r\'egression lin\'eaire simple, donner les intervalles de confiance a 95\% et 99\% pour $\beta_1$ et $\beta_2$. Les tracer en fonction de $n$ pour les donn\'ees fournies}
