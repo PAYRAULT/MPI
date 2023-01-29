@@ -240,7 +240,30 @@ Par utilisation d'un solveur internet.
 
 \subsection*{Question 2}
 \subsection*{Question 2-a}
+On calcule
+$$
+\mathcal{L}_{\theta}(x_i,\ldots,x_n) = 
+\prod_{1}^{n}\frac{x^2}{\theta} exp \left( -\frac{x^2}{2\theta}\right) 1_{x_i \in [0,+\infty]}(x_i) =
+\frac{x_1x_2 \ldots x_n}{\theta^n} exp \left( -\frac{x_1^2+x_2^2+ \ldots +x_n^2 }{2\theta} \right) \prod_{1}^{n}{1_{x_i \in [0,+\infty]}(x_i)}
+$$
 
+On calcule $\frac{\partial}{\partial \theta} \mathcal{L}_{\theta}(x_i,\ldots,x_n)$ et on cherche  les points o\'u la d\'eriv\'ee s'annule. 
+
+En utilisant un solveur internet on a 
+$$
+\frac{\partial}{\partial \theta} \mathcal{L}_{\theta}(x_i,\ldots,x_n) = \frac{x_1 x_2 \ldots x_n \theta^{-n-2}.(2n\theta - (x_1+x_2+\ldots + x_n)) e^{-\frac{x_1+x_2+ \ldots + x_n}{2\theta}}} {2}
+$$
+
+Et
+$$
+\frac{\partial}{\partial \theta} \mathcal{L}_{\theta}(x_i,\ldots,x_n) = 0
+$$
+quand $\hat{\theta_n} = \frac{(x_1+x_2+\ldots + x_n)}{2n} = \frac{\mu}{2}$.
+
+
+
+\subsection*{Question 3}
+\subsection*{Question 3-a}
 
 
 \end{document}
