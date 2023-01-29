@@ -236,7 +236,7 @@ Calcul de $E(X_1^4)$.
 $$
 E(X_1^4) = \int_{0}^{+\infty} x^4 f_{x}(x) dx = \int_{0}^{+\infty} \frac{x^5}{\theta} exp \left( -\frac{x^2}{2\theta}\right) dx = 8\theta^2 
 $$
-Par utilisation d'un solveur internet.
+Par utilisation d'un solveur internet, mais faisable \`a la main.
 
 \subsection*{Question 2}
 \subsection*{Question 2-a}
@@ -251,19 +251,64 @@ On calcule $\frac{\partial}{\partial \theta} \mathcal{L}_{\theta}(x_i,\ldots,x_n
 
 En utilisant un solveur internet on a 
 $$
-\frac{\partial}{\partial \theta} \mathcal{L}_{\theta}(x_i,\ldots,x_n) = \frac{x_1 x_2 \ldots x_n \theta^{-n-2}.(2n\theta - (x_1+x_2+\ldots + x_n)) e^{-\frac{x_1+x_2+ \ldots + x_n}{2\theta}}} {2}
+\frac{\partial}{\partial \theta} \mathcal{L}_{\theta}(x_i,\ldots,x_n) = \frac{x_1 x_2 \ldots x_n \theta^{-n-2}.(2n\theta - (x_1+x_2+\ldots + x_n)) e^{-\frac{x_1^2+x_2^2+ \ldots + x_n^2}{2\theta}}} {2}
 $$
 
 Et
 $$
 \frac{\partial}{\partial \theta} \mathcal{L}_{\theta}(x_i,\ldots,x_n) = 0
 $$
-quand $\hat{\theta_n} = \frac{(x_1+x_2+\ldots + x_n)}{2n} = \frac{\mu}{2}$.
+quand $\hat{\theta_n} = \frac{(x_1^2+x_2^2+\ldots + x_n^2)}{2n}$.
 
+Ou plus simple (en passant par le log car $\mathcal{L}_{\theta}(x_i,\ldots,x_n) \neq 0$)
+$$
+\frac{\partial}{\partial \theta} \ln(\mathcal{L}_{\theta}(x_i,\ldots,x_n)) = \frac{\partial}{\partial \theta} \left( ln(x_1x_2 \ldots x_n) - ln(\theta^n)  -  \frac{x_1^2+x_2^2+ \ldots + x_n^2}{2\theta} \right) = -\frac{n}{\theta} + \frac{x_1^2+x_2^2+ \ldots + x_n^2}{2\theta^2}
+$$
 
+Et
+$$
+-\frac{n}{\theta}+\frac{x_1^2+x_2^2+ \ldots + x_n^2}{2\theta^2} = \frac{-2n\theta + x_1^2+x_2^2+ \ldots + x_n^2}{2\theta^2} = 0
+$$
+quand $\hat{\theta_n} = \frac{(x_1^2+x_2^2+\ldots + x_n^2)}{2n}$.
+
+\subsection*{Question 2-b}
+
+\subsection*{Question 2-c}
+
+\subsection*{Question 2-d}
 
 \subsection*{Question 3}
 \subsection*{Question 3-a}
+\subsection*{Question 3-b}
+
+
+\subsection*{Question 4}
+\subsection*{Question 4-a}
+
+$$
+E(\bar{U}^2) = E\left(\left(\frac{1}{n} \sum_{i=1}^{n}U_i \right)^2\right) = \frac{1}{n^2} E\left(\left(\sum_{i=1}^{n}U_i \right)^2\right) 
+$$
+$$
+= \frac{1}{n^2} E\left(\sum_{i=1}^{n}U_i^2 + 2\sum_{1 \leq i < j \leq n} U_i U_j\right) = \frac{1}{n^2} \left(\sum_{i=1}^{n}E(U_i^2) + 2 \sum_{1 \leq i < j \leq n} E(U_i U_j) \right)
+$$
+Comme les $U_i$ suivent la m\^eme loi, elles ont la m\^eme esperance, de plus elles sont independantes donc $E(U_iU_j) =E(U_i)E(U_j)$. Donc
+
+$$
+E(\bar{U}^2) = \frac{1}{n^2} \left(nE(U_1^2) + 2 \sum_{1 \leq i < j \leq n} (E(U_1))^2 \right)
+$$
+On a aussi $E(X^2) = V(X) + (E(X))^2$. Donc
+$$
+E(\bar{U}^2) = \frac{1}{n^2} \left(n(V(U_1) + (E(U_1))^2) + 2 \sum_{1 \leq i < j \leq n} (E(U_1))^2 \right) = \frac{1}{n^2} \left(n \left(V(U_1) + (E(U_1))^2 \right) + 2 \frac{n(n-1)}{2} (E(U_1))^2 \right)
+$$
+$$
+= \frac{1}{n^2} \left(nV(U_1) + n(E(U_1))^2 + n(n-1) (E(U_1))^2 \right) = \frac{1}{n^2} \left(nV(U_1) + n^2 (E(U_1))^2 \right) = (E(U_1))^2 +\frac{V(U_1)}{n} 
+$$
+
+La seconde partie, on admet.
+
+\subsection*{Question 4-b}
+
+
 
 
 \end{document}
