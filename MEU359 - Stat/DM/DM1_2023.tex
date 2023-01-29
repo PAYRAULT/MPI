@@ -1,0 +1,147 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[margin=2cm,top=2.5cm,headheight=16pt,headsep=0.1in,heightrounded]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\usepackage{tikz}
+\usepackage{pgfplots}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\E}{\bb{E}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;} 
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+
+%Pagination stuff.
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\cfoot{page \thepage}
+\lhead{MEU302 - Alg\`ebre}
+\rhead{TD2}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\subsection*{Exercice 5}
+\subsection*{Question 1}
+On a
+
+$$
+E(X_1) = \int_{a}^{1}{t f(t) \,dt} = \int_{a}^{1}{t\frac{1}{1-a} \,dt} = \frac{1}{1-a}\frac{1-a^2}{2} = \frac{1+a}{2}
+$$
+
+On a
+$$
+E[X_1^2] = \int_{a}^{1}{t^2 f(t) \,dt} = \int_{a}^{1}{t^2\frac{1}{1-a} \,dt} = \frac{1}{1-a}\frac{1-a^3}{3} = \frac{1+a+a^2}{3}
+$$
+
+Donc
+$$
+V(X_1) = E[X_1^2]−(E[X_1])^2 = \frac{1+a+a^2}{3} -  \left( \frac{1+a}{2} \right)^2 = \frac{(1-a)^2}{12}
+$$
+
+\subsection*{Question 2}
+On a
+$$E[X_1] = \frac{1+a}{2} \implies a = 2E[X_1] - 1$$
+Donc on prend comme EMM de $a$
+$$
+\tilde{a}_n = 2 \bar{a}_n - 1
+$$
+Mais $0 < a <1$, il faut donc que son estimateur soit aussi $0 < \tilde{a}_n <1$
+Donc 
+$$
+0 < 2\bar{a}_n - 1 < 1 \implies 1 < 2\bar{a}_n < 2 \implies 1/2 < \bar{a}_n < 1
+$$
+Donc l'EMM est d\'efini uniquement si la moyenne de l'\'echantillon $\bar{a}_n$ est comprise entre 0.5 et 1. 
+
+Consistance. En appliquant le Lemme de l'application Continue (LAC).
+En prenant $h(x) = 2 x - 1$, pour $1/2 < x <1$. La fonction est continue. On a \'egalement, $\bar{a}_n \xrightarrow[n \to +\infty]{P} E[X_1]$ selon la loi des grands nombres. Donc $\tilde{a}_n = h(\bar{a}_n) \xrightarrow[n \to +\infty]{P} h(E[X_1]) = a$. Donc consistance.
+
+En appliquant le Th\'eo\`eme Central Limite (TCL) avec $\mu = a$ et $\sigma^2 = \frac{(1-a)^2}{12}$ on a  
+$$
+\frac{\sqrt{n}(\bar{a}_n - a)}{\sqrt{\sigma^2}} \xrightarrow[n \to +\infty]{P} Z \sim \mathcal{N}(0,1)
+$$
+
+\subsection*{Question 3}
+On calcule
+$$
+\mathcal{L}_a(x_i,\ldots,x_n) = \prod_{1}^{n}{\frac{1}{1-a}}1_{x_i \in [a,1]}(x_i) =
+\frac{1}{(1-a)^n}\prod_{1}^{n}{1_{x_i \in [a,1]}(x_i)} = \frac{1}{(1-a)^n}{1_{min(x_i) \leq x_i \leq 1}(x_i)}
+$$
+
+Ce qui donne la fonction suivante:
+$$
+\mathcal{L}_a(x_i,\ldots,x_n) =     
+\left\{
+    \begin{array}{cc}
+        1 &  a = 0 \\
+        \frac{1}{(1-a)^n} & 0 < a \leq min(x_i)\\
+        0 & min(x_i) < a < 1 \\
+    \end{array}
+\right.
+$$ 
+
+$\mathcal{L}_a(x_i,\ldots,x_n)$ est croissante sur $0 \leq a \leq min(x_i)$ et nulle quand $min(x_i) < a$ donc EMV est maximale lorsque $a=min(x_i)$. On a $\hat{a} = \frac{1}{(1-min(x_i))^n}$.  
+
+
+
+\end{document}
+
