@@ -269,9 +269,22 @@ Et
 $$
 -\frac{n}{\theta}+\frac{x_1^2+x_2^2+ \ldots + x_n^2}{2\theta^2} = \frac{-2n\theta + x_1^2+x_2^2+ \ldots + x_n^2}{2\theta^2} = 0
 $$
-quand $\hat{\theta_n} = \frac{(x_1^2+x_2^2+\ldots + x_n^2)}{2n}$.
+quand $\hat{\theta_n} = \frac{x_1^2+x_2^2+\ldots + x_n^2}{2n}$.
 
 \subsection*{Question 2-b}
+Le biais de $\hat{\theta}$ est~:
+$$
+b(\hat{\theta}) = E(\hat{\theta}) - \theta = E\left(\frac{x_1^2+x_2^2+\ldots + x_n^2}{2n}\right) - \theta = \frac{1}{2n}(E(x_1^2) + E(x_2^2) + \ldots + E(x_n^2)) - \theta
+$$
+M\^eme loi, donc tous les $E(x_i^2)$ sont identiques. 
+$$
+=\frac{1}{2n}(2\theta + 2\theta + \ldots + 2\theta) - \theta = \frac{2n\theta}{2n} - \theta = 0
+$$
+
+Le risque quadratique de $\hat{\theta}$ est~:
+$$
+r(\hat{\theta}) = E((\hat{\theta} - \theta)^2) = b(\hat{\theta}) + V(\hat{\theta}) = 0 + V(\hat{\theta}) = E(\hat{\theta}^2) - (E(\hat{\theta}))^2
+$$
 
 \subsection*{Question 2-c}
 
