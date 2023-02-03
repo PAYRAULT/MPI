@@ -139,10 +139,30 @@ $$
 \right.
 $$ 
 
-$\mathcal{L}_a(x_i,\ldots,x_n)$ est croissante sur $0 \leq a \leq min(x_i)$ et nulle quand $min(x_i) < a$ donc EMV est maximale lorsque $a=min(x_i)$. On a $\hat{a}_n = \frac{1}{(1-min(x_i))^n}$.  
+$\mathcal{L}_a(x_i,\ldots,x_n)$ est croissante sur $0 \leq a \leq min(x_i)$ et nulle quand $min(x_i) < a$ donc EMV est maximale lorsque $a=min(x_i)$ donc $\hat{a}=min(x_i)$.  
 
 
-Je ne comprends pas ce que represente $Z_{n}$.
+$$
+P(Z_{n} \geq s) = P\left(\frac{n(\hat{a}-a)}{1-a} \geq s\right) = P\left(\hat{a} \geq \frac{s(1-a)+na}{n}\right) 
+$$.
+
+
+$$
+P(\hat{a} \geq t) = P(\forall i \in [1,n] X_i \geq t) = P(X_1 \geq t)^n = \left(\int_{t}^{1}{\frac{1}{1-a}dy}\right)^n = \left(\frac{1-t}{1-a}\right)^n
+$$
+Donc
+$$
+P(Z_{n} \geq s) = \left(\frac{1-\frac{s(1-a)+na}{n}}{1-a}\right)^n = \left(\frac{\frac{n-s(1-a)-na}{n}}{1-a}\right)^n = \left(\frac{(n-s)(1-a)}{n(1-a)}\right)^n = \left(\frac{n-s}{n}\right)^n
+$$
+
+Convergence en loi: $\lim_{n \to \infty} F_{X_n}(x) \to F_X(x)$.
+$$
+\lim_{n \to \infty} F_{Z_n}(x) = \lim_{n \to \infty} P({Z_n} \leq x) = \lim_{n \to \infty} 1- P({Z_n} \geq x) = 1 - \lim_{n \to \infty} P({Z_n} \geq x) = 1 - \lim_{n \to \infty} \left(\frac{n-x}{n}\right)^n
+$$
+
+On a $n-s <n$, donc $\lim_{n \to \infty} \left(\frac{n-x}{n}\right)^n \to 0$. Donc $\lim_{n \to \infty} F_{X_n}(x) \to 1$. 
+Ce n'est pas une convergence en loi mais une convergence en probabilit\'e. ???? 
+
 
 \subsection*{Question 4}
 Vitesse de convergence de $\tilde{a}_n$.
