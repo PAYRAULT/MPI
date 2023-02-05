@@ -115,7 +115,7 @@ Donc l'EMM est d\'efini uniquement si la moyenne de l'\'echantillon $\bar{a}_n$ 
 Consistance. En appliquant le Lemme de l'application Continue (LAC).
 En prenant $h(x) = 2 x - 1$, pour $1/2 < x <1$. La fonction est continue. On a \'egalement, $\bar{a}_n \xrightarrow[n \to +\infty]{P} E[X_1]$ selon la loi des grands nombres. Donc $\tilde{a}_n = h(\bar{a}_n) \xrightarrow[n \to +\infty]{P} h(E[X_1]) = a$. Donc consistance.
 
-En appliquant le Th\'eo\`eme Central Limite (TCL) avec $\mu = a$ et $\sigma^2 = \frac{(1-a)^2}{12}$ on a  
+En appliquant le Th\'eor\`eme Central Limite (TCL) avec $\mu = a$ et $\sigma^2 = \frac{(1-a)^2}{12}$ on a  
 $$
 \frac{\sqrt{n}(\bar{a}_n - a)}{\sqrt{\sigma^2}} \xrightarrow[n \to +\infty]{P} Z \sim \mathcal{N}(0,1)
 $$
@@ -155,14 +155,47 @@ $$
 P(Z_{n} \geq s) = \left(\frac{1-\frac{s(1-a)+na}{n}}{1-a}\right)^n = \left(\frac{\frac{n-s(1-a)-na}{n}}{1-a}\right)^n = \left(\frac{(n-s)(1-a)}{n(1-a)}\right)^n = \left(\frac{n-s}{n}\right)^n
 $$
 
+On a 
+$$
+P(Z_{n} \geq s) \in [0,1]
+$$
+$$
+\left(\frac{n-s}{n}\right)^n \in [0,1]
+$$
+donc
+$$
+s \in [0,n]
+$$
+
 Convergence en loi: $\lim_{n \to \infty} F_{X_n}(x) \to F_X(x)$.
+On a $P(Z_{n} \leq s) = 1 - P(Z_{n} \geq s) = 1 - \left(\frac{n-s}{n}\right)^n$
 $$
-\lim_{n \to \infty} F_{Z_n}(x) = \lim_{n \to \infty} P({Z_n} \leq x) = \lim_{n \to \infty} 1- P({Z_n} \geq x) = 1 - \lim_{n \to \infty} P({Z_n} \geq x) = 1 - \lim_{n \to \infty} \left(\frac{n-x}{n}\right)^n
+F_{Z_n}(x) =     
+\left\{
+    \begin{array}{cc}
+        0 &  x \leq 0 \\
+        1 - \left(\frac{n-x}{n}\right)^n & 0 \leq x \leq n\\
+        1 & x \geq n \\
+    \end{array}
+\right.
+$$ 
+
+
+$$
+\lim_{n \to \infty} F_{Z_n}(x) = \lim_{n \to \infty} 1- \left(\frac{n-x}{n}\right)^n = 1 - e^{-x}
 $$
 
-On a $n-s <n$, donc $\lim_{n \to \infty} \left(\frac{n-x}{n}\right)^n \to 0$. Donc $\lim_{n \to \infty} F_{X_n}(x) \to 1$. 
-Ce n'est pas une convergence en loi mais une convergence en probabilit\'e. ???? 
+La variable al\'eatoire $Z_n$ converge en loi vers une loi exponentielle de param\`etre $\lambda = 1$. 
 
+En prenant $g(x) = \frac{x(1-a)}{n}+a$, et on a~:  
+$$
+\hat{a_n} = g(Z_n) \xrightarrow[n \to +\infty]{L} g(Z) = \frac{Z(1-a)}{n} + a
+$$
+Donc
+$$
+\lim_{n \to \infty}\hat{a} = \lim_{n \to \infty}\frac{e^{-x}(1-a)}{n} + a = a
+$$
+Donc $\hat{a}$ est consistant.
 
 \subsection*{Question 4}
 Vitesse de convergence de $\tilde{a}_n$.
@@ -174,10 +207,18 @@ $$
 \forall \epsilon, \lim_{n \to \infty}{\mathbb{P}(n^d(\tilde{a}_n-a) \geq \epsilon)} = 0
 $$
 $$
-\forall \epsilon, \lim_{n \to \infty}{\mathbb{P}((2\bar{a}_n) \geq \frac{\epsilon}{n^d} +a+1)} = 0
+\forall \epsilon, \lim_{n \to \infty}{\mathbb{P}(\tilde{a}_n \geq \frac{\epsilon}{n^d} + a)} = 0
 $$
 
-Je ne comprends rien.
+Maintenant calculons $\mathbb{P}(\tilde{a}_n \geq t)$.
+$$
+\mathbb{P}(\tilde{a}_n \geq t) = \mathbb{P}(2\bar{a}_n - 1 \geq t) = \mathbb{P}\left(\bar{a}_n \geq \frac{t +1}{2}\right)
+$$
+On a $F(x) = \frac{x}{1-a}$.
+Donc 
+$$
+\mathbb{P}(\tilde{a}_n \geq t) = \frac{1}{1-a} - \frac{\frac{t +1}{2}}{1-a} = \frac{1-t}{2(1-a)}
+$$
 
 \subsection*{Exercice 6}
 \subsection*{Question 1}
