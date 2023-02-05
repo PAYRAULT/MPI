@@ -225,7 +225,7 @@ $$
 $$
 \mathbb{P}(\tilde{a}_n \geq \frac{\epsilon}{n^d} + a) = \frac{1-\frac{\epsilon}{n^d} - a}{2(1-a)} = \frac{1}{2}-\frac{\epsilon}{2n^d(1-a)}
 $$
-CHerchons une valeur de $d$ qui tel que
+Cherchons une valeur de $d$ qui tel que
 $$
 \frac{1}{2}-\frac{\epsilon}{2n^d(1-a)} = 0
 $$
@@ -236,12 +236,54 @@ $$
 n^d = \frac{\epsilon}{1-a}
 $$
 $$
-d\ln(n) = ln(\epsilon) - ln(1-a)
+d\ln(n) = \ln(\epsilon) - \ln(1-a)
 $$
 $$
-d= \frac{ln(\epsilon) - ln(1-a)}{\ln(n)}
+d= \frac{\ln(\epsilon) - \ln(1-a)}{\ln(n)}
 $$
-Pas sur de moi ???
+Donc la vitesse de convergence de $\tilde{a}_n$ est $\frac{\ln(\epsilon) - \ln(1-a)}{\ln(n)}$.
+
+\bigskip
+Vitesse de convergence de $\hat{a}_n$.
+Il faut trouver le plus grand $d$ qui v\'erifie:
+$$
+n^d(\hat{a}_n-a) \xrightarrow[n \to +\infty]{P} 0
+$$
+$$
+\forall \epsilon, \lim_{n \to \infty}{\mathbb{P}(n^d(\hat{a}_n-a) \geq \epsilon)} = 0
+$$
+$$
+\forall \epsilon, \lim_{n \to \infty}{\mathbb{P}(\hat{a}_n \geq \frac{\epsilon}{n^d} + a)} = 0
+$$
+
+Maintenant calculons $\mathbb{P}(\hat{a}_n \geq t)$ sachant que $\hat{a} = \frac{Z_n(1-a) + na}{n}$.
+$$
+\mathbb{P}(\hat{a}_n \geq t) = \mathbb{P}(\frac{Z_n(1-a) + na}{n} \geq t) = \mathbb{P}\left(Z_n \geq \frac{n(t-a)}{1-a}\right) = \left(\frac{n- \frac{n(t-a)}{1-a}}{n}\right)^n = \left(\frac{1-t}{1-a}\right)^n
+$$
+$$
+\forall \epsilon, \lim_{n \to \infty}{\mathbb{P}(\hat{a}_n \geq \frac{\epsilon}{n^d} + a)} = 0
+\leftrightarrow  \forall \epsilon, \lim_{n \to \infty} \left(\frac{1-\frac{\epsilon}{n^d} - a}{1-a}\right)^n = 0
+\leftrightarrow  0 < \frac{1-\frac{\epsilon}{n^d} - a}{1-a} < 1 
+\leftrightarrow  0 < 1 - \frac{\epsilon}{n^d(1-a)} < 1
+$$
+Donc
+$$
+1 > \frac{\epsilon}{n^d(1-a)} > 0
+$$
+$$
+0 > \ln(\epsilon) - \ln(1-a) - d\ln(n) >-\infty
+$$
+$$
+\ln(\epsilon) - \ln(1-a)  < d\ln(n) < +\infty
+$$
+$$
+\frac{\ln(\epsilon) - \ln(1-a)}{\ln(n)} < d < +\infty
+$$
+
+La plus petit valeur de $d$ est $\frac{\ln(\epsilon) - \ln(1-a)}{\ln(n)}$ ce qui est la vitesse de convergence de $\hat{a}_n$.
+
+La vitesse de convergence de $\tilde{a}_n$ et $\hat{a}_n$ sont identiques.
+
 
 \subsection*{Exercice 6}
 \subsection*{Question 1}
