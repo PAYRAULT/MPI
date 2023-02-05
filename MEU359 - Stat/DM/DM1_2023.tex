@@ -217,8 +217,31 @@ $$
 On a $F(x) = \frac{x}{1-a}$.
 Donc 
 $$
-\mathbb{P}(\tilde{a}_n \geq t) = \frac{1}{1-a} - \frac{\frac{t +1}{2}}{1-a} = \frac{1-t}{2(1-a)}
+\mathbb{P}(\bar{a}_n \geq s) = \frac{1-s}{1-a}
 $$
+$$
+\mathbb{P}(\tilde{a}_n \geq t) = \frac{1-s}{1-a} = \frac{1-\frac{t +1}{2}}{1-a} = \frac{1-t}{2(1-a)}
+$$
+$$
+\mathbb{P}(\tilde{a}_n \geq \frac{\epsilon}{n^d} + a) = \frac{1-\frac{\epsilon}{n^d} - a}{2(1-a)} = \frac{1}{2}-\frac{\epsilon}{2n^d(1-a)}
+$$
+CHerchons une valeur de $d$ qui tel que
+$$
+\frac{1}{2}-\frac{\epsilon}{2n^d(1-a)} = 0
+$$
+$$
+\frac{\epsilon}{n^d(1-a)} = 1
+$$
+$$
+n^d = \frac{\epsilon}{1-a}
+$$
+$$
+d\ln(n) = ln(\epsilon) - ln(1-a)
+$$
+$$
+d= \frac{ln(\epsilon) - ln(1-a)}{\ln(n)}
+$$
+Pas sur de moi ???
 
 \subsection*{Exercice 6}
 \subsection*{Question 1}
